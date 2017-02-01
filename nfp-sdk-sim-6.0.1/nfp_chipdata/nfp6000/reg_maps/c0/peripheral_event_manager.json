@@ -1,0 +1,267 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "peripheral_event_manager.EventFilterMap_inst0": {
+            "0x00000000": {
+                "altname": "STATUS",
+                "description": "Filter Status Register",
+                "name": "FilterStatus",
+                "ptr": "peripheral_event_manager.EventFilterStatus",
+                "type": "multireg"
+            },
+            "0x00000004": {
+                "altname": "FLAGS",
+                "description": "Filter Flag Register",
+                "name": "FilterFlag",
+                "ptr": "peripheral_event_manager.EventFilterFlag",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "MASK",
+                "description": "Filter Mask Register",
+                "name": "FilterMask",
+                "ptr": "peripheral_event_manager.EventFilterMask",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "MATCH",
+                "description": "Filter Match Register",
+                "name": "FilterMatch",
+                "ptr": "peripheral_event_manager.EventFilterMatch",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "ACK",
+                "description": "A read acknowledges the filter causing it to be reset",
+                "name": "FilterAcknowledge",
+                "ptr": "peripheral_event_manager.EventFilterAck",
+                "type": "reg"
+            }
+        },
+        "peripheral_event_manager.EventFilterMap_inst1": {
+            "0x00000000": {
+                "altname": "STATUS",
+                "description": "Filter Status Register",
+                "name": "FilterStatus",
+                "ptr": "peripheral_event_manager.EventFilterStatus",
+                "type": "multireg"
+            },
+            "0x00000008": {
+                "altname": "FLAGS",
+                "description": "Filter Flag Register",
+                "name": "FilterFlag",
+                "ptr": "peripheral_event_manager.EventFilterFlag",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "MASK",
+                "description": "Filter Mask Register",
+                "name": "FilterMask",
+                "ptr": "peripheral_event_manager.EventFilterMask",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "MATCH",
+                "description": "Filter Match Register",
+                "name": "FilterMatch",
+                "ptr": "peripheral_event_manager.EventFilterMatch",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "ACK",
+                "description": "A read acknowledges the filter causing it to be reset",
+                "name": "FilterAcknowledge",
+                "ptr": "peripheral_event_manager.EventFilterAck",
+                "type": "reg"
+            }
+        },
+        "peripheral_event_manager.EventManagerMap_inst0": {
+            "0x00000000": {
+                "altname": "FILTER%d",
+                "description": "Config and status of filter %d",
+                "name": "Filter%d",
+                "offinc1": "0x00000020",
+                "ptr": "peripheral_event_manager.EventFilterMap_inst0",
+                "repeat1": 32,
+                "type": "regmap"
+            },
+            "0x00000400": {
+                "altname": "ALL_STATUS",
+                "description": "32 bits of status from the filters",
+                "name": "CombinedStatus",
+                "ptr": "peripheral_event_manager.EventCombinedStatus",
+                "type": "reg"
+            },
+            "0x00000404": {
+                "altname": "ALL_PENDING",
+                "description": "32 bits of pending status from the filters",
+                "name": "CombinedPendingStatus",
+                "ptr": "peripheral_event_manager.EventCombinedPendingStatus",
+                "type": "reg"
+            },
+            "0x00000408": {
+                "altname": "CONFIG",
+                "description": "Configuration of the event manager",
+                "name": "Config",
+                "ptr": "peripheral_event_manager.EventConfig",
+                "type": "reg"
+            }
+        },
+        "peripheral_event_manager.EventManagerMap_inst1": {
+            "0x00000000": {
+                "altname": "FILTER%d",
+                "description": "Config and status of filter %d",
+                "name": "Filter%d",
+                "offinc1": "0x00000040",
+                "ptr": "peripheral_event_manager.EventFilterMap_inst1",
+                "repeat1": 16,
+                "type": "regmap"
+            },
+            "0x00000800": {
+                "altname": "ALL_STATUS",
+                "description": "32 bits of status from the filters",
+                "name": "CombinedStatus",
+                "ptr": "peripheral_event_manager.EventCombinedStatus",
+                "type": "reg"
+            },
+            "0x00000808": {
+                "altname": "ALL_PENDING",
+                "description": "32 bits of pending status from the filters",
+                "name": "CombinedPendingStatus",
+                "ptr": "peripheral_event_manager.EventCombinedPendingStatus",
+                "type": "reg"
+            },
+            "0x00000810": {
+                "altname": "CONFIG",
+                "description": "Configuration of the event manager",
+                "name": "Config",
+                "ptr": "peripheral_event_manager.EventConfig",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "peripheral_event_manager.EventCombinedPendingStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PENDING_STATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "One bit per filter, indicating its pending status (status that would be presented if not throttling)",
+                    "mode": "RO",
+                    "name": "PendingStatus"
+                }
+            ]
+        },
+        "peripheral_event_manager.EventCombinedStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "STATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "One bit per filter, indicating its status",
+                    "mode": "RO",
+                    "name": "Status"
+                }
+            ]
+        },
+        "peripheral_event_manager.EventConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLKDIV",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Clock divider configuration for setting rate of throttling of events",
+                    "mode": "RW",
+                    "name": "ClockDivide"
+                }
+            ]
+        },
+        "peripheral_event_manager.EventFilterAck": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "EVT_STATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Read Only.  Acknowledges the filter, returning the contents of the FilterStatus Register and then resets it.",
+                    "mode": "RC",
+                    "name": "EvtStatus"
+                }
+            ]
+        },
+        "peripheral_event_manager.EventFilterFlag": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PENDING_STATUS",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Asserted if the filter status flag would be asserted if not for throttling",
+                    "mode": "RO",
+                    "name": "PendingStatus"
+                },
+                {
+                    "altname": "STATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Asserted if the filter status is asserted",
+                    "mode": "RO",
+                    "name": "Status"
+                }
+            ]
+        },
+        "peripheral_event_manager.EventFilterMask": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TYPE",
+                    "bit_lsb": 24,
+                    "bit_msb": 26,
+                    "description": "Configuration type of the filter",
+                    "mode": "RW",
+                    "name": "FilterType"
+                },
+                {
+                    "altname": "EVENT",
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "ANDed with event for filter event match",
+                    "mode": "RW",
+                    "name": "EventMask"
+                }
+            ]
+        },
+        "peripheral_event_manager.EventFilterMatch": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "EVENT",
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "Compared with event & EventMask to filter events",
+                    "mode": "RW",
+                    "name": "EventMatch"
+                }
+            ]
+        },
+        "peripheral_event_manager.EventFilterStatus": {
+            "bit_length": 32,
+            "comment": "Multi-register",
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "mode": "rw",
+                    "name": "value"
+                }
+            ]
+        }
+    }
+}

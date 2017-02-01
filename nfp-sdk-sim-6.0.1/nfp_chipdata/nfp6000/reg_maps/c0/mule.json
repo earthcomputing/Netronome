@@ -1,0 +1,118 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "mule.LookupEngine": {
+            "0x00000000": {
+                "altname": "LOOKUP_ENGINE_STATUS",
+                "description": "Lookup Engine Status Register. Contains read only status information for the Lookup Engine Instance.",
+                "name": "LookupEngineStatus",
+                "ptr": "mule.LookupEngineStatus",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "LOOKUP_ENGINE_CONFIG",
+                "description": "Lookup Engine Configuration Register. Read/Write configuration information for the Lookup Engine.",
+                "name": "LookupEngineConfig",
+                "ptr": "mule.LookupEngineConfig",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "ALGORITHMIC_TABLE_LOCATION%d",
+                "description": "Lookup Engine Algorithmic Table Types. These Read/Write registers define the location for each of the eight algorithmic table types.",
+                "name": "AlgorithmicTableLocation%d",
+                "offinc1": "0x00000004",
+                "ptr": "mule.AlgorithmicTableLocation",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "DIRECT_TABLE_LOCATION",
+                "description": "Lookup Engine Direct Table Type. Read/Write registers define the bits[32:28] of the Small Direct lookup table DLUT32 and DLUT24",
+                "name": "DirectTableLocation",
+                "ptr": "mule.DirectTableLocation",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "mule.AlgorithmicTableLocation": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ADDRESS",
+                    "bit_lsb": 1,
+                    "bit_msb": 5,
+                    "description": "Upper address bits 32:28 of the table",
+                    "mode": "RW",
+                    "name": "Address"
+                },
+                {
+                    "altname": "LOCATION",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "The location of the table",
+                    "mode": "RW",
+                    "name": "Location"
+                }
+            ]
+        },
+        "mule.DirectTableLocation": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ADDRESS",
+                    "bit_lsb": 1,
+                    "bit_msb": 5,
+                    "description": "Upper address bits 32:28 of Small Direct Lookup Table - DLUT24 and DLUT32",
+                    "mode": "RW",
+                    "name": "Address"
+                }
+            ]
+        },
+        "mule.LookupEngineConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RESET_ERR_COUNTER",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Reset Error-counter in LookupEngineStatus register when set.",
+                    "mode": "RW",
+                    "name": "Reset_Error_Counter"
+                },
+                {
+                    "altname": "LOCALITY_CONFIG",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "What locality to use when accessing the External memory through Tcache",
+                    "mode": "RW",
+                    "name": "MemoryLocalityConfig"
+                },
+                {
+                    "altname": "RECURSION_LIMIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "The recursion limit value is set to limit the maximum number of recursive lookups allowed",
+                    "mode": "RW",
+                    "name": "RecursionLimit"
+                }
+            ]
+        },
+        "mule.LookupEngineStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "It is a saturating counter and Holds the Error-count of Invalid opcode,pull-data-error,dcache-data-error",
+                    "mode": "RO",
+                    "name": "ErrorCounter"
+                }
+            ]
+        }
+    }
+}

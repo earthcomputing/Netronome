@@ -1,0 +1,226 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "mu_misc_engine.MUMiscAddressMapXpb": {
+            "0x00000000": {
+                "altname": "XPB_ERR_CONFIG",
+                "description": "XPB Error Configuration Register",
+                "name": "XpbErrConfig",
+                "ptr": "mu_misc_engine.XpbErrConfig",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "XPB_TIMEOUT_ERR_STAT",
+                "description": "XPB Timeout Error Status Register",
+                "name": "XpbTOErrStat",
+                "ptr": "mu_misc_engine.XpbTOErrStat",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "XPB_WR_ERR_STAT",
+                "description": "XPB Write Error Status Register",
+                "name": "XpbWrErrStat",
+                "ptr": "mu_misc_engine.XpbWrErrStat",
+                "type": "reg"
+            },
+            "0x00000100": {
+                "altname": "RING_%d_BASE",
+                "description": "Ring %d Base Register",
+                "name": "Ring_%d_Base",
+                "offinc1": "0x00000010",
+                "ptr": "mu_misc_engine.MUMERingBase",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00000104": {
+                "altname": "RING_%d_HEAD",
+                "description": "Ring %d Head Register",
+                "name": "Ring_%d_Head",
+                "offinc1": "0x00000010",
+                "ptr": "mu_misc_engine.MUMERingHead",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00000108": {
+                "altname": "RING_%d_TAIL",
+                "description": "Ring %d Tail Register",
+                "name": "Ring_%d_Tail",
+                "offinc1": "0x00000010",
+                "ptr": "mu_misc_engine.MUMERingTail",
+                "repeat1": 16,
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "mu_misc_engine.MUMERingBase": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIZE",
+                    "bit_lsb": 29,
+                    "bit_msb": 31,
+                    "description": "Size of ring in words",
+                    "mode": "RW",
+                    "name": "Size"
+                },
+                {
+                    "altname": "STATUS_TYPE",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Status type.  This bit controls the type of status reported on the status bus for the ring. ",
+                    "mode": "RW",
+                    "name": "StatusType"
+                },
+                {
+                    "altname": "BASE",
+                    "bit_lsb": 9,
+                    "bit_msb": 17,
+                    "description": "The Base Address. This value must be written to be consistent with the requirement that the Ring is aligned to its size. For example, if the Ring has 512 longwords, bits 10:9 must be written to 0.",
+                    "mode": "RW",
+                    "name": "BaseAddress"
+                }
+            ]
+        },
+        "mu_misc_engine.MUMERingHead": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "OFF",
+                    "bit_lsb": 2,
+                    "bit_msb": 16,
+                    "description": "Head pointer",
+                    "mode": "RW",
+                    "name": "HeadOffset"
+                }
+            ]
+        },
+        "mu_misc_engine.MUMERingTail": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "OFF",
+                    "bit_lsb": 2,
+                    "bit_msb": 16,
+                    "description": "Tail pointer",
+                    "mode": "RW",
+                    "name": "TailOffset"
+                }
+            ]
+        },
+        "mu_misc_engine.XpbErrConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "XPB_MAX_TIMEOUT",
+                    "bit_lsb": 1,
+                    "bit_msb": 15,
+                    "description": "XPB Max Timeout.  Value to wait for an XPB response before declaring a timeout error.",
+                    "mode": "RW",
+                    "name": "XpbMaxTimeout"
+                },
+                {
+                    "altname": "XPB_WRITE_IF_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "If '1', execute XPB writes if data has data_error.  If '0', drop XPB writes for data with data_error.  If write is dropped, log the address information in the XPBWrErrStat csr.",
+                    "mode": "RW",
+                    "name": "XpbWrIfErr"
+                }
+            ]
+        },
+        "mu_misc_engine.XpbTOErrStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "XPB_TIMEOUT_ERR",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "XPB Timeout Error.  If '1', the requested XPB CLUSTER_ID and DEVICE_ID combination did not result in a XPB response on the XPB Bus. Requesting a non-existent XPB target is not allowed on the XPB bus. If '0', no current error.",
+                    "mode": "RWC",
+                    "name": "XpbTOErr"
+                },
+                {
+                    "altname": "XPB_CLUSTER_ID",
+                    "bit_lsb": 8,
+                    "bit_msb": 13,
+                    "description": "This is the XPB CLUSTER ID of the XPB request that caused the XPB Timeout Error.",
+                    "mode": "RWC",
+                    "name": "XpbClId"
+                },
+                {
+                    "altname": "XPB_DEVICE_ID",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "This is the XPB Device ID of the XPB request that caused the XPB Timeout Error.",
+                    "mode": "RWC",
+                    "name": "XpbDevId"
+                }
+            ]
+        },
+        "mu_misc_engine.XpbWrErrStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "XPB_WR_ERR_MULTI",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Indicates multiple XPB writes were dropped due to a pull data error. Only the XPB information for the first dropped write is logged.",
+                    "mode": "RWC",
+                    "name": "XpbWrErrMulti"
+                },
+                {
+                    "altname": "XPB_WR_ERR_SINGLE",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Indicates a single XPB write was dropped due to a pull data error.",
+                    "mode": "RWC",
+                    "name": "XpbWrErrSingle"
+                },
+                {
+                    "altname": "XPB_WR_ERR_GLOBAL",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Global_access bit logged from first dropped XPB write.",
+                    "mode": "RWC",
+                    "name": "XpbWrErrGlobal"
+                },
+                {
+                    "altname": "XPB_WR_ERR_TGT_ISLD",
+                    "bit_lsb": 22,
+                    "bit_msb": 27,
+                    "description": "Target island logged from first dropped XPB write.",
+                    "mode": "RWC",
+                    "name": "XpbWrErrTgtIsld"
+                },
+                {
+                    "altname": "XPB_WR_ERR_SLAVE_IDX",
+                    "bit_lsb": 20,
+                    "bit_msb": 21,
+                    "description": "Slave index logged from first dropped XPB write.",
+                    "mode": "RWC",
+                    "name": "XpbWrErrSlaveIdx"
+                },
+                {
+                    "altname": "XPB_WR_ERR_DEV_ID",
+                    "bit_lsb": 14,
+                    "bit_msb": 19,
+                    "description": "DeviceID logged from first dropped XPB write.",
+                    "mode": "RWC",
+                    "name": "XpbWrErrDevID"
+                },
+                {
+                    "altname": "XPB_WR_ERR_REG_ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "Register address logged from first dropped XPB write.",
+                    "mode": "RWC",
+                    "name": "XpbWrErrRegAddr"
+                }
+            ]
+        }
+    }
+}

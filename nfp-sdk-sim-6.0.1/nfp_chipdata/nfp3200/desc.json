@@ -1,0 +1,352 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2015 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset: ade0020e9035"
+    ],
+    "a0-pf": {
+        "_comment": [
+            "Decription:",
+            "This file decribes all clusters and features in a complete NFP3200",
+            "and provides names for CPP target IDs for presentation purposes."
+        ],
+        "alloc_aliases": {
+            "dram0": "dram",
+            "dram1": "dram",
+            "emem": "dram",
+            "lm": "lmem",
+            "lscratch": "cls",
+            "sdram": "dram",
+            "sram": "sram0"
+        },
+        "alloc_types": {
+            "cls": [
+                {
+                    "islands": [
+                        0
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        0
+                    ]
+                },
+                {
+                    "islands": [
+                        1
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        1
+                    ]
+                },
+                {
+                    "islands": [
+                        2
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        2
+                    ]
+                },
+                {
+                    "islands": [
+                        3
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        3
+                    ]
+                },
+                {
+                    "islands": [
+                        4
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        4
+                    ]
+                }
+            ],
+            "cls0": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        0
+                    ]
+                }
+            ],
+            "cls1": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        1
+                    ]
+                }
+            ],
+            "cls2": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        2
+                    ]
+                }
+            ],
+            "cls3": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        3
+                    ]
+                }
+            ],
+            "cls4": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        4
+                    ]
+                }
+            ],
+            "dram": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "DDR"
+                }
+            ],
+            "lmem": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "LM"
+                }
+            ],
+            "scratch": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "GS"
+                }
+            ],
+            "sram0": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "QDR0"
+                }
+            ],
+            "sram1": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "QDR1"
+                }
+            ],
+            "sram2": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "QDR2"
+                }
+            ],
+            "sram3": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "QDR3"
+                }
+            ],
+            "ustore": [
+                {
+                    "islands": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ],
+                    "memory": "USTORE"
+                }
+            ]
+        },
+        "cluster_count": 5,
+        "cpp_targets": {
+            "1": {
+                "name": "MSF0",
+                "name_long": "Media Switch Fabric 0"
+            },
+            "2": {
+                "name": "QDR",
+                "name_long": "Real SRAM/Virtual QDR"
+            },
+            "3": {
+                "name": "MSF1",
+                "name_long": "Media Switch Fabric 1"
+            },
+            "4": {
+                "name": "Hash",
+                "name_long": "Hash"
+            },
+            "7": {
+                "name": "DDR",
+                "name_long": "DDR DRAM"
+            },
+            "8": {
+                "name": "GS",
+                "name_long": "Global Scratch"
+            },
+            "9": {
+                "name": "PCIE",
+                "name_long": "PCIe"
+            },
+            "10": {
+                "name": "ARM",
+                "name_long": "ARM"
+            },
+            "12": {
+                "name": "Crypto",
+                "name_long": "Crypto"
+            },
+            "13": {
+                "name": "CAP",
+                "name_long": "CSR Access Proxy"
+            },
+            "14": {
+                "name": "CT",
+                "name_long": "Cluster Target"
+            },
+            "15": {
+                "name": "CLS",
+                "name_long": "Cluster Local Scratch"
+            }
+        },
+        "memories": {
+            "CLS": {
+                "cpp_id": 15,
+                "size_max": "0x10000"
+            },
+            "CRYPTO": {
+                "cpp_id": 12,
+                "size_max": "0x10000"
+            },
+            "DDR": {
+                "cpp_id": 7,
+                "size_max": "0x200000000"
+            },
+            "GS": {
+                "cpp_id": 8,
+                "size_max": "0x4000"
+            },
+            "LM": {
+                "_comment": [
+                    "Microengine local memory."
+                ],
+                "size_max": "0x1000"
+            },
+            "QDR0": {
+                "_comment": [
+                    "Large enough for max of VQDR."
+                ],
+                "cpp_id": 2,
+                "size_max": "0x40000000"
+            },
+            "QDR1": {
+                "_comment": [
+                    "Large enough for max of VQDR."
+                ],
+                "base": "0x40000000",
+                "cpp_id": 2,
+                "size_max": "0x40000000"
+            },
+            "QDR2": {
+                "_comment": [
+                    "Large enough for max of VQDR."
+                ],
+                "base": "0x80000000",
+                "cpp_id": 2,
+                "size_max": "0x40000000"
+            },
+            "QDR3": {
+                "_comment": [
+                    "Large enough for max of VQDR."
+                ],
+                "base": "0xC0000000",
+                "cpp_id": 2,
+                "size_max": "0x40000000"
+            },
+            "USTORE": {
+                "size_max": "0x10000"
+            }
+        },
+        "microengines_per_clusters": 8
+    }
+}

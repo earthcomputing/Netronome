@@ -1,0 +1,282 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: eca5ba006ef4"
+    ],
+    "info": {
+        "_aliases": {
+            "nbi_pm_opcodecfg": "xpb:NbiTopXpbMap.PktModifier.NbiPmOpcodeRamCnfg",
+            "nbi_pm_rdatacfg": "xpb:NbiTopXpbMap.PktModifier.NbiPmRdataConfig",
+            "nbi_tm_bdsram": "nbi:NBITMCPP.TMBDSram",
+            "nbi_tm_descsram": "nbi:NBITMCPP.TMDescSram",
+            "nbi_tm_pktsram": "nbi:NBITMCPP.TMPktSram",
+            "nbi_tm_reorderbuf": "nbi:NBITMCPP.TMReorderBuf"
+        },
+        "chip_family": "nfp6000",
+        "islandmap_aliases": {
+            "xpb": {
+                "i1": "ArmIsldXpbMap",
+                "i32": "Me0IsldXpbMap",
+                "i33": "Me1IsldXpbMap",
+                "i34": "Me2IsldXpbMap",
+                "i35": "Me3IsldXpbMap",
+                "i36": "Me4IsldXpbMap",
+                "i37": "Me5IsldXpbMap",
+                "i38": "Me6IsldXpbMap",
+                "i39": "Me7IsldXpbMap",
+                "i4": "Pcie0IsldXpbMap",
+                "i5": "Pcie1IsldXpbMap",
+                "i56": "Me8IsldXpbMap",
+                "i57": "Me9IsldXpbMap",
+                "i6": "Pcie2IsldXpbMap",
+                "i61": "Me10IsldXpbMap",
+                "i7": "Pcie3IsldXpbMap",
+                "i8": "Nbi0IsldXpbMap",
+                "i9": "Nbi1IsldXpbMap"
+            },
+            "xpbm": {
+                "i1": "ArmIsldXpbmMap",
+                "i24": "ExtMu0IsldXpbmMap",
+                "i25": "ExtMu1IsldXpbmMap",
+                "i26": "ExtMu2IsldXpbmMap",
+                "i28": "IntMu0IsldXpbmMap",
+                "i29": "IntMu1IsldXpbmMap",
+                "i32": "Me0IsldXpbmMap",
+                "i33": "Me1IsldXpbmMap",
+                "i34": "Me2IsldXpbmMap",
+                "i35": "Me3IsldXpbmMap",
+                "i36": "Me4IsldXpbmMap",
+                "i37": "Me5IsldXpbmMap",
+                "i38": "Me6IsldXpbmMap",
+                "i39": "Me7IsldXpbmMap",
+                "i4": "Pcie0IsldXpbmMap",
+                "i5": "Pcie1IsldXpbmMap",
+                "i56": "Me8IsldXpbmMap",
+                "i57": "Me9IsldXpbmMap",
+                "i6": "Pcie2IsldXpbmMap",
+                "i61": "Me10IsldXpbmMap",
+                "i7": "Pcie3IsldXpbmMap",
+                "i8": "Nbi0IsldXpbmMap",
+                "i9": "Nbi1IsldXpbmMap"
+            }
+        },
+        "me_csrs_id": "me_v28.MeCsrCPP",
+        "target_aliases": {
+            "ARMGasketMemoryMap": "arm",
+            "ChipXPB": "xpb",
+            "ChipXPBM": "xpbm",
+            "ClusterScratchCppMap": "cls",
+            "MeCsrCPP": "mecsr",
+            "NbiAddressMap": "nbi",
+            "PcieInternalTargetsCpp": "pcie"
+        },
+        "xpb_targets": [
+            "xpb",
+            "xpbm"
+        ]
+    },
+    "mereg": {
+        "gpra": {
+            "altname": "GPRA_%d",
+            "byteaddr_lsb": -2,
+            "count": 128,
+            "cpp_read": {
+                "action": 15,
+                "offset": "0x00000800",
+                "token": 1
+            },
+            "cpp_tgt": 15,
+            "cpp_write": {
+                "action": 14,
+                "offset": "0x00000800",
+                "token": 0
+            },
+            "description": "General Purpose Bank A register %d",
+            "name": "GprA_%d",
+            "offset_cmp_mask": "0x00000E00",
+            "offset_me_lsb": 12
+        },
+        "gprb": {
+            "altname": "GPRB_%d",
+            "byteaddr_lsb": -2,
+            "count": 128,
+            "cpp_read": {
+                "action": 15,
+                "offset": "0x00000a00",
+                "token": 1
+            },
+            "cpp_tgt": 15,
+            "cpp_write": {
+                "action": 14,
+                "offset": "0x00000a00",
+                "token": 0
+            },
+            "description": "General Purpose Bank B register %d",
+            "name": "GprB_%d",
+            "offset_cmp_mask": "0x00000E00",
+            "offset_me_lsb": 12
+        },
+        "nn": {
+            "altname": "NN_%d",
+            "byteaddr_lsb": -2,
+            "count": 128,
+            "cpp_read": {
+                "action": 15,
+                "offset": "0x00000600",
+                "token": 1
+            },
+            "cpp_tgt": 15,
+            "cpp_write": {
+                "action": 14,
+                "offset": "0x00000600",
+                "token": 0
+            },
+            "description": "Next Neighbor register %d",
+            "name": "NextNeighbor_%d",
+            "offset_cmp_mask": "0x00000E00",
+            "offset_me_lsb": 12
+        },
+        "xfer_in": {
+            "altname": "XFER_IN_%d",
+            "byteaddr_lsb": -2,
+            "count": 256,
+            "cpp_read": {
+                "action": 15,
+                "offset": "0x00000c00",
+                "token": 1
+            },
+            "cpp_tgt": 15,
+            "cpp_write": {
+                "action": 14,
+                "offset": "0x00000000",
+                "token": 0
+            },
+            "description": "Input (read) Transfer register %d",
+            "name": "XferIn_%d",
+            "offset_cmp_mask": "0x00000E00",
+            "offset_me_lsb": 12
+        },
+        "xfer_out": {
+            "altname": "XFER_OUT_%d",
+            "byteaddr_lsb": -2,
+            "count": 256,
+            "cpp_read": {
+                "action": 15,
+                "offset": "0x00000000",
+                "token": 1
+            },
+            "cpp_tgt": 15,
+            "cpp_write": {
+                "action": 14,
+                "offset": "0x00000c00",
+                "token": 0
+            },
+            "description": "Output (write) Transfer register %d",
+            "name": "XferOut_%d",
+            "offset_cmp_mask": "0x00000E00",
+            "offset_me_lsb": 12
+        }
+    },
+    "targets": {
+        "arm": {
+            "cpp_read": {
+                "action": 0,
+                "token": 0
+            },
+            "cpp_tgt": 10,
+            "cpp_write": {
+                "action": 1,
+                "token": 0
+            },
+            "ptr": "arm.ARMGasketMemoryMap",
+            "scope": "single_island"
+        },
+        "cls": {
+            "cpp_read": {
+                "action": 0,
+                "token": 0
+            },
+            "cpp_tgt": 15,
+            "cpp_write": {
+                "action": 1,
+                "token": 0
+            },
+            "ptr": "cluster_scratch.ClusterScratchCppMap",
+            "scope": "island"
+        },
+        "mecsr": {
+            "cpp_read": {
+                "action": 2,
+                "token": 1
+            },
+            "cpp_tgt": 14,
+            "cpp_write": {
+                "action": 3,
+                "token": 1
+            },
+            "offset": "0x00010000",
+            "offset_cmp_mask": "0x00010000",
+            "offset_iid_lsb": 24,
+            "offset_me_lsb": 10,
+            "ptr": "me_v28.MeCsrCPP",
+            "scope": "microengine"
+        },
+        "nbi": {
+            "cpp_read": {
+                "action": 0,
+                "token": 0
+            },
+            "cpp_tgt": 1,
+            "cpp_write": {
+                "action": 1,
+                "token": 0
+            },
+            "ptr": "nbi_reg.NbiAddressMap",
+            "scope": "island"
+        },
+        "pcie": {
+            "cpp_read": {
+                "action": 2,
+                "token": 0
+            },
+            "cpp_tgt": 9,
+            "cpp_write": {
+                "action": 3,
+                "token": 0
+            },
+            "ptr": "pcie_x8_top.PcieInternalTargetsCpp",
+            "scope": "island"
+        },
+        "xpb": {
+            "cpp_read": {
+                "action": 0,
+                "token": 0
+            },
+            "cpp_tgt": 14,
+            "cpp_write": {
+                "action": 1,
+                "token": 0
+            },
+            "offset_cmp_mask": "0x40000000",
+            "offset_iid_lsb": 24,
+            "ptr": "harrier.HarrierXpbMap",
+            "scope": "global"
+        },
+        "xpbm": {
+            "cpp_read": {
+                "action": 0,
+                "token": 0
+            },
+            "cpp_tgt": 14,
+            "cpp_write": {
+                "action": 1,
+                "token": 0
+            },
+            "offset": "0x40000000",
+            "offset_cmp_mask": "0x40000000",
+            "offset_iid_lsb": 24,
+            "ptr": "harrier.HarrierXpbmMap",
+            "scope": "global"
+        }
+    }
+}

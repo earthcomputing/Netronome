@@ -1,0 +1,1926 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "me_v28.MeCsrCPP": {
+            "0x00000000": {
+                "altname": "USTORE_ADDRESS",
+                "description": "Used to load programs into the Control Store, and for URD and UWR instructions",
+                "me_csr_latency": {
+                    "rd": "NA",
+                    "use": "NA",
+                    "wr": "NA"
+                },
+                "name": "UstorAddr",
+                "ptr": "me_v28.UstorAddr",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "USTORE_DATA_LOWER",
+                "description": "Control Store Data - lower",
+                "me_csr_latency": {
+                    "rd": "NA",
+                    "use": "NA",
+                    "wr": "NA"
+                },
+                "name": "UstorDataLwr",
+                "ptr": "me_v28.UstorDataLwr",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "USTORE_DATA_UPPER",
+                "description": "Control Store Data - upper",
+                "me_csr_latency": {
+                    "rd": "NA",
+                    "use": "NA",
+                    "wr": "NA"
+                },
+                "name": "UstorDataUpr",
+                "ptr": "me_v28.UstorDataUpr",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "USTORE_ERROR_STATUS",
+                "description": "ECC errors during Control Store reads",
+                "me_csr_latency": {
+                    "rd": "NA",
+                    "use": "NA",
+                    "wr": "NA"
+                },
+                "name": "UstorErrStat",
+                "ptr": "me_v28.UstorErrStat",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "ALU_OUT",
+                "description": "Debug to show state of ALU",
+                "me_csr_latency": {
+                    "rd": "NA",
+                    "use": "NA",
+                    "wr": "NA"
+                },
+                "name": "ALUOut",
+                "ptr": "me_v28.ALUOut",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "CTX_ARB_CNTL",
+                "description": "Context Arbiter Control - used by the context arbiter and for debug",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "CtxArbCtrl",
+                "ptr": "me_v28.CtxArbCtrl",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "CTX_ENABLES",
+                "description": "Context Enables - used by the context arbiter and for debug",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": 8,
+                    "wr": 4
+                },
+                "name": "CtxEnables",
+                "ptr": "me_v28.CtxEnables",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "CC_ENABLE",
+                "description": "Condition Code Enable",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": 1,
+                    "wr": 4
+                },
+                "name": "CondCodeEn",
+                "ptr": "me_v28.CondCodeEn",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "CSR_CTX_POINTER",
+                "description": "CSR Context Pointer",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "CSRCtxPtr",
+                "ptr": "me_v28.CSRCtxPtr",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "PC_BREAKPOINT_0",
+                "description": "PC Breakpoint 0 - PCB system",
+                "name": "PcBreakpoint0",
+                "ptr": "me_v28.PcBreakpoint",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "PC_BREAKPOINT_1",
+                "description": "PC Breakpoint 1 - PCB system",
+                "name": "PcBreakpoint1",
+                "ptr": "me_v28.PcBreakpoint",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "PC_BREAKPOINT_STATUS",
+                "description": "PC Breakpoint - Status register associated with the PCB system",
+                "name": "PcBreakpointStatus",
+                "ptr": "me_v28.PcBreakpointStatus",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "REGISTER_ERROR_STATUS",
+                "description": "Information about parity errors detected on Datapath Regs",
+                "name": "RegErrStatus",
+                "ptr": "me_v28.RegErrStatus",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "LM_ERROR_STATUS",
+                "description": "Status on ECC errors recorded on Local Memory reads",
+                "name": "LMErrStatus",
+                "ptr": "me_v28.LMErrStatus",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "FORCE_BAD_LM_ECC",
+                "description": "Controls Error Injection bits into an LM data-path word.",
+                "name": "LMeccErrorMask",
+                "ptr": "me_v28.LMeccErrorMask",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "INDIRECT_CTX_STS",
+                "description": "Indirect Context Status Register",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "IndCtxStatus",
+                "ptr": "me_v28.IndCtxStatus",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "ACTIVE_CTX_STS",
+                "description": "Active Context Status Register",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "ActCtxStatus",
+                "ptr": "me_v28.ActCtxStatus",
+                "type": "reg"
+            },
+            "0x00000048": {
+                "altname": "INDIRECT_CTX_SIG_EVENTS",
+                "description": "Indirect Context Signal Events Register",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "IndCtxSglEvt",
+                "ptr": "me_v28.CtxSglEvt",
+                "type": "reg"
+            },
+            "0x0000004c": {
+                "altname": "ACTIVE_CTX_SIG_EVENTS",
+                "description": "Active Context Signal Events Register",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "ActCtxSglEvt",
+                "ptr": "me_v28.CtxSglEvt",
+                "type": "reg"
+            },
+            "0x00000050": {
+                "altname": "INDIRECT_CTX_WAKEUP_EVENTS",
+                "description": "Indirect Context Wakeup Events Register",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "IndCtxWkpEvt",
+                "ptr": "me_v28.CtxWkpEvt",
+                "type": "reg"
+            },
+            "0x00000054": {
+                "altname": "ACTIVE_CTX_WAKEUP_EVENTS",
+                "description": "Active Context Wakeup Events Register",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "ActCtxWkpEvt",
+                "ptr": "me_v28.CtxWkpEvt",
+                "type": "reg"
+            },
+            "0x00000058": {
+                "altname": "INDIRECT_CTX_FUTURE_COUNT",
+                "description": "Indirect Context Future Count Register",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "IndCtxFtrCnt",
+                "ptr": "me_v28.CtxFtrCnt",
+                "type": "reg"
+            },
+            "0x0000005c": {
+                "altname": "ACTIVE_CTX_FUTURE_COUNT",
+                "description": "Active Context Future Count Register",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "ActCtxFtrCnt",
+                "ptr": "me_v28.CtxFtrCnt",
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "INDIRECT_LM_ADDR_0",
+                "description": "Indirect Local Memory Address 0 Register",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "IndLMAddr0",
+                "ptr": "me_v28.LMAddr",
+                "type": "reg"
+            },
+            "0x00000064": {
+                "altname": "ACTIVE_LM_ADDR_0",
+                "description": "Active Local Memory Address 0 Register",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "ActLMAddr0",
+                "ptr": "me_v28.LMAddr",
+                "type": "reg"
+            },
+            "0x00000068": {
+                "altname": "INDIRECT_LM_ADDR_1",
+                "description": "Indirect Local Memory Address 1 Register",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "IndLMAddr1",
+                "ptr": "me_v28.LMAddr",
+                "type": "reg"
+            },
+            "0x0000006c": {
+                "altname": "ACTIVE_LM_ADDR_1",
+                "description": "Active Local Memory Address 1 Register",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "ActLMAddr1",
+                "ptr": "me_v28.LMAddr",
+                "type": "reg"
+            },
+            "0x00000070": {
+                "altname": "BYTE_INDEX",
+                "description": "Byte Index Register",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "ByteIndex",
+                "ptr": "me_v28.ByteIndex",
+                "type": "reg"
+            },
+            "0x00000074": {
+                "altname": "T_INDEX",
+                "description": "Transfer Index Register",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "XferIndex",
+                "ptr": "me_v28.XferIndex",
+                "type": "reg"
+            },
+            "0x00000078": {
+                "altname": "INDIRECT_FUTURE_COUNT_SIGNAL",
+                "description": "Which signal to set when FUTURE_COUNT == TIMESTAMP",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "IndFtrCntSgl",
+                "ptr": "me_v28.FtrCntSgl",
+                "type": "reg"
+            },
+            "0x0000007c": {
+                "altname": "ACTIVE_FUTURE_COUNT_SIGNAL",
+                "description": "Which signal to set when FUTURE_COUNT == TIMESTAMP",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "ActFtrCntSgl",
+                "ptr": "me_v28.FtrCntSgl",
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "NN_PUT",
+                "description": "Next Neighbor Put Register",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 0,
+                    "wr": 3
+                },
+                "name": "NNPut",
+                "ptr": "me_v28.NNPutGet",
+                "type": "reg"
+            },
+            "0x00000084": {
+                "altname": "NN_GET",
+                "description": "Next Neighbor Get Register",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "NNGet",
+                "ptr": "me_v28.NNPutGet",
+                "type": "reg"
+            },
+            "0x00000090": {
+                "altname": "INDIRECT_LM_ADDR_2",
+                "description": "Indirect Local Memory Address 2 Register",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "IndLMAddr2",
+                "ptr": "me_v28.LMAddr",
+                "type": "reg"
+            },
+            "0x00000094": {
+                "altname": "ACTIVE_LM_ADDR_2",
+                "description": "Active Local Memory Address 2 Register",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "ActLMAddr2",
+                "ptr": "me_v28.LMAddr",
+                "type": "reg"
+            },
+            "0x00000098": {
+                "altname": "INDIRECT_LM_ADDR_3",
+                "description": "Indirect Local Memory Address 3 Register",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "IndLMAddr3",
+                "ptr": "me_v28.LMAddr",
+                "type": "reg"
+            },
+            "0x0000009c": {
+                "altname": "ACTIVE_LM_ADDR_3",
+                "description": "Active Local Memory Address 3 Register",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "ActLMAddr3",
+                "ptr": "me_v28.LMAddr",
+                "type": "reg"
+            },
+            "0x000000a0": {
+                "altname": "INDIRECT_LM_ADDR_2_BYTE_INDEX",
+                "description": "Alias of IndLMAddr2 and ByteIndex",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "IndLMAddr2BytIdx",
+                "ptr": "me_v28.LMAddrBytIdx",
+                "type": "reg"
+            },
+            "0x000000a4": {
+                "altname": "ACTIVE_LM_ADDR_2_BYTE_INDEX",
+                "description": "Alias of ActLMAddr2 and ByteIndex",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "ActLMAddr2BytIdx",
+                "ptr": "me_v28.LMAddrBytIdx",
+                "type": "reg"
+            },
+            "0x000000a8": {
+                "altname": "INDIRECT_LM_ADDR_3_BYTE_INDEX",
+                "description": "Alias of IndLMAddr3 and ByteIndex",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "IndLMAddr3BytIdx",
+                "ptr": "me_v28.LMAddrBytIdx",
+                "type": "reg"
+            },
+            "0x000000ac": {
+                "altname": "ACTIVE_LM_ADDR_3_BYTE_INDEX",
+                "description": "Alias of ActLMAddr3 and ByteIndex",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "ActLMAddr3BytIdx",
+                "ptr": "me_v28.LMAddrBytIdx",
+                "type": "reg"
+            },
+            "0x000000b0": {
+                "altname": "INDIRECT_PREDICATE_CC",
+                "description": "Indirect Predicate CC select",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "IndPredCC",
+                "ptr": "me_v28.IndPredCC",
+                "type": "reg"
+            },
+            "0x000000c0": {
+                "altname": "TIMESTAMP_LOW",
+                "description": "Timestamp is 64 bits. It counts up by one every sixteen cycles",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "TimestampLow",
+                "ptr": "me_v28.TimestampLow",
+                "type": "reg"
+            },
+            "0x000000c4": {
+                "altname": "TIMESTAMP_HIGH",
+                "description": "Timestamp is 64 bits. It counts up by one every sixteen cycles",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "TimestampHgh",
+                "ptr": "me_v28.TimestampHgh",
+                "type": "reg"
+            },
+            "0x000000e0": {
+                "altname": "INDIRECT_LM_ADDR_0_BYTE_INDEX",
+                "description": "Alias of IndLMAddr0 and ByteIndex",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "IndLMAddr0BytIdx",
+                "ptr": "me_v28.LMAddrBytIdx",
+                "type": "reg"
+            },
+            "0x000000e4": {
+                "altname": "ACTIVE_LM_ADDR_0_BYTE_INDEX",
+                "description": "Alias of ActLMAddr0 and ByteIndex",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "ActLMAddr0BytIdx",
+                "ptr": "me_v28.LMAddrBytIdx",
+                "type": "reg"
+            },
+            "0x000000e8": {
+                "altname": "INDIRECT_LM_ADDR_1_BYTE_INDEX",
+                "description": "Alias of IndLMAddr1 and ByteIndex",
+                "flags": [
+                    "indirect_me_ctx_csr"
+                ],
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "IndLMAddr1BytIdx",
+                "ptr": "me_v28.LMAddrBytIdx",
+                "type": "reg"
+            },
+            "0x000000ec": {
+                "altname": "ACTIVE_LM_ADDR_1_BYTE_INDEX",
+                "description": "Alias of ActLMAddr1 and ByteIndex",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "ActLMAddr1BytIdx",
+                "ptr": "me_v28.LMAddrBytIdx",
+                "type": "reg"
+            },
+            "0x000000f4": {
+                "altname": "T_INDEX_BYTE_INDEX",
+                "description": "This register is used when Transfer registers are accessed via indexed mode",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "XfrAndBytIdx",
+                "ptr": "me_v28.XfrAndBytIdx",
+                "type": "reg"
+            },
+            "0x00000100": {
+                "altname": "NEXT_NEIGHBOR_SIGNAL",
+                "description": "Signal a Context in Next Neighbor",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 12,
+                    "wr": 3
+                },
+                "name": "NxtNghbrSgl",
+                "ptr": "me_v28.NxtNghbrSgl",
+                "type": "reg"
+            },
+            "0x00000104": {
+                "altname": "PREV_NEIGHBOR_SIGNAL",
+                "description": "Signal a Context in Previous Neighbor",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 12,
+                    "wr": 3
+                },
+                "name": "PrvNghbrSgl",
+                "ptr": "me_v28.PrvNghbrSgl",
+                "type": "reg"
+            },
+            "0x00000108": {
+                "altname": "SAME_ME_SIGNAL",
+                "description": "Signal another Context in same Microengine.",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 8,
+                    "wr": 3
+                },
+                "name": "SameMESignal",
+                "ptr": "me_v28.SameMESignal",
+                "type": "reg"
+            },
+            "0x00000140": {
+                "altname": "CRC_REMAINDER",
+                "description": "Result of the CRC operation after a crc instruction.",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 0,
+                    "wr": 3
+                },
+                "name": "CRCRemainder",
+                "ptr": "me_v28.CRCRemainder",
+                "type": "reg"
+            },
+            "0x00000144": {
+                "altname": "PROFILE_COUNT",
+                "description": "The profile count is used for code profiling and tuning",
+                "me_csr_latency": {
+                    "rd": "NA",
+                    "use": "NA",
+                    "wr": "NA"
+                },
+                "name": "ProfileCnt",
+                "ptr": "me_v28.ProfileCnt",
+                "type": "reg"
+            },
+            "0x00000148": {
+                "altname": "PSEUDO_RANDOM_NUMBER",
+                "description": "Random number generator",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 3,
+                    "wr": 3
+                },
+                "name": "PseudoRndNum",
+                "ptr": "me_v28.PseudoRndNum",
+                "type": "reg"
+            },
+            "0x00000158": {
+                "altname": "USTORE_ADDRESS_1",
+                "description": "Used to save/restore data into the Control Store by the URD and UWR instructions",
+                "me_csr_latency": {
+                    "rd": "NA",
+                    "use": "NA",
+                    "wr": "NA"
+                },
+                "name": "UstorAddr1",
+                "ptr": "me_v28.UstorAddr1",
+                "type": "reg"
+            },
+            "0x00000160": {
+                "altname": "MISC_CONTROL",
+                "description": "Miscellaneous Control Register",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": "NA",
+                    "wr": 3
+                },
+                "name": "MiscControl",
+                "ptr": "me_v28.MiscControl",
+                "type": "reg"
+            },
+            "0x00000164": {
+                "altname": "PC_BREAKPOINT_0_MASK",
+                "description": "Mask register associated with PC Breakpoint 0",
+                "name": "PcBreakpoint0Mask",
+                "ptr": "me_v28.PcBreakpointMask",
+                "type": "reg"
+            },
+            "0x00000168": {
+                "altname": "PC_BREAKPOINT_1_MASK",
+                "description": "Mask register associated with PC Breakpoint 1",
+                "name": "PcBreakpoint1Mask",
+                "ptr": "me_v28.PcBreakpointMask",
+                "type": "reg"
+            },
+            "0x00000170": {
+                "altname": "MAILBOX_0",
+                "description": "Mailbox Register 0",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "Mailbox0",
+                "ptr": "me_v28.Mailbox",
+                "type": "reg"
+            },
+            "0x00000174": {
+                "altname": "MAILBOX_1",
+                "description": "Mailbox Register 1",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "Mailbox1",
+                "ptr": "me_v28.Mailbox",
+                "type": "reg"
+            },
+            "0x00000178": {
+                "altname": "MAILBOX_2",
+                "description": "Mailbox Register 2",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "Mailbox2",
+                "ptr": "me_v28.Mailbox",
+                "type": "reg"
+            },
+            "0x0000017c": {
+                "altname": "MAILBOX_3",
+                "description": "Mailbox Register 3",
+                "me_csr_latency": {
+                    "rd": 3,
+                    "use": "NA",
+                    "wr": 4
+                },
+                "name": "Mailbox3",
+                "ptr": "me_v28.Mailbox",
+                "type": "reg"
+            },
+            "0x00000190": {
+                "altname": "CMD_INDIRECT_REF_0",
+                "description": "Command Indirect Reference Register Type 0",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 0,
+                    "wr": 3
+                },
+                "name": "CmdIndirectRef0",
+                "ptr": "me_v28.CmdIndirectRef0",
+                "type": "reg"
+            },
+            "0x00000194": {
+                "altname": "CMD_INDIRECT_REF_1",
+                "description": "Command Indirect Reference Register Type 1",
+                "me_csr_latency": {
+                    "rd": 2,
+                    "use": 0,
+                    "wr": 3
+                },
+                "name": "CmdIndirectRef1",
+                "ptr": "me_v28.CmdIndirectRef1",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "me_v28.ALUOut": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "ALU output.",
+                    "mode": "RO",
+                    "name": "ALUOutput"
+                }
+            ]
+        },
+        "me_v28.ActCtxStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "If set, the microengine has a context in the Executing state.  If clear, no context is in Executing state.",
+                    "mode": "RO",
+                    "name": "AB0"
+                },
+                {
+                    "altname": "IL_ID",
+                    "bit_lsb": 25,
+                    "bit_msb": 30,
+                    "description": "Island number where the ME happens to be instantiated.",
+                    "mode": "RO",
+                    "name": "IslandId"
+                },
+                {
+                    "altname": "ACTXPC",
+                    "bit_lsb": 8,
+                    "bit_msb": 24,
+                    "description": "PC of Executing Context. Only valid if AB0 is a 1. This field provides a snapshot value of the PC. This value is used for tracking/code profiling purposes. When issued as a local_csr_read from the Microengine, the PC value may not be the exact PC value of the local_csr_rd instruction.",
+                    "mode": "RO",
+                    "name": "ActiveContextPC"
+                },
+                {
+                    "altname": "ME_ID",
+                    "bit_lsb": 3,
+                    "bit_msb": 6,
+                    "description": "A unique number which identifies the ME within the Island where it happens to be instantiated.",
+                    "mode": "RO",
+                    "name": "MENumber"
+                },
+                {
+                    "altname": "ACNO",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "The number of the Executing context. Only valid if AB0 bit is a 1.",
+                    "mode": "RW",
+                    "name": "ActiveContextNo"
+                }
+            ]
+        },
+        "me_v28.ByteIndex": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "N0",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Specifies a byte for use with the byte_align instruction.",
+                    "mode": "RW",
+                    "name": "ByteNumber"
+                }
+            ]
+        },
+        "me_v28.CRCRemainder": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CRC_REMAINDER",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Input operand and result of the CRC instruction.",
+                    "mode": "RW",
+                    "name": "CRCRemainder"
+                }
+            ]
+        },
+        "me_v28.CSRCtxPtr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CTX",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Selects which contexts Local CSR is accessed by local_csr_read, local_csr_write, and by the IA core.",
+                    "mode": "RW",
+                    "name": "CtxSelect"
+                }
+            ]
+        },
+        "me_v28.CmdIndirectRef0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ISLAND",
+                    "bit_lsb": 24,
+                    "bit_msb": 29,
+                    "description": "Override value for the CPP command's island field.",
+                    "mode": "RW",
+                    "name": "Island"
+                },
+                {
+                    "altname": "MASTER",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Various overriding definitions depending on the value of the OVE_MASTER field in the previous ALU.",
+                    "mode": "RW",
+                    "name": "Master"
+                },
+                {
+                    "altname": "SIGNAL_MASTER",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Override value for the CPP command's signal master field.",
+                    "mode": "RW",
+                    "name": "SignalMaster"
+                },
+                {
+                    "altname": "SIGNAL_CTX",
+                    "bit_lsb": 13,
+                    "bit_msb": 15,
+                    "description": "Override value for the CPP command's signal context field.",
+                    "mode": "RW",
+                    "name": "SignalCtx"
+                },
+                {
+                    "altname": "SIGNAL_NUM",
+                    "bit_lsb": 9,
+                    "bit_msb": 12,
+                    "description": "Override value for the CPP command's signal number field.",
+                    "mode": "RW",
+                    "name": "SignalNum"
+                },
+                {
+                    "altname": "BYTE_MASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Override value for the CPP command's byte mask field.",
+                    "mode": "RW",
+                    "name": "ByteMask"
+                }
+            ]
+        },
+        "me_v28.CmdIndirectRef1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TARGET",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Override value for the CPP command's target field.",
+                    "mode": "RW",
+                    "name": "Target"
+                },
+                {
+                    "altname": "ACTION",
+                    "bit_lsb": 7,
+                    "bit_msb": 11,
+                    "description": "Override value for the CPP command's action field.",
+                    "mode": "RW",
+                    "name": "Action"
+                },
+                {
+                    "altname": "TOKEN",
+                    "bit_lsb": 5,
+                    "bit_msb": 6,
+                    "description": "Override value for the CPP command's token field.",
+                    "mode": "RW",
+                    "name": "Token"
+                },
+                {
+                    "altname": "OV_TARGET",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Override enable for the TARGET field in this same CSR.",
+                    "mode": "RW",
+                    "name": "OvTarget"
+                },
+                {
+                    "altname": "OV_ACTION",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Override enable for the Action field in this same CSR.",
+                    "mode": "RW",
+                    "name": "OvAction"
+                },
+                {
+                    "altname": "OV_TOKEN",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Override enable for the Token field in this same CSR.",
+                    "mode": "RW",
+                    "name": "OvToken"
+                }
+            ]
+        },
+        "me_v28.CondCodeEn": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CCCE",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Current Condition Code Enable.  Set to 1 to update the condition codes. When 0, condition codes will not be updated.",
+                    "mode": "RW",
+                    "name": "CurCndtnCodeEn"
+                }
+            ]
+        },
+        "me_v28.CtxArbCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCTX",
+                    "bit_lsb": 4,
+                    "bit_msb": 6,
+                    "description": "Previous Context.  This field contains the number of the last context that was running.",
+                    "mode": "RO",
+                    "name": "PreviousCtx"
+                },
+                {
+                    "altname": "NCTX",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Next Context.  This field contains the number of the next context that will be run.",
+                    "mode": "RW",
+                    "name": "NextCtx"
+                }
+            ]
+        },
+        "me_v28.CtxEnables": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "IN_USE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Indicates the number of in-use contexts, which determines the GPR and Transfer Register allocation. Note that although this information could be inferred from bits C0 to C7, this field allows for contexts to be temporarily disabled due to error or debugging conditions.  It is illegal to enable Contexts that are not currently in-use according to this field.",
+                    "mode": "RW",
+                    "name": "InUseContexts"
+                },
+                {
+                    "altname": "PRN_MODE",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Controls when the Pseudo_Random_Number is generated.",
+                    "mode": "RW",
+                    "name": "PseudoRandNum"
+                },
+                {
+                    "altname": "USTORE_ECC_ERR",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Indicates that an ECC error was detected in the Control Store when an instruction was read. This bit will never be set if ECCErrorEnable bit is 0. When this bit is set the Microengine's attn output is asserted. More information about the error is available in UstorErrStat Register.",
+                    "mode": "RW1C",
+                    "name": "CSEccError"
+                },
+                {
+                    "altname": "USTORE_ECC_ENABLE",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Enables ECC error detection on Control Store.",
+                    "mode": "RW",
+                    "name": "CSEccEnable"
+                },
+                {
+                    "altname": "BREAKPOINT",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "The ctx_arb[bpt] instruction was executed. When this bit is set, the Microengine's attn output is asserted and all CtxEnables bits in this register are cleared.",
+                    "mode": "RW1C",
+                    "name": "Breakpoint"
+                },
+                {
+                    "altname": "REG_PAR_ERR",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Indicates that a parity error was detected when reading a datapath register. When this bit is set, the Microengine's attn output is asserted and all CtxEnables bits in this register are cleared. RegErrStatus Local CSR has information about the error.",
+                    "mode": "RW1C",
+                    "name": "RegisterParityErr"
+                },
+                {
+                    "altname": "LOCAL_MEMORY_ECC_ENABLE",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Enables ECC error detection on Local Memory.",
+                    "mode": "RW",
+                    "name": "LMEccEnable"
+                },
+                {
+                    "altname": "LM_ADDR_3_GLOB",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Controls usage of ActLMAddr3.",
+                    "mode": "RW",
+                    "name": "LMAddr3Global"
+                },
+                {
+                    "altname": "LM_ADDR_2_GLOB",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Controls usage of ActLMAddr2.",
+                    "mode": "RW",
+                    "name": "LMAddr2Global"
+                },
+                {
+                    "altname": "NN_SEND_CONFIGURATION",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "This bit controls the ME's Next-Neighbor \"Send\" Interface; it controls whether a Next-Neighbor destination from this ME is written\n                         to the Next Neighbor ME (general-usage) or to this same ME (mostly for debugging usage); \"same ME\" refers to the ME executing the\n                         instruction which carries the NN destination; \"same ME\" or \"Self\" refer to the same configuration.",
+                    "mode": "RW",
+                    "name": "NNsendConfig"
+                },
+                {
+                    "altname": "NN_RING_EMPTY",
+                    "bit_lsb": 18,
+                    "bit_msb": 19,
+                    "description": "Controls threshold when NN_Empty asserts. The number of entries valid is determined by comparing NNPut and NNGet Local CSRs. The use of indicating empty when there is really something on the Ring is if the cooperating processes transfer data in a block, and the consumer does not want to get a partial block.",
+                    "mode": "RW",
+                    "name": "NextNeighborEmptyAssert"
+                },
+                {
+                    "altname": "LM_ADDR_1_GLOB",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Controls usage of ActLMAddr1.",
+                    "mode": "RW",
+                    "name": "LMAddr1Global"
+                },
+                {
+                    "altname": "LM_ADDR_0_GLOB",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Controls usage of ActLMAddr0.",
+                    "mode": "RW",
+                    "name": "LMAddr0Global"
+                },
+                {
+                    "altname": "CONTEXTS",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Context Enables for Context 7 through Context 0.",
+                    "mode": "RW",
+                    "name": "CtxEnables"
+                },
+                {
+                    "altname": "NN_RECEIVE_CONFIGURATION",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "This field controls the ME's Next-Neighbor \"Receive\" Interface; it selects which path has access to the NN Register File's\n                          write port; in MEv2.8, four different NN paths may be selected: NN from previous ME, Self, CTnn, and PushBus;\n                          please note that when the NNsendConfig bit is set to \"Self\", the NNreceiveConfig field must also be set to \"Self\";\n                          otherwise, the NN destination data generated from \"this ME\" is lost",
+                    "mode": "RW",
+                    "name": "NNreceiveConfig"
+                }
+            ]
+        },
+        "me_v28.CtxFtrCnt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Value to match against low 32-bits of Timestamp.",
+                    "mode": "RW",
+                    "name": "FutureCount"
+                }
+            ]
+        },
+        "me_v28.CtxSglEvt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIGNALS",
+                    "bit_lsb": 1,
+                    "bit_msb": 15,
+                    "description": "Each bit is set as described in the Event Signals section.  Each is cleared by microengine hardware when:  the signal is used to transition to Ready state if the CtxWkpEvt[AnyWakeEvnts] bit is clear, or a br_!signal on this signal is not taken, or a br_signal on this signal is taken.",
+                    "mode": "RW",
+                    "name": "Signals"
+                },
+                {
+                    "altname": "VOLUNTARY",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Corresponds to Event for Voluntary arb wakeup event.",
+                    "mode": "RO",
+                    "name": "VoluntaryWakeup"
+                }
+            ]
+        },
+        "me_v28.CtxWkpEvt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ANY",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Any Wakeup Events.  Set by the ANY token on a ctx_arb instruction.  Note: this bit is undefined after a wakeup.",
+                    "mode": "RW",
+                    "name": "AnyWakeEvnts"
+                },
+                {
+                    "altname": "EVENTS",
+                    "bit_lsb": 1,
+                    "bit_msb": 15,
+                    "description": "Each wakeup event bit is set by either a ctx_swap_# token on an instruction, or by the Event Signal Mask of the ctx_arb instruction.  All wakeup event bits are cleared by microengine hardware whether the context is put into execute state.",
+                    "mode": "RW",
+                    "name": "WakeupEvents"
+                },
+                {
+                    "altname": "VOLUNTARY",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set by ctx_arb[voluntary]. Cleared when the context is put into Execute state.",
+                    "mode": "RW",
+                    "name": "Voluntary"
+                }
+            ]
+        },
+        "me_v28.FtrCntSgl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NO",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "The signal number to set when FUTURE_COUNT == TIMESTAMP.",
+                    "mode": "RW",
+                    "name": "SignalNo"
+                }
+            ]
+        },
+        "me_v28.IndCtxStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RR",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Ready to Run.  Indicates that the context is in Ready state.  (This bit will be 0 if the context is in any of the other three states.)",
+                    "mode": "RO",
+                    "name": "ReadyToRun"
+                },
+                {
+                    "altname": "CTX_PC",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "The program counter at which the context begins executing when it is put into the executing state.",
+                    "mode": "RW",
+                    "name": "ContextPC"
+                }
+            ]
+        },
+        "me_v28.IndPredCC": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SELECT",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Encoded value for selecting the Predicate Condition Code; encoded values select Condition Codes as shown below",
+                    "mode": "RW",
+                    "name": "PredCCSel"
+                }
+            ]
+        },
+        "me_v28.LMAddr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 2,
+                    "bit_msb": 11,
+                    "description": "Selects the specific 32-bit word in Local Memory.  This field can be incremented or decremented by 1, or left unchanged after access, as specified in the instruction.",
+                    "mode": "RW",
+                    "name": "LocalMemoryAddr"
+                }
+            ]
+        },
+        "me_v28.LMAddrBytIdx": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "LM_ADDR",
+                    "bit_lsb": 2,
+                    "bit_msb": 11,
+                    "description": "Indirect Local Memory Address Register.",
+                    "mode": "RW",
+                    "name": "LocalMemoryAddr"
+                },
+                {
+                    "altname": "BYTE_NO",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Byte Index Register.",
+                    "mode": "RW",
+                    "name": "ByteNumber"
+                }
+            ]
+        },
+        "me_v28.LMErrStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "UNCORRECTABLE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "This bit indicates that the ECC error detected on Local Memory is uncorrectable",
+                    "mode": "RO",
+                    "name": "UncorrectableErr"
+                },
+                {
+                    "altname": "SYNDROME",
+                    "bit_lsb": 20,
+                    "bit_msb": 26,
+                    "description": "This field records the syndrome that was found when the ECC error occurred.",
+                    "mode": "RO",
+                    "name": "Syndrome"
+                },
+                {
+                    "altname": "CTX",
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "Context that was executing when the ECC error occurred",
+                    "mode": "RO",
+                    "name": "Context"
+                },
+                {
+                    "altname": "LM_ADDRESS",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "Contains the LM address where the ECC error has been detected.",
+                    "mode": "RO",
+                    "name": "LMaddress"
+                }
+            ]
+        },
+        "me_v28.LMeccErrorMask": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ERROR_INJECTION_MASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This field is used for controlling Error Injection bits into an LM data-path word.",
+                    "mode": "RW",
+                    "name": "ErrorInjectionMask"
+                }
+            ]
+        },
+        "me_v28.Mailbox": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MAILBOX",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mailbox Data value defined by the application.",
+                    "mode": "RW",
+                    "name": "Mailbox"
+                }
+            ]
+        },
+        "me_v28.MiscControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "REQUEST_ON_CS_ECC_ERROR",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "This bit enables the ME to generate an external Event request (ATTN asserts) on CS ECC correctable error.",
+                    "mode": "RW",
+                    "name": "ReqOnCsEccError"
+                },
+                {
+                    "altname": "REQUEST_ON_LM_ECC_ERROR",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "This bit enables the ME to generate an external Event request (ATTN asserts) on LM ECC correctable error.",
+                    "mode": "RW",
+                    "name": "ReqOnLmEccError"
+                },
+                {
+                    "altname": "LM_ECC_CORRECT_DISABLE",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "This bit disables LM ECC error correction, and promotes correctable errors to incorrectable errors.",
+                    "mode": "RW",
+                    "name": "LmEccCorrectDisable"
+                },
+                {
+                    "altname": "INTERRUPT",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "This bit supports the External Interrupt functionality.",
+                    "mode": "RW",
+                    "name": "Interrupt"
+                },
+                {
+                    "altname": "PARITY_ENBLE",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Parity checking on register files.",
+                    "mode": "RW",
+                    "name": "ParityEnable"
+                },
+                {
+                    "altname": "FORCE_BAR_PARITY",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Force incorrect parity value on register file when registers are written.  This bit is used for manufacturing test and should be left as 0 for normal operation.",
+                    "mode": "RW",
+                    "name": "ForceBadParity"
+                },
+                {
+                    "altname": "USTORE_ECC_CORRECT",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "UstoreECCCorrectEnable: Enables the microengine to correct correctable control store ECC errors.  Note that ECC checking must be enabled in CtxEnables for this to have any meaning.  Also note that when ECC error correcting is enabled, local CSR shadow rule is in effect.  This means that any time a local CSR is changed by program control, it must not be read until the write-to-use latency is met.  Specifically, software must not count on being able to user the value prior to the write in the write-to-use latency shadow.  This applies to all local CSRs except LMAddr, XferIndex, NNPut, anf NNGet.  For those registers the HW will guarantee that the old value can be used in the write-to-use latency shadow.",
+                    "mode": "RW",
+                    "name": "UstorECCCrctEn"
+                },
+                {
+                    "altname": "ME_SCRUB_RATE",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "This field is used to select whether Control Store Memory scrubbing is disabled or enabled, and if enabled, at what frequency the scrubbing is carried out.",
+                    "mode": "RW",
+                    "name": "MeScrubRate"
+                },
+                {
+                    "altname": "QCS_SCS_INCONSISTENT",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "This bit indicates the QuadUstore and/or ShareUstore bits within the ME group of four are not self-consistent and need to be fixed.",
+                    "mode": "RO",
+                    "name": "QCS_SCS_Inconsistent"
+                },
+                {
+                    "altname": "QUAD_USTORE",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Enables four-way shared Quad Control Store between the four MEs in an ME group. The instructions at address-modulo-4 == 0 reside in ME0 ustore, the instructions at address-modulo-4 == 1 reside in ME1 ustore, the instructions at address-modulo-4 == 2 reside in ME2 ustore, the instructions at address-modulo-4 == 3 reside in ME3 ustore.",
+                    "mode": "RW",
+                    "name": "QuadUstore"
+                },
+                {
+                    "altname": "THIRD_PARTY_ADDRESS_MODE",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Selects between 32-bit and 40-bit addressing for the 3rd Party command instruction.",
+                    "mode": "RW",
+                    "name": "ThrdPrtyAdrMode"
+                },
+                {
+                    "altname": "LEGACY_INDIRECT_REF_MODE",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Selects between Normal and Legacy Indirect Reference Modes.",
+                    "mode": "RW",
+                    "name": "LegacyIndRef"
+                },
+                {
+                    "altname": "SHARE_USTORE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Enables two-way Shared Control Store between the two MEs in an ME group pair (ME0 and ME1, or ME2 and ME3).  The even instructions reside in the even ME ustore, the odd instructions reside in the odd ME ustore",
+                    "mode": "RW",
+                    "name": "ShareUstore"
+                },
+                {
+                    "altname": "LM_REGION_PULL",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Selects between the lower and upper halves of the 1K LM address space for CPP Pull transactions.",
+                    "mode": "RW",
+                    "name": "LMRegionPull"
+                },
+                {
+                    "altname": "LM_REGION_PUSH",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Selects between the lower and upper halves of the 1K LM address space for CPP Push transactions.",
+                    "mode": "RW",
+                    "name": "LMRegionPush"
+                }
+            ]
+        },
+        "me_v28.NNPutGet": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "REG_INDEX",
+                    "bit_lsb": 0,
+                    "bit_msb": 6,
+                    "description": "Specifies one of 128 NN registers to read.",
+                    "mode": "RW",
+                    "name": "NNRegIndex"
+                }
+            ]
+        },
+        "me_v28.NxtNghbrSgl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "THIS_CTX",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Controls whether or not the context field of this register is used in selecting the context that is signaled in the next neighbor microengine.",
+                    "mode": "WO",
+                    "name": "ThisContext"
+                },
+                {
+                    "altname": "SIG_NO",
+                    "bit_lsb": 3,
+                    "bit_msb": 6,
+                    "description": "Signal to set in the next neighbor microengine.",
+                    "mode": "WO",
+                    "name": "SignalNo"
+                },
+                {
+                    "altname": "CTX",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Context to signal in the next neighbor microengine.  This field is only used if ThisContext is not asserted.",
+                    "mode": "WO",
+                    "name": "Context"
+                }
+            ]
+        },
+        "me_v28.PcBreakpoint": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CNTL",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PC Breakpoint Control: Controls the PC Breakpoint mechanism, providing a sensitive context mask.",
+                    "mode": "RW",
+                    "name": "PcBrkpntCntl"
+                },
+                {
+                    "altname": "TCNTL",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "PA TripControl: Controls the PA trip mechanism, providing a sensitive context mask.",
+                    "mode": "RW",
+                    "name": "PATripCntl"
+                },
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "PC Breakpoint Address: PC Address corresponding to PcBreakpoint0; it gets compared to the ME Active PC value.",
+                    "mode": "RW",
+                    "name": "PcBrkpntAddr"
+                }
+            ]
+        },
+        "me_v28.PcBreakpointMask": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "Masks the PC (program counter) bits which should not be considered for comparison against the value in the PcBrkpnt field of the PcBreakpoint  \n                          CSR.",
+                    "mode": "RW",
+                    "name": "PcMask"
+                }
+            ]
+        },
+        "me_v28.PcBreakpointStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CTX",
+                    "bit_lsb": 2,
+                    "bit_msb": 9,
+                    "description": "Indicates which context has triggered the PC breakpoint event; the least significant bit of this fields is associated with ctx 0; the most significant bit with ctx 7",
+                    "mode": "RW1C",
+                    "name": "PcBrkpntedCtx"
+                },
+                {
+                    "altname": "BRKPNT1",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Indicates the status of the PcBreakpoint1 SDS mechanism",
+                    "mode": "RW1C",
+                    "name": "PcBrkpnt1Status"
+                },
+                {
+                    "altname": "BRKPNT0",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Indicates the status of the PcBreakpoint0 SDS mechanism",
+                    "mode": "RW1C",
+                    "name": "PcBrkpnt0Status"
+                }
+            ]
+        },
+        "me_v28.ProfileCnt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "COUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Advances by one every cycle.",
+                    "mode": "RW",
+                    "name": "Count"
+                }
+            ]
+        },
+        "me_v28.PrvNghbrSgl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "THIS_CTX",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Controls whether or not the context field of this register is used in selecting the context that is signaled in the previous neighbor microengine.",
+                    "mode": "WO",
+                    "name": "ThisContext"
+                },
+                {
+                    "altname": "SIG_NO",
+                    "bit_lsb": 3,
+                    "bit_msb": 6,
+                    "description": "Signal to set in the previous neighbor microengine.",
+                    "mode": "WO",
+                    "name": "SignalNo"
+                },
+                {
+                    "altname": "CTX",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Context to signal in the previous neighbor microengine.  This field is only used if ThisContext is not asserted.",
+                    "mode": "WO",
+                    "name": "Context"
+                }
+            ]
+        },
+        "me_v28.PseudoRndNum": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NUMBER",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Pseudo Random Number.  This field must be non-zero to generate a pseudo random number.",
+                    "mode": "RW",
+                    "name": "Number"
+                }
+            ]
+        },
+        "me_v28.RegErrStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TYPE",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Type of Register File where a Parity Error has been detected.",
+                    "mode": "RO",
+                    "name": "Type"
+                },
+                {
+                    "altname": "REG",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Entry Address of the Register File where a Parity Error has been detected. Unused upper bits will read 0.",
+                    "mode": "RO",
+                    "name": "RegisterNumber"
+                }
+            ]
+        },
+        "me_v28.SameMESignal": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NEXT_CTX",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Controls whether or not the Context field of this register is used in selecting the context that is signaled in the microengine.",
+                    "mode": "WO",
+                    "name": "NextContext"
+                },
+                {
+                    "altname": "SIG_NO",
+                    "bit_lsb": 3,
+                    "bit_msb": 6,
+                    "description": "Signal to set in microengine.",
+                    "mode": "WO",
+                    "name": "SignalNo"
+                },
+                {
+                    "altname": "CTX",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Context to signal in the microengine.  This field is only used if NextContext field is not asserted.",
+                    "mode": "WO",
+                    "name": "Context"
+                }
+            ]
+        },
+        "me_v28.TimestampHgh": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "COUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Current 64-bit count value (upper 32 bits).",
+                    "mode": "RW",
+                    "name": "CountUpper"
+                }
+            ]
+        },
+        "me_v28.TimestampLow": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "COUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Current 64-bit count value (lower 32 bits).",
+                    "mode": "RW",
+                    "name": "CountLower"
+                }
+            ]
+        },
+        "me_v28.UstorAddr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ECS",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Enable Control Store: The Microengine should be in Idle state (no contexts running). The address in Uaddr field specifies the Control Store address where the data written to UstorDataLwr and UstorDataUpr will be written. Also set in debug mode. This bit can be used to dump data from Microengine GPRs and Read Transfer registers. The Microengine should be in an idle state (no contexts running). This forces the Microengine to continuously execute an instruction at the address specified by Uaddr. Only the ALU instruction is supported in this mode and the result of the execution is written to ALUOut CSR rather than a destination register.",
+                    "mode": "RW",
+                    "name": "EnableCS"
+                },
+                {
+                    "altname": "USTORE_NEW_MODE",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "UStoreNewMode",
+                    "mode": "RW",
+                    "name": "UstoreNewMode"
+                },
+                {
+                    "altname": "USTORE_VIRTUAL",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "UStoreVirtual",
+                    "mode": "RW",
+                    "name": "UstoreVirtual"
+                },
+                {
+                    "altname": "USTORE_PREFETCH_READ",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "UStorePrefetchRead",
+                    "mode": "RW",
+                    "name": "UstorePrefetchRead"
+                },
+                {
+                    "altname": "USTORE_NEXT_ADDRESS",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "UStoreNextAddress",
+                    "mode": "RW",
+                    "name": "UstoreNextAddress"
+                },
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Address of control store location to be accessed.  Valid values are dependent on silicon version and sharing mode.  In physical mode only the local UStore for this ME is accessible, and at most 14 bits of address are used.  In virtual mode, the address is munged to access the ME group UStore memories appropriate to the sharing mode such that this address is the same as the program counter value to access the same instruction as a program fetch would access.",
+                    "mode": "RW",
+                    "name": "Uaddr"
+                }
+            ]
+        },
+        "me_v28.UstorAddr1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "USTORE_NEW_MODE",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "UStoreNewMode",
+                    "mode": "RW",
+                    "name": "UstoreNewMode"
+                },
+                {
+                    "altname": "USTORE_VIRTUAL",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "UStoreVirtual",
+                    "mode": "RW",
+                    "name": "UstoreVirtual"
+                },
+                {
+                    "altname": "USTORE_PREFETCH_READ",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "UStorePrefetchRead",
+                    "mode": "RW",
+                    "name": "UstorePrefetchRead"
+                },
+                {
+                    "altname": "USTORE_NEXT_ADDRESS",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "UStoreNextAddress",
+                    "mode": "RW",
+                    "name": "UstoreNextAddress"
+                },
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Address of control store location to be accessed.  Valid values are dependent on silicon version and sharing mode.  In physical mode only the local UStore for this ME is accessible, and at most 14 bits of address are used.  In virtual mode, the address is munged to access the ME group UStore memories appropriate to the sharing mode such that this address is the same as the program counter value to access the same instruction as a program fetch would access.",
+                    "mode": "RW",
+                    "name": "Uaddr"
+                }
+            ]
+        },
+        "me_v28.UstorDataLwr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Contains bits 31:00 of the instruction of the Control Store location specified by the UstorAddr CSR.",
+                    "mode": "RW",
+                    "name": "UdataLower"
+                }
+            ]
+        },
+        "me_v28.UstorDataUpr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HIVAL",
+                    "bit_lsb": 0,
+                    "bit_msb": 12,
+                    "description": "Contains the data from bits [44:32] of the control store location specified by the UstorAddr.",
+                    "mode": "RW",
+                    "name": "UdataUpper"
+                }
+            ]
+        },
+        "me_v28.UstorErrStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "UNCORRECTABLE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Error Type. This bit indicates the type of error detected.",
+                    "mode": "RO",
+                    "name": "UncorrectableErr"
+                },
+                {
+                    "altname": "SYNDROME",
+                    "bit_lsb": 20,
+                    "bit_msb": 26,
+                    "description": "This field records the syndrome that was found when the error occurred.",
+                    "mode": "RO",
+                    "name": "Syndrome"
+                },
+                {
+                    "altname": "CTX",
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "Context that was executing when the ECC error occurred",
+                    "mode": "RO",
+                    "name": "Context"
+                },
+                {
+                    "altname": "UADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "Contains the address that had the ECC error.",
+                    "mode": "RO",
+                    "name": "Uaddr"
+                }
+            ]
+        },
+        "me_v28.XferIndex": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INDEX",
+                    "bit_lsb": 2,
+                    "bit_msb": 9,
+                    "description": "Transfer Register Index.  Specifies one of 256 registers.  The choice of TRANSFER_IN vs. TRANSFER_OUT is made based on the register use (either source or destination).  This field can be incremented or decremented by 1, or left unchanged after the access, as specified in the instruction.",
+                    "mode": "RW",
+                    "name": "XferIndex"
+                }
+            ]
+        },
+        "me_v28.XfrAndBytIdx": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "XFER_INDEX",
+                    "bit_lsb": 2,
+                    "bit_msb": 9,
+                    "description": "XferIndex: Transfer Index Register",
+                    "mode": "RW",
+                    "name": "XferIndex"
+                },
+                {
+                    "altname": "BYTE_NO",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "ByteIndex - Byte Index Register",
+                    "mode": "RW",
+                    "name": "ByteIndex"
+                }
+            ]
+        }
+    }
+}

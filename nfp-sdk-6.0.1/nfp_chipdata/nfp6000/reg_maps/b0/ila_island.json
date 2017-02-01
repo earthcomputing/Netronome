@@ -1,0 +1,81 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "ila_island.IlaIsldXpbMap": {
+            "0x00000000": {
+                "altname": "CTM_XPB",
+                "description": "Cluster Target Memory XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CTMXpbMap",
+                "ptr": "mu.CTMXpbMap",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "ISLAND_MSTR_BRIDGE",
+                "description": "Island Master Bridge XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IMBXpbMap",
+                "ptr": "island_master_bridge.IMBxpb",
+                "type": "regmap"
+            },
+            "0x00050000": {
+                "altname": "CLS_XPB",
+                "description": "Cluster Local Scratch XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ClusterScratchXPB",
+                "ptr": "cluster_scratch.ClusterScratchXPB",
+                "type": "regmap"
+            },
+            "0x000a0000": {
+                "altname": "ILA_XPB_MAP",
+                "description": "Interlaken Look-Aside XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaXpbGlbAdrMap",
+                "ptr": "ila_csr.IlaGlbAdrMap",
+                "type": "regmap"
+            },
+            "0x000e0000": {
+                "altname": "ILA_PLL_CNTL_XPB",
+                "description": "ILA Island Clock PLL Control Registers",
+                "name": "PLLCntlXpb",
+                "ptr": "pl.PLLCntlXpb",
+                "type": "regmap"
+            }
+        },
+        "ila_island.IlaIsldXpbmMap": {
+            "0x00000000": {
+                "altname": "ILA_ISLAND_OVL_XPBM",
+                "description": "ILA Island Overlay XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Overlay",
+                "ptr": "island_overlay.IslandOverlayMap",
+                "type": "regmap"
+            },
+            "0x00060000": {
+                "altname": "ILA_ISLAND_XPB",
+                "description": "ILA Island XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Island",
+                "ptr": "ila_island.IlaIsldXpbMap",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

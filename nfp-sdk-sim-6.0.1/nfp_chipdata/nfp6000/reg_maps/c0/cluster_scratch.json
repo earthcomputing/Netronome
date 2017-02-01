@@ -1,0 +1,741 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "cluster_scratch.ClsAutopushMap": {
+            "0x00000000": {
+                "altname": "STATUS%d",
+                "description": "Status Monitor for Event manager filter",
+                "name": "FilterStatusMonitor%d",
+                "offinc1": "0x00000008",
+                "ptr": "cluster_scratch.ClsAutoFilterStatusMonitor",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00000200": {
+                "altname": "SIGNAL%d",
+                "description": "Autopush signal configuration",
+                "name": "AutopushSignal%d",
+                "offinc1": "0x00000008",
+                "ptr": "cluster_scratch.ClsAutoSignal",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00000400": {
+                "altname": "USER_EVENT",
+                "description": "UserEvent, UserEventStatus",
+                "name": "UserEventGrp",
+                "ptr": "cluster_scratch.UserEventGrp",
+                "type": "multireg"
+            },
+            "0x00000600": {
+                "altname": "WRITE_ALERT_CFG",
+                "description": "Write alert configuration",
+                "name": "WriteAlertConfig",
+                "ptr": "cluster_scratch.ClsAutoWriteAlertConfig",
+                "type": "reg"
+            },
+            "0x00000608": {
+                "altname": "WRITE_ALERT_PEND",
+                "description": "Pending write alerts",
+                "name": "WriteAlertsPending",
+                "ptr": "cluster_scratch.ClsAutoWriteAlertsPending",
+                "type": "reg"
+            },
+            "0x00000620": {
+                "altname": "VF_TRANSLATION",
+                "description": "VF translation",
+                "name": "VFTranslation",
+                "ptr": "cluster_scratch.ClsAutoVFTranslation",
+                "type": "reg"
+            }
+        },
+        "cluster_scratch.ClsHashMap": {
+            "0x00000000": {
+                "altname": "HASH_MULTIPLY",
+                "description": "Multiplier configuration for all hash indices",
+                "name": "HashMultiply",
+                "ptr": "cluster_scratch.ClsHashMultiply",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "HASH_INDEX_LOW%d",
+                "description": "Bottom 32-bits of hash index",
+                "name": "HashIndexLow%d",
+                "offinc1": "0x00000100",
+                "ptr": "cluster_scratch.ClsHashIndexLow",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "HASH_INDEX_HIGH%d",
+                "description": "Top 32-bits of hash index",
+                "name": "HashIndexHigh%d",
+                "offinc1": "0x00000100",
+                "ptr": "cluster_scratch.ClsHashIndexHigh",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00000800": {
+                "altname": "HASH_INDEX64%d",
+                "description": "Full 64-bits of hash index",
+                "name": "HashIndex%d",
+                "offinc1": "0x00000008",
+                "ptr": "cluster_scratch.ClsHashIndex64",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00002000": {
+                "altname": "HASH_INITIAL_RESIDUE_LOW",
+                "description": "Bottom 32-bits of initial residue",
+                "name": "HashInitialResidueLow",
+                "ptr": "cluster_scratch.ClsHashInitialResidueLow",
+                "type": "reg"
+            },
+            "0x00002008": {
+                "altname": "HASH_INITIAL_RESIDUE_HIGH",
+                "description": "Top 32-bits of initial residue",
+                "name": "HashInitialResidueHigh",
+                "ptr": "cluster_scratch.ClsHashInitialResidueHigh",
+                "type": "reg"
+            }
+        },
+        "cluster_scratch.ClsNfaMap": {
+            "0x00000000": {
+                "altname": "CSR",
+                "description": "Write a CSR",
+                "name": "WriteCsr",
+                "ptr": "cluster_scratch.ClsNfaCsr",
+                "type": "reg"
+            },
+            "0x00004000": {
+                "altname": "EVENT",
+                "description": "Write event",
+                "name": "Event",
+                "ptr": "cluster_scratch.ClsNfaEvent",
+                "type": "reg"
+            },
+            "0x00008000": {
+                "altname": "RUN",
+                "description": "Write run",
+                "name": "Run",
+                "ptr": "cluster_scratch.ClsNfaRun",
+                "type": "reg"
+            }
+        },
+        "cluster_scratch.ClsRingsMap": {
+            "0x00000000": {
+                "altname": "RING_BASE%d",
+                "description": "Base, size, etc. of ring %d",
+                "name": "RingBase%d",
+                "offinc1": "0x00000008",
+                "ptr": "cluster_scratch.ClsRingBase",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "RING_PTRS%d",
+                "description": "Pointers for ring %d",
+                "name": "RingPtrs%d",
+                "offinc1": "0x00000008",
+                "ptr": "cluster_scratch.ClsRingPointers",
+                "repeat1": 16,
+                "type": "reg"
+            }
+        },
+        "cluster_scratch.ClusterScratchCppMap": {
+            "0x00010000": {
+                "altname": "RINGS",
+                "description": "Ring base addresses and pointers",
+                "name": "Rings",
+                "ptr": "cluster_scratch.ClsRingsMap",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "EM",
+                "description": "Event manager",
+                "name": "EventManager",
+                "ptr": "peripheral_event_manager.EventManagerMap_inst1",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "AUTOPUSH",
+                "description": "Auto push submodule access",
+                "name": "Autopush",
+                "ptr": "cluster_scratch.ClsAutopushMap",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "HASH",
+                "description": "Configuration and access to the hash logic",
+                "name": "Hash",
+                "ptr": "cluster_scratch.ClsHashMap",
+                "type": "regmap"
+            },
+            "0x00050000": {
+                "altname": "IM",
+                "description": "Peripheral Interrupt Manager Address Map",
+                "name": "InterruptManager",
+                "ptr": "peripheral_interrupt_manager.InterruptManagerMap_inst1",
+                "type": "regmap"
+            },
+            "0x00060000": {
+                "altname": "TRNG",
+                "description": "Peripheral TRNG Address Map",
+                "name": "PeripheralTrngData",
+                "ptr": "peripheral_trng.PeripheralTrngDataMap",
+                "type": "regmap"
+            },
+            "0x00070000": {
+                "altname": "NFA",
+                "description": "NFA register map",
+                "name": "Nfa",
+                "ptr": "cluster_scratch.ClsNfaMap",
+                "type": "regmap"
+            }
+        },
+        "cluster_scratch.ClusterScratchXPB": {
+            "0x00000000": {
+                "altname": "IM",
+                "description": "Interrupt Manager XPB Address Map",
+                "name": "InterruptManager",
+                "ptr": "peripheral_interrupt_manager.InterruptManagerMap_inst0",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "ECC_MONITOR_XPB_MAP",
+                "description": "ECC Monitor XPB Address Map",
+                "name": "ECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {
+        "cluster_scratch.ClsAutoFilterStatusMonitor": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "LAST_STATUS",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Last status value; a write clears this, to ensure that a new event will be generated if the filter status monitor is reconfigured",
+                    "mode": "RW",
+                    "name": "LastStatus"
+                },
+                {
+                    "altname": "EDGE_DETECTED",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Asserted if a rising edge of the filter status has been detected; a write clears this, to ensure that a new event will be generated if the filter status monitor is reconfigured",
+                    "mode": "RW",
+                    "name": "EdgeDetected"
+                },
+                {
+                    "altname": "MONITOR",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Type of monitoring to perform",
+                    "mode": "RW",
+                    "name": "Monitor"
+                },
+                {
+                    "altname": "AUTOPUSH",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Which autopush configuration register to use when the monitor fires (unless Monitor is 'Off')",
+                    "mode": "RW",
+                    "name": "Autopush"
+                }
+            ]
+        },
+        "cluster_scratch.ClsAutoSignal": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MASTER_ISL_LO",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "The bottom 4 bits of the CPP master island number to signal; zero in the CPP master island number implies the island the CLS is in",
+                    "mode": "RW",
+                    "name": "MasterIslandLow"
+                },
+                {
+                    "altname": "MASTER",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "The CPP master number to signal and push data to when a FilterStatusMonitor fires with this AutoPushSignal referenced.",
+                    "mode": "RW",
+                    "name": "Master"
+                },
+                {
+                    "altname": "SIGNAL_REF",
+                    "bit_lsb": 16,
+                    "bit_msb": 22,
+                    "description": "Signal reference to signal.",
+                    "mode": "RW",
+                    "name": "SignalRef"
+                },
+                {
+                    "altname": "MASTER_ISL_HI",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "The top 2 bits of the CPP master island number to signal; zero in the CPP master island number implies the island the CLS is in",
+                    "mode": "RW",
+                    "name": "MasterIslandHigh"
+                },
+                {
+                    "altname": "DATA_REF",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "Data reference for data to be pushed to.",
+                    "mode": "RW",
+                    "name": "DataRef"
+                }
+            ]
+        },
+        "cluster_scratch.ClsAutoVFTranslation": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BASE",
+                    "bit_lsb": 16,
+                    "bit_msb": 25,
+                    "description": "Base address to be used for SRAM address [10;6]",
+                    "mode": "RW",
+                    "name": "BaseAddress"
+                },
+                {
+                    "altname": "OFFSET_SIZE",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Virtual translation offset size",
+                    "mode": "RW",
+                    "name": "OffsetSize"
+                },
+                {
+                    "altname": "VF_OFS",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Virtual translation offset",
+                    "mode": "RW",
+                    "name": "VFOffset"
+                },
+                {
+                    "altname": "VF_ALERT",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Bit to use for write_alert enabling for virtual function translation",
+                    "mode": "RW",
+                    "name": "VFAlert"
+                },
+                {
+                    "altname": "ALIGN",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Virtual translation offset size",
+                    "mode": "RW",
+                    "name": "Alignment"
+                },
+                {
+                    "altname": "PROT_VFS",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Set to if virtual functions should have half the space per VF to protect them from each other",
+                    "mode": "RW",
+                    "name": "ProtectVfs"
+                },
+                {
+                    "altname": "ENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set to enable virtual address translation (only for atomics and read/write)",
+                    "mode": "RW",
+                    "name": "Enable"
+                }
+            ]
+        },
+        "cluster_scratch.ClsAutoWriteAlertConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ADDR_MASK",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Address mask for SRAM address [8;8]",
+                    "mode": "RW",
+                    "name": "AddressMask"
+                },
+                {
+                    "altname": "ADDR_MATCH",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Address match for SRAM address [8;8]",
+                    "mode": "RW",
+                    "name": "AddressMatch"
+                },
+                {
+                    "altname": "REGION",
+                    "bit_lsb": 4,
+                    "bit_msb": 6,
+                    "description": "Bottom bit number of SRAM address to use as alert number",
+                    "mode": "RW",
+                    "name": "Region"
+                },
+                {
+                    "altname": "EVENTS",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "If asserted, write alerts generate events (when the pending_events bit becomes set)",
+                    "mode": "RW",
+                    "name": "GenerateEvents"
+                },
+                {
+                    "altname": "DATA63",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "If asserted, a write alert requires bit 63 of the SRAM write data to be set to generate an alert",
+                    "mode": "RW",
+                    "name": "RequireData63"
+                },
+                {
+                    "altname": "ENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "If deasserted, the write alert logic is disabled",
+                    "mode": "RW",
+                    "name": "Enable"
+                }
+            ]
+        },
+        "cluster_scratch.ClsAutoWriteAlertsPending": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "ALERTS",
+                    "bit_lsb": 0,
+                    "bit_msb": 63,
+                    "description": "Pending alerts; clears after read",
+                    "mode": "RC",
+                    "name": "Alerts"
+                }
+            ]
+        },
+        "cluster_scratch.ClsHashIndex64": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "INDEX",
+                    "bit_lsb": 0,
+                    "bit_msb": 63,
+                    "description": "Full 64-bits of hash index value",
+                    "mode": "RO",
+                    "name": "Index"
+                }
+            ]
+        },
+        "cluster_scratch.ClsHashIndexHigh": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INDEX_HIGH",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Top 32-bits of hash index value",
+                    "mode": "RO",
+                    "name": "IndexHigh"
+                }
+            ]
+        },
+        "cluster_scratch.ClsHashIndexLow": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INDEX_LOW",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Bottom 32-bits of hash index value",
+                    "mode": "RO",
+                    "name": "IndexLow"
+                }
+            ]
+        },
+        "cluster_scratch.ClsHashInitialResidueHigh": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INITIAL_RESIDUE_HIGH",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Top 32-bits of initial residue",
+                    "mode": "RO",
+                    "name": "InitialResidueHigh"
+                }
+            ]
+        },
+        "cluster_scratch.ClsHashInitialResidueLow": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INITIAL_RESIDUE_LOW",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Bottom 32-bits of initial residue",
+                    "mode": "RO",
+                    "name": "InitialResidueLow"
+                }
+            ]
+        },
+        "cluster_scratch.ClsHashMultiply": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PREMULTIPLY",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "If set, then XOR the residue with the incoming data",
+                    "mode": "RW",
+                    "name": "Premultiply"
+                },
+                {
+                    "altname": "SBOXEN",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "If set, then the residue is passed through SBOXes prior to remainder calculation; if clear, the remainder is performed without the SBOXes.",
+                    "mode": "RW",
+                    "name": "SboxEnable"
+                },
+                {
+                    "altname": "NUMSBOXES",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Number of SBOXes to use, if enabled by SboxEnable; the sboxes are applied to 4-bit groups starting at the bottom 4 bits of the residue",
+                    "mode": "RW",
+                    "name": "NumSboxes"
+                },
+                {
+                    "altname": "MULT63",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Value of 'm63' for hash multiplication equation m63.x^63 + m53.x^53 + m36.x^36 + m4.x^4",
+                    "mode": "RW",
+                    "name": "Mult63"
+                },
+                {
+                    "altname": "MULT53",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Value of 'm53' for hash multiplication equation m63.x^63 + m53.x^53 + m36.x^36 + m4.x^4",
+                    "mode": "RW",
+                    "name": "Mult53"
+                },
+                {
+                    "altname": "MULT36",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Value of 'm36' for hash multiplication equation m63.x^63 + m53.x^53 + m36.x^36 + m4.x^4",
+                    "mode": "RW",
+                    "name": "Mult36"
+                },
+                {
+                    "altname": "MULT4",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Value of 'm4' for hash multiplication equation m63.x^63 + m53.x^53 + m36.x^36 + m4.x^4",
+                    "mode": "RW",
+                    "name": "Mult4"
+                }
+            ]
+        },
+        "cluster_scratch.ClsNfaCsr": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "CSRADDR",
+                    "bit_lsb": 32,
+                    "bit_msb": 39,
+                    "description": "CSRAddress",
+                    "mode": "WO",
+                    "name": "CsrAddress"
+                },
+                {
+                    "altname": "LENGTH",
+                    "bit_lsb": 16,
+                    "bit_msb": 27,
+                    "description": "Length",
+                    "mode": "WO",
+                    "name": "Length"
+                },
+                {
+                    "altname": "ADDRESS",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Address",
+                    "mode": "WO",
+                    "name": "Address"
+                }
+            ]
+        },
+        "cluster_scratch.ClsNfaEvent": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SOURCE",
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": "Source",
+                    "mode": "WO",
+                    "name": "Source"
+                }
+            ]
+        },
+        "cluster_scratch.ClsNfaRun": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "RESTYPE",
+                    "bit_lsb": 52,
+                    "bit_msb": 54,
+                    "description": "Result type",
+                    "mode": "WO",
+                    "name": "ResultType"
+                },
+                {
+                    "altname": "RESLEN",
+                    "bit_lsb": 48,
+                    "bit_msb": 51,
+                    "description": "Length",
+                    "mode": "WO",
+                    "name": "ResultLength"
+                },
+                {
+                    "altname": "RESADDR",
+                    "bit_lsb": 32,
+                    "bit_msb": 43,
+                    "description": "Length",
+                    "mode": "WO",
+                    "name": "ResultAddress"
+                },
+                {
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "NFA to use",
+                    "mode": "WO",
+                    "name": "NFA"
+                },
+                {
+                    "altname": "BIGEND",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Set if bigendian addressing should be used for bytes in the NFA data",
+                    "mode": "WO",
+                    "name": "BigEndian"
+                },
+                {
+                    "altname": "LENGTH",
+                    "bit_lsb": 16,
+                    "bit_msb": 27,
+                    "description": "Length",
+                    "mode": "WO",
+                    "name": "Length"
+                },
+                {
+                    "altname": "ADDRESS",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Address",
+                    "mode": "WO",
+                    "name": "Address"
+                }
+            ]
+        },
+        "cluster_scratch.ClsRingBase": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "FULL",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Asserted if the ring is >= 3/4 full (almost full); should be initialized to zero. Watermark is at 3/4 full.",
+                    "mode": "RW",
+                    "name": "Full"
+                },
+                {
+                    "altname": "NOT_EMPTY",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Asserted if the ring is not empty; should be initialized to zero",
+                    "mode": "RW",
+                    "name": "NotEmpty"
+                },
+                {
+                    "altname": "WORK",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Asserted for work queues if the ring contains work and not threads",
+                    "mode": "RW",
+                    "name": "ContainsWork"
+                },
+                {
+                    "altname": "REPORT",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Bitmap of which ring events should generate system events on the event bus",
+                    "mode": "RW",
+                    "name": "Report"
+                },
+                {
+                    "altname": "SIZE",
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "Size of the ring",
+                    "mode": "RW",
+                    "name": "Size"
+                },
+                {
+                    "altname": "BASE",
+                    "bit_lsb": 0,
+                    "bit_msb": 8,
+                    "description": "Base address (anywhere within the cluster local scratch RAM) of the ring; note the alignment required by the size above",
+                    "mode": "RW",
+                    "name": "Base"
+                }
+            ]
+        },
+        "cluster_scratch.ClsRingPointers": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TAIL_POINTER",
+                    "bit_lsb": 16,
+                    "bit_msb": 28,
+                    "description": "Word offset from base address to tail of ring; when written it must be bounded by the ring size first.",
+                    "mode": "RW",
+                    "name": "TailPointer"
+                },
+                {
+                    "altname": "HEAD_POINTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 12,
+                    "description": "Word offset from base address to head of ring; when written it must be bounded by the ring size first.",
+                    "mode": "RW",
+                    "name": "HeadPointer"
+                }
+            ]
+        },
+        "cluster_scratch.UserEventGrp": {
+            "bit_length": 32,
+            "comment": "Multi-register",
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "mode": "rw",
+                    "name": "value"
+                }
+            ]
+        }
+    }
+}

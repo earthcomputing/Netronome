@@ -1,0 +1,429 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "peripheral_ecc_monitor.ECCControl": {
+            "0x00000000": {
+                "altname": "ENABLE",
+                "description": "ECC detection and correction enable",
+                "name": "ECCEnable",
+                "ptr": "peripheral_ecc_monitor.ECCEnable",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "INJECT_CLEAR",
+                "description": "Clear any outstanding ECC error injection",
+                "name": "InjectClear",
+                "ptr": "peripheral_ecc_monitor.ECCInjectClear",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "INJECT_ECC_PERM",
+                "description": "Inject ECC errors into the ECC field continuously on matching writes",
+                "name": "InjectECCPermanent",
+                "ptr": "peripheral_ecc_monitor.ECCInjectError",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "INJECT_DATA_PERM",
+                "description": "Inject ECC errors into the data field continuously on matching writes",
+                "name": "InjectDataPermanent",
+                "ptr": "peripheral_ecc_monitor.ECCInjectError",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "INJECT_ECC_ONCE",
+                "description": "Inject an ECC error into the ECC field on next matching write",
+                "name": "InjectECCOneShot",
+                "ptr": "peripheral_ecc_monitor.ECCInjectError",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "INJECT_DATA_ONCE",
+                "description": "Inject an ECC error into the data field on next matching write",
+                "name": "InjectDataOneShot",
+                "ptr": "peripheral_ecc_monitor.ECCInjectError",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "ERR_FIRST",
+                "description": "First ECC error to occur since errors were reset.",
+                "name": "FirstECCError",
+                "ptr": "peripheral_ecc_monitor.ECCError",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "ERR_LAST",
+                "description": "Read only - Most recent ECC error",
+                "name": "LastECCError",
+                "ptr": "peripheral_ecc_monitor.ECCError",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "ERR_COUNT",
+                "description": "Read only - Count of ECC errors, without clearing count",
+                "name": "ErrorCounts",
+                "ptr": "peripheral_ecc_monitor.ECCErrorCounts",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "ERR_COUNT_RESET",
+                "description": "Read only - Count of ECC errors, clears count on read",
+                "name": "ErrorCountsReset",
+                "ptr": "peripheral_ecc_monitor.ECCErrorCounts",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "LONG_ADDR",
+                "description": "Read-only, for long address ECC (eg. DRAM interface) only",
+                "name": "LongAddress",
+                "ptr": "peripheral_ecc_monitor.ECCLongAddress",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "CLEAR_ERR",
+                "description": "Write only - clears all error counts",
+                "name": "ClearErrors",
+                "ptr": "peripheral_ecc_monitor.ECCClearErrors",
+                "type": "reg"
+            }
+        },
+        "peripheral_ecc_monitor.ECCControlMany": {
+            "0x00000000": {
+                "altname": "CTL%d",
+                "description": "ECC monitor control for SRAM",
+                "name": "ECCControl%d",
+                "offinc1": "0x00000040",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "repeat1": 16,
+                "type": "regmap"
+            }
+        },
+        "peripheral_ecc_monitor.ECCControlReg": {
+            "0x00000000": {
+                "altname": "ENABLE",
+                "description": "ECC detection and correction enable",
+                "name": "ECCEnable",
+                "ptr": "peripheral_ecc_monitor.ECCEnable",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "INJECT_CLEAR",
+                "description": "Clear any outstanding ECC error injection",
+                "name": "InjectClear",
+                "ptr": "peripheral_ecc_monitor.ECCInjectClear",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "INJECT_ECC_PERM",
+                "description": "Inject ECC errors into the ECC field continuously on matching writes",
+                "name": "InjectECCPermanent",
+                "ptr": "peripheral_ecc_monitor.ECCInjectError",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "INJECT_DATA_PERM",
+                "description": "Inject ECC errors into the data field continuously on matching writes",
+                "name": "InjectDataPermanent",
+                "ptr": "peripheral_ecc_monitor.ECCInjectError",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "INJECT_ECC_ONCE",
+                "description": "Inject an ECC error into the ECC field on next matching write",
+                "name": "InjectECCOneShot",
+                "ptr": "peripheral_ecc_monitor.ECCInjectError",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "INJECT_DATA_ONCE",
+                "description": "Inject an ECC error into the data field on next matching write",
+                "name": "InjectDataOneShot",
+                "ptr": "peripheral_ecc_monitor.ECCInjectError",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "ERR_FIRST",
+                "description": "First ECC error to occur since errors were reset.",
+                "name": "FirstECCError",
+                "ptr": "peripheral_ecc_monitor.ECCError",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "ERR_LAST",
+                "description": "Read only - Most recent ECC error",
+                "name": "LastECCError",
+                "ptr": "peripheral_ecc_monitor.ECCError",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "ERR_COUNT",
+                "description": "Read only - Count of ECC errors, without clearing count",
+                "name": "ErrorCounts",
+                "ptr": "peripheral_ecc_monitor.ECCErrorCounts",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "ERR_COUNT_RESET",
+                "description": "Read only - Count of ECC errors, clears count on read",
+                "name": "ErrorCountsReset",
+                "ptr": "peripheral_ecc_monitor.ECCErrorCounts",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "CLEAR_ERR",
+                "description": "Write only - clears all error counts",
+                "name": "ClearErrors",
+                "ptr": "peripheral_ecc_monitor.ECCClearErrors",
+                "type": "reg"
+            }
+        },
+        "peripheral_ecc_monitor.ECCControl_12": {
+            "0x00000000": {
+                "altname": "CTL%d",
+                "description": "ECC monitor control for SRAM",
+                "name": "ECCControlReg%d",
+                "offinc1": "0x00000040",
+                "ptr": "peripheral_ecc_monitor.ECCControlReg",
+                "repeat1": 12,
+                "type": "regmap"
+            }
+        },
+        "peripheral_ecc_monitor.ECCControl_16": {
+            "0x00000000": {
+                "altname": "CTL%d",
+                "description": "ECC monitor control for SRAM",
+                "name": "ECCControlReg%d",
+                "offinc1": "0x00000040",
+                "ptr": "peripheral_ecc_monitor.ECCControlReg",
+                "repeat1": 16,
+                "type": "regmap"
+            }
+        },
+        "peripheral_ecc_monitor.ECCControl_2": {
+            "0x00000000": {
+                "altname": "CTL%d",
+                "description": "ECC monitor control for SRAM",
+                "name": "ECCControlReg%d",
+                "offinc1": "0x00000040",
+                "ptr": "peripheral_ecc_monitor.ECCControlReg",
+                "repeat1": 2,
+                "type": "regmap"
+            }
+        },
+        "peripheral_ecc_monitor.ECCControl_4": {
+            "0x00000000": {
+                "altname": "CTL%d",
+                "description": "ECC monitor control for SRAM",
+                "name": "ECCControlReg%d",
+                "offinc1": "0x00000040",
+                "ptr": "peripheral_ecc_monitor.ECCControlReg",
+                "repeat1": 4,
+                "type": "regmap"
+            }
+        },
+        "peripheral_ecc_monitor.ECCControl_8": {
+            "0x00000000": {
+                "altname": "CTL%d",
+                "description": "ECC monitor control for SRAM",
+                "name": "ECCControlReg%d",
+                "offinc1": "0x00000040",
+                "ptr": "peripheral_ecc_monitor.ECCControlReg",
+                "repeat1": 8,
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {
+        "peripheral_ecc_monitor.ECCClearErrors": {
+            "bit_length": 32,
+            "fields": []
+        },
+        "peripheral_ecc_monitor.ECCEnable": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ALL",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "ECCEnable Register Description",
+                    "mode": "RW",
+                    "name": "Enable"
+                }
+            ]
+        },
+        "peripheral_ecc_monitor.ECCError": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VALID",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Contents of reg are valid",
+                    "mode": "RO",
+                    "name": "Valid"
+                },
+                {
+                    "altname": "MULTIBIT",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "MultibitError - Set if the error was a multi-bit (uncorrectable) error",
+                    "mode": "RO",
+                    "name": "MultibitError"
+                },
+                {
+                    "altname": "SINGLEBIT",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "SinglebitError - Set if the error was a single-bit (corrected) error",
+                    "mode": "RO",
+                    "name": "SinglebitError"
+                },
+                {
+                    "altname": "DELTA",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "ECCDelta - ECC delta of the error (XOR of expected and read)",
+                    "mode": "RO",
+                    "name": "ECCDelta"
+                },
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Address - 16-bit address where the error occurred",
+                    "mode": "RO",
+                    "name": "Address"
+                }
+            ]
+        },
+        "peripheral_ecc_monitor.ECCErrorCounts": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MULTIS",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Multibit error count - 16-bit saturation count of multibit errors",
+                    "mode": "RO",
+                    "name": "MultibitCount"
+                },
+                {
+                    "altname": "SINGLES",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Singlebit error count - 16-bit saturated count of singlebit errors",
+                    "mode": "RO",
+                    "name": "SinglebitCount"
+                }
+            ]
+        },
+        "peripheral_ecc_monitor.ECCInjectClear": {
+            "bit_length": 32,
+            "fields": []
+        },
+        "peripheral_ecc_monitor.ECCInjectError": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ADDR_MATCH",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "8-bit address to match for ECC poisoning",
+                    "mode": "WO",
+                    "name": "AddressMatch"
+                },
+                {
+                    "altname": "DELTA",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "ECC Delta to derive a single bit data error from or to be inserted if ECC poisoning requested",
+                    "mode": "WO",
+                    "name": "ECCDelta"
+                }
+            ]
+        },
+        "peripheral_ecc_monitor.ECCLongAddress": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "LADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Full address of error from last read of FirstECCError or LastECCError for any of the ECC monitor spaces",
+                    "mode": "RO",
+                    "name": "Address"
+                }
+            ]
+        },
+        "peripheral_ecc_monitor.ECCSramCnt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "SRAM0: Bias Level Adjust Input. This is bias control for controlling the diode connected to VSSCORE.",
+                    "mode": "RW",
+                    "name": "BC2_0"
+                },
+                {
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "SRAM0: Bias Level Adjust Input. This is bias control for controlling the diode connected to VSSCORE.",
+                    "mode": "RW",
+                    "name": "BC1_0"
+                },
+                {
+                    "altname": "TEST1B_0",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "SRAM0: Test pin for Port B to bypass self-timed circuit. The external clock controls the read and write control signals.",
+                    "mode": "RW",
+                    "name": "Test1B0"
+                },
+                {
+                    "altname": "TEST_TEST1A_0",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "SRAM0: Test pin for Port A to bypass self-timed circuit. The external clock controls the read and write control signals.",
+                    "mode": "RW",
+                    "name": "Test1Test1A0"
+                },
+                {
+                    "altname": "RA_RM_OVRD_0",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "SRAM0: Enables the override of the sense-amp controls by both RmRma0 and Rmb0 fields.",
+                    "mode": "RW",
+                    "name": "RaRmOveride0"
+                },
+                {
+                    "altname": "RA_0",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "SRAM0: RA for 1-Port SRAMs. Read Assist(RA) to control WL under-drive. See SRAMs specs.",
+                    "mode": "RW",
+                    "name": "Ra0"
+                },
+                {
+                    "altname": "RMB_0",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "SRAM0: RMB for 2-port SRAMs. Read Margin Port B(RMB) sets the Read-Write margin by adjusting the sense amp differential setting.  See SRAMs specs.",
+                    "mode": "RW",
+                    "name": "Rmb0"
+                },
+                {
+                    "altname": "RM_RMA_0",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "SRAM0: RM for 1-Port SRAMs / RMA for 2-port SRAMs. Read Margin(RM) / Read Margin Port A(RMA) sets the Read-Write margin by adjusting the sense amp differential setting.  See SRAMs specs.",
+                    "mode": "RW",
+                    "name": "RmRma0"
+                }
+            ]
+        }
+    }
+}

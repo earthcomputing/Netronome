@@ -1,0 +1,706 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "nbi_dma_csr.NbiDmaCsr": {
+            "0x00000000": {
+                "altname": "NBI_DMA_CFG",
+                "description": "NBI DMA Configuration register",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaCfg",
+                "ptr": "nbi_dma_csr.NbiDmaCfg",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "NBI_DMA_SPARE",
+                "description": "General Purpose Register",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaSpare",
+                "ptr": "nbi_dma_csr.NbiDmaSpare",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "NBI_DMA_BLQ_EVENT",
+                "description": "NBI DMA Buffer List Queue Event Control",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaBlqEvent",
+                "ptr": "nbi_dma_csr.NbiDmaBlqEvent",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "NBI_DMA_RATE",
+                "description": "NBI DMA Token Refresh Rate Register",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaRate",
+                "ptr": "nbi_dma_csr.NbiDmaRate",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "NBI_DMA_CREDIT",
+                "description": "NBI DMA Token Credit Registers",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaCredit",
+                "ptr": "nbi_dma_csr.NbiDmaCredit",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "BPE_CHAIN_END",
+                "description": "NBI DMA BPE Chain End Register",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaBpeChainEnd",
+                "ptr": "nbi_dma_csr.NbiDmaBpeChainEnd",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "NBI_DMA_BP%d_CFG",
+                "description": "NBI DMA Buffer Pool %d Configuration",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaBP%dCfg",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_dma_csr.NbiDmaBPCfg",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "NBI_DMA_BPE%d_CFG",
+                "description": "NBI DMA Buffer Pool Entry %d Configuration",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaBpe%dCfg",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_dma_csr.NbiDmaBpeCfg",
+                "repeat1": 32,
+                "type": "reg"
+            },
+            "0x000000c0": {
+                "altname": "NBI_DMA_PKT_CNT_LO",
+                "description": "Nbi Dma Pkt Counter Low 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaPktCntLo",
+                "ptr": "nbi_dma_csr.NbiDmaPktCntLo",
+                "type": "reg"
+            },
+            "0x000000c4": {
+                "altname": "NBI_DMA_PKT_CNT_HI",
+                "description": "Nbi Dma Pkt Counter High 16-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaPktCntHi",
+                "ptr": "nbi_dma_csr.NbiDmaPktCntHi",
+                "type": "reg"
+            },
+            "0x000000c8": {
+                "altname": "NBI_DMA_BYTE_CNT_LO",
+                "description": "Nbi Dma Byte Counter Low 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaByteCntLo",
+                "ptr": "nbi_dma_csr.NbiDmaByteCntLo",
+                "type": "reg"
+            },
+            "0x000000cc": {
+                "altname": "NBI_DMA_BYTE_CNT_HI",
+                "description": "Nbi Dma Byte Counter High 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaByteCntHi",
+                "ptr": "nbi_dma_csr.NbiDmaByteCntHi",
+                "type": "reg"
+            },
+            "0x000000d0": {
+                "altname": "NBI_DMA_DROP_PKT_CNT_LO",
+                "description": "Nbi Dma Drop Pkt Counter Low 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaDropPktCntLo",
+                "ptr": "nbi_dma_csr.NbiDmaDropPktCntLo",
+                "type": "reg"
+            },
+            "0x000000d4": {
+                "altname": "NBI_DMA_DROP_PKT_CNT_HI",
+                "description": "Nbi Dma Drop Pkt Counter High 16-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaDropPktCntHi",
+                "ptr": "nbi_dma_csr.NbiDmaDropPktCntHi",
+                "type": "reg"
+            },
+            "0x000000d8": {
+                "altname": "NBI_DMA_DROP_BYTE_CNT_LO",
+                "description": "Nbi Dma Drop Byte Counter Low 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaDropByteCntLo",
+                "ptr": "nbi_dma_csr.NbiDmaDropByteCntLo",
+                "type": "reg"
+            },
+            "0x000000dc": {
+                "altname": "NBI_DMA_DROP_BYTE_CNT_HI",
+                "description": "Nbi Dma Drop Byte Counter High 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaDropByteCntHi",
+                "ptr": "nbi_dma_csr.NbiDmaDropByteCntHi",
+                "type": "reg"
+            }
+        },
+        "nbi_dma_csr.NbiDmaXpbAddressMap": {
+            "0x00000000": {
+                "altname": "NBI_DMA_CSR",
+                "description": "NBI DMA CSRs",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDmaCsr",
+                "ptr": "nbi_dma_csr.NbiDmaCsr",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "NBI_DMA_BD_ECC",
+                "description": "NBI DMA Buffer Descriptor SRAM ECC Monitor",
+                "name": "NbiDmaBDEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "NBI_DMA_BC_ECC",
+                "description": "NBI DMA Buffer Completion SRAM ECC Monitor",
+                "name": "NbiDmaBCEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "NBI_DMA_DS_ECC",
+                "description": "NBI DMA State SRAM ECC Monitor . Implemented using 2 ecc_monitor & ecc_monitor2 macro.",
+                "name": "NbiDmaDSEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {
+        "nbi_dma_csr.NbiDmaBPCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DROP_EN",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Enables a packet to be dropped when buffer or packet credits run out or there are no MU buffers left on the selected buffer list. When cleared packets are not dropped and the logic backs up waiting for credits to arrive.",
+                    "mode": "RW",
+                    "name": "DropEn"
+                },
+                {
+                    "altname": "CTM_OFFSET",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Defines the offset to add to the data reference when starting to write packet data to the\n                 CTM. The space in front of the packet is for the rewrite script used by the packet modifier.",
+                    "mode": "RW",
+                    "name": "CtmOffset"
+                },
+                {
+                    "altname": "PRI_BP_LIST",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Primary Buffer list number associated. There are 4 buffer lists available, which contain\n                 buffer descriptors that are used to store packet data in internal/external MUs.",
+                    "mode": "RW",
+                    "name": "PriBList"
+                },
+                {
+                    "altname": "SEC_BP_LIST",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Secondary Buffer list number associated. There are 4 buffer lists available, which contain\n                 buffer descriptors that are used to store packet data in internal/external MUs.",
+                    "mode": "RW",
+                    "name": "SecBList"
+                },
+                {
+                    "altname": "SPLIT_LENGTH",
+                    "bit_lsb": 5,
+                    "bit_msb": 6,
+                    "description": "Encoded packet size used when deciding to split packets between CTM and internal/external MUs.\n                 The encoding is in powers of 2 starting at 256 bytes.",
+                    "mode": "RW",
+                    "name": "SplitLength"
+                },
+                {
+                    "altname": "BPE_HEAD",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Pointer to the first Buffer Pool Entry register in the list associated with this buffer pool.",
+                    "mode": "RW",
+                    "name": "BpeHead"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaBlqEvent": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DIS_BLQ_EVENT_FIFO_FULL_ASSERT",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Set this bit to disable the BLQ Event FIFO overflow assertion",
+                    "mode": "RW",
+                    "name": "DisBLQEventFifoFullAssert"
+                },
+                {
+                    "altname": "BLQEVENT_THRESHOLD3",
+                    "bit_lsb": 18,
+                    "bit_msb": 19,
+                    "description": "An event is generated every N buffer descriptors read from buffer list queue3, where N is configurable from 16 to 128.",
+                    "mode": "RW",
+                    "name": "BLQEventThreshold3"
+                },
+                {
+                    "altname": "BLQEVENT_THRESHOLD2",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "An event is generated every N buffer descriptors read from buffer list queue2, where N is configurable from 16 to 128.",
+                    "mode": "RW",
+                    "name": "BLQEventThreshold2"
+                },
+                {
+                    "altname": "BLQEVENT_THRESHOLD1",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "An event is generated every N buffer descriptors read from buffer list queue1, where N is configurable from 16 to 128.",
+                    "mode": "RW",
+                    "name": "BLQEventThreshold1"
+                },
+                {
+                    "altname": "BLQEVENT_THRESHOLD0",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "An event is generated every N buffer descriptors read from buffer list queue0, where N is configurable from 16 to 128.",
+                    "mode": "RW",
+                    "name": "BLQEventThreshold0"
+                },
+                {
+                    "altname": "BLQ_EVENT_NOT_FULL_ENABLE",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "One bit per buffer list queue. Enables the generation of BLQ Events when the queue transitions from full to not full. Disabled when clear. \nThe event type value used is 0x1 (event_type_fifo_not_full)",
+                    "mode": "RW",
+                    "name": "BLQEventNotFullEnable"
+                },
+                {
+                    "altname": "BLQ_EVENT_STATUS_ENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "One bit per buffer list queue. Enables BLQ Status Events when set. Disabled when clear. A Status Event is sent when the number of entries read from the queue reaches the programmed value in the BLQEventThreshold register.  The event type value used is 0x5 (event_type_value_update)",
+                    "mode": "RW",
+                    "name": "BLQEventStatusEnable"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaBpeCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BPE_NUM",
+                    "bit_lsb": 27,
+                    "bit_msb": 31,
+                    "description": "Buffer Pool Entry Number. When the register is written this value is the latched version of the buffer pool register number 0-31. Used for debug purposes.",
+                    "mode": "RWL",
+                    "name": "BpeNum"
+                },
+                {
+                    "altname": "CTM",
+                    "bit_lsb": 21,
+                    "bit_msb": 26,
+                    "description": "CTM number to use",
+                    "mode": "RW",
+                    "name": "Ctm"
+                },
+                {
+                    "altname": "PKT_CREDIT",
+                    "bit_lsb": 10,
+                    "bit_msb": 20,
+                    "description": "Configures the number of packets allocated to the CTM",
+                    "mode": "RW",
+                    "name": "PktCredit"
+                },
+                {
+                    "altname": "BUF_CREDIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "Configures the number of buffer credits in 2K byte increments associated with the CTM. The msbit is the sign bit and must be cleared during configuration.",
+                    "mode": "RW",
+                    "name": "BufCredit"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaBpeChainEnd": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BPE_CHAIN_END",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": " Configures BPE module 'n' as the end of the buffer pool entry chain, where 'n' = 0 to 31.",
+                    "mode": "RW",
+                    "name": "BpeChainEnd"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaByteCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_BYTE_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Upper 32-bits of 64-bit NBI DMA Tx Byte count.  Read this register after reading the NbiDmaByteCntLo register",
+                    "mode": "RC",
+                    "name": "NbiDmaByteCntHi"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaByteCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_BYTE_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 64-bit NBI DMA Tx Byte count. Reading this register latches the value in NbiDmaByteCntHi register",
+                    "mode": "RC",
+                    "name": "NbiDmaByteCntLo"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DIS_PUSHBUS_SELECT",
+                    "bit_lsb": 17,
+                    "bit_msb": 20,
+                    "description": "Disables a push bus from being selected by the read arbiter when set. Used to force packet traffic to not use a particular push bus.",
+                    "mode": "RW",
+                    "name": "DisPushBusSelect"
+                },
+                {
+                    "altname": "DIS_BCRAM_ERR",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Controls how the DMA engine handles multi-bit ECC errors received from the Buffer Completion RAM.",
+                    "mode": "RW",
+                    "name": "DisBcRamErr"
+                },
+                {
+                    "altname": "DIS_DSRAM_ERR",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Controls how the DMA engine handles multi-bit ECC errors received from the DMA State RAM.",
+                    "mode": "RW",
+                    "name": "DisDsRamErr"
+                },
+                {
+                    "altname": "DIS_BDRAM_ERR",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Controls how the BLQ logic handles multi-bit ECC errors received from the Buffer Descriptor RAM",
+                    "mode": "RW",
+                    "name": "DisBdRamErr"
+                },
+                {
+                    "altname": "DIS_BUFRD_ERR",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Controls how the hardware forwards the received NBI Buffer Memory Read Error to the output data buses.",
+                    "mode": "RW",
+                    "name": "DisBufRdErr"
+                },
+                {
+                    "altname": "DIS_RXPUSH_LAST_ERR",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Controls how the hardware responds to a push bus input protocol error for allocation response transactions",
+                    "mode": "RW",
+                    "name": "DisRxPushLastErr"
+                },
+                {
+                    "altname": "DIS_RXALLOC_IN_ERR",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Controls how the hardware responds to a push bus input error for allocation response transactions.",
+                    "mode": "RW",
+                    "name": "DisRxAllocInErr"
+                },
+                {
+                    "altname": "DIS_RXBLQWR_IN_ERR",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Controls how the hardware responds to a push bus input error for BLQ writes transactions.",
+                    "mode": "RW",
+                    "name": "DisRxBlqWrInErr"
+                },
+                {
+                    "altname": "NBI_NUM",
+                    "bit_lsb": 7,
+                    "bit_msb": 9,
+                    "description": "This field is placed in the 3 lsbits of the Packet Allocation Command Address field. It is used\n                            by the CTM to identify which NBI sent the command.",
+                    "mode": "RW",
+                    "name": "NbiNum"
+                },
+                {
+                    "altname": "CTM_POLL_ENA",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Configures whether the polling function is enabled or disabled.",
+                    "mode": "RW",
+                    "name": "CtmPollEna"
+                },
+                {
+                    "altname": "CTM_POLL_INTVL",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Configures the amount of time between packet allocation poll commands to a CTM. If CtmPollSearchEna = 0, the polling interval is defined by the CtmPollIntvl. If the CtmPollSearchEna = 1, the poll interval is defined by the following equation: (CtmPollIntvl/64)*(# of active CTMs).",
+                    "mode": "RW",
+                    "name": "CtmPollIntvl"
+                },
+                {
+                    "altname": "RATE_LIMIT_ENABLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Selects whether to limit the bandwidth on the four Push Buses.",
+                    "mode": "RW",
+                    "name": "RateLimitEnable"
+                },
+                {
+                    "altname": "CTM_POLL_SEARCH_ENA",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Controls how CTM polling is performed. When set the CTM polling logic skips to the next active CTM every poll interval. When clear the CTM polling logic increments the CTM counter by one every poll interval.",
+                    "mode": "RW",
+                    "name": "CtmPollSearchEna"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaCredit": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "THRESHOLD3",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "Sets the threshold that the leaky bucket is closed. Values are in increments of 16 Credits. A value of 0 equates to 16 credits or 128 bytes. A value of 3 equates to 64 credits or 512 bytes.",
+                    "mode": "RW",
+                    "name": "Threshold3"
+                },
+                {
+                    "altname": "THRESHOLD2",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "Sets the threshold that the leaky bucket is closed. Values are in increments of 16 Credits. A value of 0 equates to 16 credits or 128 bytes. A value of 3 equates to 64 credits or 512 bytes.",
+                    "mode": "RW",
+                    "name": "Threshold2"
+                },
+                {
+                    "altname": "THRESHOLD1",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Sets the threshold that the leaky bucket is closed. Values are in increments of 16 Credits. A value of 0 equates to 16 credits or 128 bytes. A value of 3 equates to 64 credits or 512 bytes.",
+                    "mode": "RW",
+                    "name": "Threshold1"
+                },
+                {
+                    "altname": "THRESHOLD0",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Sets the threshold that the leaky bucket is closed. Values are in increments of 16 Credits. A value of 0 equates to 16 credits or 128 bytes. A value of 3 equates to 64 credits or 512 bytes.",
+                    "mode": "RW",
+                    "name": "Threshold0"
+                },
+                {
+                    "altname": "CREDIT3",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Sets the number of credits to subtract from the leaky bucket for push bus 3. A credit equates to 8-bytes or 1 cycle on the bus. A value of zero equates to 1 credits. A value of 3 equates to 4 credits.",
+                    "mode": "RW",
+                    "name": "Credit3"
+                },
+                {
+                    "altname": "CREDIT2",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Sets the number of credits to subtract from the leaky bucket for push bus 2. A credit equates to 8-bytes or 1 cycle on the bus. A value of zero equates to 1 credits. A value of 3 equates to 4 credits.",
+                    "mode": "RW",
+                    "name": "Credit2"
+                },
+                {
+                    "altname": "CREDIT1",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Sets the number of credits to subtract from the leaky bucket for push bus 1. A credit equates to 8-bytes or 1 cycle on the bus. A value of zero equates to 1 credits. A value of 3 equates to 4 credits.",
+                    "mode": "RW",
+                    "name": "Credit1"
+                },
+                {
+                    "altname": "CREDIT0",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Sets the number of credits to subtract from the leaky bucket for push bus 0. A credit equates to 8-bytes or 1 cycle on the bus. A value of zero equates to 1 credits. A value of 3 equates to 4 credits.",
+                    "mode": "RW",
+                    "name": "Credit0"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaDropByteCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_DROP_BYTE_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Upper 32-bits of 64-bit NBI DMA Drop Byte count. Read this register after reading the NbiDmaDropByteCntLo register",
+                    "mode": "RC",
+                    "name": "NbiDmaDropByteCntHi"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaDropByteCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_DROP_BYTE_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 64-bit NBI DMA Drop Byte count. Reading this register latches the value in NbiDmaDropByteCntHi register",
+                    "mode": "RC",
+                    "name": "NbiDmaDropByteCntLo"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaDropPktCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_DROP_PKT_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Upper 16-bits of 48-bit NBI Drop Packet count. Read this register after reading the NbiDmaDropPktCntLo register",
+                    "mode": "RC",
+                    "name": "NbiDmaDropPktCntHi"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaDropPktCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_DROP_PKT_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 48-bit NBI DMA Drop Packet count. Reading this register latches the value in NbiDmaDropPktCntHi register",
+                    "mode": "RC",
+                    "name": "NbiDmaDropPktCntLo"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaPktCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_PKT_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Upper 16-bits of 48-bit NBI Tx Packet count. Read this register after reading the NbiDmaPktCntLo register",
+                    "mode": "RC",
+                    "name": "NbiDmaPktCntHi"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaPktCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_PKT_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 48-bit NBI DMA Tx Packet count. Reading this register latches the value in NbiDmaPktCntHi register",
+                    "mode": "RC",
+                    "name": "NbiDmaPktCntLo"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaRate": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TOKEN_RATE3",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Sets the credit rate for push bus 3. Values are in 4 cycle increments.",
+                    "mode": "RW",
+                    "name": "CreditRate3"
+                },
+                {
+                    "altname": "TOKEN_RATE2",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Sets the credit rate for push bus 2. Values are in 4 cycle increments.",
+                    "mode": "RW",
+                    "name": "CreditRate2"
+                },
+                {
+                    "altname": "TOKEN_RATE1",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Sets the credit rate for push bus 1. Values are in 4 cycle increments.",
+                    "mode": "RW",
+                    "name": "CreditRate1"
+                },
+                {
+                    "altname": "TOKEN_RATE0",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Sets the credit rate for push bus 0. Values are in 4 cycle increments.",
+                    "mode": "RW",
+                    "name": "CreditRate0"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaSpare": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_SPARE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "General use register.",
+                    "mode": "RW",
+                    "name": "NbiDmaSpare"
+                }
+            ]
+        }
+    }
+}

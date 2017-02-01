@@ -1,0 +1,67 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {},
+    "regs": {
+        "credit_tracker_config.CreditThrottleAction": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CONFIG",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "One bit per credit throttler; set to load the config from CreditThrottleConfig into the respective credit throttler",
+                    "mode": "RW",
+                    "name": "Config"
+                },
+                {
+                    "altname": "RUN",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "One bit per credit throttler; set to enable the respective credit throttler",
+                    "mode": "RW",
+                    "name": "Run"
+                }
+            ]
+        },
+        "credit_tracker_config.CreditThrottleConfigOnly": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CONFIG_LFSR",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Modifier for Configure: Enables/disables the use of the linear feedback shift register to control the throttling",
+                    "mode": "RW",
+                    "name": "ConfigLfsr"
+                },
+                {
+                    "altname": "THROTTLE_OFF",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Programmable number of cycles for which 'throttle' is de-asserted ",
+                    "mode": "RW",
+                    "name": "ThrottleOff"
+                },
+                {
+                    "altname": "THROTTLE_ON",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Programmable number of cycles for which 'throttle' is asserted",
+                    "mode": "RW",
+                    "name": "ThrottleOn"
+                },
+                {
+                    "altname": "THROTTLE_MASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Controls which of 8 outputs are stimulated by the credit throttle; a 1 enables the output",
+                    "mode": "RW",
+                    "name": "ThrottleMask"
+                }
+            ]
+        }
+    }
+}

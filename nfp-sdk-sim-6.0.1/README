@@ -1,0 +1,59 @@
+Netronome NFP Simulator for NFP-6XXX/NFP-4XXX
+
+The Netronome NFP simulator is a cycle accurate simulator aimed at simulating code running on a NFP-6XXX/NFP-4XXX processors.
+The simulator runs as separate process and acts as a server to which clients can connect to over TCP.
+For a detailed introduction to the functions of the simulator see the appropriate "Development Tools User's Guide".
+The Development Tools User Guide will from now on be referred to as the "DevTools guide" in the interest of brevity.
+This guide aims to cover the basics of starting and using your simulator on linux. For more detail on a particular tool,
+see the appropriate section in the DevTools guide.
+
+REQUIREMENTS
+
+The simulator does not have external library requirements as all required libraries are bundled along with the
+simulator.
+Hardware requirements: TBD
+
+EXTRACTING THE SIMULATOR TARBALL
+
+The simulator tarball can be extracted to /opt/netronome or another directory of your choice, which will from now on be referred to as <install_prefix>
+This will result in single directory nfp-sdk-<version> under <install_prefix>.
+In order to make interacting with the simulator tools simpler, you may want to add <install-prefix>/nfp-sdk-<version>/bin to your path.
+
+DIRECTORY LAYOUT
+
+bin/					Contains various binaries
+	nfsim				The simulator binary
+	nfp-reg				Tool for reading and writing registers
+	nfp-mem				Tool for reading and writing memories
+	nfp-*				Various other tools for interacting with the simulator. See DevTools guide for more info.
+etc/
+	nfp6000sim.cfg		Config file for 6XXX processors
+	nfp4000sim.cfg		Config file for 4XXX processors
+examples/
+		 nfsim/			Contains various example application that use the simulator API to interact with the simulator.
+						See the README in the examples directory for more information
+include/				Header files defining function used in the simulator API
+lib/					Libraries required by both the simulator and applications using the simulator API
+nfp_chipdata/ 			Contains chip definitions and register maps. See chips.json for a list of available chip IDs (SKUs) and
+						which islands they have enabled.
+
+STARTING THE SIMULATOR
+
+The simulator can started by running the nfsim executable in the bin directory.
+There are various options that can be tuned, see nfsim --help for a full list.
+In addition, the simulator also has a config file which can be found at <install-prefix>/nfp-sdk-<version>/etc/nfp6000sim.cfg.
+The simulator will look for this file by default but alternate config files can also be specified via the --cfgfile/-f option.
+By default the simulator will listen for client connection on port 20606, this can be configured with the -p/--port option.
+The simulator will automatically detect a number of cores available on the running machine and make use of all of them as needed.
+The number of cores that the simulator uses can be controlled with the --threads CNT/-t CNT option.
+Once the simulator starts it will print various log messages to standard out (unless it was started as a daemon).
+
+LOADING FIRMWARE FILES ON THE SIMULATOR
+
+Once a firmware file (.nffw) has been created, we now can load the firmware file into the simulator to run our code and verify that the
+code behaves as expected. Details of generating a nffw file are not covered here and users should consult the Development Tools User's Guide
+for more information.
+The simplest way to run code on the simulator is to do so from Programmer studio.
+In programmer studio, the host and port simulation options must be configured to connect to the host running your linux simulator.
+Once configuration is complete you can start debugging from PS and the linux simulator will be used.
+

@@ -1,0 +1,58 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "crypto_top.CryptoTopXPBMap": {
+            "0x00010000": {
+                "altname": "CRYPTO_CIF",
+                "description": "Crypto CIF CSRs",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CryptoCif",
+                "ptr": "crypto_cif.CryptoCifXpb",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "CRYPTO_CDS_ECC",
+                "description": "Crypto Dispatcher Queue State ECC Monitor CSRs",
+                "name": "CryptoCdsEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "CRYPTO_CPPM_ECC",
+                "description": "Crypto CPP Master (Crypto Buffer) ECC Monitor CSRs. Implemented using ecc_monitor & ecc_monitor4 ECC macro",
+                "name": "CryptoCppmEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            },
+            "0x00070000": {
+                "altname": "CRYPTO_BULK",
+                "description": "Crypto Bulk Director CSRs",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CryptoBulk",
+                "ptr": "crypto_bulk.CryptoBulkXpb",
+                "type": "regmap"
+            },
+            "0x00080000": {
+                "altname": "CRYPTO_CORE%d",
+                "description": "Crypto Bulk Crypt Core CSRs",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CryptoCore%d",
+                "offinc1": "0x00010000",
+                "ptr": "crypto_bulkeng.CryptoBulkEngXpb",
+                "repeat1": 6,
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

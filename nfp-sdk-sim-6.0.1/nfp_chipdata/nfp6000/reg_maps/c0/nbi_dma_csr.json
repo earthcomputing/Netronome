@@ -1,0 +1,2317 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "nbi_dma_csr.NbiDmaCsr": {
+            "0x00000000": {
+                "altname": "NBI_DMA_CFG",
+                "description": "NBI DMA Configuration register",
+                "name": "NbiDmaCfg",
+                "ptr": "nbi_dma_csr.NbiDmaCfg",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "NBI_DMA_SPARE",
+                "description": "General Purpose Register",
+                "name": "NbiDmaSpare",
+                "ptr": "nbi_dma_csr.NbiDmaSpare",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "NBI_DMA_BLQ_EVENT",
+                "description": "NBI DMA Buffer List Queue Event Control",
+                "name": "NbiDmaBlqEvent",
+                "ptr": "nbi_dma_csr.NbiDmaBlqEvent",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "NBI_DMA_RATE",
+                "description": "NBI DMA Token Refresh Rate Register",
+                "name": "NbiDmaRate",
+                "ptr": "nbi_dma_csr.NbiDmaRate",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "NBI_DMA_CREDIT",
+                "description": "NBI DMA Token Credit Registers",
+                "name": "NbiDmaCredit",
+                "ptr": "nbi_dma_csr.NbiDmaCredit",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "BPE_CHAIN_END",
+                "description": "NBI DMA BPE Chain End Register",
+                "name": "NbiDmaBpeChainEnd",
+                "ptr": "nbi_dma_csr.NbiDmaBpeChainEnd",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "NBI_DMA_BP%d_CFG",
+                "description": "NBI DMA Buffer Pool %d Configuration",
+                "name": "NbiDmaBP%dCfg",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_dma_csr.NbiDmaBPCfg",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "NBI_DMA_BPE%d_CFG",
+                "description": "NBI DMA Buffer Pool Entry %d Configuration",
+                "name": "NbiDmaBpe%dCfg",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_dma_csr.NbiDmaBpeCfg",
+                "repeat1": 32,
+                "type": "reg"
+            },
+            "0x000000c0": {
+                "altname": "NBI_DMA_PKT_CNT_LO",
+                "description": "Nbi Dma Pkt Counter Low 32-bits",
+                "name": "NbiDmaPktCntLo",
+                "ptr": "nbi_dma_csr.NbiDmaPktCntLo",
+                "type": "reg"
+            },
+            "0x000000c4": {
+                "altname": "NBI_DMA_PKT_CNT_HI",
+                "description": "Nbi Dma Pkt Counter High 16-bits",
+                "name": "NbiDmaPktCntHi",
+                "ptr": "nbi_dma_csr.NbiDmaPktCntHi",
+                "type": "reg"
+            },
+            "0x000000c8": {
+                "altname": "NBI_DMA_BYTE_CNT_LO",
+                "description": "Nbi Dma Byte Counter Low 32-bits",
+                "name": "NbiDmaByteCntLo",
+                "ptr": "nbi_dma_csr.NbiDmaByteCntLo",
+                "type": "reg"
+            },
+            "0x000000cc": {
+                "altname": "NBI_DMA_BYTE_CNT_HI",
+                "description": "Nbi Dma Byte Counter High 32-bits",
+                "name": "NbiDmaByteCntHi",
+                "ptr": "nbi_dma_csr.NbiDmaByteCntHi",
+                "type": "reg"
+            },
+            "0x000000d0": {
+                "altname": "NBI_DMA_DROP_PKT_CNT_LO",
+                "description": "Nbi Dma Drop Pkt Counter Low 32-bits",
+                "name": "NbiDmaDropPktCntLo",
+                "ptr": "nbi_dma_csr.NbiDmaDropPktCntLo",
+                "type": "reg"
+            },
+            "0x000000d4": {
+                "altname": "NBI_DMA_DROP_PKT_CNT_HI",
+                "description": "Nbi Dma Drop Pkt Counter High 16-bits",
+                "name": "NbiDmaDropPktCntHi",
+                "ptr": "nbi_dma_csr.NbiDmaDropPktCntHi",
+                "type": "reg"
+            },
+            "0x000000d8": {
+                "altname": "NBI_DMA_DROP_BYTE_CNT_LO",
+                "description": "Nbi Dma Drop Byte Counter Low 32-bits",
+                "name": "NbiDmaDropByteCntLo",
+                "ptr": "nbi_dma_csr.NbiDmaDropByteCntLo",
+                "type": "reg"
+            },
+            "0x000000dc": {
+                "altname": "NBI_DMA_DROP_BYTE_CNT_HI",
+                "description": "Nbi Dma Drop Byte Counter High 32-bits",
+                "name": "NbiDmaDropByteCntHi",
+                "ptr": "nbi_dma_csr.NbiDmaDropByteCntHi",
+                "type": "reg"
+            },
+            "0x00000148": {
+                "altname": "NBI_DMA_BP%d_CTMCR_THRESH",
+                "description": "NBI DMA Buffer Pool CTM Credit Thresholds.",
+                "name": "NbiDmaBP%dCtmCrThresh",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_dma_csr.NbiDmaBPCtmCrThresh",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000168": {
+                "altname": "BLQ_NULL_MU_PTR",
+                "description": "Programmable Null Memory Buffer Pointer.",
+                "name": "BlqNullMuPtr",
+                "ptr": "nbi_dma_csr.BlqNullMuPtr",
+                "type": "reg"
+            },
+            "0x0000016c": {
+                "altname": "NBI_DMA_SEQ_NUM%d",
+                "description": "Sequence Numbers for Sequencer %d",
+                "name": "NbiDmaSeqNum%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_dma_csr.NbiDmaSeqNum",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x0000018c": {
+                "altname": "NBI_DMA_FLOW_CONTROLTHRESHOLD%d",
+                "description": " Port based Flow Control Threshold %d",
+                "name": "NbiDmaFlowControlThreshold%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlThreshold",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x000001cc": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CONFIG0",
+                "description": " Port based Flow Control Config",
+                "name": "NbiDmaFlowControlConfig0",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlConfig0",
+                "type": "reg"
+            },
+            "0x000001d0": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CONFIG1",
+                "description": " Port based Flow Control Config",
+                "name": "NbiDmaFlowControlConfig1",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlConfig1",
+                "type": "reg"
+            },
+            "0x000001d4": {
+                "altname": "NBI_DMA_FLOW_CONTROL_STATUS0",
+                "description": " Port based Flow Control status",
+                "name": "NbiDmaFlowControlStatus0",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlStatus0",
+                "type": "reg"
+            },
+            "0x000001d8": {
+                "altname": "NBI_DMA_FLOW_CONTROL_STATUS1",
+                "description": " Port based Flow Control Status",
+                "name": "NbiDmaFlowControlStatus1",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlStatus1",
+                "type": "reg"
+            },
+            "0x000001dc": {
+                "altname": "NBI_DMA_FLOW_CONTROL_PORT_BUCKET_STATUS0",
+                "description": " Port based Flow Control Status",
+                "name": "NbiDmaFlowControlPortBucketStatus0",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlPortBucketStatus0",
+                "type": "reg"
+            },
+            "0x000001e0": {
+                "altname": "NBI_DMA_FLOW_CONTROL_PORT_BUCKET_STATUS1",
+                "description": " Port based Flow Control Status",
+                "name": "NbiDmaFlowControlPortBucketStatus1",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlPortBucketStatus1",
+                "type": "reg"
+            },
+            "0x000001e4": {
+                "altname": "NBI_DMA_FLOW_CONTROL_PORT_BUCKET_STATUS2",
+                "description": " Port based Flow Control Status",
+                "name": "NbiDmaFlowControlPortBucketStatus2",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlPortBucketStatus2",
+                "type": "reg"
+            },
+            "0x000001e8": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP0",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap0",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap0",
+                "type": "reg"
+            },
+            "0x000001ec": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP1",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap1",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap1",
+                "type": "reg"
+            },
+            "0x000001f0": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP2",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap2",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap2",
+                "type": "reg"
+            },
+            "0x000001f4": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP3",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap3",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap3",
+                "type": "reg"
+            },
+            "0x000001f8": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP4",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap4",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap4",
+                "type": "reg"
+            },
+            "0x000001fc": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP5",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap5",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap5",
+                "type": "reg"
+            },
+            "0x00000200": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP6",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap6",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap6",
+                "type": "reg"
+            },
+            "0x00000204": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP7",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap7",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap7",
+                "type": "reg"
+            },
+            "0x00000208": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP8",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap8",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap8",
+                "type": "reg"
+            },
+            "0x0000020c": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP9",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap9",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap9",
+                "type": "reg"
+            },
+            "0x00000210": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP10",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap10",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap10",
+                "type": "reg"
+            },
+            "0x00000214": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP11",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap11",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap11",
+                "type": "reg"
+            },
+            "0x00000218": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP12",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap12",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap12",
+                "type": "reg"
+            },
+            "0x0000021c": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP13",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap13",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap13",
+                "type": "reg"
+            },
+            "0x00000220": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP14",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap14",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap14",
+                "type": "reg"
+            },
+            "0x00000224": {
+                "altname": "NBI_DMA_FLOW_CONTROL_CHANNEL_PORT_MAP15",
+                "description": " Channel to Port Map",
+                "name": "NbiDmaFlowControlChannelPortMap15",
+                "ptr": "nbi_dma_csr.NbiDmaFlowControlChannelPortMap15",
+                "type": "reg"
+            }
+        },
+        "nbi_dma_csr.NbiDmaXpbAddressMap": {
+            "0x00000000": {
+                "altname": "NBI_DMA_CSR",
+                "description": "NBI DMA CSRs",
+                "name": "NbiDmaCsr",
+                "ptr": "nbi_dma_csr.NbiDmaCsr",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "NBI_DMA_BD_ECC",
+                "description": "NBI DMA Buffer Descriptor SRAM ECC Monitor",
+                "name": "NbiDmaBDEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "NBI_DMA_BC_ECC",
+                "description": "NBI DMA Buffer Completion SRAM ECC Monitor",
+                "name": "NbiDmaBCEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "NBI_DMA_DS_ECC",
+                "description": "NBI DMA State SRAM ECC Monitor . Implemented using 2 ecc_monitor & ecc_monitor2 macro.",
+                "name": "NbiDmaDSEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControl_2",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {
+        "nbi_dma_csr.BlqNullMuPtr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BLQ_NULL_MU_PTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 28,
+                    "description": " Programmable Null Memory Buffer Pointer.",
+                    "mode": "RW",
+                    "name": "BlqNullMuPtr"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaBPCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BLQ_BYPASS_ENA",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "When set, selects to use a null buffer descriptor if the packet is not split. The selection can also be made per packet using the preclassifier metadata_0 bits [1;6]\nwhen the BlOverrideEna is set.",
+                    "mode": "RW",
+                    "name": "BlqBypassEna"
+                },
+                {
+                    "altname": "OVERRIDE_ENA",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": " When set, Preclassifier metadata_0 bits [3;3] (PcBlistOverride) are used to select a buffer list override and metadata_0 bits [1;6] (PcBlqBypassEna) selects to use a null buffer descriptor if the packet is not split.",
+                    "mode": "RW",
+                    "name": "BlOverrideEna"
+                },
+                {
+                    "altname": "CTM_BUF_PAD",
+                    "bit_lsb": 18,
+                    "bit_msb": 21,
+                    "description": "Selects the number of 32 bytes to add to the allocation size of the packet. Allows padding to the allocated space in the CTM for smaller packets in increments of 32B. 0=32B, 1=64B, 0xf=512B.",
+                    "mode": "RW",
+                    "name": "CtmBufPad"
+                },
+                {
+                    "altname": "CTM_BUF_PAD_ENA",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Enables adding CtmBufPad bytes to the allocation size of the packet.",
+                    "mode": "RW",
+                    "name": "CtmBufPadEna"
+                },
+                {
+                    "altname": "CTM_OFFSET_MSB",
+                    "bit_lsb": 14,
+                    "bit_msb": 16,
+                    "description": "\n                 When the EnaEnhCtmOffset bit of the NbiDmaCfg register is a zero, this field is not used. \nWhen EnaEnhCtmOffset is a one, this field represents the MSbits of CtmOffset and defines the offset to add to the data reference when starting to write packet data to the CTM. The space in front of the packet is for the rewrite script used by the packet modifier. Encoding of {CtmOffsetMsb[3;0],CtmOffset} are: 0000 = 32B, 0001=64B, 0010=96B, 0011 = 128B, 0100 = 160B, ... 1111 = 512B",
+                    "mode": "RW",
+                    "name": "CtmOffsetMsb"
+                },
+                {
+                    "altname": "DROP_EN",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Enables a packet to be dropped when buffer or packet credits run out or there are no MU buffers left on the selected buffer list. When cleared packets are not dropped and the logic backs up waiting for credits to arrive.",
+                    "mode": "RW",
+                    "name": "DropEn"
+                },
+                {
+                    "altname": "CTM_OFFSET",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "When the EnaEnhCtmOffset bit of the NbiDmaCfg register is a zero, this field controls the CtmOffset in Compatability mode. In Compatability mode a CtmOffset = 0 equates to a CTM offset of 128 Bytes and a CtmOffset = 1 equates to a CTM offset of 64 Bytes. \nWhen the EnaEnhCtmOffset is a one this field contains the LSbit of CtmOffset. See description of CtmOffsetMsb.",
+                    "mode": "RW",
+                    "name": "CtmOffset"
+                },
+                {
+                    "altname": "PRI_BP_LIST",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Primary Buffer list number associated. There are 4 buffer lists available, which contain\n                 buffer descriptors that are used to store packet data in internal/external MUs.",
+                    "mode": "RW",
+                    "name": "PriBList"
+                },
+                {
+                    "altname": "SEC_BP_LIST",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Secondary Buffer list number associated. There are 4 buffer lists available, which contain\n                 buffer descriptors that are used to store packet data in internal/external MUs.",
+                    "mode": "RW",
+                    "name": "SecBList"
+                },
+                {
+                    "altname": "SPLIT_LENGTH",
+                    "bit_lsb": 5,
+                    "bit_msb": 7,
+                    "description": "Encoded packet size used when deciding to split packets between CTM and internal/external MUs.\n                 The encoding is in powers of 2 starting at 256 bytes.",
+                    "mode": "RW",
+                    "name": "SplitLength"
+                },
+                {
+                    "altname": "BPE_HEAD",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Pointer to the first Buffer Pool Entry register in the list associated with this buffer pool.",
+                    "mode": "RW",
+                    "name": "BpeHead"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaBPCtmCrThresh": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "THRESHOLD2",
+                    "bit_lsb": 20,
+                    "bit_msb": 29,
+                    "description": "Configures Threshold2 for the CTM credits. The packet color value is 2b11 if: credit < Threshold2.",
+                    "mode": "RW",
+                    "name": "Threshold2"
+                },
+                {
+                    "altname": "THRESHOLD1",
+                    "bit_lsb": 10,
+                    "bit_msb": 19,
+                    "description": "Configures Threshold1 for the CTM credits. The packet color value is 2b10 if: Threshold2  <=  credit  < Threshold1.",
+                    "mode": "RW",
+                    "name": "Threshold1"
+                },
+                {
+                    "altname": "THRESHOLD0",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "Configures Threshold0 for the CTM credits. The packet color value is 2b01 if : Threshold1  <=  credit  < Threshold0, else it remains 2b00 if credit >= Threshold0.",
+                    "mode": "RW",
+                    "name": "Threshold0"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaBlqEvent": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DIS_BLQ_EVENT_FIFO_FULL_ASSERT",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Set this bit to disable the BLQ Event FIFO overflow assertion",
+                    "mode": "RW",
+                    "name": "DisBLQEventFifoFullAssert"
+                },
+                {
+                    "altname": "BLQEVENT_THRESHOLD3",
+                    "bit_lsb": 18,
+                    "bit_msb": 19,
+                    "description": "An event is generated every N buffer descriptors read from buffer list queue3, where N is configurable from 16 to 128.",
+                    "mode": "RW",
+                    "name": "BLQEventThreshold3"
+                },
+                {
+                    "altname": "BLQEVENT_THRESHOLD2",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "An event is generated every N buffer descriptors read from buffer list queue2, where N is configurable from 16 to 128.",
+                    "mode": "RW",
+                    "name": "BLQEventThreshold2"
+                },
+                {
+                    "altname": "BLQEVENT_THRESHOLD1",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "An event is generated every N buffer descriptors read from buffer list queue1, where N is configurable from 16 to 128.",
+                    "mode": "RW",
+                    "name": "BLQEventThreshold1"
+                },
+                {
+                    "altname": "BLQEVENT_THRESHOLD0",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "An event is generated every N buffer descriptors read from buffer list queue0, where N is configurable from 16 to 128.",
+                    "mode": "RW",
+                    "name": "BLQEventThreshold0"
+                },
+                {
+                    "altname": "BLQ_EVENT_NOT_FULL_ENABLE",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "One bit per buffer list queue. Enables the generation of BLQ Events when the queue transitions from full to not full. Disabled when clear. \nThe event type value used is 0x1 (event_type_fifo_not_full)",
+                    "mode": "RW",
+                    "name": "BLQEventNotFullEnable"
+                },
+                {
+                    "altname": "BLQ_EVENT_STATUS_ENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "One bit per buffer list queue. Enables BLQ Status Events when set. Disabled when clear. A Status Event is sent when the number of entries read from the queue reaches the programmed value in the BLQEventThreshold register.  The event type value used is 0x5 (event_type_value_update)",
+                    "mode": "RW",
+                    "name": "BLQEventStatusEnable"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaBpeCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BPE_NUM",
+                    "bit_lsb": 27,
+                    "bit_msb": 31,
+                    "description": "Buffer Pool Entry Number. When the register is written this value is the latched version of the buffer pool register number 0-31. Used for debug purposes.",
+                    "mode": "RWL",
+                    "name": "BpeNum"
+                },
+                {
+                    "altname": "CTM",
+                    "bit_lsb": 21,
+                    "bit_msb": 26,
+                    "description": "CTM number to use",
+                    "mode": "RW",
+                    "name": "Ctm"
+                },
+                {
+                    "altname": "PKT_CREDIT",
+                    "bit_lsb": 10,
+                    "bit_msb": 20,
+                    "description": "Configures the number of packets allocated to the CTM",
+                    "mode": "RW",
+                    "name": "PktCredit"
+                },
+                {
+                    "altname": "BUF_CREDIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "Configures the number of buffer credits in 2K byte increments associated with the CTM. The msbit is the sign bit and must be cleared during configuration.",
+                    "mode": "RW",
+                    "name": "BufCredit"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaBpeChainEnd": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BPE_CHAIN_END",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": " Configures BPE module 'n' as the end of the buffer pool entry chain, where 'n' = 0 to 31.",
+                    "mode": "RW",
+                    "name": "BpeChainEnd"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaByteCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_BYTE_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Upper 32-bits of 64-bit NBI DMA Tx Byte count.  Read this register after reading the NbiDmaByteCntLo register",
+                    "mode": "RC",
+                    "name": "NbiDmaByteCntHi"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaByteCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_BYTE_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 64-bit NBI DMA Tx Byte count. Reading this register latches the value in NbiDmaByteCntHi register",
+                    "mode": "RC",
+                    "name": "NbiDmaByteCntLo"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PACKET_COLOR_ENABLE",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "When set, the NBI DMA adds 2-bit packet color in Picoengine metadata based on the CTM's credit level.",
+                    "mode": "RW",
+                    "name": "PacketColorEnable"
+                },
+                {
+                    "altname": "SEQ_NUM_OVERRIDE",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "When set, the NBI DMA overrides the Sequence Numbers in the PicoEngine metadata to avoid holes due to drops",
+                    "mode": "RW",
+                    "name": "SeqNumOverride"
+                },
+                {
+                    "altname": "POLL_RESP_NO_WAIT_ENA",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "When set, CTM Polling command responses are processed as they arrive. When cleared, CTM Polling command responses are processed after all outstanding responses have arrived",
+                    "mode": "RW",
+                    "name": "PollRespNoWaitEna"
+                },
+                {
+                    "altname": "BPE_RR_ARB_ENA",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Controls arbitratin mode of BPE module swapping. Set this bit to enable round-robin mode of arbitration",
+                    "mode": "RW",
+                    "name": "BpeRRArbEna"
+                },
+                {
+                    "altname": "ENA_ENH_CTM_OFFSET",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Controls how the CtmOffset field of the NbiDmaBPCfg registers operates.",
+                    "mode": "RW",
+                    "name": "EnaEnhCtmOffset"
+                },
+                {
+                    "altname": "DIS_PUSHBUS_SELECT",
+                    "bit_lsb": 17,
+                    "bit_msb": 20,
+                    "description": "Disables a push bus from being selected by the read arbiter when set. Used to force packet traffic to not use a particular push bus.",
+                    "mode": "RW",
+                    "name": "DisPushBusSelect"
+                },
+                {
+                    "altname": "DIS_BCRAM_ERR",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Controls how the DMA engine handles multi-bit ECC errors received from the Buffer Completion RAM.",
+                    "mode": "RW",
+                    "name": "DisBcRamErr"
+                },
+                {
+                    "altname": "DIS_DSRAM_ERR",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Controls how the DMA engine handles multi-bit ECC errors received from the DMA State RAM.",
+                    "mode": "RW",
+                    "name": "DisDsRamErr"
+                },
+                {
+                    "altname": "DIS_BDRAM_ERR",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Controls how the BLQ logic handles multi-bit ECC errors received from the Buffer Descriptor RAM",
+                    "mode": "RW",
+                    "name": "DisBdRamErr"
+                },
+                {
+                    "altname": "DIS_BUFRD_ERR",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Controls how the hardware forwards the received NBI Buffer Memory Read Error to the output data buses.",
+                    "mode": "RW",
+                    "name": "DisBufRdErr"
+                },
+                {
+                    "altname": "DIS_RXPUSH_LAST_ERR",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Controls how the hardware responds to a push bus input protocol error for allocation response transactions",
+                    "mode": "RW",
+                    "name": "DisRxPushLastErr"
+                },
+                {
+                    "altname": "DIS_RXALLOC_IN_ERR",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Controls how the hardware responds to a push bus input error for allocation response transactions.",
+                    "mode": "RW",
+                    "name": "DisRxAllocInErr"
+                },
+                {
+                    "altname": "DIS_RXBLQWR_IN_ERR",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Controls how the hardware responds to a push bus input error for BLQ writes transactions.",
+                    "mode": "RW",
+                    "name": "DisRxBlqWrInErr"
+                },
+                {
+                    "altname": "NBI_NUM",
+                    "bit_lsb": 7,
+                    "bit_msb": 9,
+                    "description": "This field is placed in the 3 lsbits of the Packet Allocation Command Address field. It is used\n                            by the CTM to identify which NBI sent the command.",
+                    "mode": "RW",
+                    "name": "NbiNum"
+                },
+                {
+                    "altname": "CTM_POLL_ENA",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Configures whether the polling function is enabled or disabled.",
+                    "mode": "RW",
+                    "name": "CtmPollEna"
+                },
+                {
+                    "altname": "CTM_POLL_INTVL",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Configures the minimum amount of time between packet allocation poll commands in clock cycles.",
+                    "mode": "RW",
+                    "name": "CtmPollIntvl"
+                },
+                {
+                    "altname": "POLL_CMD_ISSUE_RATE",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Configures the minimum space between CPP Polling commands issued after the polling interval has expired",
+                    "mode": "RW",
+                    "name": "PollCmdIssueRate"
+                },
+                {
+                    "altname": "RATE_LIMIT_ENABLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Selects whether to limit the bandwidth on the four Push Buses.",
+                    "mode": "RW",
+                    "name": "RateLimitEnable"
+                },
+                {
+                    "altname": "POLL_SEARCH_ENA",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Enable searching for next CTM to poll",
+                    "mode": "RW",
+                    "name": "PollSearchEna"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaCredit": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "THRESHOLD3",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "Sets the threshold that the leaky bucket is closed. Values are in increments of 16 Credits. A value of 0 equates to 16 credits or 128 bytes. A value of 3 equates to 64 credits or 512 bytes.",
+                    "mode": "RW",
+                    "name": "Threshold3"
+                },
+                {
+                    "altname": "THRESHOLD2",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "Sets the threshold that the leaky bucket is closed. Values are in increments of 16 Credits. A value of 0 equates to 16 credits or 128 bytes. A value of 3 equates to 64 credits or 512 bytes.",
+                    "mode": "RW",
+                    "name": "Threshold2"
+                },
+                {
+                    "altname": "THRESHOLD1",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Sets the threshold that the leaky bucket is closed. Values are in increments of 16 Credits. A value of 0 equates to 16 credits or 128 bytes. A value of 3 equates to 64 credits or 512 bytes.",
+                    "mode": "RW",
+                    "name": "Threshold1"
+                },
+                {
+                    "altname": "THRESHOLD0",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Sets the threshold that the leaky bucket is closed. Values are in increments of 16 Credits. A value of 0 equates to 16 credits or 128 bytes. A value of 3 equates to 64 credits or 512 bytes.",
+                    "mode": "RW",
+                    "name": "Threshold0"
+                },
+                {
+                    "altname": "CREDIT3",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Sets the number of credits to subtract from the leaky bucket for push bus 3. A credit equates to 8-bytes or 1 cycle on the bus. A value of zero equates to 1 credits. A value of 3 equates to 4 credits.",
+                    "mode": "RW",
+                    "name": "Credit3"
+                },
+                {
+                    "altname": "CREDIT2",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Sets the number of credits to subtract from the leaky bucket for push bus 2. A credit equates to 8-bytes or 1 cycle on the bus. A value of zero equates to 1 credits. A value of 3 equates to 4 credits.",
+                    "mode": "RW",
+                    "name": "Credit2"
+                },
+                {
+                    "altname": "CREDIT1",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Sets the number of credits to subtract from the leaky bucket for push bus 1. A credit equates to 8-bytes or 1 cycle on the bus. A value of zero equates to 1 credits. A value of 3 equates to 4 credits.",
+                    "mode": "RW",
+                    "name": "Credit1"
+                },
+                {
+                    "altname": "CREDIT0",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Sets the number of credits to subtract from the leaky bucket for push bus 0. A credit equates to 8-bytes or 1 cycle on the bus. A value of zero equates to 1 credits. A value of 3 equates to 4 credits.",
+                    "mode": "RW",
+                    "name": "Credit0"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaDbgPaStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ACTIVE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "When a packet allocation context becomes active the bit that corresponds to the packet allocation context is set. Clears on read",
+                    "mode": "RC",
+                    "name": "Active"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaDropByteCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_DROP_BYTE_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Upper 32-bits of 64-bit NBI DMA Drop Byte count. Read this register after reading the NbiDmaDropByteCntLo register",
+                    "mode": "RC",
+                    "name": "NbiDmaDropByteCntHi"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaDropByteCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_DROP_BYTE_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 64-bit NBI DMA Drop Byte count. Reading this register latches the value in NbiDmaDropByteCntHi register",
+                    "mode": "RC",
+                    "name": "NbiDmaDropByteCntLo"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaDropPktCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_DROP_PKT_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Upper 16-bits of 48-bit NBI Drop Packet count. Read this register after reading the NbiDmaDropPktCntLo register",
+                    "mode": "RC",
+                    "name": "NbiDmaDropPktCntHi"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaDropPktCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_DROP_PKT_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 48-bit NBI DMA Drop Packet count. Reading this register latches the value in NbiDmaDropPktCntHi register",
+                    "mode": "RC",
+                    "name": "NbiDmaDropPktCntLo"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL7",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel7"
+                },
+                {
+                    "altname": "CHANNEL6",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel6"
+                },
+                {
+                    "altname": "CHANNEL5",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel5"
+                },
+                {
+                    "altname": "CHANNEL4",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel4"
+                },
+                {
+                    "altname": "CHANNEL3",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel3"
+                },
+                {
+                    "altname": "CHANNEL2",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel2"
+                },
+                {
+                    "altname": "CHANNEL1",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel1"
+                },
+                {
+                    "altname": "CHANNEL0",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel0"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL15",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel15"
+                },
+                {
+                    "altname": "CHANNEL14",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel14"
+                },
+                {
+                    "altname": "CHANNEL13",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel13"
+                },
+                {
+                    "altname": "CHANNEL12",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel12"
+                },
+                {
+                    "altname": "CHANNEL11",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel11"
+                },
+                {
+                    "altname": "CHANNEL10",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel10"
+                },
+                {
+                    "altname": "CHANNEL9",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel9"
+                },
+                {
+                    "altname": "CHANNEL8",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel8"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap10": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL87",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel87"
+                },
+                {
+                    "altname": "CHANNEL86",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel86"
+                },
+                {
+                    "altname": "CHANNEL85",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel85"
+                },
+                {
+                    "altname": "CHANNEL84",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel84"
+                },
+                {
+                    "altname": "CHANNEL83",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel83"
+                },
+                {
+                    "altname": "CHANNEL82",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel82"
+                },
+                {
+                    "altname": "CHANNEL81",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel81"
+                },
+                {
+                    "altname": "CHANNEL80",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel80"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap11": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL95",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel95"
+                },
+                {
+                    "altname": "CHANNEL94",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel94"
+                },
+                {
+                    "altname": "CHANNEL93",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel93"
+                },
+                {
+                    "altname": "CHANNEL92",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel92"
+                },
+                {
+                    "altname": "CHANNEL91",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel91"
+                },
+                {
+                    "altname": "CHANNEL90",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel90"
+                },
+                {
+                    "altname": "CHANNEL89",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel89"
+                },
+                {
+                    "altname": "CHANNEL88",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel88"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap12": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL103",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel103"
+                },
+                {
+                    "altname": "CHANNEL102",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel102"
+                },
+                {
+                    "altname": "CHANNEL101",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel101"
+                },
+                {
+                    "altname": "CHANNEL100",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel100"
+                },
+                {
+                    "altname": "CHANNEL99",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel99"
+                },
+                {
+                    "altname": "CHANNEL98",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel98"
+                },
+                {
+                    "altname": "CHANNEL97",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel97"
+                },
+                {
+                    "altname": "CHANNEL96",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel96"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap13": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL111",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel111"
+                },
+                {
+                    "altname": "CHANNEL110",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel110"
+                },
+                {
+                    "altname": "CHANNEL109",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel109"
+                },
+                {
+                    "altname": "CHANNEL108",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel108"
+                },
+                {
+                    "altname": "CHANNEL107",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel107"
+                },
+                {
+                    "altname": "CHANNEL106",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel106"
+                },
+                {
+                    "altname": "CHANNEL105",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel105"
+                },
+                {
+                    "altname": "CHANNEL104",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel104"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap14": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL119",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel119"
+                },
+                {
+                    "altname": "CHANNEL118",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel118"
+                },
+                {
+                    "altname": "CHANNEL117",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel117"
+                },
+                {
+                    "altname": "CHANNEL116",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel116"
+                },
+                {
+                    "altname": "CHANNEL115",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel115"
+                },
+                {
+                    "altname": "CHANNEL114",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel114"
+                },
+                {
+                    "altname": "CHANNEL113",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel113"
+                },
+                {
+                    "altname": "CHANNEL112",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel112"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap15": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL127",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel127"
+                },
+                {
+                    "altname": "CHANNEL126",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel126"
+                },
+                {
+                    "altname": "CHANNEL125",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel125"
+                },
+                {
+                    "altname": "CHANNEL124",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel124"
+                },
+                {
+                    "altname": "CHANNEL123",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel123"
+                },
+                {
+                    "altname": "CHANNEL122",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel122"
+                },
+                {
+                    "altname": "CHANNEL121",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel121"
+                },
+                {
+                    "altname": "CHANNEL120",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel120"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL23",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel23"
+                },
+                {
+                    "altname": "CHANNEL22",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel22"
+                },
+                {
+                    "altname": "CHANNEL21",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel21"
+                },
+                {
+                    "altname": "CHANNEL20",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel20"
+                },
+                {
+                    "altname": "CHANNEL19",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel19"
+                },
+                {
+                    "altname": "CHANNEL18",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel18"
+                },
+                {
+                    "altname": "CHANNEL17",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel17"
+                },
+                {
+                    "altname": "CHANNEL16",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel16"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL31",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel31"
+                },
+                {
+                    "altname": "CHANNEL30",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel30"
+                },
+                {
+                    "altname": "CHANNEL29",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel29"
+                },
+                {
+                    "altname": "CHANNEL28",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel28"
+                },
+                {
+                    "altname": "CHANNEL27",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel27"
+                },
+                {
+                    "altname": "CHANNEL26",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel26"
+                },
+                {
+                    "altname": "CHANNEL25",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel25"
+                },
+                {
+                    "altname": "CHANNEL24",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel24"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap4": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL39",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel39"
+                },
+                {
+                    "altname": "CHANNEL38",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel38"
+                },
+                {
+                    "altname": "CHANNEL37",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel37"
+                },
+                {
+                    "altname": "CHANNEL36",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel36"
+                },
+                {
+                    "altname": "CHANNEL35",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel35"
+                },
+                {
+                    "altname": "CHANNEL34",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel34"
+                },
+                {
+                    "altname": "CHANNEL33",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel33"
+                },
+                {
+                    "altname": "CHANNEL32",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel32"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap5": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL47",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel47"
+                },
+                {
+                    "altname": "CHANNEL46",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel46"
+                },
+                {
+                    "altname": "CHANNEL45",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel45"
+                },
+                {
+                    "altname": "CHANNEL44",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel44"
+                },
+                {
+                    "altname": "CHANNEL43",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel43"
+                },
+                {
+                    "altname": "CHANNEL42",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel42"
+                },
+                {
+                    "altname": "CHANNEL41",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel41"
+                },
+                {
+                    "altname": "CHANNEL40",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel40"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap6": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL55",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel55"
+                },
+                {
+                    "altname": "CHANNEL54",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel54"
+                },
+                {
+                    "altname": "CHANNEL53",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel53"
+                },
+                {
+                    "altname": "CHANNEL52",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel52"
+                },
+                {
+                    "altname": "CHANNEL51",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel51"
+                },
+                {
+                    "altname": "CHANNEL50",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel50"
+                },
+                {
+                    "altname": "CHANNEL49",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel49"
+                },
+                {
+                    "altname": "CHANNEL48",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel48"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap7": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL63",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel63"
+                },
+                {
+                    "altname": "CHANNEL62",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel62"
+                },
+                {
+                    "altname": "CHANNEL61",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel61"
+                },
+                {
+                    "altname": "CHANNEL60",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel60"
+                },
+                {
+                    "altname": "CHANNEL59",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel59"
+                },
+                {
+                    "altname": "CHANNEL58",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel58"
+                },
+                {
+                    "altname": "CHANNEL57",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel57"
+                },
+                {
+                    "altname": "CHANNEL56",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel56"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap8": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL71",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel71"
+                },
+                {
+                    "altname": "CHANNEL70",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel70"
+                },
+                {
+                    "altname": "CHANNEL69",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel69"
+                },
+                {
+                    "altname": "CHANNEL68",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel68"
+                },
+                {
+                    "altname": "CHANNEL67",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel67"
+                },
+                {
+                    "altname": "CHANNEL66",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel66"
+                },
+                {
+                    "altname": "CHANNEL65",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel65"
+                },
+                {
+                    "altname": "CHANNEL64",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel64"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlChannelPortMap9": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNEL79",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel79"
+                },
+                {
+                    "altname": "CHANNEL78",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel78"
+                },
+                {
+                    "altname": "CHANNEL77",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel77"
+                },
+                {
+                    "altname": "CHANNEL76",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel76"
+                },
+                {
+                    "altname": "CHANNEL75",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel75"
+                },
+                {
+                    "altname": "CHANNEL74",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel74"
+                },
+                {
+                    "altname": "CHANNEL73",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel73"
+                },
+                {
+                    "altname": "CHANNEL72",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the Channel to Port Mapping",
+                    "mode": "RW",
+                    "name": "Channel72"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlConfig0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "T0_FRACTION",
+                    "bit_lsb": 21,
+                    "bit_msb": 23,
+                    "description": " Programmed value is threshold 0 in terms of a fraction of CTM Capacity: When the Total Packet Bucket climbs to this threshold the Auto Threshold State Machine transitions from State 0 to State 1.  This value must be largest of the three T#fractions. ",
+                    "mode": "RW",
+                    "name": "T0fraction"
+                },
+                {
+                    "altname": "T1_FRACTION",
+                    "bit_lsb": 18,
+                    "bit_msb": 20,
+                    "description": " Programmed value is threshold 1 in terms of a fraction of CTM Capacity: When the Total Packet Bucket falls to this threshold the Auto Threshold State Machine transitions from State 1 to State 0.  This value must be between T0fraction and T2fraction.",
+                    "mode": "RW",
+                    "name": "T1fraction"
+                },
+                {
+                    "altname": "T2_FRACTION",
+                    "bit_lsb": 15,
+                    "bit_msb": 17,
+                    "description": " Programmed value is threshold 2 in terms of a fraction of CTM Capacity: When the Total Packet Bucket falls to this threshold the Auto Threshold State Machine transitions from State 2 to State 0.  This value must be smallest of the three T#fractions.",
+                    "mode": "RW",
+                    "name": "T2fraction"
+                },
+                {
+                    "altname": "AUTO_THRESHOLD_TIMEOUT",
+                    "bit_lsb": 12,
+                    "bit_msb": 14,
+                    "description": " Programmed value controls the number of packets while in State 1 after which the Auto Threshold State Machine will transition from State 1 to State 2 ",
+                    "mode": "RW",
+                    "name": "AutoThresholdTimeout"
+                },
+                {
+                    "altname": "AUTO_THRESHOLD_ENABLE",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": " When programmed to 1, enables the Auto Threshold State Machine to execute the high-level algorithm that periodically re-adjusts the individual port bucket thresholds that govern the per port XON/XOFF flow control ",
+                    "mode": "RW",
+                    "name": "AutoThresholdEnable"
+                },
+                {
+                    "altname": "XON_HYSTERESIS",
+                    "bit_lsb": 7,
+                    "bit_msb": 10,
+                    "description": " Programmed value controls the XON Hysteresis.  If a port is XOFF'd, the port bucket value must fall this amount below its port bucket threshold before being XON'd ",
+                    "mode": "RW",
+                    "name": "XonHysteresis"
+                },
+                {
+                    "altname": "XOFF_TIMER",
+                    "bit_lsb": 4,
+                    "bit_msb": 6,
+                    "description": " Programmed value controls the maximum number of clocks a port may be XOFF'd. When a port has been off for this duration, it will be XON'd until one packet is seen, after which it will be XOFF'd again if the original XOFF condition exists.  This maximum only has effect while the Auto Threshold State Machine is in State 2. ",
+                    "mode": "RW",
+                    "name": "XoffTimer"
+                },
+                {
+                    "altname": "RATE_METER_ENABLE",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": " When programmed to 1, enables all the rate meters.  Disabling the rate meters will freeze the values so that they can be read one at a time, but represent a snapshot in time.  ",
+                    "mode": "RW",
+                    "name": "RateMeterEnable"
+                },
+                {
+                    "altname": "RATE_METER_RESOLUTIION",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": " When programmed to a value of N, the rate meters will have a resolution of 1/(2**(15-N)*(CLK PERIOD in secs)*(10**6)) Million Packets Per Sec ",
+                    "mode": "RW",
+                    "name": "RateMeterResolution"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlConfig1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CTM_CAPACITY",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": " Programmed value is the maximum number of CTM packet credits usable by this NBI  ",
+                    "mode": "RW",
+                    "name": "CtmCapacity"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlPortBucketStatus0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PORT",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": " Programmed value provides port index information presented in the three NbiDmaFlowControlPortBucketStatusN registers. ",
+                    "mode": "RW",
+                    "name": "Port"
+                },
+                {
+                    "altname": "RATE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "  Measured rate of packets entering the chip through this port.  Value/(32768*(CLK PERIOD in secs)*(10**6)) = Millions of packets/sec ",
+                    "mode": "RO",
+                    "name": "Rate"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlPortBucketStatus1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BUCKET",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "  Current number of packets being processed that entered through this port. ",
+                    "mode": "RO",
+                    "name": "Bucket"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlPortBucketStatus2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ACCUMULATOR",
+                    "bit_lsb": 14,
+                    "bit_msb": 29,
+                    "description": " Value of the credit return accumulator for the indexed port. ",
+                    "mode": "RO",
+                    "name": "Accumulator"
+                },
+                {
+                    "altname": "XOFF_TIMER",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": " Value of XoffTimer for indexed port associated with the XoffTimer programmable threshold in NbiDmaFlowControlConfig0.",
+                    "mode": "RO",
+                    "name": "XoffTimer"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlStatus0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "AUTO_THRESHOLD_STATE",
+                    "bit_lsb": 30,
+                    "bit_msb": 31,
+                    "description": " State of the Auto Threshold Algorithm ",
+                    "mode": "RO",
+                    "name": "AutoThresholdState"
+                },
+                {
+                    "altname": "TIMEOUT_PACKET_COUNTER",
+                    "bit_lsb": 16,
+                    "bit_msb": 29,
+                    "description": " Current Value of the TimeoutPacketCounter associated with the AutoThresholdTimeOut ",
+                    "mode": "RO",
+                    "name": "TimeoutPacketCounter"
+                },
+                {
+                    "altname": "TOTAL_PACKETS_BUCKET",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": " Indicates the total number of packets that are currently being processed in the chip from this NBI ",
+                    "mode": "RO",
+                    "name": "TotalPacketsBucket"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlStatus1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RETURN_CREDIT_RATE",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": " Measured rate of packet credit returns; effectively processing rate. Value/(32768*(CLK PERIOD in secs)*(10**6)) = Millions of packets/sec ",
+                    "mode": "RO",
+                    "name": "ReturnCreditRate"
+                },
+                {
+                    "altname": "NEW_PACKET_RATE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "  Measured rate of packets entering the chip through this NBI.  Value/(32768*(CLK PERIOD in secs)*(10**6)) = Millions of packets/sec ",
+                    "mode": "RO",
+                    "name": "NewPacketRate"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaFlowControlThreshold": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "THRESHOLD",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": " When AutoThresholdEnable = 1, this register is read only and reflects the current value of the port threshold set by the high-level algorithm.  When AutoThresholdEnable = 0, the programmed value is used as the port threshold. ",
+                    "mode": "RW",
+                    "name": "Threshold"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaPktCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_PKT_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Upper 16-bits of 48-bit NBI Tx Packet count. Read this register after reading the NbiDmaPktCntLo register",
+                    "mode": "RC",
+                    "name": "NbiDmaPktCntHi"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaPktCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_PKT_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 48-bit NBI DMA Tx Packet count. Reading this register latches the value in NbiDmaPktCntHi register",
+                    "mode": "RC",
+                    "name": "NbiDmaPktCntLo"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaRate": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TOKEN_RATE3",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Sets the credit rate for push bus 3. Values are in 4 cycle increments.",
+                    "mode": "RW",
+                    "name": "CreditRate3"
+                },
+                {
+                    "altname": "TOKEN_RATE2",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Sets the credit rate for push bus 2. Values are in 4 cycle increments.",
+                    "mode": "RW",
+                    "name": "CreditRate2"
+                },
+                {
+                    "altname": "TOKEN_RATE1",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Sets the credit rate for push bus 1. Values are in 4 cycle increments.",
+                    "mode": "RW",
+                    "name": "CreditRate1"
+                },
+                {
+                    "altname": "TOKEN_RATE0",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Sets the credit rate for push bus 0. Values are in 4 cycle increments.",
+                    "mode": "RW",
+                    "name": "CreditRate0"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaSeqNum": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_SEQ_NUM",
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": " Sequence Numbers (0..4095)",
+                    "mode": "RW1C",
+                    "name": "NbiDmaSeqNum"
+                }
+            ]
+        },
+        "nbi_dma_csr.NbiDmaSpare": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_DMA_SPARE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "General use register.",
+                    "mode": "RW",
+                    "name": "NbiDmaSpare"
+                }
+            ]
+        }
+    }
+}

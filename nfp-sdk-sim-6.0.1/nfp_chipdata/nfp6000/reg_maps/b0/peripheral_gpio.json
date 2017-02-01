@@ -1,0 +1,353 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "peripheral_gpio.GpioCsrSsb": {
+            "0x00000000": {
+                "altname": "PINLEVEL",
+                "description": "Return the current value of all the GPIO pins",
+                "name": "PinLevel",
+                "ptr": "peripheral_gpio.GpioLevels",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "PINDIRECTION",
+                "description": "Configuration of each GPIO pin as either input or output",
+                "name": "PinDirection",
+                "ptr": "peripheral_gpio.GpioPinDirection",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "PINDIRECTIONSET",
+                "description": "Make any set of GPIO pins to be outputs",
+                "name": "PinDirectionSet",
+                "ptr": "peripheral_gpio.GpioPinMakeOutputs",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "PINDIRECTIONCLEAR",
+                "description": "Make any set of GPIO pins to be inputs",
+                "name": "PinDirectionClear",
+                "ptr": "peripheral_gpio.GpioPinMakeInputs",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "OUTPUTDATAPROGRAM",
+                "description": "Set levels for all GPIO outputs",
+                "name": "OutputDataProgram",
+                "ptr": "peripheral_gpio.GpioSetOutputValues",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "OUTPUTDATASET",
+                "description": "Write 1s to set individual GPIO outputs",
+                "name": "OutputDataSet",
+                "ptr": "peripheral_gpio.GpioSetOutputsHigh",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "OUTPUTDATACLEAR",
+                "description": "Write 1s to clear individual GPIO outputs",
+                "name": "OutputDataClear",
+                "ptr": "peripheral_gpio.GpioSetOutputsLow",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "EDGEDETECTRISING",
+                "description": "Enable detects on rising edge",
+                "name": "EdgeDetectRising",
+                "ptr": "peripheral_gpio.GpioEdgeDetectRising",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "EDGEDETECTFALLING",
+                "description": "Enable detects on falling edge",
+                "name": "EdgeDetectFalling",
+                "ptr": "peripheral_gpio.GpioEdgeDetectFalling",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "EDGEDETECTSTATUS",
+                "description": "Logging of detected transactions",
+                "name": "EdgeDetectStatus",
+                "ptr": "peripheral_gpio.GpioEdgeDetectStatus",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "LEVELDETECTHIGH",
+                "description": "Enable Detect on level sensitive high inputs",
+                "name": "LevelDetectHigh",
+                "ptr": "peripheral_gpio.GpioLevelSensitiveHigh",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "LEVELDETECTLOW",
+                "description": "Enable Detect on level sensitive low inputs",
+                "name": "LevelDetectLow",
+                "ptr": "peripheral_gpio.GpioLevelSensitiveLow",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "LEVELDETECTSTATUS",
+                "description": "Log the logic level of inputs",
+                "name": "LevelDetectStatus",
+                "ptr": "peripheral_gpio.GpioLevelSensitiveStatus",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "INTERRUPTENABLE",
+                "description": "Enable the interrupt generation",
+                "name": "InterruptEnable",
+                "ptr": "peripheral_gpio.GpioInterruptEnables",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "INTERRUPTENABLESET",
+                "description": "Set the interrupt enable register",
+                "name": "InterruptEnableSet",
+                "ptr": "peripheral_gpio.GpioInterruptEnableSet",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "INTERRUPTENABLECLEAR",
+                "description": "Reset the interrupt enable register",
+                "name": "InterruptEnableClear",
+                "ptr": "peripheral_gpio.GpioInterruptEnableReset",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "INTERRUPTSTATUS",
+                "description": "Capture the interrupts occurred to the corresponding pin by the external devices",
+                "name": "InterruptStatus",
+                "ptr": "peripheral_gpio.GpioInterruptStatus",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "peripheral_gpio.GpioEdgeDetectFalling": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "EDGES",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Enable falling edge detection for selected GPIO pins",
+                    "mode": "RW",
+                    "name": "Edges"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioEdgeDetectRising": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "EDGES",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Enable rising edge detection for selected GPIO pins",
+                    "mode": "RW",
+                    "name": "Edges"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioEdgeDetectStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "EDGESTATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Reads return the current edge detected status for the GPIOs. Write a 1 to a bit to clear that edge detected status bit.",
+                    "mode": "RW1C",
+                    "name": "EdgeStatus"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioInterruptEnableReset": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INTRESETEN",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Write a 1 to disable interrupts for a GPIO on both edge/level sensitivity status",
+                    "mode": "RW",
+                    "name": "IntResetEn"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioInterruptEnableSet": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INTSETEN",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Write a 1 to enable interrupts for a GPIO on both edge/level sensitivity status",
+                    "mode": "RW",
+                    "name": "IntSetEn"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioInterruptEnables": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INTEN",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Enable mask for edge and level detection status",
+                    "mode": "RW",
+                    "name": "IntEn"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioInterruptStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INTSTATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Interrupt generation status; clear a bit by writing 1 to it. Interrupt status is set for a GPIO when an enabled edge/level status bit is high.",
+                    "mode": "RW",
+                    "name": "IntStatus"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioLevelSensitiveHigh": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "LEVELHIGH",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Enable active high level detection for selected GPIO pins",
+                    "mode": "RW",
+                    "name": "LevelHigh"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioLevelSensitiveLow": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "LEVELLOW",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Enable active low level detection for selected GPIO pins",
+                    "mode": "RW",
+                    "name": "LevelLow"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioLevelSensitiveStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "STATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Reads return the current level detected status for the GPIOs. Write a 1 to a bit to clear that level detected status bit.",
+                    "mode": "RW",
+                    "name": "Status"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioLevels": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Current value of the GPIO pins (0 = Low, 1 = High)",
+                    "mode": "RW",
+                    "name": "Value"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioPinDirection": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DIRN",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Sets the direction for all GPIO pins (0 = In, 1 = Out)",
+                    "mode": "RW",
+                    "name": "Dirn"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioPinMakeInputs": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLRVALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Write a 1 to make a GPIO pin to be an input",
+                    "mode": "WO",
+                    "name": "ClrValue"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioPinMakeOutputs": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SETVALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Write a 1 to make a GPIO pin to be an output",
+                    "mode": "WO",
+                    "name": "SetValue"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioSetOutputValues": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Values to be driven out on GPIO pins, for those pins configured as outputs.",
+                    "mode": "RW",
+                    "name": "Value"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioSetOutputsHigh": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SETVALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Write 1s to set bits of the output data value",
+                    "mode": "WO",
+                    "name": "SetValue"
+                }
+            ]
+        },
+        "peripheral_gpio.GpioSetOutputsLow": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLRVALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Write 1s to clear bits of the output data value",
+                    "mode": "WO",
+                    "name": "ClrValue"
+                }
+            ]
+        }
+    }
+}

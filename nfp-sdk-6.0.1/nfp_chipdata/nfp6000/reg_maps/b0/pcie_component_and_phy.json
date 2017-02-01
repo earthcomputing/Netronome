@@ -1,0 +1,2196 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "pcie_component_and_phy.PcieComponentCfgXpb": {
+            "0x00000000": {
+                "altname": "CFG0",
+                "description": "Configures operation mode for PCIe component",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeCompConfig0",
+                "ptr": "pcie_component_and_phy.PCIeCompConfig0",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "CFG1",
+                "description": "Configures operation mode for PCIe component",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeCompConfig1",
+                "ptr": "pcie_component_and_phy.PCIeCompConfig1",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "CFG2",
+                "description": "Configures operation mode for PCIe component",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeCompConfig2",
+                "ptr": "pcie_component_and_phy.PCIeCompConfig2",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "CFG3",
+                "description": "Configures operation mode for PCIe component",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeCompConfig3",
+                "ptr": "pcie_component_and_phy.PCIeCompConfig3",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "PCIEMTOTAL",
+                "description": "Status of total cycle count since stats enable in PCIe Master interface",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePciemStatTotal",
+                "ptr": "pcie_component_and_phy.PCIePciemStat",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "PCIEMWRITE",
+                "description": "Status of write data cycle count since stats enable in PCIe Master interface",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePciemStatWrite",
+                "ptr": "pcie_component_and_phy.PCIePciemStat",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "PCIEMREAD",
+                "description": "Status of read data cycle count since stats enable in PCIe Master interface",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePciemStatRead",
+                "ptr": "pcie_component_and_phy.PCIePciemStat",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "SRAMCTL",
+                "description": "SRAM control register for PCIe Controller Core and DMA descriptor mems",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeSramCtl",
+                "ptr": "pcie_component_and_phy.PCIeSramCtl",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "ARIERR0",
+                "description": "Status of Virtual Functions that had errors",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeARIError0",
+                "ptr": "pcie_component_and_phy.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "ARIERR1",
+                "description": "Status of Virtual Functions that had errors",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeARIError1",
+                "ptr": "pcie_component_and_phy.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "ARIERR2",
+                "description": "Status of Virtual Functions that had errors",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeARIError2",
+                "ptr": "pcie_component_and_phy.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "ARIERR3",
+                "description": "Status of Virtual Functions that had errors",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeARIError3",
+                "ptr": "pcie_component_and_phy.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "ARIERR4",
+                "description": "Status of Virtual Functions that had errors",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeARIError4",
+                "ptr": "pcie_component_and_phy.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "ARIERR5",
+                "description": "Status of Virtual Functions that had errors",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeARIError5",
+                "ptr": "pcie_component_and_phy.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "ARIERR6",
+                "description": "Status of Virtual Functions that had errors",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeARIError6",
+                "ptr": "pcie_component_and_phy.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "ARIERR7",
+                "description": "Status of Virtual Functions that had errors",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeARIError7",
+                "ptr": "pcie_component_and_phy.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x00000048": {
+                "altname": "SERDES4_RDWR_03_00",
+                "description": "Write port to serdes lanes 3 to 0.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "SerDes4RdWr03To00",
+                "ptr": "pcie_component_and_phy.SerDes4RdWr",
+                "type": "reg"
+            },
+            "0x0000004c": {
+                "altname": "SERDES4_RDWR_07_04",
+                "description": "Write port to serdes lanes 7 to 4.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "SerDes4RdWr07To04",
+                "ptr": "pcie_component_and_phy.SerDes4RdWr",
+                "type": "reg"
+            },
+            "0x00000050": {
+                "altname": "SERDES4_RDDATA_03_00",
+                "description": "Read return data for serdes lanes 3 to 0.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "SerDes4RdData03To00",
+                "ptr": "pcie_component_and_phy.SerDes4RdData",
+                "type": "reg"
+            },
+            "0x00000054": {
+                "altname": "SERDES4_RDDATA_07_04",
+                "description": "Read return data for serdes lanes 7 to 4.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "SerDes4RdData07To04",
+                "ptr": "pcie_component_and_phy.SerDes4RdData",
+                "type": "reg"
+            },
+            "0x0000005c": {
+                "altname": "PCIESPARE0",
+                "description": "Spare register address, no hw implemented",
+                "name": "PCIeSpare0",
+                "ptr": "pcie_component_and_phy.PcieReserved",
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "CNTRLR0",
+                "description": "Selects operation mode for PCIe controller",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeCntrlrConfig0",
+                "ptr": "pcie_component_and_phy.PCIeCntrlrConfig0",
+                "type": "reg"
+            },
+            "0x00000064": {
+                "altname": "CNTRLR1",
+                "description": "Selects operation mode for PCIe controller",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeCntrlrConfig1",
+                "ptr": "pcie_component_and_phy.PCIeCntrlrConfig1",
+                "type": "reg"
+            },
+            "0x00000068": {
+                "altname": "CNTRLR2",
+                "description": "Selects operation mode for PCIe controller",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeCntrlrConfig2",
+                "ptr": "pcie_component_and_phy.PCIeCntrlrConfig2",
+                "type": "reg"
+            },
+            "0x0000006c": {
+                "altname": "CNTRLR3",
+                "description": "Selects operation mode for PCIe controller",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeCntrlrConfig3",
+                "ptr": "pcie_component_and_phy.PCIeCntrlrConfig3",
+                "type": "reg"
+            },
+            "0x00000070": {
+                "altname": "VFEN0",
+                "description": "Status of Virtual Functions that are enabled",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfEnable0",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x00000074": {
+                "altname": "VFEN1",
+                "description": "Status of Virtual Functions that are enabled",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfEnable1",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x00000078": {
+                "altname": "VFBUSMAST0",
+                "description": "reflects the status of the Bus Master Enable bit of the PCI Command Register of Virtual Function i",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfBusMasterEn0",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x0000007c": {
+                "altname": "VFBUSMAST1",
+                "description": "reflects the status of the Bus Master Enable bit of the PCI Command Register of Virtual Function i",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfBusMasterEn1",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "VFFLRPROG0",
+                "description": "status of host-initiated reset of Virtual Function i though its FLR bit in the configuration space",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfFlrInProg0",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x00000084": {
+                "altname": "VFFLRPROG1",
+                "description": "status of host-initiated reset of Virtual Function i though its FLR bit in the configuration space",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfFlrInProg1",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x00000090": {
+                "altname": "VFTPHREQ0",
+                "description": "indicate whether the software has enabled the device to generate requests with TPH Hints from the associated Virtual Function.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfTphReqEn0",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x00000094": {
+                "altname": "VFTPHREQ1",
+                "description": "indicate whether the software has enabled the device to generate requests with TPH Hints from the associated Virtual Function.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfTphReqEn1",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x00000098": {
+                "altname": "VFPWR0",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfPwrState0",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x0000009c": {
+                "altname": "VFPWR1",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfPwrState1",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x000000a0": {
+                "altname": "VFPWR2",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfPwrState2",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x000000a4": {
+                "altname": "VFPWR3",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfPwrState3",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x000000a8": {
+                "altname": "VFPWR4",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfPwrState4",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x000000ac": {
+                "altname": "VFPWR5",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfPwrState5",
+                "ptr": "pcie_component_and_phy.PCIeVfStat1",
+                "type": "reg"
+            },
+            "0x000000b0": {
+                "altname": "VFTPHST0",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfTphState0",
+                "ptr": "pcie_component_and_phy.PCIeVfStat",
+                "type": "reg"
+            },
+            "0x000000b4": {
+                "altname": "VFTPHST1",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfTphState1",
+                "ptr": "pcie_component_and_phy.PCIeVfStat",
+                "type": "reg"
+            },
+            "0x000000b8": {
+                "altname": "VFTPHST2",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfTphState2",
+                "ptr": "pcie_component_and_phy.PCIeVfStat",
+                "type": "reg"
+            },
+            "0x000000bc": {
+                "altname": "VFTPHST3",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfTphState3",
+                "ptr": "pcie_component_and_phy.PCIeVfStat",
+                "type": "reg"
+            },
+            "0x000000c0": {
+                "altname": "VFTPHST4",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfTphState4",
+                "ptr": "pcie_component_and_phy.PCIeVfStat",
+                "type": "reg"
+            },
+            "0x000000c4": {
+                "altname": "VFTPHST5",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfTphState5",
+                "ptr": "pcie_component_and_phy.PCIeVfStat",
+                "type": "reg"
+            },
+            "0x000000c8": {
+                "altname": "VFTPHPWRST6",
+                "description": "3 bits provide current power state of the Virtual Function, 000: D0_uninitialized, 001: D0_active, 010: D1, 100: D3_hot",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeVfTphPwrState6",
+                "ptr": "pcie_component_and_phy.PCIeVfPwrStat",
+                "type": "reg"
+            },
+            "0x000000cc": {
+                "altname": "PCIE_STATE_CHG_STAT",
+                "description": "Contains the state change interrupt and status",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeStateChangeStat",
+                "ptr": "pcie_component_and_phy.PCIeStateChangeStat",
+                "type": "reg"
+            },
+            "0x000000d0": {
+                "altname": "PCIECOEFF0",
+                "description": "map presets to their coefficients",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePresetCoeff0",
+                "ptr": "pcie_component_and_phy.PCIePresetCoeff",
+                "type": "reg"
+            },
+            "0x000000d4": {
+                "altname": "PCIECOEFF1",
+                "description": "map presets to their coefficients",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePresetCoeff1",
+                "ptr": "pcie_component_and_phy.PCIePresetCoeff",
+                "type": "reg"
+            },
+            "0x000000d8": {
+                "altname": "PCIECOEFF2",
+                "description": "map presets to their coefficients",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePresetCoeff2",
+                "ptr": "pcie_component_and_phy.PCIePresetCoeff",
+                "type": "reg"
+            },
+            "0x000000dc": {
+                "altname": "PCIECOEFF3",
+                "description": "map presets to their coefficients",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePresetCoeff3",
+                "ptr": "pcie_component_and_phy.PCIePresetCoeff",
+                "type": "reg"
+            },
+            "0x000000e0": {
+                "altname": "PCIECOEFF4",
+                "description": "map presets to their coefficients",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePresetCoeff4",
+                "ptr": "pcie_component_and_phy.PCIePresetCoeff",
+                "type": "reg"
+            },
+            "0x000000e4": {
+                "altname": "PCIECOEFF5",
+                "description": "map presets to their coefficients",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePresetCoeff5",
+                "ptr": "pcie_component_and_phy.PCIePresetCoeff",
+                "type": "reg"
+            },
+            "0x000000e8": {
+                "altname": "PCIECOEFF6",
+                "description": "map presets to their coefficients",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePresetCoeff6",
+                "ptr": "pcie_component_and_phy.PCIePresetCoeff",
+                "type": "reg"
+            },
+            "0x000000ec": {
+                "altname": "PCIECOEFF7",
+                "description": "map presets to their coefficients",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePresetCoeff7",
+                "ptr": "pcie_component_and_phy.PCIePresetCoeff",
+                "type": "reg"
+            },
+            "0x000000f0": {
+                "altname": "PCIECOEFF8",
+                "description": "map presets to their coefficients",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePresetCoeff8",
+                "ptr": "pcie_component_and_phy.PCIePresetCoeff",
+                "type": "reg"
+            },
+            "0x000000f4": {
+                "altname": "PCIECOEFF9",
+                "description": "map presets to their coefficients",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePresetCoeff9",
+                "ptr": "pcie_component_and_phy.PCIePresetCoeff",
+                "type": "reg"
+            },
+            "0x000000f8": {
+                "altname": "PCIECOEFF10",
+                "description": "map presets to their coefficients",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIePresetCoeff10",
+                "ptr": "pcie_component_and_phy.PCIePresetCoeff",
+                "type": "reg"
+            },
+            "0x00000100": {
+                "altname": "LOCALLF0",
+                "description": "Provides the Low Frequency (LF) values for lanes 0 thru 3 to Controller. A PHY may optionally consider this value when deciding how long to evaluate TX equalization settings of the link partner. These signals are only used at the 8.0 GT/s signaling rate.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeLocalLowFreq0",
+                "ptr": "pcie_component_and_phy.LocalLfFs1",
+                "type": "reg"
+            },
+            "0x00000104": {
+                "altname": "LOCALLF1",
+                "description": "Provides the Low Frequency (LF) values for lanes 4 thru 7 to Controller. A PHY may optionally consider this value when deciding how long to evaluate TX equalization settings of the link partner. These signals are only used at the 8.0 GT/s signaling rate.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeLocalLowFreq1",
+                "ptr": "pcie_component_and_phy.LocalLfFs1",
+                "type": "reg"
+            },
+            "0x00000108": {
+                "altname": "LOCALFS0",
+                "description": "Provides the Full Swing (FS) values for lanes 0 thru 3 to Controller. A PHY may optionally consider this value when deciding how long to evaluate TX equalization settings of the link partner. These signals are only used at the 8.0 GT/s signaling rate.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeLocalFullSwing0",
+                "ptr": "pcie_component_and_phy.LocalLfFs",
+                "type": "reg"
+            },
+            "0x0000010c": {
+                "altname": "LOCALFS1",
+                "description": "Provides the Full Swing (FS) values for lanes 4 thru 7 to Controller. A PHY may optionally consider this value when deciding how long to evaluate TX equalization settings of the link partner. These signals are only used at the 8.0 GT/s signaling rate.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeLocalFullSwing1",
+                "ptr": "pcie_component_and_phy.LocalLfFs",
+                "type": "reg"
+            },
+            "0x00000110": {
+                "altname": "PCI_EVENT_MAP_%d",
+                "description": "Defines the MSI function number and message attributes for event filter %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PcieEventMsiFuncMap_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_component_and_phy.PcieEventMsiFuncMap",
+                "repeat1": 32,
+                "type": "reg"
+            },
+            "0x00000190": {
+                "altname": "PCIE_PBA_%d",
+                "description": "Shows the status of 32 of the 256 MSI-X interrupt vectors Pending Bit Array, PBA",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PCIeMSIxPendBitArray_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_component_and_phy.PCIeMSIxPendBitArray",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x000001b0": {
+                "altname": "PCIE_VENDOR_MSG_HDR0",
+                "description": "The TLP Header of the received Vendor-defined message",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PcieVendorMsgHeader0",
+                "ptr": "pcie_component_and_phy.PcieVendorMsgHeader0",
+                "type": "reg"
+            },
+            "0x000001b4": {
+                "altname": "PCIE_VENDOR_MSG_HDR1",
+                "description": "The TLP Header of the received Vendor-defined message",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PcieVendorMsgHeader1",
+                "ptr": "pcie_component_and_phy.PcieVendorMsgHeader1",
+                "type": "reg"
+            },
+            "0x000001b8": {
+                "altname": "PCIE_VENDOR_MSG_HDR2",
+                "description": "The TLP Header of the received Vendor-defined message",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PcieVendorMsgHeader2",
+                "ptr": "pcie_component_and_phy.PcieVendorMsgHeader2",
+                "type": "reg"
+            },
+            "0x000001bc": {
+                "altname": "PCIE_VENDOR_MSG_HDR3",
+                "description": "The TLP Header of the received Vendor-defined message",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PcieVendorMsgHeader3",
+                "ptr": "pcie_component_and_phy.PcieVendorMsgHeader3",
+                "type": "reg"
+            },
+            "0x000001c0": {
+                "altname": "PCIE_VENDOR_MSG_DATA%d",
+                "description": "The data payload of the received Vendor-defined message",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PcieVendorMsgData%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_component_and_phy.PcieVendorMsgData",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x000001dc": {
+                "altname": "PCIE_INT_MSI_MSG_ABORT",
+                "description": "Reporting Requester ID and Vector number of a MSI msg aborted occurred.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PcieIntMsiMsgAborted",
+                "ptr": "pcie_component_and_phy.PcieIntMsiMsgAborted",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "pcie_component_and_phy.LocalLfFs": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RESERVED",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Reserved",
+                    "mode": "RO",
+                    "name": "Reserved"
+                },
+                {
+                    "altname": "LOCAL_LF_FS_LANE3",
+                    "bit_lsb": 18,
+                    "bit_msb": 23,
+                    "description": "Lane 3 Full Swing (FS) value considered during TX equalization.",
+                    "mode": "RW",
+                    "name": "LocalLfFs_lane3"
+                },
+                {
+                    "altname": "LOCAL_LF_FS_LANE2",
+                    "bit_lsb": 12,
+                    "bit_msb": 17,
+                    "description": "Lane 2 Full Swing (FS) value considered during TX equalization.",
+                    "mode": "RW",
+                    "name": "LocalLfFs_lane2"
+                },
+                {
+                    "altname": "LOCAL_LF_FS_LANE1",
+                    "bit_lsb": 6,
+                    "bit_msb": 11,
+                    "description": "Lane 1 Full Swing (FS) value considered during TX equalization.",
+                    "mode": "RW",
+                    "name": "LocalLfFs_lane1"
+                },
+                {
+                    "altname": "LOCAL_LF_FS_LANE0",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "Lane 0 Full Swing (FS) value considered during TX equalization.",
+                    "mode": "RW",
+                    "name": "LocalLfFs_lane0"
+                }
+            ]
+        },
+        "pcie_component_and_phy.LocalLfFs1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RESERVEDLFS1",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Reserved",
+                    "mode": "RO",
+                    "name": "Reserved"
+                },
+                {
+                    "altname": "LOCAL_LF_FS_1_LANE3",
+                    "bit_lsb": 18,
+                    "bit_msb": 23,
+                    "description": "Lane 3 Low Frequency (LF) value considered during TX equalization.",
+                    "mode": "RW",
+                    "name": "LocalLfFs1_lane3"
+                },
+                {
+                    "altname": "LOCAL_LF_FS_1_LANE2",
+                    "bit_lsb": 12,
+                    "bit_msb": 17,
+                    "description": "Lane 2 Low Frequency (LF) value considered during TX equalization.",
+                    "mode": "RW",
+                    "name": "LocalLfFs1_lane2"
+                },
+                {
+                    "altname": "LOCAL_LF_FS_1_LANE1",
+                    "bit_lsb": 6,
+                    "bit_msb": 11,
+                    "description": "Lane 1 Low Frequency (LF) value considered during TX equalization.",
+                    "mode": "RW",
+                    "name": "LocalLfFs1_lane1"
+                },
+                {
+                    "altname": "LOCAL_LF_FS_1_LANE0",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "Lane 0 Low Frequency (LF) value considered during TX equalization.",
+                    "mode": "RW",
+                    "name": "LocalLfFs1_lane0"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeAriErr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_ARI_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "ARI Error status.",
+                    "mode": "RW1C",
+                    "name": "PCIeAriErr"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeCntrlrConfig0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RCB_STATUS",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Indicates Pcie Controller Core status of Read Completion Boundary setting: 0 = 64B, 1 = 128B",
+                    "mode": "RO",
+                    "name": "RcbStatus"
+                },
+                {
+                    "altname": "OBFF_ENABLE",
+                    "bit_lsb": 29,
+                    "bit_msb": 30,
+                    "description": "Indicates Pcie Controller Core status of Optimized Buffer Flush Fill. Valid settings are 00 (disabled), 01 (Variation A), and 10 (Variation B).",
+                    "mode": "RO",
+                    "name": "ObffEnable"
+                },
+                {
+                    "altname": "NEGOTIATED_SPEED",
+                    "bit_lsb": 27,
+                    "bit_msb": 28,
+                    "description": "Reflects Pcie Controller Core status of current operating speed of the link (00 = 2.5 GT/s, 01 = 5 GT/s, 10 = 8 GT/s). Valid when LINK_STATUS = 10 or 11.",
+                    "mode": "RO",
+                    "name": "NegotiatedSpeed"
+                },
+                {
+                    "altname": "MAX_READ_REQ_SIZE",
+                    "bit_lsb": 24,
+                    "bit_msb": 26,
+                    "description": "Indicates Pcie Controller Core status of the limit of the size of outgoing read requests. The 3-bit codes are the same as those defined in PCIe Specifications:\n000 = 128 bytes,\n001 = 256 bytes,\n010 = 512 bytes,\n011 = 1024 bytes,\n100 = 2048 bytes\n101 = 4096 bytes.",
+                    "mode": "RO",
+                    "name": "MaxReadReqSize"
+                },
+                {
+                    "altname": "MAX_PAYLOAD_SIZE",
+                    "bit_lsb": 21,
+                    "bit_msb": 23,
+                    "description": "Reflects Pcie Controller Core status of the limit of  the size of Outgoing Completion payloads. The 3-bit codes are the same as those defined in PCIe Specifications:\n000 = 128 bytes,\n001 = 256 bytes,\n010 = 512 bytes.",
+                    "mode": "RO",
+                    "name": "MaxPayloadSize"
+                },
+                {
+                    "altname": "FUNCTION_STATUS",
+                    "bit_lsb": 17,
+                    "bit_msb": 20,
+                    "description": "Indicates Pcie Controller Core status of the states of the Command Register bits in the PCI configuration space of each Function. These outputs are used to enable requests and completions from the host logic. The assignment of bits is as follows:\nBit 0: Function 0 IO Space Enable,\nBit 1: Function 0 Memory Space Enable,\nBit 2: Function 0 Bus Master Enable,\nBit 3: Function 0 INTx Disable.",
+                    "mode": "RO",
+                    "name": "FunctionStatus"
+                },
+                {
+                    "altname": "FUNCTION_POWER_STATE",
+                    "bit_lsb": 12,
+                    "bit_msb": 14,
+                    "description": "Provides Pcie Controller Core status of the current power state of the Physical Function. The possible power states are:\n000: D0_uninitialized,\n001: D0_active,\n010: D1,\n100: D3_hot.",
+                    "mode": "RO",
+                    "name": "FunctionPowerState"
+                },
+                {
+                    "altname": "LINK_POWER_STATE",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Reflects Pcie Controller Core power state of the PCIe link.\n0001 = L0,\n0010 = L0s,\n0100 = L1,\n1000 = L2.",
+                    "mode": "RO",
+                    "name": "LinkPowerState"
+                },
+                {
+                    "altname": "LINK_STATUS",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Indicates Pcie Controller Core status of the PCI Express link.\n00 = No receivers detected,\n01 = Link training in progress,\n10 = Link up , DL initialization in progress,\n11 = Link up, DL initialization completed..",
+                    "mode": "RO",
+                    "name": "LinkStatus"
+                },
+                {
+                    "altname": "LTSSM_STATE",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "Reflects Pcie Controller Core state of the Link Training and Status State Machine.",
+                    "mode": "RO",
+                    "name": "LtssmState"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeCntrlrConfig1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "REQ_PM_TRANSITION_L23_READY",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Pcie Controller Core status.",
+                    "mode": "RW",
+                    "name": "ReqPmTransitionL23Ready"
+                },
+                {
+                    "altname": "NON_POSTED_OVERRIDE_DISABLE",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Setting this bit allows HAL Target posted requests to postpone and pass existing received non_posted requests (allowed per pcie spec). Default 0 allows HAL Target to fairly mix posted and non-posted requests.",
+                    "mode": "RW",
+                    "name": "NonPostedOverrideDisable"
+                },
+                {
+                    "altname": "MASTER_HOLD_IF_DISABLED",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "When in Endpoint mode, the PCIe Master logic hold back all PCIe Master transactions when this bit is set and the FUNCTION_STATUS bit 2 from the PCIe core indicates the Bus Master is not enabled. The MasterDropIfDisabled must also be cleared.",
+                    "mode": "RW",
+                    "name": "MasterHoldIfDisabled"
+                },
+                {
+                    "altname": "CONFIG_ENABLE",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Tied to Pcie Controller CONFIG_ENABLE input. When this bit is a 0 in the EP mode, the core will generate a CRS Completion in response to Configuration Requests. In systems where the core configuration registers are loaded from RAM on power-up, this prevents the core from responding to Configuration Requests before all the registers are loaded. When this bit is a 1 in the EP mode, the core will accept Configuration Requests.",
+                    "mode": "RW",
+                    "name": "ConfigEnable"
+                },
+                {
+                    "altname": "MASTER_DROP_IF_DISABLED",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "When in Endpoint mode, the PCIe Master logic drops all PCIe Master transactions when this bit is set and the FUNCTION_STATUS bit 2 from the PCIe core indicates the Bus Master is not enabled. This bit has no effect in Root Complex mode.",
+                    "mode": "RW",
+                    "name": "MasterDropIfDisabled"
+                },
+                {
+                    "altname": "TPH_ST_MODE",
+                    "bit_lsb": 1,
+                    "bit_msb": 3,
+                    "description": "Indicates Pcie Controller Core status of the setting of the ST Mode Select bits in the TPH Requester Control Register of Physical Function 0.\nThese bits are active only in the EndPoint mode. They indicate the allowed modes for generation of TPH Hints by the corresponding Physical Function.",
+                    "mode": "RO",
+                    "name": "TphStMode"
+                },
+                {
+                    "altname": "TPH_REQUESTER_ENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Indicates Pcie Controller Core status of the TPH Requester Enable bit [8] of the TPH Requester Control Register in the TPH Requester Capability Structure of the Physical Function 0.\nThese bits are active only in the EndPoint mode. They indicate whether the software has enabled the device to generate requests with TPH Hints from the associated Physical Function.",
+                    "mode": "RO",
+                    "name": "TphRequesterEnable"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeCntrlrConfig2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_CNTRLR_DEBUG_DATA",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Pcie Controller Core status of 16-bit output data from the debug bus.",
+                    "mode": "RO",
+                    "name": "PCIeCntrlrDebugData"
+                },
+                {
+                    "altname": "LINK_EQ_LOOPBACK_IN_PROGRESS",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Pcie Controller Core status of link equalization loopback.",
+                    "mode": "RO",
+                    "name": "LinkEqLoopbackInProgress"
+                },
+                {
+                    "altname": "HOT_RESET_STAT",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Reflects current state of the Hot Reset Status from the PCIe Controller. If set a hot reset was received from the link in the Endpoint mode.",
+                    "mode": "RO",
+                    "name": "HotResetStat"
+                },
+                {
+                    "altname": "HOT_RESET_INIT",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "SW sets this bit when Pcie Controller Core needs to initiate a Hot Reset sequence on the PCIe link when in RC mode.",
+                    "mode": "RW",
+                    "name": "HotResetInit"
+                },
+                {
+                    "altname": "LINK_DOWN_RESET_OUT",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Pcie Controller Core status asserted when its LTSSM detects a link-down event (when the LINK_UP state variable goes to 0).",
+                    "mode": "RO",
+                    "name": "LinkDownResetOut"
+                },
+                {
+                    "altname": "PHY_INTERRUPT",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "PCIe Core output used in RC mode to signal a link training related event has occurred",
+                    "mode": "RW1C",
+                    "name": "PhyInterrupt"
+                },
+                {
+                    "altname": "LOCAL_INTERRUPT",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Pcie Controller Core status. Used to signal an error or abnormal condition to the local processor. \nThe interrupting condition can be obtained by reading the Local Error Status Register.",
+                    "mode": "RW1C",
+                    "name": "LocalInterrupt"
+                },
+                {
+                    "altname": "FATAL_ERROR",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Pcie core detected a fatal error.",
+                    "mode": "RW1C",
+                    "name": "FatalError"
+                },
+                {
+                    "altname": "NON_FATAL_ERROR",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Pcie core detected a non-fatal error.",
+                    "mode": "RW1C",
+                    "name": "NonFatalError"
+                },
+                {
+                    "altname": "CORRECTABLE_ERROR",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Pcie core detected a correctable error.",
+                    "mode": "RW1C",
+                    "name": "CorrectableError"
+                },
+                {
+                    "altname": "CORRECTABLE_ERROR_IN",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Software writes a 1 to this bit when an correctable error has been detected. A correctable error can be a correctable error event from the Shared SRAM. The error is reported by the core through the PCI Express Advanced Error Reporting mechanism.",
+                    "mode": "WO",
+                    "name": "CorrectableErrorIn"
+                },
+                {
+                    "altname": "UNCORRECTABLE_ERROR_IN",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Software writes a 1 to this bit when an uncorrectable error has been detected. An uncorrectable error can be an uncorrectable error event from the Shared SRAM or a DMA Descriptor Rd Parity error. The error is reported by the core through the PCI Express Advanced Error Reporting mechanism.",
+                    "mode": "WO",
+                    "name": "UncorrectableErrorIn"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeCntrlrConfig3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INTA_MASK",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Software sets this bit to mask the interrupt.",
+                    "mode": "RW",
+                    "name": "IntAMask"
+                },
+                {
+                    "altname": "INTB_MASK",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Software sets this bit to mask the interrupt.",
+                    "mode": "RW",
+                    "name": "IntBMask"
+                },
+                {
+                    "altname": "INTC_MASK",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Software sets this bit to mask the interrupt.",
+                    "mode": "RW",
+                    "name": "IntCMask"
+                },
+                {
+                    "altname": "INTD_MASK",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "Software sets this bit to mask the interrupt.",
+                    "mode": "RW",
+                    "name": "IntDMask"
+                },
+                {
+                    "altname": "INTA",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Legacy Interrupt driven by the PCIe Core",
+                    "mode": "RW1C",
+                    "name": "IntA"
+                },
+                {
+                    "altname": "INTB",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Legacy Interrupt driven by the PCIe Core",
+                    "mode": "RW1C",
+                    "name": "IntB"
+                },
+                {
+                    "altname": "INTC",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Legacy Interrupt driven by the PCIe Core",
+                    "mode": "RW1C",
+                    "name": "IntC"
+                },
+                {
+                    "altname": "INTD",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Legacy Interrupt driven by the PCIe Core",
+                    "mode": "RW1C",
+                    "name": "IntD"
+                },
+                {
+                    "altname": "VF_FLR_DONE_CHANNEL",
+                    "bit_lsb": 16,
+                    "bit_msb": 21,
+                    "description": "Software sets this field to the select the virtual function to drive the VfFlrDone signal to.",
+                    "mode": "RW",
+                    "name": "VfFlrDoneChannel"
+                },
+                {
+                    "altname": "VF_FLR_DONE",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Software sets this bit in conjunction with the VfFlrDoneChannel after completion of a virtual function level reset requested by the host. This bit always reads a 0.",
+                    "mode": "WO",
+                    "name": "VfFlrDone"
+                },
+                {
+                    "altname": "FLR_DONE",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Software sets this bit after completion of a function level reset requested by the host. This bit always reads a 0.",
+                    "mode": "WO",
+                    "name": "FlrDone"
+                },
+                {
+                    "altname": "FLR_IN_PROGRESS",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Function level reset in progress status bit. This bit stays set until the FLR_DONE bit is set.",
+                    "mode": "RO",
+                    "name": "FlrInProgress"
+                },
+                {
+                    "altname": "PRESET_SWEEP_MASK",
+                    "bit_lsb": 2,
+                    "bit_msb": 12,
+                    "description": "Controls masking off evalutating known bad TX Presets during link equalization",
+                    "mode": "RW",
+                    "name": "PresetSweepMask"
+                },
+                {
+                    "altname": "BYPASS_REMOTE_TX_EQ",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Controls bypassing the evaluation of the remote PHY Tx during Link Equalization",
+                    "mode": "RW",
+                    "name": "BypassRemoteTxEq"
+                },
+                {
+                    "altname": "BYPASS_PHASE23",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When in RC mode, controls Phase 2 and phase 3 of Link Equalization",
+                    "mode": "RW",
+                    "name": "BypassPhase23"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeCompConfig0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SERDES_CKMUX_SEL",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Selects Serdes clock",
+                    "mode": "RW",
+                    "name": "PCIeSerdesClkMuxSel"
+                },
+                {
+                    "altname": "COMPL_ID_EN",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "When set PCIe Target overrides Completer ID",
+                    "mode": "RW",
+                    "name": "PCIeTargetComplIdEn"
+                },
+                {
+                    "altname": "BUS_MASTER_EN",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Physical Function status indicates can issue Master requests",
+                    "mode": "RO",
+                    "name": "PfBusMasterEnable"
+                },
+                {
+                    "altname": "CLR_PCIEM_ARI_ERR",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Clear the VF ARI Error status reg in PCIe Master ",
+                    "mode": "RW",
+                    "name": "ClrPciemHalmAriError"
+                },
+                {
+                    "altname": "CLR_DMA_ARI_ERR",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Clear the VF ARI Error status reg in DMA",
+                    "mode": "RW",
+                    "name": "ClrDmaAriError"
+                },
+                {
+                    "altname": "DMA_SRAM_RD_CREDIT",
+                    "bit_lsb": 20,
+                    "bit_msb": 22,
+                    "description": "Sets the outstanding number of DMA reads to SRAM in increments of 8 with a starting offset of 7. Setting the value above\n               3 has no effect as the hardware limit of the credit tracker is set to 32. The minimum value of 0 equates to a credit limit of 7 requests.",
+                    "mode": "RW",
+                    "name": "PciemDMASramReadCredit"
+                },
+                {
+                    "altname": "PCIEM_RD_CREDIT",
+                    "bit_lsb": 12,
+                    "bit_msb": 19,
+                    "description": "Controls the amout of outstanding PCIe read requests that can be issued. Value is in increments of 256 bytes.\n               The minimum value that should be used is 4KB or 16(dec).",
+                    "mode": "RW",
+                    "name": "PciemPciReadCredit"
+                },
+                {
+                    "altname": "PCIE_MSG_VALID",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Interrupt status bit that indicates a PCIe vendor defined message has been received. The message is stored in the PcieVendorMsgHeader and PcieVendorMsgData CSRs.",
+                    "mode": "RW1C",
+                    "name": "PcieMsgValid"
+                },
+                {
+                    "altname": "RC_MODE_IO_CFG_WRITE_CPL_REC",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Pcie completed IO or Config Write operation.",
+                    "mode": "RW1C",
+                    "name": "RC_mode_IO_CFG_write_CPL_rec"
+                },
+                {
+                    "altname": "INT_SEL",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Selects which interrupt pin legacy interrupts are mapped to.",
+                    "mode": "RW",
+                    "name": "InterruptOutSelect"
+                },
+                {
+                    "altname": "PCIE_LANES",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Status of the number of active lanes.",
+                    "mode": "RW",
+                    "name": "PCIeLanes"
+                },
+                {
+                    "altname": "GEN_ENABLE",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Status of what PCIe generation Controller Core is configured",
+                    "mode": "RW",
+                    "name": "GenEnable"
+                },
+                {
+                    "altname": "PCIEM_WR_STAT_EN",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Enables the PCIe Master to count write data transmit cycles",
+                    "mode": "RW",
+                    "name": "PciemWriteStatsEn"
+                },
+                {
+                    "altname": "PCIEM_RD_STAT_EN",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Enables the PCIe Master to count read data receive cycles",
+                    "mode": "RW",
+                    "name": "PciemReadStatsEn"
+                },
+                {
+                    "altname": "PCIE_ADDR_MODE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Configure whether PCIe transactions support 32-bit or 64-bit addressing.",
+                    "mode": "RW",
+                    "name": "PCIeAddrMode"
+                },
+                {
+                    "altname": "CPP_ADDR_MODE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Configure whether to interpret the CPP address bits as 32-bit or 40-bit.",
+                    "mode": "RW",
+                    "name": "CPPAddrMode"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeCompConfig1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "COMPL_ID_BUS",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Sets the Completer ID Bus number to be used when in RC Mode or when override set",
+                    "mode": "RW",
+                    "name": "PCIeTargetComplIdBus"
+                },
+                {
+                    "altname": "COMPL_ID_DEV_FUNC",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Sets the Completer ID Dev and Function numbers to be used when in RC Mode or when override set",
+                    "mode": "RW",
+                    "name": "PCIeTargetComplIdDevFunc"
+                },
+                {
+                    "altname": "REQ_ID_BUS",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Sets the Requester ID Bus number to be used when PCIe Master generates requests in RC Mode",
+                    "mode": "RW",
+                    "name": "PCIeMasterReqIdBus"
+                },
+                {
+                    "altname": "REQ_ID_FUNC",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Sets the Requester ID Function number to be used when PCIe Master generates requests in RC Mode",
+                    "mode": "RW",
+                    "name": "PCIeMasterReqIdFunc"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeCompConfig2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CPPT_SRAM_CREDIT",
+                    "bit_lsb": 24,
+                    "bit_msb": 28,
+                    "description": "Sets the number of outstanding read requests the CPP Target can make to the shared SRAM",
+                    "mode": "RW",
+                    "name": "CppTargetSramReadCredit"
+                },
+                {
+                    "altname": "CPPT_DIS_INT_DAT_ERR",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "When set read data errors received from the internal SRAM or targets are masked to the CPP Target push data bus.",
+                    "mode": "RW",
+                    "name": "CpptDisIntDataError"
+                },
+                {
+                    "altname": "CPPT_DIS_PULL_DAT_ERR",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "When set write data errors received from the CPP Target Pull Data bus are masked to the internal SRAM or PCIE Master Interface, and writes to internal targets are dropped.",
+                    "mode": "RW",
+                    "name": "CpptDisPullDataError"
+                },
+                {
+                    "altname": "PCIEM_DIS_INT_DAT_ERR",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "When set DMA read data errors received from the internal SRAM are masked to the PCIE Master Interface.",
+                    "mode": "RW",
+                    "name": "PciemDisIntDataError"
+                },
+                {
+                    "altname": "PCIEM_DIS_HAL_DAT_ERR",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "When set data errors received from the PCIe Master Completion interface are masked to the internal SRAM and CPP Target Push intf.",
+                    "mode": "RW",
+                    "name": "PciemDisHalDataError"
+                },
+                {
+                    "altname": "PCIET_DIS_INT_DAT_ERR",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "When set read data errors received from the internal SRAM or targets are not masked to the PCIe Target Completion interface.",
+                    "mode": "RW",
+                    "name": "PcietDisIntDataError"
+                },
+                {
+                    "altname": "PCIET_DIS_HAL_DAT_ERR",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "When set write data errors received from the PCIe Target interface are masked to the internal SRAM and CPP Master interfaces, and writes to internal targets are dropped.",
+                    "mode": "RW",
+                    "name": "PcietDisHalDataError"
+                },
+                {
+                    "altname": "PCIET_SRAM_CREDIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Sets the number of outstanding read requests the PCIe Target can make to the shared SRAM",
+                    "mode": "RW",
+                    "name": "PcieTargetSramReadCredit"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeCompConfig3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DMA_ARI_IN_ERROR",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "DMA ARI number that last had an error",
+                    "mode": "RO",
+                    "name": "DmaAriInError"
+                },
+                {
+                    "altname": "PCIEM_HAL_COMPL_CODE",
+                    "bit_lsb": 21,
+                    "bit_msb": 23,
+                    "description": "PCIe Master HAL Completion code that is latched when PciemAccessError is asserted",
+                    "mode": "RO",
+                    "name": "PciemHalComplCode"
+                },
+                {
+                    "altname": "DMA_FROM_ACC_ERR_VF",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "DMA FromPCIe Virtual Function Access Error.",
+                    "mode": "RO",
+                    "name": "DmaFromAccessErrorVf"
+                },
+                {
+                    "altname": "DMA_FROM_ACC_ERR_PF",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "DMA FromPCIe Physical Function Access Error.",
+                    "mode": "RO",
+                    "name": "DmaFromAccessErrorPf"
+                },
+                {
+                    "altname": "DMA_FRM_OVFL_HI",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "DMA FromPcie High Priority Descriptor Queue Overflow.",
+                    "mode": "RO",
+                    "name": "DmaFromDescrOvflHi"
+                },
+                {
+                    "altname": "DMA_FRM_OVFL_MED",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "DMA FromPcie Medium Priority Descriptor Queue Overflow.",
+                    "mode": "RO",
+                    "name": "DmaFromDescrOvflMed"
+                },
+                {
+                    "altname": "DMA_FRM_OVFL_LO",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "DMA FromPcie Low Priority Descriptor Queue Overflow.",
+                    "mode": "RO",
+                    "name": "DmaFromDescrOvflLo"
+                },
+                {
+                    "altname": "DMA_FRM_RD_PARITY_ERROR",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "DMA FrmPcie Descriptor memory read parity error",
+                    "mode": "RO",
+                    "name": "DmaFrmRdParityError"
+                },
+                {
+                    "altname": "DMA_TO_ACC_ERR_VF",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "DMA ToPCIe Virtual Function Access Error.",
+                    "mode": "RO",
+                    "name": "DmaToAccessErrorVf"
+                },
+                {
+                    "altname": "DMA_TO_ACC_ERR_PF",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "DMA ToPCIe Physical Function Access Error.",
+                    "mode": "RO",
+                    "name": "DmaToAccessErrorPf"
+                },
+                {
+                    "altname": "DMA_TO_OVFL_HI",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "DMA ToPcie High Priority Descriptor Queue Overflow.",
+                    "mode": "RO",
+                    "name": "DmaToDescrOvflHi"
+                },
+                {
+                    "altname": "DMA_TO_OVFL_MED",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "DMA ToPcie Medium Priority Descriptor Queue Overflow.",
+                    "mode": "RO",
+                    "name": "DmaToDescrOvflMed"
+                },
+                {
+                    "altname": "DMA_TO_OVFL_LO",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "DMA ToPcie Low Priority Descriptor Queue Overflow.",
+                    "mode": "RO",
+                    "name": "DmaToDescrOvflLo"
+                },
+                {
+                    "altname": "DMA_TO_RD_PARITY_ERROR",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "DMA ToPcie Descriptor memory read parity error",
+                    "mode": "RO",
+                    "name": "DmaToRdParityError"
+                },
+                {
+                    "altname": "CPPT_ACC_ERR",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Cpp Target Access Error Status bit indicates access error received from the cpp.",
+                    "mode": "RW1C",
+                    "name": "CpptAccessError"
+                },
+                {
+                    "altname": "CPPT_INT_DATA_ERR",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Cpp Target Internal Data Error status bit indicates an error was received from the Shared Memory during a read operation",
+                    "mode": "RW1C",
+                    "name": "CpptIntDataError"
+                },
+                {
+                    "altname": "CPPT_PULL_DATA_ERR",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Cpp Target Pull Data Error status bit indicates an error was received on the CPP Pull data interface",
+                    "mode": "RW1C",
+                    "name": "CpptPullDataError"
+                },
+                {
+                    "altname": "PCIEM_ACC_ERR",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Pcie Master Access Error Status bit indicates access error received from the link.",
+                    "mode": "RW1C",
+                    "name": "PciemAccessError"
+                },
+                {
+                    "altname": "PCIEM_HAL_DATA_ERR",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "PCIE Master detected a data error from the HAL interface.",
+                    "mode": "RW1C",
+                    "name": "PciemHalDataError"
+                },
+                {
+                    "altname": "PCIET_ACC_ERR",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Pcie Target Access Error Status bit indicates access error received from the link.",
+                    "mode": "RW1C",
+                    "name": "PcietAccessError"
+                },
+                {
+                    "altname": "PCIET_INT_ACC_ERR",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Pcie Target Internal Access Error Status bit indicates an error occurred during an internal access operation",
+                    "mode": "RW1C",
+                    "name": "PcietIntAccessError"
+                },
+                {
+                    "altname": "PCIET_HAL_DATA_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "PCIE Target detected a data error from the HAL interface",
+                    "mode": "RW1C",
+                    "name": "PcietHalDataError"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeMSIxPendBitArray": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MSIX_PBA",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Status of the MSI-X Pending Bit Array.",
+                    "mode": "RO",
+                    "name": "MsixPba"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIePciemStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_PCIEM_STAT",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "General use register.",
+                    "mode": "RO",
+                    "name": "PCIePciemStat"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIePresetCoeff": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RESERVED",
+                    "bit_lsb": 18,
+                    "bit_msb": 31,
+                    "description": "Reserved",
+                    "mode": "RO",
+                    "name": "Reserved"
+                },
+                {
+                    "altname": "PCIE_PRESET_COEFF",
+                    "bit_lsb": 0,
+                    "bit_msb": 17,
+                    "description": "Map presets to their coefficients.",
+                    "mode": "RW",
+                    "name": "PCIePresetCoeff"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeSramCtl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_SRAMCTL_WEN",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Write to 1 to initiate a write to the selected sram control register.",
+                    "mode": "WO",
+                    "name": "PcieSramCtlWen"
+                },
+                {
+                    "altname": "PCIE_SRAM_CTL_SEL",
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "Selects which SRAM Control register to write to or read from.",
+                    "mode": "RW",
+                    "name": "PCIeSramCtlSel"
+                },
+                {
+                    "altname": "PCIE_SRAM_CTL",
+                    "bit_lsb": 0,
+                    "bit_msb": 14,
+                    "description": "SRAM Control Register Access for DMADesc, PnpRxFifo, SCFifo, TphSt, ReplayBuf and SCAnnex",
+                    "mode": "RW",
+                    "name": "PCIeSramCtl"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeStateChangeStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HOT_RESET_ASSERT_INT_MASK",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Software sets this bit to mask off the corresponding interrupt status bit.",
+                    "mode": "RW",
+                    "name": "HotResetAssertIntMask"
+                },
+                {
+                    "altname": "FUNC_STATUS_CHG_INT_MASK",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Software sets this bit to mask off the corresponding interrupt status bit.",
+                    "mode": "RW",
+                    "name": "FuncStatusChgIntMask"
+                },
+                {
+                    "altname": "PWR_STATE_CHG_INT_MASK",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Software sets this bit to mask off the corresponding interrupt status bit.",
+                    "mode": "RW",
+                    "name": "PwrStateChgIntMask"
+                },
+                {
+                    "altname": "VF_BUS_MSTR_EN_STATE_CHG_INT_MASK",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "Software sets this bit to mask off the corresponding interrupt status bit.",
+                    "mode": "RW",
+                    "name": "VfBusMstrEnStateChangeIntMask"
+                },
+                {
+                    "altname": "VF_ENABLE_STATE_CHANGE_INT_MASK",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "Software sets this bit to mask off the corresponding interrupt status bit.",
+                    "mode": "RW",
+                    "name": "VfEnableStateChangeIntMask"
+                },
+                {
+                    "altname": "LINK_PWR_STATE_CHG_INT_MASK",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Software sets this bit to mask off the corresponding interrupt status bit.",
+                    "mode": "RW",
+                    "name": "LinkPwrStateChgIntMask"
+                },
+                {
+                    "altname": "LINK_STATUS_CHG_INT_MASK",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Software sets this bit to mask off the corresponding interrupt status bit.",
+                    "mode": "RW",
+                    "name": "LinkStatusChgIntMask"
+                },
+                {
+                    "altname": "CFG_FUNC_NUM",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Contains the CONFIG_FUNCTION_NUM associated with the POWER_STATE_CHANGE_INTERRUPT.",
+                    "mode": "RO",
+                    "name": "CfgFuncNum"
+                },
+                {
+                    "altname": "HOT_RESET_ASSERT_INT",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Interrupt status bit that indicates the HOT_RESET_OUT from the PCIe core has asserted. Current state of the signal can be read in the PCIeCntrlrConfig2 register.",
+                    "mode": "RW1C",
+                    "name": "HotResetAssertInt"
+                },
+                {
+                    "altname": "FUNC_STATUS_CHG_INT",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Interrupt status bit that indicates there was a change to the FUNCTION_STATUS bits from the PCIe core",
+                    "mode": "RW1C",
+                    "name": "FuncStatusChgInt"
+                },
+                {
+                    "altname": "PWR_STATE_CHG_INT",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Interrupt status bit that indicates there was a change to the FUNCTION_POWER_STATE or VF_POWER_STATE status from the PCIe core. Writing a 1 to this register asserts the POWER_STATE_CHANGE_ACK back to the PCIe Core.",
+                    "mode": "RW1C",
+                    "name": "PwrStateChgInt"
+                },
+                {
+                    "altname": "VF_BUS_MSTR_EN_STATE_CHG_INT",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Interrupt status bit that indicates there was a change to the VF_BUS_MASTER_ENABLE status from the PCIe core",
+                    "mode": "RW1C",
+                    "name": "VfBusMstrEnStateChangeInt"
+                },
+                {
+                    "altname": "VF_ENABLE_STATE_CHANGE_INT",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Interrupt status bit that indicates there was a change to VF_ENABLE status from the PCIe core.",
+                    "mode": "RW1C",
+                    "name": "VfEnableStateChangeInt"
+                },
+                {
+                    "altname": "LINK_PWR_STATE_CHG_INT",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Interrupt status bit that indicates the LINK_POWER_STATE has changed",
+                    "mode": "RW1C",
+                    "name": "LinkPwrStateChgInt"
+                },
+                {
+                    "altname": "LINK_STATUS_CHG_INT",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Interrupt status bit that indicates the LINK_STATUS has changed",
+                    "mode": "RW1C",
+                    "name": "LinkStatusChgInt"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeVfPwrStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_TPH_ST_MODE63",
+                    "bit_lsb": 25,
+                    "bit_msb": 27,
+                    "description": "VF63 TPH State",
+                    "mode": "RO",
+                    "name": "PCIeTphStMode63"
+                },
+                {
+                    "altname": "PCIE_TPH_ST_MODE62",
+                    "bit_lsb": 22,
+                    "bit_msb": 24,
+                    "description": "VF62 TPH Mode",
+                    "mode": "RO",
+                    "name": "PCIeTphStMode62"
+                },
+                {
+                    "altname": "PCIE_TPH_ST_MODE61",
+                    "bit_lsb": 19,
+                    "bit_msb": 21,
+                    "description": "VF61 TPH Mode",
+                    "mode": "RO",
+                    "name": "PCIeTphStMode61"
+                },
+                {
+                    "altname": "PCIE_TPH_ST_MODE60",
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "VF60 TPH Mode",
+                    "mode": "RO",
+                    "name": "PCIeTphStMode60"
+                },
+                {
+                    "altname": "PCIE_VF_PWR_STATE63",
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "VF63 Power State",
+                    "mode": "RO",
+                    "name": "PCIeVfPwrState63"
+                },
+                {
+                    "altname": "PCIE_VF_PWR_STATE62",
+                    "bit_lsb": 6,
+                    "bit_msb": 8,
+                    "description": "VF62 Power State",
+                    "mode": "RO",
+                    "name": "PCIeVfPwrState62"
+                },
+                {
+                    "altname": "PCIE_VF_PWR_STATE61",
+                    "bit_lsb": 3,
+                    "bit_msb": 5,
+                    "description": "VF61 Power State",
+                    "mode": "RO",
+                    "name": "PCIeVfPwrState61"
+                },
+                {
+                    "altname": "PCIE_VF_PWR_STATE60",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "VF60 Power State",
+                    "mode": "RO",
+                    "name": "PCIeVfPwrState60"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeVfStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_VF_STAT",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Virtual Function status.",
+                    "mode": "RO",
+                    "name": "PCIeVfStat"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PCIeVfStat1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_VF_STAT_1",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Virtual Function status.",
+                    "mode": "RO",
+                    "name": "PCIeVfStat1"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PcieEventMsiFuncMap": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RESERVEDMSI",
+                    "bit_lsb": 9,
+                    "bit_msb": 31,
+                    "description": "Reserved.",
+                    "mode": "RW",
+                    "name": "Reserved"
+                },
+                {
+                    "altname": "MASK",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Specifies to mask the event from generating an MSI.",
+                    "mode": "RW",
+                    "name": "MaskEvent"
+                },
+                {
+                    "altname": "FUNCTION",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Specifies the Function number to be sent as ReqID with MSI message.",
+                    "mode": "RW",
+                    "name": "FunctionNumber"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PcieIntMsiMsgAborted": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_MSI_MSG_ABORTED",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "When set it indicates a MSI message aborted occurred. When cleared the Vector number and Requester ID fields are invalid",
+                    "mode": "W1C",
+                    "name": "PcieMsiMsgAborted"
+                },
+                {
+                    "altname": "PCIE_MSI_ABORT_REQ_ID",
+                    "bit_lsb": 5,
+                    "bit_msb": 12,
+                    "description": "Requester id of aborted MSI message",
+                    "mode": "RO",
+                    "name": "PcieMsiMsgAbortReqId"
+                },
+                {
+                    "altname": "PCIE_MSI_ABORT_VECTOR",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Vector number of aborted MSI message.",
+                    "mode": "RO",
+                    "name": "PcieMsiMsgAbortVector"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PcieReserved": {
+            "bit_length": 32,
+            "fields": []
+        },
+        "pcie_component_and_phy.PcieVendorMsgData": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_VENDOR_MSG_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "The data payload of the received Vendor-defined message",
+                    "mode": "RO",
+                    "name": "PcieVendorMsgData"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PcieVendorMsgHeader0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "REQ_ID",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Received vendor-defined message header, Requestor ID field.",
+                    "mode": "RO",
+                    "name": "ReqId"
+                },
+                {
+                    "altname": "TAG",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Received vendor-defined message header, Tag field",
+                    "mode": "RO",
+                    "name": "Tag"
+                },
+                {
+                    "altname": "MSG_CODE",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Received vendor-defined message header Message, Code field",
+                    "mode": "RO",
+                    "name": "MsgCode"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PcieVendorMsgHeader1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TYPE",
+                    "bit_lsb": 18,
+                    "bit_msb": 20,
+                    "description": "Received vendor-defined message header, Transaction Type field",
+                    "mode": "RO",
+                    "name": "Type"
+                },
+                {
+                    "altname": "TCLASS",
+                    "bit_lsb": 15,
+                    "bit_msb": 17,
+                    "description": "Received vendor-defined message header, Traffic Class field.",
+                    "mode": "RO",
+                    "name": "Tclass"
+                },
+                {
+                    "altname": "ATTR",
+                    "bit_lsb": 12,
+                    "bit_msb": 14,
+                    "description": "Received vendor-defined message header, Attribute field.",
+                    "mode": "RO",
+                    "name": "Attr"
+                },
+                {
+                    "altname": "LENGTH",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "Received vendor-defined message length field. Length is in bytes.",
+                    "mode": "RO",
+                    "name": "Length"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PcieVendorMsgHeader2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BUS_NUM",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Received vendor-defined message, Bus Number field",
+                    "mode": "RO",
+                    "name": "BusNum"
+                },
+                {
+                    "altname": "DEV_NUM",
+                    "bit_lsb": 19,
+                    "bit_msb": 23,
+                    "description": "Received vendor-defined message, Device Number field",
+                    "mode": "RO",
+                    "name": "DevNum"
+                },
+                {
+                    "altname": "FUNC_NUM",
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "Received vendor-defined message, Function Number field",
+                    "mode": "RO",
+                    "name": "FuncNum"
+                },
+                {
+                    "altname": "VENDOR_ID",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Received vendor-defined message, Vendor ID field",
+                    "mode": "RO",
+                    "name": "VendorId"
+                }
+            ]
+        },
+        "pcie_component_and_phy.PcieVendorMsgHeader3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "V_HDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Received vendor-defined message, vendor defined field",
+                    "mode": "RO",
+                    "name": "VHdr"
+                }
+            ]
+        },
+        "pcie_component_and_phy.SerDes4RdData": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MAC_SERDES_RD_PAGE_ADDR",
+                    "bit_lsb": 29,
+                    "bit_msb": 31,
+                    "description": "Read page address to serdes membus",
+                    "mode": "RO",
+                    "name": "SerDesRdPageAddr"
+                },
+                {
+                    "altname": "MAC_SERDES_RD_OFFSET_ADDR",
+                    "bit_lsb": 16,
+                    "bit_msb": 28,
+                    "description": "Read offset Address to serdes membus",
+                    "mode": "RO",
+                    "name": "SerDesRdOffsetAddr"
+                },
+                {
+                    "altname": "MAC_SERDES_RD_DATA_VALID",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Set to '1' when read complete, cleared when next read initiated",
+                    "mode": "RO",
+                    "name": "SerDesRdDataValid"
+                },
+                {
+                    "altname": "MAC_SERDES_RD_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "8 bit read data from SerDes",
+                    "mode": "RO",
+                    "name": "SerDesRdData"
+                }
+            ]
+        },
+        "pcie_component_and_phy.SerDes4RdWr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MAC_SERDES_PAGE_ADDR",
+                    "bit_lsb": 29,
+                    "bit_msb": 31,
+                    "description": "Read/Write page address to serdes membus",
+                    "mode": "RW",
+                    "name": "SerDesPageAddr"
+                },
+                {
+                    "altname": "MAC_SERDES_PCS_PMA_SEL",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Write to 1 to select PCS Registers. Write to 0 to select PMA registers. PageAddr and OffsetAddr bits will index into the PCS or PMA register sets depending on the state of this bit.",
+                    "mode": "RW",
+                    "name": "SerDesPcsPmaSel"
+                },
+                {
+                    "altname": "MAC_SERDES_OFFSET_ADDR",
+                    "bit_lsb": 16,
+                    "bit_msb": 27,
+                    "description": "Read/Write offset Address to serdes membus",
+                    "mode": "RW",
+                    "name": "SerDesOffsetAddr"
+                },
+                {
+                    "altname": "RFU",
+                    "bit_lsb": 10,
+                    "bit_msb": 15,
+                    "description": "Reserved for Use.",
+                    "mode": "RO",
+                    "name": "Rfu"
+                },
+                {
+                    "altname": "MAC_SERDES_RD_BUSY",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "write to 1 to start read op. Self clears when read complete. read data in corresponding read register. If read and write bits set at same time, operation default to NOP.",
+                    "mode": "RW",
+                    "name": "SerDesRdBusy"
+                },
+                {
+                    "altname": "MAC_SERDES_WR_BUSY",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "write to 1 to start write op. Self clears when write complete.",
+                    "mode": "RW",
+                    "name": "SerDesWrBusy"
+                },
+                {
+                    "altname": "MAC_SERDES_WR_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "8 bit write data to SerDes. Dont care for a read op.",
+                    "mode": "RW",
+                    "name": "SerDesWrData"
+                }
+            ]
+        }
+    }
+}

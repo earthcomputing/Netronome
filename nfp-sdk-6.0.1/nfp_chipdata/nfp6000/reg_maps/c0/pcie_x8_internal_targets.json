@@ -1,0 +1,2013 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: eca5ba006ef4"
+    ],
+    "maps": {
+        "pcie_x8_internal_targets.PCIeDMAController": {
+            "0x00000000": {
+                "altname": "TOPCI_HI",
+                "description": "Insert legacy-format command into HiToPCIe DMA command queue or Write pointer for HiToPCIe DMA command queue",
+                "name": "DmaCmdInsertHiToPCI",
+                "ptr": "pcie_x8_internal_targets.DMADescrLegacy",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "TOPCI_MED",
+                "description": "Insert legacy-format command into MedToPCIe DMA command queue or Write pointer for MedToPCIe DMA command queue",
+                "name": "DmaCmdInsertMedToPCI",
+                "ptr": "pcie_x8_internal_targets.DMADescrLegacy",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "TOPCI_LO",
+                "description": "Insert legacy-format command into LoToPCIe DMA command queue or Write pointer for LoToPCIe DMA command queue",
+                "name": "DmaCmdInsertLoToPCI",
+                "ptr": "pcie_x8_internal_targets.DMADescrLegacy",
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "FROMPCI_HI",
+                "description": "Insert legacy-format command into HiFrmPCIe DMA command queue or Write pointer for HiFrmPCIe DMA command queue",
+                "name": "DmaCmdInsertHiFrmPCI",
+                "ptr": "pcie_x8_internal_targets.DMADescrLegacy",
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "FROMPCI_MED",
+                "description": "Insert legacy-format command into MedFrmPCIe DMA command queue or Write pointer for MedFrmPCIe DMA command queue",
+                "name": "DmaCmdInsertMedFrmPCI",
+                "ptr": "pcie_x8_internal_targets.DMADescrLegacy",
+                "type": "reg"
+            },
+            "0x000000a0": {
+                "altname": "FROMPCI_LO",
+                "description": "Insert legacy-format command into LoFrmPCIe DMA command queue or Write pointer for LoFrmPCIe DMA command queue",
+                "name": "DmaCmdInsertLoFrmPCI",
+                "ptr": "pcie_x8_internal_targets.DMADescrLegacy",
+                "type": "reg"
+            },
+            "0x000000c0": {
+                "altname": "CFG0",
+                "description": "Specifies additional DMA configuration information to supplement incoming descriptor, CPP Target, 32- or 64-bit target, CPP Token, padding depth, and PCIe descriptor attribute.",
+                "name": "DMADescrConfig0",
+                "ptr": "pcie_x8_internal_targets.DMADescrConfig",
+                "type": "reg"
+            },
+            "0x000000c4": {
+                "altname": "CFG1",
+                "description": "Specifies additional DMA configuration information to supplement incoming descriptor, CPP Target, 32- or 64-bit target, CPP Token, padding depth, and PCIe descriptor attribute.",
+                "name": "DMADescrConfig1",
+                "ptr": "pcie_x8_internal_targets.DMADescrConfig",
+                "type": "reg"
+            },
+            "0x000000c8": {
+                "altname": "CFG2",
+                "description": "Specifies additional DMA configuration information to supplement incoming descriptor, CPP Target, 32- or 64-bit target, CPP Token, padding depth, and PCIe descriptor attribute.",
+                "name": "DMADescrConfig2",
+                "ptr": "pcie_x8_internal_targets.DMADescrConfig",
+                "type": "reg"
+            },
+            "0x000000cc": {
+                "altname": "CFG3",
+                "description": "Specifies additional DMA configuration information to supplement incoming descriptor, CPP Target, 32- or 64-bit target, CPP Token, padding depth, and PCIe descriptor attribute.",
+                "name": "DMADescrConfig3",
+                "ptr": "pcie_x8_internal_targets.DMADescrConfig",
+                "type": "reg"
+            },
+            "0x000000d0": {
+                "altname": "CFG4",
+                "description": "Specifies additional DMA configuration information to supplement incoming descriptor, CPP Target, 32- or 64-bit target, CPP Token, padding depth, and PCIe descriptor attribute.",
+                "name": "DMADescrConfig4",
+                "ptr": "pcie_x8_internal_targets.DMADescrConfig",
+                "type": "reg"
+            },
+            "0x000000d4": {
+                "altname": "CFG5",
+                "description": "Specifies additional DMA configuration information to supplement incoming descriptor, CPP Target, 32- or 64-bit target, CPP Token, padding depth, and PCIe descriptor attribute.",
+                "name": "DMADescrConfig5",
+                "ptr": "pcie_x8_internal_targets.DMADescrConfig",
+                "type": "reg"
+            },
+            "0x000000d8": {
+                "altname": "CFG6",
+                "description": "Specifies additional DMA configuration information to supplement incoming descriptor, CPP Target, 32- or 64-bit target, CPP Token, padding depth, and PCIe descriptor attribute.",
+                "name": "DMADescrConfig6",
+                "ptr": "pcie_x8_internal_targets.DMADescrConfig",
+                "type": "reg"
+            },
+            "0x000000dc": {
+                "altname": "CFG7",
+                "description": "Specifies additional DMA configuration information to supplement incoming descriptor, CPP Target, 32- or 64-bit target, CPP Token, padding depth, and PCIe descriptor attribute.",
+                "name": "DMADescrConfig7",
+                "ptr": "pcie_x8_internal_targets.DMADescrConfig",
+                "type": "reg"
+            },
+            "0x000000e0": {
+                "altname": "QSTS0_TOPCI",
+                "description": "Queue status for ToPCIe DMA command queues",
+                "name": "DMAQStatToPCI0",
+                "ptr": "pcie_x8_internal_targets.DMAToQueueStatus0",
+                "type": "reg"
+            },
+            "0x000000e4": {
+                "altname": "QSTS1_TOPCI",
+                "description": "Queue status for ToPCIe DMA command queues",
+                "name": "DMAQStatToPCI1",
+                "ptr": "pcie_x8_internal_targets.DMAQueueStatus1",
+                "type": "reg"
+            },
+            "0x000000e8": {
+                "altname": "QSTS0_FROMPCI",
+                "description": "Queue status for FrmPCIe DMA command queues",
+                "name": "DMAQStatFrmPCI0",
+                "ptr": "pcie_x8_internal_targets.DMAFrmQueueStatus0",
+                "type": "reg"
+            },
+            "0x000000ec": {
+                "altname": "QSTS1_FROMPCI",
+                "description": "Queue status for FrmPCIe DMA command queues",
+                "name": "DMAQStatFrmPCI1",
+                "ptr": "pcie_x8_internal_targets.DMAQueueStatus1",
+                "type": "reg"
+            },
+            "0x000000f8": {
+                "altname": "CTRL_CFG1",
+                "description": "DMA performance configure, cpp and pcie request issue rates",
+                "name": "DMACntrlConfig1",
+                "ptr": "pcie_x8_internal_targets.DMACntrlCfg1",
+                "type": "reg"
+            },
+            "0x000000fc": {
+                "altname": "CTRL_CFG2",
+                "description": "DMA Bandwidth configuration, cpp and pcie request bandwidth control",
+                "name": "DMACntrlConfig2",
+                "ptr": "pcie_x8_internal_targets.DMACntrlCfg2",
+                "type": "reg"
+            },
+            "0x00000100": {
+                "altname": "DMA_STAG%d",
+                "description": "Specifies additional DMA configuration information to supplement incoming descriptor, TPH Value and Steering Tag settings.",
+                "name": "DMADescrTPHConfig%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_internal_targets.DMADescrTPHConfig",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000120": {
+                "altname": "DMA_ALLOC_CTRL",
+                "description": "Packet Mode DMA Allocatoin Control CSR",
+                "name": "DMAAllocCtrl",
+                "ptr": "pcie_x8_internal_targets.DMAAllocCtrl",
+                "type": "reg"
+            },
+            "0x00000124": {
+                "altname": "DMA_BLQ_EVENT",
+                "description": "DMA Buffer List Queue Event Control",
+                "name": "DMABlqEvent",
+                "ptr": "nbi_dma_csr.NbiDmaBlqEvent",
+                "type": "reg"
+            },
+            "0x00000128": {
+                "altname": "BPE_CHAIN_END",
+                "description": "DMA BPE Chain End Register",
+                "name": "DMABpeChainEnd",
+                "ptr": "nbi_dma_csr.NbiDmaBpeChainEnd",
+                "type": "reg"
+            },
+            "0x00000130": {
+                "altname": "DMA_BP%d_CFG",
+                "description": "DMA Buffer Pool %d Configuration",
+                "name": "DMABP%dCfg",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_internal_targets.DMABPCfg",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000150": {
+                "altname": "BL_QUE_CTRL0",
+                "description": "Configures the buffer list circular queue and provides status",
+                "name": "BLQueCtrl0",
+                "ptr": "pcie_x8_internal_targets.PcieBLQueCtrl0",
+                "type": "reg"
+            },
+            "0x00000158": {
+                "altname": "BL_QUE_CTRL1",
+                "description": "Configures the buffer list circular queue and provides status",
+                "name": "BLQueCtrl1",
+                "ptr": "pcie_x8_internal_targets.PcieBLQueCtrl1",
+                "type": "reg"
+            },
+            "0x00000160": {
+                "altname": "BL_QUE_CTRL2",
+                "description": "Configures the buffer list circular queue and provides status",
+                "name": "BLQueCtrl2",
+                "ptr": "pcie_x8_internal_targets.PcieBLQueCtrl2",
+                "type": "reg"
+            },
+            "0x00000168": {
+                "altname": "BL_QUE_CTRL3",
+                "description": "Configures the buffer list circular queue and provides status",
+                "name": "BLQueCtrl3",
+                "ptr": "pcie_x8_internal_targets.PcieBLQueCtrl3",
+                "type": "reg"
+            },
+            "0x00000174": {
+                "altname": "BLQ_NULL_MU_PTR",
+                "description": "Value to use in MuPtr field when bypassing the BLQ in packet mode DMAs",
+                "name": "BlqNullMuPtr",
+                "ptr": "nbi_dma_csr.BlqNullMuPtr",
+                "type": "reg"
+            },
+            "0x00000178": {
+                "altname": "PCIE_DMA_RSVD%d",
+                "description": "Reserved",
+                "name": "PcieDmaRsvd%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_internal_targets.PcieDmaRsvd",
+                "repeat1": 2,
+                "type": "reg"
+            },
+            "0x00000180": {
+                "altname": "DMA_BPE%d_CFG",
+                "description": "DMA Buffer Pool Entry %d Configuration",
+                "name": "DMABpe%dCfg",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_dma_csr.NbiDmaBpeCfg",
+                "repeat1": 32,
+                "type": "reg"
+            },
+            "0x00000200": {
+                "altname": "DMA_PM_HEADER%d",
+                "description": "DMA Packet Mode Metadata Header register.",
+                "name": "DMAPmHeader%d",
+                "offinc1": "0x00000008",
+                "ptr": "pcie_x8_internal_targets.DMAPMHeader",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00000280": {
+                "altname": "ABORT_STATUS%d",
+                "description": "DMA Packet Mode Abort Status Register for DMA Context N and N + 1 where N = %d",
+                "name": "AbortStatus%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_internal_targets.AbortStatus",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x000002a0": {
+                "altname": "DMA_BP%d_CTMCR_THRESH",
+                "description": "NBI DMA Buffer Pool CTM Credit Thresholds.",
+                "name": "DMABP%dCtmCrThresh",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_dma_csr.NbiDmaBPCtmCrThresh",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x000002c0": {
+                "altname": "DMA_TOTAL_CREDIT_CNT",
+                "description": "Buffer Allocation Total Packet and Buffer Credits in use counters",
+                "name": "DMATotalCreditCnt",
+                "ptr": "pcie_x8_internal_targets.DMATotalCreditCnt",
+                "type": "reg"
+            }
+        },
+        "pcie_x8_internal_targets.PcieExpBARConfig_x8": {
+            "0x00000000": {
+                "altname": "PF%d_P2C",
+                "description": "PCIe to CPP Translation Expansion BARs for Physical BARs and Virtual Function BARs associated with PF %d",
+                "name": "PcieToCppExpansionBar_PF%d",
+                "offinc1": "0x000000c0",
+                "ptr": "pcie_x8_internal_targets.PcieToCppExpansionBarFunc",
+                "repeat1": 8,
+                "type": "regmap"
+            },
+            "0x00000600": {
+                "altname": "C2P%d",
+                "description": "CPP to PCIe translation BAR",
+                "name": "CPPToPCIeBAR%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_internal_targets.CppToPcieBar",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000620": {
+                "altname": "C2P_EXT%d",
+                "description": "CPP to PCIe BAR Base Address extension",
+                "name": "CPPToPCIeBaseExt%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_internal_targets.CppToPcieBaseExt",
+                "repeat1": 8,
+                "type": "reg"
+            }
+        },
+        "pcie_x8_internal_targets.PcieExplicitCmd": {
+            "0x00000000": {
+                "altname": "P2CX0",
+                "description": "PCIe to CPP Explicit Command BAR 0",
+                "name": "PCIeExplicitCmdBAR0",
+                "ptr": "pcie_x8_internal_targets.PcieExplicitCmdBar0",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "P2CX1",
+                "description": "PCIe to CPP Explicit Command BAR 1",
+                "name": "PCIeExplicitCmdBAR1",
+                "ptr": "pcie_x8_internal_targets.PcieExplicitCmdBar1",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "P2CX2",
+                "description": "PCIe to CPP Explicit Command BAR 2",
+                "name": "PCIeExplicitCmdBAR2",
+                "ptr": "pcie_x8_internal_targets.PcieExplicitCmdBar2",
+                "type": "reg"
+            }
+        },
+        "pcie_x8_internal_targets.PcieInternalTargets": {
+            "0x00000000": {
+                "altname": "SRAM",
+                "description": "Internal SRAM Base address.  16,384 total 4-byte locations.",
+                "name": "PCIeInternalSRAM",
+                "ptr": "pcie_x8_internal_targets.PcieInternalSRAM",
+                "type": "reg"
+            },
+            "0x00010000": {
+                "altname": "IM",
+                "description": "PCIe Interrupt Manager",
+                "name": "InterruptManager",
+                "ptr": "peripheral_interrupt_manager.InterruptManagerMap_inst0",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "EM",
+                "description": "PCIe Event Manager",
+                "name": "EventManager",
+                "ptr": "peripheral_event_manager.EventManagerMap_inst0",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "BARCFG",
+                "description": "PCIe and CPP Expansion BAR Translation Configuration Registers",
+                "name": "ExpansionBARConfiguration",
+                "ptr": "pcie_x8_internal_targets.PcieExpBARConfig_x8",
+                "type": "regmap"
+            },
+            "0x00060000": {
+                "altname": "MSIX_INSTR_GEN%d",
+                "description": "Software MSI and MSIX Interrupt generation",
+                "name": "PCIeMsixInterruptGenerator%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_internal_targets.PCIeMsixGen",
+                "repeat1": 256,
+                "type": "multireg"
+            },
+            "0x00070000": {
+                "altname": "VF_CFG_LUT%d",
+                "description": "Lookup table that stores for each VF the base addr of its queue region, number of queues and which associated PF",
+                "name": "PCIeTargetFuncCfgLUT%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_internal_targets.PcietFuncCfgLut",
+                "repeat1": 256,
+                "type": "reg"
+            },
+            "0x00400000": {
+                "altname": "QUEUE%d",
+                "description": "Queue registers and operations for queue %d",
+                "name": "Queue%d",
+                "offinc1": "0x00000800",
+                "ptr": "peripheral_queue_controller_2k.QC_Queue_x4SSB",
+                "repeat1": 2048,
+                "type": "regmap"
+            },
+            "0x00800000": {
+                "altname": "DMA",
+                "description": "PCIe DMA Engine queue control and status",
+                "name": "DMAController",
+                "ptr": "pcie_x8_internal_targets.PCIeDMAController",
+                "type": "regmap"
+            }
+        },
+        "pcie_x8_internal_targets.PcieToCppExpansionBarFunc": {
+            "0x00000000": {
+                "altname": "PF_P2C_%d_%d",
+                "description": "PCIe to CPP Translation Expansion BARs for a Physical Function BAR %d",
+                "name": "PCIeToCppExpansionBAR%d%d",
+                "offinc1": "0x00000020",
+                "offinc2": "0x00000004",
+                "ptr": "pcie_x8_internal_targets.PcieToCppExpansionBar",
+                "repeat1": 3,
+                "repeat2": 8,
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "VF_P2C_BAR%d_%d",
+                "description": "PCIe to CPP Translation for Virtual Function BAR %d",
+                "name": "PCIeToCppExpansionBARVf_%d_%d",
+                "offinc1": "0x00000008",
+                "offinc2": "0x00000004",
+                "ptr": "pcie_x8_internal_targets.PcieToCppExpansionBarVf",
+                "repeat1": 3,
+                "repeat2": 2,
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "P2CX%d",
+                "description": "PCIe to CPP Explicit Command BAR %d",
+                "name": "PCIeExplicitCmd_%d",
+                "offinc1": "0x00000010",
+                "ptr": "pcie_x8_internal_targets.PcieExplicitCmd",
+                "repeat1": 4,
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {
+        "pcie_x8_internal_targets.AbortStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCK_NUM_ODD",
+                    "bit_lsb": 23,
+                    "bit_msb": 31,
+                    "description": "Latched packet number of an aborted packet. Only valid when the Valid field is set in this register.",
+                    "mode": "RO",
+                    "name": "PckNumOdd"
+                },
+                {
+                    "altname": "CTM_ODD",
+                    "bit_lsb": 17,
+                    "bit_msb": 22,
+                    "description": "Latched CTM number of an aborted packet, Only valid when the Valid field is set in this register.",
+                    "mode": "RO",
+                    "name": "CtmOdd"
+                },
+                {
+                    "altname": "VALID_ODD",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "When set the contents of this register contain the MuPtr, CTM number and packet number of an aborted packet.",
+                    "mode": "RW1C",
+                    "name": "ValidOdd"
+                },
+                {
+                    "altname": "PCK_NUM_EVEN",
+                    "bit_lsb": 7,
+                    "bit_msb": 15,
+                    "description": "Latched packet number of an aborted packet. Only valid when the Valid field is set in this register.",
+                    "mode": "RO",
+                    "name": "PckNumEven"
+                },
+                {
+                    "altname": "CTM_EVEN",
+                    "bit_lsb": 1,
+                    "bit_msb": 6,
+                    "description": "Latched CTM number of an aborted packet, Only valid when the Valid field is set in this register.",
+                    "mode": "RO",
+                    "name": "CtmEven"
+                },
+                {
+                    "altname": "VALID_EVEN",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When set the contents of this register contain the MuPtr, CTM number and packet number of an aborted packet.",
+                    "mode": "RW1C",
+                    "name": "ValidEven"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.CppToPcieBar": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TYPE",
+                    "bit_lsb": 30,
+                    "bit_msb": 31,
+                    "description": "Map Type",
+                    "mode": "RW",
+                    "name": "MapType"
+                },
+                {
+                    "altname": "ARI_ENABLE",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Set if, Requester ID in PCIe TLP header should be overridden.",
+                    "mode": "RW",
+                    "name": "OverrideRID"
+                },
+                {
+                    "altname": "ARI",
+                    "bit_lsb": 21,
+                    "bit_msb": 28,
+                    "description": "Value for Requester ID (if OverrideRID is set) to use in PCIe TLP header. Otherwise ignored.",
+                    "mode": "RW",
+                    "name": "RequesterID"
+                },
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 20,
+                    "description": "PCIe address bits [47:27] for 32-bit mode and [20:8] map to bits [47:35] for 40-bit mode. NOTE: For Type-1 Configuration cycles to the PCIe bus, bit [3] of this field should be set to '1'.",
+                    "mode": "RW",
+                    "name": "Address"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.CppToPcieBaseExt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CPP2PCI_BASE_ADDR_EXT",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "An extension of the Base Address field of the Cpp2PCIe BAR to form a 64-bit PCIe address.",
+                    "mode": "RW",
+                    "name": "Cpp2Pcie_Base_Addr_Ext"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.DMAAllocCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PACKET_COLOR_ENABLE",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "When set, the DMA engine adds 2-bit packet color in packet mode DMA metadata based on the CTM's credit level.",
+                    "mode": "RW",
+                    "name": "PacketColorEnable"
+                },
+                {
+                    "altname": "RESET_DMA_STATE",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Set this bit to reset DMA Context State registers used in packet mode DMA. This bit will only have an effect after all FromPcie DMA Stop bits are set by software. Software should only set this bit after any inflight DMAs have completed",
+                    "mode": "RW",
+                    "name": "ResetDMAState"
+                },
+                {
+                    "altname": "POLL_RESP_NO_WAIT_ENA",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "When set, CTM Polling command responses are processed as they arrive. When cleared, CTM Polling command responses are processed after all outstanding responses have arrived",
+                    "mode": "RW",
+                    "name": "PollRespNoWaitEna"
+                },
+                {
+                    "altname": "BPE_RR_ARB_ENA",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Controls arbitratin mode of BPE module swapping. Set this bit to enable round-robin mode of arbitration",
+                    "mode": "RW",
+                    "name": "BpeRRArbEna"
+                },
+                {
+                    "altname": "NON_DEPWR_BEAT_READS_ENA",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Allows non dependent writes to pass reads in the CTM bulk Engine. Copied to bit 30 of the CPP address field during Packet Mode DMAs to the CTM",
+                    "mode": "RW",
+                    "name": "NonDepWrBeatsReadEna"
+                },
+                {
+                    "altname": "DIS_BDRAM_ERR",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Controls how the BLQ logic handles multi-bit ECC errors received from the Buffer Descriptor RAM",
+                    "mode": "RW",
+                    "name": "DisBdRamErr"
+                },
+                {
+                    "altname": "DIS_RXPUSH_LAST_ERR",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Controls how the hardware responds to a push bus input protocol error for allocation response transactions",
+                    "mode": "RW",
+                    "name": "DisRxPushLastErr"
+                },
+                {
+                    "altname": "DIS_RXALLOC_IN_ERR",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Controls how the hardware responds to a push bus input error for allocation response transactions.",
+                    "mode": "RW",
+                    "name": "DisRxAllocInErr"
+                },
+                {
+                    "altname": "DIS_RXBLQWR_IN_ERR",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Controls how the hardware responds to a push bus input error for BLQ writes transactions.",
+                    "mode": "RW",
+                    "name": "DisRxBlqWrInErr"
+                },
+                {
+                    "altname": "PCIE_NUM",
+                    "bit_lsb": 5,
+                    "bit_msb": 7,
+                    "description": "This field is placed in the 3 lsbits of the Packet Allocation Command Address field. It is used\n                            by the CTM to identify the source of the command. It must be a different value for each source.",
+                    "mode": "RW",
+                    "name": "PCIeNum"
+                },
+                {
+                    "altname": "CTM_POLL_ENA",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Configures whether the polling function is enabled or disabled.",
+                    "mode": "RW",
+                    "name": "CtmPollEna"
+                },
+                {
+                    "altname": "CTM_POLL_INTVL",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Configures the minimum amount of time between packet allocation poll commands in clock cycles.",
+                    "mode": "RW",
+                    "name": "CtmPollIntvl"
+                },
+                {
+                    "altname": "POLL_CMD_ISSUE_RATE",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Configures the space between CPP Polling commands issues after the polling interval has expired",
+                    "mode": "RW",
+                    "name": "PollCmdIssueRate"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.DMABPCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BLQ_BYPASS_ENA",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "When set, selects to use a null buffer descriptor if the packet is not split.",
+                    "mode": "RW",
+                    "name": "BlqBypassEna"
+                },
+                {
+                    "altname": "BP_RSVD",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Reserved, Write to 0",
+                    "mode": "RW",
+                    "name": "BPRsvd"
+                },
+                {
+                    "altname": "CTM_BUF_PAD",
+                    "bit_lsb": 18,
+                    "bit_msb": 21,
+                    "description": "Selects the number of 32 bytes to add to the allocation size of the packet. Allows padding to the allocated space in the CTM for smaller packets in increments of 32B. 0=32B, 1=64B, 0xf=512B.",
+                    "mode": "RW",
+                    "name": "CtmBufPad"
+                },
+                {
+                    "altname": "CTM_BUF_PAD_ENA",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Enables adding CtmBufPad bytes to the allocation size of the packet.",
+                    "mode": "RW",
+                    "name": "CtmBufPadEna"
+                },
+                {
+                    "altname": "CTM_OFFSET_MSB",
+                    "bit_lsb": 14,
+                    "bit_msb": 16,
+                    "description": "\nThis field represents the MSbits of CtmOffset and defines the offset to add to the data reference when starting to write packet data to the CTM. The space in front of the packet is for the rewrite script used by the packet modifier. Encoding of {CtmOffsetMsb[3;0],CtmOffset} are: 0000 = 32B, 0001=64B, 0010=96B, 0011 = 128B, 0100 = 160B, ... 1111 = 512B",
+                    "mode": "RW",
+                    "name": "CtmOffsetMsb"
+                },
+                {
+                    "altname": "CTM_OFFSET",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "This field contains the LSbit of CtmOffset. See description of CtmOffsetMsb.",
+                    "mode": "RW",
+                    "name": "CtmOffset"
+                },
+                {
+                    "altname": "PRI_BP_LIST",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Primary Buffer list number associated. There are 4 buffer lists available, which contain\n                 buffer descriptors that are used to store packet data in internal/external MUs.",
+                    "mode": "RW",
+                    "name": "PriBList"
+                },
+                {
+                    "altname": "SEC_BP_LIST",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Secondary Buffer list number associated. There are 4 buffer lists available, which contain\n                 buffer descriptors that are used to store packet data in internal/external MUs.",
+                    "mode": "RW",
+                    "name": "SecBList"
+                },
+                {
+                    "altname": "SPLIT_LENGTH",
+                    "bit_lsb": 5,
+                    "bit_msb": 7,
+                    "description": "Encoded packet size used when deciding to split packets between CTM and internal/external MUs.\n                 The encoding is in powers of 2 starting at 256 bytes.",
+                    "mode": "RW",
+                    "name": "SplitLength"
+                },
+                {
+                    "altname": "BPE_HEAD",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Pointer to the first Buffer Pool Entry register in the list associated with this buffer pool.",
+                    "mode": "RW",
+                    "name": "BpeHead"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.DMACntrlCfg1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DMA_FRM_CPP_RATE",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "DMA FromPCIe rate at which requests are issued to CPP",
+                    "mode": "RW",
+                    "name": "DmaFrmCppRate"
+                },
+                {
+                    "altname": "DMA_TO_PCIE_RATE",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "DMA ToPCIe rate at which requests are issued to CPP",
+                    "mode": "RW",
+                    "name": "DmaToPcieRate"
+                },
+                {
+                    "altname": "DMA_TO_CPP_RATE",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "DMA ToPCIe rate at which requests are issued to PCIe",
+                    "mode": "RW",
+                    "name": "DmaToCppRate"
+                },
+                {
+                    "altname": "DMA_FRM_PCIE_RATE",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "DMA FromPCIe rate at which requests are issued to PCIe",
+                    "mode": "RW",
+                    "name": "DmaFrmPcieRate"
+                },
+                {
+                    "altname": "DMA_FRM_PCIE_ISSUE_LOAD",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "DMA FromPCIe issue rate load value. Controls rate at which requests are issued to PCIe",
+                    "mode": "RW",
+                    "name": "DmaFrmPcieIssueLoad"
+                },
+                {
+                    "altname": "DMA_RATE_LIMIT_SELECT",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Selects the type of rate limiting used by the DMA engine.",
+                    "mode": "RW",
+                    "name": "DmaRateLimitSelect"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.DMACntrlCfg2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DMA_TO_CPP_TH",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Selects the threshold of the rate limiter in 256 byte increments. A value of 0 equals a threshold of 256 bytes. A value of 15 equates to a threshold of 4KB.",
+                    "mode": "RW",
+                    "name": "DmaToCppTh"
+                },
+                {
+                    "altname": "DMA_TO_PCIE_TH",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Selects the threshold of the rate limiter in 512 byte increments. A value of 0 equals a threshold of 256 bytes. A value of 15 equates to a threshold of 4KB.",
+                    "mode": "RW",
+                    "name": "DmaToPcieTh"
+                },
+                {
+                    "altname": "DMA_FRM_CPP_TH",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Selects the threshold of the rate limiter in 512 byte increments. A value of 0 equals a threshold of 256 bytes. A value of 15 equates to a threshold of 4KB.",
+                    "mode": "RW",
+                    "name": "DmaFrmCppTh"
+                },
+                {
+                    "altname": "DMA_FRM_PCIE_TH",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Selects the threshold of the rate limiter in 256 byte increments. A value of 0 equals a threshold of 256 bytes. A value of 15 equates to a threshold of 4KB.",
+                    "mode": "RW",
+                    "name": "DmaFrmPcieTh"
+                },
+                {
+                    "altname": "DMA_RATE",
+                    "bit_lsb": 12,
+                    "bit_msb": 14,
+                    "description": "Controls the number of cycles between credit decrements in all of the Token bucket rate shapers. A value of 0 equates to 1 cycle. A value of 7 equates to 8 cycles.",
+                    "mode": "RW",
+                    "name": "DmaRate"
+                },
+                {
+                    "altname": "DMA_TO_CPP_CREDIT",
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "Controls bandwidth of CPP Reads when in BWRateLimitMode. Equals the number of 8-byte credits + 1 that are decremented every (DmaRate + 1) cycles.",
+                    "mode": "RW",
+                    "name": "DmaToCppCredit"
+                },
+                {
+                    "altname": "DMA_TO_PCIE_CREDIT",
+                    "bit_lsb": 6,
+                    "bit_msb": 8,
+                    "description": "Controls bandwidth of PCIe Writes when in BWRateLimitMode. Equals the number of 8-byte credits + 1 that are decremented every (DmaRate + 1) cycles.",
+                    "mode": "RW",
+                    "name": "DmaToPcieCredit"
+                },
+                {
+                    "altname": "DMA_FRM_CPP_CREDIT",
+                    "bit_lsb": 3,
+                    "bit_msb": 5,
+                    "description": "Controls bandwidth of CPP Reads when in BWRateLimitMode. Equals the number of 8-byte credits + 1 that are decremented every (DmaRate + 1) cycles.",
+                    "mode": "RW",
+                    "name": "DmaFrmCppCredit"
+                },
+                {
+                    "altname": "DMA_FRM_PCIE_CREDIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Controls bandwidth of PCIe Reads when in BWRateLimit mode.  Equals the number of 8-byte credits + 1 that are decremented every (DmaRate + 1) cycles.",
+                    "mode": "RW",
+                    "name": "DmaFrmPcieCredit"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.DMADescrConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "FREE_CTM_PACKET_ODD",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "When set, a ToPCIe DMA issues a free packet command as part of the packet completion process to free the packet in the CTM packet engine",
+                    "mode": "RW",
+                    "name": "FreeCtmPacketOdd"
+                },
+                {
+                    "altname": "SIGNAL_ONLY_ODD",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Specifies if DMA is a signal-only, no data transferred.",
+                    "mode": "RW",
+                    "name": "SignalOnlyOdd"
+                },
+                {
+                    "altname": "END_PAD_ODD",
+                    "bit_lsb": 26,
+                    "bit_msb": 27,
+                    "description": "Specifies if 0-padding should be inserted at the end of DMA transfers to PCIe.",
+                    "mode": "RW",
+                    "name": "EndPaddingOdd"
+                },
+                {
+                    "altname": "START_PAD_ODD",
+                    "bit_lsb": 24,
+                    "bit_msb": 25,
+                    "description": "Specifies if 0-padding should be inserted in front of DMA transfers to PCIe.",
+                    "mode": "RW",
+                    "name": "StartPaddingOdd"
+                },
+                {
+                    "altname": "ID_BASED_ORDER_ODD",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Specifies if ID-Based Ordering attribute should be set for PCIe request.",
+                    "mode": "RW",
+                    "name": "IdBasedOrderingOdd"
+                },
+                {
+                    "altname": "RELAXED_ORDER_ODD",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Specifies if Relaxed Ordering attribute should be set for PCIe request.",
+                    "mode": "RW",
+                    "name": "RelaxedOrderingOdd"
+                },
+                {
+                    "altname": "NO_SNOOP_ODD",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Specifies if No Snoop attribute should be set for PCIe request.",
+                    "mode": "RW",
+                    "name": "NoSnoopOdd"
+                },
+                {
+                    "altname": "TARGET_64_ODD",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Specifies if CPP Target is 64-bit or 32-bit, default is 32-bit.",
+                    "mode": "RW",
+                    "name": "Target64bitOdd"
+                },
+                {
+                    "altname": "CPP_TARGET_ODD",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Selects CPP Target to be used for DMA.",
+                    "mode": "RW",
+                    "name": "CppTargetIDOdd"
+                },
+                {
+                    "altname": "FREE_CTM_PACKET_EVEN",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "When set, a ToPCIe DMA issues a free packet command as part of the packet completion process to free the packet in the CTM packet engine",
+                    "mode": "RW",
+                    "name": "FreeCtmPacketEven"
+                },
+                {
+                    "altname": "SIGNAL_ONLY_EVEN",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Specifies if DMA is a signal-only, no data transferred.",
+                    "mode": "RW",
+                    "name": "SignalOnlyEven"
+                },
+                {
+                    "altname": "END_PAD_EVEN",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Specifies if 0-padding should be inserted in front of DMA transfers to PCIe.",
+                    "mode": "RW",
+                    "name": "EndPaddingEven"
+                },
+                {
+                    "altname": "START_PAD_EVEN",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Specifies if 0-padding should be inserted in front of DMA transfers to PCIe.",
+                    "mode": "RW",
+                    "name": "StartPaddingEven"
+                },
+                {
+                    "altname": "ID_BASED_ORDER_EVEN",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Specifies if ID-Based Ordering attribute should be set for PCIe request.",
+                    "mode": "RW",
+                    "name": "IdBasedOrderingEven"
+                },
+                {
+                    "altname": "RELAXED_ORDER_EVEN",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Specifies if Relaxed Ordering attribute should be set for PCIe request.",
+                    "mode": "RW",
+                    "name": "RelaxedOrderingEven"
+                },
+                {
+                    "altname": "NO_SNOOP_EVEN",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Specifies if No Snoop attribute should be set for PCIe request.",
+                    "mode": "RW",
+                    "name": "NoSnoopEven"
+                },
+                {
+                    "altname": "TARGET_64_EVEN",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "CPP target is 64-bit.  Set if target supports 64-bit transactions, or cleared if target only supports 32-bit transaction.",
+                    "mode": "RW",
+                    "name": "Target64bitEven"
+                },
+                {
+                    "altname": "CPP_TARGET_EVEN",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Selects CPP Target to be used for DMA.",
+                    "mode": "RW",
+                    "name": "CppTargetIDEven"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.DMADescrLegacy": {
+            "bit_length": 128,
+            "fields": [
+                {
+                    "altname": "LENGTH",
+                    "bit_lsb": 116,
+                    "bit_msb": 127,
+                    "description": "Size of transfer.  Specified as number of bytes minus 1.",
+                    "mode": "WO",
+                    "name": "XferLength"
+                },
+                {
+                    "altname": "RID",
+                    "bit_lsb": 108,
+                    "bit_msb": 115,
+                    "description": "8-bit Requester ID to use (if OverrideRID is set)",
+                    "mode": "WO",
+                    "name": "RequesterID"
+                },
+                {
+                    "altname": "RID_OVERRIDE",
+                    "bit_lsb": 107,
+                    "bit_msb": 107,
+                    "description": "If set the value of RequesterID will be used for the Requester-ID in the PCIe TLP header",
+                    "mode": "WO",
+                    "name": "OverrideRID"
+                },
+                {
+                    "altname": "TRANS_CLASS",
+                    "bit_lsb": 104,
+                    "bit_msb": 106,
+                    "description": "Indicates the transaction class.",
+                    "mode": "WO",
+                    "name": "TransClass"
+                },
+                {
+                    "altname": "PCIE_ADDR_HI",
+                    "bit_lsb": 96,
+                    "bit_msb": 103,
+                    "description": "Upper 8 bits of 40-bit PCIe address",
+                    "mode": "WO",
+                    "name": "PCIeAddressHi"
+                },
+                {
+                    "altname": "PCIE_ADDR_LO",
+                    "bit_lsb": 64,
+                    "bit_msb": 95,
+                    "description": "Lower 32 bits of 40-bit PCIe address",
+                    "mode": "WO",
+                    "name": "PCIeAddressLo"
+                },
+                {
+                    "altname": "MODE_SEL",
+                    "bit_lsb": 62,
+                    "bit_msb": 63,
+                    "description": "Selects what type of signaling, AutoPush or Event, or indicates Packet Mode, also see DMA Mode field",
+                    "mode": "WO",
+                    "name": "ModeSelect"
+                },
+                {
+                    "altname": "DMA_MODE",
+                    "bit_lsb": 46,
+                    "bit_msb": 61,
+                    "description": "Indicates Signal or Event to generate on completed command or can be DMA descriptor extension for Data Gather support, depending on ModeSelect bits",
+                    "mode": "WO",
+                    "name": "DmaMode"
+                },
+                {
+                    "altname": "CPP_TOKEN",
+                    "bit_lsb": 44,
+                    "bit_msb": 45,
+                    "description": "Specifies CPP Token to be used when issuing CPP commands for the transfer.",
+                    "mode": "WO",
+                    "name": "CppToken"
+                },
+                {
+                    "altname": "DMA_CFG_INDEX",
+                    "bit_lsb": 40,
+                    "bit_msb": 43,
+                    "description": "Index register for CPP transaction. Used to index from which register to get supplemental DMA descriptor configuration.\n                          NOTE: lsb chooses low or high half of 4B configuration register",
+                    "mode": "WO",
+                    "name": "DmaConfigRegIndex"
+                },
+                {
+                    "altname": "CPP_ADDR_HI",
+                    "bit_lsb": 32,
+                    "bit_msb": 39,
+                    "description": "Upper 8-bits of 40-bit CPP bus address unless ModeSelect==3 and DmaMode[13]==1 (Packet Mode). In Packet Mode this field is the 8-bit QID copied to the metadata written to the CTM (refer to the DMA section of the EAS). ",
+                    "mode": "WO",
+                    "name": "CPPAddressHi"
+                },
+                {
+                    "altname": "CPP_ADDR_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 40-bit CPP bus address unless ModeSelect==3 and DmaMode[13]==1 (Packet Mode). In Packet Mode this field contains the {SequenceNumber[15:00],2h0,TotalLength[13:0]}. The SequenceNumber is copied to the metadata written to the CTM. The TotalLength is the total number of bytes of a Packet Mode Gather DMA and must be equal to the total of each stage of the DMA operation.  (refer to the DMA section of the EAS).",
+                    "mode": "WO",
+                    "name": "CPPAddressLo"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.DMADescrTPHConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TPH_CTRL_ENA_ODD",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "When set the TPH Value and associated TPH Steering Tag are used during the all DMA TLPs. When clear the TPH and TPH Steering Tag are not used for DMA TLPs",
+                    "mode": "RW",
+                    "name": "TphCtrlEnaOdd"
+                },
+                {
+                    "altname": "TPH_ODD",
+                    "bit_lsb": 24,
+                    "bit_msb": 25,
+                    "description": "TPH Value used in all DMA TLPs when TphCtrlEnaOdd bit is set.",
+                    "mode": "RW",
+                    "name": "TphOdd"
+                },
+                {
+                    "altname": "TPH_ST_ODD",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "TPH Steering Tag used in all DMA TLPs when TphCtrlEnaOdd bit is set.",
+                    "mode": "RW",
+                    "name": "TphStOdd"
+                },
+                {
+                    "altname": "TPH_CTRL_ENA_EVEN",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "When set the TPH Value and associated TPH Steering Tag are used during the all DMA TLPs. When clear the TPH and TPH Steering Tag are not used for DMA TLPs",
+                    "mode": "RW",
+                    "name": "TphCtrlEnaEven"
+                },
+                {
+                    "altname": "TPH_EVEN",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "TPH Value used in all DMA TLPs when TphCtrlEnaEven bit is set.",
+                    "mode": "RW",
+                    "name": "TphEven"
+                },
+                {
+                    "altname": "TPH_ST_EVEN",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "TPH Steering Tag used in all DMA TLPs when TphCtrlEnaEven bit is set.",
+                    "mode": "RW",
+                    "name": "TphStEven"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.DMAFrmQueueStatus0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DMA_LO_AVAIL",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "DMA Low priority queue space available",
+                    "mode": "RO",
+                    "name": "DmaLoQueAvail"
+                },
+                {
+                    "altname": "DMA_LO_WRPTR",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "DMA Low priority queue write pointer",
+                    "mode": "RO",
+                    "name": "DmaLoQueWrPtr"
+                },
+                {
+                    "altname": "PKT_MODE_STG_ERROR",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "When non-zero, DMA detected a packet mode descriptor stage was in error. This indicates a start stage was received for a context that was still in use or a middle or end packet mode stage was detected with no previus start stage. In both cases the descriptors are dropped.",
+                    "mode": "RW1C",
+                    "name": "PktModeStgError"
+                },
+                {
+                    "altname": "DIS_ARI_ERROR",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Setting this bit disables VF Access errors from dropping DMAs. When this bit is clear VF Access Errors cause DMAs using the errored VF to be dropped",
+                    "mode": "RW",
+                    "name": "DisAriError"
+                },
+                {
+                    "altname": "RESET_DMA",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Setting this bit clears the DMA Queue Read/Write Pointers. This bit can only be written after software writes a 1 to the QueueStop register. Software should only set this bit after waiting for any inflight DMAs to complete.",
+                    "mode": "W1C",
+                    "name": "ResetDMA"
+                },
+                {
+                    "altname": "MULTIBIT_ERROR",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "When non-zero, A multi-bit error was detected while reading from the DMA Descriptor memory. ",
+                    "mode": "RW1C",
+                    "name": "MultiBitError"
+                },
+                {
+                    "altname": "DIS_DMADESC_MULTIBIT_ERR",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "When set, DMA Engine ingores Descriptor multibit errors.",
+                    "mode": "RW",
+                    "name": "DisDmaDescMultiBitErr"
+                },
+                {
+                    "altname": "PF_ERROR_HALT",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "When set, DMA Engine will halt on a physical function access error.",
+                    "mode": "RW",
+                    "name": "HaltOnPfDmaError"
+                },
+                {
+                    "altname": "MULTIBIT_ERROR_HALT",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "When set, DMA Engine will halt on a DMA Descriptor multibit error.",
+                    "mode": "RW",
+                    "name": "HaltOnRdMultiBitError"
+                },
+                {
+                    "altname": "DMA_ERROR",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "When non-zero, DMA had an error. Bit 0 indicates a virtual function access error. Bit 1 indicates a physical function access error.",
+                    "mode": "RW1C",
+                    "name": "DmaError"
+                },
+                {
+                    "altname": "QUEUE_OVERFLOW",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "When non-zero, DMA queue descriptor is written to a full queue.",
+                    "mode": "RW1C",
+                    "name": "QueueOverflow"
+                },
+                {
+                    "altname": "QUEUE_HALT_FULL",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "When non-zero, DMA Engine will halt when full",
+                    "mode": "RW",
+                    "name": "HaltOnFull"
+                },
+                {
+                    "altname": "HI_QUEUE_STOP",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Set when the DMA engine High Queue is stopped due to an error, or if DMA engine is explicitly stopped by writing a 1 to this bit.",
+                    "mode": "RW",
+                    "name": "HighQueueStop"
+                },
+                {
+                    "altname": "MED_QUEUE_STOP",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Set when the DMA engine Medium Queue is stopped due to an error, or if DMA engine is explicitly stopped by writing a 1 to this bit. ",
+                    "mode": "RW",
+                    "name": "MediumQueueStop"
+                },
+                {
+                    "altname": "LO_QUEUE_STOP",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set when the DMA engine Low Queue is stopped due to an error, or if DMA engine is explicitly stopped by writing a 1 to this bit.",
+                    "mode": "RW",
+                    "name": "LowQueueStop"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.DMAPMHeader": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "PM_HEADER_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 63,
+                    "description": "Used to populate various packet mode meta-data fields",
+                    "mode": "RW",
+                    "name": "PMHeaderData"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.DMAQueueStatus1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DMA_HI_AVAIL",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "DMA High priority queue space available",
+                    "mode": "RO",
+                    "name": "DmaHiQueAvail"
+                },
+                {
+                    "altname": "DMA_HI_WRPTR",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "DMA High priority queue write pointer",
+                    "mode": "RO",
+                    "name": "DmaHiQueWrPtr"
+                },
+                {
+                    "altname": "DMA_MED_AVAIL",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "DMA Medium priority queue space available",
+                    "mode": "RO",
+                    "name": "DmaMedQueAvail"
+                },
+                {
+                    "altname": "DMA_MED_WRPTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "DMA Medium priority queue write pointer",
+                    "mode": "RO",
+                    "name": "DmaMedQueWrPtr"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.DMAToQueueStatus0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DMA_LO_AVAIL",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "DMA Low priority queue space available",
+                    "mode": "RO",
+                    "name": "DmaLoQueAvail"
+                },
+                {
+                    "altname": "DMA_LO_WRPTR",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "DMA Low priority queue write pointer",
+                    "mode": "RO",
+                    "name": "DmaLoQueWrPtr"
+                },
+                {
+                    "altname": "DIS_ARI_ERROR",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Setting this bit disables VF Access errors from dropping DMAs. When this bit is clear VF Access Errors cause DMAs using the errored VF to be dropped",
+                    "mode": "RW",
+                    "name": "DisAriError"
+                },
+                {
+                    "altname": "RESET_DMA",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Setting this bit clears the DMA Queue Read/Write Pointers. This bit can only be written after software writes a 1 to the QueueStop register. Software should only set this bit after waiting for any inflight DMAs to complete.",
+                    "mode": "W1C",
+                    "name": "ResetDMA"
+                },
+                {
+                    "altname": "MULTIBIT_ERROR",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "When non-zero, A multi-bit error was detected while reading from the DMA Descriptor memory. ",
+                    "mode": "RW1C",
+                    "name": "MultiBitError"
+                },
+                {
+                    "altname": "DIS_DMADESC_MULTIBIT_ERR",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "When set, DMA Engine ingores Descriptor multibit errors.",
+                    "mode": "RW",
+                    "name": "DisDmaDescMultiBitErr"
+                },
+                {
+                    "altname": "PF_ERROR_HALT",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "When set, DMA Engine will halt on a physical function access error.",
+                    "mode": "RW",
+                    "name": "HaltOnPfDmaError"
+                },
+                {
+                    "altname": "MULTIBIT_ERROR_HALT",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "When set, DMA Engine will halt on a DMA Descriptor multibit error.",
+                    "mode": "RW",
+                    "name": "HaltOnRdMultiBitError"
+                },
+                {
+                    "altname": "DMA_ERROR",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "When non-zero, DMA had an error. Bit 0 indicates a virtual function access error. Bit 1 indicates a physical function access error.",
+                    "mode": "RW1C",
+                    "name": "DmaError"
+                },
+                {
+                    "altname": "QUEUE_OVERFLOW",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "When non-zero, DMA queue descriptor is written to a full queue.",
+                    "mode": "RW1C",
+                    "name": "QueueOverflow"
+                },
+                {
+                    "altname": "QUEUE_HALT_FULL",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "When non-zero, DMA Engine will halt when full",
+                    "mode": "RW",
+                    "name": "HaltOnFull"
+                },
+                {
+                    "altname": "HI_QUEUE_STOP",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Set when the DMA engine High Queue is stopped due to an error, or if DMA engine is explicitly stopped by writing a 1 to this bit.",
+                    "mode": "RW",
+                    "name": "HighQueueStop"
+                },
+                {
+                    "altname": "MED_QUEUE_STOP",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Set when the DMA engine Medium Queue is stopped due to an error, or if DMA engine is explicitly stopped by writing a 1 to this bit. ",
+                    "mode": "RW",
+                    "name": "MediumQueueStop"
+                },
+                {
+                    "altname": "LO_QUEUE_STOP",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set when the DMA engine Low Queue is stopped due to an error, or if DMA engine is explicitly stopped by writing a 1 to this bit.",
+                    "mode": "RW",
+                    "name": "LowQueueStop"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.DMATotalCreditCnt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TOTAL_PKT_CREDIT",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Contains the total number of packet credits in use by the DMA buffer allocation logic",
+                    "mode": "RW1C",
+                    "name": "TotalPktCredit"
+                },
+                {
+                    "altname": "TOTAL_BUF_CREDIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Contains the total number of buffer credits in use by the DMA buffer allocation logic",
+                    "mode": "RW1C",
+                    "name": "TotalBufCredit"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.PCIeMsixGen": {
+            "bit_length": 32,
+            "comment": "Multi-register",
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "mode": "wo",
+                    "name": "value"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.PcieBLQueCtrl0": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "BLQ_EVENT_FULL_CNT",
+                    "bit_lsb": 48,
+                    "bit_msb": 55,
+                    "description": "Debug counter that increments when a BLQ Event is dropped due to a full BLQ Event FIFO. This counter saturates at all 1's",
+                    "mode": "RC",
+                    "name": "BLQEventFullCnt"
+                },
+                {
+                    "altname": "BD_FIFO_ENTRY_CNT",
+                    "bit_lsb": 40,
+                    "bit_msb": 42,
+                    "description": "Number of buffer descriptors resident in the buffer descriptor register FIFO",
+                    "mode": "RO",
+                    "name": "BDFifoEntryCnt"
+                },
+                {
+                    "altname": "BL_QUE_FULL",
+                    "bit_lsb": 39,
+                    "bit_msb": 39,
+                    "description": "The Queue is full when set.",
+                    "mode": "RO",
+                    "name": "BLQFull"
+                },
+                {
+                    "altname": "BL_QUE_EMPTY",
+                    "bit_lsb": 38,
+                    "bit_msb": 38,
+                    "description": "The queue is empty when set.",
+                    "mode": "RO",
+                    "name": "BLQEmpty"
+                },
+                {
+                    "altname": "BL_QUE_SIZE",
+                    "bit_lsb": 36,
+                    "bit_msb": 37,
+                    "description": "Defines the Size of the Circular Buffer List Queue",
+                    "mode": "RW",
+                    "name": "BLQSize"
+                },
+                {
+                    "altname": "BL_ENTRY_CNT",
+                    "bit_lsb": 24,
+                    "bit_msb": 34,
+                    "description": "Hardware calculated value of the number of entries on the Buffer List Queue. A full Buffer List Queue has an entry count equal to zero, with the BLQFull flag set. An empty Buffer List Queue has an entry count equal to zero with the BLQEmpty flag set.",
+                    "mode": "RO",
+                    "name": "BLEntryCnt"
+                },
+                {
+                    "altname": "BL_HEAD_PTR",
+                    "bit_lsb": 12,
+                    "bit_msb": 22,
+                    "description": "Buffer List Queue Head Pointer. Points to the next entry to be read by hardware.",
+                    "mode": "RW",
+                    "name": "BLHdPtr"
+                },
+                {
+                    "altname": "BL_TAIL_PTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 10,
+                    "description": "Buffer List Queue Tail Pointer. Points to the next entry to be written at the tail.",
+                    "mode": "RW",
+                    "name": "BLTlPtr"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.PcieBLQueCtrl1": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "BLQ_EVENT_FULL_CNT",
+                    "bit_lsb": 48,
+                    "bit_msb": 55,
+                    "description": "Debug counter that increments when a BLQ Event is dropped due to a full BLQ Event FIFO. This counter saturates at all 1's",
+                    "mode": "RC",
+                    "name": "BLQEventFullCnt"
+                },
+                {
+                    "altname": "BD_FIFO_ENTRY_CNT",
+                    "bit_lsb": 40,
+                    "bit_msb": 42,
+                    "description": "Number of buffer descriptors resident in the buffer descriptor register FIFO",
+                    "mode": "RO",
+                    "name": "BDFifoEntryCnt"
+                },
+                {
+                    "altname": "BL_QUE_FULL",
+                    "bit_lsb": 39,
+                    "bit_msb": 39,
+                    "description": "The Queue is full when set.",
+                    "mode": "RO",
+                    "name": "BLQFull"
+                },
+                {
+                    "altname": "BL_QUE_EMPTY",
+                    "bit_lsb": 38,
+                    "bit_msb": 38,
+                    "description": "The queue is empty when set.",
+                    "mode": "RO",
+                    "name": "BLQEmpty"
+                },
+                {
+                    "altname": "BL_QUE_SIZE",
+                    "bit_lsb": 36,
+                    "bit_msb": 37,
+                    "description": "Defines the Size of the Circular Buffer List Queue",
+                    "mode": "RW",
+                    "name": "BLQSize"
+                },
+                {
+                    "altname": "BL_ENTRY_CNT",
+                    "bit_lsb": 24,
+                    "bit_msb": 34,
+                    "description": "Hardware calculated value of the number of entries on the Buffer List Queue. A full Buffer List Queue has an entry count equal to zero, with the BLQFull flag set. An empty Buffer List Queue has an entry count equal to zero with the BLQEmpty flag set.",
+                    "mode": "RO",
+                    "name": "BLEntryCnt"
+                },
+                {
+                    "altname": "BL_HEAD_PTR",
+                    "bit_lsb": 12,
+                    "bit_msb": 22,
+                    "description": "Buffer List Queue Head Pointer. Points to the next entry to be read by hardware.",
+                    "mode": "RW",
+                    "name": "BLHdPtr"
+                },
+                {
+                    "altname": "BL_TAIL_PTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 10,
+                    "description": "Buffer List Queue Tail Pointer. Points to the next entry to be written at the tail.",
+                    "mode": "RW",
+                    "name": "BLTlPtr"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.PcieBLQueCtrl2": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "BLQ_EVENT_FULL_CNT",
+                    "bit_lsb": 48,
+                    "bit_msb": 55,
+                    "description": "Debug counter that increments when a BLQ Event is dropped due to a full BLQ Event FIFO. This counter saturates at all 1's",
+                    "mode": "RC",
+                    "name": "BLQEventFullCnt"
+                },
+                {
+                    "altname": "BD_FIFO_ENTRY_CNT",
+                    "bit_lsb": 40,
+                    "bit_msb": 42,
+                    "description": "Number of buffer descriptors resident in the buffer descriptor register FIFO",
+                    "mode": "RO",
+                    "name": "BDFifoEntryCnt"
+                },
+                {
+                    "altname": "BL_QUE_FULL",
+                    "bit_lsb": 39,
+                    "bit_msb": 39,
+                    "description": "The Queue is full when set.",
+                    "mode": "RO",
+                    "name": "BLQFull"
+                },
+                {
+                    "altname": "BL_QUE_EMPTY",
+                    "bit_lsb": 38,
+                    "bit_msb": 38,
+                    "description": "The queue is empty when set.",
+                    "mode": "RO",
+                    "name": "BLQEmpty"
+                },
+                {
+                    "altname": "BL_QUE_SIZE",
+                    "bit_lsb": 36,
+                    "bit_msb": 37,
+                    "description": "Defines the Size of the Circular Buffer List Queue",
+                    "mode": "RW",
+                    "name": "BLQSize"
+                },
+                {
+                    "altname": "BL_ENTRY_CNT",
+                    "bit_lsb": 24,
+                    "bit_msb": 34,
+                    "description": "Hardware calculated value of the number of entries on the Buffer List Queue. A full Buffer List Queue has an entry count equal to zero, with the BLQFull flag set. An empty Buffer List Queue has an entry count equal to zero with the BLQEmpty flag set.",
+                    "mode": "RO",
+                    "name": "BLEntryCnt"
+                },
+                {
+                    "altname": "BL_HEAD_PTR",
+                    "bit_lsb": 12,
+                    "bit_msb": 22,
+                    "description": "Buffer List Queue Head Pointer. Points to the next entry to be read by hardware.",
+                    "mode": "RW",
+                    "name": "BLHdPtr"
+                },
+                {
+                    "altname": "BL_TAIL_PTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 10,
+                    "description": "Buffer List Queue Tail Pointer. Points to the next entry to be written at the tail.",
+                    "mode": "RW",
+                    "name": "BLTlPtr"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.PcieBLQueCtrl3": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "BLQ_EVENT_FULL_CNT",
+                    "bit_lsb": 48,
+                    "bit_msb": 55,
+                    "description": "Debug counter that increments when a BLQ Event is dropped due to a full BLQ Event FIFO. This counter saturates at all 1's",
+                    "mode": "RC",
+                    "name": "BLQEventFullCnt"
+                },
+                {
+                    "altname": "BD_FIFO_ENTRY_CNT",
+                    "bit_lsb": 40,
+                    "bit_msb": 42,
+                    "description": "Number of buffer descriptors resident in the buffer descriptor register FIFO",
+                    "mode": "RO",
+                    "name": "BDFifoEntryCnt"
+                },
+                {
+                    "altname": "BL_QUE_FULL",
+                    "bit_lsb": 39,
+                    "bit_msb": 39,
+                    "description": "The Queue is full when set.",
+                    "mode": "RO",
+                    "name": "BLQFull"
+                },
+                {
+                    "altname": "BL_QUE_EMPTY",
+                    "bit_lsb": 38,
+                    "bit_msb": 38,
+                    "description": "The queue is empty when set.",
+                    "mode": "RO",
+                    "name": "BLQEmpty"
+                },
+                {
+                    "altname": "BL_QUE_SIZE",
+                    "bit_lsb": 36,
+                    "bit_msb": 37,
+                    "description": "Defines the Size of the Circular Buffer List Queue",
+                    "mode": "RW",
+                    "name": "BLQSize"
+                },
+                {
+                    "altname": "BL_ENTRY_CNT",
+                    "bit_lsb": 24,
+                    "bit_msb": 34,
+                    "description": "Hardware calculated value of the number of entries on the Buffer List Queue. A full Buffer List Queue has an entry count equal to zero, with the BLQFull flag set. An empty Buffer List Queue has an entry count equal to zero with the BLQEmpty flag set.",
+                    "mode": "RO",
+                    "name": "BLEntryCnt"
+                },
+                {
+                    "altname": "BL_HEAD_PTR",
+                    "bit_lsb": 12,
+                    "bit_msb": 22,
+                    "description": "Buffer List Queue Head Pointer. Points to the next entry to be read by hardware.",
+                    "mode": "RW",
+                    "name": "BLHdPtr"
+                },
+                {
+                    "altname": "BL_TAIL_PTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 10,
+                    "description": "Buffer List Queue Tail Pointer. Points to the next entry to be written at the tail.",
+                    "mode": "RW",
+                    "name": "BLTlPtr"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.PcieDmaRsvd": {
+            "bit_length": 32,
+            "fields": []
+        },
+        "pcie_x8_internal_targets.PcieExplicitCmdBar0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIGTYPE",
+                    "bit_lsb": 30,
+                    "bit_msb": 31,
+                    "description": "Signal type to expect from CPP target. Set 1 bit for each signal expected. If 0 this implies the PCIe component should expect no CPP signal and will complete the PCIe request immediately, potentially before the CPP request completes.  This use case is reserved for 3rd party Mastering and Signaling. Ensure all Explicit CPP Command fields (Data/Signal Master, Data/Signal Ref) are configured properly for the intended Master/Target combination.",
+                    "mode": "RW",
+                    "name": "SignalType"
+                },
+                {
+                    "altname": "TOK",
+                    "bit_lsb": 28,
+                    "bit_msb": 29,
+                    "description": "CPP command token",
+                    "mode": "RW",
+                    "name": "Token"
+                },
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "This field represents bits [39:22] of CPP command address, starting with the msb and truncating unnecessary lsb bits, depending on the size of the aperture.  See figure 2.2 for more detail of address bit muxing.",
+                    "mode": "RW",
+                    "name": "Address"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.PcieExplicitCmdBar1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIGNAL_REF",
+                    "bit_lsb": 24,
+                    "bit_msb": 30,
+                    "description": "CPP command signal reference, when SigType is 0, otherwise RESERVED BY HW, dont care for SW",
+                    "mode": "RW",
+                    "name": "SignalRef"
+                },
+                {
+                    "altname": "DATA_MASTER",
+                    "bit_lsb": 14,
+                    "bit_msb": 23,
+                    "description": "CPP command data master, when SigType is 0, otherwise RESERVED BY HW, dont care for SW",
+                    "mode": "RW",
+                    "name": "DataMaster"
+                },
+                {
+                    "altname": "DATA_REF",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "CPP command data reference, when SigType is 0, otherwise RESERVED BY HW, dont care for SW ",
+                    "mode": "RW",
+                    "name": "DataRef"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.PcieExplicitCmdBar2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TGT",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "CPP command target ID",
+                    "mode": "RW",
+                    "name": "Target"
+                },
+                {
+                    "altname": "ACT",
+                    "bit_lsb": 23,
+                    "bit_msb": 27,
+                    "description": "CPP Command Action Encoding",
+                    "mode": "RW",
+                    "name": "Action"
+                },
+                {
+                    "altname": "LEN",
+                    "bit_lsb": 18,
+                    "bit_msb": 22,
+                    "description": "CPP command length",
+                    "mode": "RW",
+                    "name": "Length"
+                },
+                {
+                    "altname": "BYTE_MASK",
+                    "bit_lsb": 10,
+                    "bit_msb": 17,
+                    "description": "CPP command byte mask",
+                    "mode": "RW",
+                    "name": "ByteMask"
+                },
+                {
+                    "altname": "SIGNAL_MASTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "CPP command signal master, when SigType is 0, otherwise RESERVED BY HW, dont care for SW",
+                    "mode": "RW",
+                    "name": "SignalMaster"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.PcieInternalSRAM": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "WORD",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Shared Memory addresses",
+                    "mode": "RW",
+                    "name": "SharemMem"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.PcieToCppExpansionBar": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MAP_TYPE",
+                    "bit_lsb": 29,
+                    "bit_msb": 31,
+                    "description": "Map Type",
+                    "mode": "RW",
+                    "name": "MapType"
+                },
+                {
+                    "altname": "LEN",
+                    "bit_lsb": 27,
+                    "bit_msb": 28,
+                    "description": "Used to select the weighting of the CPP length field.",
+                    "mode": "RW",
+                    "name": "LengthSelect"
+                },
+                {
+                    "altname": "TARGET",
+                    "bit_lsb": 23,
+                    "bit_msb": 26,
+                    "description": "MapType 0, 1 and 2 this field specifies TargetID, otherwise upper portion of Base Address.",
+                    "mode": "RW",
+                    "name": "Target_BaseAddress"
+                },
+                {
+                    "altname": "TOKEN",
+                    "bit_lsb": 21,
+                    "bit_msb": 22,
+                    "description": "MapType 0 and 1 this field specifies CPP Token, otherwise upper portion of Base Address.",
+                    "mode": "RW",
+                    "name": "Token_BaseAddress"
+                },
+                {
+                    "altname": "ACTADDR",
+                    "bit_lsb": 16,
+                    "bit_msb": 20,
+                    "description": "MapType 0 this field specifies Action, otherwise upper portion of Base Address.",
+                    "mode": "RW",
+                    "name": "Action_BaseAddress"
+                },
+                {
+                    "altname": "BASE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Base address.  Each mapping uses a varying number of bits, always starting at the most significant bit.  Remaining least significant bits are ignored.",
+                    "mode": "RW",
+                    "name": "BaseAddress"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.PcieToCppExpansionBarVf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "LEN",
+                    "bit_lsb": 30,
+                    "bit_msb": 31,
+                    "description": "Used to select the weighting of the CPP length field.",
+                    "mode": "RW",
+                    "name": "LengthSelect"
+                },
+                {
+                    "altname": "TARGET",
+                    "bit_lsb": 26,
+                    "bit_msb": 29,
+                    "description": "Specifies Target ID.",
+                    "mode": "RW",
+                    "name": "Target"
+                },
+                {
+                    "altname": "TOKEN",
+                    "bit_lsb": 24,
+                    "bit_msb": 25,
+                    "description": "Specifies CPP Token.",
+                    "mode": "RW",
+                    "name": "Token"
+                },
+                {
+                    "altname": "MAP_TYPE",
+                    "bit_lsb": 22,
+                    "bit_msb": 23,
+                    "description": "Map Type selects memory mapped or internal peripheral target mapping",
+                    "mode": "RW",
+                    "name": "MapType"
+                },
+                {
+                    "altname": "BASE",
+                    "bit_lsb": 0,
+                    "bit_msb": 21,
+                    "description": "Base address.  Each aperture uses a varying number of bits, always starting at the most significant bit of the BaseAddr field.  \n                         Remaining least significant bits of BaseAddr are ignored. NOTE: Trap Mode uses bits [20:16] for CPP Action",
+                    "mode": "RW",
+                    "name": "BaseAddress"
+                }
+            ]
+        },
+        "pcie_x8_internal_targets.PcietFuncCfgLut": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VALID",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "A valid bit to indicate the table entry has been initialized.",
+                    "mode": "RW",
+                    "name": "EntryValid"
+                },
+                {
+                    "altname": "PF_NUM",
+                    "bit_lsb": 28,
+                    "bit_msb": 30,
+                    "description": "Three bits to indicate which PF the VF is associated with.",
+                    "mode": "RW",
+                    "name": "PhysFuncNum"
+                },
+                {
+                    "altname": "QUE_COUNT",
+                    "bit_lsb": 16,
+                    "bit_msb": 26,
+                    "description": "The 11-bit count of queues assigned to VF, used to check if queue request is valid or out of range, where the queue count is specified as number of queues minus 1",
+                    "mode": "RW",
+                    "name": "QueueCount"
+                },
+                {
+                    "altname": "QUE_BASE",
+                    "bit_lsb": 0,
+                    "bit_msb": 10,
+                    "description": "The 11-bit base addr of where VF queues start.",
+                    "mode": "RW",
+                    "name": "QueueBaseAddr"
+                }
+            ]
+        }
+    }
+}

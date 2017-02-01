@@ -1,0 +1,2390 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: eca5ba006ef4"
+    ],
+    "maps": {
+        "pcie_x8_xpb.PcieComponentCfgXpb": {
+            "0x00000000": {
+                "altname": "CFG0",
+                "description": "Configures operation mode for PCIe component",
+                "name": "PCIeCompConfig0",
+                "ptr": "pcie_x8_xpb.PCIeCompConfig0",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "CFG1",
+                "description": "Configures operation mode for PCIe component",
+                "name": "PCIeCompConfig1",
+                "ptr": "pcie_x8_xpb.PCIeCompConfig1",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "CFG2",
+                "description": "Configures operation mode for PCIe component",
+                "name": "PCIeCompConfig2",
+                "ptr": "pcie_x8_xpb.PCIeCompConfig2",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "CFG3",
+                "description": "Configures operation mode for PCIe component",
+                "name": "PCIeCompConfig3",
+                "ptr": "pcie_x8_xpb.PCIeCompConfig3",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "PCIE_RX_MSG_INT",
+                "description": "PCIe Received Message Interrupts and Masks.",
+                "name": "PcieRxMsgInt",
+                "ptr": "pcie_x8_xpb.PcieRxMsgInt",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "PCIEMTOTAL",
+                "description": "Status of total cycle count since stats enable in PCIe Master interface",
+                "name": "PCIePciemStatTotal",
+                "ptr": "pcie_x8_xpb.PCIePciemStat",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "PCIEMWRITE",
+                "description": "Status of write data cycle count since stats enable in PCIe Master interface",
+                "name": "PCIePciemStatWrite",
+                "ptr": "pcie_x8_xpb.PCIePciemStat",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "PCIEMREAD",
+                "description": "Status of read data cycle count since stats enable in PCIe Master interface",
+                "name": "PCIePciemStatRead",
+                "ptr": "pcie_x8_xpb.PCIePciemStat",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "PCIEM_SMEM_ARB_CTRL",
+                "description": "Control of PCIe Master Shared SRAM DWRR Arbitration.",
+                "name": "PCIePciemSmemArbCtrl",
+                "ptr": "pcie_x8_xpb.PCIePciemSmemArbCtrl",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "ARIERR0",
+                "description": "Status of Virtual Functions that had errors",
+                "name": "PCIeARIError0",
+                "ptr": "pcie_x8_xpb.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "ARIERR1",
+                "description": "Status of Virtual Functions that had errors",
+                "name": "PCIeARIError1",
+                "ptr": "pcie_x8_xpb.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "ARIERR2",
+                "description": "Status of Virtual Functions that had errors",
+                "name": "PCIeARIError2",
+                "ptr": "pcie_x8_xpb.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "ARIERR3",
+                "description": "Status of Virtual Functions that had errors",
+                "name": "PCIeARIError3",
+                "ptr": "pcie_x8_xpb.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "ARIERR4",
+                "description": "Status of Virtual Functions that had errors",
+                "name": "PCIeARIError4",
+                "ptr": "pcie_x8_xpb.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "ARIERR5",
+                "description": "Status of Virtual Functions that had errors",
+                "name": "PCIeARIError5",
+                "ptr": "pcie_x8_xpb.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "ARIERR6",
+                "description": "Status of Virtual Functions that had errors",
+                "name": "PCIeARIError6",
+                "ptr": "pcie_x8_xpb.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "ARIERR7",
+                "description": "Status of Virtual Functions that had errors",
+                "name": "PCIeARIError7",
+                "ptr": "pcie_x8_xpb.PCIeAriErr",
+                "type": "reg"
+            },
+            "0x0000005c": {
+                "altname": "VF_ERR",
+                "description": "Pcie target VF access error ",
+                "name": "PcietVFerror",
+                "ptr": "pcie_x8_xpb.PcietVFerror",
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "CNTRLR0",
+                "description": "Selects operation mode for PCIe DMA controller and PCIe Master Interface",
+                "name": "PCIeCntrlrConfig0",
+                "ptr": "pcie_x8_xpb.PCIeCntrlrConfig0",
+                "type": "reg"
+            },
+            "0x00000064": {
+                "altname": "QUE_RING_CFG_%d",
+                "description": "Queue Controller registers to define RingPut operation upon queue status change",
+                "name": "QueueRingCfg_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_xpb.QueueRingCfg",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000084": {
+                "altname": "CFG4",
+                "description": "Configures operation mode for PCIe component, Expansion ROM Expansion BAR access",
+                "name": "PCIeCompConfig4",
+                "ptr": "pcie_x8_xpb.PCIeCompConfig4",
+                "type": "reg"
+            },
+            "0x00000088": {
+                "altname": "TRAP_TIMEOUT",
+                "description": "32-bit Cycle counter used to detect when trapped PCIe mem read request has been lost and completion should be aborted",
+                "name": "PcieTrapTypeTimeout",
+                "ptr": "pcie_x8_xpb.PcieTrapTypeTimeout",
+                "type": "reg"
+            },
+            "0x00000100": {
+                "altname": "PCIE_PERF_CFG",
+                "description": "Performance Mux Control Register",
+                "name": "PCIePerfCfg",
+                "ptr": "perf_mux_config.PerfMuxConfig",
+                "type": "reg"
+            },
+            "0x00000108": {
+                "altname": "PCIESPARE2%d",
+                "description": "Spare register address, no hw implemented",
+                "name": "PCIeSpare2%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_xpb.PcieReserved",
+                "repeat1": 2,
+                "type": "reg"
+            },
+            "0x00000110": {
+                "altname": "PCI_EVENT_MAP_%d",
+                "description": "Defines the MSI/MSIX/Legacy function number and message attributes for event filter %d",
+                "name": "PcieEventIntFuncMap_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_xpb.PcieEventIntFuncMap",
+                "repeat1": 32,
+                "type": "reg"
+            },
+            "0x00000190": {
+                "altname": "PCIE_PBA_%d",
+                "description": "Shows the status of 32 of the 256 MSI-X interrupt vectors Pending Bit Array, PBA",
+                "name": "PCIeMSIxPendBitArray_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_xpb.PCIeMSIxPendBitArray",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x000001b0": {
+                "altname": "PCIE_VENDOR_MSG_CTRL",
+                "description": "PCIe Vendor Message Control Register",
+                "name": "PcieVendorMsgCtrl",
+                "ptr": "pcie_x8_xpb.PcieVendorMsgCtrl",
+                "type": "reg"
+            },
+            "0x000001b4": {
+                "altname": "PCIE_VENDOR_MSG_STAT",
+                "description": "PCIe Vendor Message Statistic Register",
+                "name": "PcieVendorMsgStat",
+                "ptr": "pcie_x8_xpb.PcieVendorMsgStat",
+                "type": "reg"
+            },
+            "0x000001b8": {
+                "altname": "PCIESPARE3%d",
+                "description": "Spare register address, no hw implemented",
+                "name": "PCIeSpare3%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_xpb.PcieReserved",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x000001dc": {
+                "altname": "PCIE_INT_MSI_MSG_ABORT",
+                "description": "Reporting Requester ID and Vector number of a MSI msg aborted occurred.",
+                "name": "PcieIntMsiMsgAborted",
+                "ptr": "pcie_x8_xpb.PcieIntMsiMsgAborted",
+                "type": "reg"
+            },
+            "0x000001e0": {
+                "altname": "PCIESPARE4",
+                "description": "Spare register address, no hw implemented",
+                "name": "PCIeSpare4",
+                "ptr": "pcie_x8_xpb.PcieReserved",
+                "type": "reg"
+            },
+            "0x000001e4": {
+                "altname": "PCIE_ROCE_COUNTERS",
+                "description": "Pcie Roce doorbell statistics",
+                "name": "PcieRoceCounters",
+                "ptr": "pcie_x8_xpb.PcieRoceCounters",
+                "type": "reg"
+            },
+            "0x000001e8": {
+                "altname": "PCIE_ROCE_AUTOPUSH_INTERVAL",
+                "description": "Waiting time before sending second cycle autopush with zeros",
+                "name": "PcieRoceAutoPushInterval",
+                "ptr": "pcie_x8_xpb.PcieRoceAutoPushInterval",
+                "type": "reg"
+            },
+            "0x000001ec": {
+                "altname": "PCIE_ROCE_INTERRUPT_STATUS",
+                "description": "Information regarding the event",
+                "name": "PcieRoceInterruptStatus",
+                "ptr": "pcie_x8_xpb.PcieRoceInterruptStatus",
+                "type": "reg"
+            },
+            "0x000001f8": {
+                "altname": "PCIE_PF_MSIX_MASK_CHANGE",
+                "description": "Summary register of the change in the PF MSI-X mask",
+                "name": "PCIePfMSIxMaskChange",
+                "ptr": "pcie_x8_xpb.PCIePfMSIxMaskChange",
+                "type": "reg"
+            },
+            "0x000001fc": {
+                "altname": "PCIE_MSIX_SUMMARY",
+                "description": "Summary register where each bit is a wire-OR of 32 of the 256 status bits as a hint to SW for which register(s) to read",
+                "name": "PCIeMSIxSummary",
+                "ptr": "pcie_x8_xpb.PCIeMSIxSummary",
+                "type": "reg"
+            },
+            "0x00000200": {
+                "altname": "PCIE_VMCHNG_%d",
+                "description": "Status of 32 of the 256 MSI-X Vector Mask bits that have recently changed",
+                "name": "PCIeMSIxVectorMaskChange_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_x8_xpb.PCIeMSIxVectorMaskChange",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000240": {
+                "altname": "PCIE_PME_MSG_HDR0",
+                "description": "The TLP Header of the received PME message",
+                "name": "PciePMEMsgHeader0",
+                "ptr": "pcie_x8_xpb.PcieMsgHeader0",
+                "type": "reg"
+            },
+            "0x00000244": {
+                "altname": "PCIE_PME_MSG_HDR1",
+                "description": "The TLP Header of the received PME message",
+                "name": "PciePMEMsgHeader1",
+                "ptr": "pcie_x8_xpb.PcieMsgHeader1",
+                "type": "reg"
+            },
+            "0x00000248": {
+                "altname": "PCIE_PME_MSG_HDR2",
+                "description": "The TLP Header of the received PME message",
+                "name": "PciePMEMsgHeader2",
+                "ptr": "pcie_x8_xpb.PcieMsgHeader2",
+                "type": "reg"
+            },
+            "0x0000024c": {
+                "altname": "PCIE_PME_MSG_HDR3",
+                "description": "The TLP Header of the received PME message",
+                "name": "PciePMEMsgHeader3",
+                "ptr": "pcie_x8_xpb.PcieMsgHeader3",
+                "type": "reg"
+            },
+            "0x00000250": {
+                "altname": "PCIE_SSPWR_MSG_HDR0",
+                "description": "The TLP Header of the received Set Slot Power message",
+                "name": "PcieSSPwrMsgHeader0",
+                "ptr": "pcie_x8_xpb.PcieMsgHeader0",
+                "type": "reg"
+            },
+            "0x00000254": {
+                "altname": "PCIE_SSPWR_MSG_HDR1",
+                "description": "The TLP Header of the received Set Slot Power message",
+                "name": "PcieSSPwrMsgHeader1",
+                "ptr": "pcie_x8_xpb.PcieMsgHeader1",
+                "type": "reg"
+            },
+            "0x00000258": {
+                "altname": "PCIE_SSPWR_MSG_HDR2",
+                "description": "The TLP Header of the received Set Slot Power message",
+                "name": "PcieSSPwrMsgHeader2",
+                "ptr": "pcie_x8_xpb.PcieMsgHeader2",
+                "type": "reg"
+            },
+            "0x0000025c": {
+                "altname": "PCIE_SSPWR_MSG_HDR3",
+                "description": "The TLP Header of the received Set Slot Power message",
+                "name": "PcieSSPwrMsgHeader3",
+                "ptr": "pcie_x8_xpb.PcieMsgHeader3",
+                "type": "reg"
+            },
+            "0x00000260": {
+                "altname": "PCIE_SSPWR_MSG_DATA",
+                "description": "The Data portion of the set slot power message data.",
+                "name": "PcieSSPwrMsgData",
+                "ptr": "pcie_x8_xpb.PcieMsgData",
+                "type": "reg"
+            },
+            "0x00000270": {
+                "altname": "PCIE_PME_REGISTER0",
+                "description": "Indicates the activity in pcie. A value of zero indicate everything is idle.",
+                "name": "PciePmeRegister0",
+                "ptr": "pcie_x8_xpb.PciePmeRegister0",
+                "type": "reg"
+            },
+            "0x00000274": {
+                "altname": "PCIE_PME_REGISTER1",
+                "description": "Indicates the activity in pcie. A value of zero indicate everything is idle.",
+                "name": "PciePmeRegister1",
+                "ptr": "pcie_x8_xpb.PciePmeRegister1",
+                "type": "reg"
+            },
+            "0x00000278": {
+                "altname": "PCIE_CPP_MSTR_SW_CREDIT_LIMIT",
+                "description": "Programmable Credit limit control for the CPP Master Abiter logic",
+                "name": "PcieCppMstrSwCreditLimit",
+                "ptr": "pcie_x8_xpb.PcieCppMstrSwCreditLimit",
+                "type": "reg"
+            },
+            "0x0000027c": {
+                "altname": "PCIE_PM_DMA_SW_CREDIT_LIMIT",
+                "description": "Programmable Credit limit control for the DMA engine",
+                "name": "PciePmDmaSwCreditLimit",
+                "ptr": "pcie_x8_xpb.PciePmDmaSwCreditLimit",
+                "type": "reg"
+            },
+            "0x00000288": {
+                "altname": "DMA_PA_ACT_STAT",
+                "description": "Active Packet Allocation Status",
+                "name": "DMAPacketAllocationActiveStat",
+                "ptr": "nbi_dma_csr.NbiDmaDbgPaStat",
+                "type": "reg"
+            },
+            "0x0000028c": {
+                "altname": "PCIE_DMA_RATE_METER_CTRL",
+                "description": "DMA Rate Meter Control and status",
+                "name": "PCIeDmaRateMeterCtrl",
+                "ptr": "pcie_x8_xpb.PCIeDmaRateMeterCtrl",
+                "type": "reg"
+            },
+            "0x00000290": {
+                "altname": "PCIE_DMA_TOPCIE_PKT_CNT_LO",
+                "description": "DMA ToPCIe (Writes) packet counter low 32-bits. Software should read this register follwed by the PCIeDmaToPciePktCntHi register to get the 48-bit counter value.",
+                "name": "PCIeDmaToPciePktCntLo",
+                "ptr": "pcie_x8_xpb.PCIeDmaPktCntLo",
+                "type": "reg"
+            },
+            "0x00000294": {
+                "altname": "PCIE_DMA_TOPCIE_PKT_CNT_HI",
+                "description": "DMA ToPCIe (Writes) packet counter high 16-bits.",
+                "name": "PCIeDmaToPciePktCntHi",
+                "ptr": "pcie_x8_xpb.PCIeDmaPktCntHi",
+                "type": "reg"
+            },
+            "0x00000298": {
+                "altname": "PCIE_DMA_TOPCIE_PKT_BYTE_CNT_LO",
+                "description": "DMA ToPCIe (Writes) packet byte counter low 32-bits. Software should read this register follwed by the PCIeDmaToPciePktCntHi register to get the 48-bit counter value.",
+                "name": "PCIeDmaToPciePktByteCntLo",
+                "ptr": "pcie_x8_xpb.PCIeDmaByteCntLo",
+                "type": "reg"
+            },
+            "0x0000029c": {
+                "altname": "PCIE_DMA_TOPCIE_PKT_BYTE_CNT_HI",
+                "description": "DMA ToPCIe (Writes) packet byte counter high 16-bits.",
+                "name": "PCIeDmaToPciePktByteCntHi",
+                "ptr": "pcie_x8_xpb.PCIeDmaByteCntHi",
+                "type": "reg"
+            },
+            "0x000002a0": {
+                "altname": "PCIE_DMA_FRMPCIE_PKT_CNT_LO",
+                "description": "DMA ToPCIe (Writes) packet counter low 32-bits. Software should read this register follwed by the PCIeDmaFrmPciePktCntHi register to get the 48-bit counter value.",
+                "name": "PCIeDmaFrmPciePktCntLo",
+                "ptr": "pcie_x8_xpb.PCIeDmaPktCntLo",
+                "type": "reg"
+            },
+            "0x000002a4": {
+                "altname": "PCIE_DMA_FRMPCIE_PKT_CNT_HI",
+                "description": "DMA ToPCIe (Writes) packet counter high 16-bits.",
+                "name": "PCIeDmaFrmPciePktCntHi",
+                "ptr": "pcie_x8_xpb.PCIeDmaPktCntHi",
+                "type": "reg"
+            },
+            "0x000002a8": {
+                "altname": "PCIE_DMA_FRMPCIE_PKT_BYTE_CNT_LO",
+                "description": "DMA ToPCIe (Writes) packet byte counter low 32-bits. Software should read this register follwed by the PCIeDmaFromPciePktCntHi register to get the 48-bit counter value.",
+                "name": "PCIeDmaFrmPciePktByteCntLo",
+                "ptr": "pcie_x8_xpb.PCIeDmaByteCntLo",
+                "type": "reg"
+            },
+            "0x000002ac": {
+                "altname": "PCIE_DMA_FRMPCIE_PKT_BYTE_CNT_HI",
+                "description": "DMA ToPCIe (Writes) packet byte counter high 16-bits.",
+                "name": "PCIeDmaFrmPciePktByteCntHi",
+                "ptr": "pcie_x8_xpb.PCIeDmaByteCntHi",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "pcie_x8_xpb.PCIeAriErr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_ARI_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "ARI Error status.",
+                    "mode": "RW1C",
+                    "name": "PCIeAriErr"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeCntrlrConfig0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DMA_DIS_BP_CREDIT_CHK",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Setting this bit disabled the DMA logic from checking a buffer pools credits prior to allowing a DMA Packet Mode Start Stage Descriptor from being processed. Normally this bit should be cleared as this check prevents buffer pools with low credits from blocking non packet mode DMAs from higher priority queues from being processed. This bit only effects the FromPCIe DMA engine",
+                    "mode": "RW",
+                    "name": "DmaDisBpCreditChk"
+                },
+                {
+                    "altname": "DMA_FRAG_SIZE_2K_OVRD",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Setting this bit enables 2KB fragment size with DmaFragThreshold = 2KB or 3KB",
+                    "mode": "RW",
+                    "name": "DmaFragSize2kOvrd"
+                },
+                {
+                    "altname": "DMA_FRAG_DIS_ALIGN_FRMPCIE",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Setting this bit disables aligning FromPCIe 1st DMA Fragments PCIe address to the DmaFragSize address boundary.",
+                    "mode": "RW",
+                    "name": "DmaFragDisAlignFrmPcie"
+                },
+                {
+                    "altname": "DMA_FRAG_DIS_ALIGN_TOPCIE",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Setting this bit disables aligning ToPCIe 1st DMA Fragments PCIe address to the DmaFragSize address boundary.",
+                    "mode": "RW",
+                    "name": "DmaFragDisAlignToPcie"
+                },
+                {
+                    "altname": "DMA_FRAG_THRESHOLD",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "Threshold at which DMAs are fragmented.",
+                    "mode": "RW",
+                    "name": "DmaFragThreshold"
+                },
+                {
+                    "altname": "DMA_FRAG_SIZE",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Sets the fragment size of the DMA.",
+                    "mode": "RW",
+                    "name": "DmaFragSize"
+                },
+                {
+                    "altname": "DMA_FRAG_ENABLE_FRM_PCIE",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Setting this bit enabled the DMA engine to fragment FrmPCIe (Reads) DMAs larger than the DmaMaxFragSize setting.",
+                    "mode": "RW",
+                    "name": "DmaFragEnableFrmPcie"
+                },
+                {
+                    "altname": "DMA_FRAG_ENABLE_TO_PCIE",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Setting this bit enabled the DMA engine to fragment ToPCIe (Writes) DMAs larger than the DmaMaxFragSize setting.",
+                    "mode": "RW",
+                    "name": "DmaFragEnableToPcie"
+                },
+                {
+                    "altname": "DMA_FRAG_ENABLE_PKT_MODE",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Setting this bit along with the DmaFragEnableFrmPcie bit enables FromPcie Packet Mode DMAs to be fragmented.  Clearing this bit disables packet mode DMAs from being fragmented.",
+                    "mode": "RW",
+                    "name": "DmaFragEnablePacketMode"
+                },
+                {
+                    "altname": "MASTER_HOLD_IF_DISABLED",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "When in Endpoint mode, the PCIe Master logic hold back all PCIe Master transactions when this bit is set and the FUNCTION_STATUS bit 2 from the PCIe core indicates the Bus Master is not enabled. The MasterDropIfDisabled must also be cleared.",
+                    "mode": "RW",
+                    "name": "MasterHoldIfDisabled"
+                },
+                {
+                    "altname": "MASTER_DROP_IF_DISABLED",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "When in Endpoint mode, the PCIe Master logic drops all PCIe Master transactions when this bit is set and the FUNCTION_STATUS bit 2 from the PCIe core indicates the Bus Master is not enabled. This bit has no effect in Root Complex mode.",
+                    "mode": "RW",
+                    "name": "MasterDropIfDisabled"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeCompConfig0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "QCTL_ONE_SHOT_EN",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Automatically disable all notifications after the first event or RingPut, i.e. a one-shot mode",
+                    "mode": "RW",
+                    "name": "QctlOneShotEnable"
+                },
+                {
+                    "altname": "QCTL_CMD_BUS_PREF_DIS",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Disable the Qctl CLS Ring selection of the CPP Master Command Bus preference. When enabled, even CLS Ring Put requests will go out on Cmd Bus A/0, odd uses Cmd Bus B/1.",
+                    "mode": "RW",
+                    "name": "QctlCppCmdBusPrefDis"
+                },
+                {
+                    "altname": "COMPL_ID_EN",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "When set PCIe Target overrides Completer ID",
+                    "mode": "RW",
+                    "name": "PCIeTargetComplIdEn"
+                },
+                {
+                    "altname": "PCIET_CMD_BUS_PREF_DIS",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Disable the PCIe Target Expansion BAR selection of the CPP Master Command Bus preference. When enabled, even Expansion BAR requests will go out on Cmd Bus A/0, odd uses Cmd Bus B/1.",
+                    "mode": "RW",
+                    "name": "PcietCppCmdBusPrefDis"
+                },
+                {
+                    "altname": "CLR_PCIEM_ARI_ERR",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Write 1 to clear the VF ARI Error status reg in PCIe Master ",
+                    "mode": "W1C",
+                    "name": "ClrPciemHalmAriError"
+                },
+                {
+                    "altname": "CLR_DMA_ARI_ERR",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Write 1 to clear the VF ARI Error status reg in DMA",
+                    "mode": "W1C",
+                    "name": "ClrDmaAriError"
+                },
+                {
+                    "altname": "DMA_SRAM_RD_CREDIT",
+                    "bit_lsb": 20,
+                    "bit_msb": 22,
+                    "description": "Sets the outstanding number of DMA reads to SRAM in increments of 8 with a starting offset of 7. Setting the value above\n               3 has no effect as the hardware limit of the credit tracker is set to 32. The minimum value of 0 equates to a credit limit of 7 requests.",
+                    "mode": "RW",
+                    "name": "PciemDMASramReadCredit"
+                },
+                {
+                    "altname": "PCIEM_RD_CREDIT",
+                    "bit_lsb": 12,
+                    "bit_msb": 19,
+                    "description": "Controls the amout of outstanding PCIe read requests that can be issued. Value is in increments of 256 bytes.\n               The minimum value that should be used is 4KB or 16(dec).",
+                    "mode": "RW",
+                    "name": "PciemPciReadCredit"
+                },
+                {
+                    "altname": "MSIX_MODE_VECTOR_CNT",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Sets the number of vectors supported per PF to 64 or 32. NOTE: SW should ensure this is 0 if more than 4 PF are MSI-X enabled",
+                    "mode": "RW",
+                    "name": "MSIX_mode_64_not_32_vectors_per"
+                },
+                {
+                    "altname": "RC_MODE_IO_CFG_WRITE_CPL_REC",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Pcie completed IO or Config Write operation.",
+                    "mode": "RW1C",
+                    "name": "RC_mode_IO_CFG_write_CPL_rec"
+                },
+                {
+                    "altname": "PCIE_MSIX_PBA_DEBUG",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Provide ability to override read only behavior and temporarily allow write access of MSI-X PBA structure from the PCIe link for debug purpose only",
+                    "mode": "RW",
+                    "name": "Pcie_Msix_Pba_Debug"
+                },
+                {
+                    "altname": "PCIE_TRAP_DROPPED",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Indicates a trap request has been dropped due to exceeding size of targeted WorkQ spec'd by selected ExpBAR LengthSelect field.",
+                    "mode": "W1C",
+                    "name": "PcieTrapDropped"
+                },
+                {
+                    "altname": "PCIE_TRAP_TIMEOUT",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Indicates that a trap read request has not completed in the amount of time spec'd by PcieTrapTypeTimeout register.",
+                    "mode": "W1C",
+                    "name": "PcieTrapTimeout"
+                },
+                {
+                    "altname": "PCIE_TAG_CTRL",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Controls the number of tags used for Master requests.",
+                    "mode": "RW",
+                    "name": "PcieTagCtrl"
+                },
+                {
+                    "altname": "PCIEM_WR_STAT_EN",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Enables the PCIe Master to count write data transmit cycles",
+                    "mode": "RW",
+                    "name": "PciemWriteStatsEn"
+                },
+                {
+                    "altname": "PCIEM_RD_STAT_EN",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Enables the PCIe Master to count read data receive cycles",
+                    "mode": "RW",
+                    "name": "PciemReadStatsEn"
+                },
+                {
+                    "altname": "PCIE_COMP_CFG0_RSVD",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Reserved. Software must write this bit to 0.",
+                    "mode": "RW",
+                    "name": "PcieCompConfig0Rsvd"
+                },
+                {
+                    "altname": "CPP_ADDR_MODE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Configure whether to interpret the CPP address bits as 32-bit or 40-bit.",
+                    "mode": "RW",
+                    "name": "CPPAddrMode"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeCompConfig1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "COMPL_ID_BUS",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Sets the Completer ID Bus number to be used when in RC Mode or when override set",
+                    "mode": "RW",
+                    "name": "PCIeTargetComplIdBus"
+                },
+                {
+                    "altname": "COMPL_ID_DEV_FUNC",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Sets the Completer ID Dev and Function numbers to be used when in RC Mode or when override set",
+                    "mode": "RW",
+                    "name": "PCIeTargetComplIdDevFunc"
+                },
+                {
+                    "altname": "REQ_ID_BUS",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Sets the Requester ID Bus number to be used when PCIe Master generates requests in RC Mode",
+                    "mode": "RW",
+                    "name": "PCIeMasterReqIdBus"
+                },
+                {
+                    "altname": "REQ_ID_FUNC",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Sets the Requester ID Function number to be used when PCIe Master generates requests in RC Mode",
+                    "mode": "RW",
+                    "name": "PCIeMasterReqIdFunc"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeCompConfig2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CPPT_SRAM_CREDIT",
+                    "bit_lsb": 24,
+                    "bit_msb": 28,
+                    "description": "Sets the number of outstanding read requests the CPP Target can make to the shared SRAM",
+                    "mode": "RW",
+                    "name": "CppTargetSramReadCredit"
+                },
+                {
+                    "altname": "CPPT_DIS_INT_DAT_ERR",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "When set data errors received from the internal target are not forwarded to the CPP Target push data bus.",
+                    "mode": "RW",
+                    "name": "CpptDisIntDataError"
+                },
+                {
+                    "altname": "CPPT_DIS_PULL_DAT_ERR",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "When set data errors received from the CPP Target Pull Data bus are not forwarded to the internal target or PCIE Master Interface.",
+                    "mode": "RW",
+                    "name": "CpptDisPullDataError"
+                },
+                {
+                    "altname": "PCIEM_DIS_INT_DAT_ERR",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "When set data errors received from the internal target are not forwarded to the PCIE Master Interface.",
+                    "mode": "RW",
+                    "name": "PciemDisIntDataError"
+                },
+                {
+                    "altname": "PCIEM_DIS_HAL_DAT_ERR",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "When set data errors received from the HAL interface are not forwarded to the internal target or CPP Target.",
+                    "mode": "RW",
+                    "name": "PciemDisHalDataError"
+                },
+                {
+                    "altname": "PCIET_DIS_INT_DAT_ERR",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "When set data errors received from the internal target are not forwarded to the PCIE Target HAL interface.",
+                    "mode": "RW",
+                    "name": "PcietDisIntDataError"
+                },
+                {
+                    "altname": "PCIET_DIS_HAL_DAT_ERR",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "When set data errors received from the HAL interface are not forwarded to the CPP Master interface or internal target",
+                    "mode": "RW",
+                    "name": "PcietDisHalDataError"
+                },
+                {
+                    "altname": "PCIET_SRAM_CREDIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Sets the number of outstanding read requests the PCIe Target can make to the shared SRAM",
+                    "mode": "RW",
+                    "name": "PcieTargetSramReadCredit"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeCompConfig3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DMA_ARI_IN_ERROR",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "DMA ARI number that last had an error",
+                    "mode": "RO",
+                    "name": "DmaAriInError"
+                },
+                {
+                    "altname": "PCIEM_HAL_COMPL_CODE",
+                    "bit_lsb": 21,
+                    "bit_msb": 23,
+                    "description": "PCIe Master HAL Completion code that is latched when PciemAccessError is asserted",
+                    "mode": "RO",
+                    "name": "PciemHalComplCode"
+                },
+                {
+                    "altname": "DMA_FROM_ACC_ERR_VF",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "DMA FromPCIe Virtual Function Access Error.",
+                    "mode": "RO",
+                    "name": "DmaFromAccessErrorVf"
+                },
+                {
+                    "altname": "DMA_FROM_ACC_ERR_PF",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "DMA FromPCIe Physical Function Access Error.",
+                    "mode": "RO",
+                    "name": "DmaFromAccessErrorPf"
+                },
+                {
+                    "altname": "DMA_FRM_OVFL_HI",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "DMA FromPcie High Priority Descriptor Queue Overflow.",
+                    "mode": "RO",
+                    "name": "DmaFromDescrOvflHi"
+                },
+                {
+                    "altname": "DMA_FRM_OVFL_MED",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "DMA FromPcie Medium Priority Descriptor Queue Overflow.",
+                    "mode": "RO",
+                    "name": "DmaFromDescrOvflMed"
+                },
+                {
+                    "altname": "DMA_FRM_OVFL_LO",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "DMA FromPcie Low Priority Descriptor Queue Overflow.",
+                    "mode": "RO",
+                    "name": "DmaFromDescrOvflLo"
+                },
+                {
+                    "altname": "CPPM_IO_ARB_MODE",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "When set, changes arb scheme for granting internal IO device requests btwn CPP Target and PCIe Target from 75/25 to 50/50.",
+                    "mode": "RW",
+                    "name": "CppmIoArbMode"
+                },
+                {
+                    "altname": "DMA_TO_ACC_ERR_VF",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "DMA ToPCIe Virtual Function Access Error.",
+                    "mode": "RO",
+                    "name": "DmaToAccessErrorVf"
+                },
+                {
+                    "altname": "DMA_TO_ACC_ERR_PF",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "DMA ToPCIe Physical Function Access Error.",
+                    "mode": "RO",
+                    "name": "DmaToAccessErrorPf"
+                },
+                {
+                    "altname": "DMA_TO_OVFL_HI",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "DMA ToPcie High Priority Descriptor Queue Overflow.",
+                    "mode": "RO",
+                    "name": "DmaToDescrOvflHi"
+                },
+                {
+                    "altname": "DMA_TO_OVFL_MED",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "DMA ToPcie Medium Priority Descriptor Queue Overflow.",
+                    "mode": "RO",
+                    "name": "DmaToDescrOvflMed"
+                },
+                {
+                    "altname": "DMA_TO_OVFL_LO",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "DMA ToPcie Low Priority Descriptor Queue Overflow.",
+                    "mode": "RO",
+                    "name": "DmaToDescrOvflLo"
+                },
+                {
+                    "altname": "PCIET_VF_QCTL_ERR",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "PCIE Target VF Qctl access Que Out of Range w.r.t. CfgLUT entry.",
+                    "mode": "RW1C",
+                    "name": "PcietVfQctlRangeErr"
+                },
+                {
+                    "altname": "CPPT_ACC_ERR",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Cpp Target Access Error Status bit indicates error received over the CPP intf.",
+                    "mode": "RW1C",
+                    "name": "CpptAccessError"
+                },
+                {
+                    "altname": "MSIX_PF_MASK_CHG",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Indicates that a PF MSI-X mask bit changed.  SW should check the MSI-X PF Mask Changed Status register.",
+                    "mode": "RW1C",
+                    "name": "MsixPfMaskChanged"
+                },
+                {
+                    "altname": "CPPT_PULL_DATA_ERR",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Cpp Target Pull Data Error status bit indicates an error was received on the CPP Pull data interface",
+                    "mode": "RW1C",
+                    "name": "CpptPullDataError"
+                },
+                {
+                    "altname": "PCIEM_ACC_ERR",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Pcie Master Access Error Status bit indicates access error received from the link.",
+                    "mode": "RW1C",
+                    "name": "PciemAccessError"
+                },
+                {
+                    "altname": "PCIET_CFG_LUT_ERR",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "PCIE Target VF access through uninitialized CfgLUT Entry.",
+                    "mode": "RW1C",
+                    "name": "PcietVfCfgLutInitErr"
+                },
+                {
+                    "altname": "PCIEM_HAL_DATA_ERR",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "PCIE Master detected a data error from the HAL interface.",
+                    "mode": "RW1C",
+                    "name": "PciemHalDataError"
+                },
+                {
+                    "altname": "PCIET_ACC_ERR",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Pcie Target Access Error Status bit indicates access error received from the link.",
+                    "mode": "RW1C",
+                    "name": "PcietAccessError"
+                },
+                {
+                    "altname": "MSIX_VECTOR_CHG_STAT",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Indicates that the MSI-X Vector Table has been updated. SW should check the MSI-X Vector Change Summary register.",
+                    "mode": "RW1C",
+                    "name": "MsixVectorChangeStatus"
+                },
+                {
+                    "altname": "PCIET_HAL_DATA_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "PCIE Target detected a data error from the HAL interface",
+                    "mode": "RW1C",
+                    "name": "PcietHalDataError"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeCompConfig4": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PF7_EXP_ROM_SEL",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "Selects which Expansion BAR should be used for PCIe Target requests received through Expansion ROM BAR",
+                    "mode": "RW",
+                    "name": "Pf7_Expansion_ROM_BAR_Select"
+                },
+                {
+                    "altname": "PF6_EXP_ROM_SEL",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "Selects which Expansion BAR should be used for PCIe Target requests received through Expansion ROM BAR",
+                    "mode": "RW",
+                    "name": "Pf6_Expansion_ROM_BAR_Select"
+                },
+                {
+                    "altname": "PF5_EXP_ROM_SEL",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Selects which Expansion BAR should be used for PCIe Target requests received through Expansion ROM BAR",
+                    "mode": "RW",
+                    "name": "Pf5_Expansion_ROM_BAR_Select"
+                },
+                {
+                    "altname": "PF4_EXP_ROM_SEL",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Selects which Expansion BAR should be used for PCIe Target requests received through Expansion ROM BAR",
+                    "mode": "RW",
+                    "name": "Pf4_Expansion_ROM_BAR_Select"
+                },
+                {
+                    "altname": "PF3_EXP_ROM_SEL",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Selects which Expansion BAR should be used for PCIe Target requests received through Expansion ROM BAR",
+                    "mode": "RW",
+                    "name": "Pf3_Expansion_ROM_BAR_Select"
+                },
+                {
+                    "altname": "PF2_EXP_ROM_SEL",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Selects which Expansion BAR should be used for PCIe Target requests received through Expansion ROM BAR",
+                    "mode": "RW",
+                    "name": "Pf2_Expansion_ROM_BAR_Select"
+                },
+                {
+                    "altname": "PF1_EXP_ROM_SEL",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Selects which Expansion BAR should be used for PCIe Target requests received through Expansion ROM BAR",
+                    "mode": "RW",
+                    "name": "Pf1_Expansion_ROM_BAR_Select"
+                },
+                {
+                    "altname": "PF0_EXP_ROM_SEL",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Selects which Expansion BAR should be used for PCIe Target requests received through Expansion ROM BAR",
+                    "mode": "RW",
+                    "name": "Pf0_Expansion_ROM_BAR_Select"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeDmaByteCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_DMA_BYTE_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "DMA Packet Byte Counter High Latched 16-bits. SW should read this register after reading the low byte count regiser.",
+                    "mode": "RO",
+                    "name": "PCIeDmaByteCntHi"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeDmaByteCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_DMA_BYTE_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "DMA Packet Byte Counter Low 32-bits. SW should read this register followed by the high packet count regiser. Increments by the size of the DMA Descriptor when popped from the DMA queue. ",
+                    "mode": "RC",
+                    "name": "PCIeDmaByteCntLo"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeDmaPktCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_DMA_PKT_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "DMA Packet Counter High Latched 16-bits. SW should read this register after reading the low packet count regiser.",
+                    "mode": "RO",
+                    "name": "PCIeDmaPktCntHi"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeDmaPktCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_DMA_PKT_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "DMA Packet Counter Low 32-bits. SW should read this register followed by the high packet count regiser. Increments when a DMA Descriptor is popped from the DMA queue.",
+                    "mode": "RC",
+                    "name": "PCIeDmaPktCntLo"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeDmaRateMeterCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RATE_METER_RD_DATA",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Measured rate from selected DMA rate meter. Value/(32768*(CLK PERIOD in secs)*(10**6)) = Millions of packets/sec or bit rate. If selecting FrmPcieBitRate or ToPcieBitRate \nmultiply the value by the (DmaPcieCredit+1)*8*8, where the DmaPcieCredit is either the DmaToPcieCredit or DmaToPcieCredit from the DMACntrlCfg2 register.",
+                    "mode": "RO",
+                    "name": "RateMeterRdData"
+                },
+                {
+                    "altname": "DIS_SIG_ONLY_CNT",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "When set, signal only DMAs are not counted for pkt rate meter measurements and packet count increments.",
+                    "mode": "RW",
+                    "name": "DisSigOnlyCnt"
+                },
+                {
+                    "altname": "DMA_RATE_METER_RDSEL",
+                    "bit_lsb": 5,
+                    "bit_msb": 6,
+                    "description": "Selects the DMA Rate meter to read from",
+                    "mode": "RW",
+                    "name": "DmaRateMeterRdSel"
+                },
+                {
+                    "altname": "DMA_PKT_RATE_MUX_SEL",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Used to select the increment signal for rate meter measurements and packet/byte count increments.",
+                    "mode": "RW",
+                    "name": "DmaPktRateMuxSel"
+                },
+                {
+                    "altname": "PCIE_DMARATE_RES",
+                    "bit_lsb": 1,
+                    "bit_msb": 3,
+                    "description": "When programmed to a value of N, the rate meters will have a resolution of 1/(2**(15-N)*(CLK PERIOD in secs)*(10**6)) Million Packets Per Sec ",
+                    "mode": "RW",
+                    "name": "DmaRateResolution"
+                },
+                {
+                    "altname": "DMARATE_METER_EN",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When programmed to 1, enables the rate meters. Disabling the rate meters will freeze the values so that they can be read one at a time, but represent a snapshot in time. ",
+                    "mode": "RW",
+                    "name": "DmaRateMeterEna"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeMSIxPendBitArray": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MSIX_PBA",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Status of the MSI-X Pending Bit Array.",
+                    "mode": "RO",
+                    "name": "MsixPba"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeMSIxSummary": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MSIX_PBA_IDX",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Indirect status summary of the MSI-X PBA registers, where 1 bit represents 32 PBA status bits. Bit 0 being set would indicate that at least 1 bit is set for PBA bits 0 thru 31. Bit 1 represents PBA 32 thru 63, and so on.",
+                    "mode": "RO",
+                    "name": "MsixPbaIdx"
+                },
+                {
+                    "altname": "MSIX_VECTOR_CHG_IDX",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Indirect status summary of the MSI-X Vector Change registers, where 1 bit represents 32 mask change status bits. Bit 0 being set would indicate that at least 1 bit is set for MSI-X Vector Change bits 0 thru 31. Bit 1 represents Vectors 32 thru 63, and so on.",
+                    "mode": "RO",
+                    "name": "MsixVectorChngIdx"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIeMSIxVectorMaskChange": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MSIX_MASK_CHNG",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Status of the MSI-X Vector Mask Change. Clear on read.",
+                    "mode": "RC",
+                    "name": "MsixMaskChng"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIePciemSmemArbCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ARB_DWELL_CNT",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Controls the number of arbiter grant cycles to dwell on one arbiter state before switching. A value of 0 disables the dwell count. A value of 1 updates the arbiter state every other grant. A value of 15 updates the arbiter state every 16th grant.",
+                    "mode": "RW",
+                    "name": "ArbDwellCnt"
+                },
+                {
+                    "altname": "DWRR_DISABLE",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "When set, the DWRR arbitration is disabled. When clear, the DWRR weights are used to proportionaly control the arbitration process",
+                    "mode": "RW",
+                    "name": "DwrrDisable"
+                },
+                {
+                    "altname": "DWRR_LOAD",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "When set the value of DwrrWrData is loaded into the selected credit allotment register. This bit self clears.",
+                    "mode": "W1C",
+                    "name": "DwrrLoad"
+                },
+                {
+                    "altname": "DWRR_SELECT",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Used to select 1 of the 2 credit allotment registers.",
+                    "mode": "RW",
+                    "name": "DwrrSelect"
+                },
+                {
+                    "altname": "DWRR_CONFIG_WR_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Controls the value written to the selected credit allotment register in the DWRR arbiter.",
+                    "mode": "RW",
+                    "name": "DwrrWrData"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIePciemStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_PCIEM_STAT",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "General use register.",
+                    "mode": "RO",
+                    "name": "PCIePciemStat"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PCIePfMSIxMaskChange": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MSIX_PF_MASK_CHG_STAT",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Status of the MSI-X PF Mask Change, where each bit represents a PF Mask change state, NOTE: changed status not the actual mask value. These bits are clear-on-read.",
+                    "mode": "RC",
+                    "name": "MsixPfMaskChngStatus"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieCppMstrSwCreditLimit": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BLQWRCMD_SW_CREDIT_LIMIT",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Controls the software credit limit value for the BLQWR Command output interface of the CPP Master Arbiter Block",
+                    "mode": "RW",
+                    "name": "BlqWrCmdSwCreditLimit"
+                },
+                {
+                    "altname": "ALLOC_RESP_SW_CREDIT_LIMIT",
+                    "bit_lsb": 16,
+                    "bit_msb": 21,
+                    "description": "Controls the software credit limit value for the Allocation Response output interface of the CPP Master Arbiter block.",
+                    "mode": "RW",
+                    "name": "AllocRespSwCreditLimit"
+                },
+                {
+                    "altname": "P7_CMD_SW_CREDIT_LIMIT",
+                    "bit_lsb": 12,
+                    "bit_msb": 14,
+                    "description": "Controls the software credit limit value for Command Bus B output of the CPP Master Arbiter block.",
+                    "mode": "RW",
+                    "name": "P7CmdSwCreditLimit"
+                },
+                {
+                    "altname": "P6_CMD_SW_CREDIT_LIMIT",
+                    "bit_lsb": 8,
+                    "bit_msb": 10,
+                    "description": "Controls the software credit limit value for Command Bus A output of the CPP Master Arbiter block.",
+                    "mode": "RW",
+                    "name": "P6CmdSwCreditLimit"
+                },
+                {
+                    "altname": "P7B_SMCPPDATA_SW_CREDIT_LIMIT",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Controls the software credit limit value for Push bus to shared Master port P7B Credit Tracker.",
+                    "mode": "RW",
+                    "name": "P7BSmCppDataSwCreditLimit"
+                },
+                {
+                    "altname": "P7A_SMCPPDATA_SW_CREDIT_LIMIT",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Controls the software credit limit value for Push bus to shared Master port P7A Credit Tracker",
+                    "mode": "RW",
+                    "name": "P7ASmCppDataSwCreditLimit"
+                },
+                {
+                    "altname": "P6B_SMCPPDATA_SW_CREDIT_LIMIT",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Controls the software credit limit value for Push bus to shared Master port P6B Credit Tracker",
+                    "mode": "RW",
+                    "name": "P6BSmCppDataSwCreditLimit"
+                },
+                {
+                    "altname": "P6A_SMCPPDATA_SW_CREDIT_LIMIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Controls the software credit limit value for Push bus to shared Master port P6A Credit Tracker",
+                    "mode": "RW",
+                    "name": "P6ASmCppDataSwCreditLimit"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieEventIntFuncMap": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RESERVED",
+                    "bit_lsb": 9,
+                    "bit_msb": 31,
+                    "description": "Reserved.",
+                    "mode": "RW",
+                    "name": "Reserved"
+                },
+                {
+                    "altname": "MASK",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Specifies to mask the event from generating an MSI.",
+                    "mode": "RW",
+                    "name": "MaskEvent"
+                },
+                {
+                    "altname": "FUNCTION",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Specifies the function number to be sent as ReqID with MSI/MSIX/Legacy message or when used with Legacy interrupts the physical function number associated with the Interrupt request. Physical Functions are in the range of 0x0-0x7. Only physical functions allowed for MSIX and Legacy",
+                    "mode": "RW",
+                    "name": "FunctionNumber"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieIntMsiMsgAborted": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_MSI_MSG_ABORTED",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "When set it indicates a MSI message aborted occurred. When cleared the Vector number and Requester ID fields are invalid",
+                    "mode": "W1C",
+                    "name": "PcieMsiMsgAborted"
+                },
+                {
+                    "altname": "PCIE_MSI_ABORT_REQ_ID",
+                    "bit_lsb": 5,
+                    "bit_msb": 12,
+                    "description": "Requester id of aborted MSI message",
+                    "mode": "RO",
+                    "name": "PcieMsiMsgAbortReqId"
+                },
+                {
+                    "altname": "PCIE_MSI_ABORT_VECTOR",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Vector number of aborted MSI message.",
+                    "mode": "RO",
+                    "name": "PcieMsiMsgAbortVector"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieMsgData": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_MSG_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "The data payload of the received message",
+                    "mode": "RO",
+                    "name": "PcieMsgData"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieMsgHeader0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "REQ_ID",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Received message header, Requestor ID field.",
+                    "mode": "RO",
+                    "name": "ReqId"
+                },
+                {
+                    "altname": "TAG",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Received message header, Tag field",
+                    "mode": "RO",
+                    "name": "Tag"
+                },
+                {
+                    "altname": "MSG_CODE",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Received message header Message, Code field",
+                    "mode": "RO",
+                    "name": "MsgCode"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieMsgHeader1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TYPE",
+                    "bit_lsb": 18,
+                    "bit_msb": 20,
+                    "description": "Received message header, Transaction Type field",
+                    "mode": "RO",
+                    "name": "Type"
+                },
+                {
+                    "altname": "TCLASS",
+                    "bit_lsb": 15,
+                    "bit_msb": 17,
+                    "description": "Received message header, Traffic Class field.",
+                    "mode": "RO",
+                    "name": "Tclass"
+                },
+                {
+                    "altname": "ATTR",
+                    "bit_lsb": 12,
+                    "bit_msb": 14,
+                    "description": "Received message header, Attribute field.",
+                    "mode": "RO",
+                    "name": "Attr"
+                },
+                {
+                    "altname": "LENGTH",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "Received message header length field. Length is in bytes.",
+                    "mode": "RO",
+                    "name": "Length"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieMsgHeader2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HB_12_15",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Received message header bytes {12,13,14,15}",
+                    "mode": "RO",
+                    "name": "HeaderBytes12_15"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieMsgHeader3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HB_8_11",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Received message header bytes {8,9,10,11}",
+                    "mode": "RO",
+                    "name": "HeaderBytes8_11"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PciePmDmaSwCreditLimit": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PM_CREDIT_CHK_SW_CREDIT_LIMIT",
+                    "bit_lsb": 27,
+                    "bit_msb": 29,
+                    "description": "Controls the software credit limit for the DMA Descriptor Packet Mode Credit Check Credit Tracker.",
+                    "mode": "RW",
+                    "name": "PmCreditChkSwCreditLimit"
+                },
+                {
+                    "altname": "P2D_SW_CREDIT_LIMIT",
+                    "bit_lsb": 24,
+                    "bit_msb": 26,
+                    "description": "Controls the software credit limit for the P2D Command interface between the FromPCIe DMA engine and buffer allocation logic",
+                    "mode": "RW",
+                    "name": "P2DSwCreditLimit"
+                },
+                {
+                    "altname": "TOPCIE_BUFFER_SW_CREDIT_LIMIT",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Controls the software credit limit for the toPcie DMA SRAM allocation space in increments of 8 buffers",
+                    "mode": "RW",
+                    "name": "ToPcieBufferSwCreditLimit"
+                },
+                {
+                    "altname": "FRMPCIE_BUFFER_SW_CREDIT_LIMIT",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Controls the software credit limit for the fromPcie DMA SRAM allocation space in increments of 8 buffers",
+                    "mode": "RW",
+                    "name": "FrmPcieBufferSwCreditLimit"
+                },
+                {
+                    "altname": "ALLOC_CMD_SW_CREDIT_LIMIT",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Controls the software credit limit for the allocation command interface within the buffer allocation logic",
+                    "mode": "RW",
+                    "name": "AllocCmdSwCreditLimit"
+                },
+                {
+                    "altname": "ALLOC_MSTRCMD_SW_CREDIT_LIMIT",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Controls the software credit limit for the allocation master command interface between the buffer allocation logic and the CPP Master Arbiter block",
+                    "mode": "RW",
+                    "name": "AllocMstrCmdSwCreditLimit"
+                },
+                {
+                    "altname": "DMACMD_SW_CREDIT_LIMIT",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Controls software credit limit for the DMA command interface between the buffer allocation logic and the PCIe Master Interface.",
+                    "mode": "RW",
+                    "name": "DmaCmdSwCreditLimit"
+                },
+                {
+                    "altname": "BUF_RET_CREDIT_SW_CREDIT_LIMIT",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Controls the Buffer Credit Return interface software credit limit within the Buffer allocation logic",
+                    "mode": "RW",
+                    "name": "BufRetCreditSwCreditLimit"
+                },
+                {
+                    "altname": "BDFIFO_SW_CREDIT_LIMIT",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Controls BLQ buffer descriptor FIFO credit limit value",
+                    "mode": "RW",
+                    "name": "BdFifoSwCreditLimit"
+                },
+                {
+                    "altname": "MCR_RESP_SW_CREDIT_LIMIT",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Controls the software credit limit for the MCR response interface between the buffer allocation BLQ logic and the DMA CSR block",
+                    "mode": "RW",
+                    "name": "McrRespSwCreditLimit"
+                },
+                {
+                    "altname": "DMA_PMADDTOWRKQ_SW_CREDIT_LIMIT",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Controls the software credit limit for the packet mode add to workQ and read completion command from the DMA engine to the CPP Master Arbiter block",
+                    "mode": "RW",
+                    "name": "DmaPmAddToWrkQSwCreditLimit"
+                },
+                {
+                    "altname": "DMA_FREEPKT_SW_CREDIT_LIMIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Controls the software credit limit value for the free pkt command i/f from the DMA engine to the CPP Master Arbiter block.",
+                    "mode": "RW",
+                    "name": "DmaFreePktSwCreditLimit"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PciePmeRegister0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DMA_ITP_STATE_FSM_BUSY",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "dma_itp_state_fsm_busy",
+                    "mode": "RO",
+                    "name": "DmaItpStateFsmBusy"
+                },
+                {
+                    "altname": "DMA_RTP_STATE_FSM_BUSY",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "dma_rtp_state_fsm_busy",
+                    "mode": "RO",
+                    "name": "DmaRtpStateFsmBusy"
+                },
+                {
+                    "altname": "DMA_IFP_STATE_FSM_BUSY",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "dma_ifp_state_fsm_busy",
+                    "mode": "RO",
+                    "name": "DmaIfpStateFsmBusy"
+                },
+                {
+                    "altname": "DMA_RFP_STATE_FSM_BUSY",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "dma_rfp_state_fsm_busy",
+                    "mode": "RO",
+                    "name": "DmaRfpStateFsmBusy"
+                },
+                {
+                    "altname": "DMA_RFP_C_STATE_FSM_BUSY",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "dma_rfp_c_state_fsm_busy",
+                    "mode": "RO",
+                    "name": "DmaRfpCStateFsmBusy"
+                },
+                {
+                    "altname": "DMA_RTP_C_STATE_FSM_BUSY",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "dma_rtp_c_state_fsm_busy",
+                    "mode": "RO",
+                    "name": "DmaRtpCStateFsmBusy"
+                },
+                {
+                    "altname": "ALL_TOKENS_FREE",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "all_tokens_free",
+                    "mode": "RO",
+                    "name": "AllTokensFree"
+                },
+                {
+                    "altname": "ALL_CONTEXTS_FREE",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "all_contexts_free",
+                    "mode": "RO",
+                    "name": "AllContextsFree"
+                },
+                {
+                    "altname": "FRM_PCIE_FIFO_EMPTY",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "frm_pcie_fifo_empty",
+                    "mode": "RO",
+                    "name": "FrmPcieFifoEmpty"
+                },
+                {
+                    "altname": "TO_PCIE_FIFO_EMPTY",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "to_pcie_fifo_empty",
+                    "mode": "RO",
+                    "name": "ToPcieFifoEmpty"
+                },
+                {
+                    "altname": "TO_PCIE_COMPLETION_FIFO_EMPTY",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "to_pcie_completion_fifo_empty",
+                    "mode": "RO",
+                    "name": "ToPcieCompletionFifoEmpty"
+                },
+                {
+                    "altname": "FRM_PCIE_COMPLETION_FIFO_EMPTY",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "frm_pcie_completion_fifo_empty",
+                    "mode": "RO",
+                    "name": "FrmPcieCompletionFifoEmpty"
+                },
+                {
+                    "altname": "FRM_PCIE_PM_CMD_FIFO_EMPTY",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "frm_pcie_pm_cmd_fifo_empty",
+                    "mode": "RO",
+                    "name": "FrmPciePmCmdFifoEmpty"
+                },
+                {
+                    "altname": "PCIEM_PCIE_MASTER_HALM_COMPL_REORDER_FIFO_ARRAY_VALID",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "pciem_pcie_master_halm_compl_reorder_fifo_array_valid",
+                    "mode": "RO",
+                    "name": "PciemPcieMasterHalmComplReorderFifoArrayValid"
+                },
+                {
+                    "altname": "PCIEM_PCIEM_HALM_REQ_FIFO_VALID",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "pciem_pciem_halm_req_fifo_valid",
+                    "mode": "RO",
+                    "name": "PciemPciemHalmReqFifoValid"
+                },
+                {
+                    "altname": "PCIEM_SHARED_MEM_REQ_FIFO_VALID",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "pciem_shared_mem_req_fifo_valid",
+                    "mode": "RO",
+                    "name": "PciemSharedMemReqFifoValid"
+                },
+                {
+                    "altname": "PCIEM_PCIEM_CPPT_REQ_FIFO_VALID",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "pciem_pciem_cppt_req_fifo_valid",
+                    "mode": "RO",
+                    "name": "PciemPciemCpptReqFifoValid"
+                },
+                {
+                    "altname": "PCIEM_PCIEM_HALM_REQ_STATE_IDLE",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "pciem_pciem_halm_req_state_idle",
+                    "mode": "RO",
+                    "name": "PciemPciemHalmReqStateIdle"
+                },
+                {
+                    "altname": "CPPT_COMMAND_HANDLER_CMD_VALID",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "cppt_command_handler_cmd_valid",
+                    "mode": "RO",
+                    "name": "CpptCommandHandlerCmdValid"
+                },
+                {
+                    "altname": "CPPT_PUSH2TARGET_INLET_FIFO_VALID",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "cppt_push2target_inlet_fifo_valid",
+                    "mode": "RO",
+                    "name": "CpptPush2targetInletFifoValid"
+                },
+                {
+                    "altname": "CPPT_CPPT_DEQUEUED_CMD_FIFO_VALID",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "cppt_cppt_dequeued_cmd_fifo_valid",
+                    "mode": "RO",
+                    "name": "CpptCpptDequeuedCmdFifoValid"
+                },
+                {
+                    "altname": "CPPT_SHARED_MEM_REQ_FIFO_VALID",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "cppt_shared_mem_req_fifo_valid",
+                    "mode": "RO",
+                    "name": "CpptSharedMemReqFifoValid"
+                },
+                {
+                    "altname": "CPPT_SM_PUSH_ID_FIFO_VALID",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "cppt_sm_push_id_fifo_valid",
+                    "mode": "RO",
+                    "name": "CpptSmPushIdFifoValid"
+                },
+                {
+                    "altname": "CPPT_SM_PUSH_DATA_FIFO_VALID",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "cppt_sm_push_data_fifo_valid",
+                    "mode": "RO",
+                    "name": "CpptSmPushDataFifoValid"
+                },
+                {
+                    "altname": "CPPT_IOSEL_SM_PUSH_DATA_FIFO_VALID",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "cppt_iosel_sm_push_data_fifo_valid",
+                    "mode": "RO",
+                    "name": "CpptIoselSmPushDataFifoValid"
+                },
+                {
+                    "altname": "CPPT_PCIEM_PUSH_DATA_FIFO_VALID",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "cppt_pciem_push_data_fifo_valid",
+                    "mode": "RO",
+                    "name": "CpptPciemPushDataFifoValid"
+                },
+                {
+                    "altname": "CPPT_CPPT_COMPL_STATE_IDLE",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "cppt_cppt_compl_state_idle",
+                    "mode": "RO",
+                    "name": "CpptCpptComplStateIdle"
+                },
+                {
+                    "altname": "PCIET_WRITE_SHARED_MEM_BUSY",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "pciet_write_shared_mem_busy",
+                    "mode": "RO",
+                    "name": "PcietWriteSharedMemBusy"
+                },
+                {
+                    "altname": "PCIET_PCIE_REQ_STATE_FSM_BUSY",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "pciet_pcie_req_state_fsm_busy",
+                    "mode": "RO",
+                    "name": "PcietPcieReqStateFsmBusy"
+                },
+                {
+                    "altname": "PCIET_PCIET_SRAM_READ_STATE_FSM_BUSY",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "pciet_pciet_sram_read_state_fsm_busy",
+                    "mode": "RO",
+                    "name": "PcietPcietSramReadStateFsmBusy"
+                },
+                {
+                    "altname": "PCIET_PCIET_READ_COMPL_STATE_FSM_BUSY",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "pciet_pciet_read_compl_state_fsm_busy",
+                    "mode": "RO",
+                    "name": "PcietPcietReadComplStateFsmBusy"
+                },
+                {
+                    "altname": "PCIET_HAL_COMPL_CSTATE_BUSY",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "pciet_hal_compl_cstate_busy",
+                    "mode": "RO",
+                    "name": "PcietHalComplCstateBusy"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PciePmeRegister1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HALT_PCIET_REQ_FIFO_VALID",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "halt_pciet_req_fifo_valid",
+                    "mode": "RO",
+                    "name": "HaltPcietReqFifoValid"
+                },
+                {
+                    "altname": "HALT_PCIET_REQ_CA_FIFO_VALID",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "halt_pciet_req_ca_fifo_valid",
+                    "mode": "RO",
+                    "name": "HaltPcietReqCaFifoValid"
+                },
+                {
+                    "altname": "HAL_COMPL_DESCR_FIFO_VALID",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "hal_compl_descr_fifo_valid",
+                    "mode": "RO",
+                    "name": "HalComplDescrFifoValid"
+                },
+                {
+                    "altname": "HAL_COMPL_READY_FIFO_VALID",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "hal_compl_ready_fifo_valid",
+                    "mode": "RO",
+                    "name": "HalComplReadyFifoValid"
+                },
+                {
+                    "altname": "HAL_REQUEST_READY_FIFO_VALID",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "HAL_REQUEST_READY_FIFO_VALID",
+                    "mode": "RO",
+                    "name": "HalRequestReadyFifoValid"
+                },
+                {
+                    "altname": "SHARED_MEM_REQ_FIFO_VALID",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "shared_mem_req_fifo_valid",
+                    "mode": "RO",
+                    "name": "SharedMemReqFifoValid"
+                },
+                {
+                    "altname": "SHARED_MEM_RD_REQ_FIFO_VALID",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "shared_mem_rd_req_fifo_valid",
+                    "mode": "RO",
+                    "name": "SharedMemRdReqFifoValid"
+                },
+                {
+                    "altname": "SHARED_MEM_WR_REQ_FIFO_VALID",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "shared_mem_wr_req_fifo_valid",
+                    "mode": "RO",
+                    "name": "SharedMemWrReqFifoValid"
+                },
+                {
+                    "altname": "HALT_PCIET_REQ_INLET_FIFO_VALID",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "halt_pciet_req_inlet_fifo_valid",
+                    "mode": "RO",
+                    "name": "HaltPcietReqInletFifoValid"
+                },
+                {
+                    "altname": "INT_IO_READ_DATA_FIFO_VALID",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "int_io_read_data_fifo_valid",
+                    "mode": "RO",
+                    "name": "IntIoReadDataFifoValid"
+                },
+                {
+                    "altname": "SRAM_READ_DATA_FIFO_VALID",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "sram_read_data_fifo_valid",
+                    "mode": "RO",
+                    "name": "SramReadDataFifoValid"
+                },
+                {
+                    "altname": "READ_COMPL_ORDER_FIFO_VALID",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "read_compl_order_fifo_valid",
+                    "mode": "RO",
+                    "name": "ReadComplOrderFifoValid"
+                },
+                {
+                    "altname": "CPP_MASTER_REQ_FIFO_VALID",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "cpp_master_req_fifo_valid",
+                    "mode": "RO",
+                    "name": "CppMasterReqFifoValid"
+                },
+                {
+                    "altname": "INT_READ_REQ_FIFO_VALID",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "int_read_req_fifo_valid",
+                    "mode": "RO",
+                    "name": "IntReadReqFifoValid"
+                },
+                {
+                    "altname": "PCIE_REQ_STATE",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "pcie_req_state",
+                    "mode": "RO",
+                    "name": "PcieReqState"
+                },
+                {
+                    "altname": "PCIET_SRAM_READ_STATE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "pciet_sram_read_state",
+                    "mode": "RO",
+                    "name": "PcietSramReadState"
+                },
+                {
+                    "altname": "PCIET_READ_COMPL_STATE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "pciet_read_compl_state",
+                    "mode": "RO",
+                    "name": "PcietReadComplState"
+                },
+                {
+                    "altname": "INT_DUMMY",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "int_dummy",
+                    "mode": "RO",
+                    "name": "IntDummy"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieReserved": {
+            "bit_length": 32,
+            "fields": []
+        },
+        "pcie_x8_xpb.PcieRoceAutoPushInterval": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_ROCE_DOORBELL_FIFO_SW_CREDITS",
+                    "bit_lsb": 23,
+                    "bit_msb": 25,
+                    "description": "Software credit limit for the Roce Doorbell FIFO.",
+                    "mode": "RW",
+                    "name": "PcieRoceDoorbellFifoSWCredits"
+                },
+                {
+                    "altname": "PCIE_ROCE_WORKQ_FIFO_SW_CREDITS",
+                    "bit_lsb": 16,
+                    "bit_msb": 22,
+                    "description": "Software credit limit for the Roce workq FIFO.",
+                    "mode": "RW",
+                    "name": "PcieRoceWorkqFifoSWCredits"
+                },
+                {
+                    "altname": "PCIE_ROCE_AUTO_PUSH_INTERVAL",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Number of cycles to wait for the second doorbell after the first one, before sending sending zeroes on second autopush cycle ",
+                    "mode": "RW",
+                    "name": "PcieRoceAutoPushInterval"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieRoceCounters": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_DOORBELL_DROP_COUNT",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Counter that keeps a track of the dropped doorbells. Saturates if not read",
+                    "mode": "RC",
+                    "name": "PcieDoorbellDropCount"
+                },
+                {
+                    "altname": "PCIE_DOORBELL_COUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Counter that keeps a track of the number of doorbells. Saturates if not read",
+                    "mode": "RC",
+                    "name": "PcieDoorBellCount"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieRoceInterruptStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_ROCE_WORKQ_STATE",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "0 -> Workq FIFO stores Threads. 1 -> Workq FIFO stores doorbells",
+                    "mode": "RO",
+                    "name": "PcieRoceWorkqState"
+                },
+                {
+                    "altname": "PCIE_ROCE_WORKQ_FIFO_STATUS",
+                    "bit_lsb": 8,
+                    "bit_msb": 14,
+                    "description": "Indicates the level of the WorkQ FIFO.",
+                    "mode": "RO",
+                    "name": "PcieRoceWorkqFifoStatus"
+                },
+                {
+                    "altname": "PCIE_ROCE_EVENT_MASK_DROP_DOORBELLSS",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Mask bit for Dropping Doorbells event.",
+                    "mode": "RW",
+                    "name": "PcieRoceEventMaskDropDoorbells"
+                },
+                {
+                    "altname": "PCIE_ROCE_EVENT_MASK_DROP_THREADS",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Mask bit for Dropping Threads event.",
+                    "mode": "RW",
+                    "name": "PcieRoceEventMaskDropThreads"
+                },
+                {
+                    "altname": "PCIE_ROCE_EVENT_MASK_FULL",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Mask bit for WorkQ FIFO Full event.",
+                    "mode": "RW",
+                    "name": "PcieRoceEventMaskFull"
+                },
+                {
+                    "altname": "PCIE_ROCE_EVENT_MASK_34_FULL",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Mask bit for WorkQ FIFO 3/4th Full event.",
+                    "mode": "RW",
+                    "name": "PcieRoceEventMask34Full"
+                },
+                {
+                    "altname": "PCIE_ROCE_DROP_DOORBELLS",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Indicates that the WorkQ FIFO is Full of doorbells and the doorbells are being dropped. Write 1 to clear.",
+                    "mode": "RW1C",
+                    "name": "PcieRoceDropDoorbells"
+                },
+                {
+                    "altname": "PCIE_ROCE_DROP_THREADS",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Indicates that the WorkQ FIFO is Full and the incoming threads is being dropped. Write 1 to clear.",
+                    "mode": "RW1C",
+                    "name": "PcieRoceDropThreads"
+                },
+                {
+                    "altname": "PCIE_ROCE_WORKQ_FULL",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Indicates that the WorkQ FIFO is Full. Write 1 to clear.",
+                    "mode": "RW1C",
+                    "name": "PcieRoceWorkqFull"
+                },
+                {
+                    "altname": "PCIE_ROCE_WORKQ_34_FULL",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Indicates that the WorkQ FIFO is 3/4th Full. Write 1 to clear.",
+                    "mode": "RW1C",
+                    "name": "PcieRoceWorkq34Full"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieRxMsgInt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PCIE_SS_PWR_MSG_INT_MASK",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "Set to mask PcieSSPwrMsgValid Interrupt.",
+                    "mode": "RW",
+                    "name": "PcieSSPwrMsgIntMask"
+                },
+                {
+                    "altname": "PCIE_PME_MSG_INT_MASK",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Set to mask PciePMEPwrMsgValid Interrupt.",
+                    "mode": "RW",
+                    "name": "PciePMEMsgIntMask"
+                },
+                {
+                    "altname": "PCIE_VMSG_INT_MASK",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Set to mask PciePwrVMsgValid Interrupt.",
+                    "mode": "RW",
+                    "name": "PcieVMsgIntMask"
+                },
+                {
+                    "altname": "PCIE_SS_PWR_MSG_VALID",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Interrupt status bit that indicates a PCIe Set Slot Power message has been received. The message is stored in the PcieSSPwrMsgHeader0-3 and PcieSSPwrMsgData CSRs.",
+                    "mode": "RW1C",
+                    "name": "PcieSSPwrMsgValid"
+                },
+                {
+                    "altname": "PCIE_PME_MSG_VALID",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Interrupt status bit that indicates a PCIe PME message has been received. The message is stored in the PciePMEMsgHeader0-3 CSRs.",
+                    "mode": "RW1C",
+                    "name": "PciePMEMsgValid"
+                },
+                {
+                    "altname": "PCIE_VMSG_VALID",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Interrupt status bit that indicates a PCIe vendor defined message has been received. The message is stored in the PcieVendorMsgHeader and PcieVendorMsgData CSRs.",
+                    "mode": "RW1C",
+                    "name": "PcieVMsgValid"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieTrapTypeTimeout": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TRAP_TIMEOUT_RANGE",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "A timeout value for all Trap VirtIO read requests, programmed by SW, represented in microseconds, 1us - 31us. Read requests that timeout will complete with an error.",
+                    "mode": "RW",
+                    "name": "TrapTimeoutRange"
+                },
+                {
+                    "altname": "TRAP_TIMEOUT",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "The timeout value for all Trap VirtIO read requests, programmed by SW, represented in multiples of microseconds, see timeout range bit field. NOTE: a value of 0 disables the timeout check. NOTE: Read requests that timeout will complete Completer Abort.",
+                    "mode": "RW",
+                    "name": "TrapTimeout"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieVendorMsgCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "FULL",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "When set all 32 buffers are occupied with vendor defined messages. When clear the SRAM buffer is not full",
+                    "mode": "RO",
+                    "name": "Full"
+                },
+                {
+                    "altname": "EMPTY",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "When set no vendor defined messages are currently stored in SRAM,. When clear there is at least one\n               message stored in the SRAM buffer",
+                    "mode": "RO",
+                    "name": "Empty"
+                },
+                {
+                    "altname": "ADD_TO_RD_PTR",
+                    "bit_lsb": 24,
+                    "bit_msb": 28,
+                    "description": " Software writes a value to this field to increment the read pointer by n+1 and free up SRAM buffers. The write will also update the EntryCnt, Full and Empty flags.\nSoftware should not write a value larger than the number of entries currently in the buffer or an underflow error assertion will fire and the read pointer increment will be limted by the current EntryCnt value. Software should only update the read pointer after the vendor defined messages have been read from SRAM.",
+                    "mode": "WO",
+                    "name": "AddToRdPtr"
+                },
+                {
+                    "altname": "ENTRY_CNT",
+                    "bit_lsb": 16,
+                    "bit_msb": 21,
+                    "description": "Indicates the number of vendor defined messages currently stored in SRAM",
+                    "mode": "RO",
+                    "name": "EntryCnt"
+                },
+                {
+                    "altname": "WR_PTR",
+                    "bit_lsb": 8,
+                    "bit_msb": 12,
+                    "description": "Write Pointer increments when a Vendor Defined Message has been written in the SRAM buffer",
+                    "mode": "RO",
+                    "name": "WrPtr"
+                },
+                {
+                    "altname": "RD_PTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Read pointer. Software increments this pointer by writing to the RdPtrInc Field",
+                    "mode": "RO",
+                    "name": "RdPtr"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcieVendorMsgStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DROP_CNT",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Vendor Defined Message Drop Counter. Increments when a vendor defined message is dropped due to lack of SRAM buffers. This counter saturates at all 1's and clears on reads",
+                    "mode": "RC",
+                    "name": "DropCnt"
+                },
+                {
+                    "altname": "RX_CNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "Vendor Defined Message receive counter. Increments after a vendor defined message is received and stored in SRAM. This counter clears on reads.",
+                    "mode": "RC",
+                    "name": "RxCnt"
+                }
+            ]
+        },
+        "pcie_x8_xpb.PcietVFerror": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VF_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Pcie target VF access error function number",
+                    "mode": "RO",
+                    "name": "PcietVFerror"
+                }
+            ]
+        },
+        "pcie_x8_xpb.QueueRingCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RING_CLS_ISLE",
+                    "bit_lsb": 26,
+                    "bit_msb": 31,
+                    "description": "CLS Island ID for Ring Op",
+                    "mode": "RW",
+                    "name": "RingClsIsl"
+                },
+                {
+                    "altname": "RING_SIG_MASTER",
+                    "bit_lsb": 22,
+                    "bit_msb": 25,
+                    "description": "CPP Signal Master to send for CLS Ring Op",
+                    "mode": "RW",
+                    "name": "RingSigMaster"
+                },
+                {
+                    "altname": "RING_SIG_REF",
+                    "bit_lsb": 15,
+                    "bit_msb": 21,
+                    "description": "CPP Signal Ref to send for CLS Ring Op",
+                    "mode": "RW",
+                    "name": "RingSigRef"
+                },
+                {
+                    "altname": "RING_TOKEN",
+                    "bit_lsb": 13,
+                    "bit_msb": 14,
+                    "description": "CPP Token to send for CLS Ring Op",
+                    "mode": "RW",
+                    "name": "RingToken"
+                },
+                {
+                    "altname": "RING_TARGET",
+                    "bit_lsb": 9,
+                    "bit_msb": 12,
+                    "description": "CPP Target ID to send for CLS Ring Op",
+                    "mode": "RW",
+                    "name": "RingTarget"
+                },
+                {
+                    "altname": "RING_ACTION",
+                    "bit_lsb": 4,
+                    "bit_msb": 8,
+                    "description": "CPP Action to send for CLS Ring Op",
+                    "mode": "RW",
+                    "name": "RingAction"
+                },
+                {
+                    "altname": "RING_INDEX",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Ring index determines which ring",
+                    "mode": "RW",
+                    "name": "RingIndex"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,2781 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: eca5ba006ef4"
+    ],
+    "maps": {
+        "nbitm.NBITMCPPAddressMap": {
+            "0x00000000": {
+                "altname": "TM_DESC_SRAM",
+                "description": "Access to the Traffic Manager Descriptor SRAM",
+                "name": "TMDescSram",
+                "ptr": "nbitm.TMDescSram",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "TM_NEXTPTR_SRAM",
+                "description": "Access to the Traffic Manager NextPtr SRAM",
+                "name": "TMNextPtrSram",
+                "ptr": "nbitm.TMNextPtrSram",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "TM_BDSRAM",
+                "description": "TM Buffer Descriptor RAM",
+                "name": "TMBDSram",
+                "ptr": "nbitm.TMBDSram",
+                "type": "regmap"
+            },
+            "0x00048000": {
+                "altname": "TM_BUFFER_LIST",
+                "description": "TM Buffer List Queue Registers",
+                "name": "TMBufferList",
+                "ptr": "nbitm.TMBufferList",
+                "type": "regmap"
+            },
+            "0x00060000": {
+                "altname": "TM_PKT_SRAM",
+                "description": "Access to the Traffic Manager Packet SRAM",
+                "name": "TMPktSram",
+                "ptr": "nbitm.TMPktSram",
+                "type": "regmap"
+            },
+            "0x00068000": {
+                "altname": "TM_HEAD_TAIL_SRAM",
+                "description": "Access to the Traffic Manager Descriptor Head and Tail SRAM",
+                "name": "TMHeadTailSram",
+                "ptr": "nbitm.TMHeadTailSram",
+                "type": "regmap"
+            },
+            "0x00070000": {
+                "altname": "TM_FLOW_CONTROL",
+                "description": "Read Only Access to the Traffic Manager Flow Control Signals",
+                "name": "TMFlowControl",
+                "ptr": "nbitm.TMFlowControl",
+                "type": "regmap"
+            },
+            "0x00080000": {
+                "altname": "TM_BLQ_READ",
+                "description": "TM Buffer List Queue Read Addresses",
+                "name": "TMBLQRead",
+                "ptr": "nbitm.TMBLQRead",
+                "type": "regmap"
+            },
+            "0x000a0000": {
+                "altname": "TM_FREEPTR_SRAM",
+                "description": "Access to the Traffic Manager FreePtr SRAM",
+                "name": "TMFreePtrSram",
+                "ptr": "nbitm.TMFreePtrSram",
+                "type": "regmap"
+            },
+            "0x000d0000": {
+                "altname": "TM_REORDER_BUF",
+                "description": "Access to the Traffic Manager Reorder Buffer SRAM",
+                "name": "TMReorderBuf",
+                "ptr": "nbitm.TMReorderBuf",
+                "type": "regmap"
+            },
+            "0x000e0000": {
+                "altname": "TM_QUEUE_LEVEL_SRAM",
+                "description": "Access to the Traffic Manager Descriptor QueueLevel SRAM",
+                "name": "TMQueueLevelSram",
+                "ptr": "nbitm.TMQueueLevelSram",
+                "type": "regmap"
+            }
+        },
+        "nbitm.SchedulerL1Deficit": {
+            "0x00000000": {
+                "altname": "SCHEDULER_DEFICIT%d",
+                "description": "Scheduler deficit value for each scheduler port.  There are a total of 128 deficit values in the level 1 scheduler.",
+                "name": "SchedulerDeficit%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.SchedulerDeficit",
+                "repeat1": 128,
+                "type": "reg"
+            }
+        },
+        "nbitm.SchedulerL1Weight": {
+            "0x00000000": {
+                "altname": "SCHEDULER_WEIGHT%d",
+                "description": "Scheduler weight value to configure the relative bandwidth for each scheduler port.  There are a total of 128 weight values to program in the level 1 scheduler.",
+                "name": "SchedulerWeight%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.SchedulerWeight",
+                "repeat1": 128,
+                "type": "reg"
+            }
+        },
+        "nbitm.SchedulerL2Deficit": {
+            "0x00000000": {
+                "altname": "SCHEDULER_DEFICIT%d",
+                "description": "Scheduler deficit value for each scheduler port.  There are a total of 1024 deficit values in the level 2 scheduler.",
+                "name": "SchedulerDeficit%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.SchedulerDeficit",
+                "repeat1": 1024,
+                "type": "reg"
+            }
+        },
+        "nbitm.SchedulerL2Weight": {
+            "0x00000000": {
+                "altname": "SCHEDULER_WEIGHT%d",
+                "description": "Scheduler weight value to configure the relative bandwidth for each scheduler port.  There are a total of 1024 weight values to program in the level 2 scheduler.",
+                "name": "SchedulerWeight%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.SchedulerWeight",
+                "repeat1": 1024,
+                "type": "reg"
+            }
+        },
+        "nbitm.TMBDSram": {
+            "0x00000000": {
+                "altname": "TM_BDSRAM_ENTRY%d",
+                "description": "NBI TM Buffer Descriptor SRAM Entry",
+                "name": "NbiBDSramEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbi_dma_reg.NbiBDSramEntry",
+                "repeat1": 4096,
+                "type": "reg"
+            }
+        },
+        "nbitm.TMBLQRead": {
+            "0x00000000": {
+                "altname": "BL_QUE_READ%d",
+                "description": "Reads a pair of entries from Buffer List Queue",
+                "name": "BLQRead%d",
+                "offinc1": "0x00000080",
+                "ptr": "nbitm.BLQueRead",
+                "repeat1": 4,
+                "type": "reg"
+            }
+        },
+        "nbitm.TMBufferList": {
+            "0x00000000": {
+                "altname": "BL_QUE_CTRL0",
+                "description": "Configures the buffer list circular queue and provides status",
+                "name": "BLQueCtrl0",
+                "ptr": "nbi_dma_reg.BLQueCtrl0",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "BL_QUE_CTRL1",
+                "description": "Configures the buffer list circular queue and provides status",
+                "name": "BLQueCtrl1",
+                "ptr": "nbi_dma_reg.BLQueCtrl1",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "BL_QUE_CTRL2",
+                "description": "Configures the buffer list circular queue and provides status",
+                "name": "BLQueCtrl2",
+                "ptr": "nbi_dma_reg.BLQueCtrl2",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "BL_QUE_CTRL3",
+                "description": "Configures the buffer list circular queue and provides status",
+                "name": "BLQueCtrl3",
+                "ptr": "nbi_dma_reg.BLQueCtrl3",
+                "type": "reg"
+            }
+        },
+        "nbitm.TMDescSram": {
+            "0x00000000": {
+                "altname": "TM_DESC_ENTRY%d",
+                "description": "NBI TM Descriptor SRAM Entry",
+                "name": "TMDescSramEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbitm.TMDescSramEntry",
+                "repeat1": 8192,
+                "type": "reg"
+            }
+        },
+        "nbitm.TMFlowControl": {
+            "0x00000000": {
+                "altname": "FLOW_CONTROL%d",
+                "description": "Reads 64-bits at a time of Traffic Manager Out-of-band Flow Control information",
+                "name": "TMFlowControlEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbitm.TMFlowControlEntry",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "MAC_XOFFFLOW_CONTROL%d",
+                "description": "Reads 64-bits at a time of Traffic Manager MAC XOFF Flow Control information",
+                "name": "TMMacXoffFlowControlEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbitm.TMFlowControlEntry",
+                "repeat1": 2,
+                "type": "reg"
+            },
+            "0x00000090": {
+                "altname": "MINIPKT_FLOW_CONTROL%d",
+                "description": "Reads 64-bits at a time of Traffic Manager Minipacket Flow Control information",
+                "name": "TmMiniPktFlowControlEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbitm.TmMiniPktFlowControlEntry",
+                "repeat1": 2,
+                "type": "reg"
+            }
+        },
+        "nbitm.TMFreePtrSram": {
+            "0x00000000": {
+                "altname": "TM_FREEPTR_SRAM_ENTRY%d",
+                "description": "NBI TM FreePtr SRAM Entry",
+                "name": "TMFreePtrSramEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbitm.TMFreePtrSramEntry",
+                "repeat1": 8192,
+                "type": "reg"
+            }
+        },
+        "nbitm.TMHeadTailSram": {
+            "0x00000000": {
+                "altname": "TM_HEAD_TAIL_ENTRY%d",
+                "description": "NBI TM Head and Tail SRAM Entry",
+                "name": "TMHeadTailEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbitm.TMHeadTailSramEntry",
+                "repeat1": 1024,
+                "type": "reg"
+            }
+        },
+        "nbitm.TMNextPtrSram": {
+            "0x00000000": {
+                "altname": "TM_NEXTPTR_SRAM_ENTRY%d",
+                "description": "NBI TM NextPtr SRAM Entry",
+                "name": "TMNextPtrSramEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbitm.TMNextPtrSramEntry",
+                "repeat1": 8192,
+                "type": "reg"
+            }
+        },
+        "nbitm.TMPktSram": {
+            "0x00000000": {
+                "altname": "TM_PKT_SRAM_ENTRY%d",
+                "description": "NBI TM Packet SRAM Entry",
+                "name": "TMPktSramEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbitm.TMPktSramEntry",
+                "repeat1": 2048,
+                "type": "reg"
+            }
+        },
+        "nbitm.TMQueueLevelSram": {
+            "0x00000000": {
+                "altname": "TM_QUEUE_LEVEL_ENTRY%d",
+                "description": "NBI TM Queue Level SRAM Entry",
+                "name": "TMQueueLevelEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbitm.TMQueueLevelSramEntry",
+                "repeat1": 1024,
+                "type": "reg"
+            }
+        },
+        "nbitm.TMQueueReg": {
+            "0x00000000": {
+                "altname": "QUEUE_STATUS%d",
+                "description": "Status information stored for each queue.  There are a total of 1024 queue status registers in the traffic manager.",
+                "name": "QueueStatus%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.QueueStatus",
+                "repeat1": 1024,
+                "type": "reg"
+            },
+            "0x00001000": {
+                "altname": "QUEUE_CONFIG%d",
+                "description": "Configuration settings for each queue.  There are a total of 1024 queue configuration registers in the traffic manager.",
+                "name": "QueueConfig%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.QueueConfig",
+                "repeat1": 1024,
+                "type": "reg"
+            },
+            "0x00002000": {
+                "altname": "QUEUE_DROP_COUNT%d",
+                "description": "Drop counter for each queue.  There are a total of 1024 drop counters in the traffic manager.",
+                "name": "QueueDropCount%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.QueueDropCount",
+                "repeat1": 1024,
+                "type": "reg"
+            },
+            "0x00003000": {
+                "altname": "QUEUE_DROP_COUNT_CLEAR%d",
+                "description": "Clear on read drop counter for each queue.  There are a total of 1024 clear on read drop counters in the traffic manager.",
+                "name": "QueueDropCountClear%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.QueueDropCountClear",
+                "repeat1": 1024,
+                "type": "reg"
+            },
+            "0x00004000": {
+                "altname": "PACKET_DESCRIPTOR_MEMORY_STATUS",
+                "description": "Packet Descriptor Memory Status.",
+                "name": "PacketDescriptorMemoryStatus",
+                "ptr": "nbitm.PacketDescriptorMemoryStatus",
+                "type": "reg"
+            },
+            "0x00004004": {
+                "altname": "COMMAND_DROP_STATUS",
+                "description": "Clear on read status register indicating that an outgoing DSF/CPP command has been dropped due to the command fifo being full for 1024 clock cycles.This register is only set once and only set again after the register is read",
+                "name": "CommandDropStatus",
+                "ptr": "nbitm.CommandDropStatus",
+                "type": "reg"
+            },
+            "0x00004008": {
+                "altname": "PCIE_COMMAND_DROP_STATUS",
+                "description": "Clear on read status register indicating that an outgoing DSF/CPP command has been dropped due to the command fifo being full for 1024 clock cycles.This register is only set once and only set again after the register is read",
+                "name": "PCIeCommandDropStatus",
+                "ptr": "nbitm.PCIeCommandDropStatus",
+                "type": "reg"
+            }
+        },
+        "nbitm.TMReorderBuf": {
+            "0x00000000": {
+                "altname": "TM_RORDR_BUF_ENTRY%d",
+                "description": "NBI TM Reorder Buffer Entry",
+                "name": "TMReorderBufEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbitm.TMReorderBufEntry",
+                "repeat1": 4096,
+                "type": "reg"
+            }
+        },
+        "nbitm.TMSchedulerReg": {
+            "0x00000000": {
+                "altname": "SCHEDULER_CONFIG%d",
+                "description": "Configuration register for setup of each scheduler. The level 2 schedulers are at offsets 0-127, the level 1 standard schedulers are at offsets 128-143, and the level 0 scheduler is at offset 144.",
+                "name": "SchedulerConfig%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.SchedulerConfig",
+                "repeat1": 145,
+                "type": "reg"
+            },
+            "0x00000400": {
+                "altname": "L1EXTSCHEDULER_CONFIG%d",
+                "description": "Level 1 Extended Scheduler Configuration register. These registers configure the 16 level 1 extended schedulers.",
+                "name": "L1ExtSchedulerConfig%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.L1ExtSchedulerConfig",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00000800": {
+                "altname": "SCHEDULER_WEIGHT%d",
+                "description": "L0 Scheduler weight value to configure the relative bandwidth for each scheduler port.  There are a total of 128 weight values to program in the level 0 scheduler. ",
+                "name": "SchedulerWeight%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.SchedulerWeight",
+                "repeat1": 128,
+                "type": "reg"
+            },
+            "0x00001000": {
+                "altname": "SCHEDULER_DEFICIT%d",
+                "description": "L0 Scheduler deficit value for each scheduler port.  There are a total of 128 deficit values in the level 0 scheduler. ",
+                "name": "SchedulerDeficit%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.SchedulerDeficit",
+                "repeat1": 128,
+                "type": "reg"
+            }
+        },
+        "nbitm.TMShaperReg": {
+            "0x00000000": {
+                "altname": "SHAPER_RATE%d",
+                "description": "Shaper rate register.  Configures the maximum allowed rate.  The level 2 shaper registers are at offsets 0-127, the level 1 shaper registers are at offsets 128-143, and the level 0 shaper register is at offset 144.",
+                "name": "ShaperRate%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.ShaperRate",
+                "repeat1": 145,
+                "type": "reg"
+            },
+            "0x00000300": {
+                "altname": "L1EXT_SHAPER_RATE%d",
+                "description": "Level 1 extended shaper rate register.  Configures the maximum allowed rate for the 16 Level 1 extended shapers.",
+                "name": "L1ExtShaperRate%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.ShaperRate",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00000800": {
+                "altname": "SHAPER_THRESHOLD%d",
+                "description": "Rate limiting shaper threshold register.  Configures the desired threshold level of the leaky bucket.  The level 2 shaper registers are at offsets 0-127, the level 1 shaper registers are at offsets 128-143, and the level 0 shaper register is at offset 144.",
+                "name": "ShaperThreshold%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.ShaperThreshold",
+                "repeat1": 145,
+                "type": "reg"
+            },
+            "0x00000b00": {
+                "altname": "L1EXT_SHAPER_THRESHOLD%d",
+                "description": "Level 1 extended shaper threshold register.  Configures the desired threshold level of the leaky bucket for the 16 level 1 extended shapers.",
+                "name": "L1ExtShaperThreshold%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.ShaperThreshold",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00001000": {
+                "altname": "SHAPER_MAX_OVERSHOOT%d",
+                "description": "Rate limiting shaper maximum overshoot register.  Configures the maximum allowed overshoot for the leaky bucket.  The level 2 shaper registers are at offsets 0-127, the level 1 shaper registers are at offsets 128-143, and the level 0 shaper register is at offset 144",
+                "name": "ShaperMaxOvershoot%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.ShaperMaxOvershoot",
+                "repeat1": 145,
+                "type": "reg"
+            },
+            "0x00001300": {
+                "altname": "L1EXT_SHAPER_MAX_OVERSHOOT%d",
+                "description": "Level 1 extended shaper maximum overshoot register.  Configures the maximum allowed overshoot of the leaky bucket for the 16 level 1 extended shapers.",
+                "name": "L1ExtShaperMaxOvershoot%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.ShaperMaxOvershoot",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00001800": {
+                "altname": "SHAPER_RATE_ADJUST%d",
+                "description": "Shaper rate adjust register.  Configures the fixed data rate adjustment for packet overhead.  The level 2 shaper registers are at offsets 0-127, the level 1 shaper registers are at offsets 128-143, and the level 0 shaper register is at offset 144.",
+                "name": "ShaperRateAdjust%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.ShaperRateAdjust",
+                "repeat1": 145,
+                "type": "reg"
+            },
+            "0x00001b00": {
+                "altname": "L1EXT_SHAPER_RATE_ADJUST%d",
+                "description": "Level 1 extended shaper rate adjust register.  Configures the fixed data rate adjustment for packet overheadfor the 16 level 1 extended shapers.",
+                "name": "L1ExtShaperRateAdjust%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.ShaperRateAdjust",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00002000": {
+                "altname": "SHAPER_STATUS%d",
+                "description": "Shaper status register.  Contains read-only status information for the rate liming shaper.  The level 2 shaper registers are at offsets 0-127, the level 1 shaper registers are at offsets 128-143, and the level 0 shaper register is at offset 144.",
+                "name": "ShaperStatus%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.ShaperStatus",
+                "repeat1": 145,
+                "type": "reg"
+            },
+            "0x00002300": {
+                "altname": "L1EXT_SHAPER_STATUS%d",
+                "description": "Level 1 extended shaper status register.  Contains read-only status information for the 16 level 1 extended shapers.",
+                "name": "L1ExtShaperStatus%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.ShaperStatus",
+                "repeat1": 16,
+                "type": "reg"
+            }
+        },
+        "nbitm.TrafficManager": {
+            "0x00000000": {
+                "altname": "TRAFFIC_MANAGER_REG",
+                "description": "Traffic Manager XPB Registers",
+                "name": "TrafficManagerReg",
+                "ptr": "nbitm.TrafficManagerReg",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "QUEUE_REG",
+                "description": "Descriptor Queue XPB Registers",
+                "name": "TMQueueReg",
+                "ptr": "nbitm.TMQueueReg",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "SCHEDULER_REG",
+                "description": "Scheduler XPB Registers",
+                "name": "TMSchedulerReg",
+                "ptr": "nbitm.TMSchedulerReg",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "SCHEDULER_L1_WEIGHT",
+                "description": "Level 1 Scheduler Weight Values",
+                "name": "SchedulerL1Weight",
+                "ptr": "nbitm.SchedulerL1Weight",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "SCHEDULER_L1_DEFICIT",
+                "description": "Level 1 Scheduler Deficit Values",
+                "name": "SchedulerL1Deficit",
+                "ptr": "nbitm.SchedulerL1Deficit",
+                "type": "regmap"
+            },
+            "0x00050000": {
+                "altname": "SCHEDULER_L1_ECC",
+                "description": "Level 1 Scheduler Memory ECC. Implemented using ecc_monitor2 macro.",
+                "name": "SchedulerL1ECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_2",
+                "type": "regmap"
+            },
+            "0x00060000": {
+                "altname": "SCHEDULER_L2_WEIGHT",
+                "description": "Level 2 Scheduler Weight Values",
+                "name": "SchedulerL2Weight",
+                "ptr": "nbitm.SchedulerL2Weight",
+                "type": "regmap"
+            },
+            "0x00070000": {
+                "altname": "SCHEDULER_L2_DEFICIT",
+                "description": "Level 2 Scheduler Deficit Values",
+                "name": "SchedulerL2Deficit",
+                "ptr": "nbitm.SchedulerL2Deficit",
+                "type": "regmap"
+            },
+            "0x00080000": {
+                "altname": "SCHEDULER_L2_ECC",
+                "description": "Level 2 Scheduler Memory ECC. Implemented using ecc_monitor2 macro.",
+                "name": "SchedulerL2ECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_2",
+                "type": "regmap"
+            },
+            "0x00090000": {
+                "altname": "SHAPER_REG",
+                "description": "Shaper XPB Registers",
+                "name": "TMShaperReg",
+                "ptr": "nbitm.TMShaperReg",
+                "type": "regmap"
+            },
+            "0x000a0000": {
+                "altname": "DESCRIPTOR_MEM_ECC",
+                "description": "Descriptor Memory ECC.",
+                "name": "DescriptorMemECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x000b0000": {
+                "altname": "HD_TL_MEM_ECC",
+                "description": "Descsriptor Head and Tail Memory ECC. Implemented using ecc_monitor2 macro.",
+                "name": "HdTlMemECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_2",
+                "type": "regmap"
+            },
+            "0x000c0000": {
+                "altname": "BLQ_MEM_ECC",
+                "description": "Buffer List Queue Memory ECC",
+                "name": "BLQMemECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x000d0000": {
+                "altname": "EGRESS_PKT_BUF_ECC",
+                "description": "Egress Packet Buffer ECC. Implemented using ecc_monitor8 macro.",
+                "name": "EgressPktBufECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_8",
+                "type": "regmap"
+            },
+            "0x000f0000": {
+                "altname": "REORDER_MEM_ECC",
+                "description": "Reorder Memory ECC. Implemented using ecc_monitor2 macro.",
+                "name": "ReorderMemECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_2",
+                "type": "regmap"
+            },
+            "0x00100000": {
+                "altname": "SCHEDULER_L0_ECC",
+                "description": "Level 0 Scheduler Memory ECC. Implemented using ecc_monitor2 macro.",
+                "name": "SchedulerL0ECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_2",
+                "type": "regmap"
+            },
+            "0x00110000": {
+                "altname": "DROP_CNT_MEM_ECC",
+                "description": "Drop Count Memory ECC",
+                "name": "DropCntMemECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00120000": {
+                "altname": "FREE_NEXT_MEM_ECC",
+                "description": "Free Pointer and Next Pointer Memory ECC. Implemented using ecc_monitor2 macro.",
+                "name": "FreeNextMemECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_2",
+                "type": "regmap"
+            },
+            "0x00130000": {
+                "altname": "QUEUE_LEVEL_MEM_ECC",
+                "description": "Queue Level Memory ECC. Implemented using ecc_monitor macro.",
+                "name": "QueueLevelMemECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            }
+        },
+        "nbitm.TrafficManagerReg": {
+            "0x00000000": {
+                "altname": "TRAFFIC_MANAGER_CONFIG",
+                "description": "Traffic manager configuration register. Contains global read/write configuration information.",
+                "name": "TrafficManagerConfig",
+                "ptr": "nbitm.TrafficManagerConfig",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "DROP_RATE",
+                "description": "Configurable drop rate that is programmable for each queue depth range",
+                "name": "DropRate",
+                "ptr": "nbitm.DropRate",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "BLQ_EVENT",
+                "description": "Configures thresholds, event type and enables/disables for the buffer list queues",
+                "name": "BlqEvent",
+                "ptr": "nbitm.BlqEvent",
+                "type": "reg"
+            },
+            "0x00000074": {
+                "altname": "EGRESS_RATE_LIMIT",
+                "description": "Rate limiting CSR for the Egress NBI Command/PullId ports.",
+                "name": "EgressRateLimit",
+                "ptr": "nbitm.EgressRateLimit",
+                "type": "reg"
+            },
+            "0x00000078": {
+                "altname": "EGRESS_PULL_ID_PORT_ENABLE",
+                "description": "Enables ports for transmitting Pull IDs.",
+                "name": "EgressPullIdPortEnable",
+                "ptr": "nbitm.EgressPullIdPortEnable",
+                "type": "reg"
+            },
+            "0x00000100": {
+                "altname": "OUT_OF_ORDER_COUNT%d",
+                "description": "Out of order counter for each sequencer.  There are a total of 32 out of order counters in the traffic manager, one for each active sequencer.",
+                "name": "OutOfOrderCount%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.OutOfOrderCount",
+                "repeat1": 32,
+                "type": "reg"
+            },
+            "0x00000200": {
+                "altname": "OUT_OF_ORDER_COUNT_CLEAR%d",
+                "description": "Clear on read out of order counter for each sequencer.  One for each active sequencer.",
+                "name": "OutOfOrderCountClear%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.OutOfOrderCountClear",
+                "repeat1": 32,
+                "type": "reg"
+            },
+            "0x00000300": {
+                "altname": "MINIPKT_CREDIT_CONFIG",
+                "description": "MiniPacket Credit Flow Control Configuration Register",
+                "name": "MiniPktCreditConfig",
+                "ptr": "nbitm.MiniPktCreditConfig",
+                "type": "reg"
+            },
+            "0x00000304": {
+                "altname": "MINIPKT_FREE_POOL_CREDIT%d",
+                "description": "MiniPacket Transmit Free Pool Credit Counter.  Read only free pool credit counters",
+                "name": "MiniPktFreePoolCredit%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.MiniPktFreePoolCredit",
+                "repeat1": 2,
+                "type": "reg"
+            },
+            "0x00000400": {
+                "altname": "MINIPKT_CHANNEL_CREDIT%d",
+                "description": "MiniPacket Transmit Channel Credit Counter.  Read only credit counter, one for each channel",
+                "name": "MiniPktChannelCredit%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.MiniPktChannelCredit",
+                "repeat1": 128,
+                "type": "reg"
+            },
+            "0x00000600": {
+                "altname": "REORDER_ACTIVITY",
+                "description": "Activity indication flag for each sequencer in the reorder buffer.",
+                "name": "ReorderActivity",
+                "ptr": "nbitm.ReorderActivity",
+                "type": "reg"
+            },
+            "0x00000604": {
+                "altname": "DROP_PROFILE%d",
+                "description": "8 programmable Drop Profiles corresponding to drop precedence values 0-7",
+                "name": "DropProfile%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.DropProfile",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000628": {
+                "altname": "DESCRIPTOR_MEMORY_RED_DROP",
+                "description": "Packet Descriptor RED drops.",
+                "name": "DescriptorMemoryRedDrop",
+                "ptr": "nbitm.DescriptorMemoryRedDrop",
+                "type": "reg"
+            },
+            "0x0000062c": {
+                "altname": "MINIPKT_CHANNEL_CREDIT_LIMIT%d",
+                "description": "MiniPacket Channel Credit limit Configuration Register",
+                "name": "MiniPktChannelCreditLimit%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.MiniPktChannelCreditLimit",
+                "repeat1": 128,
+                "type": "reg"
+            },
+            "0x0000082c": {
+                "altname": "TMREORDERBUFFERFLUSH",
+                "description": "Reorder buffer flush command per sequencer.",
+                "name": "TmReorderBufferFlush",
+                "ptr": "nbitm.TmReorderBufferFlush",
+                "type": "reg"
+            },
+            "0x00000830": {
+                "altname": "TMREORDERTIMEOUTRANGE0",
+                "description": "Timeout base range for sequencers 0 to 7.",
+                "name": "TmReorderTimeOutRange0",
+                "ptr": "nbitm.TmReorderTimeOutRange0",
+                "type": "reg"
+            },
+            "0x00000834": {
+                "altname": "TMREORDERTIMEOUTRANGE1",
+                "description": "Timeout base range for sequencers 8 to 15.",
+                "name": "TmReorderTimeOutRange1",
+                "ptr": "nbitm.TmReorderTimeOutRange1",
+                "type": "reg"
+            },
+            "0x00000840": {
+                "altname": "TMREORDERTIMEOUTVALUE0",
+                "description": "Timeout value for sequencers 0 to 3.",
+                "name": "TmReorderTimeOutValue0",
+                "ptr": "nbitm.TmReorderTimeOutValue0",
+                "type": "reg"
+            },
+            "0x00000844": {
+                "altname": "TMREORDERTIMEOUTVALUE1",
+                "description": "Timeout value for sequencers 4 to 7.",
+                "name": "TmReorderTimeOutValue1",
+                "ptr": "nbitm.TmReorderTimeOutValue1",
+                "type": "reg"
+            },
+            "0x00000848": {
+                "altname": "TMREORDERTIMEOUTVALUE2",
+                "description": "Timeout value for sequencers 8 to 11.",
+                "name": "TmReorderTimeOutValue2",
+                "ptr": "nbitm.TmReorderTimeOutValue2",
+                "type": "reg"
+            },
+            "0x0000084c": {
+                "altname": "TMREORDERTIMEOUTVALUE3",
+                "description": "Timeout value for sequencers 12 to 15.",
+                "name": "TmReorderTimeOutValue3",
+                "ptr": "nbitm.TmReorderTimeOutValue3",
+                "type": "reg"
+            },
+            "0x00000850": {
+                "altname": "TMREORDERTIMEOUTVALUE4",
+                "description": "Timeout value for sequencers 16 to 19.",
+                "name": "TmReorderTimeOutValue4",
+                "ptr": "nbitm.TmReorderTimeOutValue4",
+                "type": "reg"
+            },
+            "0x00000854": {
+                "altname": "TMREORDERTIMEOUTVALUE5",
+                "description": "Timeout value for sequencers 20 to 23.",
+                "name": "TmReorderTimeOutValue5",
+                "ptr": "nbitm.TmReorderTimeOutValue5",
+                "type": "reg"
+            },
+            "0x00000858": {
+                "altname": "TMREORDERTIMEOUTVALUE6",
+                "description": "Timeout value for sequencers 24 to 27.",
+                "name": "TmReorderTimeOutValue6",
+                "ptr": "nbitm.TmReorderTimeOutValue6",
+                "type": "reg"
+            },
+            "0x0000085c": {
+                "altname": "TMREORDERTIMEOUTVALUE7",
+                "description": "Timeout value for sequencers 28 to 31.",
+                "name": "TmReorderTimeOutValue7",
+                "ptr": "nbitm.TmReorderTimeOutValue7",
+                "type": "reg"
+            },
+            "0x00000900": {
+                "altname": "TMREORDERFLUSHFLAG",
+                "description": "Sticky Flush Flag, Clear on read.",
+                "name": "TmReorderFlushFlag",
+                "ptr": "nbitm.TmReorderFlushFlag",
+                "type": "reg"
+            },
+            "0x00000904": {
+                "altname": "TMRECEIVEDPACKETCOUNTER",
+                "description": "This 32-bit register is a saturating counter, counting the incoming PktReady to Traffic Manager. It's a clear on read register.",
+                "name": "TMReceivedPacketCounter",
+                "ptr": "nbitm.TMReceivedPacketCounter",
+                "type": "reg"
+            },
+            "0x00000908": {
+                "altname": "TMTRANSMITTEDPACKETCOUNTER",
+                "description": "This 32-bit register is a saturating counter, counting the descriptors going out to DMA block from the Descriptor Queues. It's a clear on read register.",
+                "name": "TMTransmittedPacketCounter",
+                "ptr": "nbitm.TMTransmittedPacketCounter",
+                "type": "reg"
+            },
+            "0x0000090c": {
+                "altname": "TMBLQNULLMUPTR",
+                "description": " Programmable Null Memory Buffer Pointer.",
+                "name": "TMBlqNullMuPtr",
+                "ptr": "nbitm.TMBlqNullMuPtr",
+                "type": "reg"
+            },
+            "0x00000910": {
+                "altname": "TMREORDERSEQREMPTY",
+                "description": "32-bits indicating Empty Reorder Sequencers.",
+                "name": "TMReorderSeqrEmpty",
+                "ptr": "nbitm.TMReorderSeqrEmpty",
+                "type": "reg"
+            },
+            "0x00000914": {
+                "altname": "TMRECEIVEDDROPPACKETCOUNTER",
+                "description": "This 32-bit register is a saturating counter, counting the incoming PktReady to Traffic Manager which are with Token of 0. It's a clear on read register.",
+                "name": "TMReceivedDropPacketCounter",
+                "ptr": "nbitm.TMReceivedDropPacketCounter",
+                "type": "reg"
+            },
+            "0x0000091c": {
+                "altname": "NBITMPCIECMDOUTCFG%d",
+                "description": " Pcie Command out Configuration.",
+                "name": "NbiTmPcieCmdOutCfg%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbitm.NbiTmPcieCmdOutCfg",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x0000095c": {
+                "altname": "FREEPKTOUTSTANDINGLIMIT",
+                "description": "Limits the number of outstanding FreePkt commands",
+                "name": "FreePktOutstandingLimit",
+                "ptr": "nbitm.FreePktOutstandingLimit",
+                "type": "reg"
+            },
+            "0x00000960": {
+                "altname": "TMCHANNELPCIEVMQOSENA_0",
+                "description": "Identifies Channel 0->31 as PCIe vs Network.",
+                "name": "TMChannelPcieVmQoSEna_0",
+                "ptr": "nbitm.TMChannelPcieVmQoSEna_0",
+                "type": "reg"
+            },
+            "0x00000964": {
+                "altname": "TMCHANNELPCIEVMQOSENA_1",
+                "description": "Identifies Channel 32->63 as PCIe vs Network.",
+                "name": "TMChannelPcieVmQoSEna_1",
+                "ptr": "nbitm.TMChannelPcieVmQoSEna_1",
+                "type": "reg"
+            },
+            "0x00000968": {
+                "altname": "TMCHANNELPCIEVMQOSENA_2",
+                "description": "Identifies Channel 64->95 as PCIe vs Network.",
+                "name": "TMChannelPcieVmQoSEna_2",
+                "ptr": "nbitm.TMChannelPcieVmQoSEna_2",
+                "type": "reg"
+            },
+            "0x0000096c": {
+                "altname": "TMCHANNELPCIEVMQOSENA_3",
+                "description": "Identifies Channel 96->127 as PCIe vs Network.",
+                "name": "TMChannelPcieVmQoSEna_3",
+                "ptr": "nbitm.TMChannelPcieVmQoSEna_3",
+                "type": "reg"
+            },
+            "0x00000970": {
+                "altname": "REORDERBUFFER_PERF_SEQR_SELECTOR",
+                "description": "Reorder buffer Seqr selector for Performance bus",
+                "name": "ReorderBuffer_perf_seqr_selector",
+                "ptr": "nbitm.ReorderBuffer_perf_seqr_selector",
+                "type": "reg"
+            },
+            "0x00000974": {
+                "altname": "SET_OF_PARTIAL_HEAD_POINTERS",
+                "description": "This register contains 3-bit of selector, which gives set of 4 Partial Head Pointers",
+                "name": "SetOfPartialHeadPointers",
+                "ptr": "nbitm.SetOfPartialHeadPointers",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "nbitm.BLQueRead": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "MU_PTR_HI",
+                    "bit_lsb": 32,
+                    "bit_msb": 60,
+                    "description": "Pointer to the memory buffer. Refer to NbiBDSramEntry register description.",
+                    "mode": "RO",
+                    "name": "MuAddrHi"
+                },
+                {
+                    "altname": "MU_PTR_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 28,
+                    "description": "Pointer to the memory buffer. Refer to NbiBDSramEntry register description.",
+                    "mode": "RO",
+                    "name": "MuAddrLo"
+                }
+            ]
+        },
+        "nbitm.BlqEvent": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BYPASS_BLQ_PTR_RETURN",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "When set to '1', drops Null MU Pointers (29h0) instead of returning them to the BLQ.",
+                    "mode": "RW",
+                    "name": "BypassBLQPtrReturn"
+                },
+                {
+                    "altname": "DIS_BLQ_EVENT_FIFO_FULL_ASSERT",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Set this bit to disable the BLQ Event FIFO overflow assertion",
+                    "mode": "RW",
+                    "name": "DisBLQEventFifoFullAssert"
+                },
+                {
+                    "altname": "BLQEVENT_THRESHOLD3",
+                    "bit_lsb": 18,
+                    "bit_msb": 19,
+                    "description": "An event is generated every N buffer descriptors written to buffer list queue3, where N is configurable from 16 to 128.",
+                    "mode": "RW",
+                    "name": "BLQEventThreshold3"
+                },
+                {
+                    "altname": "BLQEVENT_THRESHOLD2",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "An event is generated every N buffer descriptors written to buffer list queue2, where N is configurable from 16 to 128.",
+                    "mode": "RW",
+                    "name": "BLQEventThreshold2"
+                },
+                {
+                    "altname": "BLQEVENT_THRESHOLD1",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "An event is generated every N buffer descriptors written to buffer list queue1, where N is configurable from 16 to 128.",
+                    "mode": "RW",
+                    "name": "BLQEventThreshold1"
+                },
+                {
+                    "altname": "BLQEVENT_THRESHOLD0",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "An event is generated every N buffer descriptors written to buffer list queue0, where N is configurable from 16 to 128.",
+                    "mode": "RW",
+                    "name": "BLQEventThreshold0"
+                },
+                {
+                    "altname": "BLQ_EVENT_NOT_EMPTY_ENABLE",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "One bit per buffer list queue. Enables the generation of BLQ Events when the queue transitions from empty to not empty. Disabled when clear. The event type value used is 0x0 (event_type_fifo_not_empty)",
+                    "mode": "RW",
+                    "name": "BLQEventNotEmptyEnable"
+                },
+                {
+                    "altname": "BLQ_EVENT_STATUS_ENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "One bit per buffer list queue. Enables BLQ Status Events when set. Disabled when clear. A Status Event is sent when the number of entries written to the queue reaches the programmed value in the BLQEventThreshold register. The event type value used is 0x5 (event_type_value_update)",
+                    "mode": "RW",
+                    "name": "BLQEventStatusEnable"
+                }
+            ]
+        },
+        "nbitm.CommandDropStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "COMMANDDROPCTMID",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Read only register indicating the CTM Number for the command that was dropped.",
+                    "mode": "RC",
+                    "name": "CommandDropCTMID"
+                },
+                {
+                    "altname": "COMMANDDROPCTMISLAND",
+                    "bit_lsb": 22,
+                    "bit_msb": 27,
+                    "description": "Read only register indicating the CTM Island Number for the command that was dropped.",
+                    "mode": "RC",
+                    "name": "CommandDropCTMIsland"
+                },
+                {
+                    "altname": "COMMANDDROPQUEUENUMBER",
+                    "bit_lsb": 12,
+                    "bit_msb": 21,
+                    "description": "Read only register indicating the intended Queue Number for the command that was dropped.",
+                    "mode": "RC",
+                    "name": "CommandDropQueueNumber"
+                },
+                {
+                    "altname": "COMMANDDROPPACKETNUMBER",
+                    "bit_lsb": 3,
+                    "bit_msb": 11,
+                    "description": "Read only register indicating the intended Packet Number for the command that was dropped.",
+                    "mode": "RC",
+                    "name": "CommandDropPacketNumber"
+                },
+                {
+                    "altname": "SECONDTIMEFULLFIFO",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Bit indicating that either a FreePkt/PPC command was dropped due to FIFO being full. - only gets cleared on reset",
+                    "mode": "RO",
+                    "name": "SecondTimeFullFIFO"
+                },
+                {
+                    "altname": "FIRSTTIMEFULLFIFO",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Bit indicating that either a FreePkt/PPC command was dropped due to FIFO being full. - only gets cleared on reset",
+                    "mode": "RO",
+                    "name": "FirstTimeFullFIFO"
+                }
+            ]
+        },
+        "nbitm.DescriptorMemoryRedDrop": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DROPRATERANGE3",
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "Drop Rate for Descriptor Memory Depth Range 3. Top 75% to 100% of the Descriptor Memory.  Packets will be dropped n% of the time if the memory depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRange3"
+                },
+                {
+                    "altname": "DROPRATERANGE2",
+                    "bit_lsb": 6,
+                    "bit_msb": 8,
+                    "description": "Drop Rate for Descriptor Memory Depth Range 2. 25% to 49% of the Descriptor Memory.  Packets will be dropped n% of the time if the memory depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRange2"
+                },
+                {
+                    "altname": "DROPRATERANGE1",
+                    "bit_lsb": 3,
+                    "bit_msb": 5,
+                    "description": "Drop Rate for Descriptor Memory Depth Range 1. 25% to 49% of the Descriptor Memory.  Packets will be dropped n% of the time if the memory depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRange1"
+                },
+                {
+                    "altname": "DROPRATERANGE0",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Drop Rate for Descriptor Memory Depth Range 0. Bottom 0 to 24% of the Descriptor Memory. Packets will be dropped n% of the time if the memory depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRange0"
+                }
+            ]
+        },
+        "nbitm.DropProfile": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DROPRATERANGE3",
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "Drop Rate Queue Depth Range 3. Top 75% to 100% of the descriptor queue.  Packets will be dropped n% of the time if the queue depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRange3"
+                },
+                {
+                    "altname": "DROPRATERANGE2",
+                    "bit_lsb": 6,
+                    "bit_msb": 8,
+                    "description": "Drop Rate for Queue Depth Range 2. 50% to 74% full. Packets will be dropped n% of the time if the queue depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRange2"
+                },
+                {
+                    "altname": "DROPRATERANGE1",
+                    "bit_lsb": 3,
+                    "bit_msb": 5,
+                    "description": "Drop Rate for Queue Depth Range 1. 25% to 49% full. Packets will be dropped n% of the time if the queue depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRange1"
+                },
+                {
+                    "altname": "DROPRATERANGE0",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Drop Rate for Queue Depth Range 0. Bottom 0 to 24% of the descriptor queue.  Packets will be dropped n% of the time if the queue depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRange0"
+                }
+            ]
+        },
+        "nbitm.DropRate": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DROPRATERANGEB3",
+                    "bit_lsb": 21,
+                    "bit_msb": 23,
+                    "description": "Drop Rate for Queue Depth Range B-3. Top 75% to 100% of the descriptor queue.  Packets will be dropped n% of the time if the queue depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRangeB3"
+                },
+                {
+                    "altname": "DROPRATERANGEB2",
+                    "bit_lsb": 18,
+                    "bit_msb": 20,
+                    "description": "Drop Rate for Queue Depth Range B-2. 50% to 74% full. Packets will be dropped n% of the time if the queue depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRangeB2"
+                },
+                {
+                    "altname": "DROPRATERANGEB1",
+                    "bit_lsb": 15,
+                    "bit_msb": 17,
+                    "description": "Drop Rate for Queue Depth Range B-1. 25% to 49% full. Packets will be dropped n% of the time if the queue depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRangeB1"
+                },
+                {
+                    "altname": "DROPRATERANGEB0",
+                    "bit_lsb": 12,
+                    "bit_msb": 14,
+                    "description": "Drop Rate for Queue Depth Range B-0. Bottom 0 to 24% of the descriptor queue.  Packets will be dropped n% of the time if the queue depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRangeB0"
+                },
+                {
+                    "altname": "DROPRATERANGEA3",
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "Drop Rate for Queue Depth Range A-3. Top 75% to 100% of the descriptor queue.  Packets will be dropped n% of the time if the queue depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRangeA3"
+                },
+                {
+                    "altname": "DROPRATERANGEA2",
+                    "bit_lsb": 6,
+                    "bit_msb": 8,
+                    "description": "Drop Rate for Queue Depth Range A-2. 50% to 74% full. Packets will be dropped n% of the time if the queue depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRangeA2"
+                },
+                {
+                    "altname": "DROPRATERANGEA1",
+                    "bit_lsb": 3,
+                    "bit_msb": 5,
+                    "description": "Drop Rate for Queue Depth Range A-1. 25% to 49% full. Packets will be dropped n% of the time if the queue depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRangeA1"
+                },
+                {
+                    "altname": "DROPRATERANGEA0",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Drop Rate for Queue Depth Range A-0. Bottom 0 to 24% of the descriptor queue.  Packets will be dropped n% of the time if the queue depth is within this range",
+                    "mode": "RW",
+                    "name": "DropRateRangeA0"
+                }
+            ]
+        },
+        "nbitm.EgressPullIdPortEnable": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "EGRESS_PULL_ID_PORT_ENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Egress Port enable for transmitting PullIDs.",
+                    "mode": "RW",
+                    "name": "EgressPullIdPortEnable"
+                }
+            ]
+        },
+        "nbitm.EgressRateLimit": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "EGRESS_RATE_LIMIT_OFF",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Turns the rate limiting off for both Ports 6 and 7 (P6 and P7).",
+                    "mode": "RW",
+                    "name": "EgressRateLimitOff"
+                },
+                {
+                    "altname": "EGRESS_RATE",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Rate limiting control for the Command/PullId Ports 6 and 7 (P6 and P7).",
+                    "mode": "RW",
+                    "name": "EgressRate"
+                }
+            ]
+        },
+        "nbitm.FreePktOutstandingLimit": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "LIMIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Limits the number of Outstanding FreePkt commands",
+                    "mode": "RW",
+                    "name": "Limit"
+                }
+            ]
+        },
+        "nbitm.L1ExtSchedulerConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "L1EXTSCHEDENABLE",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Enable the extended level 1 scheduler.  Each group of 8 L2 scheduler outputs may connect to either the base or extended L1 scheduler inputs with the following options",
+                    "mode": "RW",
+                    "name": "L1ExtSchedEnable"
+                },
+                {
+                    "altname": "L1EXTSPENABLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 2,
+                    "description": "Strict Priority Enable bits.  Configure the extended scheduler for Strict Priority operation.",
+                    "mode": "RW",
+                    "name": "L1ExtSPEnable"
+                },
+                {
+                    "altname": "L1EXTDWRRENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Deficit Weighted Round Robin Enable bit.  Set this bit to enable dwrr operation for the extended scheduler.",
+                    "mode": "RW",
+                    "name": "L1ExtDWRREnable"
+                }
+            ]
+        },
+        "nbitm.MiniPktChannelCredit": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CREDITCOUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "MiniPacket Transmit Channel Credit Counter.  Read only counter of the channel credits remaining",
+                    "mode": "RO",
+                    "name": "CreditCounter"
+                }
+            ]
+        },
+        "nbitm.MiniPktChannelCreditLimit": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CHANNELCREDITLIMIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "MiniPacket Transmit Channel Credit Limit. Programmable limit per channel",
+                    "mode": "RW",
+                    "name": "ChannelCreditLimit"
+                }
+            ]
+        },
+        "nbitm.MiniPktCreditConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PERCHANNELCREDITENABLE",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Enables per channel credit limit defined by ChannelCreditLimit.",
+                    "mode": "RW",
+                    "name": "PerChannelCreditEnable"
+                },
+                {
+                    "altname": "MINIPACKETFCMODE",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "MiniPacket Credit Flow Control Mode bit.  Select the free pool crediting mode to use.",
+                    "mode": "RW",
+                    "name": "MiniPacketFCMode"
+                },
+                {
+                    "altname": "FPCREDITLIMIT",
+                    "bit_lsb": 12,
+                    "bit_msb": 21,
+                    "description": "MiniPacket Transmit Free Pool Credit Counter Limit.  Programmable limit for both of the free pool credit counters.  The default value of 512 credits should be used for most applications using one free pool.  The free pool has a reserve of 40 credits and should always be programmed to a value greater than 40.",
+                    "mode": "RW",
+                    "name": "FPCreditLimit"
+                },
+                {
+                    "altname": "CREDITLIMIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "MiniPacket Transmit Channel Credit Counter Limit.  Programmable limit for all of the channel credit counters",
+                    "mode": "RW",
+                    "name": "CreditLimit"
+                }
+            ]
+        },
+        "nbitm.MiniPktFreePoolCredit": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "FPCREDITCOUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "MiniPacket Transmit Free Pool Credit Counter.  Read only counter of the free pool credits remaining",
+                    "mode": "RO",
+                    "name": "FPCreditCounter"
+                }
+            ]
+        },
+        "nbitm.NbiTmPcieCmdOutCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RING_NUMBER",
+                    "bit_lsb": 20,
+                    "bit_msb": 29,
+                    "description": " CLS/IMU/EMU Ring Number for the Pcie Command out (Only used for PCIe VM-QoS).",
+                    "mode": "RW",
+                    "name": "RingNumber"
+                },
+                {
+                    "altname": "OUTPUT_PORT",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": " Output Command port (in NBI Island) for the Pcie Command out.",
+                    "mode": "RW",
+                    "name": "OutputPort"
+                },
+                {
+                    "altname": "ISLAND",
+                    "bit_lsb": 11,
+                    "bit_msb": 18,
+                    "description": " Destination Island for the Pcie Command out.",
+                    "mode": "RW",
+                    "name": "Island"
+                },
+                {
+                    "altname": "TOKEN",
+                    "bit_lsb": 9,
+                    "bit_msb": 10,
+                    "description": " Token field for the Pcie Command out.",
+                    "mode": "RW",
+                    "name": "Token"
+                },
+                {
+                    "altname": "ACTION",
+                    "bit_lsb": 4,
+                    "bit_msb": 8,
+                    "description": " Action field for the Pcie Command out.",
+                    "mode": "RW",
+                    "name": "Action"
+                },
+                {
+                    "altname": "TARGET",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Target ID for the Destination Island target for the Pcie Command out.",
+                    "mode": "RW",
+                    "name": "Target"
+                }
+            ]
+        },
+        "nbitm.OutOfOrderCount": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "OUTOFORDERCOUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Out-of-order counter to keep track of the number of packets sent out of order for this sequencer. The counter will saturate when the maximum number is reached.",
+                    "mode": "RO",
+                    "name": "OutOfOrderCount"
+                }
+            ]
+        },
+        "nbitm.OutOfOrderCountClear": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "OUTOFORDERCOUNTCLEAR",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Clear on read out-of-order counter to keep track of the number of packets sent out of order for this sequencer. The counter will saturate when the maximum number is reached. The read value for this register is identical to the OUTOFORDERCOUNT register value, however when this register is read the out-of-order counter is cleared.",
+                    "mode": "RC",
+                    "name": "OutOfOrderCountClear"
+                }
+            ]
+        },
+        "nbitm.PCIeCommandDropStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "COMMANDDROPLOOKUPADDRESS",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Read only register indicating the Lookup Address for the command that was dropped.",
+                    "mode": "RC",
+                    "name": "CommandDropLookupAddress"
+                },
+                {
+                    "altname": "COMMANDDROPCTMISLAND",
+                    "bit_lsb": 22,
+                    "bit_msb": 27,
+                    "description": "Read only register indicating the CTM Island Number for the command that was dropped.",
+                    "mode": "RC",
+                    "name": "CommandDropCTMIsland"
+                },
+                {
+                    "altname": "COMMANDDROPSEQUENCENUMBER",
+                    "bit_lsb": 10,
+                    "bit_msb": 21,
+                    "description": "Read only register indicating the Sequence Number for the command that was dropped.",
+                    "mode": "RC",
+                    "name": "CommandDropSequenceNumber"
+                },
+                {
+                    "altname": "COMMANDDROPSEQNCERNUMBER",
+                    "bit_lsb": 5,
+                    "bit_msb": 9,
+                    "description": "Read only register indicating the Sequence Number for the command that was dropped.",
+                    "mode": "RC",
+                    "name": "CommandDropSequencerNumber"
+                },
+                {
+                    "altname": "SECONDTIMEFULLFIFO",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Bit indicating that ReorderOnly/Reorder with VM-QoS command was dropped due to FIFO being full. - only gets cleared on reset",
+                    "mode": "RO",
+                    "name": "SecondTimeFullFIFO"
+                },
+                {
+                    "altname": "FIRSTTIMEFULLFIFO",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Bit indicating that ReorderOnly/Reorder with VM-QoS command was dropped due to FIFO being full. - only gets cleared on reset",
+                    "mode": "RO",
+                    "name": "FirstTimeFullFIFO"
+                }
+            ]
+        },
+        "nbitm.PacketDescriptorMemoryStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PACKETDESCRIPTORMEMORYFULL",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Packet Descriptor Memory Full register bit indicating the Descriptor Memory is Full or Almost Full",
+                    "mode": "RO",
+                    "name": "PacketDescriptorMemoryFull"
+                },
+                {
+                    "altname": "PACKETDESCRIPTORMEMORYLEVEL",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "Packet Descriptor Memory level register indicating the fill level.",
+                    "mode": "RO",
+                    "name": "PacketDescriptorMemoryLevel"
+                }
+            ]
+        },
+        "nbitm.QueueConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DROPPRECEDENCEENABLE",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Enable the Drop Precedence feature for this queue.  When enabled, the drop precedence bits in the packet descriptor will select the drop profile to be used.  When disabled the static drop rate range sets A or B will be used.",
+                    "mode": "RW",
+                    "name": "DropPrecedenceEnable"
+                },
+                {
+                    "altname": "DROPRATERANGESELECT",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Select the Drop Rate Range set to use for this queue.  There are two range sets A and B that may be used and are selectable per queue.",
+                    "mode": "RW",
+                    "name": "DropRateRangeSelect"
+                },
+                {
+                    "altname": "QUEUESIZE",
+                    "bit_lsb": 6,
+                    "bit_msb": 9,
+                    "description": "Configures the maximum size of this particular queue. If linked list is enabled, the recommended values are 1024 or higher. (TBD: requires validation in silicon)",
+                    "mode": "RW",
+                    "name": "QueueSize"
+                },
+                {
+                    "altname": "REDENABLE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Enables random early detection for packet dropping for this particular queue.  Packets will be discarded for this queue based on the globally configured drop profiles. The queue is divided into four ranges, the drop percentage is configurable for each range.",
+                    "mode": "RW",
+                    "name": "REDEnable"
+                },
+                {
+                    "altname": "DROPENABLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Enables packet dropping for this particular queue.  Packets will be discarded for this queue when it is full or almost full.  DropEnable must be set to 1 by user.",
+                    "mode": "RW",
+                    "name": "DropEnable"
+                },
+                {
+                    "altname": "QUEUEENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Enable bit for this particular queue.  Set this bit to enable the queue, clear to disable.",
+                    "mode": "RW",
+                    "name": "QueueEnable"
+                }
+            ]
+        },
+        "nbitm.QueueDropCount": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DROPCOUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "32-bit drop counter to keep track of the number of packets dropped for this queue.  The counter will saturate when the maximum number is reached.",
+                    "mode": "RO",
+                    "name": "DropCount"
+                }
+            ]
+        },
+        "nbitm.QueueDropCountClear": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DROPCOUNTCLEAR",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Clear on read 32-bit drop counter to keep track of the number of packets dropped for this queue.  The counter will saturate when the maximum number is reached.  The read value for this register is identical to the DROPCOUNT register value, however when DROPCOUNTCLEAR is read the drop counter is cleared. The drop count memory is undefined at start-up.  This register should be read for all active queues by software prior to device operation.",
+                    "mode": "RC",
+                    "name": "DropCountClear"
+                }
+            ]
+        },
+        "nbitm.QueueStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "QUEUEFULL",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Queue Full register bit indicating the Descriptor Queue is Full or Almost Full",
+                    "mode": "RO",
+                    "name": "QueueFull"
+                },
+                {
+                    "altname": "QUEUELEVEL",
+                    "bit_lsb": 0,
+                    "bit_msb": 12,
+                    "description": "Queue level register indicating the fill level for this particular queue.  One register for each descriptor queue.",
+                    "mode": "RO",
+                    "name": "QueueLevel"
+                }
+            ]
+        },
+        "nbitm.ReorderActivity": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "REORDERACTIVITY",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Clear on read activity flag for each sequencer in the reorder buffer.  One bit for each active sequencer in the reorder buffer.",
+                    "mode": "RO",
+                    "name": "ReorderActivity"
+                }
+            ]
+        },
+        "nbitm.ReorderBuffer_perf_seqr_selector": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "REORDERBUFFER_PERF_SEQR_SELECTOR",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Reorder buffer Seqr selector for Performance bus",
+                    "mode": "RW",
+                    "name": "ReorderBuffer_perf_seqr_selector"
+                }
+            ]
+        },
+        "nbitm.SchedulerConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SPENABLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 2,
+                    "description": "Strict Priority Enable bits.  Configure the scheduler for Strict Priority operation.",
+                    "mode": "RW",
+                    "name": "SPEnable"
+                },
+                {
+                    "altname": "DWRRENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Deficit Weighted Round Robin Enable bit.  Set this bit to enable deficit weighted round operation for the particular scheduler.",
+                    "mode": "RW",
+                    "name": "DWRREnable"
+                }
+            ]
+        },
+        "nbitm.SchedulerDeficit": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DEFICIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 24,
+                    "description": "Scheduler deficit value.  This memory provides the signed value of the deficit for the particular scheduler port.   This memory is undefined at start-up and should be programmed to zero by software.  If all of the ports either have a negative deficit or do not have data to send, the deficit values will be updated for all ports.  During the update if the port does not have data to send the deficit will be set to the weight value.  If the deficit has gone negative, the weight value will be added to the current deficit.",
+                    "mode": "RW",
+                    "name": "Deficit"
+                }
+            ]
+        },
+        "nbitm.SchedulerWeight": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "WEIGHT",
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "Scheduler weight value.  Program this memory with the desired weight value for the particular scheduler port. This memory is undefined at start-up and should be programmed or set to zero by software.  If all weights for all ports of a particular port are set to zero, the scheduler will operate in round robin fashion.  The weight value will configure the relative bandwidth for the port and is used to update the deficit value.  The weight should be programmed to the desired relative bandwidth for this port as compared to the other ports on this scheduler.",
+                    "mode": "RW",
+                    "name": "Weight"
+                }
+            ]
+        },
+        "nbitm.SetOfPartialHeadPointers": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HEAD_POINTER_SELECTOR",
+                    "bit_lsb": 28,
+                    "bit_msb": 30,
+                    "description": "Partial Head Pointer selector for set of 4 HeadPointers",
+                    "mode": "RW",
+                    "name": "HeadPointerSelector"
+                },
+                {
+                    "altname": "PARTIAL_HEAD_POINTER_3",
+                    "bit_lsb": 21,
+                    "bit_msb": 27,
+                    "description": "Reorder Buffer head_pointer[(HeadPointerSelector*4)+3]",
+                    "mode": "RO",
+                    "name": "Partial_Head_Pointer_3"
+                },
+                {
+                    "altname": "PARTIAL_HEAD_POINTER_2",
+                    "bit_lsb": 14,
+                    "bit_msb": 20,
+                    "description": "Reorder Buffer head_pointer[(HeadPointerSelector*4)+2]",
+                    "mode": "RO",
+                    "name": "Partial_Head_Pointer_2"
+                },
+                {
+                    "altname": "PARTIAL_HEAD_POINTER_1",
+                    "bit_lsb": 7,
+                    "bit_msb": 13,
+                    "description": "Reorder Buffer head_pointer[(HeadPointerSelector*4)+1]",
+                    "mode": "RO",
+                    "name": "Partial_Head_Pointer_1"
+                },
+                {
+                    "altname": "PARTIAL_HEAD_POINTER_0",
+                    "bit_lsb": 0,
+                    "bit_msb": 6,
+                    "description": "Reorder Buffer head_pointer[HeadPointerSelector*4]",
+                    "mode": "RO",
+                    "name": "Partial_Head_Pointer_0"
+                }
+            ]
+        },
+        "nbitm.ShaperMaxOvershoot": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MAXOVERSHOOT",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "The rate limiting shaper maximum overshoot register.  This register configures the maximum allowed overshoot in bytes for the leaky bucket.  Data that is sent beyond this limit will not be accounted for in the leaky bucket algorithm.",
+                    "mode": "RW",
+                    "name": "MaxOvershoot"
+                }
+            ]
+        },
+        "nbitm.ShaperRate": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RATE",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "The shaper rate register.  This register is programmed with the desired maximum rate in 10Megabit per second increments for the associated port or queue. Valid values may range in size from 1 to 12,000 and correspond to data rates of 10Mbs to 120Gbps when using a 1.0GHz PCLK. Values outside that range are not supported (i.e. 0, or above 12,000).  If other PCLK frequencies are used, the shaper rate value should be multiplied by (PCLK frequency/1.0GHz) for proper shaper accuracy.",
+                    "mode": "RW",
+                    "name": "Rate"
+                }
+            ]
+        },
+        "nbitm.ShaperRateAdjust": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RATE",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "The shaper rate adjust register.  This register contains the standard number of bytes to be subtracted for every packet that is transmitted.  This can acount for packet overhead or interpacket gap not to be included in the shaper rate calculation.  In cases where the rate adjust value is larger than the packet size, the difference will be deducted from the shaper bucket.  Positive values will subtract bytes and negative values will add bytes, program in twos compliment format -512 to 511.  Negative values will limit the Max Packet size supported to 15,838 bytes",
+                    "mode": "RW",
+                    "name": "RateAdjust"
+                }
+            ]
+        },
+        "nbitm.ShaperStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SHAPEROPEN",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Indicates the state of the leaky bucket",
+                    "mode": "RO",
+                    "name": "ShaperOpen"
+                },
+                {
+                    "altname": "LEVEL",
+                    "bit_lsb": 0,
+                    "bit_msb": 16,
+                    "description": "The current leaky bucket level of the rate limiting shaper.  This register contains the present level of the leaky bucket that is used to determine open or closed state.  If this value is below the threshold the shaper will be open, if it is above the threshold the shaper will be closed.",
+                    "mode": "RO",
+                    "name": "Level"
+                }
+            ]
+        },
+        "nbitm.ShaperThreshold": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "THRESHOLD",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "The rate limiting shaper threshold register.  This register configures the threshold in bytes used for comparison to the instantaneous level of the leaky bucket.  When the number of bytes sent is below this threshold the shaper will be open, when the bucket level equals or exceeds the threshold the shaper will be closed.",
+                    "mode": "RW",
+                    "name": "Threshold"
+                }
+            ]
+        },
+        "nbitm.TMBlqNullMuPtr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TMBLQNULLMUPTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 28,
+                    "description": " Programmable Null Memory Buffer Pointer.",
+                    "mode": "RW",
+                    "name": "TMBlqNullMuPtr"
+                }
+            ]
+        },
+        "nbitm.TMChannelPcieVmQoSEna_0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TMCHANNELPCIEVMQOSENA_0",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Identifies Channel 0->31 as PCIe vs Network.",
+                    "mode": "RW",
+                    "name": "TMChannelPcieVmQoSEna_0"
+                }
+            ]
+        },
+        "nbitm.TMChannelPcieVmQoSEna_1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TMCHANNELPCIEVMQOSENA_1",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Identifies Channel 32->63 as PCIe vs Network.",
+                    "mode": "RW",
+                    "name": "TMChannelPcieVmQoSEna_1"
+                }
+            ]
+        },
+        "nbitm.TMChannelPcieVmQoSEna_2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TMCHANNELPCIEVMQOSENA_2",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Identifies Channel 64->95 as PCIe vs Network.",
+                    "mode": "RW",
+                    "name": "TMChannelPcieVmQoSEna_2"
+                }
+            ]
+        },
+        "nbitm.TMChannelPcieVmQoSEna_3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TMCHANNELPCIEVMQOSENA_3",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Identifies Channel 96->127 as PCIe vs Network.",
+                    "mode": "RW",
+                    "name": "TMChannelPcieVmQoSEna_3"
+                }
+            ]
+        },
+        "nbitm.TMDescSramEntry": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "DESC_SRAM_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 63,
+                    "description": "64-bit descriptor stored in the TM Descriptor SRAM.  Refer to the Packet Descriptor Memory tables in the MAS for bit definitions",
+                    "mode": "RW",
+                    "name": "DescSRAMData"
+                }
+            ]
+        },
+        "nbitm.TMFlowControlEntry": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "FLOW_CONTROL_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 63,
+                    "description": "Generic Read-Only status register for Out of Band Flow control and 128-bits of XOFF flow control from the MAC.",
+                    "mode": "RO",
+                    "name": "FlowControlData"
+                }
+            ]
+        },
+        "nbitm.TMFreePtrSramEntry": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "FREEPTR_SRAM_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 12,
+                    "description": "13-bits of freeptr, initialize memory with available freeptr's",
+                    "mode": "RW",
+                    "name": "FreePtrData"
+                }
+            ]
+        },
+        "nbitm.TMHeadTailSramEntry": {
+            "bit_length": 28,
+            "fields": [
+                {
+                    "altname": "HEAD_POINTER",
+                    "bit_lsb": 14,
+                    "bit_msb": 26,
+                    "description": "13-bit Descriptor Queue Head Pointer",
+                    "mode": "RW",
+                    "name": "HeadPointer"
+                },
+                {
+                    "altname": "TAIL_POINTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 12,
+                    "description": "13-bit Descriptor Queue Tail Pointer",
+                    "mode": "RW",
+                    "name": "TailPointer"
+                }
+            ]
+        },
+        "nbitm.TMNextPtrSramEntry": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "NEXTPTR_SRAM_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 12,
+                    "description": "13-bits of Nextptr, initialize memory with available Nextptr's",
+                    "mode": "RW",
+                    "name": "NextPtrSRAMData"
+                }
+            ]
+        },
+        "nbitm.TMPktSramEntry": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "TM_PKT_SRAM_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 63,
+                    "description": "64-bits of packet data within the TM Packet Buffer SRAM.  Refer to Packet Buffer Entry for details",
+                    "mode": "RW",
+                    "name": "TMPktSRAMData"
+                }
+            ]
+        },
+        "nbitm.TMQueueLevelSramEntry": {
+            "bit_length": 15,
+            "fields": [
+                {
+                    "altname": "QUEUE_FULL_FLAG",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Queue full flag",
+                    "mode": "RO",
+                    "name": "QueueFullFlag"
+                },
+                {
+                    "altname": "QUEUE_LEVEL",
+                    "bit_lsb": 0,
+                    "bit_msb": 12,
+                    "description": "13-bit Queue Level",
+                    "mode": "RW",
+                    "name": "QueueLevel"
+                }
+            ]
+        },
+        "nbitm.TMReceivedDropPacketCounter": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TMRECEIVEDDROPPACKETCOUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This 32-bit register is a saturating counter, counting the incoming PktReady to Traffic Manager which are with Token of 0. It's a clear on read register.",
+                    "mode": "RC",
+                    "name": "TMReceivedDropPacketCounter"
+                }
+            ]
+        },
+        "nbitm.TMReceivedPacketCounter": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TMRECEIVEDPACKETCOUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This 32-bit register is a saturating counter, counting the incoming PktReady to Traffic Manager. It's a clear on read register.",
+                    "mode": "RC",
+                    "name": "TMReceivedPacketCounter"
+                }
+            ]
+        },
+        "nbitm.TMReorderBufEntry": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "TM_RE_BUF_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 63,
+                    "description": "64-bits of the 128-bit descriptor in the TM Reorder Buffer SRAM.  Refer to the Packet Descriptor Details table for details on bit definitions",
+                    "mode": "RW",
+                    "name": "TmReorderBufData"
+                }
+            ]
+        },
+        "nbitm.TMReorderSeqrEmpty": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TMREORDERSEQREMPTY",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "32-bits indicating Empty Reorder Sequencers. On Reset all the Sequencers are empty",
+                    "mode": "RO",
+                    "name": "TMReorderSeqrEmpty"
+                }
+            ]
+        },
+        "nbitm.TMTransmittedPacketCounter": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TMTRANSMITTEDPACKETCOUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This 32-bit register is a saturating counter, counting the descriptors going out to DMA block from the Descriptor Queues. It's a clear on read register.",
+                    "mode": "RC",
+                    "name": "TMTransmittedPacketCounter"
+                }
+            ]
+        },
+        "nbitm.TmMiniPktFlowControlEntry": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "TM_MINIPKT_FLOWCONTROL_ENTRY",
+                    "bit_lsb": 0,
+                    "bit_msb": 63,
+                    "description": "Generic Clear-on-read status register for Minipkt Channel flow control from the MAC.",
+                    "mode": "RC",
+                    "name": "TmMiniPktFlowControlEntry"
+                }
+            ]
+        },
+        "nbitm.TmReorderBufferFlush": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQUENCERFLUSH",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This 32-bit register defines a bit per sequencer that needs to be flushed. Multiple sequencers can be flushed by setting the appropriate bits. Bit 0 represents sequencer number 0 and bit 31 represents sequencer number 31. The software can set the appropriate bits for the sequencers that need to be flushed. The hardware will clear those bits once those sequencers are flushed. It is software's responsibility to set appropriate bits in this register based on the NumSequencers register.",
+                    "mode": "RW",
+                    "name": "SequencerFlush"
+                }
+            ]
+        },
+        "nbitm.TmReorderFlushFlag": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TMREORDERFLUSHFLAG",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This 32-bit register is a sticky flush flag per sequencer. Once Flush occurs due to timeout, software flush or flush due to incoming sequence for a given sequencer - respective bit would be set and the register only be cleared on read. ",
+                    "mode": "RC",
+                    "name": "TmReorderFlushFlag"
+                }
+            ]
+        },
+        "nbitm.TmReorderTimeOutRange0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQRANGE15",
+                    "bit_lsb": 30,
+                    "bit_msb": 31,
+                    "description": "Defines the timeout range select for Sequencer 15",
+                    "mode": "RW",
+                    "name": "SeqRange15"
+                },
+                {
+                    "altname": "SEQRANGE14",
+                    "bit_lsb": 28,
+                    "bit_msb": 29,
+                    "description": "Defines the timeout range select for Sequencer 14",
+                    "mode": "RW",
+                    "name": "SeqRange14"
+                },
+                {
+                    "altname": "SEQRANGE13",
+                    "bit_lsb": 26,
+                    "bit_msb": 27,
+                    "description": "Defines the timeout range select for Sequencer 13",
+                    "mode": "RW",
+                    "name": "SeqRange13"
+                },
+                {
+                    "altname": "SEQRANGE12",
+                    "bit_lsb": 24,
+                    "bit_msb": 25,
+                    "description": "Defines the timeout range select for Sequencer 12",
+                    "mode": "RW",
+                    "name": "SeqRange12"
+                },
+                {
+                    "altname": "SEQRANGE11",
+                    "bit_lsb": 22,
+                    "bit_msb": 23,
+                    "description": "Defines the timeout range select for Sequencer 11",
+                    "mode": "RW",
+                    "name": "SeqRange11"
+                },
+                {
+                    "altname": "SEQRANGE10",
+                    "bit_lsb": 20,
+                    "bit_msb": 21,
+                    "description": "Defines the timeout range select for Sequencer 10",
+                    "mode": "RW",
+                    "name": "SeqRange10"
+                },
+                {
+                    "altname": "SEQRANGE9",
+                    "bit_lsb": 18,
+                    "bit_msb": 19,
+                    "description": "Defines the timeout range select for Sequencer 9",
+                    "mode": "RW",
+                    "name": "SeqRange9"
+                },
+                {
+                    "altname": "SEQRANGE8",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Defines the timeout range select for Sequencer 8",
+                    "mode": "RW",
+                    "name": "SeqRange8"
+                },
+                {
+                    "altname": "SEQRANGE7",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "Defines the timeout range select for Sequencer 7",
+                    "mode": "RW",
+                    "name": "SeqRange7"
+                },
+                {
+                    "altname": "SEQRANGE6",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "Defines the timeout range select for Sequencer 6",
+                    "mode": "RW",
+                    "name": "SeqRange6"
+                },
+                {
+                    "altname": "SEQRANGE5",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Defines the timeout range select for Sequencer 5",
+                    "mode": "RW",
+                    "name": "SeqRange5"
+                },
+                {
+                    "altname": "SEQRANGE4",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Defines the timeout range select for Sequencer 4",
+                    "mode": "RW",
+                    "name": "SeqRange4"
+                },
+                {
+                    "altname": "SEQRANGE3",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Defines the timeout range select for Sequencer 3",
+                    "mode": "RW",
+                    "name": "SeqRange3"
+                },
+                {
+                    "altname": "SEQRANGE2",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Defines the timeout range select for Sequencer 2",
+                    "mode": "RW",
+                    "name": "SeqRange2"
+                },
+                {
+                    "altname": "SEQRANGE1",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Defines the timeout range select for Sequencer 1",
+                    "mode": "RW",
+                    "name": "SeqRange1"
+                },
+                {
+                    "altname": "SEQRANGE0",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Defines the timeout range select for Sequencer 0",
+                    "mode": "RW",
+                    "name": "SeqRange0"
+                }
+            ]
+        },
+        "nbitm.TmReorderTimeOutRange1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQRANGE31",
+                    "bit_lsb": 30,
+                    "bit_msb": 31,
+                    "description": "Defines the timeout range select for Sequencer 31",
+                    "mode": "RW",
+                    "name": "SeqRange31"
+                },
+                {
+                    "altname": "SEQRANGE30",
+                    "bit_lsb": 28,
+                    "bit_msb": 29,
+                    "description": "Defines the timeout range select for Sequencer 30",
+                    "mode": "RW",
+                    "name": "SeqRange30"
+                },
+                {
+                    "altname": "SEQRANGE29",
+                    "bit_lsb": 26,
+                    "bit_msb": 27,
+                    "description": "Defines the timeout range select for Sequencer 29",
+                    "mode": "RW",
+                    "name": "SeqRange29"
+                },
+                {
+                    "altname": "SEQRANGE28",
+                    "bit_lsb": 24,
+                    "bit_msb": 25,
+                    "description": "Defines the timeout range select for Sequencer 28",
+                    "mode": "RW",
+                    "name": "SeqRange28"
+                },
+                {
+                    "altname": "SEQRANGE27",
+                    "bit_lsb": 22,
+                    "bit_msb": 23,
+                    "description": "Defines the timeout range select for Sequencer 27",
+                    "mode": "RW",
+                    "name": "SeqRange27"
+                },
+                {
+                    "altname": "SEQRANGE26",
+                    "bit_lsb": 20,
+                    "bit_msb": 21,
+                    "description": "Defines the timeout range select for Sequencer 26",
+                    "mode": "RW",
+                    "name": "SeqRange26"
+                },
+                {
+                    "altname": "SEQRANGE25",
+                    "bit_lsb": 18,
+                    "bit_msb": 19,
+                    "description": "Defines the timeout range select for Sequencer 25",
+                    "mode": "RW",
+                    "name": "SeqRange25"
+                },
+                {
+                    "altname": "SEQRANGE24",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Defines the timeout range select for Sequencer 24",
+                    "mode": "RW",
+                    "name": "SeqRange24"
+                },
+                {
+                    "altname": "SEQRANGE23",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "Defines the timeout range select for Sequencer 23",
+                    "mode": "RW",
+                    "name": "SeqRange23"
+                },
+                {
+                    "altname": "SEQRANGE22",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "Defines the timeout range select for Sequencer 22",
+                    "mode": "RW",
+                    "name": "SeqRange22"
+                },
+                {
+                    "altname": "SEQRANGE21",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Defines the timeout range select for Sequencer 21",
+                    "mode": "RW",
+                    "name": "SeqRange21"
+                },
+                {
+                    "altname": "SEQRANGE20",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Defines the timeout range select for Sequencer 20",
+                    "mode": "RW",
+                    "name": "SeqRange20"
+                },
+                {
+                    "altname": "SEQRANGE19",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Defines the timeout range select for Sequencer 19",
+                    "mode": "RW",
+                    "name": "SeqRange19"
+                },
+                {
+                    "altname": "SEQRANGE18",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Defines the timeout range select for Sequencer 18",
+                    "mode": "RW",
+                    "name": "SeqRange18"
+                },
+                {
+                    "altname": "SEQRANGE17",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Defines the timeout range select for Sequencer 17",
+                    "mode": "RW",
+                    "name": "SeqRange17"
+                },
+                {
+                    "altname": "SEQRANGE16",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Defines the timeout range select for Sequencer 16",
+                    "mode": "RW",
+                    "name": "SeqRange16"
+                }
+            ]
+        },
+        "nbitm.TmReorderTimeOutValue0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQVALUE3",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Defines the timeout value for Sequencer 3",
+                    "mode": "RW",
+                    "name": "SeqValue3"
+                },
+                {
+                    "altname": "SEQVALUE2",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Defines the timeout value for Sequencer 2",
+                    "mode": "RW",
+                    "name": "SeqValue2"
+                },
+                {
+                    "altname": "SEQVALUE1",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Defines the timeout value for Sequencer 1",
+                    "mode": "RW",
+                    "name": "SeqValue1"
+                },
+                {
+                    "altname": "SEQVALUE0",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Defines the timeout value for Sequencer 0",
+                    "mode": "RW",
+                    "name": "SeqValue0"
+                }
+            ]
+        },
+        "nbitm.TmReorderTimeOutValue1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQVALUE7",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Defines the timeout value for Sequencer 7",
+                    "mode": "RW",
+                    "name": "SeqValue7"
+                },
+                {
+                    "altname": "SEQVALUE6",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Defines the timeout value for Sequencer 6",
+                    "mode": "RW",
+                    "name": "SeqValue6"
+                },
+                {
+                    "altname": "SEQVALUE5",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Defines the timeout value for Sequencer 5",
+                    "mode": "RW",
+                    "name": "SeqValue5"
+                },
+                {
+                    "altname": "SEQVALUE4",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Defines the timeout value for Sequencer 4",
+                    "mode": "RW",
+                    "name": "SeqValue4"
+                }
+            ]
+        },
+        "nbitm.TmReorderTimeOutValue2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQVALUE11",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Defines the timeout value for Sequencer 11",
+                    "mode": "RW",
+                    "name": "SeqValue11"
+                },
+                {
+                    "altname": "SEQVALUE10",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Defines the timeout value for Sequencer 10",
+                    "mode": "RW",
+                    "name": "SeqValue10"
+                },
+                {
+                    "altname": "SEQVALUE9",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Defines the timeout value for Sequencer 9",
+                    "mode": "RW",
+                    "name": "SeqValue9"
+                },
+                {
+                    "altname": "SEQVALUE8",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Defines the timeout value for Sequencer 8",
+                    "mode": "RW",
+                    "name": "SeqValue8"
+                }
+            ]
+        },
+        "nbitm.TmReorderTimeOutValue3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQVALUE15",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Defines the timeout value for Sequencer 15",
+                    "mode": "RW",
+                    "name": "SeqValue15"
+                },
+                {
+                    "altname": "SEQVALUE14",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Defines the timeout value for Sequencer 14",
+                    "mode": "RW",
+                    "name": "SeqValue14"
+                },
+                {
+                    "altname": "SEQVALUE13",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Defines the timeout value for Sequencer 13",
+                    "mode": "RW",
+                    "name": "SeqValue13"
+                },
+                {
+                    "altname": "SEQVALUE12",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Defines the timeout value for Sequencer 12",
+                    "mode": "RW",
+                    "name": "SeqValue12"
+                }
+            ]
+        },
+        "nbitm.TmReorderTimeOutValue4": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQVALUE19",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Defines the timeout value for Sequencer 19",
+                    "mode": "RW",
+                    "name": "SeqValue19"
+                },
+                {
+                    "altname": "SEQVALUE18",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Defines the timeout value for Sequencer 18",
+                    "mode": "RW",
+                    "name": "SeqValue18"
+                },
+                {
+                    "altname": "SEQVALUE17",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Defines the timeout value for Sequencer 17",
+                    "mode": "RW",
+                    "name": "SeqValue17"
+                },
+                {
+                    "altname": "SEQVALUE16",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Defines the timeout value for Sequencer 16",
+                    "mode": "RW",
+                    "name": "SeqValue16"
+                }
+            ]
+        },
+        "nbitm.TmReorderTimeOutValue5": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQVALUE23",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Defines the timeout value for Sequencer 23",
+                    "mode": "RW",
+                    "name": "SeqValue23"
+                },
+                {
+                    "altname": "SEQVALUE22",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Defines the timeout value for Sequencer 22",
+                    "mode": "RW",
+                    "name": "SeqValue22"
+                },
+                {
+                    "altname": "SEQVALUE21",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Defines the timeout value for Sequencer 21",
+                    "mode": "RW",
+                    "name": "SeqValue21"
+                },
+                {
+                    "altname": "SEQVALUE20",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Defines the timeout value for Sequencer 20",
+                    "mode": "RW",
+                    "name": "SeqValue20"
+                }
+            ]
+        },
+        "nbitm.TmReorderTimeOutValue6": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQVALUE27",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Defines the timeout value for Sequencer 27",
+                    "mode": "RW",
+                    "name": "SeqValue27"
+                },
+                {
+                    "altname": "SEQVALUE26",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Defines the timeout value for Sequencer 26",
+                    "mode": "RW",
+                    "name": "SeqValue26"
+                },
+                {
+                    "altname": "SEQVALUE25",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Defines the timeout value for Sequencer 25",
+                    "mode": "RW",
+                    "name": "SeqValue25"
+                },
+                {
+                    "altname": "SEQVALUE24",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Defines the timeout value for Sequencer 24",
+                    "mode": "RW",
+                    "name": "SeqValue24"
+                }
+            ]
+        },
+        "nbitm.TmReorderTimeOutValue7": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQVALUE31",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Defines the timeout value for Sequencer 31",
+                    "mode": "RW",
+                    "name": "SeqValue31"
+                },
+                {
+                    "altname": "SEQVALUE30",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Defines the timeout value for Sequencer 30",
+                    "mode": "RW",
+                    "name": "SeqValue30"
+                },
+                {
+                    "altname": "SEQVALUE29",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Defines the timeout value for Sequencer 29",
+                    "mode": "RW",
+                    "name": "SeqValue29"
+                },
+                {
+                    "altname": "SEQVALUE28",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Defines the timeout value for Sequencer 28",
+                    "mode": "RW",
+                    "name": "SeqValue28"
+                }
+            ]
+        },
+        "nbitm.TrafficManagerConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SHAPER_REDUCE_THREE_FOURTH_ENABLE",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "This bit enables Three Fourth Threshold on Shaper and its only in effect if ShaperReduceRateEnable is set.",
+                    "mode": "RW",
+                    "name": "ShaperReduceThreeFourthEnable"
+                },
+                {
+                    "altname": "SHAPER_REDUCE_RATE_ENABLE",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "This bit enables Reduce rate Shaper threshold",
+                    "mode": "RW",
+                    "name": "ShaperReduceRateEnable"
+                },
+                {
+                    "altname": "FREE_PKT_VS_ADDRESS_BIT_SET",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "In case of Drop sending a FreePkt command vs Sending a PCIE Push command with Address[31] set",
+                    "mode": "RW",
+                    "name": "FreePktVSAddressBitSet"
+                },
+                {
+                    "altname": "USETWOPULLIDBUSES",
+                    "bit_lsb": 25,
+                    "bit_msb": 26,
+                    "description": " Enables using of both the PullID buses for CTM packets.",
+                    "mode": "RW",
+                    "name": "UseTwoPullIDBuses"
+                },
+                {
+                    "altname": "FLOWCONTROLEVENTENA",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": " Enables Flow Control Event notifications to the Software.",
+                    "mode": "RW",
+                    "name": "FlowControlEventEna"
+                },
+                {
+                    "altname": "PKTREADYC0ENABLE",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": " Eanbles decoding of previously unused bits in the Packet Ready Command for new C0 functions.",
+                    "mode": "RW",
+                    "name": "PktReadyC0Enable"
+                },
+                {
+                    "altname": "TMFREEPTRNORETURN",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": " Enable mode for Multicast Packets stream. Also, used in FreePacket Command when a Multicast Packet is dropped when the queues are full to notify PE to not return the MuPtr.",
+                    "mode": "RW",
+                    "name": "TmFreePtrNoReturn"
+                },
+                {
+                    "altname": "STARTLINKEDLISTINIT",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "It triggers the initialization of linked list FreePtr Ram and Head and Tail Pointer Ram.",
+                    "mode": "RW",
+                    "name": "StartLinkedListInit"
+                },
+                {
+                    "altname": "PACKETDESCRIPTORLINKEDLISTENA",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Enables the linked list approach to using Packet Descriptor Memory.",
+                    "mode": "RW",
+                    "name": "PacketDescriptorLinkedListEna"
+                },
+                {
+                    "altname": "OOBFCENABLE",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "MAC Out of Band Flow Control Enable.  Enable the Out of Band Flow Control from the MAC external interface to shut off the 1024 level 2 scheduler ports.",
+                    "mode": "RW",
+                    "name": "OOBFCEnable"
+                },
+                {
+                    "altname": "L0CHANNELMAP",
+                    "bit_lsb": 13,
+                    "bit_msb": 15,
+                    "description": "MAC channel number to Level 0 Scheduler port number mapping register.  This mapping register is valid only when L1InputSelect = 1 and ChannelLevelSelect = 0.  In this configuration there are up to 32 L0 Scheduler ports used.  One MAC channel may map to multiple L0 Scheduler ports, and an offset of 64 can be used to support multiple Hydras.",
+                    "mode": "RW",
+                    "name": "L0ChannelMap"
+                },
+                {
+                    "altname": "SEQUENCER0ENABLE",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Sequencer 0 Enable bit.  Set this bit to enable reordering for sequencer 0, bit is set by default.  Reordering for sequencer zero will be disabled when this bit is cleared.",
+                    "mode": "RW",
+                    "name": "Sequencer0Enable"
+                },
+                {
+                    "altname": "ERR_POISON_ENA",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "It enables the poisoning of data and/or enables the other error porpagation mechanisms in case of errors.",
+                    "mode": "RW",
+                    "name": "ErrPoisonEna"
+                },
+                {
+                    "altname": "SCHEDULERENABLE",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Scheduler Enable bit. Set this bit to enable the scheduling of traffic, clear to disable.",
+                    "mode": "RW",
+                    "name": "SchedulerEnable"
+                },
+                {
+                    "altname": "SHAPERENABLE",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Shaper Enable bit.  Enables the Rate Shaper to start rate limiting traffic based on the configured values.  The default is off so that the shaper is disabled prior to configuration.",
+                    "mode": "RW",
+                    "name": "ShaperEnable"
+                },
+                {
+                    "altname": "MINIPACKETFCENABLE",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Minipacket Credit based Flow Control enable bit.  Clear this bit to disable minipacket flow control.  This bit is set to enable flow control by default.",
+                    "mode": "RW",
+                    "name": "MiniPacketFCEnable"
+                },
+                {
+                    "altname": "CHANNELLEVELSELECT",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Channel level select bit.  Select the definition of the MAC channel number and the MAC XOFF Flow control to be either the 128 level 0 scheduler ports, or 128 ports on the first 16 level 1 schedulers (or level 2 schedulers depending on the value of L1InputSelect).  Note: When L1InputSelect=0 and ChannelLevelSelect=1, only 128 queues are allowed to be active in this configuration.",
+                    "mode": "RW",
+                    "name": "ChannelLevelSelect"
+                },
+                {
+                    "altname": "NUMSEQUENCERS",
+                    "bit_lsb": 1,
+                    "bit_msb": 3,
+                    "description": "Number of active sequencers.  Specifies the number of active sequencers in the traffic manager.",
+                    "mode": "RW",
+                    "name": "NumSequencers"
+                },
+                {
+                    "altname": "L1INPUTSELECT",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Select the operation of the Level 1 schedulers.  This bit disables or enables the Level 1 schedulers, and allows for two or three levels of scheduling in the Traffic Manager.  When disabled, the Level 2 scheduler outputs are connected directly to the Level 0 scheduler inputs.  When enabled, Level 2 outputs connect to Level 1 inputs, and Level 1 outputs connects to Level 0 inputs",
+                    "mode": "RW",
+                    "name": "L1InputSelect"
+                }
+            ]
+        }
+    }
+}

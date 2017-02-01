@@ -1,0 +1,72 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: eca5ba006ef4"
+    ],
+    "maps": {
+        "muse.MUSECsrXpb": {
+            "0x00000000": {
+                "altname": "MU_SE_BASE_ADDR_%d",
+                "description": "MU SE Base Address ",
+                "name": "MUSEBaseAddr%d",
+                "offinc1": "0x00000004",
+                "ptr": "muse.MUSEBaseAddr",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00000800": {
+                "altname": "MU_SE_CONFIG",
+                "description": "MU SE DSP CPP or Credit Throttle Config ",
+                "name": "MUSEConfig",
+                "ptr": "muse.MUSEConfig",
+                "type": "multireg"
+            },
+            "0x00000804": {
+                "altname": "MU_SE_ACTION",
+                "description": "MU SE Action ",
+                "name": "MUSEAction",
+                "ptr": "muse.MUSEAction",
+                "type": "multireg"
+            }
+        }
+    },
+    "regs": {
+        "muse.MUSEAction": {
+            "bit_length": 32,
+            "comment": "Multi-register",
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "mode": "wo",
+                    "name": "value"
+                }
+            ]
+        },
+        "muse.MUSEBaseAddr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_SE_BASE_ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 18,
+                    "description": "Base Address For Statistic",
+                    "mode": "RW",
+                    "name": "MUSEBaseAddr"
+                }
+            ]
+        },
+        "muse.MUSEConfig": {
+            "bit_length": 32,
+            "comment": "Multi-register",
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "mode": "wo",
+                    "name": "value"
+                }
+            ]
+        }
+    }
+}

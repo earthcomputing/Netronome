@@ -1,0 +1,40 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "peripheral_trng.PeripheralTrngDataMap": {
+            "0x00000000": {
+                "altname": "DATA",
+                "description": "Random number data",
+                "name": "Data",
+                "ptr": "peripheral_trng.TRNGData",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "DATA_ALT",
+                "description": "Random number data (either or both registers may be read to retrieve data)",
+                "name": "DataAlt",
+                "ptr": "peripheral_trng.TRNGData",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "peripheral_trng.TRNGData": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 63,
+                    "description": "Next 64 bits of random data; if zero, then there is no valid data ready.",
+                    "mode": "RO",
+                    "name": "Data"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,83 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "pcie_x8_top.PcieInternalTargetsCpp": {
+            "0x00000000": {
+                "altname": "PCIE_INT_TGT_ADDR_MAP",
+                "description": "PCIe Component Internal Target Address Map through CPP Target",
+                "name": "PcieInternalTargets",
+                "ptr": "pcie_x8_internal_targets.PcieInternalTargets",
+                "type": "regmap"
+            }
+        },
+        "pcie_x8_top.PcieXpb": {
+            "0x00000000": {
+                "altname": "PCIE_COMPONENT_CFG_XPB",
+                "description": "PCIe Component and PHY Configuration registers",
+                "name": "PcieComponentCfgXpb",
+                "ptr": "pcie_x8_xpb.PcieComponentCfgXpb",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "PCIE_QUE_ECC",
+                "description": "Error check and correct status registers for Queue Controller. See Peripheral ECC Monitor documentation for more details. Implemented using ecc_monitor macro.",
+                "name": "PcieQueECC",
+                "ptr": "peripheral_ecc_monitor.ECCControlReg",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "PCIE_SRAM_ECC",
+                "description": "Error check and correct status registers for Shared Memory SRAM accessed over XPB. See Peripheral ECC Monitor documentation for more details. Implemented using ecc_monitor4 macro.",
+                "name": "PcieSramECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_4",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "PCIE_INT_MGR",
+                "description": "Control and Status registers for Interrupt Manager accessed over XPB. See Interrupt Manager documentation for more details.",
+                "name": "PcieIntMgr",
+                "ptr": "peripheral_interrupt_manager.InterruptManagerMap_inst0",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "PCIE_WQ_ECC",
+                "description": "Error check and correct status registers for WQ FIFO. See Peripheral ECC Monitor documentation for more details. Implemented using ecc_monitor macro.",
+                "name": "PcieWQECC",
+                "ptr": "peripheral_ecc_monitor.ECCControlReg",
+                "type": "regmap"
+            },
+            "0x00050000": {
+                "altname": "TO_PCIE_DMA_DESC_ECC",
+                "description": "Error check and correct status registers for ToPCIe DMA DESC FIFO. See Peripheral ECC Monitor documentation for more details. Implemented using ecc_monitor macro.",
+                "name": "ToPCIeDMADescECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_2",
+                "type": "regmap"
+            },
+            "0x00060000": {
+                "altname": "FROM_PCIE_DMA_DESC_ECC",
+                "description": "Error check and correct status registers for FromPCIe DMA DESC FIFO. See Peripheral ECC Monitor documentation for more details. Implemented using ecc_monitor macro.",
+                "name": "FromPCIeDMADescECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_2",
+                "type": "regmap"
+            },
+            "0x00070000": {
+                "altname": "PCIE_BD_ECC",
+                "description": "Error check and correct status registers for PCIe Buffer Descriptor RAM. See Peripheral ECC Monitor documentation for more details. Implemented using ecc_monitor macro.",
+                "name": "PCIeBDECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00080000": {
+                "altname": "PCIE_CFG_LUT_ECC",
+                "description": "Error check and correct status registers for PCIe Function Config Lookup Table RAM. See Peripheral ECC Monitor documentation for more details. Implemented using ecc_monitor macro.",
+                "name": "PCIeCfgLutECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

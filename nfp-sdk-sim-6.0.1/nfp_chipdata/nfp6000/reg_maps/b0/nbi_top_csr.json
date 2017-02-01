@@ -1,0 +1,405 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "nbi_top_csr.NbiCsr": {
+            "0x00000000": {
+                "altname": "NBI_MU_XLATE",
+                "description": "NBI Memory Unit Address Translation register",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiMuXlate",
+                "ptr": "nbi_top_csr.NbiMuXlate",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "NBI_STAT",
+                "description": "NBI Interrupt Status Register",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiStat",
+                "ptr": "nbi_top_csr.NbiStat",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "NBI_CTRL",
+                "description": "NBI Control Register",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiCtrl",
+                "ptr": "nbi_top_csr.NbiCtrl",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "NBI_XPB_MAXTO",
+                "description": "XPB Maximum Timeout Limit",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiXpbMaxTo",
+                "ptr": "nbi_top_csr.NbiXpbMaxTo",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "NBI_MACRD256_XPB_MAXTO",
+                "description": "MAC Read 256 XPB Maximum Timeout Limit",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiMacRd256XpbMaxTo",
+                "ptr": "nbi_top_csr.NbiMacRd256XpbMaxTo",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "NBI_XPB_TOSTAT",
+                "description": "Provides information about the last XPB timeout error ",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiXpbToStat",
+                "ptr": "nbi_top_csr.NbiXpbToStat",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "NBI_MACRD256_XPB_TOSTAT",
+                "description": "Provides information about the last MAC RD256 XPB timeout error",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiMacRd256XpbToStat",
+                "ptr": "nbi_top_csr.NbiMacRd256XpbToStat",
+                "type": "reg"
+            },
+            "0x0000005c": {
+                "altname": "NBI_DEBUG_CSR",
+                "description": "NBI Debug CSR",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiDebugCsr",
+                "ptr": "nbi_top_csr.NbiDebugCsr",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "nbi_top_csr.NbiCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CPP_TARGET_CPP_TX_ERR_ENA",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "When set, CPP Data errors from the CPP Target Logic are forwarded to the DSF CPP bus. When cleared, CPP Data errors from the CPP Target Logic are not forwarded to the DSF CPP bus.",
+                    "mode": "RW",
+                    "name": "CppTargetCppTxErrEna"
+                },
+                {
+                    "altname": "CPP_TARGET_CPP_RX_ERR_ENA",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "When set, received DSF CPP Data errors are forwarded to the CPP Target logic. When cleared, CPP Data errors are not forwarded to the CPP Target logic",
+                    "mode": "RW",
+                    "name": "CppTargetCppRxErrEna"
+                },
+                {
+                    "altname": "ING_DMA_CPP_TX_ERR_ENA",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "When set, CPP Data errors from the Ingress DMA engine are forwarded to the DSF CPP bus. When cleared, CPP Data errors from the Ingress DMA engine are not forwarded to the DSF CPP bus.",
+                    "mode": "RW",
+                    "name": "IngDmaCppTxErrEna"
+                },
+                {
+                    "altname": "ING_DMA_CPP_RX_ERR_ENA",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "When set, received DSF CPP Data errors are forwarded to the Ingress DMA engine. When cleared, CPP Data errors are not forwarded to the Ingress DMA engine",
+                    "mode": "RW",
+                    "name": "IngDmaCppRxErrEna"
+                },
+                {
+                    "altname": "EGR_DMA_CPP_TX_ERR_ENA",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "When set, CPP Data errors from the Egress DMA engine are forwarded to the DSF CPP bus. When cleared, CPP Data errors from the Egress DMA engine are not forwarded to the DSF CPP bus.",
+                    "mode": "RW",
+                    "name": "EgrDmaCppTxErrEna"
+                },
+                {
+                    "altname": "EGR_DMA_CPP_RX_ERR_ENA",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When set, received DSF CPP Data errors are forwarded to the Egress DMA engine. When cleared, CPP Data errors are not forwarded to the Egress DMA engine",
+                    "mode": "RW",
+                    "name": "EgrDmaCppRxErrEna"
+                }
+            ]
+        },
+        "nbi_top_csr.NbiDebugCsr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CPP_PKT_ENDIANNESS",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "DEBUG Only register: Determines the packet endianess sent and expected endianess received on the DSF CPP data buses.",
+                    "mode": "RW",
+                    "name": "CppPktEndianness"
+                }
+            ]
+        },
+        "nbi_top_csr.NbiMacRd256XpbMaxTo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "XPB_RD256_MAX_TO_CNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 14,
+                    "description": "Configures the allowed maximum number of clock cycles for the XPB RD256 target to respond in before a timeout is declared. ",
+                    "mode": "RW",
+                    "name": "XpbRd256MaxTimeoutCnt"
+                }
+            ]
+        },
+        "nbi_top_csr.NbiMacRd256XpbToStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TO_ERROR",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "When set, a timeout error occurred during an XPB RD256 access.",
+                    "mode": "RW1C",
+                    "name": "TimeOutError"
+                },
+                {
+                    "altname": "CLUSTER_ID",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Cluster ID of the target being accessed during the last XPB RD256 timout.",
+                    "mode": "RO",
+                    "name": "ClusterId"
+                },
+                {
+                    "altname": "DEVID",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Device ID of the XPB Target being accessed during the last XPB RD256 timout.",
+                    "mode": "RO",
+                    "name": "DeviceId"
+                }
+            ]
+        },
+        "nbi_top_csr.NbiMuXlate": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ACCESS_MODE",
+                    "bit_lsb": 13,
+                    "bit_msb": 15,
+                    "description": "The AccMode field is used to determine how the destination island number is formed from the address of the MU Write or MU Read command.",
+                    "mode": "RW",
+                    "name": "AccMode"
+                },
+                {
+                    "altname": "ISLAND1",
+                    "bit_lsb": 6,
+                    "bit_msb": 11,
+                    "description": "The Island1 field is one of 2 selections made during MU address translation",
+                    "mode": "RW",
+                    "name": "Island1"
+                },
+                {
+                    "altname": "ISLAND0",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "The Island0 field is one of 2 selections made during MU address translation",
+                    "mode": "RW",
+                    "name": "Island0"
+                }
+            ]
+        },
+        "nbi_top_csr.NbiStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_XPB_MSTR_TIMEOUT_ERR_E",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Indicates a xpb master timeout error occurred",
+                    "mode": "RW1C",
+                    "name": "NbiXpbMstrTimeOutE"
+                },
+                {
+                    "altname": "NBI_PUSHPULL_P7B_ERR_E",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Indicates a push/pull error detected on port7b",
+                    "mode": "RW1C",
+                    "name": "NbiPushPullP7BE"
+                },
+                {
+                    "altname": "NBI_PUSHPULL_P7A_ERR_E",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "Indicates a push/pull error detected on port7a",
+                    "mode": "RW1C",
+                    "name": "NbiPushPullP7AE"
+                },
+                {
+                    "altname": "NBI_PUSHPULL_P6B_ERR_E",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Indicates a push/pull error detected on port6b",
+                    "mode": "RW1C",
+                    "name": "NbiPushPullP6BE"
+                },
+                {
+                    "altname": "NBI_PUSHPULL_P6A_ERR_E",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Indicates a push/pull error detected on port6a",
+                    "mode": "RW1C",
+                    "name": "NbiPushPullP6AE"
+                },
+                {
+                    "altname": "NBI_MSTR_PULLID_P7_ERR_E",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Indicates a master pullid error detected on port7",
+                    "mode": "RW1C",
+                    "name": "NbiMstrPullidP7E"
+                },
+                {
+                    "altname": "NBI_MSTR_PULLID_P6_ERR_E",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Indicates a master pullid error detected on port6",
+                    "mode": "RW1C",
+                    "name": "NbiMstrPullidP6E"
+                },
+                {
+                    "altname": "NBI_TGT_CMD_P7_ERR_E",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Indicates a target command error detected on port7",
+                    "mode": "RW1C",
+                    "name": "NbiTgtCmdP7E"
+                },
+                {
+                    "altname": "NBI_TGT_CMD_P6_ERR_E",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Indicates a target command error detected on port6",
+                    "mode": "RW1C",
+                    "name": "NbiTgtCmdP6E"
+                },
+                {
+                    "altname": "BL_QUE_FULL",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Indicates the queue became full. One bit per Egress Buffer List Queue.",
+                    "mode": "RW1C",
+                    "name": "BLQFull"
+                },
+                {
+                    "altname": "BL_QUE_EMPTY",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Indicates the queue went empty. One bit per Ingress Buffer List Queue.",
+                    "mode": "RW1C",
+                    "name": "BLQEmpty"
+                },
+                {
+                    "altname": "NBI_PM_PKT_ERR_E",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "This is an event register which is set if two consecutive 'sop' are seen without an 'eop' in-between them.",
+                    "mode": "RW1C",
+                    "name": "NbiPmPktErrE"
+                },
+                {
+                    "altname": "NBI_PM_MODSCR_DECODE_ERR_E",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "This is an event register which is set if the modification script that is prepended to the packet has errors, the packet modifier can not decode the script correctly. Following are the contributors: 1. 'mod_instruct' == del and 'rdata_len' != 0 for direct script, 2. 'mod_instruct' == mrep and 'rdata_len' != 2*'num_bytes'+1 for direct script, 3. rdata_len > 16 for direct script, 4. rdata_len != 'num_bytes'+1 for direct script 5. offset_len+1 doesn't match the number of offsets provided in the offset field, 6. rdata_len doesn't match the number of bytes in the rdata field, 7. offsets are not in the ascending order, 8. an opcode of 0xe0 found in between the other valid opcodes",
+                    "mode": "RW1C",
+                    "name": "NbiPmModscrDecodeErrE"
+                },
+                {
+                    "altname": "CPP_DATA_OUT_ERR",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "An error from the NBI propogated onto the DSF CPP output data bus",
+                    "mode": "RW1C",
+                    "name": "CppDataOutErr"
+                },
+                {
+                    "altname": "CPP_DATA_IN_ERR",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Indicates data received from the DSF CPP contained an error.",
+                    "mode": "RW1C",
+                    "name": "CppDataInErr"
+                },
+                {
+                    "altname": "BP_DROP",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Indicates a packet was dropped due to lack of buffer or packet credits. One bit per buffer pool",
+                    "mode": "RW1C",
+                    "name": "BPDrop"
+                }
+            ]
+        },
+        "nbi_top_csr.NbiXpbMaxTo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "XPB_MAX_TO_CNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 14,
+                    "description": "Configures the allowed maximum number of clock cycles for an XPB target to respond in before a timeout is declared. ",
+                    "mode": "RW",
+                    "name": "XpbMaxTimeoutCnt"
+                }
+            ]
+        },
+        "nbi_top_csr.NbiXpbToStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TO_ERROR",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "When set, a timeout error occurred during an XPB access.",
+                    "mode": "RW1C",
+                    "name": "TimeOutError"
+                },
+                {
+                    "altname": "CLUSTER_ID",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Cluster ID of the target being accessed during the last XPB timout.",
+                    "mode": "RO",
+                    "name": "ClusterId"
+                },
+                {
+                    "altname": "DEVID",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Device ID of the XPB Target being accessed during the last XPB timout.",
+                    "mode": "RO",
+                    "name": "DeviceId"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,205 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "peripheral_timer.TimerCsrSsb": {
+            "0x00000000": {
+                "altname": "CONTROL0",
+                "description": "Determines timer0 functions, mode, activation.",
+                "name": "Control0",
+                "ptr": "peripheral_timer.TimerControl",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "CONTROL1",
+                "description": "Determines timer1 functions, mode, activation.",
+                "name": "Control1",
+                "ptr": "peripheral_timer.TimerControl",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "CONTROL2",
+                "description": "Determines timer2 functions, mode, activation.",
+                "name": "Control2",
+                "ptr": "peripheral_timer.TimerControl",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "CONTROL3",
+                "description": "Determines timer3 functions, mode, activation.",
+                "name": "Control3",
+                "ptr": "peripheral_timer.TimerControl",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "LOADVALUE0",
+                "description": "Holds the timer0 counter initial value.",
+                "name": "LoadValue0",
+                "ptr": "peripheral_timer.TimerCounterLoading",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "LOADVALUE1",
+                "description": "Holds the timer1 counter initial value.",
+                "name": "LoadValue1",
+                "ptr": "peripheral_timer.TimerCounterLoading",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "LOADVALUE2",
+                "description": "Holds the timer2 counter initial value.",
+                "name": "LoadValue2",
+                "ptr": "peripheral_timer.TimerCounterLoading",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "LOADVALUE3",
+                "description": "Holds the timer3 counter initial value.",
+                "name": "LoadValue3",
+                "ptr": "peripheral_timer.TimerCounterLoading",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "COUNTERVALUE0",
+                "description": "Current timer0 Counter Value.",
+                "name": "CounterValue0",
+                "ptr": "peripheral_timer.TimerCounterStatus",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "COUNTERVALUE1",
+                "description": "Current timer1 Counter Value.",
+                "name": "CounterValue1",
+                "ptr": "peripheral_timer.TimerCounterStatus",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "COUNTERVALUE2",
+                "description": "Current timer2 Counter Value.",
+                "name": "CounterValue2",
+                "ptr": "peripheral_timer.TimerCounterStatus",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "COUNTERVALUE3",
+                "description": "Current timer3 Counter Value.",
+                "name": "CounterValue3",
+                "ptr": "peripheral_timer.TimerCounterStatus",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "INTERRUPTCLEAR0",
+                "description": "Write 1 to clear the timer0 interrupt.",
+                "name": "InterruptClear0",
+                "ptr": "peripheral_timer.TimerCounterClear",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "INTERRUPTCLEAR1",
+                "description": "Write 1 to clear the timer1 interrupt.",
+                "name": "InterruptClear1",
+                "ptr": "peripheral_timer.TimerCounterClear",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "INTERRUPTCLEAR2",
+                "description": "Write 1 to clear the timer2 interrupt.",
+                "name": "InterruptClear2",
+                "ptr": "peripheral_timer.TimerCounterClear",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "INTERRUPTCLEAR3",
+                "description": "Write 1 to clear the timer3 interrupt.",
+                "name": "InterruptClear3",
+                "ptr": "peripheral_timer.TimerCounterClear",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "WATCHDOGENABLE",
+                "description": "Enables timer3 as a watchdog timer",
+                "name": "WatchdogEnable",
+                "ptr": "peripheral_timer.TimerWatchdogEnable",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "peripheral_timer.TimerControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ACTIVE",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Set if the timer is activated. When activated the timer counter value is decremented on every trigger; if the value is zero already, though, the TimerCounterLoad value is placed in the counter instead.",
+                    "mode": "RW",
+                    "name": "Active"
+                },
+                {
+                    "altname": "PRESCALER",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Select the pre-scaler for a timer counter; this can be a division of the P_CLK clock, or based on pulses (rising edges) on GPIO pins. GPIO pin 0 is used for timer 0, GPIO pin 1 for timer 1, GPIO pin 2 for timer 2, GPIO pin 3 for timer 3.",
+                    "mode": "RW",
+                    "name": "Prescaler"
+                }
+            ]
+        },
+        "peripheral_timer.TimerCounterClear": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLRINT",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Write a 1 to clear the interrupt status from the timer.",
+                    "mode": "W1C",
+                    "name": "ClrInt"
+                }
+            ]
+        },
+        "peripheral_timer.TimerCounterLoading": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "LOADVALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "The counter load value for the timer. Writing to these registers causes the reload of the counters to this value.",
+                    "mode": "RW",
+                    "name": "LoadValue"
+                }
+            ]
+        },
+        "peripheral_timer.TimerCounterStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "COUNTERVALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "The current counter value for the timer.",
+                    "mode": "RO",
+                    "name": "CounterValue"
+                }
+            ]
+        },
+        "peripheral_timer.TimerWatchdogEnable": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "WDOGEN",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Write a 1 to enable the watchdog; only cleared at reset.  Read back 1 if watchdog function is enabled, else read back 0.",
+                    "mode": "RW",
+                    "name": "WdogEn"
+                }
+            ]
+        }
+    }
+}

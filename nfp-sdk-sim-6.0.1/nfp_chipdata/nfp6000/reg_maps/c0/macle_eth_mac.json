@@ -1,0 +1,2460 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "macle_eth_mac.EthMac": {
+            "0x00000000": {
+                "altname": "ETH_REVISION",
+                "description": "Package defined constants",
+                "name": "EthRevision",
+                "ptr": "macle_eth_mac.EthMacRevision",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "ETH_SCRATCH",
+                "description": "General Purpose",
+                "name": "EthScratch",
+                "ptr": "macle_eth_mac.EthMacScratch",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "ETH_CMD_CONFIG",
+                "description": "Control and Configuration",
+                "name": "EthCmdConfig",
+                "ptr": "macle_eth_mac.EthMacCmdConfig",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "ETH_MAC_ADDR_0",
+                "description": "First 4 bytes of MAC address",
+                "name": "EthMacAddr0",
+                "ptr": "macle_eth_mac.EthMacMacAddr0",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "ETH_MAC_ADDR_1",
+                "description": "Last 2 bytes of MAC address",
+                "name": "EthMacAddr1",
+                "ptr": "macle_eth_mac.EthMacMacAddr1",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "ETH_FRM_LENGTH",
+                "description": "Maximum Frame Size",
+                "name": "EthFrmLength",
+                "ptr": "macle_eth_mac.EthMacFrmLength",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "ETH_RX_FIFO_SECTIONS",
+                "description": "RX FIFO thresholds",
+                "name": "EthRxFifoSections",
+                "ptr": "macle_eth_mac.EthMacRxFifoSections",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "ETH_TX_FIFO_SECTIONS",
+                "description": "TX FIFO thresholds",
+                "name": "EthTxFifoSections",
+                "ptr": "macle_eth_mac.EthMacTxFifoSections",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "ETH_RX_FIFO_ALMOST_FE",
+                "description": "Not configurable",
+                "name": "EthRxFifoAlmostFE",
+                "ptr": "macle_eth_mac.EthMacRxFifoAlmostFE",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "ETH_TX_FIFO_ALMOST_FE",
+                "description": "Not configurable",
+                "name": "EthTxFifoAlmostFE",
+                "ptr": "macle_eth_mac.EthMacTxFifoAlmostFE",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "ETH_HASH_TABLE_LOAD",
+                "description": "optional: Hash Table programming",
+                "name": "EthHashTableLoad",
+                "ptr": "macle_eth_mac.EthMacHashTableLoad",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "ETH_MDIO_CFG_STATUS",
+                "description": "MDIO Configuration and Status",
+                "name": "EthMdioCfgStatus",
+                "ptr": "macle_eth_mac.EthMacMdioCfgStatus",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "ETH_MDIO_COMMAND",
+                "description": "MDIO Command (PHY and Port Address)",
+                "name": "EthMdioCommand",
+                "ptr": "macle_eth_mac.EthMacMdioCommand",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "ETH_MDIO_DATA",
+                "description": "MDIO Data to write and last Data read",
+                "name": "EthMdioData",
+                "ptr": "macle_eth_mac.EthMacMdioData",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "ETH_MDIO_REG_ADDR",
+                "description": "MDIO Register Address. Address of register within the PHY device to read from or write to. After writing this register, an address-write transaction will be initiated to set the PHY internal address register to the value given.",
+                "name": "EthMdioRegAddr",
+                "ptr": "macle_eth_mac.EthMacMdioRegAddr",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "ETH_STATUS",
+                "description": "General Purpose Status",
+                "name": "EthStatus",
+                "ptr": "macle_eth_mac.EthMacStatus",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "ETH_TX_IPG_LENGTH",
+                "description": "TX InterPacketGap configuration",
+                "name": "EthTxIpgLength",
+                "ptr": "macle_eth_mac.EthMacTxIpgLength",
+                "type": "reg"
+            },
+            "0x00000048": {
+                "altname": "ETH_CREDIT_TRIGGER",
+                "description": "reserved",
+                "name": "EthCreditTrigger",
+                "ptr": "macle_eth_mac.EthMacCreditTrigger",
+                "type": "reg"
+            },
+            "0x0000004c": {
+                "altname": "ETH_INIT_CREDIT",
+                "description": "reserved",
+                "name": "EthInitCredit",
+                "ptr": "macle_eth_mac.EthMacInitCredit",
+                "type": "reg"
+            },
+            "0x00000050": {
+                "altname": "ETH_CREDIT_REG",
+                "description": "reserved",
+                "name": "EthCreditReg",
+                "ptr": "macle_eth_mac.EthMacCreditReg",
+                "type": "reg"
+            },
+            "0x00000054": {
+                "altname": "ETH_PAUSE_QUANTA_CL01",
+                "description": "Class 0 and 1 pause quanta. When link pause mode is enabled, PauseQuantaCL0 is used.",
+                "name": "EthPauseQuantaCL01",
+                "ptr": "macle_eth_mac.EthMacPauseQuantaCL01",
+                "type": "reg"
+            },
+            "0x00000058": {
+                "altname": "ETH_PAUSE_QUANTA_CL23",
+                "description": "Class 2 and 3 pause quanta",
+                "name": "EthPauseQuantaCL23",
+                "ptr": "macle_eth_mac.EthMacPauseQuantaCL23",
+                "type": "reg"
+            },
+            "0x0000005c": {
+                "altname": "ETH_PAUSE_QUANTA_CL45",
+                "description": "Class 4 and 5 pause quanta",
+                "name": "EthPauseQuantaCL45",
+                "ptr": "macle_eth_mac.EthMacPauseQuantaCL45",
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "ETH_PAUSE_QUANTA_CL67",
+                "description": "Class 6 and 7 pause quanta",
+                "name": "EthPauseQuantaCL67",
+                "ptr": "macle_eth_mac.EthMacPauseQuantaCL67",
+                "type": "reg"
+            },
+            "0x00000064": {
+                "altname": "ETH_QUANTA_THRESH_CL01",
+                "description": "Class 0 and 1 refresh threshold. When link pause mode is enabled, QuantaThreshCL0 is used for refreshing pause frames.",
+                "name": "EthQuantaThreshCL01",
+                "ptr": "macle_eth_mac.EthMacQuantaThreshCL01",
+                "type": "reg"
+            },
+            "0x00000068": {
+                "altname": "ETH_QUANTA_THRESH_CL23",
+                "description": "Class 2 and 3 refresh threshold",
+                "name": "EthQuantaThreshCL23",
+                "ptr": "macle_eth_mac.EthMacQuantaThreshCL23",
+                "type": "reg"
+            },
+            "0x0000006c": {
+                "altname": "ETH_QUANTA_THRESH_CL45",
+                "description": "Class 2 and 3 refresh threshold",
+                "name": "EthQuantaThreshCL45",
+                "ptr": "macle_eth_mac.EthMacQuantaThreshCL45",
+                "type": "reg"
+            },
+            "0x00000070": {
+                "altname": "ETH_QUANTA_THRESH_CL67",
+                "description": "Class 6 and 7 refresh threshold",
+                "name": "EthQuantaThreshCL67",
+                "ptr": "macle_eth_mac.EthMacQuantaThreshCL67",
+                "type": "reg"
+            },
+            "0x00000074": {
+                "altname": "ETH_RX_PAUSE_STATUS",
+                "description": "Current per class received pause status. 0 is used for link pause also.",
+                "name": "EthRxPauseStatus",
+                "ptr": "macle_eth_mac.EthMacRxPauseStatus",
+                "type": "reg"
+            },
+            "0x0000007c": {
+                "altname": "ETH_TIMESTAMP",
+                "description": "Transmit Timestamp",
+                "name": "EthTimestamp",
+                "ptr": "macle_eth_mac.EthMacTimestamp",
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "ETH_XIF_MODE",
+                "description": "Interface Mode Configuration",
+                "name": "EthXifMode",
+                "ptr": "macle_eth_mac.EthMacXifMode",
+                "type": "reg"
+            },
+            "0x000000e0": {
+                "altname": "ETH_STAT_CONFIG",
+                "description": "statistics configuration options",
+                "name": "EthStatConfig",
+                "ptr": "macle_eth_mac.EthMacStatConfig",
+                "type": "reg"
+            },
+            "0x000000e4": {
+                "altname": "ETH_STATN_CLEARVALUE_LO",
+                "description": "Lower 32bit of 64bit value written into statistics memory when a counter is cleared (testing only, should be 0 normally)",
+                "name": "EthStatnClearvalueLo",
+                "ptr": "macle_eth_mac.EthMacStatnClearvalueLo",
+                "type": "reg"
+            },
+            "0x000000e8": {
+                "altname": "ETH_STATN_CLEARVALUE_HI",
+                "description": "Upper 32bit of 64bit value written into statistics memory when a counter is cleared (testing only, should be 0 normally)",
+                "name": "EthStatnClearvalueHi",
+                "ptr": "macle_eth_mac.EthMacStatnClearvalueHi",
+                "type": "reg"
+            },
+            "0x00000100": {
+                "altname": "ETH_ETHER_STATS_OCTETS",
+                "description": "total, good and bad",
+                "name": "EthEtherStatsOctets",
+                "ptr": "macle_eth_mac.EthMacEtherStatsOctets",
+                "type": "reg"
+            },
+            "0x00000108": {
+                "altname": "ETH_OCTETS_OK",
+                "description": "total, good",
+                "name": "EthOctetsOK",
+                "ptr": "macle_eth_mac.EthMacOctetsOK",
+                "type": "reg"
+            },
+            "0x00000110": {
+                "altname": "ETH_AALIGNMENT_ERRORS",
+                "description": "Wrong SFD detected",
+                "name": "EthAAlignmentErrors",
+                "ptr": "macle_eth_mac.EthMacAAlignmentErrors",
+                "type": "reg"
+            },
+            "0x00000118": {
+                "altname": "ETH_APAUSE_MAC_CTRL_FRAMES",
+                "description": "Good Pause frames received",
+                "name": "EthAPauseMacCtrlFrames",
+                "ptr": "macle_eth_mac.EthMacAPauseMacCtrlFrames",
+                "type": "reg"
+            },
+            "0x00000120": {
+                "altname": "ETH_FRAMES_OK",
+                "description": "Good frames received",
+                "name": "EthFramesOK",
+                "ptr": "macle_eth_mac.EthMacFramesOK",
+                "type": "reg"
+            },
+            "0x00000128": {
+                "altname": "ETH_CRCERRORS",
+                "description": "wrong CRC and good length received",
+                "name": "EthCRCErrors",
+                "ptr": "macle_eth_mac.EthMacCRCErrors",
+                "type": "reg"
+            },
+            "0x00000130": {
+                "altname": "ETH_VLAN_OK",
+                "description": "Good Frames with VLAN tag received",
+                "name": "EthVlanOk",
+                "ptr": "macle_eth_mac.EthMacVlanOk",
+                "type": "reg"
+            },
+            "0x00000138": {
+                "altname": "ETH_IF_IN_ERRORS",
+                "description": "Errored frames received",
+                "name": "EthIfInErrors",
+                "ptr": "macle_eth_mac.EthMacIfInErrors",
+                "type": "reg"
+            },
+            "0x00000140": {
+                "altname": "ETH_IF_IN_UCAST_PKTS",
+                "description": "Good Unicast received",
+                "name": "EthIfInUcastPkts",
+                "ptr": "macle_eth_mac.EthMacIfInUcastPkts",
+                "type": "reg"
+            },
+            "0x00000148": {
+                "altname": "ETH_IF_IN_MCAST_PKTS",
+                "description": "Good Multicast received",
+                "name": "EthIfInMcastPkts",
+                "ptr": "macle_eth_mac.EthMacIfInMcastPkts",
+                "type": "reg"
+            },
+            "0x00000150": {
+                "altname": "ETH_IF_IN_BCAST_PKTS",
+                "description": "Good Broadcast received",
+                "name": "EthIfInBcastPkts",
+                "ptr": "macle_eth_mac.EthMacIfInBcastPkts",
+                "type": "reg"
+            },
+            "0x00000158": {
+                "altname": "ETH_ETHER_STATS_DROP_EVENTS",
+                "description": "Dropped frames",
+                "name": "EthEtherStatsDropEvents",
+                "ptr": "macle_eth_mac.EthMacEtherStatsDropEvents",
+                "type": "reg"
+            },
+            "0x00000160": {
+                "altname": "ETH_ETHER_STATS_PKTS",
+                "description": "Frames received, good and bad",
+                "name": "EthEtherStatsPkts",
+                "ptr": "macle_eth_mac.EthMacEtherStatsPkts",
+                "type": "reg"
+            },
+            "0x00000170": {
+                "altname": "ETH_ETHER_STATS_PKTS_64",
+                "description": "Frames of 64 octets received",
+                "name": "EthEtherStatsPkts64",
+                "ptr": "macle_eth_mac.EthMacEtherStatsPkts64",
+                "type": "reg"
+            },
+            "0x00000178": {
+                "altname": "ETH_ETHER_STATS_PKTS_65TO_127",
+                "description": "Frames of 65 to 127 octets received",
+                "name": "EthEtherStatsPkts65to127",
+                "ptr": "macle_eth_mac.EthMacEtherStatsPkts65to127",
+                "type": "reg"
+            },
+            "0x00000180": {
+                "altname": "ETH_ETHER_STATS_PKTS_128TO_255",
+                "description": "Frames of 128 to 255 octets received",
+                "name": "EthEtherStatsPkts128to255",
+                "ptr": "macle_eth_mac.EthMacEtherStatsPkts128to255",
+                "type": "reg"
+            },
+            "0x00000188": {
+                "altname": "ETH_ETHER_STATS_PKTS_256TO_511",
+                "description": "Frames of 256 to 511 octets received",
+                "name": "EthEtherStatsPkts256to511",
+                "ptr": "macle_eth_mac.EthMacEtherStatsPkts256to511",
+                "type": "reg"
+            },
+            "0x00000190": {
+                "altname": "ETH_ETHER_STATS_PKTS_512TO_1023",
+                "description": "Frames of 512 to 1023 octets received",
+                "name": "EthEtherStatsPkts512to1023",
+                "ptr": "macle_eth_mac.EthMacEtherStatsPkts512to1023",
+                "type": "reg"
+            },
+            "0x00000198": {
+                "altname": "ETH_ETHER_STATS_PKTS_1024TO_1518",
+                "description": "Frames of 1024 to 1518 octets received",
+                "name": "EthEtherStatsPkts1024to1518",
+                "ptr": "macle_eth_mac.EthMacEtherStatsPkts1024to1518",
+                "type": "reg"
+            },
+            "0x000001a0": {
+                "altname": "ETH_ETHER_STATS_PKTS_1519TO_MAX",
+                "description": "Frames of 1519 to FrmLength octets received",
+                "name": "EthEtherStatsPkts1519toMax",
+                "ptr": "macle_eth_mac.EthMacEtherStatsPkts1519toMax",
+                "type": "reg"
+            },
+            "0x000001a8": {
+                "altname": "ETH_ETHER_STATS_PKTS_OVERSIZE",
+                "description": "Frames greater FrmLength and good CRC received",
+                "name": "EthEtherStatsPktsOversize",
+                "ptr": "macle_eth_mac.EthMacEtherStatsPktsOversize",
+                "type": "reg"
+            },
+            "0x000001b0": {
+                "altname": "ETH_ETHER_STATS_JABBERS",
+                "description": "Frames greater FrmLength and bad CRC received",
+                "name": "EthEtherStatsJabbers",
+                "ptr": "macle_eth_mac.EthMacEtherStatsJabbers",
+                "type": "reg"
+            },
+            "0x000001b8": {
+                "altname": "ETH_ETHER_STATS_FRAGMENTS",
+                "description": "Frames less 64 and bad CRC received",
+                "name": "EthEtherStatsFragments",
+                "ptr": "macle_eth_mac.EthMacEtherStatsFragments",
+                "type": "reg"
+            },
+            "0x000001c0": {
+                "altname": "ETH_AMACCONTROL_FRAMES",
+                "description": "Good frames received of type 0x8808 but not Pause",
+                "name": "EthAMACControlFrames",
+                "ptr": "macle_eth_mac.EthMacAMACControlFrames",
+                "type": "reg"
+            },
+            "0x000001c8": {
+                "altname": "ETH_AFRAME_TOO_LONG",
+                "description": "Good and bad frames exceeding FrmLength received",
+                "name": "EthAFrameTooLong",
+                "ptr": "macle_eth_mac.EthMacAFrameTooLong",
+                "type": "reg"
+            },
+            "0x000001d0": {
+                "altname": "ETH_AIN_RANGE_LENGTH_ERROR",
+                "description": "Good frames with invalid length field (not supported)",
+                "name": "EthAInRangeLengthError",
+                "ptr": "macle_eth_mac.EthMacAInRangeLengthError",
+                "type": "reg"
+            },
+            "0x00000200": {
+                "altname": "ETH_TX_ETHER_STATS_OCTETS",
+                "description": "total, good and bad",
+                "name": "EthTxEtherStatsOctets",
+                "ptr": "macle_eth_mac.EthMacTxEtherStatsOctets",
+                "type": "reg"
+            },
+            "0x00000208": {
+                "altname": "ETH_TX_OCTETS_OK",
+                "description": "total, good",
+                "name": "EthTxOctetsOK",
+                "ptr": "macle_eth_mac.EthMacTxOctetsOK",
+                "type": "reg"
+            },
+            "0x00000218": {
+                "altname": "ETH_TX_APAUSE_MAC_CTRL_FRAMES",
+                "description": "Good Pause frames transmitted",
+                "name": "EthTxAPauseMacCtrlFrames",
+                "ptr": "macle_eth_mac.EthMacTxAPauseMacCtrlFrames",
+                "type": "reg"
+            },
+            "0x00000220": {
+                "altname": "ETH_TX_FRAMES_OK",
+                "description": "Good frames transmitted",
+                "name": "EthTxFramesOK",
+                "ptr": "macle_eth_mac.EthMacTxFramesOK",
+                "type": "reg"
+            },
+            "0x00000228": {
+                "altname": "ETH_TX_CRCERRORS",
+                "description": "wrong CRC transmitted",
+                "name": "EthTxCRCErrors",
+                "ptr": "macle_eth_mac.EthMacTxCRCErrors",
+                "type": "reg"
+            },
+            "0x00000230": {
+                "altname": "ETH_TX_VLAN_OK",
+                "description": "Good Frames with VLAN tag transmitted",
+                "name": "EthTxVlanOk",
+                "ptr": "macle_eth_mac.EthMacTxVlanOk",
+                "type": "reg"
+            },
+            "0x00000238": {
+                "altname": "ETH_IF_OUT_ERRORS",
+                "description": "Errored frames transmitted",
+                "name": "EthIfOutErrors",
+                "ptr": "macle_eth_mac.EthMacIfOutErrors",
+                "type": "reg"
+            },
+            "0x00000240": {
+                "altname": "ETH_IF_OUT_UCAST_PKTS",
+                "description": "Good Unicast transmitted",
+                "name": "EthIfOutUcastPkts",
+                "ptr": "macle_eth_mac.EthMacIfOutUcastPkts",
+                "type": "reg"
+            },
+            "0x00000248": {
+                "altname": "ETH_IF_OUT_MCAST_PKTS",
+                "description": "Good Multicast transmitted",
+                "name": "EthIfOutMcastPkts",
+                "ptr": "macle_eth_mac.EthMacIfOutMcastPkts",
+                "type": "reg"
+            },
+            "0x00000250": {
+                "altname": "ETH_IF_OUT_BCAST_PKTS",
+                "description": "Good Broadcast transmitted",
+                "name": "EthIfOutBcastPkts",
+                "ptr": "macle_eth_mac.EthMacIfOutBcastPkts",
+                "type": "reg"
+            },
+            "0x00000258": {
+                "altname": "ETH_TX_ETHER_STATS_DROP_EVENTS",
+                "description": "Dropped frames (unused, reserved)",
+                "name": "EthTxEtherStatsDropEvents",
+                "ptr": "macle_eth_mac.EthMacTxEtherStatsDropEvents",
+                "type": "reg"
+            },
+            "0x00000260": {
+                "altname": "ETH_TX_ETHER_STATS_PKTS",
+                "description": "Frames transmitted, good and bad",
+                "name": "EthTxEtherStatsPkts",
+                "ptr": "macle_eth_mac.EthMacTxEtherStatsPkts",
+                "type": "reg"
+            },
+            "0x00000270": {
+                "altname": "ETH_TX_ETHER_STATS_PKTS_64",
+                "description": "Frames of 64 octets transmitted",
+                "name": "EthTxEtherStatsPkts64",
+                "ptr": "macle_eth_mac.EthMacTxEtherStatsPkts64",
+                "type": "reg"
+            },
+            "0x00000278": {
+                "altname": "ETH_TX_ETHER_STATS_PKTS_65TO_127",
+                "description": "Frames of 65 to 127 octets transmitted",
+                "name": "EthTxEtherStatsPkts65to127",
+                "ptr": "macle_eth_mac.EthMacTxEtherStatsPkts65to127",
+                "type": "reg"
+            },
+            "0x00000280": {
+                "altname": "ETH_TX_ETHER_STATS_PKTS_128TO_255",
+                "description": "Frames of 128 to 255 octets transmitted",
+                "name": "EthTxEtherStatsPkts128to255",
+                "ptr": "macle_eth_mac.EthMacTxEtherStatsPkts128to255",
+                "type": "reg"
+            },
+            "0x00000288": {
+                "altname": "ETH_TX_ETHER_STATS_PKTS_256TO_511",
+                "description": "Frames of 256 to 511 octets transmitted",
+                "name": "EthTxEtherStatsPkts256to511",
+                "ptr": "macle_eth_mac.EthMacTxEtherStatsPkts256to511",
+                "type": "reg"
+            },
+            "0x00000290": {
+                "altname": "ETH_TX_ETHER_STATS_PKTS_512TO_1023",
+                "description": "Frames of 512 to 1023 octets transmitted",
+                "name": "EthTxEtherStatsPkts512to1023",
+                "ptr": "macle_eth_mac.EthMacTxEtherStatsPkts512to1023",
+                "type": "reg"
+            },
+            "0x00000298": {
+                "altname": "ETH_TX_ETHER_STATS_PKTS_1024TO_1518",
+                "description": "Frames of 1024 to 1518 octets transmitted",
+                "name": "EthTxEtherStatsPkts1024to1518",
+                "ptr": "macle_eth_mac.EthMacTxEtherStatsPkts1024to1518",
+                "type": "reg"
+            },
+            "0x000002a0": {
+                "altname": "ETH_TX_ETHER_STATS_PKTS_1519TO_TXMTU",
+                "description": "Frames of 1519 to FrmLength.TxMtu octets transmitted",
+                "name": "EthTxEtherStatsPkts1519toTXMTU",
+                "ptr": "macle_eth_mac.EthMacTxEtherStatsPkts1519toTXMTU",
+                "type": "reg"
+            },
+            "0x000002c0": {
+                "altname": "ETH_TX_AMACCONTROL_FRAMES",
+                "description": "Good frames transmitted of type 0x8808 but not Pause",
+                "name": "EthTxAMACControlFrames",
+                "ptr": "macle_eth_mac.EthMacTxAMACControlFrames",
+                "type": "reg"
+            },
+            "0x00000380": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_0",
+                "name": "EthACBFCPAUSEFramesReceived0",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesReceived0",
+                "type": "reg"
+            },
+            "0x00000388": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_1",
+                "name": "EthACBFCPAUSEFramesReceived1",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesReceived1",
+                "type": "reg"
+            },
+            "0x00000390": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_2",
+                "name": "EthACBFCPAUSEFramesReceived2",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesReceived2",
+                "type": "reg"
+            },
+            "0x00000398": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_3",
+                "name": "EthACBFCPAUSEFramesReceived3",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesReceived3",
+                "type": "reg"
+            },
+            "0x000003a0": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_4",
+                "name": "EthACBFCPAUSEFramesReceived4",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesReceived4",
+                "type": "reg"
+            },
+            "0x000003a8": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_5",
+                "name": "EthACBFCPAUSEFramesReceived5",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesReceived5",
+                "type": "reg"
+            },
+            "0x000003b0": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_6",
+                "name": "EthACBFCPAUSEFramesReceived6",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesReceived6",
+                "type": "reg"
+            },
+            "0x000003b8": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_7",
+                "name": "EthACBFCPAUSEFramesReceived7",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesReceived7",
+                "type": "reg"
+            },
+            "0x000003c0": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_0",
+                "name": "EthACBFCPAUSEFramesTransmitted0",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted0",
+                "type": "reg"
+            },
+            "0x000003c8": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_1",
+                "name": "EthACBFCPAUSEFramesTransmitted1",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted1",
+                "type": "reg"
+            },
+            "0x000003d0": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_2",
+                "name": "EthACBFCPAUSEFramesTransmitted2",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted2",
+                "type": "reg"
+            },
+            "0x000003d8": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_3",
+                "name": "EthACBFCPAUSEFramesTransmitted3",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted3",
+                "type": "reg"
+            },
+            "0x000003e0": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_4",
+                "name": "EthACBFCPAUSEFramesTransmitted4",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted4",
+                "type": "reg"
+            },
+            "0x000003e8": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_5",
+                "name": "EthACBFCPAUSEFramesTransmitted5",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted5",
+                "type": "reg"
+            },
+            "0x000003f0": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_6",
+                "name": "EthACBFCPAUSEFramesTransmitted6",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted6",
+                "type": "reg"
+            },
+            "0x000003f8": {
+                "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_7",
+                "name": "EthACBFCPAUSEFramesTransmitted7",
+                "ptr": "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted7",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "macle_eth_mac.EthMacAAlignmentErrors": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_AALIGNMENT_ERRORS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Wrong SFD detected",
+                    "mode": "RO",
+                    "name": "EthAAlignmentErrors"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesReceived0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_0",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames received for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesReceived0"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesReceived1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_1",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames received for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesReceived1"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesReceived2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_2",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames received for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesReceived2"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesReceived3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_3",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames received for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesReceived3"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesReceived4": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_4",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames received for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesReceived4"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesReceived5": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_5",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames received for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesReceived5"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesReceived6": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_6",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames received for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesReceived6"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesReceived7": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_RECEIVED_7",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames received for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesReceived7"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_0",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames transmitted for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesTransmitted0"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_1",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames transmitted for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesTransmitted1"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_2",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames transmitted for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesTransmitted2"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_3",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames transmitted for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesTransmitted3"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted4": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_4",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames transmitted for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesTransmitted4"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted5": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_5",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames transmitted for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesTransmitted5"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted6": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_6",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames transmitted for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesTransmitted6"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacACBFCPAUSEFramesTransmitted7": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ACBFCPAUSEFRAMES_TRANSMITTED_7",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Set of 8 objects recording the number of CBFC (Class Based Flow Control) pause frames transmitted for each class.",
+                    "mode": "RO",
+                    "name": "EthACBFCPAUSEFramesTransmitted7"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacAFrameTooLong": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_AFRAME_TOO_LONG",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good and bad frames exceeding FrmLength received",
+                    "mode": "RO",
+                    "name": "EthAFrameTooLong"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacAInRangeLengthError": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_AIN_RANGE_LENGTH_ERROR",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good frames with invalid length field (not supported)",
+                    "mode": "RO",
+                    "name": "EthAInRangeLengthError"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacAMACControlFrames": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_AMACCONTROL_FRAMES",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good frames received of type 0x8808 but not Pause",
+                    "mode": "RO",
+                    "name": "EthAMACControlFrames"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacAPauseMacCtrlFrames": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_APAUSE_MAC_CTRL_FRAMES",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good Pause frames received",
+                    "mode": "RO",
+                    "name": "EthAPauseMacCtrlFrames"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacCRCErrors": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_CRCERRORS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "wrong CRC and good length (64..MTU) received",
+                    "mode": "RO",
+                    "name": "EthCRCErrors"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacCmdConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_MACCC_RSV_31",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "reserved",
+                    "mode": "RW",
+                    "name": "EthMacccRsv31"
+                },
+                {
+                    "altname": "ETH_SHORT_PREAMBLE",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "reserved; write 0 always",
+                    "mode": "RW",
+                    "name": "EthShortPreamble"
+                },
+                {
+                    "altname": "ETH_MACCC_RSV_29",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "reserved",
+                    "mode": "RW",
+                    "name": "EthMacccRsv29"
+                },
+                {
+                    "altname": "ETH_MACCC_RSV_28",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "reserved",
+                    "mode": "RW",
+                    "name": "EthMacccRsv28"
+                },
+                {
+                    "altname": "ETH_DISABLE_FLT_HDL",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Disable RS fault handling. When set to '0' (default), the MAC automatically inserts remote faults and idles in egress direction on detection of local faults and remote faults, respectively, on ingress direction. When set to '1', this feature is disabled.",
+                    "mode": "RW",
+                    "name": "EthDisableFltHdl"
+                },
+                {
+                    "altname": "ETH_TX_FIFO_RESET",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "Self-Clearing TX FIFO reset command. May not be supported in all Core variants",
+                    "mode": "RW",
+                    "name": "EthTxFifoReset"
+                },
+                {
+                    "altname": "ETH_MACCC_RSV_25",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "reserved",
+                    "mode": "RW",
+                    "name": "EthMacccRsv25"
+                },
+                {
+                    "altname": "ETH_REG_LOWP_RXEMPTY",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Mask toplevel pin reg_lowp with RX FIFO empty.",
+                    "mode": "RW",
+                    "name": "EthRegLowpRxempty"
+                },
+                {
+                    "altname": "ETH_TX_LOWP_ENA",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Instruct RS Layer to transmit LPI.",
+                    "mode": "RW",
+                    "name": "EthTxLowpEna"
+                },
+                {
+                    "altname": "ETH_TX_FLUSH",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Egress flush enable.",
+                    "mode": "RW",
+                    "name": "EthTxFlush"
+                },
+                {
+                    "altname": "ETH_RX_SFD_ANY",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Disable check for SFD (0xd5) and accept frame with any character.",
+                    "mode": "RW",
+                    "name": "EthRxSfdAny"
+                },
+                {
+                    "altname": "ETH_PAUSE_PFC_COMP",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Link Pause compatible with PFC mode. Pause is only indicated but does not stop TX.",
+                    "mode": "RW",
+                    "name": "EthPausePfcComp"
+                },
+                {
+                    "altname": "ETH_PFC_MODE",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "Priority Flow Control Mode enable. If set to 1, the Core generates and processes PFC control frames according to the Priority Flow Control Interface signals. If set to 0 (Reset Value), the Core operates in legacy Pause Frame mode and generates and processes standard Pause Frames.",
+                    "mode": "RW",
+                    "name": "EthPfcMode"
+                },
+                {
+                    "altname": "ETH_RS_COL_CNT_EXT",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "reserved",
+                    "mode": "RW",
+                    "name": "EthRsColCntExt"
+                },
+                {
+                    "altname": "ETH_NO_LGTH_CHECK",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Disable Payload Length Check. Not supported; write 0 always.",
+                    "mode": "RW",
+                    "name": "EthNoLgthCheck"
+                },
+                {
+                    "altname": "ETH_SEND_IDLE",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Force Idle Generation. If set to '1', the MAC permanently sends XLGMII Idle sequences even when faults are received.",
+                    "mode": "RW",
+                    "name": "EthSendIdle"
+                },
+                {
+                    "altname": "ETH_PHY_TXENA",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Controls toplevel pin phy_txena. No internal function",
+                    "mode": "RW",
+                    "name": "EthPhyTxena"
+                },
+                {
+                    "altname": "ETH_RX_ERR_DISCARD",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Enable Receive Errored Frame Discard. Use only with RX FIFO Store and Forward. May not be supported by all Core variants.",
+                    "mode": "RW",
+                    "name": "EthRxErrDiscard"
+                },
+                {
+                    "altname": "ETH_CMD_FRAME_ENA",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Enable Reception of all Control Frames. If set to '1', all control frames are accepted. If set to '0', only Pause frames are accepted and all other command frames are rejected.",
+                    "mode": "RW",
+                    "name": "EthCmdFrameEna"
+                },
+                {
+                    "altname": "ETH_SW_RESET",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Self-Clearing Software Reset. When written with '1', all Statistics Counters are reset to 0.",
+                    "mode": "RW",
+                    "name": "EthSwReset"
+                },
+                {
+                    "altname": "ETH_TX_PAD_EN",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "reserved, 0 always. The MAC never appends padding octets; the user application must provide frames of correct minimum size.",
+                    "mode": "RW",
+                    "name": "EthTxPadEn"
+                },
+                {
+                    "altname": "ETH_LOOP_BACK_EN",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Enable PHY Interface loopback. If set to '1', the signal loop_ena is set to '1'. If set to '0' (Reset value), the signal loop_ena is set to '0'.",
+                    "mode": "RW",
+                    "name": "EthLoopBackEn"
+                },
+                {
+                    "altname": "ETH_TX_ADDR_INS",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Set Source MAC Address on Transmit. If set to '1', the MAC overwrites the source MAC address received from the client interface with the MAC address programmed in registers MacAddr0 and MacAddr1 . If set to '0' (Reset value), the source MAC address from the client interface is transmitted unmodified to the line.",
+                    "mode": "RW",
+                    "name": "EthTxAddrIns"
+                },
+                {
+                    "altname": "ETH_PAUSE_IGNORE",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Ignore received Pause frame quanta. If set to '1', received pause frames are ignored by the MAC. If set to '0' (Reset value), the transmit process is stopped for the amount of time specified in the pause quanta received within a pause frame.",
+                    "mode": "RW",
+                    "name": "EthPauseIgnore"
+                },
+                {
+                    "altname": "ETH_PAUSE_FWD",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Terminate / Forward Pause Frames. If set to '1', pause frames are forwarded to the user application. If set to '0' (Reset value), pause frames are terminated and discarded within the MAC.",
+                    "mode": "RW",
+                    "name": "EthPauseFwd"
+                },
+                {
+                    "altname": "ETH_CRC_FWD",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Terminate / Forward Received CRC. If set to '1', the CRC field of received frames is forwarded with the frame to the user application. If set to '0' (Reset value), the CRC field is stripped from the frame. Note - If padding (Bit PadEn set to ?1?) is enabled, CrcFwd is ignored.",
+                    "mode": "RW",
+                    "name": "EthCrcFwd"
+                },
+                {
+                    "altname": "ETH_PAD_EN",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "reserved, write 0 always. (MAC never removes padding)",
+                    "mode": "RW",
+                    "name": "EthPadEn"
+                },
+                {
+                    "altname": "ETH_PROMIS_EN",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Enable MAC Promiscuous Operation. If set to '1', all frames are received without any MAC address filtering. If set to '0' (Reset value), Unicast frames with a destination address not matching the Core MAC address (programmed in registers MacAddr0 and MacAddr1) are rejected.",
+                    "mode": "RW",
+                    "name": "EthPromisEn"
+                },
+                {
+                    "altname": "ETH_MACCC_RSV_3",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "reserved",
+                    "mode": "RO",
+                    "name": "EthMacccRsv3"
+                },
+                {
+                    "altname": "ETH_MACCC_RSV_2",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "reserved",
+                    "mode": "RO",
+                    "name": "EthMacccRsv2"
+                },
+                {
+                    "altname": "ETH_RX_ENA",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "MAC Receive Path Enable. Should be set to '1' to enable the MAC receive path, should be set to '0' (Reset value) to disable the MAC receive path.",
+                    "mode": "RW",
+                    "name": "EthRxEna"
+                },
+                {
+                    "altname": "ETH_TX_ENA",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "MAC Transmit Path Enable. Should be set to '1' to enable the MAC transmit path, should be set to '0' (Reset value) to disable the MAC transmit path.",
+                    "mode": "RW",
+                    "name": "EthTxEna"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacCreditReg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_CREDITS",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Current credit register value (for debug purpose only).",
+                    "mode": "RO",
+                    "name": "EthCredits"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacCreditTrigger": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_LOAD_CREDIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Credit-based FIFO only: When written with a 1, RX FIFO reset occurs and credit counter loaded from the InitCredit value.",
+                    "mode": "RW",
+                    "name": "EthLoadCredit"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsDropEvents": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_DROP_EVENTS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Dropped frames",
+                    "mode": "RO",
+                    "name": "EthEtherStatsDropEvents"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsFragments": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_FRAGMENTS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames less 64 and bad CRC received",
+                    "mode": "RO",
+                    "name": "EthEtherStatsFragments"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsJabbers": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_JABBERS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames greater FrmLength and bad CRC received",
+                    "mode": "RO",
+                    "name": "EthEtherStatsJabbers"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsOctets": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_OCTETS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Total Octets received; good and bad",
+                    "mode": "RO",
+                    "name": "EthEtherStatsOctets"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsPkts": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_PKTS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames received, good and bad",
+                    "mode": "RO",
+                    "name": "EthEtherStatsPkts"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsPkts1024to1518": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_PKTS_1024TO_1518",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 1024 to 1518 octets received",
+                    "mode": "RO",
+                    "name": "EthEtherStatsPkts1024to1518"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsPkts128to255": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_PKTS_128TO_255",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 128 to 255 octets received",
+                    "mode": "RO",
+                    "name": "EthEtherStatsPkts128to255"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsPkts1519toMax": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_PKTS_1519TO_MAX",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 1519 to FrmLength octets received",
+                    "mode": "RO",
+                    "name": "EthEtherStatsPkts1519toMax"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsPkts256to511": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_PKTS_256TO_511",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 256 to 511 octets received",
+                    "mode": "RO",
+                    "name": "EthEtherStatsPkts256to511"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsPkts512to1023": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_PKTS_512TO_1023",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 512 to 1023 octets received",
+                    "mode": "RO",
+                    "name": "EthEtherStatsPkts512to1023"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsPkts64": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_PKTS_64",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 64 octets received",
+                    "mode": "RO",
+                    "name": "EthEtherStatsPkts64"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsPkts65to127": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_PKTS_65TO_127",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 65 to 127 octets received",
+                    "mode": "RO",
+                    "name": "EthEtherStatsPkts65to127"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacEtherStatsPktsOversize": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ETHER_STATS_PKTS_OVERSIZE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames greater FrmLength and good CRC received",
+                    "mode": "RO",
+                    "name": "EthEtherStatsPktsOversize"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacFramesOK": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_FRAMES_OK",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good frames received",
+                    "mode": "RO",
+                    "name": "EthFramesOK"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacFrmLength": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_MTU",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Optional maximum frame size setting for transmit statistics use if it should be different from receive statistics. When set to 0 the FrmLength value is used (i.e. statistics symmetric for TX and RX).",
+                    "mode": "RW",
+                    "name": "EthTxMtu"
+                },
+                {
+                    "altname": "ETH_FRM_LENGTH",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Maximum Frame Size",
+                    "mode": "RW",
+                    "name": "EthFrmLength"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacHashTableLoad": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ENABLE_MULTICAST_FRAME",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "enables (1) or disables (0) multicast frame reception for the entry.",
+                    "mode": "WO",
+                    "name": "EthEnableMulticastFrame"
+                },
+                {
+                    "altname": "ETH_HASH_TABLE_ADDRESS",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "0 specify the hash table address (code)",
+                    "mode": "WO",
+                    "name": "EthHashTableAddress"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacIfInBcastPkts": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_IF_IN_BCAST_PKTS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good Broadcast received",
+                    "mode": "RO",
+                    "name": "EthIfInBcastPkts"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacIfInErrors": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_IF_IN_ERRORS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Errored frames received",
+                    "mode": "RO",
+                    "name": "EthIfInErrors"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacIfInMcastPkts": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_IF_IN_MCAST_PKTS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good Multicast received",
+                    "mode": "RO",
+                    "name": "EthIfInMcastPkts"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacIfInUcastPkts": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_IF_IN_UCAST_PKTS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good Unicast received",
+                    "mode": "RO",
+                    "name": "EthIfInUcastPkts"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacIfOutBcastPkts": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_IF_OUT_BCAST_PKTS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good Broadcast transmitted",
+                    "mode": "RO",
+                    "name": "EthIfOutBcastPkts"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacIfOutErrors": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_IF_OUT_ERRORS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Errored frames transmitted",
+                    "mode": "RO",
+                    "name": "EthIfOutErrors"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacIfOutMcastPkts": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_IF_OUT_MCAST_PKTS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good Multicast transmitted",
+                    "mode": "RO",
+                    "name": "EthIfOutMcastPkts"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacIfOutUcastPkts": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_IF_OUT_UCAST_PKTS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good Unicast transmitted",
+                    "mode": "RO",
+                    "name": "EthIfOutUcastPkts"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacInitCredit": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_INITIAL_CREDIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Credit-based FIFO only: Specifies the initial credit value to be loaded.",
+                    "mode": "RW",
+                    "name": "EthInitialCredit"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacMacAddr0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_MAC_ADDR_0",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "First 4 bytes of the MAC Address. First byte is 7:0.",
+                    "mode": "RW",
+                    "name": "EthMacAddr0"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacMacAddr1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_MAC_ADDR_1",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Last 2 bytes: 5th is 7:0, 6th is 15:8",
+                    "mode": "RW",
+                    "name": "EthMacAddr1"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacMdioCfgStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_MDIO_CLK_DIVISOR",
+                    "bit_lsb": 7,
+                    "bit_msb": 15,
+                    "description": "MDIO clock divisor; A value of 5 to 511. The frequency is reg_clk/(2*divisor+1). The reset default is defined by the synthesis package setting MDIO_CLK_DIV. Setting the divisor to 0 disables MDC.",
+                    "mode": "RO",
+                    "name": "EthMdioClkDivisor"
+                },
+                {
+                    "altname": "ETH_MDIO_CLAUSE_45",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "MDIO transaction use Clause 45 format (1) or Clause 22 format (0).",
+                    "mode": "RO",
+                    "name": "EthMdioClause45"
+                },
+                {
+                    "altname": "ETH_MDIO_DISABLE_PREAMBLE",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "MDIO transaction preamble disable. Shortens transaction but is non-standard.",
+                    "mode": "RO",
+                    "name": "EthMdioDisablePreamble"
+                },
+                {
+                    "altname": "ETH_MDIO_HOLD_TIME",
+                    "bit_lsb": 2,
+                    "bit_msb": 4,
+                    "description": "MDIO hold time setting (reg_clk cycles).",
+                    "mode": "RW",
+                    "name": "EthMdioHoldTime"
+                },
+                {
+                    "altname": "ETH_MDIO_RD_ERROR",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "MDIO read error. If set, the last read transaction had no response from a PHY and the data read could be invalid. This can happen, if the PHY address does not match any PHY that is available on the MDIO bus.",
+                    "mode": "RO",
+                    "name": "EthMdioRdError"
+                },
+                {
+                    "altname": "ETH_MDIO_BUSY",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "MDIO busy. If set, a MDIO transaction is currently ongoing. If cleared, the application can access the other registers.",
+                    "mode": "RO",
+                    "name": "EthMdioBusy"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacMdioCommand": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_MDIO_RD_CMD",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "If written with 1, a normal read transaction is initiated.",
+                    "mode": "WO",
+                    "name": "EthMdioRdCmd"
+                },
+                {
+                    "altname": "ETH_MDIO_RD_CMD_CL_45",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "If written with 1, a read with address post-increment will be performed. Post-increment will be performed in the PHY internal address register.",
+                    "mode": "WO",
+                    "name": "EthMdioRdCmdCl45"
+                },
+                {
+                    "altname": "ETH_MDIO_PORT_PHY_ADDR",
+                    "bit_lsb": 5,
+                    "bit_msb": 9,
+                    "description": "Port Address",
+                    "mode": "WO",
+                    "name": "EthMdioPortPhyAddr"
+                },
+                {
+                    "altname": "ETH_MDIO_DEV_REG_ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Device Address",
+                    "mode": "WO",
+                    "name": "EthMdioDevRegAddr"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacMdioData": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_MDIO_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "16-bit data word. When written- Initiates a write transaction to the PHY. The MdioCommand register must have been initialized. The busy status bit will be set immediately and cleared when the write transaction has finished. When read - Returns the data read from the PHY register after a read transaction has been completed (initiated by writing a 1 to Bit 15 or Bit 14 of the MdioCommand register).",
+                    "mode": "RW",
+                    "name": "EthMdioData"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacMdioRegAddr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_MDIO_REG_ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "The MdioCommand register must have been initialized before the first write to this register.",
+                    "mode": "WO",
+                    "name": "EthMdioRegAddr"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacOctetsOK": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_OCTETS_OK",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Total Octets received; good",
+                    "mode": "RO",
+                    "name": "EthOctetsOK"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacPauseQuantaCL01": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PAUSE_QUANTA_CL1",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Value to be sent for the PFC quanta value for that class when a class XOFF is triggered. Each Quanta specifies a 512 bit-time.",
+                    "mode": "RW",
+                    "name": "EthPauseQuantaCL1"
+                },
+                {
+                    "altname": "ETH_PAUSE_QUANTA_CL0",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "PauseQuantaCL0",
+                    "mode": "RW",
+                    "name": "EthPauseQuantaCL0"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacPauseQuantaCL23": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PAUSE_QUANTA_CL3",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "PauseQuantaCL3; Value to be sent for the PFC quanta value for that class when a class XOFF is triggered.",
+                    "mode": "RW",
+                    "name": "EthPauseQuantaCL3"
+                },
+                {
+                    "altname": "ETH_PAUSE_QUANTA_CL2",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "PauseQuantaCL2",
+                    "mode": "RW",
+                    "name": "EthPauseQuantaCL2"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacPauseQuantaCL45": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PAUSE_QUANTA_CL5",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "PauseQuantaCL5; Value to be sent for the PFC quanta value for that class when a class XOFF is triggered.",
+                    "mode": "RW",
+                    "name": "EthPauseQuantaCL5"
+                },
+                {
+                    "altname": "ETH_PAUSE_QUANTA_CL4",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "PauseQuantaCL4",
+                    "mode": "RW",
+                    "name": "EthPauseQuantaCL4"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacPauseQuantaCL67": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PAUSE_QUANTA_CL7",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "PauseQuantaCL7; Value to be sent for the PFC quanta value for that class when a class XOFF is triggered.",
+                    "mode": "RW",
+                    "name": "EthPauseQuantaCL7"
+                },
+                {
+                    "altname": "ETH_PAUSE_QUANTA_CL6",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "PauseQuantaCL6",
+                    "mode": "RW",
+                    "name": "EthPauseQuantaCL6"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacQuantaThreshCL01": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_QUANTA_THRESH_CL1",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "QuantaThreshCL1;When a PFC quanta timer counts down and reaches this value, a refresh pause frame should be sent with the programmed full quanta value if the input level indicates that a pause condition still exists.",
+                    "mode": "RW",
+                    "name": "EthQuantaThreshCL1"
+                },
+                {
+                    "altname": "ETH_QUANTA_THRESH_CL0",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "QuantaThreshCL0",
+                    "mode": "RW",
+                    "name": "EthQuantaThreshCL0"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacQuantaThreshCL23": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_QUANTA_THRESH_CL3",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "QuantaThreshCL3; When a PFC quanta timer counts down and reaches this value, a refresh pause frame should be sent with the programmed full quanta value if the input level indicates that a pause condition still exists.",
+                    "mode": "RW",
+                    "name": "EthQuantaThreshCL3"
+                },
+                {
+                    "altname": "ETH_QUANTA_THRESH_CL2",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "QuantaThreshCL2",
+                    "mode": "RW",
+                    "name": "EthQuantaThreshCL2"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacQuantaThreshCL45": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_QUANTA_THRESH_CL5",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "QuantaThreshCL5",
+                    "mode": "RW",
+                    "name": "EthQuantaThreshCL5"
+                },
+                {
+                    "altname": "ETH_QUANTA_THRESH_CL4",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "QuantaThreshCL4",
+                    "mode": "RW",
+                    "name": "EthQuantaThreshCL4"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacQuantaThreshCL67": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_QUANTA_THRESH_CL7",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "QuantaThreshCL7",
+                    "mode": "RW",
+                    "name": "EthQuantaThreshCL7"
+                },
+                {
+                    "altname": "ETH_QUANTA_THRESH_CL6",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "QuantaThreshCL6",
+                    "mode": "RW",
+                    "name": "EthQuantaThreshCL6"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacRevision": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_CUST_REV",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Programmable Customer Revision from package parameter CUST_REVISION",
+                    "mode": "RO",
+                    "name": "EthCustRev"
+                },
+                {
+                    "altname": "ETH_CORE_VER",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "8-bit value from package parameter CORE_VERSION",
+                    "mode": "RO",
+                    "name": "EthCoreVer"
+                },
+                {
+                    "altname": "ETH_CORE_REV",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "8-bit value from package parameter CORE_REVISION",
+                    "mode": "RO",
+                    "name": "EthCoreRev"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacRxFifoAlmostFE": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_RX_FIFO_ALMOST_FULL",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "RX FIFO almost full threshold",
+                    "mode": "RO",
+                    "name": "EthRxFifoAlmostFull"
+                },
+                {
+                    "altname": "ETH_RX_FIFO_ALMOST_EMPTY",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "RX FIFO almost empty threshold",
+                    "mode": "RO",
+                    "name": "EthRxFifoAlmostEmpty"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacRxFifoSections": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_RX_SECTION_EMPTY_WM",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "RX section empty threshold",
+                    "mode": "RW",
+                    "name": "EthRxSectionEmptyWm"
+                },
+                {
+                    "altname": "ETH_RX_SECTION_AVAIL_WM",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "RX section avail. threshold",
+                    "mode": "RW",
+                    "name": "EthRxSectionAvailWm"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacRxPauseStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PAUSE_STATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Status bit for software to read the current received pause status. One bit for each of the 8 classes.",
+                    "mode": "RO",
+                    "name": "EthPauseStatus"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacScratch": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_SCRATCH",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "The Scratch Register provides a memory location to test the register access",
+                    "mode": "RW",
+                    "name": "EthScratch"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacStatConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_CLEAR",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Clear all counters command (self-clearing). When written with 1 all counters (tx and rx) are cleared (set to STATN_CLEARVALUE).",
+                    "mode": "RW",
+                    "name": "EthClear"
+                },
+                {
+                    "altname": "ETH_CLEAR_ON_READ",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Configure clear-on-read behavior. When set to 1, the counters are cleared (set to STATN_CLEARVALUE) after having been transferred into the read registers (snapshot captured). When set 0 (default) the counters are not modified when read/captured.",
+                    "mode": "RW",
+                    "name": "EthClearOnRead"
+                },
+                {
+                    "altname": "ETH_SATURATE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Configure saturation behavior. When set to 1, the counters saturate at all-1. Otherwise counters wrap around.",
+                    "mode": "RW",
+                    "name": "EthSaturate"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacStatnClearvalueHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_VALUE_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Upper 32bit of 64bit value used for clearing a memory entry. Value resets to 0 when command_config.sw_reset is issued.",
+                    "mode": "RW",
+                    "name": "EthValueHi"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacStatnClearvalueLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_VALUE_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32bit of 64bit value used for clearing a memory entry. Value resets to 0 when command_config.sw_reset is issued.",
+                    "mode": "RW",
+                    "name": "EthValueLo"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_IS_IDLE",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "TX MAC datapath (statemachine) is idle",
+                    "mode": "RO",
+                    "name": "EthTxIsIdle"
+                },
+                {
+                    "altname": "ETH_RX_LINT_FAULT",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Special Link Interruption Fault Sequence detected in receive",
+                    "mode": "RO",
+                    "name": "EthRxLintFault"
+                },
+                {
+                    "altname": "ETH_RX_EMPTY",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "RX FIFO is empty",
+                    "mode": "RO",
+                    "name": "EthRxEmpty"
+                },
+                {
+                    "altname": "ETH_TX_EMPTY",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "TX FIFO is empty",
+                    "mode": "RO",
+                    "name": "EthTxEmpty"
+                },
+                {
+                    "altname": "ETH_RX_LOWP",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Receiving Low Power Idle (LPI)",
+                    "mode": "RO",
+                    "name": "EthRxLowp"
+                },
+                {
+                    "altname": "ETH_TS_AVAIL",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Transmit Timestamp Available. Indicates that the timestamp of the last transmitted 1588 event frame is available in the register Timestamp.  To clear TsAvail, the bit must be written with a '1'.",
+                    "mode": "W1C",
+                    "name": "EthTsAvail"
+                },
+                {
+                    "altname": "ETH_PHY_LOS",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "PHY indicates loss-of-signal. Represents value of pin \"phy_los\".",
+                    "mode": "RO",
+                    "name": "EthPhyLos"
+                },
+                {
+                    "altname": "ETH_RX_REM_FAULT",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Remote Fault Status. Set to '1' when the MAC detects Rx Remote Fault Sequences on the CGMII receive interface",
+                    "mode": "RO",
+                    "name": "EthRxRemFault"
+                },
+                {
+                    "altname": "ETH_RX_LOC_FAULT",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Local Fault Status. Set to '1' when the MAC detects Rx Local Fault Sequences on the CGMII receive interface.",
+                    "mode": "RO",
+                    "name": "EthRxLocFault"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTimestamp": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TIMESTAMP",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Timestamp of the last frame transmitted by the Core that had the ff_tx_ts_frm signal asserted from the user application. Valid when the status bit TsAvail is set to '1'.",
+                    "mode": "RO",
+                    "name": "EthTimestamp"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxAMACControlFrames": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_AMACCONTROL_FRAMES",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good frames transmitted of type 0x8808 but not Pause",
+                    "mode": "RO",
+                    "name": "EthTxAMACControlFrames"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxAPauseMacCtrlFrames": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_APAUSE_MAC_CTRL_FRAMES",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good Pause frames transmitted",
+                    "mode": "RO",
+                    "name": "EthTxAPauseMacCtrlFrames"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxCRCErrors": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_CRCERRORS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "wrong CRC transmitted",
+                    "mode": "RO",
+                    "name": "EthTxCRCErrors"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxEtherStatsDropEvents": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_ETHER_STATS_DROP_EVENTS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Dropped frames (unused, reserved)",
+                    "mode": "RO",
+                    "name": "EthTxEtherStatsDropEvents"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxEtherStatsOctets": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_ETHER_STATS_OCTETS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Total Octets transmitted; good and bad",
+                    "mode": "RO",
+                    "name": "EthTxEtherStatsOctets"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxEtherStatsPkts": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_ETHER_STATS_PKTS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames transmitted, good and bad",
+                    "mode": "RO",
+                    "name": "EthTxEtherStatsPkts"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxEtherStatsPkts1024to1518": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_ETHER_STATS_PKTS_1024TO_1518",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 1024 to 1518 octets transmitted",
+                    "mode": "RO",
+                    "name": "EthTxEtherStatsPkts1024to1518"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxEtherStatsPkts128to255": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_ETHER_STATS_PKTS_128TO_255",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 128 to 255 octets transmitted",
+                    "mode": "RO",
+                    "name": "EthTxEtherStatsPkts128to255"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxEtherStatsPkts1519toTXMTU": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_ETHER_STATS_PKTS_1519TO_MAX",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 1519 to FrmLength octets transmitted",
+                    "mode": "RO",
+                    "name": "EthTxEtherStatsPkts1519toMax"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxEtherStatsPkts256to511": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_ETHER_STATS_PKTS_256TO_511",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 256 to 511 octets transmitted",
+                    "mode": "RO",
+                    "name": "EthTxEtherStatsPkts256to511"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxEtherStatsPkts512to1023": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_ETHER_STATS_PKTS_512TO_1023",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 512 to 1023 octets transmitted",
+                    "mode": "RO",
+                    "name": "EthTxEtherStatsPkts512to1023"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxEtherStatsPkts64": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_ETHER_STATS_PKTS_64",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 64 octets transmitted",
+                    "mode": "RO",
+                    "name": "EthTxEtherStatsPkts64"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxEtherStatsPkts65to127": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_ETHER_STATS_PKTS_65TO_127",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Frames of 65 to 127 octets transmitted",
+                    "mode": "RO",
+                    "name": "EthTxEtherStatsPkts65to127"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxFifoAlmostFE": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_FIFO_ALMOST_FULL",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "TX FIFO almost full threshold",
+                    "mode": "RO",
+                    "name": "EthTxFifoAlmostFull"
+                },
+                {
+                    "altname": "ETH_TX_FIFO_ALMOST_EMPTY",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "TX FIFO almost empty threshold",
+                    "mode": "RO",
+                    "name": "EthTxFifoAlmostEmpty"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxFifoSections": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_SECTION_EMPTY",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "TX section empty threshold",
+                    "mode": "RW",
+                    "name": "EthTxSectionEmpty"
+                },
+                {
+                    "altname": "ETH_TX_SECTION_AVAIL",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "TX section avail. threshold",
+                    "mode": "RW",
+                    "name": "EthTxSectionAvail"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxFramesOK": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_FRAMES_OK",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good frames transmitted",
+                    "mode": "RO",
+                    "name": "EthTxFramesOK"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxIpgLength": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_COMPENSATION",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Compensation for PCS inserted markers. Depending on PCS type a value of 16383 (40G) or 20479 (25/50G) must be set.",
+                    "mode": "RW",
+                    "name": "EthCompensation"
+                },
+                {
+                    "altname": "ETH_TX_IPG_LENGTH",
+                    "bit_lsb": 0,
+                    "bit_msb": 6,
+                    "description": "Number of octets in steps of 4 (XGMII) or 8 (XLGMII). Minimum 8. Value 12 should be set for compliant operation.",
+                    "mode": "RW",
+                    "name": "EthTxIpgLength"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxOctetsOK": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_OCTETS_OK",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Total Octets transmitted; good",
+                    "mode": "RO",
+                    "name": "EthTxOctetsOK"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacTxVlanOk": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TX_VLAN_OK",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good Frames with VLAN tag transmitted",
+                    "mode": "RO",
+                    "name": "EthTxVlanOk"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacVlanOk": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_VLAN_OK",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Good Frames with VLAN tag received",
+                    "mode": "RO",
+                    "name": "EthVlanOk"
+                }
+            ]
+        },
+        "macle_eth_mac.EthMacXifMode": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ONESTEPENA",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Enable 1-step capable datapath (if available)",
+                    "mode": "RW",
+                    "name": "EthOnestepena"
+                },
+                {
+                    "altname": "ETH_PAUSE_TIMERX_8",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Enable Pause Timer Compensation when using external XLGMII/GMII Converter",
+                    "mode": "RW",
+                    "name": "EthPauseTimerx8"
+                },
+                {
+                    "altname": "ETH_XGMII",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Enable XGMII-64 (4byte alignment)",
+                    "mode": "RW",
+                    "name": "EthXgmii"
+                }
+            ]
+        }
+    }
+}

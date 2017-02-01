@@ -1,0 +1,512 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "packet_modifier.NbiPmOpcodeRamCnfg": {
+            "0x00000000": {
+                "altname": "NBI_PM_OPCODE32_CNFG0_%d",
+                "description": "Lower 32-bit of row %d of the Opcode Configuration RAM. Contains 4 opcodes, 3..0.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmOpcode32Cnfg0_%d",
+                "offinc1": "0x00000008",
+                "ptr": "packet_modifier.NbiPmOpcode32Cnfg",
+                "repeat1": 256,
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "NBI_PM_OPCODE32_CNFG1_%d",
+                "description": "Upper 32-bit of row %d of the Opcode Configuration RAM. Contains 4 opcodes, 7..4.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmOpcode32Cnfg1_%d",
+                "offinc1": "0x00000008",
+                "ptr": "packet_modifier.NbiPmOpcode32Cnfg",
+                "repeat1": 256,
+                "type": "reg"
+            }
+        },
+        "packet_modifier.NbiPmRdataConfig": {
+            "0x00000000": {
+                "altname": "NBI_PM_RDATA_CNFG0_%d",
+                "description": "Bytes 3..0 of row %d of the Replacement Configuration RAM.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmRdataCnfg0_%d",
+                "offinc1": "0x00000020",
+                "ptr": "packet_modifier.NbiPmRdataCnfg",
+                "repeat1": 256,
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "NBI_PM_RDATA_CNFG1_%d",
+                "description": "Bytes 7..4 of row %d of the Replacement Configuration RAM.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmRdataCnfg1_%d",
+                "offinc1": "0x00000020",
+                "ptr": "packet_modifier.NbiPmRdataCnfg",
+                "repeat1": 256,
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "NBI_PM_RDATA_CNFG2_%d",
+                "description": "Bytes 11..8 of row %d of the Replacement Configuration RAM.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmRdataCnfg2_%d",
+                "offinc1": "0x00000020",
+                "ptr": "packet_modifier.NbiPmRdataCnfg",
+                "repeat1": 256,
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "NBI_PM_RDATA_CNFG3_%d",
+                "description": "Bytes 15..12 of row %d of the Replacement Configuration RAM.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmRdataCnfg3_%d",
+                "offinc1": "0x00000020",
+                "ptr": "packet_modifier.NbiPmRdataCnfg",
+                "repeat1": 256,
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "NBI_PM_RDATA_CNFG4_%d",
+                "description": "Bytes 19..16 of row %d of the Replacement Configuration RAM.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmRdataCnfg4_%d",
+                "offinc1": "0x00000020",
+                "ptr": "packet_modifier.NbiPmRdataCnfg",
+                "repeat1": 256,
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "NBI_PM_RDATA_CNFG5_%d",
+                "description": "Bytes 23..20 of row %d of the Replacement Configuration RAM.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmRdataCnfg5_%d",
+                "offinc1": "0x00000020",
+                "ptr": "packet_modifier.NbiPmRdataCnfg",
+                "repeat1": 256,
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "NBI_PM_RDATA_CNFG6_%d",
+                "description": "Bytes 27..24 of row %d of the Replacement Configuration RAM.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmRdataCnfg6_%d",
+                "offinc1": "0x00000020",
+                "ptr": "packet_modifier.NbiPmRdataCnfg",
+                "repeat1": 256,
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "NBI_PM_RDATA_CNFG7_%d",
+                "description": "Bytes 31..28 of row %d of the Replacement Configuration RAM.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmRdataCnfg7_%d",
+                "offinc1": "0x00000020",
+                "ptr": "packet_modifier.NbiPmRdataCnfg",
+                "repeat1": 256,
+                "type": "reg"
+            }
+        },
+        "packet_modifier.NbiPmRegs": {
+            "0x00000000": {
+                "altname": "NBI_PM_CNFG",
+                "description": "Packet Modifier Configuration Register.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmCnfg",
+                "ptr": "packet_modifier.NbiPmCnfg",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "NBI_PM_PKT_CNT_HI",
+                "description": "Packet Modifier packet counter, High 32-bit",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmPktCntHi",
+                "ptr": "packet_modifier.NbiPmPktCntHi",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "NBI_PM_PKT_CNT_LO",
+                "description": "Packet Modifier packet counter, Low 32-bit",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmPktCntLo",
+                "ptr": "packet_modifier.NbiPmPktCntLo",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "NBI_PM_MOD_CNT_HI",
+                "description": "Counts number of modifications performed, High 32-bit",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmModCntHi",
+                "ptr": "packet_modifier.NbiPmModCntHi",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "NBI_PM_MOD_CNT_LO",
+                "description": "Counts number of modifications performed, Low 32-bit",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmModCntLo",
+                "ptr": "packet_modifier.NbiPmModCntLo",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "NBI_PM_PKT_ERR_CNT_HI",
+                "description": "Packet Error Count, High 32-bit",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmPktErrCntHi",
+                "ptr": "packet_modifier.NbiPmPktErrCntHi",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "NBI_PM_PKT_ERR_CNT_LO",
+                "description": "Packet Error Count, Low 32-bit",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmPktErrCntLo",
+                "ptr": "packet_modifier.NbiPmPktErrCntLo",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "NBI_PM_MODSCR_DECODE_ERR_CNT_HI",
+                "description": "Modification Script Decode Error Count, High 32-bit",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmModscrDecodeErrCntHi",
+                "ptr": "packet_modifier.NbiPmModscrDecodeErrCntHi",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "NBI_PM_MODSCR_DECODE_ERR_CNT_LO",
+                "description": "Modification Script Decode Error Count, Low 32-bit",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmModscrDecodeErrCntLo",
+                "ptr": "packet_modifier.NbiPmModscrDecodeErrCntLo",
+                "type": "reg"
+            }
+        },
+        "packet_modifier.NbiPmXpbRegs": {
+            "0x00000000": {
+                "altname": "NBI_PM_OPCODE_RAM_CNFG",
+                "description": "NBI PM Opcode Ram Configuration.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmOpcodeRamCnfg",
+                "ptr": "packet_modifier.NbiPmOpcodeRamCnfg",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "NBI_PM_OPCODE_RAM_ECC",
+                "description": "NBI PM Opcode SRAM ECC Monitor.",
+                "name": "OpcodeRamECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "NBI_PM_RDATA_CNFG",
+                "description": "NBI PM Replacement Data Ram Configuration.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmRdataConfig",
+                "ptr": "packet_modifier.NbiPmRdataConfig",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "NBI_PM_RDATA_RAM_ECC",
+                "description": "NBI PM Replacement Data SRAM ECC Monitor. Implemented using ecc_monitor4 macro.",
+                "name": "RdataRamECC",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "NBI_PM_REGS",
+                "description": "NBI PM Floped Based registers.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiPmRegs",
+                "ptr": "packet_modifier.NbiPmRegs",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {
+        "packet_modifier.NbiPmCnfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ADD_MOD_SCR_BYTES",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "The NBI Packet Modifier reports number of deleted bytes (for every packet) to the Traffic Manager. 'add_mo_scr_bytes' enables the addition of modification script bytes into deleted byte-count.",
+                    "mode": "RW",
+                    "name": "AddModScrBytes"
+                },
+                {
+                    "altname": "ADD_PAD_BYTES",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "The NBI Packet Modifier reports number of inserted bytes (for every packet) to the Traffic Manager. 'add_pad_bytes' enables the addition of pad bytes into inserted byte-count.",
+                    "mode": "RW",
+                    "name": "AddPadBytes"
+                }
+            ]
+        },
+        "packet_modifier.NbiPmModCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_PM_MOD_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Upper 32-bit of 64-bit Modification Count.",
+                    "mode": "RC",
+                    "name": "NbiPmModCntHi"
+                }
+            ]
+        },
+        "packet_modifier.NbiPmModCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_PM_MOD_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bit of 64-bit Modification Count.",
+                    "mode": "RC",
+                    "name": "NbiPmModCntLo"
+                }
+            ]
+        },
+        "packet_modifier.NbiPmModscrDecodeErrCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_PM_MODSCR_DECODE_ERR_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Upper 32-bit of 64-bit Script Decode Error Count.",
+                    "mode": "RC",
+                    "name": "NbiPmModscrDecodeErrCntHi"
+                }
+            ]
+        },
+        "packet_modifier.NbiPmModscrDecodeErrCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_PM_MODSCR_DECODE_ERR_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "lower 32-bit of 64-bit Script Decode Error Count.",
+                    "mode": "RW",
+                    "name": "NbiPmModscrDecodeErrCntLo"
+                }
+            ]
+        },
+        "packet_modifier.NbiPmOpcode32Cnfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MOD_INSTRUCT_OP3",
+                    "bit_lsb": 29,
+                    "bit_msb": 31,
+                    "description": "Defines the modification instruction, e.g. insert, delete, replace, increment or decrement etc... This is for Opcode 3 or 7.",
+                    "mode": "RW",
+                    "name": "ModInstructOp3"
+                },
+                {
+                    "altname": "NUM_BYTES_OP3",
+                    "bit_lsb": 25,
+                    "bit_msb": 28,
+                    "description": "For mod_instruct '110' (short packet padding), num_bytes defines 'pad_to' values. For all the other opcodes it defines the number of bytes for modification (limited to 16).  This is for opcode 3 or 7.",
+                    "mode": "RW",
+                    "name": "NumBytesOp3"
+                },
+                {
+                    "altname": "MOD_RDATA_OP3",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Indicates from where to get the replacement data from (the modification script itself or the rdata config. RAM) for every opcode. This is only valid when the 'rdata_loc' field of the modification script is '10'.  This is for opcode 3 or 7.",
+                    "mode": "RW",
+                    "name": "ModRdataOp3"
+                },
+                {
+                    "altname": "MOD_INSTRUCT_OP2",
+                    "bit_lsb": 21,
+                    "bit_msb": 23,
+                    "description": "Defines the modification instruction, e.g. insert, delete, replace, increment or decrement etc... This is for Opcode 2 or 6.",
+                    "mode": "RW",
+                    "name": "ModInstructOp2"
+                },
+                {
+                    "altname": "NUM_BYTES_OP2",
+                    "bit_lsb": 17,
+                    "bit_msb": 20,
+                    "description": "For mod_instruct '110' (short packet padding), num_bytes defines 'pad_to' values. For all the other opcodes it defines the number of bytes for modification (limited to 16).  This is for opcode 2 or 6.",
+                    "mode": "RW",
+                    "name": "NumBytesOp2"
+                },
+                {
+                    "altname": "MOD_RDATA_OP2",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Indicates from where to get the replacement data from (the modification script itself or the rdata config. RAM) for every opcode. This is only valid when the 'rdata_loc' field of the modification script is '10'.  This is for opcode 2 or 6.",
+                    "mode": "RW",
+                    "name": "ModRdataOp2"
+                },
+                {
+                    "altname": "MOD_INSTRUCT_OP1",
+                    "bit_lsb": 13,
+                    "bit_msb": 15,
+                    "description": "Defines the modification instruction, e.g. insert, delete, replace, increment or decrement etc... This is for Opcode 1 or 5.",
+                    "mode": "RW",
+                    "name": "ModInstructOp1"
+                },
+                {
+                    "altname": "NUM_BYTES_OP1",
+                    "bit_lsb": 9,
+                    "bit_msb": 12,
+                    "description": "For mod_instruct '110' (short packet padding), num_bytes defines 'pad_to' values. For all the other opcodes it defines the number of bytes for modification (limited to 16).  This is for opcode 1 or 5.",
+                    "mode": "RW",
+                    "name": "NumBytesOp1"
+                },
+                {
+                    "altname": "MOD_RDATA_OP1",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Indicates from where to get the replacement data from (the modification script itself or the rdata config. RAM) for every opcode. This is only valid when the 'rdata_loc' field of the modification script is '10'.  This is for opcode 1 or 5.",
+                    "mode": "RW",
+                    "name": "ModRdataOp1"
+                },
+                {
+                    "altname": "MOD_INSTRUCT_OP0",
+                    "bit_lsb": 5,
+                    "bit_msb": 7,
+                    "description": "Defines the modification instruction, e.g. insert, delete, replace, increment or decrement etc... This is for Opcode 0 or 4.",
+                    "mode": "RW",
+                    "name": "ModInstructOp0"
+                },
+                {
+                    "altname": "NUM_BYTES_OP0",
+                    "bit_lsb": 1,
+                    "bit_msb": 4,
+                    "description": "For mod_instruct '110' (short packet padding), num_bytes defines 'pad_to' values. For all the other opcodes it defines the number of bytes for modification (limited to 16).  This is for opcode 0 or 4.",
+                    "mode": "RW",
+                    "name": "NumBytesOp0"
+                },
+                {
+                    "altname": "MOD_RDATA_OP0",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Indicates from where to get the replacement data from (the modification script itself or the rdata config. RAM) for every opcode. This is only valid when the 'rdata_loc' field of the modification script is '10'.  This is for opcode 0 or 4.",
+                    "mode": "RW",
+                    "name": "ModRdataOp0"
+                }
+            ]
+        },
+        "packet_modifier.NbiPmPktCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_PM_PKT_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Upper 32-bit of 64-bit Packet Count.",
+                    "mode": "RC",
+                    "name": "NbiPmPktCntHi"
+                }
+            ]
+        },
+        "packet_modifier.NbiPmPktCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_PM_PKT_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bit of 64-bit Packet Count.",
+                    "mode": "RC",
+                    "name": "NbiPmPktCntLo"
+                }
+            ]
+        },
+        "packet_modifier.NbiPmPktErrCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_PM_PKT_ERR_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Upper 32-bit of 64-bit Packet Error Count.",
+                    "mode": "RC",
+                    "name": "NbiPmPktErrCntHi"
+                }
+            ]
+        },
+        "packet_modifier.NbiPmPktErrCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NBI_PM_PKT_ERR_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bit of 64-bit Packet Error Count.",
+                    "mode": "RC",
+                    "name": "NbiPmPktErrCntLo"
+                }
+            ]
+        },
+        "packet_modifier.NbiPmRdataCnfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RDATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "32-bit Replacement data for modification",
+                    "mode": "RW",
+                    "name": "Rdata"
+                }
+            ]
+        }
+    }
+}

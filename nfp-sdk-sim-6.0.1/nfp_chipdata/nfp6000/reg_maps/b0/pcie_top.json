@@ -1,0 +1,96 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "pcie_top.PcieInternalTargetsCpp": {
+            "0x00000000": {
+                "altname": "PCIE_INT_TGT_ADDR_MAP",
+                "description": "PCIe Component Internal Target Address Map through CPP Target",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PcieInternalTargets",
+                "ptr": "pcie_internal_targets.PcieInternalTargets",
+                "type": "regmap"
+            }
+        },
+        "pcie_top.PcieXpb": {
+            "0x00000000": {
+                "altname": "PCIE_COMPONENT_CFG_XPB",
+                "description": "PCIe Component and PHY Configuration registers",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PcieComponentCfgXpb",
+                "ptr": "pcie_component_and_phy.PcieComponentCfgXpb",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "PCIE_QUE_ECC",
+                "description": "Error check and correct status registers for Queue Controller. See Peripheral ECC Monitor documentation for more details. Implemented using ecc_monitor macro.",
+                "name": "PcieQueECC",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "PCIE_SRAM_ECC",
+                "description": "Error check and correct status registers for Shared Memory SRAM accessed over XPB. See Peripheral ECC Monitor documentation for more details. Implemented using ecc_monitor4 macro.",
+                "name": "PcieSramECC",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "PCIE_INT_MGR",
+                "description": "Control and Status registers for Interrupt Manager accessed over XPB. See Interrupt Manager documentation for more details.",
+                "name": "PcieIntMgr",
+                "ptr": "peripheral_interrupt_manager.InterruptManagerMap_inst0",
+                "type": "regmap"
+            },
+            "0x00100000": {
+                "altname": "PCIE_PF_REG",
+                "description": "PCIe Controller Core End Point Registers",
+                "name": "Pcie_Pf_Reg",
+                "ptr": "pcie_pf_reg.pcie_PF_addrmap",
+                "type": "regmap"
+            },
+            "0x00110000": {
+                "altname": "PCIE_RC_REG",
+                "description": "PCIe Controller Core Root Complex Registers",
+                "name": "Pcie_Rc_Reg",
+                "ptr": "pcie_rc_reg.pcie_RC_addrmap",
+                "type": "regmap"
+            },
+            "0x00120000": {
+                "altname": "PCIE_LM_REG",
+                "description": "PCIe Controller Core Local Management registers",
+                "name": "Pcie_Lm_Reg",
+                "ptr": "pcie_lm_reg.pcie_LM_addrmap",
+                "type": "regmap"
+            },
+            "0x00130000": {
+                "altname": "PCIE_VF_REG_GROUP%d",
+                "description": "PCIe Core Virtual Function Group Contains 16 VF Regmaps",
+                "name": "Pcie_Vf_Reg_Group%d",
+                "offinc1": "0x00010000",
+                "ptr": "pcie_top.Pcie_Vf_Reg_Group",
+                "repeat1": 4,
+                "type": "regmap"
+            }
+        },
+        "pcie_top.Pcie_Vf_Reg_Group": {
+            "0x00000000": {
+                "altname": "PCIE_VF_REG%d",
+                "description": "PCIe Virtual Function regmap",
+                "name": "PcieVfReg%d",
+                "offinc1": "0x00001000",
+                "ptr": "pcie_vf_reg.pcie_VF_addrmap",
+                "repeat1": 16,
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

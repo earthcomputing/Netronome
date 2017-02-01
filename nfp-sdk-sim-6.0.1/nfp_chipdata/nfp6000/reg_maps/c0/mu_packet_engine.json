@@ -1,0 +1,1551 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "mu_packet_engine.MUPacketEngineAddressMapXpb": {
+            "0x00000000": {
+                "altname": "MU_PE_MEM_CONFIG",
+                "description": "MU PE Memory Configuration",
+                "name": "MUPEMemConfig",
+                "ptr": "mu_packet_engine.MUPEMemConfig",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "MU_PE_WQ_CONFIG",
+                "description": "MU PE Work Queue Config",
+                "name": "MUPEWQConfig",
+                "ptr": "mu_packet_engine.MUPEWQConfig",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "MU_PE_BUFFER_CONFIG",
+                "description": "MU PE Buffer Configuration",
+                "name": "MUPEBufferConfig",
+                "ptr": "mu_packet_engine.MUPEBufferConfig",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "MU_PE_TRACK_ME_CREDITS",
+                "description": "MU PE - Track ME Credits",
+                "name": "MUPETrackMECredits",
+                "ptr": "mu_packet_engine.MUPETrackMECredits",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "MU_PE_ALLOW_NBI_PUSH_TO_COMBINE_TO_16B",
+                "description": "Allow NBI Push to Combine to 16B",
+                "name": "MUPEAllowNBIPushToCombineTo16B",
+                "ptr": "mu_packet_engine.MUPEAllowNBIPushToCombineTo16B",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "MU_PE_ALLOW_DMA_PUSH_TO_COMBINE_TO_16B",
+                "description": "Allow DMA Push to Combine to 16B",
+                "name": "MUPEAllowDMAPushToCombineTo16B",
+                "ptr": "mu_packet_engine.MUPEAllowDMAPushToCombineTo16B",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "MU_PE_DMA_OVERFLOW_INTO_DCACHE_ENABLED",
+                "description": "Allow DMA Commands to be stored into the DCache",
+                "name": "MUPEDMAOverflowIntoDCacheEnabled",
+                "ptr": "mu_packet_engine.MUPEDMAOverflowIntoDCacheEnabled",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "MU_PE_DMA_STORAGE_SIZE",
+                "description": "DMA Storage Size",
+                "name": "MUPEDMAStorageSize",
+                "ptr": "mu_packet_engine.MUPEDMAStorageSize",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "MU_PE_DMA_STORAGE_BASE_ADDRESS",
+                "description": "DMA Storage Base Address",
+                "name": "MUPEDMAStorageBaseAddress",
+                "ptr": "mu_packet_engine.MUPEDMAStorageBaseAddress",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "MU_PE_DMA_MAX_OUTSTANDING_MEM",
+                "description": "DMA Outstanding Rd/Write Commands",
+                "name": "MUPEDMAMaxOutstandingMem",
+                "ptr": "mu_packet_engine.MUPEDMAMaxOutstandingMem",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "MU_PE_DMA_HYSTERESIS",
+                "description": "Empty Slots that need to be avail in the DMA RH before reading new cmds from DCache",
+                "name": "MUPEDMAHysteresis",
+                "ptr": "mu_packet_engine.MUPEDMAHysteresis",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "MU_PE_STOP_PQ_DEQUEUE",
+                "description": "Set before starting WQ Flush. Setting this bit prevents the Packet Queue from draining",
+                "name": "MUPEStopPQDequeue",
+                "ptr": "mu_packet_engine.MUPEStopPQDequeue",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "MU_PE_STOP_WQ_DEQUEUE",
+                "description": "Set before starting PQ Flush. Setting this bit prevents the Work Queue from draining",
+                "name": "MUPEStopWQDequeue",
+                "ptr": "mu_packet_engine.MUPEStopWQDequeue",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "MU_PE_GRANT_CYCLES",
+                "description": "This register controls how many cycles each requestor gets access to the DCache port for",
+                "name": "MUPEGrantCycles",
+                "ptr": "mu_packet_engine.MUPEGrantCycles",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "MU_PE_OVERRIDE_PCIE_LENGTH",
+                "description": "This register is used to override the length from the add_thread command for PCIe packets",
+                "name": "MUPEOverridePCIeLength",
+                "ptr": "mu_packet_engine.MUPEOverridePCIeLength",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "MU_PE_OVERRIDE_PCIE_OFFSET",
+                "description": "This register is used to override the offset from the add_thread command for PCIe packets",
+                "name": "MUPEOverridePCIeOffset",
+                "ptr": "mu_packet_engine.MUPEOverridePCIeOffset",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "MU_PE_MULTICAST_ENABLE",
+                "description": "Enable Hardware Support for Multicast",
+                "name": "MUPEMultiCastEnable",
+                "ptr": "mu_packet_engine.MUPEMultiCastEnable",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "MU_PE_DROP_AWARE_MODE_ENABLE",
+                "description": "Enable DropAwareMode (all dropped packets except multicast dropped packets)",
+                "name": "MUPEDropAwareModeEnable",
+                "ptr": "mu_packet_engine.MUPEDropAwareModeEnable",
+                "type": "reg"
+            },
+            "0x00000048": {
+                "altname": "MU_PE_DROP_RULE_%d",
+                "description": "Drop Rule %d",
+                "name": "MUPEDropRule%d",
+                "offinc1": "0x00000004",
+                "ptr": "mu_packet_engine.MUPEDropRule",
+                "repeat1": 3,
+                "type": "reg"
+            },
+            "0x00000054": {
+                "altname": "MU_PE_DROP_RING_%d",
+                "description": "Drop Ring %d",
+                "name": "MUPEDropRing%d",
+                "offinc1": "0x00000004",
+                "ptr": "mu_packet_engine.MUPEDropRing",
+                "repeat1": 2,
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "MU_PE_NULL_MUPTR",
+                "description": "Null MUPtr. Should be configured to the same value as NBI DMA and NBI TM",
+                "name": "MUPENullMUPtr",
+                "ptr": "mu_packet_engine.MUPENullMUPtr",
+                "type": "reg"
+            },
+            "0x00000064": {
+                "altname": "MU_PE_BYTE_ALIGNED_ADD_THREAD",
+                "description": "Set to enable byte aligned add_thread commands",
+                "name": "MUPEEnableByteAlignedAddThread",
+                "ptr": "mu_packet_engine.MUPEEnableByteAlignedAddThread",
+                "type": "reg"
+            },
+            "0x00000068": {
+                "altname": "MU_PE_ENABLE_DMA_POLL",
+                "description": "Set to enable polling of DMA Queue. If the Queue is full, the ME will be pushed back an error/retry response.",
+                "name": "MUPEEnableDMAPoll",
+                "ptr": "mu_packet_engine.MUPEEnableDMAPoll",
+                "type": "reg"
+            },
+            "0x0000006c": {
+                "altname": "MU_PE_ENABLE_DMA_LENGTH_AND_OFFSET",
+                "description": "Set to enable additional length and offset inputs into DMATo/FromMemPacket and DMATo/FromMemIndirect Commands.",
+                "name": "MUPEEnableDMALengthAndOffset",
+                "ptr": "mu_packet_engine.MUPEEnableDMALengthAndOffset",
+                "type": "reg"
+            },
+            "0x00000070": {
+                "altname": "MU_PE_ENABLE_MPULL_ID_WITH_NO_READ",
+                "description": "Set to enable MpullIDs with NoRead. (Recommended for Performance)",
+                "name": "MUPEEnableMPullIDWithNoRead",
+                "ptr": "mu_packet_engine.MUPEEnableMPullIDWithNoRead",
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "MU_PE_CONFIGURE_ME_CREDITS",
+                "description": "MU PE Configure ME Credits",
+                "name": "MUPEConfigureMECredits",
+                "ptr": "mu_packet_engine.MUPEConfigureMECredits",
+                "type": "reg"
+            },
+            "0x00002800": {
+                "altname": "MU_PE_CLEAR_ALLOC_PACKET_COUNT",
+                "description": "LifeOfAPacket:(Clear) Allocated Packet Count",
+                "name": "MUPEClearAllocPacketCount",
+                "ptr": "mu_packet_engine.MUPECount32WithClear",
+                "type": "reg"
+            },
+            "0x00002804": {
+                "altname": "MU_PE_CLEAR_FIRST_SEGMENT_RX_PACKET_COUNT",
+                "description": "LifeOfAPacket:(Clear) First Segment Received Count",
+                "name": "MUPEClearFirstSegmentRxPacketCount",
+                "ptr": "mu_packet_engine.MUPECount32WithClear",
+                "type": "reg"
+            },
+            "0x00002808": {
+                "altname": "MU_PE_CLEAR_LAST_SEGMENT_RX_PACKET_COUNT",
+                "description": "LifeOfAPacket:(Clear) Last Segment Received Count",
+                "name": "MUPEClearLastSegmentRxPacketCount",
+                "ptr": "mu_packet_engine.MUPECount32WithClear",
+                "type": "reg"
+            },
+            "0x0000280c": {
+                "altname": "MU_PE_CLEAR_SENT_TO_ME_PACKET_COUNT",
+                "description": "LifeOfAPacket:(Clear) Sent to ME Count",
+                "name": "MUPEClearSentToMEPacketCount",
+                "ptr": "mu_packet_engine.MUPECount32WithClear",
+                "type": "reg"
+            },
+            "0x00002810": {
+                "altname": "MU_PE_CLEAR_TX_PACKET_COUNT",
+                "description": "LifeOfAPacket:(Clear) Last PullID Received Count",
+                "name": "MUPEClearTxPacketCount",
+                "ptr": "mu_packet_engine.MUPECount32WithClear",
+                "type": "reg"
+            },
+            "0x00002814": {
+                "altname": "MU_PE_CLEAR_FREE_PACKET_COUNT",
+                "description": "LifeOfAPacket:(Clear) Free Packet Count",
+                "name": "MUPEClearFreePacketCount",
+                "ptr": "mu_packet_engine.MUPECount32WithClear",
+                "type": "reg"
+            },
+            "0x00002818": {
+                "altname": "MU_PE_ACTIVE_PACKET_COUNT",
+                "description": "Active Packet Count",
+                "name": "MUPEActivePacketCount",
+                "ptr": "mu_packet_engine.MUPECount11_inst0",
+                "type": "reg"
+            },
+            "0x0000281c": {
+                "altname": "MU_PE_ACTIVE_PACKET_COUNT_OWNER%d",
+                "description": "Active Packet Count (Per Owner). Owner 3 maps to Owner 0. Do not read 3, read 0 instead.",
+                "name": "MUPEActivePacketCountOwner%d",
+                "offinc1": "0x00000004",
+                "ptr": "mu_packet_engine.MUPECount11_inst0",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x0000283c": {
+                "altname": "MU_PE_ACTIVE_BYTE_COUNT",
+                "description": "Active Byte Count",
+                "name": "MUPEActiveByteCount",
+                "ptr": "mu_packet_engine.MUPECount11_inst0",
+                "type": "reg"
+            },
+            "0x00002840": {
+                "altname": "MU_PE_ACTIVE_BYTE_COUNT_OWNER%d",
+                "description": "Active Byte Count (Per Owner). Owner 3 maps to Owner 0. Do not read 3, read 0 instead.",
+                "name": "MUPEActiveByteCountOwner%d",
+                "offinc1": "0x00000004",
+                "ptr": "mu_packet_engine.MUPECount11_inst0",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00002860": {
+                "altname": "MU_PE_PEAK_PACKET_COUNT",
+                "description": "Peak Packet Count",
+                "name": "MUPEPeakPacketCount",
+                "ptr": "mu_packet_engine.MUPECount11_inst0",
+                "type": "reg"
+            },
+            "0x00002864": {
+                "altname": "MU_PE_CLEAR_PEAK_PACKET_COUNT",
+                "description": "(Clear) Peak Packet Count",
+                "name": "MUPEClearPeakPacketCount",
+                "ptr": "mu_packet_engine.MUPECount11WithClear",
+                "type": "reg"
+            },
+            "0x00002868": {
+                "altname": "MU_PE_CLEAR_PEAK_PACKET_COUNT_OWNER%d",
+                "description": "(Clear) Peak Packet Count (Per Owner). Owner 3 maps to Owner 0. Do not read 3, read 0 instead.",
+                "name": "MUPEClearPeakPacketCountOwner%d",
+                "offinc1": "0x00000004",
+                "ptr": "mu_packet_engine.MUPECount11WithClear",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00002888": {
+                "altname": "MU_PE_PEAK_BYTE_COUNT",
+                "description": "Peak Byte Count",
+                "name": "MUPEPeakByteCount",
+                "ptr": "mu_packet_engine.MUPECount11_inst0",
+                "type": "reg"
+            },
+            "0x0000288c": {
+                "altname": "MU_PE_CLEAR_PEAK_BYTE_COUNT",
+                "description": "(Clear) Peak Byte Count",
+                "name": "MUPEClearPeakByteCount",
+                "ptr": "mu_packet_engine.MUPECount11WithClear",
+                "type": "reg"
+            },
+            "0x00002890": {
+                "altname": "MU_PE_CLEAR_PEAK_BYTE_COUNT_OWNER%d",
+                "description": "(Clear) Peak Byte Count (Per Owner). Owner 3 maps to Owner 0. Do not read 3, read 0 instead.",
+                "name": "MUPEClearPeakByteCountOwner%d",
+                "offinc1": "0x00000004",
+                "ptr": "mu_packet_engine.MUPECount11WithClear",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x000028b0": {
+                "altname": "MU_PE_WQ_ACTIVE_COUNT",
+                "description": "Number of Entries currently present in WQ",
+                "name": "MUPEWQActiveCount",
+                "ptr": "mu_packet_engine.MUPECount8",
+                "type": "reg"
+            },
+            "0x000028b4": {
+                "altname": "MU_PE_PQ_ACTIVE_COUNT",
+                "description": "Number of Entries currently present in PQ",
+                "name": "MUPEPQActiveCount",
+                "ptr": "mu_packet_engine.MUPECount10",
+                "type": "reg"
+            },
+            "0x000028b8": {
+                "altname": "MU_PE_ADD_PACKET_TOTAL_COUNT",
+                "description": "(Clear) Total Number of packets added to Packet Queue",
+                "name": "MUPEClearAddPacketTotalCount",
+                "ptr": "mu_packet_engine.MUPECount32WithClear",
+                "type": "reg"
+            },
+            "0x000028bc": {
+                "altname": "MU_PE_CMD_ADD_PACKET_TOTAL_COUNT",
+                "description": "(Clear) Total Number of packets added to Packet Queue via AddPacket Command",
+                "name": "MUPEClearCmdAddPacketTotalCount",
+                "ptr": "mu_packet_engine.MUPECount32WithClear",
+                "type": "reg"
+            },
+            "0x000028c0": {
+                "altname": "MU_PE_MPUSH_ADD_PACKET_TOTAL_COUNT",
+                "description": "(Clear) Total Number of packets added to Packet Queue via MPush",
+                "name": "MUPEClearMpushAddPacketTotalCount",
+                "ptr": "mu_packet_engine.MUPECount32WithClear",
+                "type": "reg"
+            },
+            "0x000028c4": {
+                "altname": "MU_PE_DMAS_AVAILABLE_IN_DCACHE_COUNT",
+                "description": "Number of DMA Descriptors Available in DCache",
+                "name": "MUPEDMAsAvailableInDcacheCount",
+                "ptr": "mu_packet_engine.MUPECount11_inst1",
+                "type": "reg"
+            },
+            "0x000028c8": {
+                "altname": "MU_PE_INCOMING_DMA_REQUEST_CREDITS_AVAILABLE",
+                "description": "Incoming DMA Request Credits Available (Credits Available in DMA RH)",
+                "name": "MUPEDMARequestCreditsAvailable",
+                "ptr": "mu_packet_engine.MUPECount6",
+                "type": "reg"
+            },
+            "0x000028cc": {
+                "altname": "MU_PE_FINGERPRINT_WAS_ERRORED_COUNT",
+                "description": "(Clear) Fingerprint was Errored Count",
+                "name": "MUPEClearFingerprintWasErroredCount",
+                "ptr": "mu_packet_engine.MUPECount11WithClear",
+                "type": "reg"
+            },
+            "0x000028d0": {
+                "altname": "MU_PE_DMA_DESCRIPTOR_WAS_ERRORED_COUNT",
+                "description": "(Clear) DMADescriptor was Errored Count",
+                "name": "MUPEClearDMADescriptorWasErroredCount",
+                "ptr": "mu_packet_engine.MUPECount11WithClear",
+                "type": "reg"
+            },
+            "0x00002a00": {
+                "altname": "MU_PE_CLEAR_ASSERTIONS_FIRED",
+                "description": "This register sets a bit per assertions_drive module that was fired",
+                "name": "MUPEClearAssertionsFired",
+                "ptr": "mu_packet_engine.MUPEClearAssertionsFired",
+                "type": "reg"
+            },
+            "0x00002a04": {
+                "altname": "MU_PE_CLEAR_ASSERTIONS_BUS",
+                "description": "Some useful assertions put into a register to avoid binary search",
+                "name": "MUPEClearAssertionsBus",
+                "ptr": "mu_packet_engine.MUPEClearAssertionsBus",
+                "type": "reg"
+            },
+            "0x00002c00": {
+                "altname": "MU_PE_CREDIT_TRACKING_MASTER_CREDITS_%d",
+                "description": "MU PE Credit Tracking Master Credits. Owner 3 maps to Owner 0. Do not read 3, read 0 instead.",
+                "name": "MUPECreditTrackingMasterCredits%d",
+                "offinc1": "0x00000004",
+                "ptr": "mu_packet_engine.MUPECredits",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00002c20": {
+                "altname": "MU_PE_CREDIT_TRANSPARENT_MASTER_CREDITS",
+                "description": "MU PE Credit Transparent Master Credits",
+                "name": "MUPECreditTransparentMasterCredits",
+                "ptr": "mu_packet_engine.MUPECredits256B",
+                "type": "reg"
+            },
+            "0x00003000": {
+                "altname": "MU_PE_CLEAR_WQ",
+                "description": "Clear WQ FIFO",
+                "name": "MUPEClearWQ",
+                "ptr": "mu_packet_engine.MUPEClearWQ",
+                "type": "reg"
+            },
+            "0x00003004": {
+                "altname": "MU_PE_CLEAR_PQ",
+                "description": "Clear PQ FIFO",
+                "name": "MUPEClearPQ",
+                "ptr": "mu_packet_engine.MUPEClearPQ",
+                "type": "reg"
+            },
+            "0x00004000": {
+                "altname": "MU_PE_ASSERTION_CONFIG",
+                "description": "Assertion Reporting Configuration Register for Packet Engine",
+                "name": "MUPEAssertionsConfig",
+                "ptr": "mu_packet_engine.MUPEAssertionsConfig",
+                "type": "reg"
+            },
+            "0x00006800": {
+                "altname": "MU_PE_CREDIT_THROTTLE_CONFIG",
+                "description": "Credit Throttle Config",
+                "name": "MUPECreditThrottleConfig",
+                "ptr": "credit_tracker_config.CreditThrottleConfigOnly",
+                "type": "reg"
+            },
+            "0x00006804": {
+                "altname": "MU_PE_CREDIT_THROTTLE_ACTION",
+                "description": "Credit Throttle Pair Action",
+                "name": "MUPECreditThrottlePairAction",
+                "ptr": "credit_tracker_config.CreditThrottleAction",
+                "type": "reg"
+            },
+            "0x00006c00": {
+                "altname": "MU_PE_MPULL_BUS_LB_CONFIG_%d",
+                "description": "Load Balance Config for CH %d",
+                "name": "MUPEMPullBusLBConfig%d",
+                "offinc1": "0x00000004",
+                "ptr": "mu_packet_engine.MUPELBConfig",
+                "repeat1": 2,
+                "type": "reg"
+            },
+            "0x00006c08": {
+                "altname": "MU_PE_MPULL_BUS_DWRR_CREDITS_CONFIG_%d",
+                "description": "Dynamic Load Balance Config (DWRR) for CH %d",
+                "name": "MUPEMPullBusDWRRCreditsConfig%d",
+                "offinc1": "0x00000004",
+                "ptr": "dsf_cpp_config.DsfCppDynamicLoadBalancerConfig",
+                "repeat1": 2,
+                "type": "reg"
+            },
+            "0x00006c10": {
+                "altname": "MU_PE_MPULL_BUS_STATIC_LB_CONFIG_%d",
+                "description": "Static Load Balance Config for MPULL CH %d",
+                "name": "MUPEMPullBusStaticLBConfig%d",
+                "offinc1": "0x00000004",
+                "ptr": "dsf_cpp_config.DsfCppLoadBalancerConfig",
+                "repeat1": 2,
+                "type": "reg"
+            },
+            "0x00006c18": {
+                "altname": "MU_PE_MPULL_BUS_RL_CONFIG_%d",
+                "description": "Rate Limiter Config for CH0A (0), CH0B (1), CH1A(2), CH1B(3)",
+                "name": "MUPEMPullBusRLConfig%d",
+                "offinc1": "0x00000004",
+                "ptr": "dsf_cpp_config.DsfCppRateLimiterConfig",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00006c28": {
+                "altname": "MU_PE_COMMAND_BUS_DWRR_CREDITS_CONFIG",
+                "description": "Dynamic Load Balance Config (DWRR) for CMD CH",
+                "name": "MUPECommandBusDWRRCreditsConfig",
+                "ptr": "dsf_cpp_config.DsfCppDynamicLoadBalancerConfig",
+                "type": "reg"
+            },
+            "0x00006c2c": {
+                "altname": "MU_PE_RATE_SELECT",
+                "description": "Select bus whose rate needs to be measured",
+                "name": "MUPERateSelect",
+                "ptr": "mu_packet_engine.MUPERateSelect",
+                "type": "reg"
+            },
+            "0x00006c30": {
+                "altname": "MU_PE_RATE",
+                "description": "Measured rate for selected bus",
+                "name": "MUPERate",
+                "ptr": "mu_packet_engine.MUPERate",
+                "type": "reg"
+            },
+            "0x00008000": {
+                "altname": "MU_PE_WQ",
+                "description": "ECC Control Register for the Work Queue",
+                "name": "MUPEWQ",
+                "ptr": "peripheral_ecc_monitor.ECCSramCnt",
+                "type": "reg"
+            },
+            "0x00008004": {
+                "altname": "MU_PE_PQ",
+                "description": "ECC Control Register for Packet Queue",
+                "name": "MUPEPQ",
+                "ptr": "peripheral_ecc_monitor.ECCSramCnt",
+                "type": "reg"
+            },
+            "0x00008008": {
+                "altname": "MU_PE_PP",
+                "description": "ECC Control Register for Mpush, Tpush Memories",
+                "name": "MUPEPP",
+                "ptr": "peripheral_ecc_monitor.ECCSramCnt",
+                "type": "reg"
+            },
+            "0x00008280": {
+                "altname": "MU_PE_DROP_ON_RETRY",
+                "description": "MU PE Drop Packet Processing Complete on Retry",
+                "name": "MUPEDropOnRetry",
+                "ptr": "mu_packet_engine.MUPEDropOnRetry",
+                "type": "reg"
+            },
+            "0x00008284": {
+                "altname": "MU_PE_RAISE_EVENT_ON_RETRY",
+                "description": "MU PE Raise Event on Retry",
+                "name": "MUPERaiseEventOnRetry",
+                "ptr": "mu_packet_engine.MUPERaiseEventOnRetry",
+                "type": "reg"
+            },
+            "0x00008288": {
+                "altname": "MU_PE_PPC_WAS_RETRIED",
+                "description": "MU PE PPC Was Retried",
+                "name": "MUPEPPCWasRetried",
+                "ptr": "mu_packet_engine.MUPEPPCWasRetried",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "mu_packet_engine.MUPEAllowDMAPushToCombineTo16B": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_ALLOW_DMA_PUSH_TO_COMBINE_TO_16B",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Allow DMA Push to combine to 16B",
+                    "mode": "RW",
+                    "name": "MUPEAllowDMAPushToCombineTo16B"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEAllowNBIPushToCombineTo16B": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_ALLOW_NBI_PUSH_TO_COMBINE_TO_16B",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Allow NBI Push to combine to 16B",
+                    "mode": "RW",
+                    "name": "MUPEAllowNBIPushToCombineTo16B"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEAssertionsConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_ENABLE_FSMS",
+                    "bit_lsb": 30,
+                    "bit_msb": 31,
+                    "description": "Enable FSMS (Only assertions drive 0 and 1 have FSM status connected to them",
+                    "mode": "RW",
+                    "name": "MUPEEnableFSMs"
+                },
+                {
+                    "altname": "MU_PE_FSM_CONFIG",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "FSM Config",
+                    "mode": "RW",
+                    "name": "MUPEFSMConfig"
+                },
+                {
+                    "altname": "MU_PE_DISABLE_ASSERTIONS",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Disable Assertions",
+                    "mode": "RW",
+                    "name": "MUPEDisableAssertions"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEBufferConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_BUFFER_CONFIG",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Buffer Config",
+                    "mode": "RW",
+                    "name": "MUPEBufferConfig"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEClearAssertionsBus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PAT_INVALID_FREE",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "PatInvalidFree",
+                    "mode": "RC",
+                    "name": "PatInvalidFree"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_ATOMIC",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "PatPatTranslateInvalidPacketAtomic",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketAtomic"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_BULK",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "PatPatTranslateInvalidPacketBulk",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketBulk"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_DMA",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "PatPatTranslateInvalidPacketDma",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketDma"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_DC_MPUSH_CH0A",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "PatPatTranslateInvalidPacketDcMpushCh0a",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketDcMpushCh0a"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_DC_MPUSH_CH0B",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "PatPatTranslateInvalidPacketDcMpushCh0b",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketDcMpushCh0b"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_DC_MPUSH_CH1A",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "PatPatTranslateInvalidPacketDcMpushCh1a",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketDcMpushCh1a"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_DC_MPUSH_CH1B",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "PatPatTranslateInvalidPacketDcMpushCh1b",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketDcMpushCh1b"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_DC_MPULL_CH0",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "PatPatTranslateInvalidPacketDcMpullCh0",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketDcMpullCh0"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_DC_MPULL_CH1",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "PatPatTranslateInvalidPacketDcMpullCh1",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketDcMpullCh1"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_DC_TPUSH_CH0",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "PatPatTranslateInvalidPacketDcTpushCh0",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketDcTpushCh0"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_DC_TPUSH_CH1",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "PatPatTranslateInvalidPacketDcTpushCh1",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketDcTpushCh1"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_DC_MPTR_CH0",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "PatPatTranslateInvalidPacketDcMptrCh0",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketDcMptrCh0"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_PACKET_DC_MPTR_CH1",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "PatPatTranslateInvalidPacketDcMptrCh1",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidPacketDcMptrCh1"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_ATOMIC",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "PatPatTranslateInvalidOffsetAtomic",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetAtomic"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_BULK",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "PatPatTranslateInvalidOffsetBulk",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetBulk"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_DMA",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "PatPatTranslateInvalidOffsetDma",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetDma"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_DC_MPUSH_CH0A",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "PatPatTranslateInvalidOffsetDcMpushCh0a",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetDcMpushCh0a"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_DC_MPUSH_CH0B",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "PatPatTranslateInvalidOffsetDcMpushCh0b",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetDcMpushCh0b"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_DC_MPUSH_CH1A",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "PatPatTranslateInvalidOffsetDcMpushCh1a",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetDcMpushCh1a"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_DC_MPUSH_CH1B",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "PatPatTranslateInvalidOffsetDcMpushCh1b",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetDcMpushCh1b"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_DC_MPULL_CH0",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "PatPatTranslateInvalidOffsetDcMpullCh0",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetDcMpullCh0"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_DC_MPULL_CH1",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "PatPatTranslateInvalidOffsetDcMpullCh1",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetDcMpullCh1"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_DC_TPUSH_CH0",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "PatPatTranslateInvalidOffsetDcTpushCh0",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetDcTpushCh0"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_DC_TPUSH_CH1",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "PatPatTranslateInvalidOffsetDcTpushCh1",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetDcTpushCh1"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_DC_MPTR_CH0",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "PatPatTranslateInvalidOffsetDcMptrCh0",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetDcMptrCh0"
+                },
+                {
+                    "altname": "PAT_PAT_TRANSLATE_INVALID_OFFSET_DC_MPTR_CH1",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "PatPatTranslateInvalidOffsetDcMptrCh1",
+                    "mode": "RC",
+                    "name": "PatPatTranslateInvalidOffsetDcMptrCh1"
+                },
+                {
+                    "altname": "TARGET_COMMAND_HANDLER_WQ_FIFO_FULL",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "TargetCommandHandlerWqFifoFull",
+                    "mode": "RC",
+                    "name": "TargetCommandHandlerWqFifoFull"
+                },
+                {
+                    "altname": "DCACHE_INTERFACE_TOP_WQ_WQ_EMPTY",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "DcacheInterfaceTopWqWqEmpty",
+                    "mode": "RC",
+                    "name": "DcacheInterfaceTopWqWqEmpty"
+                },
+                {
+                    "altname": "DCACHE_INTERFACE_TOP_WQ_PQ_FIFO_FULL_ON_COMMAND",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "DcacheInterfaceTopWqPqFifoFullOnCommand",
+                    "mode": "RC",
+                    "name": "DcacheInterfaceTopWqPqFifoFullOnCommand"
+                },
+                {
+                    "altname": "DCACHE_INTERFACE_TOP_WQ_PQ_FIFO_FULL_ON_PUSH",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "DcacheInterfaceTopWqPqFifoFullOnPush",
+                    "mode": "RC",
+                    "name": "DcacheInterfaceTopWqPqFifoFullOnPush"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEClearAssertionsFired": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_CLEAR_ASSERTIONS_FIRED",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Each bit indicates which assertions_drive module had an assertion fire. Register is cleared on read.",
+                    "mode": "RC",
+                    "name": "MUPEClearAssertionsFired"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEClearPQ": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_CLEAR_PQ",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Clear PQ FIFO",
+                    "mode": "WO",
+                    "name": "MUPEClearPQ"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEClearWQ": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_CLEAR_WQ",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Clear WQ FIFO",
+                    "mode": "WO",
+                    "name": "MUPEClearWQ"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEConfigureMECredits": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_CONFIGURE_ME_PACKET_CREDITS",
+                    "bit_lsb": 16,
+                    "bit_msb": 26,
+                    "description": "ME Packet Credits (Max 512)",
+                    "mode": "RW",
+                    "name": "MUPEConfigureMEPacketCredits"
+                },
+                {
+                    "altname": "MU_PE_CONFIGURE_ME_BUFFER_CREDITS",
+                    "bit_lsb": 0,
+                    "bit_msb": 8,
+                    "description": "ME Buffer Credits (Max 128)",
+                    "mode": "RW",
+                    "name": "MUPEConfigureMEBufferCredits"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPECount10": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_COUNT_10",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "10 Bit Count that clears on read. Multiple registers map to this type, look at AddressMap for description.",
+                    "mode": "RO",
+                    "name": "MUPECount10"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPECount11WithClear": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_COUNT_WITH_CLEAR",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "11 Bit Count that clears on read. Multiple registers map to this type, look at AddressMap for description.",
+                    "mode": "RC",
+                    "name": "MUPECountWithClear"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPECount11_inst0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_COUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "11 Bit Count. Multiple registers map to this type, look at AddressMap for description.",
+                    "mode": "RO",
+                    "name": "MUPECount"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPECount11_inst1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_COUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "11 Bit Count. Multiple registers map to this type, look at AddressMap for description.",
+                    "mode": "RO",
+                    "name": "MUPECount"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPECount32WithClear": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_COUNT_WITH_CLEAR",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "32 Bit Count that clears on read. Multiple registers map to this type, look at AddressMap for description.",
+                    "mode": "RC",
+                    "name": "MUPECountWithClear"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPECount6": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_COUNT_6",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "6 Bit Count that clears on read. Multiple registers map to this type, look at AddressMap for description.",
+                    "mode": "RO",
+                    "name": "MUPECount6"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPECount8": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_COUNT_8",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "8 Bit Count that clears on read. Multiple registers map to this type, look at AddressMap for description.",
+                    "mode": "RO",
+                    "name": "MUPECount8"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPECredits": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_PACKET_CREDITS",
+                    "bit_lsb": 16,
+                    "bit_msb": 26,
+                    "description": "Packet Credits ",
+                    "mode": "RO",
+                    "name": "MUPEPacketCredits"
+                },
+                {
+                    "altname": "MU_PE_BUFFER_CREDITS",
+                    "bit_lsb": 0,
+                    "bit_msb": 8,
+                    "description": "Buffer Credits ",
+                    "mode": "RO",
+                    "name": "MUPEBufferCredits"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPECredits256B": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_PACKET_CREDITS_256B",
+                    "bit_lsb": 16,
+                    "bit_msb": 26,
+                    "description": "Packet Credits (Used by ME when ME is having Packet Engine track credits)",
+                    "mode": "RO",
+                    "name": "MUPEPacketCredits256B"
+                },
+                {
+                    "altname": "MU_PE_BUFFER_CREDITS_256B",
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": "Buffer Credits (Used by ME when ME is having Packet Engine track credits)",
+                    "mode": "RO",
+                    "name": "MUPEBufferCredits256B"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEDMAHysteresis": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_DMA_HYSTERESIS",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "DMA Outstanding Bulk Read/Write Commands",
+                    "mode": "RW",
+                    "name": "MUPEDMAHysteresis"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEDMAMaxOutstandingMem": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_DMA_MAX_OUTSTANDING_MEM",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "DMA Outstanding Bulk Read/Write Commands",
+                    "mode": "RW",
+                    "name": "MUPEDMAMaxOutstandingMem"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEDMAOverflowIntoDCacheEnabled": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_DMA_OVERFLOW_INTO_DCACHE_ENABLED",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Allow DMA Commands to be stored into the DCache",
+                    "mode": "RW",
+                    "name": "MUPEDMAOverflowIntoDCacheEnabled"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEDMAStorageBaseAddress": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_DMA_STORAGE_BASE_ADDRESS",
+                    "bit_lsb": 0,
+                    "bit_msb": 17,
+                    "description": "DMA Storage Base Address",
+                    "mode": "RW",
+                    "name": "MUPEDMAStorageBaseAddress"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEDMAStorageSize": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_DMA_STORAGE_SIZE",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "DMA Storage Size",
+                    "mode": "RW",
+                    "name": "MUPEDMAStorageSize"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEDropAwareModeEnable": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_DROP_AWARE_MODE_ENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Enable DropAwareMode (all dropped packets except multicast dropped packets)",
+                    "mode": "RW",
+                    "name": "MUPEDropAwareModeEnable"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEDropOnRetry": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_DROP_ON_RETRY",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Drop Packet Processing Complete On Retry",
+                    "mode": "RW",
+                    "name": "MUPEDropOnRetry"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEDropRing": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_DROP_RING_NUMBER",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Ring Number",
+                    "mode": "RW",
+                    "name": "MUPEDropRingNumber"
+                },
+                {
+                    "altname": "MU_PE_DROP_RING_DATA_SELECT",
+                    "bit_lsb": 24,
+                    "bit_msb": 25,
+                    "description": "Which 32 bits of data out of 128 bits of data should be sent to the Ring",
+                    "mode": "RW",
+                    "name": "MUPEDropRingDataSelect"
+                },
+                {
+                    "altname": "MU_PE_DROP_RING_ISLAND",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Island Number to use while adding data to Ring",
+                    "mode": "RW",
+                    "name": "MUPEDropRingIsland"
+                },
+                {
+                    "altname": "MU_PE_DROP_RING_TARGET",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Target Encoding to use while adding data to Ring",
+                    "mode": "RW",
+                    "name": "MUPEDropRingTarget"
+                },
+                {
+                    "altname": "MU_PE_DROP_RING_TOKEN",
+                    "bit_lsb": 5,
+                    "bit_msb": 6,
+                    "description": "Token Encoding to use while adding data to Ring",
+                    "mode": "RW",
+                    "name": "MUPEDropRingToken"
+                },
+                {
+                    "altname": "MU_PE_DROP_RING_ACTION",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Action Encoding to use while adding data to Ring",
+                    "mode": "RW",
+                    "name": "MUPEDropRingAction"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEDropRule": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_DROP_RULE_ENABLE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Enable this rule",
+                    "mode": "RW",
+                    "name": "MUPEDropRuleEnable"
+                },
+                {
+                    "altname": "MU_PE_DROP_RULE_FREE_PACKET",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "If masked packet data at starting index matches this rule, then free the packet only if this bit is set",
+                    "mode": "RW",
+                    "name": "MUPEDropRuleFreePacket"
+                },
+                {
+                    "altname": "MU_PE_DROP_RULE_ADD_TO_PACKET_QUEUE",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "If masked packet data at starting index matches this rule, then add packet back to PacketQueue only if this bit is set",
+                    "mode": "RW",
+                    "name": "MUPEDropRuleAddtoPacketQueue"
+                },
+                {
+                    "altname": "MU_PE_DROP_RULE_SEND_TO_RING1",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "If masked packet data at starting index matches this rule, then send information to Ring1 only if this bit is set",
+                    "mode": "RW",
+                    "name": "MUPEDropRuleSendToRing1"
+                },
+                {
+                    "altname": "MU_PE_DROP_RULE_SEND_TO_RING0",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "If masked packet data at starting index matches this rule, then send information to Ring0",
+                    "mode": "RW",
+                    "name": "MUPEDropRuleSendToRing0"
+                },
+                {
+                    "altname": "MU_PE_DROP_RULE_STARTING_IDNEX",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Starting Index for Mask and Match Data",
+                    "mode": "RW",
+                    "name": "MUPEDropRuleStartingIndex"
+                },
+                {
+                    "altname": "MU_PE_DROP_RULE_MATCH",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Drop Match to match packet data",
+                    "mode": "RW",
+                    "name": "MUPEDropRuleMatch"
+                },
+                {
+                    "altname": "MU_PE_DROP_RULE_MASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Drop Mask to mask packet data",
+                    "mode": "RW",
+                    "name": "MUPEDropRuleMask"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEEnableByteAlignedAddThread": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_ENABLE_BYTE_ALIGNED_ADD_THREAD",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set to enable byte aligned add_thread commands",
+                    "mode": "RW",
+                    "name": "MUPEEnableByteAlignedAddThread"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEEnableDMALengthAndOffset": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_ENABLE_BYTE_ALIGNED_ADD_THREAD",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set to enable additional length and offset inputs into DMATo/FromMemPacket and DMATo/FromMemIndirect Commands.",
+                    "mode": "RW",
+                    "name": "MUPEEnableDMALengthAndOffset"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEEnableDMAPoll": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_ENABLE_BYTE_ALIGNED_ADD_THREAD",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set to enable polling of DMA Queue. If the Queue is full, the ME will be pushed back an error/retry response.",
+                    "mode": "RW",
+                    "name": "MUPEEnableDMAPoll"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEEnableMPullIDWithNoRead": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_ENABLE_MPULLID_WITH_NOREAD",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set to enable MpullIDs with NoRead. (Recommended for Performance)",
+                    "mode": "RW",
+                    "name": "MUPEEnableMPullIDWithNoRead"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEGrantCycles": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_GRANT_CYCLES",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "This register controls how many cycles each requestor gets access to the DCache port for.",
+                    "mode": "RW",
+                    "name": "MUPEGrantCycles"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPELBConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_LB_CONFIG",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Choose between static and dynamic load balancing",
+                    "mode": "RW",
+                    "name": "MUPELBConfig"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEMemConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_MEM_CONFIG",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Packet Mem Config. The decoding is non-linear to support A0 mode, which allocated all, half or quarter of the memory for packets.",
+                    "mode": "RW",
+                    "name": "MUPEMemConfig"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEMultiCastEnable": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_MULTICAST_ENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Enable Hardware Support for Multicast",
+                    "mode": "RW",
+                    "name": "MUPEMultiCastEnable"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPENullMUPtr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_NULL_MUPTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 28,
+                    "description": "Null MUPtr. Should be configured to the same value as NBI DMA and NBI TM",
+                    "mode": "RW",
+                    "name": "MUPENullMUPtr"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEOverridePCIeLength": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_OVERRIDE_PCIE_LENGTH_ENABLE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "This register is used to enable overriding the length from the add_thread command for PCIe allocated packets.",
+                    "mode": "RW",
+                    "name": "MUPEOverridePCIeLengthEnable"
+                },
+                {
+                    "altname": "MU_PE_OVERRIDE_PCIE_LENGTH",
+                    "bit_lsb": 0,
+                    "bit_msb": 14,
+                    "description": "This register is used to override the length from the add_thread command for PCIe allocated packets. This is a Byte aligned field, however length must be a 4B aligned field. Rules for AddThread must be adhered to while programming this field.",
+                    "mode": "RW",
+                    "name": "MUPEOverridePCIeLength"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEOverridePCIeOffset": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_OVERRIDE_PCIE_OFFSET_ENABLE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "This register is used to enable overriding the offset from the add_thread command for PCIe allocated packets. This is a Byte aligned field. Rules for AddThread must be adhered to while programming this field.",
+                    "mode": "RW",
+                    "name": "MUPEOverridePCIeOffsetEnable"
+                },
+                {
+                    "altname": "MU_PE_OVERRIDE_PCIE_OFFSET",
+                    "bit_lsb": 0,
+                    "bit_msb": 14,
+                    "description": "This register is used to override the offset from the add_thread command for PCIe allocated packets. This is a Byte aligned field. Rules for AddThread must be adhered to while programming this field.",
+                    "mode": "RW",
+                    "name": "MUPEOverridePCIeOffset"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEPPCWasRetried": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_PPC_WAS_RETRIED",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "PPC Was Retried. Clears on Read.",
+                    "mode": "RC",
+                    "name": "MUPEPPCWasRetried"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPERaiseEventOnRetry": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_RAISE_EVENT_ON_RETRY",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Raise Event when Packet Processing Complete with Retry bit set is received",
+                    "mode": "RW",
+                    "name": "MUPERaiseEventOnRetry"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPERate": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_RATE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Rate measured on bus selected using RateSelect register",
+                    "mode": "RO",
+                    "name": "MUPERate"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPERateSelect": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_RATE_ENABLE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Enable Rate Measurement on bus selected via Select bits",
+                    "mode": "RW",
+                    "name": "MUPERateEnable"
+                },
+                {
+                    "altname": "MU_PE_RATE_SELECT",
+                    "bit_lsb": 4,
+                    "bit_msb": 8,
+                    "description": "Choose bus whose rate needs to be measured",
+                    "mode": "RW",
+                    "name": "MUPERateSelect"
+                },
+                {
+                    "altname": "MU_PE_RATE_RESOLUTION",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Resolution at which rate needs to be measured",
+                    "mode": "RW",
+                    "name": "MUPERateResolution"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEStopPQDequeue": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_STOP_PQ_DEQUEUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set before starting WQ Flush. Setting this bit will prevent the Packet Queue from draining.",
+                    "mode": "RW",
+                    "name": "MUPEStopPQDequeue"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEStopWQDequeue": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_STOP_WQ_DEQUEUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set before starting PQ Flush. Setting this bit will prevent the Work Queue from draining.",
+                    "mode": "RW",
+                    "name": "MUPEStopWQDequeue"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPETrackMECredits": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_TRACK_ME_CREDITS",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set if ME wants Packet Engine to track packet and buffer credits, instead of tracking them itself",
+                    "mode": "RW",
+                    "name": "MUPETrackMECredits"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEWQConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_WQ_CONFIG",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Work Queue Configuration",
+                    "mode": "RW",
+                    "name": "MUPEWQConfig"
+                }
+            ]
+        }
+    }
+}

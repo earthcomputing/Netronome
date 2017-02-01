@@ -1,0 +1,189 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "island_master_bridge.IMBxpb": {
+            "0x00000000": {
+                "altname": "TGT0_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 0",
+                "name": "Target0AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "TGT1_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 1",
+                "name": "Target1AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "TGT2_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 2",
+                "name": "Target2AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "TGT3_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 3",
+                "name": "Target3AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "TGT4_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 4",
+                "name": "Target4AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "TGT5_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 5",
+                "name": "Target5AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "TGT6_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 6",
+                "name": "Target6AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "TGT7_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 7",
+                "name": "Target7AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "TGT8_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 8",
+                "name": "Target8AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "TGT9_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 9",
+                "name": "Target9AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "TGT10_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 10",
+                "name": "Target10AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "TGT11_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 11",
+                "name": "Target11AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "TGT12_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 12",
+                "name": "Target12AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "TGT13_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 13",
+                "name": "Target13AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "TGT14_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 14",
+                "name": "Target14AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "TGT15_ADDRESS_MODE_CONFIGURATION",
+                "description": "Configuration CSR for programming the addressing mode for Target ID 15",
+                "name": "Target15AddressModeCfg",
+                "ptr": "island_master_bridge.TgtAddressModeCfg",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "ISLAND_CONFIGURATION_CLASS_A",
+                "description": "Overall Island Configuration",
+                "name": "IslandConfigurationClassA",
+                "ptr": "island_master_bridge.IslandConfigurationClassA",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "island_master_bridge.IslandConfigurationClassA": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "NN_CHAIN_CONFIG",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "The specific NN chain (A/B schemes) used for linking all the MEs within the Island",
+                    "mode": "RW",
+                    "name": "NNchainCfg"
+                },
+                {
+                    "altname": "BROADCAST_MODE",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Broadcast mode for parallel loading of the Control Store in all MEs within an Island (both ME and SM Islands)",
+                    "mode": "RW",
+                    "name": "BroadcastMode"
+                }
+            ]
+        },
+        "island_master_bridge.TgtAddressModeCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MODE",
+                    "bit_lsb": 13,
+                    "bit_msb": 15,
+                    "description": "The specific translation mode to be used by the IMB when generating the Island number where the Target resides",
+                    "mode": "RW",
+                    "name": "Mode"
+                },
+                {
+                    "altname": "ADDRESSING_MODE",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "The specific addressing mode (32 or 40) used by the Master when referencing the Target",
+                    "mode": "RW",
+                    "name": "AddrMode"
+                },
+                {
+                    "altname": "ISLAND_1",
+                    "bit_lsb": 6,
+                    "bit_msb": 11,
+                    "description": "The actual Island number for Island 1",
+                    "mode": "RW",
+                    "name": "Island1"
+                },
+                {
+                    "altname": "ISLAND_0",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "The actual Island number for Island 0",
+                    "mode": "RW",
+                    "name": "Island0"
+                }
+            ]
+        }
+    }
+}

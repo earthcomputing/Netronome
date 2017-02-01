@@ -1,0 +1,38 @@
+NFP-6xxx Simulator example code
+-------------------------------
+
+Dependencies to build the example code in the nfsim directory are as follows:
+    
+libpcap-dev
+libreadline-dev
+libjansson-dev
+
+To install on Ubuntu:
+
+$ sudo apt-get install libpcap-dev libreadline-dev libjansson-dev
+
+Building the nfsim examples
+---------------------------
+
+To build the examples, type make in the nfsim directory.
+
+e.g.
+~/nfp-sdk-5.1.0/examples/nfsim/ $ make
+
+
+To run the packet_ingress and packet_egress examples
+the NFP-6xxx SDK Toolchain needs to be installed.
+
+============================================================================
+
+Dependencies to build the uc example code:
+
+NFP-6xxx SDK Toolchain
+
+Building the uc examples
+------------------------
+
+to build the examples, type make in the uc directory.
+
+e.g.
+~/nfp-sdk-5.1.0/examples/uc/ $ make

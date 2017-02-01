@@ -1,0 +1,390 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "crypto_bulk.CryptoBulkXpb": {
+            "0x00000000": {
+                "altname": "BULK_CFG",
+                "description": "Basic Configuration Register",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "BasicConfig",
+                "ptr": "crypto_bulk.BasicConfig",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "BULK_WDCFG",
+                "description": "Watch dog timer configuration",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "WtchDgTmrCnf",
+                "ptr": "crypto_bulk.WtchDgTmrCnf",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "BULK_ERR",
+                "description": "Error Register. Reading this register will show all errors that have occurred regardless of mask value. Writing a '1' to a bit will clear the appropriate bit in this register and the \"who's on first\" register.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ErrorReg",
+                "ptr": "crypto_bulk.ErrorReg",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "BULK_FERR",
+                "description": "\"Who's on first\" register. Each bit maps directly to a bit in the Error Register. This register captures the first error bit which is selected by the mask register, blocking future error bits into this register until the register has been cleared. This register is used to determine which error happened first if multiple errors are indicated in the error register. Writing a '1' to a bit will clear the appropriate bit in this register.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "WhsOnFrstErr",
+                "ptr": "crypto_bulk.WhsOnFrstErr",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "BULK_ERRMASK",
+                "description": "Error Mask. Each bit maps directly to a bit in the Error Register. This mask is used with the \"Who's on first\" register and the Clock Stop Mask. Setting a bit position to a '1' will enable the associated error to be detected.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ErrorMask",
+                "ptr": "crypto_bulk.ErrorMask",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "BULK_CLKSTOP",
+                "description": "Clock Stop Mask. This register is used along with the Error Mask register to select which error bits will trigger a local clock stop. Setting a bit position to a '1' will enable the associated error to cause a local clock stop.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ClkStopMask",
+                "ptr": "crypto_bulk.ClkStopMask",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "BULK_TESTMODE",
+                "description": "Test mode / Error inject. This address is used to send single cycle pulses to test the error detect registers.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "TestMode",
+                "ptr": "crypto_bulk.TestMode",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "crypto_bulk.BasicConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DES_MCP",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Multicycle path for DES algorithm. The path is designed for 5 cycles with a 700MHz Crypto_Bulk block clock. This value may be adjusted to improve performance or algorithm stability when using other clock frequencies.",
+                    "mode": "RW",
+                    "name": "DesMCP"
+                },
+                {
+                    "altname": "ENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "per bit enable for each bulk crypt core. '1' to enable. There must be at least one bulk crypt core enabled to activate the Bulk Crypt Director (interface to the bulk crypt block). Activating an core that is already active has no effect. It is the transition of the bit value that performs an action.",
+                    "mode": "RW",
+                    "name": "Enable"
+                }
+            ]
+        },
+        "crypto_bulk.ClkStopMask": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLK_STOP_MASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 22,
+                    "description": "Same bitmap as ErrorReg",
+                    "mode": "RW",
+                    "name": "ClkStopMask"
+                }
+            ]
+        },
+        "crypto_bulk.ErrorMask": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ERROR_MASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 22,
+                    "description": "Same bitmap as ErrorReg",
+                    "mode": "RW",
+                    "name": "ErrorMask"
+                }
+            ]
+        },
+        "crypto_bulk.ErrorReg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "EVENTC_5",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Event/Error was for a Bulk_Crypto 5",
+                    "mode": "RW1C",
+                    "name": "EventBulk5"
+                },
+                {
+                    "altname": "EVENTC_4",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Event/Error was for a Bulk_Crypto 4",
+                    "mode": "RW1C",
+                    "name": "EventBulk4"
+                },
+                {
+                    "altname": "EVENTC_3",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Event/Error was for a Bulk_Crypto 3",
+                    "mode": "RW1C",
+                    "name": "EventBulk3"
+                },
+                {
+                    "altname": "EVENTC_2",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "Event/Error was for a Bulk_Crypto 2",
+                    "mode": "RW1C",
+                    "name": "EventBulk2"
+                },
+                {
+                    "altname": "EVENTC_1",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "Event/Error was for a Bulk_Crypto 1",
+                    "mode": "RW1C",
+                    "name": "EventBulk1"
+                },
+                {
+                    "altname": "EVENTC_0",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Event/Error was for a Bulk_Crypto 0",
+                    "mode": "RW1C",
+                    "name": "EventBulk0"
+                },
+                {
+                    "altname": "SEQNUM_ERR",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "SRAM controller mismatch or read data error",
+                    "mode": "RW1C",
+                    "name": "SeqnumErr"
+                },
+                {
+                    "altname": "WRT_FIFO_PTY",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "fifo output parity error.",
+                    "mode": "RW1C",
+                    "name": "WrtFifoPty"
+                },
+                {
+                    "altname": "WRT_FIFO_ERR",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "fifo overflow or has a 'hole'/missing location",
+                    "mode": "RW1C",
+                    "name": "WrtFifoErr"
+                },
+                {
+                    "altname": "WRT_ARB_ERR",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "a hot arb has multiple/no states active",
+                    "mode": "RW1C",
+                    "name": "WrtArbErr"
+                },
+                {
+                    "altname": "ALLOC_WDOG_5",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "watch-dog for Bulk_Crypto 5 tripped",
+                    "mode": "RW1C",
+                    "name": "AllocWdog5"
+                },
+                {
+                    "altname": "ALLOC_WDOG_4",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "watch-dog for Bulk_Crypto 4 tripped",
+                    "mode": "RW1C",
+                    "name": "AllocWdog4"
+                },
+                {
+                    "altname": "ALLOC_WDOG_3",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "watch-dog for Bulk_Crypto 3 tripped",
+                    "mode": "RW1C",
+                    "name": "AllocWdog3"
+                },
+                {
+                    "altname": "ALLOC_WDOG_2",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "watch-dog for Bulk_Crypto 2 tripped",
+                    "mode": "RW1C",
+                    "name": "AllocWdog2"
+                },
+                {
+                    "altname": "ALLOC_WDOG_1",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "watch-dog for Bulk_Crypto 1 tripped",
+                    "mode": "RW1C",
+                    "name": "AllocWdog1"
+                },
+                {
+                    "altname": "ALLOC_WDOG_0",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "watch-dog for Bulk_Crypto 0 tripped",
+                    "mode": "RW1C",
+                    "name": "AllocWdog0"
+                },
+                {
+                    "altname": "ALLOC_FIFO_PERR",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "parity error on allocator get() queue memory",
+                    "mode": "RW1C",
+                    "name": "AllocFifoPerr"
+                },
+                {
+                    "altname": "ALLOC_MEM_PERR",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "parity error on allocator context memory",
+                    "mode": "RW1C",
+                    "name": "AllocMemPerr"
+                },
+                {
+                    "altname": "ALLOC_BUSY_ERR",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "new instruction arrives while state indicates busy or instruction completion arrives while state indicates not_busy.",
+                    "mode": "RW1C",
+                    "name": "AllocBusyErr"
+                },
+                {
+                    "altname": "ALLOC_GCNT_ERR",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "get() context id queue exceeds depth of 12.",
+                    "mode": "RW1C",
+                    "name": "AllocGcntErr"
+                },
+                {
+                    "altname": "ALLOC_FREE_ERR",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "context id for free() instruction has not been allocated",
+                    "mode": "RW1C",
+                    "name": "AllocFreeErr"
+                },
+                {
+                    "altname": "ALLOC_GET_ERR",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "context id for get() instructions has already been allocated",
+                    "mode": "RW1C",
+                    "name": "AllocGetErr"
+                },
+                {
+                    "altname": "ALLOC_CHK_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "context id on instruction has not been allocated",
+                    "mode": "RW1C",
+                    "name": "AllocChkErr"
+                }
+            ]
+        },
+        "crypto_bulk.TestMode": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TARGET",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Select target logic to send error inject pulse.",
+                    "mode": "RO",
+                    "name": "Target"
+                },
+                {
+                    "altname": "DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 21,
+                    "description": "Set specific bit(s) to '1' to inject error pulse.  Bit breakout depends on target value selected in Target Field.",
+                    "mode": "RO",
+                    "name": "Data"
+                }
+            ]
+        },
+        "crypto_bulk.WhsOnFrstErr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "WHS_ON_FRST_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 22,
+                    "description": "Same bitmap as ErrorReg",
+                    "mode": "RW1C",
+                    "name": "WhsOnFrstErr"
+                }
+            ]
+        },
+        "crypto_bulk.WtchDgTmrCnf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLEAR",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Set to '1' to clear the watchdog timers.",
+                    "mode": "RW",
+                    "name": "Clear"
+                },
+                {
+                    "altname": "ENABLE",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Set to '1' to enable the watchdog timers.",
+                    "mode": "RW",
+                    "name": "Enable"
+                },
+                {
+                    "altname": "SIZE",
+                    "bit_lsb": 28,
+                    "bit_msb": 29,
+                    "description": "Counter Size",
+                    "mode": "RW",
+                    "name": "Size"
+                },
+                {
+                    "altname": "TRIP",
+                    "bit_lsb": 0,
+                    "bit_msb": 27,
+                    "description": "Value for counter to trigger an event. This field maps to the most significant bits in the counter. For counter sizes larger than 28 bits, the least significant bits of the trip vector are zeros.",
+                    "mode": "RW",
+                    "name": "Trip"
+                }
+            ]
+        }
+    }
+}

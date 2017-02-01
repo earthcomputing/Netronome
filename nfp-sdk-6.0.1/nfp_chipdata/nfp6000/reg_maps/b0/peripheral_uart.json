@@ -1,0 +1,214 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "peripheral_uart.UartCsrSsb": {
+            "0x00000000": {
+                "altname": "UARTDATAREG",
+                "description": "TxData, RxData, BaudRateLow",
+                "name": "UartDataReg",
+                "ptr": "peripheral_uart.UartDataReg",
+                "type": "multireg"
+            },
+            "0x00000004": {
+                "altname": "UARTINTENDIVHI",
+                "description": "Interrupt enable, BaudRateHigh",
+                "name": "UartIntEnDivHi",
+                "ptr": "peripheral_uart.UartIntEnDivHi",
+                "type": "multireg"
+            },
+            "0x00000008": {
+                "altname": "UARTFIFOCTRLINTSTS",
+                "description": "Fifo control, interrupt status",
+                "name": "UartFifoCtrlIntSts",
+                "ptr": "peripheral_uart.UartFifoCtrlIntSts",
+                "type": "multireg"
+            },
+            "0x0000000c": {
+                "altname": "LINECONTROL",
+                "description": "Control the transmission line data format",
+                "name": "LineControl",
+                "ptr": "peripheral_uart.UartLineControl",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "LINESTATUS",
+                "description": "Stores the status of the previous transaction",
+                "name": "LineStatus",
+                "ptr": "peripheral_uart.UartLineStatus",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "peripheral_uart.UartDataReg": {
+            "bit_length": 32,
+            "comment": "Multi-register",
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "mode": "rw",
+                    "name": "value"
+                }
+            ]
+        },
+        "peripheral_uart.UartFifoCtrlIntSts": {
+            "bit_length": 32,
+            "comment": "Multi-register",
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "mode": "rw",
+                    "name": "value"
+                }
+            ]
+        },
+        "peripheral_uart.UartIntEnDivHi": {
+            "bit_length": 32,
+            "comment": "Multi-register",
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "mode": "rw",
+                    "name": "value"
+                }
+            ]
+        },
+        "peripheral_uart.UartLineControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DIVACCESS",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Divisor register access - set to permit access to the baud rate divisor",
+                    "mode": "RW",
+                    "name": "DivAccess"
+                },
+                {
+                    "altname": "SETBREAK",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Set Break",
+                    "mode": "RW",
+                    "name": "SetBreak"
+                },
+                {
+                    "altname": "STICKYPAR",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Sticky Parity",
+                    "mode": "RW",
+                    "name": "StickyPar"
+                },
+                {
+                    "altname": "EVENPAR",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Even Parity Select",
+                    "mode": "RW",
+                    "name": "EvenPar"
+                },
+                {
+                    "altname": "PARITYEN",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Parity Enable",
+                    "mode": "RW",
+                    "name": "ParityEn"
+                },
+                {
+                    "altname": "STOPBITS",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Stop Bits",
+                    "mode": "RW",
+                    "name": "StopBits"
+                },
+                {
+                    "altname": "DATALEN",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Word Length Select",
+                    "mode": "RW",
+                    "name": "DataLen"
+                }
+            ]
+        },
+        "peripheral_uart.UartLineStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "FIFOERROR",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Fifo Error Status",
+                    "mode": "RO",
+                    "name": "FifoError"
+                },
+                {
+                    "altname": "TXEMPTY",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Transmitter Empty",
+                    "mode": "RO",
+                    "name": "TxEmpty"
+                },
+                {
+                    "altname": "TXDATAREQ",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Transmitter Data Request",
+                    "mode": "RO",
+                    "name": "TxDataReq"
+                },
+                {
+                    "altname": "BRKINT",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Break Interrupt",
+                    "mode": "RO",
+                    "name": "BrkInt"
+                },
+                {
+                    "altname": "FRAMEERR",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Framing Error",
+                    "mode": "RO",
+                    "name": "FrameErr"
+                },
+                {
+                    "altname": "PARERR",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Parity Error",
+                    "mode": "RO",
+                    "name": "ParErr"
+                },
+                {
+                    "altname": "OVERRUNERR",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Overrun Error",
+                    "mode": "RO",
+                    "name": "OverrunErr"
+                },
+                {
+                    "altname": "DATARDY",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Data Ready",
+                    "mode": "RO",
+                    "name": "DataRdy"
+                }
+            ]
+        }
+    }
+}

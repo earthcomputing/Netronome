@@ -1,0 +1,199 @@
+{
+  "libnfd": {
+    "dir": "p4/components/ng_nfd",
+    "assembler": {
+    },
+    "compiler": {
+      "include": [
+        "me/lib",
+        "me/blocks",
+        "shared",
+        "."
+      ],
+      "src": ["me/blocks/vnic/libnfd.c"]
+    }
+  },
+  "nfdpci": {
+    "dir": "p4/components/ng_nfd",
+    "assembler": {
+    },
+    "compiler": {
+      "include": [
+        "me/blocks",
+        "shared",
+        "."
+      ],
+      "src": [
+        "me/blocks/vnic/utils/libutils.c",
+        "me/blocks/vnic/shared/nfd_cfg.c"
+      ]
+    },
+    "assembler": {
+      "include": [
+        "me/blocks/vnic",
+        "me/blocks/vnic/shared",
+        "shared"
+      ]
+    }
+  },
+  "dcfl": {
+    "dir": "p4/components/dcfl",
+    "compiler": {
+      "include": [
+        "me/lib/dcfl",
+        "shared/include/dcfl"
+      ],
+      "src": ["me/lib/dcfl/libdcfl.c"]
+    }
+  },
+  "flowenv": {
+    "dir": "p4/components/flowenv",
+    "compiler": {
+      "include": [
+        "me/include",
+        "me/include/nfp6000",
+        "me/lib",
+        "me/lib/nfp"
+      ],
+      "src": [
+        "me/lib/nfp/libnfp.c",
+        "me/lib/std/libstd.c",
+        "me/lib/pkt/libpkt.c",
+        "me/lib/pktdma/libpktdma.c",
+        "me/lib/net/libnet.c"
+      ]
+    },
+    "assembler": {
+      "include": [
+        "me/include"
+      ]
+    } 
+  },
+  "flowcache": {
+    "dir": "p4/components/flowcache",
+    "compiler": {
+      "include": [
+        "me/lib/flowcache",
+        "me/lib/standardlibrary"
+      ],
+      "src": [
+        "me/lib/flowcache/_c/flow_cache.c",
+        "me/lib/flowcache/_c/jenkins_hash.c",
+        "me/lib/flowcache/_c/flow_cache_remove.c",
+        "me/lib/flowcache/_c/flow_cache_timestamp.c",
+        "me/lib/flowcache/_c/flow_cache_lock.c",
+        "me/lib/standardlibrary/_c/mem_atomic_indirect.c",
+        "me/lib/standardlibrary/_c/mem_cam_add_inc.c",
+        "me/lib/standardlibrary/_c/cluster_target.c",
+        "me/lib/standardlibrary/_c/cam.c",
+        "me/lib/standardlibrary/_c/rotate.c"
+      ]
+    }
+  },
+  "flowcache_timeout": {
+    "dir": "p4/components/flowcache",
+    "optional": "flowcache",
+    "compiler": {
+      "include": [
+        "me/lib/flowcache",
+        "me/lib/standardlibrary"
+      ],
+      "src": [
+        "me/lib/flowcache/_c/flow_cache_remove.c",
+        "me/lib/flowcache/_c/flow_cache_timeout.c",
+        "me/lib/flowcache/_c/flow_cache_timeout_lock.c",
+        "me/lib/flowcache/_c/flow_cache_timestamp.c",
+        "me/lib/standardlibrary/_c/cluster_target.c",
+        "me/lib/standardlibrary/_c/mem_atomic_indirect.c"
+      ]
+    }
+  },
+  "blm": {
+    "dir": "p4/components/flowenv",
+    "assembler": {
+      "include": [
+        "me/blocks/blm/_h",
+        "me/blocks/blm/_uc",
+        "me/blocks/blm",
+        "me/blocks"
+      ]
+    },
+    "compiler": {
+      "include": [
+        "me/blocks/blm/_h",
+        "me/blocks/blm"
+      ],
+      "src": [
+        "me/blocks/blm/libblm.c"
+      ]
+    }
+  },
+  "gro": {
+    "dir": "p4/components/gro",
+    "assembler": {
+      "include": [
+        ".",
+        "me"
+      ],
+      "src": []
+    },
+    "compiler": {
+      "include": [
+        "."
+      ],
+      "src": [
+        "libgro.c"
+      ]
+    }
+  },
+  "npe": {
+    "dir": "p4/components/npe",
+    "compiler": {
+      "include": [
+        "me/include"
+      ],
+      "src": [
+        "me/src/npe_cam.c",
+        "me/src/npe_hash.c",
+        "me/src/npe_mem.c"
+      ]
+    }
+  },
+  "standardlibrary": {
+    "dir": "components/standardlibrary",
+    "compiler": {
+      "include": [
+        "include"
+      ]
+    },
+    "assembler": {
+      "include": [
+        "include"
+      ]
+    }
+  },
+  "microc": {
+    "dir": "components/standardlibrary/microc",
+    "compiler": {
+      "include": [
+        "include",
+        "src"
+      ],
+      "src": [
+        "src/intrinsic.c",
+        "src/rtl.c"
+      ]
+    }
+  },
+  "microcode": {
+    "dir": "components/standardlibrary/microcode",
+    "assembler": {
+      "include": [
+        "src",
+        "include"
+      ],
+      "src": []
+    }
+  }
+ 
+}

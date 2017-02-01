@@ -1,0 +1,13 @@
+[Unit]
+Description=Netronome SDK6 Run Time Environment SIMULATOR MODE
+After=network.target
+
+[Service]
+Environment=CTL_SCRIPT=/opt/nfp_pif/scripts/pif_ctl_sim.sh
+Environment=NFPSHUTILS=/opt/nfp_pif/scripts/shared/nfp-shutils
+Environment=NETRODIR=/opt/nfp-sdk-6.0.1
+Environment=LD_LIBRARY_PATH=$NETRODIR/lib:/opt/nfp_pif/lib:$LD_LIBRARY_PATH
+ExecStart=/opt/nfp_pif/bin/pif_rte -I -z -s $CTL_SCRIPT --log_file /var/log/nfp-sdk6-rte.log
+
+[Install]
+WantedBy=multi-user.target

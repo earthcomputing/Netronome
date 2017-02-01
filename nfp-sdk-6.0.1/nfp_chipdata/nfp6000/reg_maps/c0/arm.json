@@ -1,0 +1,1426 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: eca5ba006ef4"
+    ],
+    "maps": {
+        "arm.ARMGasketCSR_CPP": {
+            "0x00000000": {
+                "altname": "BULK_BAR%d",
+                "description": "Bulk BAR Configuration Register",
+                "name": "BulkBarCfg%d",
+                "offinc1": "0x00000004",
+                "ptr": "arm.BulkBarCfg",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "EXPA_BAR%d",
+                "description": "Expansion BAR Configuration Register",
+                "name": "ExpansionBarCfg%d",
+                "offinc1": "0x00000004",
+                "ptr": "arm.ExpansionBarCfg",
+                "repeat1": 16,
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "EXPL0_BAR%d",
+                "description": "Explicit BAR Configuration Register 0_Reg",
+                "name": "ExplicitBarCfg0%d",
+                "offinc1": "0x00000004",
+                "ptr": "arm.ExplicitBarCfg0",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "EXPL1_BAR%d",
+                "description": "Explicit BAR Configuration Register 1_Reg",
+                "name": "ExplicitBarCfg1%d",
+                "offinc1": "0x00000004",
+                "ptr": "arm.ExplicitBarCfg1",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x000000a0": {
+                "altname": "EXPL2_BAR%d",
+                "description": "Explicit BAR Configuration Register 2_Reg",
+                "name": "ExplicitBarCfg2%d",
+                "offinc1": "0x00000004",
+                "ptr": "arm.ExplicitBarCfg2",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x000000c0": {
+                "altname": "EXPL_POST%d",
+                "description": "Posted_Cmd_Signal",
+                "name": "PostedCommandSignal%d",
+                "offinc1": "0x00000004",
+                "ptr": "arm.PostedCommandSignal",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x000000e0": {
+                "altname": "MPCORE_BASE",
+                "description": "MPCore Base Address",
+                "name": "MPCoreBaseAddress",
+                "ptr": "arm.MPCoreBaseAddress",
+                "type": "reg"
+            },
+            "0x000000e4": {
+                "altname": "PL310_BASE",
+                "description": "PL310 Base Address",
+                "name": "PL310BaseAddress",
+                "ptr": "arm.PL310BaseAddress",
+                "type": "reg"
+            },
+            "0x000000e8": {
+                "altname": "MP0_CFG",
+                "description": "MPCore Configuration",
+                "name": "MPCoreCfg",
+                "ptr": "arm.MPCoreCfg",
+                "type": "reg"
+            },
+            "0x00000100": {
+                "altname": "DFT",
+                "description": "ARM Design for Test register",
+                "name": "ArmDft",
+                "ptr": "arm.ArmDft",
+                "type": "reg"
+            },
+            "0x00000104": {
+                "altname": "ARMSTATUS",
+                "description": "ARM Status register",
+                "name": "ArmStatus",
+                "ptr": "arm.ArmStatus",
+                "type": "reg"
+            },
+            "0x00000108": {
+                "altname": "GPIO_SEL",
+                "description": "GPIO Mux Select register",
+                "name": "GPIO_Sel",
+                "ptr": "arm.GPIO_Sel",
+                "type": "reg"
+            },
+            "0x00000158": {
+                "altname": "CFGCONFIGSTS",
+                "description": "Configurater Configuration Status register",
+                "name": "CfgConfigSts",
+                "ptr": "arm.CfgConfigSts",
+                "type": "reg"
+            },
+            "0x0000015c": {
+                "altname": "BULKBAR0BOOT",
+                "description": "Boot value for the Bulk Bar 0 (ARM soft reset loads this value into Bulk Bar 0)",
+                "name": "BulkBar0Boot",
+                "ptr": "arm.BulkBarCfg",
+                "type": "reg"
+            },
+            "0x00000160": {
+                "altname": "EXPANSIONBAR0BOOT",
+                "description": "Boot value for the Expansion Bar 0 (ARM soft reset loads this value into Expansion Bar 0)",
+                "name": "ExpansionBar0Boot",
+                "ptr": "arm.ExpansionBarCfg",
+                "type": "reg"
+            },
+            "0x00000164": {
+                "altname": "ARMCFG0BOOT",
+                "description": "Boot value for the ARM MPCoreCfg (ARM soft reset loads this value into MPCoreCfg)",
+                "name": "MPCoreCfgBoot",
+                "ptr": "arm.MPCoreCfg",
+                "type": "reg"
+            },
+            "0x00000180": {
+                "altname": "SIDEDOORCECORE",
+                "description": "ARM sidedoor ram ce for core rams",
+                "name": "SidedoorCECore",
+                "ptr": "arm.SidedoorCECore",
+                "type": "reg"
+            },
+            "0x00000184": {
+                "altname": "SIDEDOORCEPL310",
+                "description": "ARM sidedoor ram ce for L2 cache rams",
+                "name": "SidedoorCEPl310",
+                "ptr": "arm.SidedoorCEPl310",
+                "type": "reg"
+            },
+            "0x00000188": {
+                "altname": "SIDEDOORADDRESS",
+                "description": "ARM sidedoor ram address",
+                "name": "SidedoorAddress",
+                "ptr": "arm.SidedoorAddress",
+                "type": "reg"
+            },
+            "0x0000018c": {
+                "altname": "SIDEDOORDATAWRITELO",
+                "description": "ARM sidedoor ram write data lo (bits [31:0])",
+                "name": "SidedoorDataWriteLo",
+                "ptr": "arm.SidedoorDataWriteLo",
+                "type": "reg"
+            },
+            "0x00000190": {
+                "altname": "SIDEDOORDATAWRITEHI",
+                "description": "ARM sidedoor ram write data hi (bits [63:32])",
+                "name": "SidedoorDataWriteHi",
+                "ptr": "arm.SidedoorDataWriteHi",
+                "type": "reg"
+            },
+            "0x00000194": {
+                "altname": "SIDEDOORBECORE",
+                "description": "ARM sidedoor ram be (bit enables) and we (write enables) for core rams",
+                "name": "SidedoorBECore",
+                "ptr": "arm.SidedoorBECore",
+                "type": "reg"
+            },
+            "0x00000198": {
+                "altname": "SIDEDOORDCTL",
+                "description": "ARM sidedoor ram DCTL for L2 cache rams",
+                "name": "SidedoorDCTLPl310",
+                "ptr": "arm.SidedoorDCTL",
+                "type": "reg"
+            },
+            "0x0000019c": {
+                "altname": "SIDEDOORWEPL310",
+                "description": "ARM sidedoor ram we for L2 cache rams",
+                "name": "SidedoorWEPl310",
+                "ptr": "arm.SidedoorWEPl310",
+                "type": "reg"
+            },
+            "0x000001a0": {
+                "altname": "SIDEDOORCOREDATAREADLO",
+                "description": "ARM sidedoor ram read data lo (bits [31:0]) for core rams",
+                "name": "SidedoorCoreDataReadLo",
+                "ptr": "arm.SidedoorCoreDataReadLo",
+                "type": "reg"
+            },
+            "0x000001a4": {
+                "altname": "SIDEDOORCOREDATAREADHI",
+                "description": "ARM sidedoor ram read data hi (bits [63:32]) for core rams",
+                "name": "SidedoorCoreDataReadHi",
+                "ptr": "arm.SidedoorCoreDataReadHi",
+                "type": "reg"
+            },
+            "0x000001a8": {
+                "altname": "SIDEDOORPL310DATAREADLO",
+                "description": "ARM sidedoor ram read data lo (bits [31:0]) for L2 cache rams",
+                "name": "SidedoorPl310DataReadLo",
+                "ptr": "arm.SidedoorPl310DataReadLo",
+                "type": "reg"
+            },
+            "0x000001ac": {
+                "altname": "SIDEDOORPL310DATAREADHI",
+                "description": "ARM sidedoor ram read data hi (bits [63:32]) for L2 cache rams",
+                "name": "SidedoorPl310DataReadHi",
+                "ptr": "arm.SidedoorPl310DataReadHi",
+                "type": "reg"
+            },
+            "0x00000400": {
+                "altname": "JUMPTOSELF%d",
+                "description": "Jump To Self opcode register",
+                "name": "JumpToSelf%d",
+                "offinc1": "0x00000004",
+                "ptr": "arm.JumpToSelf",
+                "repeat1": 16,
+                "type": "reg"
+            }
+        },
+        "arm.ARMGasketMemoryMap": {
+            "0x00000000": {
+                "altname": "SHARED_MEM_BASE%d",
+                "description": "Shared Memory base address",
+                "name": "SharedMemoryBase%d",
+                "offinc1": "0x00000004",
+                "ptr": "arm.SharedMemBase",
+                "repeat1": 16384,
+                "type": "reg"
+            },
+            "0x00100000": {
+                "altname": "QC",
+                "description": "ARM Queue Controller",
+                "name": "QueueController",
+                "ptr": "peripheral_queue_controller.QC_x4SSB",
+                "type": "regmap"
+            },
+            "0x00200000": {
+                "altname": "IM",
+                "description": "ARM Interrupt Manager",
+                "name": "InterruptManager",
+                "ptr": "peripheral_interrupt_manager.InterruptManagerMap_inst0",
+                "type": "regmap"
+            },
+            "0x00300000": {
+                "altname": "LOCALEVENTMANAGER",
+                "description": "ARM Local Event Manager",
+                "name": "LocalEventManager",
+                "ptr": "peripheral_event_manager.EventManagerMap_inst0",
+                "type": "regmap"
+            },
+            "0x00400000": {
+                "altname": "GASKET",
+                "description": "ARM Gasket CSRs",
+                "name": "ARMGasketCSRs",
+                "ptr": "arm.ARMGasketCSR_CPP",
+                "type": "regmap"
+            },
+            "0x00403000": {
+                "altname": "GPIO",
+                "description": "GPIO CSRs",
+                "name": "GPIOCSRs",
+                "ptr": "peripheral_gpio.GpioCsrSsb",
+                "type": "regmap"
+            },
+            "0x00403400": {
+                "altname": "TIMER",
+                "description": "Timer CSRs",
+                "name": "TimerCSRs",
+                "ptr": "peripheral_timer.TimerCsrSsb",
+                "type": "regmap"
+            },
+            "0x00403800": {
+                "altname": "UART0",
+                "description": "UART0 CSRs",
+                "name": "UART0CSRs",
+                "ptr": "peripheral_uart.UartCsrSsb",
+                "type": "regmap"
+            },
+            "0x00403a00": {
+                "altname": "UART1",
+                "description": "UART1 CSRs",
+                "name": "UART1CSRs",
+                "ptr": "peripheral_uart.UartCsrSsb",
+                "type": "regmap"
+            },
+            "0x00403c00": {
+                "altname": "SPI",
+                "description": "SPI CSRs",
+                "name": "SPICSRs",
+                "ptr": "peripheral_spi.SpiCsrSsb",
+                "type": "regmap"
+            },
+            "0x00500000": {
+                "altname": "GLOBALEVENTMANAGER",
+                "description": "ARM Global Event Manager",
+                "name": "GlobalEventManager",
+                "ptr": "peripheral_event_manager.EventManagerMap_inst0",
+                "type": "regmap"
+            },
+            "0x00600000": {
+                "altname": "SMBUS",
+                "description": "SMBus CSRs",
+                "name": "SMBUSCSRs",
+                "ptr": "peripheral_smbus.SMBusCsrSSb",
+                "type": "regmap"
+            },
+            "0x00601000": {
+                "altname": "NCSI",
+                "description": "NCSI CSRs",
+                "name": "NCSICSRs",
+                "ptr": "peripheral_ncsi.NcsiCsrSSb",
+                "type": "regmap"
+            },
+            "0x00800000": {
+                "altname": "MP_CORE_CSR_BASE",
+                "description": "MP Core CSR base address (see notes 1 and 2)",
+                "name": "MPCoreCSRBase",
+                "ptr": "arm.MPCoreCSRBase",
+                "type": "reg"
+            },
+            "0x00a00000": {
+                "altname": "PL_310_CSR_BASE",
+                "description": "PL310 CSR base address (see notes 1 and 2)",
+                "name": "Pl310CSRBase",
+                "ptr": "arm.Pl310CSRBase",
+                "type": "reg"
+            },
+            "0x10000000": {
+                "altname": "SPIVIRTUAL0",
+                "description": "SPI Virtual Port 0",
+                "name": "SPIVirtual0",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x10400000": {
+                "altname": "SPIVIRTUAL1",
+                "description": "SPI Virtual Port 1",
+                "name": "SPIVirtual1",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x10800000": {
+                "altname": "SPIVIRTUAL2",
+                "description": "SPI Virtual Port 2",
+                "name": "SPIVirtual2",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x10c00000": {
+                "altname": "SPIVIRTUAL3",
+                "description": "SPI Virtual Port 3",
+                "name": "SPIVirtual3",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x11000000": {
+                "altname": "SPIVIRTUAL4",
+                "description": "SPI Virtual Port 4",
+                "name": "SPIVirtual4",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x11400000": {
+                "altname": "SPIVIRTUAL5",
+                "description": "SPI Virtual Port 5",
+                "name": "SPIVirtual5",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x11800000": {
+                "altname": "SPIVIRTUAL6",
+                "description": "SPI Virtual Port 6",
+                "name": "SPIVirtual6",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x11c00000": {
+                "altname": "SPIVIRTUAL7",
+                "description": "SPI Virtual Port 7",
+                "name": "SPIVirtual7",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x12000000": {
+                "altname": "SPIVIRTUAL8",
+                "description": "SPI Virtual Port 8",
+                "name": "SPIVirtual8",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x12400000": {
+                "altname": "SPIVIRTUAL9",
+                "description": "SPI Virtual Port 9",
+                "name": "SPIVirtual9",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x12800000": {
+                "altname": "SPIVIRTUAL10",
+                "description": "SPI Virtual Port 10",
+                "name": "SPIVirtual10",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x12c00000": {
+                "altname": "SPIVIRTUAL11",
+                "description": "SPI Virtual Port 11",
+                "name": "SPIVirtual11",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x13000000": {
+                "altname": "SPIVIRTUAL12",
+                "description": "SPI Virtual Port 12",
+                "name": "SPIVirtual12",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x13400000": {
+                "altname": "SPIVIRTUAL13",
+                "description": "SPI Virtual Port 13",
+                "name": "SPIVirtual13",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x13800000": {
+                "altname": "SPIVIRTUAL14",
+                "description": "SPI Virtual Port 14",
+                "name": "SPIVirtual14",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            },
+            "0x13c00000": {
+                "altname": "SPIVIRTUAL15",
+                "description": "SPI Virtual Port 15",
+                "name": "SPIVirtual15",
+                "ptr": "arm.SPIVirtualMemBase",
+                "type": "reg"
+            }
+        },
+        "arm.ARMGasketXpbMap": {
+            "0x00000000": {
+                "altname": "INTERRUPT_MGR_XPB_MAP",
+                "description": "Interrupt Manager XPB Address Map",
+                "name": "InterruptManagerMap",
+                "ptr": "peripheral_interrupt_manager.InterruptManagerMap_inst0",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "QC_ECC_MONITOR_XPB_MAP",
+                "description": "ECC Monitor XPB Address Map",
+                "name": "QueueCtlrECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "SM_ECC_MONITOR_XPB_MAP",
+                "description": "Shared Memory ECC Monitor XPB Address Map",
+                "name": "SharedMemECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "L2_DC_ECC_MONITOR_XPB_MAP",
+                "description": "L2 Data Cache ECC Monitor XPB Address Map",
+                "name": "L2DataCacheECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "L2_TC_ECC_MONITOR_XPB_MAP",
+                "description": "L2 Tag Cache ECC Monitor XPB Address Map",
+                "name": "L2TagCacheECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00050000": {
+                "altname": "L1_DC0_ECC_MONITOR_XPB_MAP",
+                "description": "L1 Data Cache 0 ECC Monitor XPB Address Map",
+                "name": "L1DCache0ECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00060000": {
+                "altname": "L1_DC1_ECC_MONITOR_XPB_MAP",
+                "description": "L1 Data Cache 1 ECC Monitor XPB Address Map",
+                "name": "L1DCache1ECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00070000": {
+                "altname": "L1_DC2_ECC_MONITOR_XPB_MAP",
+                "description": "L1 Data Cache 2 ECC Monitor XPB Address Map",
+                "name": "L1DCache2ECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00080000": {
+                "altname": "L1_DC3_ECC_MONITOR_XPB_MAP",
+                "description": "L1 Data Cache 3 ECC Monitor XPB Address Map",
+                "name": "L1DCache3ECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00090000": {
+                "altname": "L1_IC_ECC_MONITOR_XPB_MAP",
+                "description": "L1 Instruction Cache ECC Monitor XPB Address Map",
+                "name": "L1ICacheECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x000a0000": {
+                "altname": "L1_DTC_ECC_MONITOR_XPB_MAP",
+                "description": "L1 Data Tag Cache ECC Monitor XPB Address Map",
+                "name": "L1DTagCacheECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x000b0000": {
+                "altname": "L1_ITC_ECC_MONITOR_XPB_MAP",
+                "description": "L1 Instruction Tag Cache ECC Monitor XPB Address Map",
+                "name": "L1ITagCacheECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x000c0000": {
+                "altname": "L1_DIRTY_ECC_MONITOR_XPB_MAP",
+                "description": "L1 Dirty ECC Monitor XPB Address Map",
+                "name": "L1DirtyECCControl",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {
+        "arm.ArmDft": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DBG_REQ",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "MPCore0 Debug Request (Write 1 to initiate debug request, cleared by HW on DBGACK from ARM)",
+                    "mode": "RW",
+                    "name": "DbgReq"
+                },
+                {
+                    "altname": "DBG_EN",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "MPCore0 Debug Enable",
+                    "mode": "RW",
+                    "name": "DbgEn"
+                },
+                {
+                    "altname": "WFE_EVT_TRG",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "CSR WFE event trigger",
+                    "mode": "RW",
+                    "name": "WfeEvtTrg"
+                },
+                {
+                    "altname": "ETM_WFI_RDY",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "ETM WFU Ready handshake response (active low)",
+                    "mode": "RW",
+                    "name": "EtmWfiReady"
+                },
+                {
+                    "altname": "ETM_PWR_ON",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "ETM interface power on (to MPCore)",
+                    "mode": "RW",
+                    "name": "EtmPowerOn"
+                },
+                {
+                    "altname": "BIST_FAIL",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "BIST Fail status from DAL",
+                    "mode": "RO",
+                    "name": "BistFail"
+                },
+                {
+                    "altname": "BIST_DONE",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "BIST Done status from DAL",
+                    "mode": "RO",
+                    "name": "BistDone"
+                },
+                {
+                    "altname": "BIST_RUN",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "BIST Run",
+                    "mode": "RW",
+                    "name": "BistRun"
+                }
+            ]
+        },
+        "arm.ArmStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "COMMRX_CPU0",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "MPCore0 commrx_cpu0.",
+                    "mode": "RO",
+                    "name": "commrx_cpu0"
+                },
+                {
+                    "altname": "COMMTX_CPU0",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "MPCore0 commtx_cpu0.",
+                    "mode": "RO",
+                    "name": "commtx_cpu0"
+                },
+                {
+                    "altname": "SMPNAMP",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "MPCore0 smpnamp.",
+                    "mode": "RO",
+                    "name": "smpnamp"
+                },
+                {
+                    "altname": "PWRCTL0",
+                    "bit_lsb": 3,
+                    "bit_msb": 4,
+                    "description": "MPCore0 pwrctl.",
+                    "mode": "RO",
+                    "name": "pwrctl0"
+                },
+                {
+                    "altname": "WFE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "MPCore0 wfe.",
+                    "mode": "RO",
+                    "name": "wfe"
+                },
+                {
+                    "altname": "WFI",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "MPCore0 wfi.",
+                    "mode": "RO",
+                    "name": "wfi"
+                },
+                {
+                    "altname": "L2_IDLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "MPCore0 l2_idle.",
+                    "mode": "RO",
+                    "name": "l2_idle"
+                }
+            ]
+        },
+        "arm.BulkBarCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TYPE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "BAR type",
+                    "mode": "RW",
+                    "name": "BarType"
+                },
+                {
+                    "altname": "TGT",
+                    "bit_lsb": 27,
+                    "bit_msb": 30,
+                    "description": "CPP command target ID",
+                    "mode": "RW",
+                    "name": "Target"
+                },
+                {
+                    "altname": "TOK",
+                    "bit_lsb": 25,
+                    "bit_msb": 26,
+                    "description": "CPP command token",
+                    "mode": "RW",
+                    "name": "Token"
+                },
+                {
+                    "altname": "LEN",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "CPP command length increment",
+                    "mode": "RW",
+                    "name": "Length"
+                },
+                {
+                    "altname": "PREF",
+                    "bit_lsb": 11,
+                    "bit_msb": 12,
+                    "description": "CPP master command bus preference",
+                    "mode": "RW",
+                    "name": "Preference"
+                },
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 10,
+                    "description": "Bits [39:29] of CPP command address.  Bits [28:0] of CPP command are taken from the AXI command address.",
+                    "mode": "RW",
+                    "name": "Address"
+                }
+            ]
+        },
+        "arm.CfgConfigSts": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CFGCOMPLETED",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "This bit is set to indicate the configurater completed the configuration process.",
+                    "mode": "RO",
+                    "name": "CfgCompleted"
+                },
+                {
+                    "altname": "CFG2ERR",
+                    "bit_lsb": 5,
+                    "bit_msb": 7,
+                    "description": "This field indicates the error type for the second image copy.  Only valid if CfgCompleted is set.",
+                    "mode": "RO",
+                    "name": "Cfg2Err"
+                },
+                {
+                    "altname": "CFG1ERR",
+                    "bit_lsb": 2,
+                    "bit_msb": 4,
+                    "description": "This field indicates the error type for the first image copy.  Only valid if CfgImage is set.",
+                    "mode": "RO",
+                    "name": "Cfg1Err"
+                },
+                {
+                    "altname": "CFGSUCCESS",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "This bit is set if the configurater successfully completed the configuration process.",
+                    "mode": "RO",
+                    "name": "CfgSuccess"
+                },
+                {
+                    "altname": "CFGIMAGE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Zero indicates the configurater suceeded using the first image.  One indicates the first image failed and the second image was used.",
+                    "mode": "RO",
+                    "name": "CfgImage"
+                }
+            ]
+        },
+        "arm.ExpansionBarCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TYPE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "BAR type",
+                    "mode": "RW",
+                    "name": "BarType"
+                },
+                {
+                    "altname": "TGT",
+                    "bit_lsb": 27,
+                    "bit_msb": 30,
+                    "description": "CPP command target ID",
+                    "mode": "RW",
+                    "name": "Target"
+                },
+                {
+                    "altname": "TOK",
+                    "bit_lsb": 25,
+                    "bit_msb": 26,
+                    "description": "CPP command token",
+                    "mode": "RW",
+                    "name": "Token"
+                },
+                {
+                    "altname": "LEN",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "CPP command length increment",
+                    "mode": "RW",
+                    "name": "Length"
+                },
+                {
+                    "altname": "ACT",
+                    "bit_lsb": 19,
+                    "bit_msb": 23,
+                    "description": "CPP Command Action Encoding",
+                    "mode": "RW",
+                    "name": "Action"
+                },
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 14,
+                    "description": "Bits [39:25] of CPP command address.  Bits [24:0] of CPP command are taken from the AXI command address.",
+                    "mode": "RW",
+                    "name": "Address"
+                }
+            ]
+        },
+        "arm.ExplicitBarCfg0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 17,
+                    "description": "Bits [39:22] of CPP command address.  Bits [21:0] of CPP command are taken from the AXI command address.",
+                    "mode": "RW",
+                    "name": "Address"
+                }
+            ]
+        },
+        "arm.ExplicitBarCfg1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "POSTED",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "CPP command posted",
+                    "mode": "RW",
+                    "name": "Posted"
+                },
+                {
+                    "altname": "SIGNAL_REF",
+                    "bit_lsb": 24,
+                    "bit_msb": 30,
+                    "description": "CPP command signal ref",
+                    "mode": "RW",
+                    "name": "SignalRef"
+                },
+                {
+                    "altname": "DATA_MASTER",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "CPP command data master",
+                    "mode": "RW",
+                    "name": "DataMaster"
+                },
+                {
+                    "altname": "DATA_REF",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "CPP command data ref",
+                    "mode": "RW",
+                    "name": "DataRef"
+                }
+            ]
+        },
+        "arm.ExplicitBarCfg2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TGT",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "CPP command target ID",
+                    "mode": "RW",
+                    "name": "Target"
+                },
+                {
+                    "altname": "ACT",
+                    "bit_lsb": 23,
+                    "bit_msb": 27,
+                    "description": "CPP Command Action Encoding",
+                    "mode": "RW",
+                    "name": "Action"
+                },
+                {
+                    "altname": "LEN",
+                    "bit_lsb": 18,
+                    "bit_msb": 22,
+                    "description": "CPP command length",
+                    "mode": "RW",
+                    "name": "Length"
+                },
+                {
+                    "altname": "BYTE_MASK",
+                    "bit_lsb": 10,
+                    "bit_msb": 17,
+                    "description": "CPP command byte mask",
+                    "mode": "RW",
+                    "name": "ByteMask"
+                },
+                {
+                    "altname": "TOK",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "CPP command token",
+                    "mode": "RW",
+                    "name": "Token"
+                },
+                {
+                    "altname": "SIGNAL_MASTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "CPP command signal master",
+                    "mode": "RW",
+                    "name": "SignalMaster"
+                }
+            ]
+        },
+        "arm.GPIO_Sel": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "GPIO_SEL_31",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Select RMII TXD[1] or SMII TX_SYNC signal onto GPIO[31]",
+                    "mode": "RW",
+                    "name": "Gpio_Sel_31"
+                },
+                {
+                    "altname": "GPIO_SEL_30",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Select RMII TXD[0] or SMII TXD signal onto GPIO[30]",
+                    "mode": "RW",
+                    "name": "Gpio_Sel_30"
+                },
+                {
+                    "altname": "GPIO_SEL_29",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "RMII TX_EN signal onto GPIO[29]",
+                    "mode": "RW",
+                    "name": "Gpio_Sel_29"
+                },
+                {
+                    "altname": "GPIO_SEL_26",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "RMII RX_ER or SS_TX_CLK signal onto GPIO[26]",
+                    "mode": "RW",
+                    "name": "Gpio_Sel_26"
+                },
+                {
+                    "altname": "GPIO_SEL_23",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Select Serial_Activity_1 signal onto GPIO[23]",
+                    "mode": "RW",
+                    "name": "Gpio_Sel_23"
+                },
+                {
+                    "altname": "GPIO_SEL_22",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Select Serial_Activity_0 signal onto GPIO[22]",
+                    "mode": "RW",
+                    "name": "Gpio_Sel_22"
+                },
+                {
+                    "altname": "GPIO_SEL_21",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Select Uart1_TxDo onto GPIO[21]",
+                    "mode": "RW",
+                    "name": "Gpio_Sel_21"
+                },
+                {
+                    "altname": "GPIO_SEL_20",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Unused. Uart1_RxDi maps in from GPIO[20]",
+                    "mode": "RO",
+                    "name": "Gpio_Sel_20"
+                },
+                {
+                    "altname": "GPIO_SEL_19",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "Selects GPIO[19] to be ArbOut for NCSI/RMII. Use standard GPIO[19] OE.",
+                    "mode": "RW",
+                    "name": "Gpio_Sel_19"
+                },
+                {
+                    "altname": "GPIO_SEL_18",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "Unused. NCSI ArbIn maps in from GPIO[18]",
+                    "mode": "RO",
+                    "name": "Gpio_Sel_18"
+                }
+            ]
+        },
+        "arm.JumpToSelf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "JUMPTOSELF",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This register provides a jump to self instruction to the arm core when the configurater process fails and the arm is spun up for the arm JTAG to come in and program the configurater flash.",
+                    "mode": "RO",
+                    "name": "JumpToSelf"
+                }
+            ]
+        },
+        "arm.MPCoreBaseAddress": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 13,
+                    "bit_msb": 31,
+                    "description": "Base address for CSRs in MPCore",
+                    "mode": "RW",
+                    "name": "BaseAddress"
+                }
+            ]
+        },
+        "arm.MPCoreCSRBase": {
+            "bit_length": 32,
+            "fields": []
+        },
+        "arm.MPCoreCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PL310CFGBIGEND",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "L2 Cache big-endian.",
+                    "mode": "RW",
+                    "name": "PL310_Cfg_Bigend"
+                },
+                {
+                    "altname": "PL310CACHEID",
+                    "bit_lsb": 19,
+                    "bit_msb": 24,
+                    "description": "L2 Cache ID.",
+                    "mode": "RW",
+                    "name": "PL310_CacheID"
+                },
+                {
+                    "altname": "ARMCFGNMI",
+                    "bit_lsb": 15,
+                    "bit_msb": 18,
+                    "description": "NMI configuration.",
+                    "mode": "RW",
+                    "name": "ARM_Cfg_NMI"
+                },
+                {
+                    "altname": "ENDIAN",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "MP0 endianess",
+                    "mode": "RW",
+                    "name": "MP0ConfigEndian"
+                },
+                {
+                    "altname": "RESET_VECTOR",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "MP0 Reset Vector location",
+                    "mode": "RO",
+                    "name": "MP0RstVecLoc"
+                },
+                {
+                    "altname": "OUTCLK_EN",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "MP Output clock enable",
+                    "mode": "RW",
+                    "name": "MP0OutClkEnable"
+                },
+                {
+                    "altname": "ARMID",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Base address for CSRs in PL310 L2 Cache",
+                    "mode": "RW",
+                    "name": "ARMClusterId"
+                }
+            ]
+        },
+        "arm.PL310BaseAddress": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 12,
+                    "bit_msb": 31,
+                    "description": "Base address for CSRs in PL310 L2 cache",
+                    "mode": "RW",
+                    "name": "BaseAddress"
+                }
+            ]
+        },
+        "arm.Pl310CSRBase": {
+            "bit_length": 32,
+            "fields": []
+        },
+        "arm.PostedCommandSignal": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIG_B",
+                    "bit_lsb": 25,
+                    "bit_msb": 31,
+                    "description": "Expected return signal ref for signal B",
+                    "mode": "RW",
+                    "name": "SignalB"
+                },
+                {
+                    "altname": "SIG_B_BUS",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Signal B data bus",
+                    "mode": "RW",
+                    "name": "SignalBBus"
+                },
+                {
+                    "altname": "SIG_A",
+                    "bit_lsb": 17,
+                    "bit_msb": 23,
+                    "description": "Expected return signal ref for signal A",
+                    "mode": "RW",
+                    "name": "SignalA"
+                },
+                {
+                    "altname": "SIG_A_BUS",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Signal A data bus",
+                    "mode": "RW",
+                    "name": "SignalABus"
+                },
+                {
+                    "altname": "NOSPLIT_RCVD_B",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Set to '1' by hardware when Signal B received and the appropriate [Pull|Push]_Signal_Nosplit is active, cleared on CSR write.",
+                    "mode": "RW",
+                    "name": "NosplitReceivedB"
+                },
+                {
+                    "altname": "NOSPLIT_ENABLE_B",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Nosplit B and Signal B received will terminate a command waiting for both signals.",
+                    "mode": "RW",
+                    "name": "NosplitEnableB"
+                },
+                {
+                    "altname": "NOSPLIT_RCVD_A",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Set to '1' by hardware when Signal A received and the appropriate [Pull|Push]_Signal_Nosplit is active, cleared on CSR write.",
+                    "mode": "RW",
+                    "name": "NosplitReceivedA"
+                },
+                {
+                    "altname": "NOSPLIT_ENABLE_A",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Nosplit A and Signal A received will terminate a command waiting for both signals.",
+                    "mode": "RW",
+                    "name": "NosplitEnableA"
+                },
+                {
+                    "altname": "SIG_B_RCVD",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Set to '1' by hardware when Signal B received, cleared on CSR write.",
+                    "mode": "RW",
+                    "name": "SignalBReceived"
+                },
+                {
+                    "altname": "SIG_B_VALID",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Value in Signal B field is valid and must be received to complete cmd.",
+                    "mode": "RW",
+                    "name": "SignalBValid"
+                },
+                {
+                    "altname": "SIG_A_RCVD",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Set to '1' by hardware when Signal A received, cleared on CSR write.",
+                    "mode": "RW",
+                    "name": "SignalAReceived"
+                },
+                {
+                    "altname": "SIG_A_VALID",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Value in Signal A field is valid and must be received to complete cmd.",
+                    "mode": "RW",
+                    "name": "SignalAValid"
+                },
+                {
+                    "altname": "CMD_COMPLETE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Command complete, set to '1' by hardware when all valid signal(s) received, cleared on CSR write.",
+                    "mode": "RW",
+                    "name": "CmdComplete"
+                }
+            ]
+        },
+        "arm.SPIVirtualMemBase": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "EXTSPIDEVADDRSPACE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "SPI external device virtual address space",
+                    "mode": "RW",
+                    "name": "ExtSpiDevAddrSpace"
+                }
+            ]
+        },
+        "arm.SharedMemBase": {
+            "bit_length": 32,
+            "fields": []
+        },
+        "arm.SidedoorAddress": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIDEDOORADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 19,
+                    "description": "This field controls the ram ADDR pins for the arm core and L2 cache memories during sidedoor accesses.",
+                    "mode": "RW",
+                    "name": "SidedoorAddr"
+                }
+            ]
+        },
+        "arm.SidedoorBECore": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIDEDOORCOREWE",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "This bit is set to write enable sidedoor access into the arm core memories.",
+                    "mode": "RW",
+                    "name": "SidedoorCoreWE"
+                },
+                {
+                    "altname": "SIDEDOORCOREBE",
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "This field controls the bit enables for the arm core memories during sidedoor accesses.",
+                    "mode": "RW",
+                    "name": "SidedoorCoreBE"
+                }
+            ]
+        },
+        "arm.SidedoorCECore": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIDEDOORCOREENABLE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "This bit is set to enable sidedoor access into the arm core memories.",
+                    "mode": "RW",
+                    "name": "SidedoorCoreEnable"
+                },
+                {
+                    "altname": "SIDEDOORCE",
+                    "bit_lsb": 0,
+                    "bit_msb": 17,
+                    "description": "This field controls the ram CE pins for the arm core memories during sidedoor accesses.",
+                    "mode": "RW",
+                    "name": "SidedoorCE"
+                }
+            ]
+        },
+        "arm.SidedoorCEPl310": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIDEDOORPL310ENABLE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "This bit is set to enable sidedoor access into the arm L2 cache memories.",
+                    "mode": "RW",
+                    "name": "SidedoorPl310Enable"
+                },
+                {
+                    "altname": "SIDEDOORCE",
+                    "bit_lsb": 0,
+                    "bit_msb": 17,
+                    "description": "This field controls the ram CE pins for the arm L2 cache memories during sidedoor accesses.",
+                    "mode": "RW",
+                    "name": "SidedoorCE"
+                }
+            ]
+        },
+        "arm.SidedoorCoreDataReadHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIDEDOORDATARDHICORE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This register returns ram read data (bits [63:32]) for the arm core memories during sidedoor accesses.",
+                    "mode": "RO",
+                    "name": "SidedoorDataRdHiCore"
+                }
+            ]
+        },
+        "arm.SidedoorCoreDataReadLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIDEDOORDATARDLO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This register returns ram read data (bits [31:0]) for the arm core memories during sidedoor accesses.",
+                    "mode": "RO",
+                    "name": "SidedoorDataRdLo"
+                }
+            ]
+        },
+        "arm.SidedoorDCTL": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIDEDOORPL310DCTL",
+                    "bit_lsb": 0,
+                    "bit_msb": 19,
+                    "description": "This field controls the data read muxing for the arm L2 cache memories during sidedoor accesses.",
+                    "mode": "RW",
+                    "name": "SidedoorPl310DCTL"
+                }
+            ]
+        },
+        "arm.SidedoorDataWriteHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIDEDOORDATAWRHI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This field controls the ram write DATA pins (bits [63:32]) for the arm core cache memories during sidedoor accesses.",
+                    "mode": "RW",
+                    "name": "SidedoorDataWrHi"
+                }
+            ]
+        },
+        "arm.SidedoorDataWriteLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIDEDOORDATAWRLO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This field controls the ram write DATA pins (bits [31:0]) for the arm core cache memories during sidedoor accesses.",
+                    "mode": "RW",
+                    "name": "SidedoorDataWrLo"
+                }
+            ]
+        },
+        "arm.SidedoorPl310DataReadHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIDEDOORDATARDHIPL310",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This register returns ram read data (bits [63:32]) for the arm L2 cache memories during sidedoor accesses.",
+                    "mode": "RO",
+                    "name": "SidedoorDataRdHiPl310"
+                }
+            ]
+        },
+        "arm.SidedoorPl310DataReadLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIDEDOORDATARDLOPL310",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This register returns ram read data (bits [31:0]) for the arm L2 cache memories during sidedoor accesses.",
+                    "mode": "RO",
+                    "name": "SidedoorDataRdLoPl310"
+                }
+            ]
+        },
+        "arm.SidedoorWEPl310": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SIDEDOORPL310WE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This field controls the ram write enable pins for the arm L2 cache memories during sidedoor accesses.",
+                    "mode": "RW",
+                    "name": "SidedoorPl310WE"
+                }
+            ]
+        }
+    }
+}

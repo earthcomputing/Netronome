@@ -1,0 +1,423 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "peripheral_interrupt_manager.InterruptManagerMap_inst0": {
+            "0x00000000": {
+                "altname": "PINSTATUS",
+                "description": "32-bits of status in",
+                "name": "Status",
+                "ptr": "peripheral_interrupt_manager.IMgrStatus",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "PINDISABLE",
+                "description": "32-bits indicating which status bits have interrupt generation disabled",
+                "name": "IntDisable",
+                "ptr": "peripheral_interrupt_manager.IMgrEnable",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "PINSTATUSLOW",
+                "description": "Status & IntEnableLow",
+                "name": "IntStatusLow",
+                "ptr": "peripheral_interrupt_manager.IMgrEnabledStatus",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "PINENABLELOW",
+                "description": "32-bits indicating which status bits generate low priority interrupts",
+                "name": "IntEnableLow",
+                "ptr": "peripheral_interrupt_manager.IMgrEnable",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "INTRSTSMI",
+                "description": "Status & IntEnableMid",
+                "name": "IntStatusMid",
+                "ptr": "peripheral_interrupt_manager.IMgrEnabledStatus",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "PINENABLEMED",
+                "description": "32-bits indicating which status bits generate medium priority interrupts",
+                "name": "IntEnableMid",
+                "ptr": "peripheral_interrupt_manager.IMgrEnable",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "PINSTATUSHIGH",
+                "description": "Status & IntEnableHigh",
+                "name": "IntStatusHigh",
+                "ptr": "peripheral_interrupt_manager.IMgrEnabledStatus",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "PINENABLEHIGH",
+                "description": "32-bits indicating which status bits generate high priority interrupts",
+                "name": "IntEnableHigh",
+                "ptr": "peripheral_interrupt_manager.IMgrEnable",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "EVENTCONFIG0",
+                "description": "Which status changes on bits 0-15 generate events",
+                "name": "StatusEventConfig0",
+                "ptr": "peripheral_interrupt_manager.IMgrStatusEventConfig",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "EVENTCONFIG1",
+                "description": "What status changes on bits 16-31 generate events",
+                "name": "StatusEventConfig1",
+                "ptr": "peripheral_interrupt_manager.IMgrStatusEventConfig",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "EVENTTEST",
+                "description": "Write to add event to FIFO",
+                "name": "EventOut",
+                "ptr": "peripheral_interrupt_manager.IMgrEventOut",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "CAPTIMERSTATUS",
+                "description": "Set which edge detect captures a timer value",
+                "name": "CaptureTimerStatus",
+                "ptr": "peripheral_interrupt_manager.IMgrCaptureTimerStatus",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "CAPTIMERVALUE",
+                "description": "Set which edge detect captures a timer value",
+                "name": "CaptureTimerValue",
+                "ptr": "peripheral_interrupt_manager.IMgrCaptureTimerValue",
+                "type": "reg"
+            }
+        },
+        "peripheral_interrupt_manager.InterruptManagerMap_inst1": {
+            "0x00000000": {
+                "altname": "PINSTATUS",
+                "description": "32-bits of status in",
+                "name": "Status",
+                "ptr": "peripheral_interrupt_manager.IMgrStatus",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "PINDISABLE",
+                "description": "32-bits indicating which status bits have interrupt generation disabled",
+                "name": "IntDisable",
+                "ptr": "peripheral_interrupt_manager.IMgrEnable",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "PINSTATUSLOW",
+                "description": "Status & IntEnableLow",
+                "name": "IntStatusLow",
+                "ptr": "peripheral_interrupt_manager.IMgrEnabledStatus",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "PINENABLELOW",
+                "description": "32-bits indicating which status bits generate low priority interrupts",
+                "name": "IntEnableLow",
+                "ptr": "peripheral_interrupt_manager.IMgrEnable",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "INTRSTSMI",
+                "description": "Status & IntEnableMid",
+                "name": "IntStatusMid",
+                "ptr": "peripheral_interrupt_manager.IMgrEnabledStatus",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "PINENABLEMED",
+                "description": "32-bits indicating which status bits generate medium priority interrupts",
+                "name": "IntEnableMid",
+                "ptr": "peripheral_interrupt_manager.IMgrEnable",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "PINSTATUSHIGH",
+                "description": "Status & IntEnableHigh",
+                "name": "IntStatusHigh",
+                "ptr": "peripheral_interrupt_manager.IMgrEnabledStatus",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "PINENABLEHIGH",
+                "description": "32-bits indicating which status bits generate high priority interrupts",
+                "name": "IntEnableHigh",
+                "ptr": "peripheral_interrupt_manager.IMgrEnable",
+                "type": "reg"
+            },
+            "0x00000050": {
+                "altname": "EVENTCONFIG0",
+                "description": "Which status changes on bits 0-15 generate events",
+                "name": "StatusEventConfig0",
+                "ptr": "peripheral_interrupt_manager.IMgrStatusEventConfig",
+                "type": "reg"
+            },
+            "0x00000058": {
+                "altname": "EVENTCONFIG1",
+                "description": "What status changes on bits 16-31 generate events",
+                "name": "StatusEventConfig1",
+                "ptr": "peripheral_interrupt_manager.IMgrStatusEventConfig",
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "EVENTTEST",
+                "description": "Write to add event to FIFO",
+                "name": "EventOut",
+                "ptr": "peripheral_interrupt_manager.IMgrEventOut",
+                "type": "reg"
+            },
+            "0x00000070": {
+                "altname": "CAPTIMERSTATUS",
+                "description": "Set which edge detect captures a timer value",
+                "name": "CaptureTimerStatus",
+                "ptr": "peripheral_interrupt_manager.IMgrCaptureTimerStatus",
+                "type": "reg"
+            },
+            "0x00000078": {
+                "altname": "CAPTIMERVALUE",
+                "description": "Set which edge detect captures a timer value",
+                "name": "CaptureTimerValue",
+                "ptr": "peripheral_interrupt_manager.IMgrCaptureTimerValue",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "peripheral_interrupt_manager.IMgrCaptureTimerStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "EDGES",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mask of the edges which, when detected with StatusEdgeN, should cause a timer value to be captured.",
+                    "mode": "RW",
+                    "name": "Edges"
+                }
+            ]
+        },
+        "peripheral_interrupt_manager.IMgrCaptureTimerValue": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VALID",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Asserted if the timer value is valid; cleared on read and write.",
+                    "mode": "RO",
+                    "name": "Valid"
+                },
+                {
+                    "altname": "VALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 30,
+                    "description": "Timer value at last edge detected on 'CaptureEdge' status bit.",
+                    "mode": "RO",
+                    "name": "Value"
+                }
+            ]
+        },
+        "peripheral_interrupt_manager.IMgrEnable": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "When read a bit is set if the corresponding status bit is assigned to the interrupt level of the register being read; write a 1 in a bit to assign the corresponding status bit to the interrupt level of the register being written.",
+                    "mode": "RW",
+                    "name": "IntEnables"
+                }
+            ]
+        },
+        "peripheral_interrupt_manager.IMgrEnabledStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MASKED_STATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Status from the input to the module, ANDed with the interrupt priority for the register being read.",
+                    "mode": "RO",
+                    "name": "MaskedStatus"
+                }
+            ]
+        },
+        "peripheral_interrupt_manager.IMgrEventOut": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SOURCE",
+                    "bit_lsb": 4,
+                    "bit_msb": 15,
+                    "description": "Value for the source field of the event.",
+                    "mode": "WO",
+                    "name": "Source"
+                },
+                {
+                    "altname": "TYPE",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Value for the type field of the event.",
+                    "mode": "WO",
+                    "name": "Type"
+                }
+            ]
+        },
+        "peripheral_interrupt_manager.IMgrStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "STATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Status from the input to the module",
+                    "mode": "RO",
+                    "name": "Status"
+                }
+            ]
+        },
+        "peripheral_interrupt_manager.IMgrStatusEventConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "EDGE15",
+                    "bit_lsb": 30,
+                    "bit_msb": 31,
+                    "description": "Type of edge to watch Status15/31 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge15"
+                },
+                {
+                    "altname": "EDGE14",
+                    "bit_lsb": 28,
+                    "bit_msb": 29,
+                    "description": "Type of edge to watch Status14/30 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge14"
+                },
+                {
+                    "altname": "EDGE13",
+                    "bit_lsb": 26,
+                    "bit_msb": 27,
+                    "description": "Type of edge to watch Status13/29 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge13"
+                },
+                {
+                    "altname": "EDGE12",
+                    "bit_lsb": 24,
+                    "bit_msb": 25,
+                    "description": "Type of edge to watch Status12/28 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge12"
+                },
+                {
+                    "altname": "EDGE11",
+                    "bit_lsb": 22,
+                    "bit_msb": 23,
+                    "description": "Type of edge to watch Status11/27 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge11"
+                },
+                {
+                    "altname": "EDGE10",
+                    "bit_lsb": 20,
+                    "bit_msb": 21,
+                    "description": "Type of edge to watch Status10/26 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge10"
+                },
+                {
+                    "altname": "EDGE9",
+                    "bit_lsb": 18,
+                    "bit_msb": 19,
+                    "description": "Type of edge to watch Status9/25 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge9"
+                },
+                {
+                    "altname": "EDGE8",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Type of edge to watch Status8/24 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge8"
+                },
+                {
+                    "altname": "EDGE7",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "Type of edge to watch Status7/23 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge7"
+                },
+                {
+                    "altname": "EDGE6",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "Type of edge to watch Status6/22 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge6"
+                },
+                {
+                    "altname": "EDGE5",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Type of edge to watch Status5/21 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge5"
+                },
+                {
+                    "altname": "EDGE4",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Type of edge to watch Status4/20 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge4"
+                },
+                {
+                    "altname": "EDGE3",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Type of edge to watch Status3/19 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge3"
+                },
+                {
+                    "altname": "EDGE2",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Type of edge to watch Status2/18 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge2"
+                },
+                {
+                    "altname": "EDGE1",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Type of edge to watch Status1/17 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge1"
+                },
+                {
+                    "altname": "EDGE0",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Type of edge to watch Status0/16 for, to automatically generate events on that change.",
+                    "mode": "RW",
+                    "name": "Edge0"
+                }
+            ]
+        }
+    }
+}

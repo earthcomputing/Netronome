@@ -1,0 +1,538 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: eca5ba006ef4"
+    ],
+    "maps": {
+        "mu.CTMXpbMap": {
+            "0x00000000": {
+                "altname": "MU_CONFIG_REG",
+                "description": "MemUnit Config XPB Registers",
+                "name": "MuConfigReg",
+                "ptr": "mu.MuConfigXpb",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "MU_PACKET_REG",
+                "description": "PacketEngine XPB Registers",
+                "name": "MuPacketReg",
+                "ptr": "mu_packet_engine.MUPacketEngineAddressMapXpb",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "MU_MISC_REG",
+                "description": "MiscEngine XPB Registers",
+                "name": "MuMiscReg",
+                "ptr": "mu_misc_engine.MUMiscAddressMapXpb",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "MU_DCACHE_ECC",
+                "description": "DCache ECC Registers",
+                "name": "MuDcacheEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControl_16",
+                "type": "regmap"
+            }
+        },
+        "mu.ExtMuXpbMap": {
+            "0x00000000": {
+                "altname": "MU_CONFIG_REG",
+                "description": "MemUnit Config XPB Registers",
+                "name": "MuConfigReg",
+                "ptr": "mu.MuConfigXpb",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "MU_LOOKUP_REG0",
+                "description": "LookupEngine XPB Registers",
+                "name": "MuLookupReg0",
+                "ptr": "mule.LookupEngine",
+                "type": "regmap"
+            },
+            "0x00050000": {
+                "altname": "MU_LOOKUP_REG1",
+                "description": "Direct-access LookupEngine XPB Registers",
+                "name": "MuLookupReg1",
+                "ptr": "mule.LookupEngine",
+                "type": "regmap"
+            },
+            "0x000c0000": {
+                "altname": "MU_QUEUE_ECC",
+                "description": "QueueEngine ECC Registers",
+                "name": "MuQueueEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControl_2",
+                "type": "regmap"
+            },
+            "0x00300000": {
+                "altname": "MU_EXTCFG_REG",
+                "description": "External Interface Config Registers",
+                "name": "MuExtCfgReg",
+                "ptr": "mu_external_interface.MUExtCfgXpb",
+                "type": "regmap"
+            },
+            "0x00320000": {
+                "altname": "MU_DM_ECC0",
+                "description": "Channel 0 DataMover ECC Registers",
+                "name": "MuDataMoverEcc0",
+                "ptr": "peripheral_ecc_monitor.ECCControl_4",
+                "type": "regmap"
+            },
+            "0x00330000": {
+                "altname": "MU_DM_ECC1",
+                "description": "Channel 1 DataMover ECC Registers",
+                "name": "MuDataMoverEcc1",
+                "ptr": "peripheral_ecc_monitor.ECCControl_4",
+                "type": "regmap"
+            },
+            "0x00390000": {
+                "altname": "MU_DCACHE_ECC",
+                "description": "DCache ECC Registers",
+                "name": "MuDcacheEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControl_16",
+                "type": "regmap"
+            },
+            "0x00400000": {
+                "altname": "MU_TCACHE_CFG0",
+                "description": "TCache Bank0 Config Registers",
+                "name": "MuTcacheReg0",
+                "ptr": "mu_tcache_bank.MUTCacheBankCfgXpb",
+                "type": "regmap"
+            },
+            "0x00410000": {
+                "altname": "MU_TCACHE_ECC0",
+                "description": "TCache Bank0 ECC Registers",
+                "name": "MuTcacheEcc0",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00420000": {
+                "altname": "MU_TCACHE_CFG1",
+                "description": "TCache Bank1 Config Registers",
+                "name": "MuTcacheReg1",
+                "ptr": "mu_tcache_bank.MUTCacheBankCfgXpb",
+                "type": "regmap"
+            },
+            "0x00430000": {
+                "altname": "MU_TCACHE_ECC1",
+                "description": "TCache Bank1 ECC Registers",
+                "name": "MuTcacheEcc1",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00440000": {
+                "altname": "MU_TCACHE_CFG2",
+                "description": "TCache Bank2 Config Registers",
+                "name": "MuTcacheReg2",
+                "ptr": "mu_tcache_bank.MUTCacheBankCfgXpb",
+                "type": "regmap"
+            },
+            "0x00450000": {
+                "altname": "MU_TCACHE_ECC2",
+                "description": "TCache Bank2 ECC Registers",
+                "name": "MuTcacheEcc2",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00460000": {
+                "altname": "MU_TCACHE_CFG3",
+                "description": "TCache Bank3 Config Registers",
+                "name": "MuTcacheReg3",
+                "ptr": "mu_tcache_bank.MUTCacheBankCfgXpb",
+                "type": "regmap"
+            },
+            "0x00470000": {
+                "altname": "MU_TCACHE_ECC3",
+                "description": "TCache Bank3 ECC Registers",
+                "name": "MuTcacheEcc3",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00480000": {
+                "altname": "MU_TCACHE_CFG4",
+                "description": "TCache Bank4 Config Registers",
+                "name": "MuTcacheReg4",
+                "ptr": "mu_tcache_bank.MUTCacheBankCfgXpb",
+                "type": "regmap"
+            },
+            "0x00490000": {
+                "altname": "MU_TCACHE_ECC4",
+                "description": "TCache Bank4 ECC Registers",
+                "name": "MuTcacheEcc4",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x004a0000": {
+                "altname": "MU_TCACHE_CFG5",
+                "description": "TCache Bank5 Config Registers",
+                "name": "MuTcacheReg5",
+                "ptr": "mu_tcache_bank.MUTCacheBankCfgXpb",
+                "type": "regmap"
+            },
+            "0x004b0000": {
+                "altname": "MU_TCACHE_ECC5",
+                "description": "TCache Bank5 ECC Registers",
+                "name": "MuTcacheEcc5",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x004c0000": {
+                "altname": "MU_TCACHE_CFG6",
+                "description": "TCache Bank6 Config Registers",
+                "name": "MuTcacheReg6",
+                "ptr": "mu_tcache_bank.MUTCacheBankCfgXpb",
+                "type": "regmap"
+            },
+            "0x004d0000": {
+                "altname": "MU_TCACHE_ECC6",
+                "description": "TCache Bank6 ECC Registers",
+                "name": "MuTcacheEcc6",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x004e0000": {
+                "altname": "MU_TCACHE_CFG7",
+                "description": "TCache Bank7 Config Registers",
+                "name": "MuTcacheReg7",
+                "ptr": "mu_tcache_bank.MUTCacheBankCfgXpb",
+                "type": "regmap"
+            },
+            "0x004f0000": {
+                "altname": "MU_TCACHE_ECC7",
+                "description": "TCache Bank7 ECC Registers",
+                "name": "MuTcacheEcc7",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            },
+            "0x00500000": {
+                "altname": "MU_EXT_DCT0",
+                "description": "Channel 0 DDR Controller Configuration Registers",
+                "name": "MuExtDCT0",
+                "ptr": "mu_dct.MUExtDCT",
+                "type": "regmap"
+            },
+            "0x00510000": {
+                "altname": "MU_EXT_PHY0",
+                "description": "Channel 0 DDR PHY Configuration Registers",
+                "name": "MuExtPHY0",
+                "ptr": "mu_phy.MUExtPHY",
+                "type": "regmap"
+            },
+            "0x00520000": {
+                "altname": "MU_EXT_DCT1",
+                "description": "Channel 1 DDR Controller Configuration Registers",
+                "name": "MuExtDCT1",
+                "ptr": "mu_dct.MUExtDCT",
+                "type": "regmap"
+            },
+            "0x00530000": {
+                "altname": "MU_EXT_PHY1",
+                "description": "Channel 1 DDR PHY Configuration Registers",
+                "name": "MuExtPHY1",
+                "ptr": "mu_phy.MUExtPHY",
+                "type": "regmap"
+            },
+            "0x006f0000": {
+                "altname": "MU_OVL_EXT",
+                "description": "MU Overlay Extension",
+                "name": "MuOvlExt",
+                "ptr": "island_overlay.IslandOverlayExtMap",
+                "type": "regmap"
+            },
+            "0x009f0000": {
+                "altname": "MU_PLL_CNTL_XPB",
+                "description": "DDR Clock PLL Control Registers",
+                "name": "PLLCntlXpb",
+                "ptr": "pl.PLLCntlXpb",
+                "type": "regmap"
+            }
+        },
+        "mu.IntMuXpbMap": {
+            "0x00000000": {
+                "altname": "MU_CONFIG_REG",
+                "description": "MemUnit Config XPB Registers",
+                "name": "MuConfigReg",
+                "ptr": "mu.MuConfigXpb",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "MU_LOOKUP_REG0",
+                "description": "LookupEngine XPB Registers",
+                "name": "MuLookupReg0",
+                "ptr": "mule.LookupEngine",
+                "type": "regmap"
+            },
+            "0x00050000": {
+                "altname": "MU_LOOKUP_REG1",
+                "description": "NBI LookupEngine XPB Registers",
+                "name": "MuLookupReg1",
+                "ptr": "mule.LookupEngine",
+                "type": "regmap"
+            },
+            "0x00080000": {
+                "altname": "MU_STATS_REG",
+                "description": "StatsEngine XPB Registers",
+                "name": "MuStatsReg",
+                "ptr": "muse.MUSECsrXpb",
+                "type": "regmap"
+            },
+            "0x000c0000": {
+                "altname": "MU_QUEUE_ECC",
+                "description": "QueueEngine ECC Registers",
+                "name": "MuQueueEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControl_2",
+                "type": "regmap"
+            },
+            "0x00390000": {
+                "altname": "MU_DCACHE_ECC",
+                "description": "DCache ECC Registers",
+                "name": "MuDcacheEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControl_16",
+                "type": "regmap"
+            },
+            "0x006f0000": {
+                "altname": "MU_OVL_EXT",
+                "description": "MU Overlay Extension",
+                "name": "MuOvlExt",
+                "ptr": "island_overlay.IslandOverlayExtMap",
+                "type": "regmap"
+            }
+        },
+        "mu.MuConfigXpb": {
+            "0x00000000": {
+                "altname": "CFG",
+                "description": "CPP MU Configuration Register",
+                "name": "ConfigCPP",
+                "ptr": "mu.MUConfigCPP",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "VQDR_%d",
+                "description": "Virtual QDR %d Configuration Register",
+                "name": "ConfigVQDR%d",
+                "offinc1": "0x00000004",
+                "ptr": "mu.MUConfigVQDR",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "MU_CONFIG_BE_SDET",
+                "description": "Bulk Engine starvation Detection Control Register",
+                "name": "MUConfigBeSdet",
+                "ptr": "mu.MUConfigBeSdet",
+                "type": "reg"
+            },
+            "0x00000800": {
+                "altname": "PUSH_LOAD_BALANCER",
+                "description": "MU DSF Push Load Balancer Register",
+                "name": "PushLoadBalancer",
+                "ptr": "dsf_cpp_config.DsfCppLoadBalancerConfig",
+                "type": "reg"
+            },
+            "0x00000c00": {
+                "altname": "XPB_TIMEOUT",
+                "description": "XPB Timeout",
+                "name": "XpbTimeout",
+                "ptr": "mu.MUXpbTimeout",
+                "type": "reg"
+            },
+            "0x00001c10": {
+                "altname": "BE_PUSH_LOAD_BALANCER_%d",
+                "description": "MU DSF Push Load Balancer Register for Bulk Engine Channel %d",
+                "name": "BulkPushLoadBalancer%d",
+                "offinc1": "0x00000004",
+                "ptr": "dsf_cpp_config.DsfCppLoadBalancerConfig",
+                "repeat1": 2,
+                "type": "reg"
+            },
+            "0x00002400": {
+                "altname": "QUEUE_ENGINE_REG0",
+                "description": "Queue Engine Error reset and Configurable events",
+                "name": "QueueEngineReg",
+                "ptr": "mu.MUQueueEngineReg",
+                "type": "reg"
+            },
+            "0x00002404": {
+                "altname": "ATOMIC_ENGINE_REG0",
+                "description": "Atomic engine, Enable shifting of Immediate data for ALU operations",
+                "name": "AtomicEngineReg",
+                "ptr": "mu.MUAtomicEngineReg",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "mu.MUAtomicEngineReg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ATOMIC_ENGINE_REG",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Atomic engine, Enable shifting of Immediate data for ALU operations.",
+                    "mode": "RW",
+                    "name": "AtomicEngineReg"
+                }
+            ]
+        },
+        "mu.MUConfigBeSdet": {
+            "bit_length": 32,
+            "fields": []
+        },
+        "mu.MUConfigCPP": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DISABLE_TAG_PASSING_BULK_ENGINE",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "This flag is used to disable tag passing completely in Bulk engine. All Tags would be requested and released. ",
+                    "mode": "RW",
+                    "name": "DisableTagPassingBulkEngine"
+                },
+                {
+                    "altname": "WAYS",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "When bit n in this field is set to 1, permit MU commands to direct access that way of the cache; when low, address bits [39:38] determine locality. If all 1s then all MU commands, with the exception of the Queue Engine commands highlighted in the Note below, are forced to be direct access.  Note: This applies only the External Memory Units, all other Memory Units are direct access only",
+                    "mode": "RW",
+                    "name": "DirAccWays"
+                },
+                {
+                    "altname": "DISABLE_FIX_ON_PARTIAL_TAG_PASSING_BULK_ENGINE",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": " This bit is set to Disable the fix which was put in for Partial Tag-passing. If this bit is set old mode of operation would take into effect for Bulk engine Tag-passing.",
+                    "mode": "RW",
+                    "name": "DisableFixOnPartialTagPassingBulkEngine"
+                },
+                {
+                    "altname": "ENABLE_BULK_BYTEMASK_SWAP",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Enable Bulk ByteMask Swap",
+                    "mode": "RW",
+                    "name": "EnableBulkByteMaskSwap"
+                },
+                {
+                    "altname": "ERROR_SUPPRESS",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "If set, data errors generated for outbound CPP data buses will be suppressed internally and will not be sent out on the bus.  CPP targets will suppress Push bus errors, CPP masters will suppress Pull bus errors.",
+                    "mode": "RW",
+                    "name": "CPPErrorSuppress"
+                },
+                {
+                    "altname": "ERROR_IGNORE",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "If set, data errors received on inbound CPP data buses will be ignored internally.  CPP targets will ignore Pull bus errors, CPP masters will ignore Push bus errors.",
+                    "mode": "RW",
+                    "name": "CPPErrorIgnore"
+                },
+                {
+                    "altname": "DISABLE_DUAL_READ",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Controls the use of the CTM Bulk Engine performance feature to use both DCache channels for parallel non-dependent reads if the ordered commands are blocked/empty (CTM Only).",
+                    "mode": "RW",
+                    "name": "DisableDualChRead"
+                },
+                {
+                    "altname": "ADDRESSING",
+                    "bit_lsb": 1,
+                    "bit_msb": 2,
+                    "description": "Select mode of addressing. Note that only Bulk, Atomic and Queue operations are supported in 32-bit modes.",
+                    "mode": "RW",
+                    "name": "Addr32Bit"
+                },
+                {
+                    "altname": "BULK_ALIGN",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "If set, then CPP address[3;0] are ignored for bulk DRAM access, as with the IXP. If clear, then CPP address[3;0] are used, and unaligned accesses occur if they are not zero.",
+                    "mode": "RW",
+                    "name": "IgnBulkAlign"
+                }
+            ]
+        },
+        "mu.MUConfigVQDR": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "QUEUE_TYPE",
+                    "bit_lsb": 20,
+                    "bit_msb": 21,
+                    "description": "Type of queues in the channel, similar to IXP IgnoreEOP and IgnoreSegCnt",
+                    "mode": "RW",
+                    "name": "QueueType"
+                },
+                {
+                    "altname": "BASE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits [16;24] of full 40-bit MU address space for the base of the virtual QDR channel",
+                    "mode": "RW",
+                    "name": "MemWinBase"
+                }
+            ]
+        },
+        "mu.MUQueueEngineReg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ERRORRESET",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "When set to 1, causes Queue engine to clear its error bit ",
+                    "mode": "RW",
+                    "name": "ErrorReset"
+                },
+                {
+                    "altname": "ERRORINDICATOR",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "when set to 1, indicates that all the Queue operations on any of the QDescriptor contains multi-bit error",
+                    "mode": "RO",
+                    "name": "ErrorIndicator"
+                },
+                {
+                    "altname": "ENABLE_DROP_BAD_PUSH_IDS",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "When this bit is set, push commands that get their IDs from DCache will be silently dropped If the Dcache read had an un-correctablr ECC error.",
+                    "mode": "RW",
+                    "name": "EnableDropBadPushIds"
+                },
+                {
+                    "altname": "ENABLE_ERROR_HANDLING",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "When this bit is set, Error-handling becomes active. i.e. from now on if any Qdescriptor gets error based on ReadQDescriptor then any command working on any of the Qdescriptor would be considered to be Error'd ",
+                    "mode": "RW",
+                    "name": "EnableErrorHandling"
+                },
+                {
+                    "altname": "CONFIGURABLEWATERMARK",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Legal values are from 0->19, when set to 0 event is raised when count goes above/below  pow(2,(4+configurable_watermark)) value. If value greater than 19 is specified then RTL would default it to value of 0.",
+                    "mode": "RW",
+                    "name": "ConfigurableWatermark"
+                }
+            ]
+        },
+        "mu.MUXpbTimeout": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "XPB_TIMEOUT_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "XPB timeout data.",
+                    "mode": "RW",
+                    "name": "XpbTimeoutData"
+                }
+            ]
+        }
+    }
+}

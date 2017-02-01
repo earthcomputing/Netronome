@@ -1,0 +1,588 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "macle_eth_an73.EthAn": {
+            "0x00000000": {
+                "altname": "ETH_KXAN_CONTROL",
+                "description": "Control Operation",
+                "name": "EthKxanControl",
+                "ptr": "macle_eth_an73.EthKxanControl",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "ETH_KXAN_STATUS",
+                "description": "Status Information",
+                "name": "EthKxanStatus",
+                "ptr": "macle_eth_an73.EthKxanStatus",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "ETH_KXAN_ABILITY_0",
+                "description": "Ability Word first 16 bits",
+                "name": "EthKxanAbility0",
+                "ptr": "macle_eth_an73.EthKxanAbility0",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "ETH_KXAN_ABILITY_1",
+                "description": "Ability Word 2nd 16 bits (31:16)",
+                "name": "EthKxanAbility1",
+                "ptr": "macle_eth_an73.EthKxanAbility1",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "ETH_KXAN_ABILITY_2",
+                "description": "Ability Word last 16 bits (47:32)",
+                "name": "EthKxanAbility2",
+                "ptr": "macle_eth_an73.EthKxanAbility2",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "ETH_KXAN_REM_ABILITY_0",
+                "description": "Received Ability base page first 16 bits 15:0",
+                "name": "EthKxanRemAbility0",
+                "ptr": "macle_eth_an73.EthKxanRemAbility0",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "ETH_KXAN_REM_ABILITY_1",
+                "description": "Received Ability bits 32:16",
+                "name": "EthKxanRemAbility1",
+                "ptr": "macle_eth_an73.EthKxanRemAbility1",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "ETH_KXAN_REM_ABILITY_2",
+                "description": "Received Ability bits 47:16",
+                "name": "EthKxanRemAbility2",
+                "ptr": "macle_eth_an73.EthKxanRemAbility2",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "ETH_KXAN_MS_COUNT",
+                "description": "Timebase for millisecond timer.",
+                "name": "EthKxanMsCount",
+                "ptr": "macle_eth_an73.EthKxanMsCount",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "ETH_AN_XNP_0",
+                "description": "Next Page Ability Register bits 15:0. Must be written first. Can be written only if the KxanControl next page ability is enabled.",
+                "name": "EthAnXnp0",
+                "ptr": "macle_eth_an73.EthAnXnp0",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "ETH_AN_XNP_1",
+                "description": "Next Page Abilities bits 31:16.  Can be written only if the KxanControl next page ability is enabled.",
+                "name": "EthAnXnp1",
+                "ptr": "macle_eth_an73.EthAnXnp1",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "ETH_AN_XNP_2",
+                "description": "Next Page Abilities bits 47:32. This register must be written last and transfer the data into the transmit register triggering DME page transmission.  Can be written only if the KxanControl next page ability is enabled.",
+                "name": "EthAnXnp2",
+                "ptr": "macle_eth_an73.EthAnXnp2",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "ETH_LP_AN_XNP_0",
+                "description": "Received Next Page from Link Partner bits 15:0.",
+                "name": "EthLpAnXnp0",
+                "ptr": "macle_eth_an73.EthLpAnXnp0",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "ETH_LP_AN_XNP_1",
+                "description": "Received Next Page from Link Partner bits 31:16.",
+                "name": "EthLpAnXnp1",
+                "ptr": "macle_eth_an73.EthLpAnXnp1",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "ETH_LP_AN_XNP_2",
+                "description": "Received Next Page from Link Partner bits 47:32.",
+                "name": "EthLpAnXnp2",
+                "ptr": "macle_eth_an73.EthLpAnXnp2",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "ETH_BP_ETH_STATUS",
+                "description": "Resolved Ability from Base-Page",
+                "name": "EthBpEthStatus",
+                "ptr": "macle_eth_an73.EthBpEthStatus",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "macle_eth_an73.EthAnXnp0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_NEXT_PAGE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 15:0 of Next Page to transmit.",
+                    "mode": "RW",
+                    "name": "EthNextPage"
+                }
+            ]
+        },
+        "macle_eth_an73.EthAnXnp1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_NEXT_PAGE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 31:16 of Next Page to transmit.",
+                    "mode": "RW",
+                    "name": "EthNextPage"
+                }
+            ]
+        },
+        "macle_eth_an73.EthAnXnp2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_NEXT_PAGE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 47:32 of Next Page to transmit.",
+                    "mode": "RW",
+                    "name": "EthNextPage"
+                }
+            ]
+        },
+        "macle_eth_an73.EthBpEthStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TECHNOLOGY_A12",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Resolved Technology A12",
+                    "mode": "RO",
+                    "name": "EthTechnologyA12"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY_A11",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Resolved Technology A11",
+                    "mode": "RO",
+                    "name": "EthTechnologyA11"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY_A10",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Resolved Technology A10",
+                    "mode": "RO",
+                    "name": "EthTechnologyA10"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY_A9",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Resolved Technology A9",
+                    "mode": "RO",
+                    "name": "EthTechnologyA9"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY_A8",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Resolved Technology A8 (100G CR4)",
+                    "mode": "RO",
+                    "name": "EthTechnologyA8"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY_A7",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Resolved Technology A7 (100G KR4)",
+                    "mode": "RO",
+                    "name": "EthTechnologyA7"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY_A6",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Resolved Technology A6 (100G KP4)",
+                    "mode": "RO",
+                    "name": "EthTechnologyA6"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY_A5",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Resolved Technology A5 (100G CR10)",
+                    "mode": "RO",
+                    "name": "EthTechnologyA5"
+                },
+                {
+                    "altname": "ETH_BP_ETH_STATUS_RSV",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "reserved",
+                    "mode": "RO",
+                    "name": "EthBpEthStatusRsv"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY_A4",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Resolved Technology A4 (40G CR4)",
+                    "mode": "RO",
+                    "name": "EthTechnologyA4"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY_A3",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Resolved technology A3 (40G KR4)",
+                    "mode": "RO",
+                    "name": "EthTechnologyA3"
+                },
+                {
+                    "altname": "ETH_FEC",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Resolved FEC(74) should be enabled.",
+                    "mode": "RO",
+                    "name": "EthFec"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY_A2",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Resolved Technology A2 (10G KR)",
+                    "mode": "RO",
+                    "name": "EthTechnologyA2"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY_A1",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Resolved Technology A1 (KX4)",
+                    "mode": "RO",
+                    "name": "EthTechnologyA1"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY_A0",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Resolved Technology A0 (1G KX)",
+                    "mode": "RO",
+                    "name": "EthTechnologyA0"
+                },
+                {
+                    "altname": "ETH_PRESENT",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Always 1 indicating existence of the register.",
+                    "mode": "RO",
+                    "name": "EthPresent"
+                }
+            ]
+        },
+        "macle_eth_an73.EthKxanAbility0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_NEXT_PAGE",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Indicates next pages will follow.",
+                    "mode": "RW",
+                    "name": "EthNextPage"
+                },
+                {
+                    "altname": "ETH_ACK",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Acknowledge. The bit is controlled automatically. Should be written with 0 always.",
+                    "mode": "RW",
+                    "name": "EthAck"
+                },
+                {
+                    "altname": "ETH_REMOTE_FAULT",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Indicate a fault situation to the remote.",
+                    "mode": "RW",
+                    "name": "EthRemoteFault"
+                },
+                {
+                    "altname": "ETH_PAUSE_ABILITY",
+                    "bit_lsb": 10,
+                    "bit_msb": 12,
+                    "description": "Pause ability negotiation",
+                    "mode": "RW",
+                    "name": "EthPauseAbility"
+                },
+                {
+                    "altname": "ETH_ECHOED_NONCE",
+                    "bit_lsb": 5,
+                    "bit_msb": 9,
+                    "description": "Nonce field returned to remote. The field is automatically updated and should be initialized with a random value.",
+                    "mode": "RW",
+                    "name": "EthEchoedNonce"
+                },
+                {
+                    "altname": "ETH_SELECTOR",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "constant value 1",
+                    "mode": "RW",
+                    "name": "EthSelector"
+                }
+            ]
+        },
+        "macle_eth_an73.EthKxanAbility1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TECHNOLOGY",
+                    "bit_lsb": 5,
+                    "bit_msb": 15,
+                    "description": "Ability bits A10 to A0",
+                    "mode": "RW",
+                    "name": "EthTechnology"
+                },
+                {
+                    "altname": "ETH_TX_NONCE",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Transmitted Nonce. Must be initialized with a random value except 0.",
+                    "mode": "RW",
+                    "name": "EthTxNonce"
+                }
+            ]
+        },
+        "macle_eth_an73.EthKxanAbility2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_FEC_ABILITY",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "Indicate FEC(Clause74) availability and request its use.",
+                    "mode": "RW",
+                    "name": "EthFecAbility"
+                },
+                {
+                    "altname": "ETH_TECHNOLOGY",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "Ability bits A24 to A11",
+                    "mode": "RW",
+                    "name": "EthTechnology"
+                }
+            ]
+        },
+        "macle_eth_an73.EthKxanControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_RESET",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "(SC) Soft Reset. If AN is enabled causes restart. Self-Clearing",
+                    "mode": "RW",
+                    "name": "EthReset"
+                },
+                {
+                    "altname": "ETH_NEXT_PAGE_EN",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "When 1 externded NextPage support is enabled. Must be set to allow exchange of next pages.",
+                    "mode": "RW",
+                    "name": "EthNextPageEn"
+                },
+                {
+                    "altname": "ETH_AN_ENABLE",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Autonegotiation Enable. When set autonegotiation will begin. All registers must be initialized before.",
+                    "mode": "RW",
+                    "name": "EthAnEnable"
+                },
+                {
+                    "altname": "ETH_AN_RESTART",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "(SC) Restart Autonegotiation. Self-Clearning.",
+                    "mode": "RW",
+                    "name": "EthAnRestart"
+                }
+            ]
+        },
+        "macle_eth_an73.EthKxanMsCount": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_NUM_CLOCKS",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of register clock periods required to count 1ms time. Higher 16bit of 21bit wide counter. Lower 5 bits are fixed to 0x10.",
+                    "mode": "RW",
+                    "name": "EthNumClocks"
+                }
+            ]
+        },
+        "macle_eth_an73.EthKxanRemAbility0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_REM_ABILITY",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 15:0 of received base page.",
+                    "mode": "RO",
+                    "name": "EthRemAbility"
+                }
+            ]
+        },
+        "macle_eth_an73.EthKxanRemAbility1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_REM_ABILITY",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 31:16 of received base page.",
+                    "mode": "RO",
+                    "name": "EthRemAbility"
+                }
+            ]
+        },
+        "macle_eth_an73.EthKxanRemAbility2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_REM_ABILITY",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 47:32 of received base page.",
+                    "mode": "RO",
+                    "name": "EthRemAbility"
+                }
+            ]
+        },
+        "macle_eth_an73.EthKxanStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PARALLEL_DETECT_FAULT",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "(LH) Parallel detection fault occured, autoneg restarted.",
+                    "mode": "RO",
+                    "name": "EthParallelDetectFault"
+                },
+                {
+                    "altname": "ETH_EXTD_NEXT_PAGE",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Indicates next page exchanges are enabled. It asserts as a result of setting KxanControl.13",
+                    "mode": "RO",
+                    "name": "EthExtdNextPage"
+                },
+                {
+                    "altname": "ETH_PAGE_RECEIVED",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "(LH) A DME page has been received.",
+                    "mode": "RO",
+                    "name": "EthPageReceived"
+                },
+                {
+                    "altname": "ETH_AUTONEG_COMPLETE",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Autonegotiation has completed.",
+                    "mode": "RO",
+                    "name": "EthAutonegComplete"
+                },
+                {
+                    "altname": "ETH_REMOTE_FAULT",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "not applicable as no fault situation is available. If the remote device indicates a fault situation the base page must be inspected. The bit is 0 always.",
+                    "mode": "RO",
+                    "name": "EthRemoteFault"
+                },
+                {
+                    "altname": "ETH_AUTONEG_ABILITY",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Always 1 indicating this core is autonegotiation capable.",
+                    "mode": "RO",
+                    "name": "EthAutonegAbility"
+                },
+                {
+                    "altname": "ETH_LINK_STATUS",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "(LL): Status of signal detect pin.",
+                    "mode": "RO",
+                    "name": "EthLinkStatus"
+                },
+                {
+                    "altname": "ETH_LP_AN_CAPABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Link Partner is Autonegotiation Capable. Asserts when DME pages seem to be received.",
+                    "mode": "RO",
+                    "name": "EthLpAnCapable"
+                }
+            ]
+        },
+        "macle_eth_an73.EthLpAnXnp0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_REM_NEXT_PAGE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 15:0 of received Next Page.",
+                    "mode": "RO",
+                    "name": "EthRemNextPage"
+                }
+            ]
+        },
+        "macle_eth_an73.EthLpAnXnp1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_REM_NEXT_PAGE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 32:16 of received Next Page",
+                    "mode": "RO",
+                    "name": "EthRemNextPage"
+                }
+            ]
+        },
+        "macle_eth_an73.EthLpAnXnp2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_REM_NEXT_PAGE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 47:32 of received Next Page.",
+                    "mode": "RO",
+                    "name": "EthRemNextPage"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "nbi_reg.NbiAddressMap": {
+            "0x00000000": {
+                "altname": "NBI_DMA_CPP",
+                "description": "NBI DMA CPP Access",
+                "name": "NbiDmaCpp",
+                "ptr": "nbi_dma_reg.NbiDmaAddressMap",
+                "type": "regmap"
+            },
+            "0x00100000": {
+                "altname": "MAC_STATS_MAP",
+                "description": "Access to MAC Statistics using the XBP Statistics interface.",
+                "name": "MacStatsAdrMap",
+                "ptr": "mac_stats.MacStatsAdrMap",
+                "type": "regmap"
+            },
+            "0x00200000": {
+                "description": "Access to the Traffic Manager CPP Address Map",
+                "name": "NBITMCPP",
+                "ptr": "nbitm.NBITMCPPAddressMap",
+                "type": "regmap"
+            }
+        },
+        "nbi_reg.NbiTopXpbMap": {
+            "0x00000000": {
+                "altname": "NBI_DMA",
+                "description": "NBI DMA XPB Address Map",
+                "name": "NbiDmaXpb",
+                "ptr": "nbi_dma_csr.NbiDmaXpbAddressMap",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "NBI_TM",
+                "description": "NBI Traffic Manager XPB Address Map",
+                "name": "TrafficManager",
+                "ptr": "nbitm.TrafficManager",
+                "type": "regmap"
+            },
+            "0x00180000": {
+                "altname": "NBI_PKT_PRECLASSIFIER",
+                "description": "NBI Pkt Preclassifier XPB Address Map",
+                "name": "PktPreclassifier",
+                "ptr": "nbi_packet_preclassifier.PreclassifierXPBs",
+                "type": "regmap"
+            },
+            "0x00280000": {
+                "altname": "NBI_PKT_MODIFIER",
+                "description": "NBI Pkt Modifier XPB Address Map",
+                "name": "PktModifier",
+                "ptr": "packet_modifier.NbiPmXpbRegs",
+                "type": "regmap"
+            },
+            "0x002e0000": {
+                "altname": "NBI_INTERRUPT_MANAGER",
+                "description": "Interrupt Manager",
+                "name": "NbiInterruptManager",
+                "ptr": "peripheral_interrupt_manager.InterruptManagerMap_inst0",
+                "type": "regmap"
+            },
+            "0x002f0000": {
+                "altname": "NBI_TOP_CSRS",
+                "description": "NBI Top-Level CSRs",
+                "name": "NbiTopCSRs",
+                "ptr": "nbi_top_csr.NbiCsr",
+                "type": "regmap"
+            },
+            "0x00300000": {
+                "altname": "MAC_GLBL_MAP",
+                "description": "MAC Global XPB Address Map",
+                "name": "MacGlbAdrMap",
+                "ptr": "mac_csr.MacGlbAdrMap",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

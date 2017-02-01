@@ -1,0 +1,196 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "mu_tcache_bank.MUTCacheBankCfgXpb": {
+            "0x00000008": {
+                "altname": "CMDST",
+                "description": "Tag Bank N Command Status Register",
+                "name": "CommandStatus",
+                "ptr": "mu_tcache_bank.MUTCacheCmdStatus",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "CMDCTL",
+                "description": "Tag Bank N Command Control Register",
+                "name": "CommandControl",
+                "ptr": "mu_tcache_bank.MUTCacheCmdControl",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "WDATA",
+                "description": "Tag Bank N Write Data Register",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "WriteData",
+                "ptr": "mu_tcache_bank.MUTCacheWriteData",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "CMDRESP",
+                "description": "Tag Bank N Command Response Register",
+                "name": "CommandResponse",
+                "ptr": "mu_tcache_bank.MUTCacheCmdResponse",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "RDATA",
+                "description": "Tag Bank N Read Data Register",
+                "name": "ReadData",
+                "ptr": "mu_tcache_bank.MUTCacheReadData",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "mu_tcache_bank.MUTCacheCmdControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SET",
+                    "bit_lsb": 16,
+                    "bit_msb": 24,
+                    "description": "Set to access",
+                    "mode": "WO",
+                    "name": "Set"
+                },
+                {
+                    "altname": "WAYS",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "For write: mask of ways to write (one bit per way); for read: which way to read (binary encoding:upper five bits not used for read)",
+                    "mode": "WO",
+                    "name": "Ways"
+                },
+                {
+                    "altname": "TYPE",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Command type",
+                    "mode": "WO",
+                    "name": "Type"
+                }
+            ]
+        },
+        "mu_tcache_bank.MUTCacheCmdResponse": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VALID",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Asserted if the command response is valid; cleared when a new command is set",
+                    "mode": "RO",
+                    "name": "Valid"
+                },
+                {
+                    "altname": "TYPE",
+                    "bit_lsb": 28,
+                    "bit_msb": 30,
+                    "description": "Type of command response",
+                    "mode": "RO",
+                    "name": "Type"
+                },
+                {
+                    "altname": "WAY",
+                    "bit_lsb": 20,
+                    "bit_msb": 22,
+                    "description": "Way in command response",
+                    "mode": "RO",
+                    "name": "Way"
+                },
+                {
+                    "altname": "STATE",
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "State from command response",
+                    "mode": "RO",
+                    "name": "State"
+                },
+                {
+                    "altname": "TAG",
+                    "bit_lsb": 0,
+                    "bit_msb": 14,
+                    "description": "Tag from command response",
+                    "mode": "RO",
+                    "name": "Tag"
+                }
+            ]
+        },
+        "mu_tcache_bank.MUTCacheCmdStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ABORTED",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Indicates a command aborted; cleared by a read",
+                    "mode": "RO",
+                    "name": "Aborted"
+                },
+                {
+                    "altname": "VALID",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Asserted when a tcache command has completed; cleared by a read",
+                    "mode": "RO",
+                    "name": "Valid"
+                },
+                {
+                    "altname": "ERROR",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Asserted if an error occurred in a tcache command; cleared by a read",
+                    "mode": "RO",
+                    "name": "IntfErr"
+                }
+            ]
+        },
+        "mu_tcache_bank.MUTCacheReadData": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "STATE",
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "State of way read using read command; only set when a read command response is valid",
+                    "mode": "RO",
+                    "name": "State"
+                },
+                {
+                    "altname": "TAG",
+                    "bit_lsb": 0,
+                    "bit_msb": 14,
+                    "description": "Tag of way read using read command; only set when a read command response is valid",
+                    "mode": "RO",
+                    "name": "Tag"
+                }
+            ]
+        },
+        "mu_tcache_bank.MUTCacheWriteData": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "STATE",
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "State value to write to ways of set for write command",
+                    "mode": "RW",
+                    "name": "State"
+                },
+                {
+                    "altname": "TAG",
+                    "bit_lsb": 0,
+                    "bit_msb": 14,
+                    "description": "Tag data to write to ways of set for write command",
+                    "mode": "RW",
+                    "name": "Tag"
+                }
+            ]
+        }
+    }
+}

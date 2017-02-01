@@ -1,0 +1,630 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "peripheral_spi.SpiCsrSsb": {
+            "0x00000000": {
+                "altname": "SPIPORT%dCFG",
+                "description": "Configuration for physical port %d",
+                "name": "PhysicalPort%dConfig",
+                "offinc1": "0x00000004",
+                "ptr": "peripheral_spi.SerialPortConfig",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "SPIPORT%dMC",
+                "description": "Manual control for physical port %d",
+                "name": "PhysicalPort%dManualControl",
+                "offinc1": "0x00000004",
+                "ptr": "peripheral_spi.SerialPortManualControl",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "SPIPORT%dMDO",
+                "description": "Manual data out for physical port %d",
+                "name": "PhysicalPort%dManualDataOut",
+                "offinc1": "0x00000004",
+                "ptr": "peripheral_spi.SerialPortManualDataOut",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "SPIPORT%dMDI",
+                "description": "Manual data in for physical port %d",
+                "name": "PhysicalPort%dManualDataIn",
+                "offinc1": "0x00000004",
+                "ptr": "peripheral_spi.SerialPortManualDataIn",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "SPIDEV%dCFGA",
+                "description": "Part of the configuration for virtual device %d",
+                "name": "VirtualDevice%dConfigA",
+                "offinc1": "0x00000004",
+                "ptr": "peripheral_spi.SerialConfigA",
+                "repeat1": 16,
+                "type": "multireg"
+            },
+            "0x00000080": {
+                "altname": "SPIDEV%dCFGB",
+                "description": "Part of the configuration for virtual device %d",
+                "name": "VirtualDevice%dConfigB",
+                "offinc1": "0x00000004",
+                "ptr": "peripheral_spi.SerialConfigB",
+                "repeat1": 16,
+                "type": "multireg"
+            },
+            "0x000000c0": {
+                "altname": "SPIDEV%dCFGC",
+                "description": "Part of the configuration for virtual device %d",
+                "name": "VirtualDevice%dConfigC",
+                "offinc1": "0x00000004",
+                "ptr": "peripheral_spi.SerialConfigC",
+                "repeat1": 16,
+                "type": "multireg"
+            },
+            "0x00000100": {
+                "altname": "SPIIOCONFIG",
+                "description": "IO pad configuration",
+                "name": "SpiIOConfig",
+                "ptr": "peripheral_spi.SerialIOConfig",
+                "type": "reg"
+            },
+            "0x00000104": {
+                "altname": "SPIIOIDLESTATUS",
+                "description": "IO pad idle status",
+                "name": "SpiIOIdleStatus",
+                "ptr": "peripheral_spi.SerialIOIdleStatus",
+                "type": "reg"
+            },
+            "0x00000108": {
+                "altname": "SPIWRITEENABLEMASK",
+                "description": "Write enable mask for virtual port configuration registers",
+                "name": "SpiWriteEnableMask",
+                "ptr": "peripheral_spi.SerialWriteEnableMask",
+                "type": "reg"
+            },
+            "0x0000010c": {
+                "altname": "SPIWRITEENABLETARGET",
+                "description": "Write enable target for virtual port configuration registers",
+                "name": "SpiWriteEnableTarget",
+                "ptr": "peripheral_spi.SerialWriteEnableTarget",
+                "type": "reg"
+            },
+            "0x00000110": {
+                "altname": "SPIPORT%dMCFG",
+                "description": "Manual configuration for physical port %d",
+                "name": "PhysicalPort%dManualConfiguration",
+                "offinc1": "0x00000004",
+                "ptr": "peripheral_spi.SerialPortManualConfiguration",
+                "repeat1": 4,
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "peripheral_spi.SerialConfigA": {
+            "bit_length": 32,
+            "comment": "Multi-register",
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "mode": "rw",
+                    "name": "value"
+                }
+            ]
+        },
+        "peripheral_spi.SerialConfigB": {
+            "bit_length": 32,
+            "comment": "Multi-register",
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "mode": "rw",
+                    "name": "value"
+                }
+            ]
+        },
+        "peripheral_spi.SerialConfigC": {
+            "bit_length": 32,
+            "comment": "Multi-register",
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "mode": "rw",
+                    "name": "value"
+                }
+            ]
+        },
+        "peripheral_spi.SerialIOConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "This field controls which port the SPIXDAT[2-3] pins are associated with.",
+                    "mode": "RW",
+                    "name": "SPIXDAT23"
+                },
+                {
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "This field controls which port the SPIXHOLDn pin is associated with.",
+                    "mode": "RW",
+                    "name": "SPIXHOLD"
+                },
+                {
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "This field controls which port the SPIXSEL3 pin is associated with.",
+                    "mode": "RW",
+                    "name": "SPIXSEL3"
+                },
+                {
+                    "altname": "SPIXSEL2",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "This field controls which port the SPIXSEL2 pin is associated with.",
+                    "mode": "RW",
+                    "name": "SPIXSEl2"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "This field controls which port the SPIXSEL1 pin is associated with.",
+                    "mode": "RW",
+                    "name": "SPIXSEL1"
+                }
+            ]
+        },
+        "peripheral_spi.SerialIOIdleStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SAMPLETRIGGER",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "This bit represents the current sample state.  Write a 1 to trigger the sample process, wait until the bit reads as 0 before attempting to access other SPI registers.",
+                    "mode": "RW",
+                    "name": "SampleTrigger"
+                },
+                {
+                    "altname": "SPIXD3IDLE",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "This bit represents the state of the SPIxD3 io pin when not driven. During Sample this bit is set from the SPIxD3 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPIxD3Idle"
+                },
+                {
+                    "altname": "SPIXD2IDLE",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "This bit represents the state of the SPIxD2 io pin when not driven. During Sample this bit is set from the SPIxD2 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPIxD2Idle"
+                },
+                {
+                    "altname": "SPIXHOLDNIDLE",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "This bit represents the state of the SPIxHOLDn io pin when not driven. During Sample this bit is set from the SPIxHOLDn IO pad state.",
+                    "mode": "RW",
+                    "name": "SPIxHoldnIdle"
+                },
+                {
+                    "altname": "SPIXSEL3IDLE",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "This bit represents the state of the SPIxSEL3 io pin when not driven. During Sample this bit is set from the SPIxSEL3 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPIxSel3Idle"
+                },
+                {
+                    "altname": "SPIXSEL2IDLE",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "This bit represents the state of the SPIxSEL2 io pin when not driven. During Sample this bit is set from the SPIxSEL2 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPIxSel2Idle"
+                },
+                {
+                    "altname": "SPIXSEL1IDLE",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "This bit represents the state of the SPIxSEL1 io pin when not driven. During Sample this bit is set from the SPIxSEL1 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPIxSel1Idle"
+                },
+                {
+                    "altname": "SPI3D0IDLE",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "This bit represents the state of the SPI3D0 io pin when not driven. During Sample this bit is set from the SPI3D0 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPI3D0Idle"
+                },
+                {
+                    "altname": "SPI3CLKIDLE",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "This bit represents the state of the SPI3CLK io pin when not driven. During Sample this bit is set from the SPI3CLK IO pad state.",
+                    "mode": "RW",
+                    "name": "SPI3ClkIdle"
+                },
+                {
+                    "altname": "SPI2D0IDLE",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "This bit represents the state of the SPI2D0 io pin when not driven. During Sample this bit is set from the SPI2D0 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPI2D0Idle"
+                },
+                {
+                    "altname": "SPI2CLKIDLE",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "This bit represents the state of the SPI2CLK io pin when not driven. During Sample this bit is set from the SPI2CLK IO pad state.",
+                    "mode": "RW",
+                    "name": "SPI2ClkIdle"
+                },
+                {
+                    "altname": "SPI1SEL0IDLE",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "This bit represents the state of the SPI1SEL0 io pin when not driven. During Sample this bit is set from the SPI1SEL0 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPI1Sel0Idle"
+                },
+                {
+                    "altname": "SPI1D1IDLE",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "This bit represents the state of the SPI1D1 io pin when not driven. During Sample this bit is set from the SPI1D1 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPI1D1Idle"
+                },
+                {
+                    "altname": "SPI1D0IDLE",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "This bit represents the state of the SPI1D0 io pin when not driven. During Sample this bit is set from the SPI1D0 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPI1D0Idle"
+                },
+                {
+                    "altname": "SPI1CLKIDLE",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "This bit represents the state of the SPI1CLK io pin when not driven. During Sample this bit is set from the SPI1CLK IO pad state.",
+                    "mode": "RW",
+                    "name": "SPI1ClkIdle"
+                },
+                {
+                    "altname": "SPI0SEL0IDLE",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "This bit represents the state of the SPI0SEL0 io pin when not driven. During Sample this bit is set from the SPI0SEL0 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPI0Sel0Idle"
+                },
+                {
+                    "altname": "SPI0D1IDLE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "This bit represents the state of the SPI0D1 io pin when not driven. During Sample this bit is set from the SPI0D1 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPI0D1Idle"
+                },
+                {
+                    "altname": "SPI0D0IDLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "This bit represents the state of the SPI0D0 io pin when not driven. During Sample this bit is set from the SPI0D0 IO pad state.",
+                    "mode": "RW",
+                    "name": "SPI0D0Idle"
+                },
+                {
+                    "altname": "SPI0CLKIDLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "This bit represents the state of the SPI0CLK io pin when not driven. During Sample this bit is set from the SPI0CLK IO pad state.",
+                    "mode": "RW",
+                    "name": "SPI0ClkIdle"
+                }
+            ]
+        },
+        "peripheral_spi.SerialPortConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MODE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Port operating mode.",
+                    "mode": "RW",
+                    "name": "Mode"
+                },
+                {
+                    "altname": "BUSY",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "In automatic mode this bit indicates if the port is busy.  In manual mode this bit indicates if the port is actively counting out a burst.",
+                    "mode": "RO",
+                    "name": "Busy"
+                },
+                {
+                    "altname": "SENSEHOLDN",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "This represents the current state of the HOLDn pin assigned to this port (this bit is set if no pin is assigned to this function on this port).",
+                    "mode": "RO",
+                    "name": "SenseHoldn"
+                },
+                {
+                    "altname": "SENSECLK",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "This represents the current state of the CLK pin assigned to this port.",
+                    "mode": "RO",
+                    "name": "SenseClk"
+                },
+                {
+                    "altname": "SENSESELECT",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "This represents the current state of the SEL pins assigned to this port (each bit is set if no pin is assigned to this function on this port).",
+                    "mode": "RO",
+                    "name": "SenseSelect"
+                },
+                {
+                    "altname": "SENSEDATA",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "This represents the current state of the D pins assigned to this port (each bit is set if no pin is assigned to this function on this port).",
+                    "mode": "RO",
+                    "name": "SenseData"
+                },
+                {
+                    "altname": "SELECTIDLE",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "This represents the state of the Select pins assigned to this port when no device is selected.",
+                    "mode": "RW",
+                    "name": "SelectIdle"
+                },
+                {
+                    "altname": "TIMEOUT",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "This value represents the number of SPI clock periods to count out before declaring a timeout for any reason.",
+                    "mode": "RW",
+                    "name": "Timeout"
+                }
+            ]
+        },
+        "peripheral_spi.SerialPortManualConfiguration": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DATAOUTDELAY",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Specify the number of internal clocks to delay the output data relative to the SPI clock when DataSync is set.",
+                    "mode": "RW",
+                    "name": "DataOutDelay"
+                },
+                {
+                    "altname": "DATAINDELAY",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Specify the number of internal clocks to delay the sampling of input data relative to the SPI clock when DataSync is set.  This value is offset by 3 P_CLK periods (low values sample the input data before the clock edge).",
+                    "mode": "RW",
+                    "name": "DataInDelay"
+                },
+                {
+                    "altname": "DATAOUTSYNCMODE",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "This field controls the synchronous and asynchronous modes of the data outputs.",
+                    "mode": "RW",
+                    "name": "DataOutSyncMode"
+                },
+                {
+                    "altname": "DATAINSYNCMODE",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "This field controls the synchronous and asynchronous modes of the data inputs.",
+                    "mode": "RW",
+                    "name": "DataInSyncMode"
+                }
+            ]
+        },
+        "peripheral_spi.SerialPortManualControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DATADRIVEDISABLE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Disable the data driver(s).  Use this to control data bits that are bi-directional within a SPI access.",
+                    "mode": "RW",
+                    "name": "DataDriveDisable"
+                },
+                {
+                    "altname": "CLOCKIDLE",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Aka CPOL.  This is the state of the SPI clock pin when idle. During Sample this bit is set from the clock IO pad state.",
+                    "mode": "RW",
+                    "name": "ClockIdle"
+                },
+                {
+                    "altname": "CLOCKPHASE",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Aka CPHA.  This is the relative phase of the SPI clock edges to the data edges. During Sample this bit is set from the clock IO pad state.",
+                    "mode": "RW",
+                    "name": "ClockPhase"
+                },
+                {
+                    "altname": "SELECT",
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "This is the value driven to the select bit(s) for this port.",
+                    "mode": "RW",
+                    "name": "Select"
+                },
+                {
+                    "altname": "HOLDTIMEOUT",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "When set indicates an overly long active HOLDn is still stalling the port.",
+                    "mode": "RO",
+                    "name": "HoldTimeout"
+                },
+                {
+                    "altname": "HOLDENABLE",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "This bit defines whether the SPI state machine allows the SPI_HOLDn input pin to control the flow of SPI transactions to the external targets.",
+                    "mode": "RW",
+                    "name": "HoldEnable"
+                },
+                {
+                    "altname": "DATAWIDTH",
+                    "bit_lsb": 20,
+                    "bit_msb": 21,
+                    "description": "This field defines the data transfer width.",
+                    "mode": "RW",
+                    "name": "DataWidth"
+                },
+                {
+                    "altname": "DATAINTRAIL",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "When set, data in is sampled on the trailing SPI clock edge.",
+                    "mode": "RW",
+                    "name": "DataInTrail"
+                },
+                {
+                    "altname": "DATAINLEAD",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "When set, data in is sampled on the leading SPI clock edge.",
+                    "mode": "RW",
+                    "name": "DataInLead"
+                },
+                {
+                    "altname": "DATAOUTTRAIL",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "When set, data out changes on the trailing SPI clock edge.",
+                    "mode": "RW",
+                    "name": "DataOutTrail"
+                },
+                {
+                    "altname": "DATAOUTLEAD",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "When set, data out changes on the leading SPI clock edge.",
+                    "mode": "RW",
+                    "name": "DataOutLead"
+                },
+                {
+                    "altname": "CLOCKDISABLE",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "If set, no SPI clock edges are generated for this burst (but the equivalent time is taken).",
+                    "mode": "RW",
+                    "name": "ClockDisable"
+                },
+                {
+                    "altname": "CLOCKEDGECOUNT",
+                    "bit_lsb": 8,
+                    "bit_msb": 14,
+                    "description": "This value defines the number of SPI half-clocks to generate for this burst.",
+                    "mode": "RW",
+                    "name": "ClockEdgeCount"
+                },
+                {
+                    "altname": "CLOCKDIVISOR",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "This value defines the number of P_CLK ticks (typically 1 nanosecond) per SPI half-clock, i.e. the SPI clock low and high times.  Note during power on configuration the clock base is REF_CLOCK (nominally 100 MHz).",
+                    "mode": "RW",
+                    "name": "ClockDivisor"
+                }
+            ]
+        },
+        "peripheral_spi.SerialPortManualDataIn": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DATAIN",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This register provides data input from an external device to the NFP.  The data shifts in via the LSB (so bit 0 is the most recently received bit).  The number of bits received is a function of writing the manual control register.",
+                    "mode": "RO",
+                    "name": "DataIn"
+                }
+            ]
+        },
+        "peripheral_spi.SerialPortManualDataOut": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DATAOUT",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This register provides data output from the NFP to an external device.  The MSB (bit 31) is sent first.  The number of bits sent is a function of writing the manual control register.",
+                    "mode": "RW",
+                    "name": "DataOut"
+                }
+            ]
+        },
+        "peripheral_spi.SerialWriteEnableMask": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "WRITEENABLEMASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "This register permits writes to the virtual port configuration registers without writing all 32 bits.  Bit-for-bit, if the mask bit is a 1 the target register bit is written, if the mask bit is a 0 the target register bit is unaffected.  Also see SerialWriteEnableTarget register.",
+                    "mode": "RW",
+                    "name": "WriteEnableMask"
+                }
+            ]
+        },
+        "peripheral_spi.SerialWriteEnableTarget": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "WRITEENABLEAVAILABLE",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "This bit set indicates the write enable logic is available for use.  When the WriteEnableAvailable bit is already set, or a write will set it, the write to this register will be able to set the WriteEnableTarget.  When neither case is true, writes to this register have no affect, so this bit acts as a semaphore.  A process may attempt to acquire this resource by writing this bit to zero and the target field as desired.  If the write succeeds reading this register will return what was written, if not then no action is needed beyond trying again later.  To release the resource write this bit to one.",
+                    "mode": "RW",
+                    "name": "WriteEnableAvailable"
+                },
+                {
+                    "altname": "WRITEENABLETARGET",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "This field specifies the target virtual port that the WriteEnableMask will apply to if the WriteEnableAvailable bit is clear.",
+                    "mode": "RW",
+                    "name": "WriteEnableTarget"
+                }
+            ]
+        }
+    }
+}

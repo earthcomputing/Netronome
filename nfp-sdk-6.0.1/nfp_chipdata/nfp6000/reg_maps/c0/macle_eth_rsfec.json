@@ -1,0 +1,624 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: eca5ba006ef4"
+    ],
+    "maps": {
+        "macle_eth_rsfec.EthRsFec": {
+            "0x00000000": {
+                "altname": "ETH_RS_FEC_CONTROL",
+                "description": "Control register for enabling FEC functions.",
+                "name": "EthRsFecControl",
+                "ptr": "macle_eth_rsfec.EthRsFecControl",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "ETH_RS_FEC_STATUS",
+                "description": "RS FEC Status register.",
+                "name": "EthRsFecStatus",
+                "ptr": "macle_eth_rsfec.EthRsFecStatus",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "ETH_RS_FEC_CCW_LO",
+                "description": "Counts number of corrected FEC codewords lower 16-bits; None roll-over when upper 16-bits are 0xffff.",
+                "name": "EthRsFecCcwLo",
+                "ptr": "macle_eth_rsfec.EthRsFecCcwLo",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "ETH_RS_FEC_CCW_HI",
+                "description": "Counts number of corrected FEC codewords upper 16-bits; Clears on read; None roll-over.",
+                "name": "EthRsFecCcwHi",
+                "ptr": "macle_eth_rsfec.EthRsFecCcwHi",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "ETH_RS_FEC_NCCW_LO",
+                "description": "Counts number of uncorrected FEC codewords lower 16-bits; None roll-over when upper 16-bits are 0xffff.",
+                "name": "EthRsFecNccwLo",
+                "ptr": "macle_eth_rsfec.EthRsFecNccwLo",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "ETH_RS_FEC_NCCW_HI",
+                "description": "Counts number of uncorrected FEC codewords upper 16-bits; Clears on read; None roll-over.",
+                "name": "EthRsFecNccwHi",
+                "ptr": "macle_eth_rsfec.EthRsFecNccwHi",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "ETH_RS_FEC_LANEMAP",
+                "description": "FEC alignment status and lane mappings.",
+                "name": "EthRsFecLanemap",
+                "ptr": "macle_eth_rsfec.EthRsFecLanemap",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "ETH_RS_FEC_SYMBLERR_0LO",
+                "description": "Counts number of (corrected) 10-bit symbol errors found in lane 0; None roll-over when upper 16-bits are 0xffff.",
+                "name": "EthRsFecSymblerr0Lo",
+                "ptr": "macle_eth_rsfec.EthRsFecSymblerr0Lo",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "ETH_RS_FEC_SYMBLERR_0HI",
+                "description": "Upper 16-bit of counter (with above register); Clears on read; None roll-over.",
+                "name": "EthRsFecSymblerr0Hi",
+                "ptr": "macle_eth_rsfec.EthRsFecSymblerr0Hi",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "ETH_RS_FEC_SYMBLERR_1LO",
+                "description": "Counts number of (corrected) 10-bit symbol errors found in lane 1; None roll-over when upper 16-bits are 0xffff.",
+                "name": "EthRsFecSymblerr1Lo",
+                "ptr": "macle_eth_rsfec.EthRsFecSymblerr1Lo",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "ETH_RS_FEC_SYMBLERR_1HI",
+                "description": "Upper 16-bit of counter (with above register); Clears on read; None roll-over.",
+                "name": "EthRsFecSymblerr1Hi",
+                "ptr": "macle_eth_rsfec.EthRsFecSymblerr1Hi",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "ETH_RS_FEC_SYMBLERR_2LO",
+                "description": "Counts number of (corrected) 10-bit symbol errors found in lane 2; None roll-over when upper 16-bits are 0xffff.",
+                "name": "EthRsFecSymblerr2Lo",
+                "ptr": "macle_eth_rsfec.EthRsFecSymblerr2Lo",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "ETH_RS_FEC_SYMBLERR_2HI",
+                "description": "Upper 16-bit of counter (with above register); Clears on read; None roll-over.",
+                "name": "EthRsFecSymblerr2Hi",
+                "ptr": "macle_eth_rsfec.EthRsFecSymblerr2Hi",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "ETH_RS_FEC_SYMBLERR_3LO",
+                "description": "Counts number of (corrected) 10-bit symbol errors found in lane 3; None roll-over when upper 16-bits are 0xffff.",
+                "name": "EthRsFecSymblerr3Lo",
+                "ptr": "macle_eth_rsfec.EthRsFecSymblerr3Lo",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "ETH_RS_FEC_SYMBLERR_3HI",
+                "description": "Upper 16 bit of counter (with above register); Clears on read; None roll-over.",
+                "name": "EthRsFecSymblerr3Hi",
+                "ptr": "macle_eth_rsfec.EthRsFecSymblerr3Hi",
+                "type": "reg"
+            },
+            "0x00000200": {
+                "altname": "ETH_RS_FEC_VENDOR_CONTROL",
+                "description": "Additional control to enable RS-FEC operation.",
+                "name": "EthRsFecVendorControl",
+                "ptr": "macle_eth_rsfec.EthRsFecVendorControl",
+                "type": "reg"
+            },
+            "0x00000204": {
+                "altname": "ETH_RS_FEC_VENDOR_INFO_1",
+                "description": "Implementation specific information that may be useful for debugging link problems; Clears on read.",
+                "name": "EthRsFecVendorInfo1",
+                "ptr": "macle_eth_rsfec.EthRsFecVendorInfo1",
+                "type": "reg"
+            },
+            "0x00000208": {
+                "altname": "ETH_RS_FEC_VENDOR_INFO_2",
+                "description": "Implementation specific status information; Clears on read.",
+                "name": "EthRsFecVendorInfo2",
+                "ptr": "macle_eth_rsfec.EthRsFecVendorInfo2",
+                "type": "reg"
+            },
+            "0x0000020c": {
+                "altname": "ETH_RS_FEC_VENDOR_REVISION",
+                "description": "A version information taken from package file parameter FEC91_DEV_VERSION.",
+                "name": "EthRsFecVendorRevision",
+                "ptr": "macle_eth_rsfec.EthRsFecVendorRevision",
+                "type": "reg"
+            },
+            "0x00000210": {
+                "altname": "ETH_RS_FEC_VENDOR_TX_TEST_KEY",
+                "description": "Bits 7:0; Must be written with the 8-bit value of 0x57 to enable RS-FEC transmit test error injection capability.",
+                "name": "EthRsFecVendorTxTestKey",
+                "ptr": "macle_eth_rsfec.EthRsFecVendorTxTestKey",
+                "type": "reg"
+            },
+            "0x00000214": {
+                "altname": "ETH_RS_FEC_VENDOR_TX_TESTSYMBOLS",
+                "description": "Bits 15:0. One bit per 10-bit Symbol; Each bit is applied to corresponding 10B symbol after FEC encoding.",
+                "name": "EthRsFecVendorTxTestsymbols",
+                "ptr": "macle_eth_rsfec.EthRsFecVendorTxTestsymbols",
+                "type": "reg"
+            },
+            "0x00000218": {
+                "altname": "ETH_RS_FEC_VENDOR_TX_TEST_PATTERN",
+                "description": "Bits 9:0; A 10-bit value which XORed with a 10B symbol FEC encoder to manipulate transmitted datastream.",
+                "name": "EthRsFecVendorTxTestPattern",
+                "ptr": "macle_eth_rsfec.EthRsFecVendorTxTestPattern",
+                "type": "reg"
+            },
+            "0x0000021c": {
+                "altname": "ETH_RS_FEC_VENDOR_TX_TESTTRIGGER",
+                "description": "Enable register to control the triggers with the error insertion; Bit 0 clears on operation complete.",
+                "name": "EthRsFecVendorTxTesttrigger",
+                "ptr": "macle_eth_rsfec.EthRsFecVendorTxTesttrigger",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "macle_eth_rsfec.EthRsFecCcwHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_COUNTER_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Counts number of corrected FEC codewords upper 16-bits; None roll-over; Clears when read.",
+                    "mode": "RO",
+                    "name": "EthCounterHi"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecCcwLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Counts number of corrected FEC codewords lower 16-bits; Must be read before upper 16-bits; None roll-over when upper 16-bits are 0xffff",
+                    "mode": "RO",
+                    "name": "EthCounter"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_BYPASS_ERROR_INDICATION",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "When 1, configure the FEC decoder to not indicate errors to the PCS layer; When  0, the FEC decoder indicates errors to the PCS layer.",
+                    "mode": "RW",
+                    "name": "EthBypassErrorIndication"
+                },
+                {
+                    "altname": "ETH_BYPASS_CORRECTION",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When 1, bypass the decoder's correction function for reduced latency; When  0, normal FEC operation.",
+                    "mode": "RW",
+                    "name": "EthBypassCorrection"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecLanemap": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PMA_LANE_3",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "FEC lane mapped to PMA lane 3.",
+                    "mode": "RO",
+                    "name": "EthPmaLane3"
+                },
+                {
+                    "altname": "ETH_PMA_LANE_2",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "FEC lane mapped to PMA lane 2.",
+                    "mode": "RO",
+                    "name": "EthPmaLane2"
+                },
+                {
+                    "altname": "ETH_PMA_LANE_1",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "FEC lane mapped to PMA lane 1.",
+                    "mode": "RO",
+                    "name": "EthPmaLane1"
+                },
+                {
+                    "altname": "ETH_PMA_LANE_0",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "FEC lane mapped to PMA lane 0.",
+                    "mode": "RO",
+                    "name": "EthPmaLane0"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecNccwHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_COUNTER_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Counts number of uncorrected FEC codewords upper 16-bits; None roll-over; Clears when read.",
+                    "mode": "RO",
+                    "name": "EthCounterHi"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecNccwLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Counts number of uncorrected FEC codewords lower 16-bits; Must be read before upper 16-bits; None roll-over when upper 16-bits are 0xffff",
+                    "mode": "RO",
+                    "name": "EthCounter"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ALIGN_STATUS",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Always 1.",
+                    "mode": "RO",
+                    "name": "EthPcsAlignStatus"
+                },
+                {
+                    "altname": "ETH_FEC_ALIGN_STATUS",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Indicates, when 1 that the RS-FEC receiver has locked on incoming data and deskew completed.",
+                    "mode": "RO",
+                    "name": "EthFecAlignStatus"
+                },
+                {
+                    "altname": "ETH_AMPS_LOCK",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "RS-FEC receive lane locked and aligned; One bit per lane: Bit 8 = lane 0, Bit 9 = lane 1, Bit 10= lane 2, Bit 11 = lane 3.",
+                    "mode": "RO",
+                    "name": "EthAmpsLock"
+                },
+                {
+                    "altname": "ETH_HIGH_SER",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Asserts when error indication bypass is enabled and high symbol error rate is found;  Clear on read.",
+                    "mode": "RO",
+                    "name": "EthHighSer"
+                },
+                {
+                    "altname": "ETH_BYPASS_INDICATION",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Indicates the ability to disable error propagation to the PCS layer.",
+                    "mode": "RO",
+                    "name": "EthBypassIndication"
+                },
+                {
+                    "altname": "ETH_BYPASS_CORRECTION",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Indicates existence of the receive correction bypass option; The bypass function allows a reduced latency operation.",
+                    "mode": "RO",
+                    "name": "EthBypassCorrection"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecSymblerr0Hi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_SYMBOL_ERROR_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Upper 16-bits of the 32-bit Symbol error counter for lane 0; Clears on read; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthSymbolErrorHi"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecSymblerr0Lo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_SYMBOL_ERRORS",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Counts number of (corrected) 10-bit symbol errors found in lane 0 for correctable codewords only; Lower 16-bit of counter; Must be read first; None roll-over when upper word is 0xffff.",
+                    "mode": "RO",
+                    "name": "EthSymbolErrors"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecSymblerr1Hi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_SYMBOL_ERROR_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Upper 16-bits of the 32-bit Symbol error counter for lane 1; Clears on read; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthSymbolErrorHi"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecSymblerr1Lo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_SYMBOL_ERRORS",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Counts number of (corrected) 10-bit symbol errors found in lane 1 for correctable codewords only; Lower 16-bit of counter; Must be read first; None roll-over when upper word is 0xffff.",
+                    "mode": "RO",
+                    "name": "EthSymbolErrors"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecSymblerr2Hi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_SYMBOL_ERROR_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Upper 16-bits of the 32-bit Symbol error counter for lane 2; Clears on read; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthSymbolErrorHi"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecSymblerr2Lo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_SYMBOL_ERRORS",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Counts number of (corrected) 10-bit symbol errors found in lane 2 for correctable codewords only; Lower 16-bit of counter; Must be read first; None roll-over when upper word is 0xffff.",
+                    "mode": "RO",
+                    "name": "EthSymbolErrors"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecSymblerr3Hi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_SYMBOL_ERROR_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Upper 16-bits of the 32-bit Symbol error counter for lane 3; Clears on read; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthSymbolErrorHi"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecSymblerr3Lo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_SYMBOL_ERRORS",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Counts number of (corrected) 10-bit symbol errors found in lane 3 for correctable codewords only; Lower 16-bit of counter; Must be read first; None roll-over when upper word is 0xffff.",
+                    "mode": "RO",
+                    "name": "EthSymbolErrors"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecVendorControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_RS_FEC_STATUS",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Indicates the operatyional outcome of the (above) enable bit control; When 1 = FEC enabled and 0 = disabled.",
+                    "mode": "RO",
+                    "name": "EthRsFecStatus"
+                },
+                {
+                    "altname": "ETH_RS_FEC_ENABLE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "When 1, enable RSFEC datapath instead PCS MLD;  When 0, use normal PCS MLD datapath (default).",
+                    "mode": "RW",
+                    "name": "EthRsFecEnable"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecVendorInfo1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_DESKEW_EMPTY",
+                    "bit_lsb": 12,
+                    "bit_msb": 15,
+                    "description": "Real-time indication from FEC deskew FIFO per lane; bit 12 = lane 0 upto bit 15 = lane3.",
+                    "mode": "RO",
+                    "name": "EthDeskewEmpty"
+                },
+                {
+                    "altname": "ETH_FEC_ALIGN_STATUS_LL",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "FEC alignment status; Latched high; Sets on read.",
+                    "mode": "RO",
+                    "name": "EthFecAlignStatusLl"
+                },
+                {
+                    "altname": "ETH_TX_DP_OVERFLOW",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "TX datapath 4x66 input fifo overflow fatal error; Latched high; Clear on read.",
+                    "mode": "RO",
+                    "name": "EthTxDpOverflow"
+                },
+                {
+                    "altname": "ETH_RX_DP_OVERFLOW",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "RX datapath 4x66 pacing fifo overflow fatal error; Latched high; Clear on read.",
+                    "mode": "RO",
+                    "name": "EthRxDpOverflow"
+                },
+                {
+                    "altname": "ETH_TX_DATAPATH_RESTART",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "TX datapath (sync) reset occured; Latched high; Clear on read.",
+                    "mode": "RO",
+                    "name": "EthTxDatapathRestart"
+                },
+                {
+                    "altname": "ETH_RX_DATAPATH_RESTART",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "RX datapath (sync) reset occured; Latched high; Clear on read.",
+                    "mode": "RO",
+                    "name": "EthRxDatapathRestart"
+                },
+                {
+                    "altname": "ETH_MARKER_CHECK_RESTART",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "The marker_check function (PCS sublayer) caused an alignment restart to the FEC; Latched high; Clear on read.",
+                    "mode": "RO",
+                    "name": "EthMarkerCheckRestart"
+                },
+                {
+                    "altname": "ETH_FEC_ALIGN_STATUS_LH",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "FEC alignment status; Latched high; Clear on read.",
+                    "mode": "RO",
+                    "name": "EthFecAlignStatusLh"
+                },
+                {
+                    "altname": "ETH_AMPS_LOCK",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Per PMA lane FEC synchronization status; Bit 0=lane 0 up to Bit 3 = lane 3; Latched high; Clear on read.",
+                    "mode": "RO",
+                    "name": "EthAmpsLock"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecVendorInfo2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_AMPS_LOCK",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Per PMA lane FEC synchronization status; Realtime updates;  Bit  0 = lane 0 upto bit 3 = lane 3; Clears on read;",
+                    "mode": "RO",
+                    "name": "EthAmpsLock"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecVendorRevision": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_REVISION",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "A version information taken from package file parameter FEC91_DEV_VERSION.",
+                    "mode": "RO",
+                    "name": "EthRevision"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecVendorTxTestKey": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TEST_KEY",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Bits 7:0; Must be written with 8-bit value 0x57 to enable RS-FEC transmit test error injection capability.",
+                    "mode": "RW",
+                    "name": "EthTestKey"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecVendorTxTestPattern": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_OVERWRITE",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "If the bit is set the 10B symbol is replaced by the pattern instead using XOR.",
+                    "mode": "RW",
+                    "name": "EthOverwrite"
+                },
+                {
+                    "altname": "ETH_TEST_PATTERN",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "A 10-bit value which will be XORed with a 10B symbol after the FEC encoder to manipulate the transmitted datastream.",
+                    "mode": "RW",
+                    "name": "EthTestPattern"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecVendorTxTestsymbols": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TEST_SYMBOLS",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 15:0. One bit per 10-bit Symbol; When a bit is 1 the test pattern is applied to the corresponding 10B symbol after the FEC encoding.",
+                    "mode": "RW",
+                    "name": "EthTestSymbols"
+                }
+            ]
+        },
+        "macle_eth_rsfec.EthRsFecVendorTxTesttrigger": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TEST_TRIGGER",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "For bit 0 only, when written with 1 triggers the error insertion (on one word of 16 symbols); This bit clears automatically.",
+                    "mode": "RW",
+                    "name": "EthTestTrigger"
+                }
+            ]
+        }
+    }
+}

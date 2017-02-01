@@ -1,0 +1,2249 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2015 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset: ade0020e9035"
+    ],
+    "a0-bf": {
+        "_comment": [
+            "Decription:",
+            "This file decribes all islands in a complete NFP-4xxx and provides ",
+            "names for CPP target IDs for presentation purposes.",
+            "Important: Once loaded, this is considered a refinement ofNFP-6xxx family data and as such the user does not see a family'nfp4000' in the chipdata API."
+        ],
+        "alloc_aliases": {
+            "dram": "emem0",
+            "lm": "lmem",
+            "lscratch": "cls",
+            "sram": "sram0"
+        },
+        "alloc_types": {
+            "cls": [
+                {
+                    "islands": [
+                        32
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        32
+                    ]
+                },
+                {
+                    "islands": [
+                        1
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        1
+                    ]
+                },
+                {
+                    "islands": [
+                        34
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        34
+                    ]
+                },
+                {
+                    "islands": [
+                        35
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        35
+                    ]
+                },
+                {
+                    "islands": [
+                        4
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        4
+                    ]
+                },
+                {
+                    "islands": [
+                        5
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        5
+                    ]
+                },
+                {
+                    "islands": [
+                        12
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        12
+                    ]
+                },
+                {
+                    "islands": [
+                        13
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        13
+                    ]
+                },
+                {
+                    "islands": [
+                        48
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        48
+                    ]
+                },
+                {
+                    "islands": [
+                        36
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        36
+                    ]
+                },
+                {
+                    "islands": [
+                        33
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        33
+                    ]
+                },
+                {
+                    "islands": [
+                        37
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        37
+                    ]
+                }
+            ],
+            "cls{niid}": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "CLS"
+                }
+            ],
+            "ctm": [
+                {
+                    "islands": [
+                        32
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        32
+                    ]
+                },
+                {
+                    "islands": [
+                        1
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        1
+                    ]
+                },
+                {
+                    "islands": [
+                        34
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        34
+                    ]
+                },
+                {
+                    "islands": [
+                        35
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        35
+                    ]
+                },
+                {
+                    "islands": [
+                        4
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        4
+                    ]
+                },
+                {
+                    "islands": [
+                        5
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        5
+                    ]
+                },
+                {
+                    "islands": [
+                        12
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        12
+                    ]
+                },
+                {
+                    "islands": [
+                        13
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        13
+                    ]
+                },
+                {
+                    "islands": [
+                        48
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        48
+                    ]
+                },
+                {
+                    "islands": [
+                        36
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        36
+                    ]
+                },
+                {
+                    "islands": [
+                        33
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        33
+                    ]
+                },
+                {
+                    "islands": [
+                        37
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        37
+                    ]
+                }
+            ],
+            "ctm{niid}": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "CTM"
+                }
+            ],
+            "emem": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM",
+                    "policy": "spread",
+                    "targets": [
+                        24,
+                        25
+                    ]
+                }
+            ],
+            "emem0": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM",
+                    "targets": [
+                        24
+                    ]
+                }
+            ],
+            "emem0_cache": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE",
+                    "targets": [
+                        24
+                    ]
+                }
+            ],
+            "emem0_cache_upper": [
+                {
+                    "base": "0x200000",
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE",
+                    "targets": [
+                        24
+                    ]
+                }
+            ],
+            "emem1": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM",
+                    "targets": [
+                        25
+                    ]
+                }
+            ],
+            "emem1_cache": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE",
+                    "targets": [
+                        25
+                    ]
+                }
+            ],
+            "emem1_cache_upper": [
+                {
+                    "base": "0x200000",
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE",
+                    "targets": [
+                        25
+                    ]
+                }
+            ],
+            "emem_cache": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE",
+                    "policy": "spread",
+                    "targets": [
+                        24,
+                        25
+                    ]
+                }
+            ],
+            "emem_cache_upper": [
+                {
+                    "base": "0x200000",
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE",
+                    "policy": "spread",
+                    "targets": [
+                        24,
+                        25
+                    ]
+                }
+            ],
+            "imem": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "IMEM",
+                    "policy": "spread",
+                    "targets": [
+                        28
+                    ]
+                }
+            ],
+            "imem0": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "IMEM",
+                    "targets": [
+                        28
+                    ]
+                }
+            ],
+            "lmem": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "LM"
+                }
+            ],
+            "sram0": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "QDR0"
+                }
+            ],
+            "sram1": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "QDR1"
+                }
+            ],
+            "sram2": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "QDR2"
+                }
+            ],
+            "sram3": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "QDR3"
+                }
+            ],
+            "ustore": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "USTORE"
+                }
+            ],
+            "{siid}.cls": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "CLS"
+                }
+            ],
+            "{siid}.ctm": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "CTM"
+                }
+            ],
+            "{siid}.emem": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM"
+                }
+            ],
+            "{siid}.emem_cache": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE"
+                }
+            ],
+            "{siid}.emem_cache_upper": [
+                {
+                    "base": "0x200000",
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE"
+                }
+            ],
+            "{siid}.imem": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "IMEM"
+                }
+            ],
+            "{siid}.mem": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "EMEM"
+                },
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "IMEM"
+                },
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        12,
+                        13,
+                        48,
+                        36,
+                        33,
+                        37
+                    ],
+                    "memory": "CTM"
+                }
+            ]
+        },
+        "cpp_targets": {
+            "1": {
+                "name": "NBI",
+                "name_long": "NBI"
+            },
+            "2": {
+                "name": "VQDR",
+                "name_long": "Virtual QDR"
+            },
+            "7": {
+                "name": "MU",
+                "name_long": "Memory Unit"
+            },
+            "9": {
+                "name": "PCIe",
+                "name_long": "PCIe"
+            },
+            "10": {
+                "name": "ARM",
+                "name_long": "ARM"
+            },
+            "12": {
+                "name": "Crypto",
+                "name_long": "Crypto"
+            },
+            "14": {
+                "name": "CT_XPB",
+                "name_long": "Cluster Target/XPB Master"
+            },
+            "15": {
+                "name": "CLS",
+                "name_long": "Cluster Local Scratch"
+            }
+        },
+        "islands": {
+            "1": {
+                "cpp_targets": [
+                    2,
+                    7,
+                    10,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 4,
+                "mu_type": "CTM",
+                "name": "ArmIsld",
+                "type": "ARM"
+            },
+            "4": {
+                "cpp_targets": [
+                    2,
+                    7,
+                    9,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 4,
+                "mu_type": "CTM",
+                "name": "PcieIsld0",
+                "type": "PCIE"
+            },
+            "5": {
+                "cpp_targets": [
+                    2,
+                    7,
+                    9,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 4,
+                "mu_type": "CTM",
+                "name": "PcieIsld1",
+                "type": "PCIE"
+            },
+            "8": {
+                "cpp_targets": [
+                    1,
+                    14
+                ],
+                "name": "NbiIsld0",
+                "type": "NBI"
+            },
+            "12": {
+                "cpp_targets": [
+                    2,
+                    7,
+                    12,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS",
+                    "CRYPTO"
+                ],
+                "microengines": 4,
+                "mu_type": "CTM",
+                "name": "CryptoIsld0",
+                "type": "Crypto"
+            },
+            "13": {
+                "cpp_targets": [
+                    2,
+                    7,
+                    12,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS",
+                    "CRYPTO"
+                ],
+                "microengines": 4,
+                "mu_type": "CTM",
+                "name": "CryptoIsld1",
+                "type": "Crypto"
+            },
+            "24": {
+                "cpp_targets": [
+                    2,
+                    7
+                ],
+                "memories": [
+                    "EMEM",
+                    "EMEM_CACHE",
+                    "QDR0",
+                    "QDR1",
+                    "QDR2",
+                    "QDR3"
+                ],
+                "mu_type": "EMEM",
+                "name": "ExtMuEngIsld0",
+                "type": "ExtMuEng"
+            },
+            "25": {
+                "cpp_targets": [
+                    2,
+                    7
+                ],
+                "memories": [
+                    "EMEM_CACHE",
+                    "QDR0",
+                    "QDR1",
+                    "QDR2",
+                    "QDR3"
+                ],
+                "mu_type": "EMEM",
+                "name": "ExtMuEngIsld1",
+                "type": "ExtMuEng"
+            },
+            "28": {
+                "cpp_targets": [
+                    2,
+                    7
+                ],
+                "memories": [
+                    "IMEM",
+                    "QDR0",
+                    "QDR1",
+                    "QDR2",
+                    "QDR3"
+                ],
+                "mu_type": "IMEM",
+                "name": "IntMuEngIsld0",
+                "type": "IntMuEng"
+            },
+            "32": {
+                "cpp_targets": [
+                    2,
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld0",
+                "type": "MeIsld"
+            },
+            "33": {
+                "cpp_targets": [
+                    2,
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld1",
+                "type": "MeIsld"
+            },
+            "34": {
+                "cpp_targets": [
+                    2,
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld2",
+                "type": "MeIsld"
+            },
+            "35": {
+                "cpp_targets": [
+                    2,
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld3",
+                "type": "MeIsld"
+            },
+            "36": {
+                "cpp_targets": [
+                    2,
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld4",
+                "type": "MeIsld"
+            },
+            "37": {
+                "cpp_targets": [
+                    2,
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld5",
+                "type": "MeIsld"
+            },
+            "48": {
+                "cpp_targets": [
+                    2,
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS",
+                    "ILA_SRAM"
+                ],
+                "microengines": 4,
+                "mu_type": "CTM",
+                "name": "IlaIsld0",
+                "type": "ILA"
+            }
+        },
+        "memories": {
+            "CLS": {
+                "cpp_id": 15,
+                "size_max": "0x10000"
+            },
+            "CRYPTO": {
+                "cpp_id": 12,
+                "size_max": "0x10000"
+            },
+            "CTM": {
+                "cpp_id": 7,
+                "size_max": "0x40000"
+            },
+            "EMEM": {
+                "_comment": "size_max is from \"base\" in the resource, \"allocbase\" shrinks it",
+                "alloc_base": "0x800000",
+                "cpp_id": 7,
+                "size_max": "0x200000000"
+            },
+            "EMEM_CACHE": {
+                "base": "0x400000",
+                "cpp_id": 7,
+                "size_max": "0x300000"
+            },
+            "ILA_SRAM": {
+                "cpp_id": 6,
+                "size_max": "0x10000"
+            },
+            "IMEM": {
+                "cpp_id": 7,
+                "size_max": "0x400000"
+            },
+            "LM": {
+                "size_max": "0x1000"
+            },
+            "QDR0": {
+                "_comment": [
+                    "Large enough for max of VQDR. On NFP-6xxx \"                          \"this is always VQDR"
+                ],
+                "cpp_id": 2,
+                "size_max": "0x40000000"
+            },
+            "QDR1": {
+                "_comment": [
+                    "Large enough for max of VQDR."
+                ],
+                "base": "0x40000000",
+                "cpp_id": 2,
+                "size_max": "0x40000000"
+            },
+            "QDR2": {
+                "_comment": [
+                    "Large enough for max of VQDR."
+                ],
+                "base": "0x80000000",
+                "cpp_id": 2,
+                "size_max": "0x40000000"
+            },
+            "QDR3": {
+                "_comment": [
+                    "Large enough for max of VQDR."
+                ],
+                "base": "0xC0000000",
+                "cpp_id": 2,
+                "size_max": "0x40000000"
+            },
+            "USTORE": {
+                "size_max": "0x10000"
+            }
+        }
+    },
+    "c0-pf": {
+        "_comment": [
+            "Decription:",
+            "This file decribes all islands in a complete NFP-4xxx and provides ",
+            "names for CPP target IDs for presentation purposes.",
+            "Important: Once loaded, this is considered a refinement ofNFP-6xxx family data and as such the user does not see a family'nfp4000' in the chipdata API."
+        ],
+        "alloc_aliases": {
+            "dram": "emem0",
+            "lm": "lmem",
+            "lscratch": "cls"
+        },
+        "alloc_types": {
+            "cls": [
+                {
+                    "islands": [
+                        32
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        32
+                    ]
+                },
+                {
+                    "islands": [
+                        1
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        1
+                    ]
+                },
+                {
+                    "islands": [
+                        34
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        34
+                    ]
+                },
+                {
+                    "islands": [
+                        35
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        35
+                    ]
+                },
+                {
+                    "islands": [
+                        4
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        4
+                    ]
+                },
+                {
+                    "islands": [
+                        5
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        5
+                    ]
+                },
+                {
+                    "islands": [
+                        39
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        39
+                    ]
+                },
+                {
+                    "islands": [
+                        57
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        57
+                    ]
+                },
+                {
+                    "islands": [
+                        56
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        56
+                    ]
+                },
+                {
+                    "islands": [
+                        36
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        36
+                    ]
+                },
+                {
+                    "islands": [
+                        33
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        33
+                    ]
+                },
+                {
+                    "islands": [
+                        61
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        61
+                    ]
+                },
+                {
+                    "islands": [
+                        37
+                    ],
+                    "memory": "CLS",
+                    "targets": [
+                        37
+                    ]
+                }
+            ],
+            "cls{niid}": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "CLS"
+                }
+            ],
+            "ctm": [
+                {
+                    "islands": [
+                        32
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        32
+                    ]
+                },
+                {
+                    "islands": [
+                        1
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        1
+                    ]
+                },
+                {
+                    "islands": [
+                        34
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        34
+                    ]
+                },
+                {
+                    "islands": [
+                        35
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        35
+                    ]
+                },
+                {
+                    "islands": [
+                        4
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        4
+                    ]
+                },
+                {
+                    "islands": [
+                        5
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        5
+                    ]
+                },
+                {
+                    "islands": [
+                        39
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        39
+                    ]
+                },
+                {
+                    "islands": [
+                        57
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        57
+                    ]
+                },
+                {
+                    "islands": [
+                        56
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        56
+                    ]
+                },
+                {
+                    "islands": [
+                        36
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        36
+                    ]
+                },
+                {
+                    "islands": [
+                        33
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        33
+                    ]
+                },
+                {
+                    "islands": [
+                        61
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        61
+                    ]
+                },
+                {
+                    "islands": [
+                        37
+                    ],
+                    "memory": "CTM",
+                    "targets": [
+                        37
+                    ]
+                }
+            ],
+            "ctm{niid}": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "CTM"
+                }
+            ],
+            "emem": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM",
+                    "policy": "spread",
+                    "targets": [
+                        24,
+                        25
+                    ]
+                }
+            ],
+            "emem0": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM",
+                    "targets": [
+                        24
+                    ]
+                }
+            ],
+            "emem0_cache": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE",
+                    "targets": [
+                        24
+                    ]
+                }
+            ],
+            "emem0_cache_upper": [
+                {
+                    "base": "0x200000",
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE",
+                    "targets": [
+                        24
+                    ]
+                }
+            ],
+            "emem1": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM",
+                    "targets": [
+                        25
+                    ]
+                }
+            ],
+            "emem1_cache": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE",
+                    "targets": [
+                        25
+                    ]
+                }
+            ],
+            "emem1_cache_upper": [
+                {
+                    "base": "0x200000",
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE",
+                    "targets": [
+                        25
+                    ]
+                }
+            ],
+            "emem_cache": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE",
+                    "policy": "spread",
+                    "targets": [
+                        24,
+                        25
+                    ]
+                }
+            ],
+            "emem_cache_upper": [
+                {
+                    "base": "0x200000",
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE",
+                    "policy": "spread",
+                    "targets": [
+                        24,
+                        25
+                    ]
+                }
+            ],
+            "imem": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "IMEM",
+                    "policy": "spread",
+                    "targets": [
+                        28
+                    ]
+                }
+            ],
+            "imem0": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "IMEM",
+                    "targets": [
+                        28
+                    ]
+                }
+            ],
+            "lmem": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "LM"
+                }
+            ],
+            "ustore": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "USTORE"
+                }
+            ],
+            "{siid}.cls": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "CLS"
+                }
+            ],
+            "{siid}.ctm": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "CTM"
+                }
+            ],
+            "{siid}.emem": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM"
+                }
+            ],
+            "{siid}.emem_cache": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE"
+                }
+            ],
+            "{siid}.emem_cache_upper": [
+                {
+                    "base": "0x200000",
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM_CACHE"
+                }
+            ],
+            "{siid}.imem": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "IMEM"
+                }
+            ],
+            "{siid}.mem": [
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "EMEM"
+                },
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "IMEM"
+                },
+                {
+                    "islands": [
+                        32,
+                        1,
+                        34,
+                        35,
+                        4,
+                        5,
+                        39,
+                        57,
+                        56,
+                        36,
+                        33,
+                        61,
+                        37
+                    ],
+                    "memory": "CTM"
+                }
+            ]
+        },
+        "cpp_targets": {
+            "1": {
+                "name": "NBI",
+                "name_long": "NBI"
+            },
+            "7": {
+                "name": "MU",
+                "name_long": "Memory Unit"
+            },
+            "9": {
+                "name": "PCIe",
+                "name_long": "PCIe"
+            },
+            "10": {
+                "name": "ARM",
+                "name_long": "ARM"
+            },
+            "14": {
+                "name": "CT_XPB",
+                "name_long": "Cluster Target/XPB Master"
+            },
+            "15": {
+                "name": "CLS",
+                "name_long": "Cluster Local Scratch"
+            }
+        },
+        "islands": {
+            "1": {
+                "cpp_targets": [
+                    7,
+                    10,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 8,
+                "mu_type": "CTM",
+                "name": "ArmIsld",
+                "type": "ARM"
+            },
+            "4": {
+                "cpp_targets": [
+                    7,
+                    9,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 8,
+                "mu_type": "CTM",
+                "name": "PcieIsld0",
+                "type": "PCIE"
+            },
+            "5": {
+                "cpp_targets": [
+                    7,
+                    9,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 8,
+                "mu_type": "CTM",
+                "name": "PcieIsld1",
+                "type": "PCIE"
+            },
+            "8": {
+                "cpp_targets": [
+                    1,
+                    14
+                ],
+                "name": "NbiIsld0",
+                "type": "NBI"
+            },
+            "24": {
+                "cpp_targets": [
+                    7
+                ],
+                "memories": [
+                    "EMEM",
+                    "EMEM_CACHE"
+                ],
+                "mu_type": "EMEM",
+                "name": "ExtMuEngIsld0",
+                "type": "ExtMuEng"
+            },
+            "25": {
+                "cpp_targets": [
+                    7
+                ],
+                "memories": [
+                    "EMEM_CACHE"
+                ],
+                "mu_type": "EMEM",
+                "name": "ExtMuEngIsld1",
+                "type": "ExtMuEng"
+            },
+            "28": {
+                "cpp_targets": [
+                    7
+                ],
+                "memories": [
+                    "IMEM"
+                ],
+                "mu_type": "IMEM",
+                "name": "IntMuEngIsld0",
+                "type": "IntMuEng"
+            },
+            "32": {
+                "cpp_targets": [
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld0",
+                "type": "MeIsld"
+            },
+            "33": {
+                "cpp_targets": [
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld1",
+                "type": "MeIsld"
+            },
+            "34": {
+                "cpp_targets": [
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld2",
+                "type": "MeIsld"
+            },
+            "35": {
+                "cpp_targets": [
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld3",
+                "type": "MeIsld"
+            },
+            "36": {
+                "cpp_targets": [
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld4",
+                "type": "MeIsld"
+            },
+            "37": {
+                "cpp_targets": [
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld5",
+                "type": "MeIsld"
+            },
+            "39": {
+                "cpp_targets": [
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld7",
+                "type": "MeIsld"
+            },
+            "56": {
+                "cpp_targets": [
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld8",
+                "type": "MeIsld"
+            },
+            "57": {
+                "cpp_targets": [
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld9",
+                "type": "MeIsld"
+            },
+            "61": {
+                "cpp_targets": [
+                    7,
+                    14,
+                    15
+                ],
+                "memories": [
+                    "CTM",
+                    "CLS"
+                ],
+                "microengines": 12,
+                "mu_type": "CTM",
+                "name": "MeIsld10",
+                "type": "MeIsld"
+            }
+        },
+        "memories": {
+            "CLS": {
+                "cpp_id": 15,
+                "size_max": "0x10000"
+            },
+            "CTM": {
+                "cpp_id": 7,
+                "size_max": "0x40000"
+            },
+            "EMEM": {
+                "_comment": "size_max is from \"base\" in the resource, \"allocbase\" shrinks it",
+                "alloc_base": "0x800000",
+                "cpp_id": 7,
+                "size_max": "0x200000000"
+            },
+            "EMEM_CACHE": {
+                "base": "0x400000",
+                "cpp_id": 7,
+                "size_max": "0x300000"
+            },
+            "IMEM": {
+                "cpp_id": 7,
+                "size_max": "0x400000"
+            },
+            "LM": {
+                "size_max": "0x1000"
+            },
+            "USTORE": {
+                "size_max": "0x10000"
+            }
+        }
+    }
+}

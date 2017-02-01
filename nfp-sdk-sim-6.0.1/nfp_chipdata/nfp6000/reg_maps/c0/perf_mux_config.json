@@ -1,0 +1,70 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {},
+    "regs": {
+        "perf_mux_config.PerfMuxConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "AUX_SELECT",
+                    "bit_lsb": 18,
+                    "bit_msb": 20,
+                    "description": "Module select for module 3.",
+                    "mode": "RW",
+                    "name": "AuxSelect"
+                },
+                {
+                    "altname": "HI_MUX_SELECT",
+                    "bit_lsb": 14,
+                    "bit_msb": 17,
+                    "description": "High 16 to 1 mux select",
+                    "mode": "RW",
+                    "name": "HiMuxSelect"
+                },
+                {
+                    "altname": "MID_MUX_SELECT",
+                    "bit_lsb": 10,
+                    "bit_msb": 13,
+                    "description": "Middle 16 to 1 mux select.",
+                    "mode": "RW",
+                    "name": "MidMuxSelect"
+                },
+                {
+                    "altname": "LOW_MUX_SELECT",
+                    "bit_lsb": 6,
+                    "bit_msb": 9,
+                    "description": "Low 16 to 1 mux select.",
+                    "mode": "RW",
+                    "name": "LowMuxSelect"
+                },
+                {
+                    "altname": "LANE_SELECT_HI",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Lane select for bits [32;64]",
+                    "mode": "RW",
+                    "name": "LaneSelectHi"
+                },
+                {
+                    "altname": "LANE_SELECT_MID",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Lane select for bits [32;32]",
+                    "mode": "RW",
+                    "name": "LaneSelectMid"
+                },
+                {
+                    "altname": "LANE_SELECT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Lane select for bits [32;0]",
+                    "mode": "RW",
+                    "name": "LaneSelectLo"
+                }
+            ]
+        }
+    }
+}

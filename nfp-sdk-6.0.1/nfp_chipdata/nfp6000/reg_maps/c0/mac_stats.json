@@ -1,0 +1,666 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: eca5ba006ef4"
+    ],
+    "maps": {
+        "mac_stats.ChannelStatsSeg": {
+            "0x00000000": {
+                "altname": "RX_CIF_IN_OCTETS_LO",
+                "description": "Bits 31:0 of count. All octets received for all frames, good or bad, that are passed to the ingress packet memory. Bytes/Frames that are consumed by the MACs are not counted( eg FCS will not be counted if stripped or Pause frames if not passed to the Rx FIFO interface).",
+                "name": "RxCIfInOctetsLo",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "RX_CIF_IN_OCTETS_HI",
+                "description": "Bits 39:32 of count. All octets received for all frames, good or bad, that are passed to the ingress packet memory. Bytes/Frames that are consumed by the MACs are not counted( eg FCS will not be counted if stripped or Pause frames if not passed to the Rx FIFO interface).",
+                "name": "RxCIfInOctetsHi",
+                "ptr": "mac_stats.StatCounter8",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "RX_PSTATS_OCTETS_LO",
+                "description": "Total number of octets for valid frames received. Goodput octets.",
+                "name": "RxCStatsOctetsLo",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "RX_PSTATS_OCTETS_HI",
+                "description": "Total number of octets for valid frames received. Goodput octets.",
+                "name": "RxCStatsOctetsHi",
+                "ptr": "mac_stats.StatCounter8",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "RX_CIF_IN_ERRORS",
+                "description": "Number of frames received with error: FIFO Overflow Error, CRC Error, Frame Too Long Error, Alignment Error, The dedicated Error Code (0xfe, not a code error) that is signaled on the Rx FIFO interface.",
+                "name": "RxCIfInErrors",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "RX_CIF_IN_UNICAST_PKTS",
+                "description": "Incremented with each valid frame received on the Receive FIFO interface and bit 0 of the destination address was '0'.",
+                "name": "RxCIfInUniCastPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "RX_CIF_IN_MULTICAST_PKTS",
+                "description": "Incremented with each valid frame received on the Receive FIFO interface and bit 0 of the destination address was '1' but not the broadcast address (all bits set to '1'). Pause frames are not counted.",
+                "name": "RxCIfInMultiCastPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "RX_CIF_IN_BROADCAST_PKTS",
+                "description": "Incremented with each valid frame received on the Receive FIFO interface and all bits of the destination address were set to '1'.",
+                "name": "RxCIfInBroadCastPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "RX_PSTATS_PKTS",
+                "description": "Total number of packets received. Good and bad packets.",
+                "name": "RxCStatsPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "RX_PSTATS_PKTS_64_OCTETS",
+                "description": "Incremented when a packet of 64 octets length is received (good and bad frames are counted).",
+                "name": "RxCStatsPkts64octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "RX_PSTATS_PKTS_65_127_OCTETS",
+                "description": "Frames (good and bad) with 65 to 127 octets.",
+                "name": "RxCStatsPkts65to127octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "RX_PSTATS_PKTS_128_255_OCTETS",
+                "description": "Frames (good and bad) with 128 to 255 octets.",
+                "name": "RxCStatsPkts128to255octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "RX_PSTATS_PKTS_256_511_OCTETS",
+                "description": "Frames (good and bad) with 256 to 511 octets.",
+                "name": "RxCStatsPkts256to511octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "RX_PSTATS_PKTS_512_1023_OCTETS",
+                "description": "Frames (good and bad) with 512 to 1023 octets.",
+                "name": "RxCStatsPkts512to1023octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "RX_PSTATS_PKTS_1024_1518_OCTETS",
+                "description": "Frames (good and bad) with 1024 to 1518 octets.",
+                "name": "RxCStatsPkts1024to1518octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "RX_PSTATS_PKTS_1519_MAX_OCTETS",
+                "description": "Proprietary RMON extension counter that counts the number of frames with 1519 bytes to the maximum length programmed in register FRM_LENGTH.",
+                "name": "RxCStatsPkts1519toMaxoctets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "RX_CHAN_FRAMES_RECEIVED_OK",
+                "description": "Frame received without error (including pause frames).",
+                "name": "RxChanFramesReceivedOK",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "RX_CHAN_VLAN_RECEIVED_OK",
+                "description": "VLAN frame received without error.",
+                "name": "RxChanVlanReceivedOK",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "TX_CIF_OCTETS_LO",
+                "description": "Bits 31:0 of count. All octets transmitted except preamble (i.e. Header, Payload, Padding and FCS) for all valid frames and valid pause frames transmitted.",
+                "name": "TxCIfOutOctetsLo",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000064": {
+                "altname": "TX_CIF_OCTETS_HI",
+                "description": "Bits 39:32 of count. All octets transmitted except preamble (i.e. Header, Payload, Padding and FCS) for all valid frames and valid pause frames transmitted.",
+                "name": "TxCIfOutOctetsHi",
+                "ptr": "mac_stats.StatCounter8",
+                "type": "reg"
+            },
+            "0x00000068": {
+                "altname": "TX_CIF_ERRORS",
+                "description": "Number of frames transmitted with error: FIFO Overflow Error, FIFO Underflow Error, or User application defined error (ff_tx_err asserted together with ff_tx_eop).",
+                "name": "TxCIfOutErrors",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000006c": {
+                "altname": "TX_CIF_UNICAST_PKTS",
+                "description": "Incremented with each frame written to the FIFO interface and bit 0 of the destination address set to '0'.",
+                "name": "TxCIfOutUniCastPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000070": {
+                "altname": "TX_CHAN_FRAMED_TRANSMITTED_OK",
+                "description": "Frame transmitted without error (including pause frames).",
+                "name": "TxChanFramesTransmittedOK",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000074": {
+                "altname": "TX_CHAN_VLAN_TRANSMITTED_OK",
+                "description": "VLAN frame transmitted without error.",
+                "name": "TxChanVlanTransmittedOK",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000078": {
+                "altname": "TX_CIF_MULTICAST_PKTS",
+                "description": "Incremented with each frame written to the FIFO interface and bit 0 of the destination address set to '1' but not the broadcast address (all bits set to '1').",
+                "name": "TxCIfOutMultiCastPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000007c": {
+                "altname": "TX_CIF_BROADCAST_PKTS",
+                "description": "Incremented with each frame written to the FIFO interface and all bits of the destination address set to '1'.",
+                "name": "TxCIfOutBroadCastPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            }
+        },
+        "mac_stats.EthPortStatsHyd": {
+            "0x00000000": {
+                "altname": "MAC_ETH_PORT_STATS_SEG%d",
+                "description": "Mac Ethernet Port Stats for Segment %d",
+                "name": "MacEthPortStatsSeg%d",
+                "offinc1": "0x00000100",
+                "ptr": "mac_stats.EthPortStatsSeg",
+                "repeat1": 12,
+                "type": "regmap"
+            }
+        },
+        "mac_stats.EthPortStatsSeg": {
+            "0x00000000": {
+                "altname": "RX_PIF_IN_OCTETS_LO",
+                "description": "Bits 31:0 of count. All octets received except preamble (i.e. Header, Payload, Padding and FCS) for all frames and pause frames received.",
+                "name": "RxPIfInOctetsLo",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "RX_PIF_IN_OCTETS_HI",
+                "description": "Bits 39:32 of count. All octets received except preamble (i.e. Header, Payload, Padding and FCS) for all frames and pause frames received",
+                "name": "RxPIfInOctetsHi",
+                "ptr": "mac_stats.StatCounter8",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "RX_FRAME_TOO_LONG_ERRORS",
+                "description": "Frame received exceeded the maximum length programmed in register FRM_LENGTH.",
+                "name": "RxFrameTooLongErrors",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "RX_IN_RANGE_LENGTH_ERRORS",
+                "description": "A count of frames with a length/type field value between 46 (VLAN: 42) and less than 0x0600, that does not match the number of payload data octets received. Should count also if length/type field is less than 46 (VLAN: 42) and the frame is longer than 64 bytes.",
+                "name": "RxInRangeLengthErrors",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "RX_VLAN_RECEIVED_OK",
+                "description": "VLAN frame received without error.",
+                "name": "RxVlanReceivedOK",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "RX_PIF_IN_ERRORS",
+                "description": "Number of frames received with error: FIFO Overflow Error, CRC Error, Frame Too Long Error, Alignment Error, The dedicated Error Code (0xfe, not a code error) was received.",
+                "name": "RxPIfInErrors",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "RX_PIF_IN_BROADCAST_PKTS",
+                "description": "Incremented with each valid frame received on the Receive FIFO interface and all bits of the destination address were set to '1'.",
+                "name": "RxPIfInBroadCastPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "RX_PSTATS_DROP_EVENTS",
+                "description": "Counts the number of dropped packets due to internal errors of the MAC Client. Occurs when a Receive FIFO overflow condition persists.",
+                "name": "RxPStatsDropEvents",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "RX_ALIGNMENT_ERRORS",
+                "description": "Frame received with an alignment error.",
+                "name": "RxAlignmentErrors",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "RX_PAUSE_MAC_CTL_FRAMES_RECEIVED",
+                "description": "Valid pause frame received.",
+                "name": "RxPauseMacCtlFramesReceived",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "RX_FRAMES_RECEIVED_OK",
+                "description": "Frame received without error (including pause frames).",
+                "name": "RxFramesReceivedOK",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "RX_FRAME_CHECK_SEQUENCE_ERRORS",
+                "description": "CRC-32 Error is detected but the frame is otherwise of correct length.",
+                "name": "RxFrameCheckSequenceErrors",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "RX_PIF_IN_UNICAST_PKTS",
+                "description": "Incremented with each valid frame received on the Receive FIFO interface and bit 0 of the destination address was '0'.",
+                "name": "RxPIfInUniCastPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "RX_PIF_IN_MULTICAST_PKTS",
+                "description": "Incremented with each valid frame received on the Receive FIFO interface and bit 0 of the destination address was '1' but not the broadcast address (all bits set to '1'). Pause frames are not counted.",
+                "name": "RxPIfInMultiCastPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "RX_PSTATS_PKTS",
+                "description": "Total number of packets received. Good and bad packets.",
+                "name": "RxPStatsPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "RX_PSTATS_UNDERSIZE_PKTS",
+                "description": "Total number of packets that were less than 64 octets long with a good CRC. Note: Undersize packets are not delivered to the FIFO interface.",
+                "name": "RxPStatsUndersizePkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "RX_PSTATS_PKTS_64_OCTETS",
+                "description": "Incremented when a packet of 64 octets length is received (good and bad frames are counted).",
+                "name": "RxPStatsPkts64octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "RX_PSTATS_PKTS_65_127_OCTETS",
+                "description": "Frames (good and bad) with 65 to 127 octets.",
+                "name": "RxPStatsPkts65to127octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000048": {
+                "altname": "RX_PSTATS_PKTS_512_1023_OCTETS",
+                "description": "Frames (good and bad) with 512 to 1023 octets.",
+                "name": "RxPStatsPkts512to1023octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000004c": {
+                "altname": "RX_PSTATS_PKTS_1024_1518_OCTETS",
+                "description": "Frames (good and bad) with 1024 to 1518 octets.",
+                "name": "RxPStatsPkts1024to1518octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000050": {
+                "altname": "RX_PSTATS_JABBERS",
+                "description": "Total number of packets longer than the valid maximum length programmed in register FRM_LENGTH (excluding framing bits, but including FCS octets), and with a bad Frame Check Sequence.",
+                "name": "RxPStatsJabbers",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000054": {
+                "altname": "RX_PSTATS_FRAGMENTS",
+                "description": "Total number of packets that were less than 64 octets long with a wrong CRC. Note: Fragments are not delivered to the FIFO interface.",
+                "name": "RxPStatsFragments",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000058": {
+                "altname": "RX_CBFC_PAUSE_FRAMES_RECEIVED_2",
+                "description": "CBFC (Class Based Flow Control) pause frames received for class 2.",
+                "name": "RxCBFCPauseFramesReceived2",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000005c": {
+                "altname": "RX_CBFC_PAUSE_FRAMES_RECEIVED_3",
+                "description": "CBFC (Class Based Flow Control) pause frames received for class 3.",
+                "name": "RxCBFCPauseFramesReceived3",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "RX_PSTATS_PKTS_128_255_OCTETS",
+                "description": "Frames (good and bad) with 128 to 255 octets.",
+                "name": "RxPStatsPkts128to255octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000064": {
+                "altname": "RX_PSTATS_PKTS_256_511_OCTETS",
+                "description": "Frames (good and bad) with 256 to 511 octets.",
+                "name": "RxPStatsPkts256to511octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000068": {
+                "altname": "RX_PSTATS_PKTS_1519_MAX_OCTETS",
+                "description": "Proprietary RMON extension counter that counts the number of frames with 1519 bytes to the maximum length programmed in register FRM_LENGTH.",
+                "name": "RxPStatsPkts1519toMaxoctets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000006c": {
+                "altname": "RX_PSTATS_OVERSIZE_PKTS",
+                "description": "Total number of packets longer than the valid maximum length programmed in register FRM_LENGTH (excluding framing bits, but including FCS octets), and with a good Frame Check Sequence.",
+                "name": "RxPStatsOversizePkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000070": {
+                "altname": "RX_CBFC_PAUSE_FRAMES_RECEIVED_0",
+                "description": "CBFC (Class Based Flow Control) pause frames received for class 0",
+                "name": "RxCBFCPauseFramesReceived0",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000074": {
+                "altname": "RX_CBFC_PAUSE_FRAMES_RECEIVED_1",
+                "description": "CBFC (Class Based Flow Control) pause frames received for class 1.",
+                "name": "RxCBFCPauseFramesReceived1",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000078": {
+                "altname": "RX_CBFC_PAUSE_FRAMES_RECEIVED_4",
+                "description": "CBFC (Class Based Flow Control) pause frames received for class 4.",
+                "name": "RxCBFCPauseFramesReceived4",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x0000007c": {
+                "altname": "RX_CBFC_PAUSE_FRAMES_RECEIVED_5",
+                "description": "CBFC (Class Based Flow Control) pause frames received for class 5.",
+                "name": "RxCBFCPauseFramesReceived5",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "RX_CBFC_PAUSE_FRAMES_RECEIVED_6",
+                "description": "CBFC (Class Based Flow Control) pause frames received for class 6.",
+                "name": "RxCBFCPauseFramesReceived6",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000084": {
+                "altname": "RX_CBFC_PAUSE_FRAMES_RECEIVED_7",
+                "description": "CBFC (Class Based Flow Control) pause frames received for class 7.",
+                "name": "RxCBFCPauseFramesReceived7",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x00000088": {
+                "altname": "RX_MAC_CTL_FRAMES_RECEIVED",
+                "description": "Valid control frame received.",
+                "name": "RxMacCtlFramesReceived",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000a0": {
+                "altname": "TX_PIF_OCTETS_LO",
+                "description": "Bits 31:0 of count. All octets transmitted except preamble (i.e. Header, Payload, Padding and FCS) for all valid frames and valid pause frames transmitted.",
+                "name": "TxPIfOutOctetsLo",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000a4": {
+                "altname": "TX_PIF_OCTETS_HI",
+                "description": "Bits 39:32 of count. All octets transmitted except preamble (i.e. Header, Payload, Padding and FCS) for all valid frames and valid pause frames transmitted. Valid pause frame transmitted.for 24bit (TxCounter24)",
+                "name": "TxPIfOutOctetsHi",
+                "ptr": "mac_stats.StatCounter8",
+                "type": "reg"
+            },
+            "0x000000a8": {
+                "altname": "TX_VLAN_TRANSMITTED_OK",
+                "description": "VLAN frame transmitted without error.",
+                "name": "TxVlanTransmittedOK",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000ac": {
+                "altname": "TX_PIF_ERRORS",
+                "description": "Number of frames transmitted with error: FIFO Overflow Error, FIFO Underflow Error, or User application defined error (ff_tx_err asserted together with ff_tx_eop).",
+                "name": "TxPIfOutErrors",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000b0": {
+                "altname": "TX_PIF_BROADCAST_PKTS",
+                "description": "Incremented with each frame written to the FIFO interface and all bits of the destination address set to '1'.",
+                "name": "TxPIfOutBroadCastPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000b4": {
+                "altname": "TX_PSTATS_PKTS_64_OCTETS",
+                "description": "Incremented when a packet of 64 octets length is received (good and bad frames are counted).",
+                "name": "TxPStatsPkts64octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000b8": {
+                "altname": "TX_PSTATS_PKTS_256_511_OCTETS",
+                "description": "Frames (good and bad) with 256 to 511 octets.",
+                "name": "TxPStatsPkts256to511octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000bc": {
+                "altname": "TX_PSTATS_PKTS_512_1023_OCTETS",
+                "description": "Frames (good and bad) with 512 to 1023 octets.",
+                "name": "TxPStatsPkts512to1023octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000c0": {
+                "altname": "TX_PAUSE_MAC_CTL_FRAMES_TRANSMITTED",
+                "description": "Valid pause frame transmitted.",
+                "name": "TxPauseMacCtlFramesTransmitted",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000c4": {
+                "altname": "TX_FRAMED_TRANSMITTED_OK",
+                "description": "Frame transmitted without error (including pause frames).",
+                "name": "TxFramesTransmittedOK",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000c8": {
+                "altname": "TX_PIF_UNICAST_PKTS",
+                "description": "Incremented with each frame written to the FIFO interface and bit 0 of the destination address set to '0'.",
+                "name": "TxPIfOutUniCastPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000cc": {
+                "altname": "TX_PIF_MULTICAST_PKTS",
+                "description": "Incremented with each frame written to the FIFO interface and bit 0 of the destination address set to '1' but not the broadcast address (all bits set to '1').",
+                "name": "TxPIfOutMultiCastPkts",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000d0": {
+                "altname": "TX_PSTATS_PKTS_65_127_OCTETS",
+                "description": "Frames (good and bad) with 65 to 127 octets.",
+                "name": "TxPStatsPkts65to127octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000d4": {
+                "altname": "TX_PSTATS_PKTS_128_255_OCTETS",
+                "description": "Frames (good and bad) with 128 to 255 octets.",
+                "name": "TxPStatsPkts128to255octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000d8": {
+                "altname": "TX_PSTATS_PKTS_1024_1518_OCTETS",
+                "description": "Frames (good and bad) with 1024 to 1518 octets.",
+                "name": "TxPStatsPkts1024to1518octets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000dc": {
+                "altname": "TX_PSTATS_PKTS_1519_MAX_OCTETS",
+                "description": "Frames (good and bad) with 1519 to MAX octets.",
+                "name": "TxPStatsPkts1518toMAXoctets",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000e0": {
+                "altname": "TX_CBFC_PAUSE_FRAMES_TRANSMITTED_0",
+                "description": "CBFC (Class Based Flow Control) pause frames transmitted for class 0",
+                "name": "TxCBFCPauseFramesTransmitted0",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000e4": {
+                "altname": "TX_CBFC_PAUSE_FRAMES_TRANSMITTED_1",
+                "description": "CBFC (Class Based Flow Control) pause frames transmitted for class 1.",
+                "name": "TxCBFCPauseFramesTransmitted1",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000e8": {
+                "altname": "TX_CBFC_PAUSE_FRAMES_TRANSMITTED_4",
+                "description": "CBFC (Class Based Flow Control) pause frames transmitted for class 4.",
+                "name": "TxCBFCPauseFramesTransmitted4",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000ec": {
+                "altname": "TX_CBFC_PAUSE_FRAMES_TRANSMITTED_5",
+                "description": "CBFC (Class Based Flow Control) pause frames transmitted for class 5.",
+                "name": "TxCBFCPauseFramesTransmitted5",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000f0": {
+                "altname": "TX_CBFC_PAUSE_FRAMES_TRANSMITTED_2",
+                "description": "CBFC (Class Based Flow Control) pause frames transmitted for class 2.",
+                "name": "TxCBFCPauseFramesTransmitted2",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000f4": {
+                "altname": "TX_CBFC_PAUSE_FRAMES_TRANSMITTED_3",
+                "description": "CBFC (Class Based Flow Control) pause frames transmitted for class 3.",
+                "name": "TxCBFCPauseFramesTransmitted3",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000f8": {
+                "altname": "TX_CBFC_PAUSE_FRAMES_TRANSMITTED_6",
+                "description": "CBFC (Class Based Flow Control) pause frames transmitted for class 6.",
+                "name": "TxCBFCPauseFramesTransmitted6",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            },
+            "0x000000fc": {
+                "altname": "TX_CBFC_PAUSE_FRAMES_TRANSMITTED_7",
+                "description": "CBFC (Class Based Flow Control) pause frames transmitted for class 7.",
+                "name": "TxCBFCPauseFramesTransmitted7",
+                "ptr": "mac_stats.StatCounter32",
+                "type": "reg"
+            }
+        },
+        "mac_stats.MacStatsAdrMap": {
+            "0x00000000": {
+                "altname": "MAC_ETH_PORT_STATS_HY%d",
+                "description": "Mac Ethernet Port Stats for Hydra %d",
+                "name": "MacEthPortStatsHyd%d",
+                "offinc1": "0x00001000",
+                "ptr": "mac_stats.EthPortStatsHyd",
+                "repeat1": 2,
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "MAC_CHNL_STATS%d",
+                "description": "Mac Channel Stats %d",
+                "name": "MacChannelStats%d",
+                "offinc1": "0x00000100",
+                "ptr": "mac_stats.ChannelStatsSeg",
+                "repeat1": 128,
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {
+        "mac_stats.StatCounter32": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "STAT_COUNTER_32",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Clear on read 32 bit counter.",
+                    "mode": "RC",
+                    "name": "StatCounter32"
+                }
+            ]
+        },
+        "mac_stats.StatCounter8": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "STAT_COUNTER_8",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Clear on read 8 bit counter.",
+                    "mode": "RC",
+                    "name": "StatCounter8"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,2069 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "pcie_vf_reg.pcie_VF_addrmap": {
+            "0x00000000": {
+                "altname": "I_VF_PCIE_BASE",
+                "name": "i_vf_pcie_base",
+                "ptr": "pcie_vf_reg.regf_vf_pcie_base",
+                "type": "regmap"
+            },
+            "0x00000080": {
+                "altname": "I_VF_POWER_MGMT_CAP_STRUCT",
+                "name": "i_vf_power_mgmt_cap_struct",
+                "ptr": "pcie_vf_reg.regf_vf_power_mgmt_cap_struct",
+                "type": "regmap"
+            },
+            "0x00000090": {
+                "altname": "I_VF_MSI_CAP_STRUCT",
+                "name": "i_vf_MSI_cap_struct",
+                "ptr": "pcie_vf_reg.regf_vf_MSI_cap_struct",
+                "type": "regmap"
+            },
+            "0x000000b0": {
+                "altname": "I_VF_MSIX_CAP_STRUCT",
+                "name": "i_vf_MSIX_cap_struct",
+                "ptr": "pcie_vf_reg.regf_vf_MSIX_cap_struct",
+                "type": "regmap"
+            },
+            "0x000000c0": {
+                "altname": "I_VF_PCIE_CAP_STRUCT",
+                "name": "i_vf_PCIE_cap_struct",
+                "ptr": "pcie_vf_reg.regf_vf_PCIE_cap_struct",
+                "type": "regmap"
+            },
+            "0x00000100": {
+                "altname": "I_VF_AER_CAP_STRUCT",
+                "name": "i_vf_AER_cap_struct",
+                "ptr": "pcie_vf_reg.regf_vf_AER_cap_struct",
+                "type": "regmap"
+            },
+            "0x00000140": {
+                "altname": "I_VF_ARI_CAP_STRUCT",
+                "name": "i_vf_ARI_cap_struct",
+                "ptr": "pcie_vf_reg.regf_vf_ARI_cap_struct",
+                "type": "regmap"
+            },
+            "0x00000274": {
+                "altname": "I_VF_TPH_CAP_STRUCT",
+                "name": "i_vf_TPH_cap_struct",
+                "ptr": "pcie_vf_reg.regf_vf_TPH_cap_struct",
+                "type": "regmap"
+            }
+        },
+        "pcie_vf_reg.regf_vf_AER_cap_struct": {
+            "0x00000000": {
+                "altname": "I_AER_ENHANCED_CAP_HDR",
+                "name": "i_AER_enhanced_cap_hdr",
+                "ptr": "pcie_vf_reg.AER_enhanced_cap_hdr_vf",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "I_UNCORR_ERR_STATUS",
+                "name": "i_uncorr_err_status",
+                "ptr": "pcie_vf_reg.uncorr_err_status",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "I_UNCORR_ERR_MASK",
+                "name": "i_uncorr_err_mask",
+                "ptr": "pcie_vf_reg.uncorr_err_mask_vf",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "I_UNCORR_ERR_SEVERITY",
+                "name": "i_uncorr_err_severity",
+                "ptr": "pcie_vf_reg.uncorr_err_severity_vf",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "I_CORR_ERR_STATUS",
+                "name": "i_corr_err_status",
+                "ptr": "pcie_vf_reg.corr_err_status",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "I_CORR_ERR_MASK",
+                "name": "i_corr_err_mask",
+                "ptr": "pcie_vf_reg.corr_err_mask_vf",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "I_ADVCD_ERR_CAP_CTRL",
+                "name": "i_advcd_err_cap_ctrl",
+                "ptr": "pcie_vf_reg.advcd_err_cap_ctrl_vf",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "I_HDR_LOG_0",
+                "name": "i_hdr_log_0",
+                "ptr": "pcie_vf_reg.hdr_log_0",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "I_HDR_LOG_1",
+                "name": "i_hdr_log_1",
+                "ptr": "pcie_vf_reg.hdr_log_1",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "I_HDR_LOG_2",
+                "name": "i_hdr_log_2",
+                "ptr": "pcie_vf_reg.hdr_log_2",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "I_HDR_LOG_3",
+                "name": "i_hdr_log_3",
+                "ptr": "pcie_vf_reg.hdr_log_3",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "RSVD_04B_04F%d",
+                "name": "rsvd_04B_04F_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_vf_reg.VF_generic_reserved_reg",
+                "repeat1": 5,
+                "type": "reg"
+            }
+        },
+        "pcie_vf_reg.regf_vf_ARI_cap_struct": {
+            "0x00000000": {
+                "altname": "I_ARI_EXT_CAP_HDR",
+                "name": "i_ARI_ext_cap_hdr",
+                "ptr": "pcie_vf_reg.ARI_ext_cap_hdr_vf",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "I_ARI_CAP_AND_CTRL",
+                "name": "i_ARI_cap_and_ctrl",
+                "ptr": "pcie_vf_reg.ARI_cap_and_ctrl",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "RSVD_052_09C%d",
+                "name": "rsvd_052_09C_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_vf_reg.VF_generic_reserved_reg",
+                "repeat1": 75,
+                "type": "reg"
+            }
+        },
+        "pcie_vf_reg.regf_vf_MSIX_cap_struct": {
+            "0x00000000": {
+                "altname": "I_MSIX_CTRL",
+                "name": "i_msix_ctrl",
+                "ptr": "pcie_vf_reg.msix_ctrl_vf",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "I_MSIX_TBL_OFFSET",
+                "name": "i_msix_tbl_offset",
+                "ptr": "pcie_vf_reg.msix_tbl_offset_vf",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "I_MSIX_PENDING_INTRPT",
+                "name": "i_msix_pending_intrpt",
+                "ptr": "pcie_vf_reg.msix_pending_intrpt",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "RSVD_02F",
+                "name": "rsvd_02F",
+                "ptr": "pcie_vf_reg.VF_generic_reserved_reg",
+                "type": "reg"
+            }
+        },
+        "pcie_vf_reg.regf_vf_MSI_cap_struct": {
+            "0x00000000": {
+                "altname": "I_MSI_CTRL_REG",
+                "name": "i_msi_ctrl_reg",
+                "ptr": "pcie_vf_reg.msi_ctrl_reg_vf",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "I_MSI_MSG_LOW_ADDR",
+                "name": "i_msi_msg_low_addr",
+                "ptr": "pcie_vf_reg.msi_msg_low_addr",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "I_MSI_MSG_HI_ADDR",
+                "name": "i_msi_msg_hi_addr",
+                "ptr": "pcie_vf_reg.msi_msg_hi_addr",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "I_MSI_MSG_DATA",
+                "name": "i_msi_msg_data",
+                "ptr": "pcie_vf_reg.msi_msg_data",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "I_MSI_MASK",
+                "name": "i_msi_mask",
+                "ptr": "pcie_vf_reg.msi_mask",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "I_MSI_PEND",
+                "name": "i_msi_pend",
+                "ptr": "pcie_vf_reg.msi_pend",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "RSVD_02B",
+                "name": "rsvd_02B",
+                "ptr": "pcie_vf_reg.VF_generic_reserved_reg",
+                "type": "reg"
+            }
+        },
+        "pcie_vf_reg.regf_vf_PCIE_cap_struct": {
+            "0x00000000": {
+                "altname": "I_PCIE_CAP_LIST",
+                "name": "i_pcie_cap_list",
+                "ptr": "pcie_vf_reg.pcie_cap_list",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "I_PCIE_DEV_CAP",
+                "name": "i_pcie_dev_cap",
+                "ptr": "pcie_vf_reg.pcie_dev_cap_vf",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "I_PCIE_DEV_CTRL_STATUS",
+                "name": "i_pcie_dev_ctrl_status",
+                "ptr": "pcie_vf_reg.pcie_dev_ctrl_status_vf",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "I_LINK_CAP",
+                "name": "i_link_cap",
+                "ptr": "pcie_vf_reg.link_cap_vf",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "RSVD_034_038%d",
+                "name": "rsvd_034_038_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_vf_reg.VF_generic_reserved_reg",
+                "repeat1": 5,
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "I_PCIE_DEV_CAP_2",
+                "name": "i_pcie_dev_cap_2",
+                "ptr": "pcie_vf_reg.pcie_dev_cap_2",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "RSVD_03A_03F%d",
+                "name": "rsvd_03A_03F_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_vf_reg.VF_generic_reserved_reg",
+                "repeat1": 6,
+                "type": "reg"
+            }
+        },
+        "pcie_vf_reg.regf_vf_TPH_cap_struct": {
+            "0x00000000": {
+                "altname": "I_TPH_REQ_EXT_CAP_HEADER_REG",
+                "name": "i_TPH_req_ext_cap_header_reg",
+                "ptr": "pcie_vf_reg.TPH_req_ext_cap_header_reg",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "I_TPH_REQ_CAP_REG",
+                "name": "i_TPH_req_cap_reg",
+                "ptr": "pcie_vf_reg.TPH_req_cap_reg",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "I_TPH_REQ_CTRL_REG",
+                "name": "i_TPH_req_ctrl_reg",
+                "ptr": "pcie_vf_reg.TPH_req_ctrl_reg",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "I_TPH_ST_TABLE0_31%d",
+                "name": "i_TPH_st_table0_31_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_vf_reg.TPH_st_table",
+                "repeat1": 32,
+                "type": "reg"
+            }
+        },
+        "pcie_vf_reg.regf_vf_pcie_base": {
+            "0x00000000": {
+                "altname": "I_VENDOR_ID_DEVICE_ID",
+                "name": "i_vendor_id_device_id",
+                "ptr": "pcie_vf_reg.vendor_id_device_id_vf",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "I_COMMAND_STATUS",
+                "name": "i_command_status",
+                "ptr": "pcie_vf_reg.command_vf_status",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "I_REVISION_ID_CLASS_CODE",
+                "name": "i_revision_id_class_code",
+                "ptr": "pcie_vf_reg.revision_id_class_code",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "I_BIST_HEADER_LATENCY_CACHE_LINE",
+                "name": "i_bist_header_latency_cache_line",
+                "ptr": "pcie_vf_reg.bist_header_latency_cache_line_vf",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "I_BAR_0_REG",
+                "name": "i_bar_0_reg",
+                "ptr": "pcie_vf_reg.bar_0_reg",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "I_BAR_1_REG",
+                "name": "i_bar_1_reg",
+                "ptr": "pcie_vf_reg.bar_1_reg",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "I_BAR_2_REG",
+                "name": "i_bar_2_reg",
+                "ptr": "pcie_vf_reg.bar_2_reg",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "I_BAR_3_REG",
+                "name": "i_bar_3_reg",
+                "ptr": "pcie_vf_reg.bar_3_reg",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "I_BAR_4_REG",
+                "name": "i_bar_4_reg",
+                "ptr": "pcie_vf_reg.bar_4_reg",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "I_BAR_5_REG",
+                "name": "i_bar_5_reg",
+                "ptr": "pcie_vf_reg.bar_5_reg",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "RSVD_0A",
+                "name": "rsvd_0A",
+                "ptr": "pcie_vf_reg.VF_generic_reserved_reg",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "I_SUBSYSTEM_VENDOR_ID_SUBSYSTEM_I",
+                "name": "i_subsystem_vendor_id_subsystem_i",
+                "ptr": "pcie_vf_reg.subsystem_vendor_id_subsystem_id",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "I_EXPANSN_ROM_BAR_REG",
+                "name": "i_expansn_rom_bar_reg",
+                "ptr": "pcie_vf_reg.expansn_rom_bar_reg",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "I_CAPABILITIES_POINTER",
+                "name": "i_capabilities_pointer",
+                "ptr": "pcie_vf_reg.capabilities_pointer_vf",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "RSVD_0E",
+                "name": "rsvd_0E",
+                "ptr": "pcie_vf_reg.VF_generic_reserved_reg",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "I_INTRPT_LINE_INTRPT_PIN_REG",
+                "name": "i_intrpt_line_intrpt_pin_reg",
+                "ptr": "pcie_vf_reg.intrpt_line_intrpt_pin_reg",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "RSVD_010_01F%d",
+                "name": "rsvd_010_01F_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_vf_reg.VF_generic_reserved_reg",
+                "repeat1": 16,
+                "type": "reg"
+            }
+        },
+        "pcie_vf_reg.regf_vf_power_mgmt_cap_struct": {
+            "0x00000000": {
+                "altname": "I_PWR_MGMT_CAP",
+                "name": "i_pwr_mgmt_cap",
+                "ptr": "pcie_vf_reg.pwr_mgmt_cap",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "I_PWR_MGMT_CTRL_STAT_REP",
+                "name": "i_pwr_mgmt_ctrl_stat_rep",
+                "ptr": "pcie_vf_reg.pwr_mgmt_ctrl_stat_rep",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "RSVD_022_023%d",
+                "name": "rsvd_022_023_%d",
+                "offinc1": "0x00000004",
+                "ptr": "pcie_vf_reg.VF_generic_reserved_reg",
+                "repeat1": 2,
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "pcie_vf_reg.AER_enhanced_cap_hdr_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 31,
+                    "description": "Next Capability Offset: Indicates offset to the next PCI Express capability structure. It is set by default to 140 hex to point to the ARI Capability Structure. This field reflects the setting of the corresponding field in the AER Enhanced Capability Header Register of PF 0.",
+                    "mode": "RO",
+                    "name": "NCO"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Capability Version:  Specifies the SIG assigned value for the version of the capability structure. This field reflects the setting of the corresponding field in the AER Enhanced Capability Header Register of PF 0.",
+                    "mode": "RO",
+                    "name": "CV"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "PCI Express Extended Capability ID: This field is hardwired to the Capability ID assigned by PCI SIG to the PCI Express AER Extended Capability Structure (0001 hex).",
+                    "mode": "RO",
+                    "name": "PECID"
+                }
+            ]
+        },
+        "pcie_vf_reg.ARI_cap_and_ctrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R13"
+                }
+            ]
+        },
+        "pcie_vf_reg.ARI_ext_cap_hdr_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 31,
+                    "description": "Next Capability Offset: Indicates offset to the next PCI Express capability structure. The pointer is set by default to point to the Device Serial Number Capability Structure. This pointer can be modified for all Virtual Functions by writing into this register of VF 0 from the local management bus.",
+                    "mode": "RO",
+                    "name": "NCO"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Capability Version: Specifies the SIG-assigned value for the version of the capability structure. This field is taken from the setting of the corresponding field in the ARI Extended Capability Header Register of PF 0.",
+                    "mode": "RO",
+                    "name": "CV"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "PCI Express Extended Capability ID: This field is hardwired to the Capability ID assigned by PCI-SIG to the ARI Extended Capability (000E hex).",
+                    "mode": "RO",
+                    "name": "PCCID"
+                }
+            ]
+        },
+        "pcie_vf_reg.TPH_req_cap_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 27,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R2"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 26,
+                    "description": "ST Table Size: Specifies the number of entries in the Steering Tag Table (0 = 1 entry, 1 = 2 entries, and so on). Max limit is 64 entries when the ST Table is located in the TPH Requester Capability Structure, and 2048 entries when located in the MSI-X table. Each entry is 16 bits long. This field is set by default to 3F hex (64 entries), but can be modified from the local management bus.",
+                    "mode": "RO",
+                    "name": "STTS"
+                },
+                {
+                    "bit_lsb": 11,
+                    "bit_msb": 15,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R1"
+                },
+                {
+                    "bit_lsb": 9,
+                    "bit_msb": 10,
+                    "description": "ST Table Location: The setting of this field indicates if a Steering Tag Table is implemented for this Function, and its location if present. (00 = ST Table not present, 01 = ST Table in the TPH Requester Capability Structure, 10 = ST values stored in the MSI-X Table in client RAM, 11 = reserved.). This field is set by default to 01, but can be modified from the local management bus.",
+                    "mode": "RO",
+                    "name": "STTL"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Extended TPH Requester Supported: When set to 1, indicates that the Function is capable of generating requests with a TPH TLP Prefix. This bit is hardwired to 0, as the core does not have this capability.",
+                    "mode": "RO",
+                    "name": "ERS"
+                },
+                {
+                    "bit_lsb": 3,
+                    "bit_msb": 7,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R0"
+                },
+                {
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Device-Specific Mode Supported:  A setting of 1 indicates that the Function supports the Device- Specific Mode for TPH Steering Tag generation. In this mode, the Steering Tags are supplied by the client for each request through the HAL master interface. The client typically chooses the Steering Tag values from the ST Table, but is not required to do so. This bit is set to 1 by default, but can be modified from the local management bus.",
+                    "mode": "RO",
+                    "name": "DSMS"
+                },
+                {
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Hardwired to 0.",
+                    "mode": "RO",
+                    "name": "IVMS"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "No ST Mode Supported: When set to 1, indicates that this Function supports the 'No ST Mode' for the generation of TPH Steering Tags. In the No ST Mode, the device must use a Steering Tag value of 0 for all requests. This bit is hardwired to 1, as all TPH Requesters are required to support the No ST Mode of operation.",
+                    "mode": "RO",
+                    "name": "NSTM"
+                }
+            ]
+        },
+        "pcie_vf_reg.TPH_req_ctrl_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "TPH Requester Enable: When set to 1, the Function is RW 0 allowed to generate requests with Transaction Processing Hints. The TPH_REQUESTER_ ENABLE[1:0] output of the core copies the setting of this register bit (bit i for VF i). This field can also be written from the local management bus.",
+                    "mode": "RW",
+                    "name": "TRE"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "ST Mode: This field selects the ST mode (000 = No Steering Tag Mode, 001 = Interrupt Vector Mode, 010 = Device-Specific Mode, other values are reserved). The TPH_ST_MODE[5:0] output of the core reflects the setting of this register field (bits 3:0 for PF 0 and bits 5:3 for PF 1). This field can also be written from the local management bus.",
+                    "mode": "RW",
+                    "name": "STM"
+                }
+            ]
+        },
+        "pcie_vf_reg.TPH_req_ext_cap_header_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 31,
+                    "description": "Next Capability Offset: Indicates offset to the next PCI Express capability structure. Its default value is NULL, but can be modified independently for all VFs by writing into VF 0 from the local management bus.",
+                    "mode": "RO",
+                    "name": "NCO"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Capability Version: Specifies the SIG assigned value for the version of the capability structure. This field is set by default to 1, but can be modified for all VFs by writing into this register field of Physical Function 0 from the local management bus.",
+                    "mode": "RO",
+                    "name": "CV"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "PCI Express Extended Capability ID: This field is hardwired to the Capability ID assigned by PCI SIG to the TPH Requester Capability.",
+                    "mode": "RO",
+                    "name": "PECID"
+                }
+            ]
+        },
+        "pcie_vf_reg.TPH_st_table": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "ST 1 Upper: This field is used for the upper 8 bits of the second Steering Tag when Extended TPH Requester support is enabled. Because the core does not support TLP prefixes, this field is reserved.",
+                    "mode": "RW",
+                    "name": "ST1U"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "ST 1 Lower: Lower 8 bits of the second Steering Tag. This is the 8-bit Steering Tag sent out in requests.",
+                    "mode": "RW",
+                    "name": "ST1L"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "ST 0 Upper: This field is used for the upper 8 bits of the first Steering Tag when Extended TPH Requester support is enabled. Because the core does not support TLP prefixes, this field is reserved. ",
+                    "mode": "RW",
+                    "name": "ST0U"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "ST 0 Lower: Lower 8 bits of the first Steering Tag. This is the 8-bit Steering Tag sent out in requests.",
+                    "mode": "RW",
+                    "name": "ST0L"
+                }
+            ]
+        },
+        "pcie_vf_reg.VF_generic_reserved_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "NA",
+                    "mode": "RO",
+                    "name": "RSVD"
+                }
+            ]
+        },
+        "pcie_vf_reg.advcd_err_cap_ctrl_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 11,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R18"
+                },
+                {
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Multiple Header Recording Enable: Setting this bit enables the Function to log multiple error headers in its Header Log Registers. It is hardwired to 0",
+                    "mode": "RO",
+                    "name": "MHRE"
+                },
+                {
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Multiple Header Recording Capable: This bit is set when the Function has the capability to log more than one error header in its Header Log Registers. It is hardwired to 0.",
+                    "mode": "RO",
+                    "name": "MHRC"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Enable ECRC Check: Setting this bit enables ECRC checking on the receive side of the core. This bit is hardwired to 0. The setting of the corresponding bit in the Advanced Error Capabilities and Control Register of PF 0 applies to all Virtual Functions.",
+                    "mode": "RO",
+                    "name": "ECC"
+                },
+                {
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "ECRC Check Capability: This read-only bit indicates to the software that the device is capable of checking ECRC in packets received from the link. This bit is hardwired to 0. This setting of the corresponding bit in the Advanced Error Capabilities and Control Register of PF 0 applies to all Virtual Functions. ",
+                    "mode": "RO",
+                    "name": "ECCAP"
+                },
+                {
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Enable ECRC Generation: Enables the ECRC generation on the transmit side of the core. This bit is hardwired to 0. The setting of the corresponding bit in the Advanced Error Capabilities and Control Register of PF 0 applies to all Virtual Functions.",
+                    "mode": "RO",
+                    "name": "EEG"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "ECRC Generation Capability: This read-only bit indicates to the software that the device is capable of generating ECRC in packets transmitted on the link. This bit is hardwired to 0. The setting of the corresponding bit in the Advanced Error Capabilities and Control Register of PF 0 applies to all Virtual Functions.",
+                    "mode": "RO",
+                    "name": "EGC"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "First Error Pointer: This is a 5-bit pointer to the bit position in the Uncorrectable Error Status Register corresponding to the error that was detected first. When there are multiple bits set in the Uncorrectable Error Status Register, this field informs the software which error was observed first. To prevent the field from being overwritten before software was able to read it, this field is not updated while the status bit pointed by it in the Uncorrectable Error Status Register remains set. After the software clears this status bit, a subsequent error condition that sets any bit in the Uncorrectable Error Status Register will update the First Error Pointer. Any uncorrectable error type, including the special cases where the error is reported using an ERR_COR message, will set the First Error Pointer (assuming the software has reset the error pointed by it in the Uncorrectable Error Status Register). STICKY.",
+                    "mode": "RO",
+                    "name": "FER"
+                }
+            ]
+        },
+        "pcie_vf_reg.bar_0_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Not Implemented: ",
+                    "mode": "RO",
+                    "name": "NI"
+                }
+            ]
+        },
+        "pcie_vf_reg.bar_1_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Not Implemented: ",
+                    "mode": "RO",
+                    "name": "NI"
+                }
+            ]
+        },
+        "pcie_vf_reg.bar_2_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Not Implemented: ",
+                    "mode": "RO",
+                    "name": "NI"
+                }
+            ]
+        },
+        "pcie_vf_reg.bar_3_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Not Implemented: ",
+                    "mode": "RO",
+                    "name": "NI"
+                }
+            ]
+        },
+        "pcie_vf_reg.bar_4_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Not Implemented: ",
+                    "mode": "RO",
+                    "name": "NI"
+                }
+            ]
+        },
+        "pcie_vf_reg.bar_5_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Not Implemented: ",
+                    "mode": "RO",
+                    "name": "NI"
+                }
+            ]
+        },
+        "pcie_vf_reg.bist_header_latency_cache_line_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "BIST Register: Reserved",
+                    "mode": "RO",
+                    "name": "BR"
+                },
+                {
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Device Type: Identifies whether the device supports a single Function or multiple Functions. This bit is read as 0 when only Function 0 has been enabled in the Physical Function Configuration Register (in the local management block), and as 1 when more than one Function has been enabled.",
+                    "mode": "RO",
+                    "name": "DT"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 22,
+                    "description": "Header Type: Reserved",
+                    "mode": "RO",
+                    "name": "HT"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Latency Timer: Reserved",
+                    "mode": "RO",
+                    "name": "LT"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Cache Line Size: Reserved",
+                    "mode": "RO",
+                    "name": "CLS"
+                }
+            ]
+        },
+        "pcie_vf_reg.capabilities_pointer_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R6"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Capabilities Pointer:  Contains pointer to the first PCI Capability Structure. This field is set by default to 90 hex, to point to the Power Management Capability Structure. It can be modified by writing to VF 0 from the local management bus, and the setting is common across all VFs.",
+                    "mode": "RO",
+                    "name": "CP"
+                }
+            ]
+        },
+        "pcie_vf_reg.command_vf_status": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Detected Parity Error: This bit is set when the core has received a poisoned TLP. The Parity Error Response enable bit (bit 6) has no effect on the setting of this bit. This field can also be cleared from the local management bus by writing a 1 into this bit position. STICKY.",
+                    "mode": "W1C",
+                    "name": "DPE"
+                },
+                {
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Signaled System Error: If the SERR enable bit is 1, this bit is set when the core has sent out a fatal or non-fatal error message on the link to the Root Complex. If the SERR enable bit is 0, this bit remains 0. This field can also be cleared from the local management bus by writing a 1 into this bit position. STICKY.",
+                    "mode": "W1C",
+                    "name": "SSE"
+                },
+                {
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Received Master Abort:  This bit is set when the core has received a completion from the link with the Unsupported Request status. This field can also be cleared from the local management bus by writing a 1 into this bit position STICKY.",
+                    "mode": "W1C",
+                    "name": "RMA"
+                },
+                {
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Received Target Abort: This bit is set when the core has received a completion from the link with the Completer Abort status. This field can also be cleared from the local management bus by writing a 1 into this bit position STICKY.",
+                    "mode": "W1C",
+                    "name": "RTA"
+                },
+                {
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Signaled Target Abort: This bit is set when the core has sent a completion to the link with the Completer Abort status. This field can also be cleared from the local management bus by writing a 1 into this bit position. STICKY.",
+                    "mode": "W1C",
+                    "name": "STA"
+                },
+                {
+                    "bit_lsb": 25,
+                    "bit_msb": 26,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R5"
+                },
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Master Data Parity Error: When the Parity Error Response enable bit in the PCI Command Register of the associated Physical Function is set, the core sets this bit when it detects the following error conditions: (i) The core receives a Poisoned Completion TLP from the link in response to a request from this VF. (ii) The core sends out a poisoned write request on the link from this VF. (This bit remains 0 when the Parity Error Response enable bit in the PCI Command Register of the associated Physical Function is 0). This field can also be cleared from the local management bus by writing a 1 into this bit position. STICKY.",
+                    "mode": "W1C",
+                    "name": "MDPE"
+                },
+                {
+                    "bit_lsb": 21,
+                    "bit_msb": 23,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R4"
+                },
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Capabilities List: Indicates the presence of PCI Extended Capabilities registers. This bit is hardwired to 1.",
+                    "mode": "RO",
+                    "name": "CL"
+                },
+                {
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "Interrupt Status: Reserved",
+                    "mode": "RO",
+                    "name": "IS"
+                },
+                {
+                    "bit_lsb": 11,
+                    "bit_msb": 18,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R3"
+                },
+                {
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "INTx Message Disable: Reserved",
+                    "mode": "RO",
+                    "name": "IMD"
+                },
+                {
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "SERR Enable: Reserved",
+                    "mode": "RO",
+                    "name": "SE"
+                },
+                {
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R1"
+                },
+                {
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Parity Error Response Enable: Reserved",
+                    "mode": "RO",
+                    "name": "PERE"
+                },
+                {
+                    "bit_lsb": 3,
+                    "bit_msb": 5,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R0"
+                },
+                {
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Bus-Master Enable: Enables the device to issue memory and I/O requests from this Function. This field can be written from the local management bus.",
+                    "mode": "RW",
+                    "name": "BME"
+                },
+                {
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Mem-Space Enable: Reserved",
+                    "mode": "RO",
+                    "name": "MSE"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "IO-Space Enable: Reserved",
+                    "mode": "RO",
+                    "name": "IOSE"
+                }
+            ]
+        },
+        "pcie_vf_reg.corr_err_mask_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R17"
+                },
+                {
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Header Log Overflow Mask: This bit, when set, masks the generation of error messages in response to a Header Log register overflow. STICKY.",
+                    "mode": "RW",
+                    "name": "HLOM"
+                },
+                {
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Corrected Internal Error Mask: This bit, when set, masks the generation of error messages in response to a corrected internal error condition.",
+                    "mode": "RO",
+                    "name": "CIEM"
+                },
+                {
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Advisory Non-Fatal Error Mask: This bit, when set, masks the generation of error messages in response to an uncorrectable error occur, which is determined to belong to one of the special cases (as described in Section 6.2.3.2.4 of the PCI Express 2.0 Specifications). STICKY.",
+                    "mode": "RW",
+                    "name": "ANFEM"
+                },
+                {
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Replay Timer Timeout Mask: This bit, when set, masks the generation of error messages in response to a Replay Timer timeout event.",
+                    "mode": "RO",
+                    "name": "RTTM"
+                },
+                {
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R16"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Replay Number Rollover Mask: This bit, when set, masks the generation of error messages in response to a Replay Number Rollover event.",
+                    "mode": "RO",
+                    "name": "RNRM"
+                },
+                {
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Bad DLLP Mask: This bit, when set, masks the generation of error messages in response to a 'Bad DLLP' received.",
+                    "mode": "RO",
+                    "name": "BDM"
+                },
+                {
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Bad TLP Mask: This bit, when set, masks the generation of error messages in response to a 'Bad TLP' received.",
+                    "mode": "RO",
+                    "name": "BTM"
+                },
+                {
+                    "bit_lsb": 1,
+                    "bit_msb": 5,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R15"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Receiver Error Mask: This bit, when set, masks the generation of error messages in response to the Physical Layer errors",
+                    "mode": "RO",
+                    "name": "REM"
+                }
+            ]
+        },
+        "pcie_vf_reg.corr_err_status": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R14"
+                },
+                {
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Header Log Overflow Status: This bit is set on a Header Log Register overflow, that is, when the header could not be logged in the Header Log Register because it is occupied by a previous header. STICKY.",
+                    "mode": "W1C",
+                    "name": "HLOS"
+                },
+                {
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Corrected Internal Error Status: This bit is not implemented for Virtual Functions. Hardwired to 0.",
+                    "mode": "RO",
+                    "name": "CIES"
+                },
+                {
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Advisory Non-Fatal Error Status: This bit is set when an uncorrectable error occurs, which is determined to belong to one of the special cases described in Section 6.2.3.2.4 of the PCI Express 2.0 Specifications. This causes the core to generate an ERR_COR message in place of an ERR_NONFATAL message. STICKY.",
+                    "mode": "W1C",
+                    "name": "ANFES"
+                },
+                {
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Replay Timer Timeout Status: This bit is not implemented for Virtual Functions. Hardwired to 0. ",
+                    "mode": "RO",
+                    "name": "RTTS"
+                },
+                {
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R13"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Replay Number Rollover Status: This bit is not implemented for Virtual Functions. Hardwired to 0.",
+                    "mode": "RO",
+                    "name": "RNRS"
+                },
+                {
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Bad DLLP Status: This bit is not implemented for Virtual Functions. Hardwired to 0. ",
+                    "mode": "RO",
+                    "name": "BDS"
+                },
+                {
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Bad TP Status: This bit is not implemented for Virtual Functions. Hardwired to 0.",
+                    "mode": "RO",
+                    "name": "BTPS"
+                },
+                {
+                    "bit_lsb": 1,
+                    "bit_msb": 5,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R12"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Receiver Error Status: This bit is not implemented for Virtual Functions. Hardwired to 0.",
+                    "mode": "RO",
+                    "name": "RES"
+                }
+            ]
+        },
+        "pcie_vf_reg.expansn_rom_bar_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Not Implemented: ",
+                    "mode": "RO",
+                    "name": "NI"
+                }
+            ]
+        },
+        "pcie_vf_reg.hdr_log_0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Header DWORD 0: First DWORD of captured TLP header STICKY.",
+                    "mode": "RO",
+                    "name": "HD0"
+                }
+            ]
+        },
+        "pcie_vf_reg.hdr_log_1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Header DWORD 1: Second DWORD of captured TLP header STICKY.",
+                    "mode": "RO",
+                    "name": "HD1"
+                }
+            ]
+        },
+        "pcie_vf_reg.hdr_log_2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Header DWORD 2: Third DWORD of captured TLP header STICKY.",
+                    "mode": "RO",
+                    "name": "HD2"
+                }
+            ]
+        },
+        "pcie_vf_reg.hdr_log_3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Header DWORD 3: Fourth DWORD of captured TLP header STICKY.",
+                    "mode": "RO",
+                    "name": "HD3"
+                }
+            ]
+        },
+        "pcie_vf_reg.intrpt_line_intrpt_pin_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Not Implemented: ",
+                    "mode": "RO",
+                    "name": "NI"
+                }
+            ]
+        },
+        "pcie_vf_reg.link_cap_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "NA",
+                    "mode": "RO",
+                    "name": "LCR"
+                }
+            ]
+        },
+        "pcie_vf_reg.msi_ctrl_reg_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 25,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R0"
+                },
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Set to 1 to indicate that the device has per-vector masking capability. By default, this bit is set to 1 for PF 0 and 0 for PF 1. This bit can be written from the local management bus.",
+                    "mode": "RO",
+                    "name": "MCAP"
+                },
+                {
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "64-Bit Address Capable: Set to 1 to indicate that the device is capable of generating 64-bit addresses for MSI messages. Because the core has this capability, this bit is hardwired to 1.",
+                    "mode": "RO",
+                    "name": "AC64"
+                },
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 22,
+                    "description": "Multiple Message Enable: Encodes the number of distinct messages that the core is programmed to generate for this Function (000 = 1, 001 = 2, 010 = 4, 011 = 8, 100 = 16, 101 = 32). This setting must be based on the number of interrupt inputs of the core that are actually used by this Function. This field can be written from the local management bus.",
+                    "mode": "RW",
+                    "name": "MME"
+                },
+                {
+                    "bit_lsb": 17,
+                    "bit_msb": 19,
+                    "description": "Multiple Message Capable: Encodes the number of distinct messages that the core is capable of generating for this Function (000 = 1, 001 = 2, 010 = 4, 011 = 8, 100 = 16, 101 = 32). Thus, this field defines the number of the interrupt vectors for this Function. The core allows up to 32 distinct messages, but the setting of this field must be based on the number of interrupt inputs of the core that are actually used by the client. For example, if the client logic uses 8 of the 32 distinct MSI interrupt inputs of the core for this Function, then the value of this field must be set to 011. This field can be written from the local management bus.",
+                    "mode": "RO",
+                    "name": "MMC"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "MSI Enable: Set by the configuration program to enable the MSI feature. This field can also be written from the local management bus.",
+                    "mode": "RW",
+                    "name": "ME"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Pointer to the next PCI Capability Structure. The value read from this read-only field is the corresponding pointer in the MSI Capability Structure of the Physical Function this VF is attached to.",
+                    "mode": "RO",
+                    "name": "CP"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Capability ID: Specifies that the capability structure is for MSI. Hardwired to 05 hex.",
+                    "mode": "RO",
+                    "name": "CID"
+                }
+            ]
+        },
+        "pcie_vf_reg.msi_mask": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MSI_MASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mask bits for MSI interrupts. The Multiple Message Capable field in the MSI Control Register specifies the number of distinct interrupts for the Function, which determines the number of valid mask bits",
+                    "mode": "RW",
+                    "name": "MSIMask"
+                }
+            ]
+        },
+        "pcie_vf_reg.msi_msg_data": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Reserved: Hardwired to 0",
+                    "mode": "RO",
+                    "name": "R2"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Message Data: Message data to be used for this Function. This field can also be written from the local management bus.",
+                    "mode": "RW",
+                    "name": "MD"
+                }
+            ]
+        },
+        "pcie_vf_reg.msi_msg_hi_addr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Message Address High: Contains bits 63:32 of the 64-bit address to be used in MSI Messages. A value of 0 specifies that 32-bit addresses are to be used in the messages. This field can also be written from the local management bus.",
+                    "mode": "RW",
+                    "name": "MAH"
+                }
+            ]
+        },
+        "pcie_vf_reg.msi_msg_low_addr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 2,
+                    "bit_msb": 31,
+                    "description": "Message Address Low: Lower bits of the address to be used in MSI messages. This field can also be written from the local management bus.",
+                    "mode": "RW",
+                    "name": "MAL"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Reserved: The two lower bits of the address are hardwired to 0 to align the address on a double-word boundary.",
+                    "mode": "RO",
+                    "name": "R1"
+                }
+            ]
+        },
+        "pcie_vf_reg.msi_pend": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MSI_PEND",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Pending bits for MSI interrupts. A read from this location returns the state of the MSI_MASK inputs of the core.",
+                    "mode": "RO",
+                    "name": "MSIPend"
+                }
+            ]
+        },
+        "pcie_vf_reg.msix_ctrl_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "MSI-X Enable: Set by the configuration program to enable the MSI-X feature. This field can also be written from the local management bus.",
+                    "mode": "RW",
+                    "name": "MSIXE"
+                },
+                {
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Function Mask: This bit serves as a global mask to all the interrupt conditions associated with this Function. When this bit is set, the core will not send out MSI messages from this Function. This field can also be written from the local management bus.",
+                    "mode": "RW",
+                    "name": "FM"
+                },
+                {
+                    "bit_lsb": 27,
+                    "bit_msb": 29,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R0"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 26,
+                    "description": "MSI-X Table Size: Specifies the size of the MSI-X Table, that is, the number of interrupt vectors defined for the Function. The programmed value is 1 minus the size of the table (that is, this field is set to 0 if the table size is 1.). This field is set by default to 3f hex. It can be re-written independently for each Function from the local management bus.",
+                    "mode": "RO",
+                    "name": "MSIXTS"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Capabilities Pointer: Contains pointer to the next PCI Capability Structure. This is set to point to the PCI Express Capability Structure at 30 hex. This can be modified for VF 0 from the local management bus.",
+                    "mode": "RO",
+                    "name": "CP"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Capability ID: Identifies that the capability structure is for MSI-X. This field is set by default to 11 hex. It can be rewritten independently for each Function from the local management bus.",
+                    "mode": "RO",
+                    "name": "CID"
+                }
+            ]
+        },
+        "pcie_vf_reg.msix_pending_intrpt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 3,
+                    "bit_msb": 31,
+                    "description": "PBA Offset: Offset of the memory address where the PBA is located, relative to the selected BAR. The three least significant bits of the address are omitted, as the addresses are QWORD aligned.",
+                    "mode": "RO",
+                    "name": "PO"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "BAR Indicator Register: Identifies the BAR corresponding to the memory address range where the PBA Structure is located (000 = BAR 0, 001 = BAR 1, ... , 101 = BAR 5). The value programmed must be the same as the BAR Indicator configured in the MSI-X Table Offset Register.Identifies the BAR corresponding to the memory address range where the PBA Structure is located (000 = BAR 0, 001 = BAR 1, ... , 101 = BAR 5). The value programmed must be the same as the BAR Indicator configured in the MSI-X Table Offset Register.",
+                    "mode": "RO",
+                    "name": "BARI"
+                }
+            ]
+        },
+        "pcie_vf_reg.msix_tbl_offset_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 3,
+                    "bit_msb": 31,
+                    "description": "Table Offset: Offset of the memory address where the MSI-X Table is located, relative to the selected BAR. The three least significant bits of the address are omitted, as the addresses are QWORD aligned.",
+                    "mode": "RO",
+                    "name": "TO"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "BAR Indicator Register: Identifies the BAR corresponding to the memory address range where the MSI-X Table is located (000 = BAR 0, 001 = BAR 1, ... , 101 = BAR 5).",
+                    "mode": "RO",
+                    "name": "BARI"
+                }
+            ]
+        },
+        "pcie_vf_reg.pcie_cap_list": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R0"
+                },
+                {
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "TCS Routing Supported: When set to 1, this bit indicates that the device supports routing of Trusted Configuration Requests. Not valid for Endpoints. Hardwired to 0.",
+                    "mode": "RO",
+                    "name": "TRS"
+                },
+                {
+                    "bit_lsb": 25,
+                    "bit_msb": 29,
+                    "description": "Interrupt Message Number: Identifies the MSI or MSI-X interrupt vector for the interrupt message generated corresponding to the status bits in the Slot Status Register, Root Status Register, or this capability structure. This field must be defined based on the chosen interrupt mode - MSI or MSI-X. This field is hardwired to 0.",
+                    "mode": "RO",
+                    "name": "IMN"
+                },
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Slot Status: Set to 1 when the link connected to a slot. Hardwired to 0.",
+                    "mode": "RO",
+                    "name": "SS"
+                },
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Device Type: Indicates the type of device implementing this Function. This field is hardwired to 0 in the EP mode.",
+                    "mode": "RO",
+                    "name": "DT"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Capability Version: Identifies the version number of the capability structure. When GEN2_ENABLE is strapped high, this field is permanently set to 2 (Gen2), and 1 (Gen1) otherwise.",
+                    "mode": "RO",
+                    "name": "CV"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Next Capability Pointer: Points to the next PCI capability structure. Set to 0 because this is the last capability structure.",
+                    "mode": "RO",
+                    "name": "NCP"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Capability ID: Specifies Capability ID assigned by PCI SIG for this structure. This field is hardwired to 10 hex.",
+                    "mode": "RO",
+                    "name": "CID"
+                }
+            ]
+        },
+        "pcie_vf_reg.pcie_dev_cap_2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "NA",
+                    "mode": "RO",
+                    "name": "PDCR"
+                }
+            ]
+        },
+        "pcie_vf_reg.pcie_dev_cap_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 29,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R3"
+                },
+                {
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "FLR Capable: Set when device has Function-Level Reset capability. Hardwired to 1.",
+                    "mode": "RO",
+                    "name": "FLRC"
+                },
+                {
+                    "bit_lsb": 26,
+                    "bit_msb": 27,
+                    "description": "Captured Power Limit Scale:  This field reflects the setting of the corresponding field in the PCIe Device Capability Register of PF 0.",
+                    "mode": "RO",
+                    "name": "CPLS"
+                },
+                {
+                    "bit_lsb": 18,
+                    "bit_msb": 25,
+                    "description": "Captured Slot Power Limit Value: This field reflects the setting of the corresponding field in the PCIe Device Capability Register of PF 0.",
+                    "mode": "RO",
+                    "name": "CSPLV"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R2"
+                },
+                {
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Role-Based Error Reporting: This field reflects the setting of the corresponding field in the PCIe Device Capability Register of PF 0.",
+                    "mode": "RO",
+                    "name": "RBER"
+                },
+                {
+                    "bit_lsb": 12,
+                    "bit_msb": 14,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R1"
+                },
+                {
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "Acceptable L1 Latency: Specifies acceptable latency that the Endpoint can tolerate while transitioning from L1 to L0. This field reflects the setting of the corresponding field in the PCIe Device Capability Register of PF 0.",
+                    "mode": "RO",
+                    "name": "AL1SL"
+                },
+                {
+                    "bit_lsb": 6,
+                    "bit_msb": 8,
+                    "description": "Acceptable L0S Latency: Specifies acceptable latency that the Endpoint can tolerate while transitioning from L0S to L0. This field reflects the setting of the corresponding field in the PCIe Device Capability Register of PF 0.",
+                    "mode": "RO",
+                    "name": "AL0SL"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Extended Tag Field Supported: Set when device allows the tag field to be extended from 5 to 8 bits. This field reflects the setting of the corresponding field in the PCIe Device Capability Register of PF 0.",
+                    "mode": "RO",
+                    "name": "ETFS"
+                },
+                {
+                    "bit_lsb": 3,
+                    "bit_msb": 4,
+                    "description": "Phantom Functions Supported: This field is used to extend the tag field by combining unused Function bits with the tag bits. This field is hardwired to 00 to disable this feature.",
+                    "mode": "RO",
+                    "name": "PFS"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Max Payload Size: Specifies maximum payload size supported by the device. This field reflects the setting of the corresponding field in the PCIe Device Capability Register of PF 0.",
+                    "mode": "RO",
+                    "name": "MPS"
+                }
+            ]
+        },
+        "pcie_vf_reg.pcie_dev_ctrl_status_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 22,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R4"
+                },
+                {
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Transaction Pending: Indicates if any of the Non-Posted requests issued by the Function are still pending.",
+                    "mode": "RO",
+                    "name": "TP"
+                },
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Aux Power Detected: Reserved",
+                    "mode": "RO",
+                    "name": "APD"
+                },
+                {
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "Unsupported Request Detected: Reserved",
+                    "mode": "RO",
+                    "name": "URD"
+                },
+                {
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "Fatal Error Detected: Reserved",
+                    "mode": "RO",
+                    "name": "FED"
+                },
+                {
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Non-Fatal Error Detected: Reserved",
+                    "mode": "RO",
+                    "name": "NFER"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Correctable Error Detected: Reserved",
+                    "mode": "RO",
+                    "name": "CED"
+                },
+                {
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Function-Level Reset: Writing a 1 into this bit position generated a Function-Level Reset for the selected VF. This bit reads as 0.",
+                    "mode": "RW",
+                    "name": "FLR"
+                },
+                {
+                    "bit_lsb": 12,
+                    "bit_msb": 14,
+                    "description": "Max Read Request Size: Reserved",
+                    "mode": "RO",
+                    "name": "MRRS"
+                },
+                {
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Enable No Snoop: Reserved",
+                    "mode": "RO",
+                    "name": "EBS"
+                },
+                {
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Enable Aux Power: Reserved",
+                    "mode": "RO",
+                    "name": "EAP"
+                },
+                {
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Enable Phantom Functions: Reserved",
+                    "mode": "RO",
+                    "name": "EPF"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Extended Tag Field Enable: Reserved",
+                    "mode": "RO",
+                    "name": "ETFE"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 7,
+                    "description": "Max Payload Size: Reserved",
+                    "mode": "RO",
+                    "name": "MPS"
+                },
+                {
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Enable Relaxed Ordering: Reserved",
+                    "mode": "RO",
+                    "name": "ERO"
+                },
+                {
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Enable Unsupported Request Reporting: Reserved",
+                    "mode": "RO",
+                    "name": "EURR"
+                },
+                {
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Enable Fatal Error Reporting: Reserved",
+                    "mode": "RO",
+                    "name": "EFER"
+                },
+                {
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Enable Non-Fatal Error Reporting: Reserved",
+                    "mode": "RO",
+                    "name": "ENFER"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Enable Correctable Error Reporting: Reserved",
+                    "mode": "RO",
+                    "name": "ECER"
+                }
+            ]
+        },
+        "pcie_vf_reg.pwr_mgmt_cap": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "PME Support for D3(cold) State: Indicates whether the Function is capable of sending PME messages when in the D3cold state. Because the device does not have aux power, this bit is hardwired to 0.",
+                    "mode": "RO",
+                    "name": "PSDCS"
+                },
+                {
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "PME Support for D3(hot) State: Indicates whether the Function is capable of sending PME messages when in the D3hot state. This bit is set to 1 by default, but can be modified from the local management bus by writing into Function 0. All other Functions assume the value set in Function 0s Power Management Capabilities Register.",
+                    "mode": "RO",
+                    "name": "PSDHS"
+                },
+                {
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "PME Support for D1 State: Indicates whether the Function is capable of sending PME messages when in the D1 state. This bit is set to 1 by default, but can be modified from the local management bus by writing into Function 0. All other Functions assume the value set in Function 0s Power Management Capabilities Register.",
+                    "mode": "RO",
+                    "name": "PSD1S"
+                },
+                {
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "PME Support for D0 State: Indicates whether the Function is capable of sending PME messages when in the D0 state. This bit is set to 1 by default, but can be modified from the local management bus by writing into Function 0. All other Functions assume the value set in Function 0s Power Management Capabilities Register.",
+                    "mode": "RO",
+                    "name": "PSD0S"
+                },
+                {
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "D2 Support: Set if the Function supports the D2 power state. Currently hardwired to 0.",
+                    "mode": "RO",
+                    "name": "D2S"
+                },
+                {
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "D1 Support: Set if the Function supports the D1 power state. This bit is set to 1 by default, but can be modified from the local management bus by writing into Function 0. All other Functions assume the value set in Function 0s Power Management Capabilities Register.",
+                    "mode": "RO",
+                    "name": "D1S"
+                },
+                {
+                    "bit_lsb": 22,
+                    "bit_msb": 24,
+                    "description": "Max Current Required from Aux Power Supply: Specifies the maximum current drawn by the device from the aux power source in the D3cold state. This field is not implemented in devices not supporting PME notification when in the D3cold state, and is therefore hardwired to 0.",
+                    "mode": "RO",
+                    "name": "MCRAPS"
+                },
+                {
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Device Specific Initialization Bit: This bit, when set, indicates that the device requires additional configuration steps beyond setting up its PCI configuration space, to bring it to the D0active state from the D0uninitialized state. This bit is hardwired to 0.",
+                    "mode": "RO",
+                    "name": "DSI"
+                },
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R0"
+                },
+                {
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "PME Clock: Not applicable to PCI Express. This bit is hardwired to 0.",
+                    "mode": "RO",
+                    "name": "PC"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "Version ID: Indicates the version of the PCI Bus Power Management Specifications that the Function implements. This field is set by default to 011 (Version 1.2). It can be re-written independently for each Function from the local management bus.",
+                    "mode": "RO",
+                    "name": "VID"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Capabilities Pointer: Contains pointer to the next PCI Capability Structure. By default, this points to the MSI Capability Structure. This field can be re-written independently for each Function from the local management bus.",
+                    "mode": "RO",
+                    "name": "CP"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Capability ID: Identifies that the capability structure is for Power Management. This field is set by default to 01 hex. It can be re-written independently for each Function from the local management bus.",
+                    "mode": "RO",
+                    "name": "CID"
+                }
+            ]
+        },
+        "pcie_vf_reg.pwr_mgmt_ctrl_stat_rep": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Data Register: This optional register is not implemented in the Databahn PCIe core. This field is hardwired to 0.",
+                    "mode": "RO",
+                    "name": "DR"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R1"
+                },
+                {
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "PME Status: When PME notification is enabled, writing a 1 into this bit position from the local management bus sets this bit and causes the core to send a PME message from the associated Function. When the Root Complex processes this message, it will turn off this bit by writing a 1 into this bit position though a Config Write. This bit can be set or cleared from the local management bus, by writing a 1 or 0, respectively. It can only be cleared from the configuration path (by writing a 1).",
+                    "mode": "RW",
+                    "name": "PMES"
+                },
+                {
+                    "bit_lsb": 9,
+                    "bit_msb": 14,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "PME Enable: Setting this bit enables the notification of PME events from the associated Function. This bit can be set also by writing into this register from the local management bus.",
+                    "mode": "RW",
+                    "name": "PE"
+                },
+                {
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R3"
+                },
+                {
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "No Soft Reset: When this bit is set to 1, the Function will maintain all its state in the PM state D3hot. The software is not required to re-initialize the Function registers on the transition back to D0. This bit is set to 1 by default, but can be modified independently for each VF from the local management bus.",
+                    "mode": "RO",
+                    "name": "NSR"
+                },
+                {
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R4"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Power State: Indicates the power state this Function is currently in. This field can be read by the software to monitor the current power state, or can be written to cause a transition to a new state. The valid settings are 00 (state D0), 01 (state D1) and 11 (state D3hot). The software should not write any other value into this field. This field can also be written from the local management bus independently for each VF Function.",
+                    "mode": "RW",
+                    "name": "PS"
+                }
+            ]
+        },
+        "pcie_vf_reg.revision_id_class_code": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Class Code: Identifies the function of the device. This field reflects the setting of the corresponding register in the configuration space of the associated Physical Function.",
+                    "mode": "RO",
+                    "name": "CC"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Sub-Class Code: Identifies a sub-category within the selected function. This field reflects the setting of the corresponding register in the configuration space of the associated Physical Function.",
+                    "mode": "RO",
+                    "name": "SCC"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Programming Interface Byte: Identifies the register set layout of the device. This field reflects the setting of the corresponding register in the configuration space of the associated Physical Function.",
+                    "mode": "RO",
+                    "name": "PIB"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Revision ID: Assigned by the manufacturer of the device to identify the revision RO Setting of this field Denali Databahn-PCIe Core User Guide, PMC-Sierra Version 3.4 202 number of the device. This field reflects the setting of the corresponding register in the configuration space of the associated Physical Function.",
+                    "mode": "RO",
+                    "name": "RID"
+                }
+            ]
+        },
+        "pcie_vf_reg.subsystem_vendor_id_subsystem_id": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Subsystem ID: Specifies the Subsystem ID assigned by the manufacturer of the device. This field reflects the setting of the corresponding register in the configuration space of the associated Physical Function.",
+                    "mode": "RO",
+                    "name": "SID"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Subsystem Vendor ID: Specifies the Subsystem Vendor ID assigned by the PCI SIG to the manufacturer of the device. Its value comes from the Subsystem Vendor ID Register in the local management register block.",
+                    "mode": "RO",
+                    "name": "SVID"
+                }
+            ]
+        },
+        "pcie_vf_reg.uncorr_err_mask_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R4"
+                }
+            ]
+        },
+        "pcie_vf_reg.uncorr_err_severity_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R8"
+                }
+            ]
+        },
+        "pcie_vf_reg.uncorr_err_status": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 23,
+                    "bit_msb": 31,
+                    "description": "Reserved: This bit is not implemented for Virtual Functions. Hardwired to 0.",
+                    "mode": "RO",
+                    "name": "R3"
+                },
+                {
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Reserved: This bit is set when the core has received a request from the link that it does not support. This error is not Function-specific. This error is considered non-fatal by default. In the special case described in Sections 6.2.3.2.4.1 of the PCI Express Specifications, the error is reported by sending an ERR_COR message. In all other cases, the error is reported by sending an ERR_NONFATAL message. The header of the received request that caused the error is logged in the Header Log Registers. STICKY.",
+                    "mode": "W1C",
+                    "name": "R2"
+                },
+                {
+                    "altname": "R26_1",
+                    "bit_lsb": 12,
+                    "bit_msb": 20,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "Reserved"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 11,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R1"
+                },
+                {
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Data Link Protocol Error Status: This bit is not implemented for Virtual Functions. Hardwired to 0.",
+                    "mode": "RO",
+                    "name": "DLPER"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R0"
+                }
+            ]
+        },
+        "pcie_vf_reg.vendor_id_device_id_vf": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Device ID: Device ID assigned by the manufacturer of the device. This field can be written independently for each Function from the local management bus.",
+                    "mode": "RO",
+                    "name": "DID"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Vendor ID: This is the Vendor ID assigned by the PCI SIG to the manufacturer of the device The Vendor ID is set in the Vendor ID Register within the local management register block.",
+                    "mode": "RO",
+                    "name": "VID"
+                }
+            ]
+        }
+    }
+}

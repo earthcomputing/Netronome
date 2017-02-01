@@ -1,0 +1,411 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "nbi_dma_reg.NbiDmaAddressMap": {
+            "0x00000000": {
+                "altname": "NBI_DMA_BDSRAM",
+                "description": "NBI DMA Buffer Descriptor RAM",
+                "name": "NbiDmaBDSRAM",
+                "ptr": "nbi_dma_reg.NbiDmaBufDescRam",
+                "type": "regmap"
+            },
+            "0x00008000": {
+                "altname": "NBI_DMA_BUFFER_LIST",
+                "description": "NBI DMA Buffer List Queue Register",
+                "name": "NbiDmaBufferList",
+                "ptr": "nbi_dma_reg.NbiDmaBufferList",
+                "type": "regmap"
+            },
+            "0x0000a000": {
+                "altname": "NBI_DMA_BCSRAM",
+                "description": "NBI DMA Buffer Completion RAM",
+                "name": "NbiDmaBCSRAM",
+                "ptr": "nbi_dma_reg.NbiDmaBufCmplRam",
+                "type": "regmap"
+            }
+        },
+        "nbi_dma_reg.NbiDmaBufCmplRam": {
+            "0x00000000": {
+                "altname": "NBIDMA_BCSRAM_ENTRY%d",
+                "description": "NBI DMA Buffer Completion SRAM Entry %d",
+                "name": "NbiDmaBCSramEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbi_dma_reg.NbiBCSramEntry",
+                "repeat1": 1024,
+                "type": "reg"
+            }
+        },
+        "nbi_dma_reg.NbiDmaBufDescRam": {
+            "0x00000000": {
+                "altname": "NBIDMA_BDSRAM_ENTRY%d",
+                "description": "NBI DMA Buffer Descriptor SRAM Entry %d",
+                "name": "NbiDmaBDSramEntry%d",
+                "offinc1": "0x00000008",
+                "ptr": "nbi_dma_reg.NbiBDSramEntry",
+                "repeat1": 4096,
+                "type": "reg"
+            }
+        },
+        "nbi_dma_reg.NbiDmaBufferList": {
+            "0x00000000": {
+                "altname": "BL_QUE_CTRL0",
+                "description": "Configures the buffer list circular queue and provides status",
+                "name": "BLQueCtrl0",
+                "ptr": "nbi_dma_reg.BLQueCtrl0",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "BL_QUE_CTRL1",
+                "description": "Configures the buffer list circular queue and provides status",
+                "name": "BLQueCtrl1",
+                "ptr": "nbi_dma_reg.BLQueCtrl1",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "BL_QUE_CTRL2",
+                "description": "Configures the buffer list circular queue and provides status",
+                "name": "BLQueCtrl2",
+                "ptr": "nbi_dma_reg.BLQueCtrl2",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "BL_QUE_CTRL3",
+                "description": "Configures the buffer list circular queue and provides status",
+                "name": "BLQueCtrl3",
+                "ptr": "nbi_dma_reg.BLQueCtrl3",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "nbi_dma_reg.BLQueCtrl0": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "BLQ_EVENT_FULL_CNT",
+                    "bit_lsb": 48,
+                    "bit_msb": 55,
+                    "description": "Debug counter that increments when a BLQ Event is dropped due to a full BLQ Event FIFO. This counter saturates at all 1's",
+                    "mode": "RC",
+                    "name": "BLQEventFullCnt"
+                },
+                {
+                    "altname": "BD_FIFO_ENTRY_CNT",
+                    "bit_lsb": 40,
+                    "bit_msb": 42,
+                    "description": "Number of buffer descriptors resident in the buffer descriptor register FIFO",
+                    "mode": "RO",
+                    "name": "BDFifoEntryCnt"
+                },
+                {
+                    "altname": "BL_QUE_FULL",
+                    "bit_lsb": 39,
+                    "bit_msb": 39,
+                    "description": "The Queue is full when set.",
+                    "mode": "RO",
+                    "name": "BLQFull"
+                },
+                {
+                    "altname": "BL_QUE_EMPTY",
+                    "bit_lsb": 38,
+                    "bit_msb": 38,
+                    "description": "The queue is empty when set.",
+                    "mode": "RO",
+                    "name": "BLQEmpty"
+                },
+                {
+                    "altname": "BL_QUE_SIZE",
+                    "bit_lsb": 36,
+                    "bit_msb": 37,
+                    "description": "Defines the Size of the Circular Buffer List Queue",
+                    "mode": "RW",
+                    "name": "BLQSize"
+                },
+                {
+                    "altname": "BL_ENTRY_CNT",
+                    "bit_lsb": 24,
+                    "bit_msb": 35,
+                    "description": "Hardware calculated value of the number of entries on the Buffer List Queue. A full Buffer List Queue has an entry count equal to zero, with the BLQFull flag set. An empty Buffer List Queue has an entry count equal to zero with the BLQEmpty flag set.",
+                    "mode": "RO",
+                    "name": "BLEntryCnt"
+                },
+                {
+                    "altname": "BL_HEAD_PTR",
+                    "bit_lsb": 12,
+                    "bit_msb": 23,
+                    "description": "Buffer List Queue Head Pointer. Points to the next entry to be read by hardware.",
+                    "mode": "RW",
+                    "name": "BLHdPtr"
+                },
+                {
+                    "altname": "BL_TAIL_PTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": "Buffer List Queue Tail Pointer. Points to the next entry to be written at the tail.",
+                    "mode": "RW",
+                    "name": "BLTlPtr"
+                }
+            ]
+        },
+        "nbi_dma_reg.BLQueCtrl1": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "BLQ_EVENT_FULL_CNT",
+                    "bit_lsb": 48,
+                    "bit_msb": 55,
+                    "description": "Debug counter that increments when a BLQ Event is dropped due to a full BLQ Event FIFO. This counter saturates at all 1's",
+                    "mode": "RC",
+                    "name": "BLQEventFullCnt"
+                },
+                {
+                    "altname": "BD_FIFO_ENTRY_CNT",
+                    "bit_lsb": 40,
+                    "bit_msb": 42,
+                    "description": "Number of buffer descriptors resident in the buffer descriptor register FIFO",
+                    "mode": "RO",
+                    "name": "BDFifoEntryCnt"
+                },
+                {
+                    "altname": "BL_QUE_FULL",
+                    "bit_lsb": 39,
+                    "bit_msb": 39,
+                    "description": "The Queue is full when set.",
+                    "mode": "RO",
+                    "name": "BLQFull"
+                },
+                {
+                    "altname": "BL_QUE_EMPTY",
+                    "bit_lsb": 38,
+                    "bit_msb": 38,
+                    "description": "The queue is empty when set.",
+                    "mode": "RO",
+                    "name": "BLQEmpty"
+                },
+                {
+                    "altname": "BL_QUE_SIZE",
+                    "bit_lsb": 36,
+                    "bit_msb": 37,
+                    "description": "Defines the Size of the Circular Buffer List Queue",
+                    "mode": "RW",
+                    "name": "BLQSize"
+                },
+                {
+                    "altname": "BL_ENTRY_CNT",
+                    "bit_lsb": 24,
+                    "bit_msb": 35,
+                    "description": "Hardware calculated value of the number of entries on the Buffer List Queue. A full Buffer List Queue has an entry count equal to zero, with the BLQFull flag set. An empty Buffer List Queue has an entry count equal to zero with the BLQEmpty flag set.",
+                    "mode": "RO",
+                    "name": "BLEntryCnt"
+                },
+                {
+                    "altname": "BL_HEAD_PTR",
+                    "bit_lsb": 12,
+                    "bit_msb": 23,
+                    "description": "Buffer List Queue Head Pointer. Points to the next entry to be read by hardware.",
+                    "mode": "RW",
+                    "name": "BLHdPtr"
+                },
+                {
+                    "altname": "BL_TAIL_PTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": "Buffer List Queue Tail Pointer. Points to the next entry to be written at the tail.",
+                    "mode": "RW",
+                    "name": "BLTlPtr"
+                }
+            ]
+        },
+        "nbi_dma_reg.BLQueCtrl2": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "BLQ_EVENT_FULL_CNT",
+                    "bit_lsb": 48,
+                    "bit_msb": 55,
+                    "description": "Debug counter that increments when a BLQ Event is dropped due to a full BLQ Event FIFO. This counter saturates at all 1's",
+                    "mode": "RC",
+                    "name": "BLQEventFullCnt"
+                },
+                {
+                    "altname": "BD_FIFO_ENTRY_CNT",
+                    "bit_lsb": 40,
+                    "bit_msb": 42,
+                    "description": "Number of buffer descriptors resident in the buffer descriptor register FIFO",
+                    "mode": "RO",
+                    "name": "BDFifoEntryCnt"
+                },
+                {
+                    "altname": "BL_QUE_FULL",
+                    "bit_lsb": 39,
+                    "bit_msb": 39,
+                    "description": "The Queue is full when set.",
+                    "mode": "RO",
+                    "name": "BLQFull"
+                },
+                {
+                    "altname": "BL_QUE_EMPTY",
+                    "bit_lsb": 38,
+                    "bit_msb": 38,
+                    "description": "The queue is empty when set.",
+                    "mode": "RO",
+                    "name": "BLQEmpty"
+                },
+                {
+                    "altname": "BL_QUE_SIZE",
+                    "bit_lsb": 36,
+                    "bit_msb": 37,
+                    "description": "Defines the Size of the Circular Buffer List Queue",
+                    "mode": "RW",
+                    "name": "BLQSize"
+                },
+                {
+                    "altname": "BL_ENTRY_CNT",
+                    "bit_lsb": 24,
+                    "bit_msb": 35,
+                    "description": "Hardware calculated value of the number of entries on the Buffer List Queue. A full Buffer List Queue has an entry count equal to zero, with the BLQFull flag set. An empty Buffer List Queue has an entry count equal to zero with the BLQEmpty flag set.",
+                    "mode": "RO",
+                    "name": "BLEntryCnt"
+                },
+                {
+                    "altname": "BL_HEAD_PTR",
+                    "bit_lsb": 12,
+                    "bit_msb": 23,
+                    "description": "Buffer List Queue Head Pointer. Points to the next entry to be read by hardware.",
+                    "mode": "RW",
+                    "name": "BLHdPtr"
+                },
+                {
+                    "altname": "BL_TAIL_PTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": "Buffer List Queue Tail Pointer. Points to the next entry to be written at the tail.",
+                    "mode": "RW",
+                    "name": "BLTlPtr"
+                }
+            ]
+        },
+        "nbi_dma_reg.BLQueCtrl3": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "BLQ_EVENT_FULL_CNT",
+                    "bit_lsb": 48,
+                    "bit_msb": 55,
+                    "description": "Debug counter that increments when a BLQ Event is dropped due to a full BLQ Event FIFO. This counter saturates at all 1's",
+                    "mode": "RC",
+                    "name": "BLQEventFullCnt"
+                },
+                {
+                    "altname": "BD_FIFO_ENTRY_CNT",
+                    "bit_lsb": 40,
+                    "bit_msb": 42,
+                    "description": "Number of buffer descriptors resident in the buffer descriptor register FIFO",
+                    "mode": "RO",
+                    "name": "BDFifoEntryCnt"
+                },
+                {
+                    "altname": "BL_QUE_FULL",
+                    "bit_lsb": 39,
+                    "bit_msb": 39,
+                    "description": "The Queue is full when set.",
+                    "mode": "RO",
+                    "name": "BLQFull"
+                },
+                {
+                    "altname": "BL_QUE_EMPTY",
+                    "bit_lsb": 38,
+                    "bit_msb": 38,
+                    "description": "The queue is empty when set.",
+                    "mode": "RO",
+                    "name": "BLQEmpty"
+                },
+                {
+                    "altname": "BL_QUE_SIZE",
+                    "bit_lsb": 36,
+                    "bit_msb": 37,
+                    "description": "Defines the Size of the Circular Buffer List Queue",
+                    "mode": "RW",
+                    "name": "BLQSize"
+                },
+                {
+                    "altname": "BL_ENTRY_CNT",
+                    "bit_lsb": 24,
+                    "bit_msb": 35,
+                    "description": "Hardware calculated value of the number of entries on the Buffer List Queue. A full Buffer List Queue has an entry count equal to zero, with the BLQFull flag set. An empty Buffer List Queue has an entry count equal to zero with the BLQEmpty flag set.",
+                    "mode": "RO",
+                    "name": "BLEntryCnt"
+                },
+                {
+                    "altname": "BL_HEAD_PTR",
+                    "bit_lsb": 12,
+                    "bit_msb": 23,
+                    "description": "Buffer List Queue Head Pointer. Points to the next entry to be read by hardware.",
+                    "mode": "RW",
+                    "name": "BLHdPtr"
+                },
+                {
+                    "altname": "BL_TAIL_PTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": "Buffer List Queue Tail Pointer. Points to the next entry to be written at the tail.",
+                    "mode": "RW",
+                    "name": "BLTlPtr"
+                }
+            ]
+        },
+        "nbi_dma_reg.NbiBCSramEntry": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "BUFNUM3",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Buffer number 3",
+                    "mode": "RW",
+                    "name": "bufNum3"
+                },
+                {
+                    "altname": "BUFNUM2",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Buffer number 2",
+                    "mode": "RW",
+                    "name": "bufNum2"
+                },
+                {
+                    "altname": "BUFNUM1",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Buffer number 1",
+                    "mode": "RW",
+                    "name": "bufNum1"
+                },
+                {
+                    "altname": "BUFNUM0",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Buffer number 0",
+                    "mode": "RW",
+                    "name": "bufNum0"
+                }
+            ]
+        },
+        "nbi_dma_reg.NbiBDSramEntry": {
+            "bit_length": 64,
+            "fields": [
+                {
+                    "altname": "MUADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 28,
+                    "description": "Memory Unit Address of the buffer (internal/external MU). Maps to CPP Address[29;11]  Refer to the NBI top-level Master Commands section for memory unit address translation.",
+                    "mode": "RW",
+                    "name": "MuAddr"
+                }
+            ]
+        }
+    }
+}

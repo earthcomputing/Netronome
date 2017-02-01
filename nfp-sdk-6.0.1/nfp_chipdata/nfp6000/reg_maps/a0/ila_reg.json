@@ -1,0 +1,557 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "ila_reg.IlaBarCfg": {
+            "0x00000000": {
+                "altname": "I2C_%d",
+                "description": "ILA to CPP translation BAR",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaToCppBar%d",
+                "offinc1": "0x00000004",
+                "ptr": "ila_reg.IlaToCppBar",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "C2I_%d",
+                "description": "CPP to ILA translation BAR",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CppToIlaBar%d",
+                "offinc1": "0x00000004",
+                "ptr": "ila_reg.CppToIlaBar",
+                "repeat1": 8,
+                "type": "reg"
+            }
+        },
+        "ila_reg.IlaCppAddressMap": {
+            "0x00000000": {
+                "altname": "ILA_SRAM",
+                "description": "ILA Shared SRAM",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaSSram",
+                "ptr": "ila_reg.IlaSSram",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "IM",
+                "description": "Interrupt Manager",
+                "name": "InterruptManager",
+                "ptr": "peripheral_interrupt_manager.InterruptManagerMap_inst0",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "ILA_ERROR_CODE",
+                "description": "ACCEL Mode ILA Error Code Command",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaErrorCode",
+                "ptr": "ila_reg.IlaErrorCode",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "ILA_BARCFG",
+                "description": "ILA Target BAR Configuration",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaBarCfg",
+                "ptr": "ila_reg.IlaBarCfg",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "DMA_ACCEL",
+                "description": "ILA DMA Controller (Accellerator Mode)",
+                "name": "IlaDmaControllerAccel",
+                "ptr": "ila_reg.IlaDmaControllerAccel",
+                "type": "regmap"
+            },
+            "0x00080000": {
+                "altname": "QUEUE%d",
+                "description": "Queue registers and operations for queue %d",
+                "name": "Queue%d",
+                "offinc1": "0x00000800",
+                "ptr": "peripheral_queue_controller.QC_Queue_CPP",
+                "repeat1": 256,
+                "type": "regmap"
+            }
+        },
+        "ila_reg.IlaDmaControllerAccel": {
+            "0x00000000": {
+                "altname": "CMD_TILA_CH0",
+                "description": "Insert command into Ch0ToIla DMA command queue",
+                "name": "DmaCommandCh0ToIla",
+                "ptr": "ila_reg.IlaDmaCommand",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "CMD_TILA_CH1",
+                "description": "Insert command into Ch1ToIla DMA command queue",
+                "name": "DmaCommandCh1ToIla",
+                "ptr": "ila_reg.IlaDmaCommand",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "CMD_FILA_CH0",
+                "description": "Insert command into Ch0FrmIla DMA command queue",
+                "name": "DmaCommandCh0FrmIla",
+                "ptr": "ila_reg.IlaDmaCommand",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "CMD_FILA_CH1",
+                "description": "Insert command into Ch1FrmIla DMA command queue",
+                "name": "DmaCommandCh1FrmIla",
+                "ptr": "ila_reg.IlaDmaCommand",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "CTRL_TILA_CH0",
+                "description": "Control Ch0ToIla DMA command queue",
+                "name": "DmaCtrlCh0ToIla",
+                "ptr": "ila_reg.IlaDmaControl",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "CTRL_TILA_CH1",
+                "description": "Control Ch1ToIla DMA command queue",
+                "name": "DmaCtrlCh1ToIla",
+                "ptr": "ila_reg.IlaDmaControl",
+                "type": "reg"
+            },
+            "0x00000048": {
+                "altname": "CTRL_FILA_CH0",
+                "description": "Control Ch0FrmIla DMA command queue",
+                "name": "DmaCtrlCh0FrmIla",
+                "ptr": "ila_reg.IlaDmaControl",
+                "type": "reg"
+            },
+            "0x0000004c": {
+                "altname": "CTRL_FILA_CH1",
+                "description": "Control Ch1FrmIla DMA command queue",
+                "name": "DmaCtrlCh1FrmIla",
+                "ptr": "ila_reg.IlaDmaControl",
+                "type": "reg"
+            },
+            "0x00000050": {
+                "altname": "WRITEPTR_TILA_CH0",
+                "description": "Write pointer for Ch0ToIla DMA command queue",
+                "name": "DmaWritePtrCh0ToIla",
+                "ptr": "ila_reg.IlaToDmaWritePtr",
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "WRITEPTR_TILA_CH1",
+                "description": "Write pointer for Ch1ToIla DMA command queue",
+                "name": "DmaWritePtrCh1ToIla",
+                "ptr": "ila_reg.IlaToDmaWritePtr",
+                "type": "reg"
+            },
+            "0x00000070": {
+                "altname": "WRITEPTR_FILA_CH0",
+                "description": "Write pointer for Ch0FrmIla DMA command queue",
+                "name": "DmaWritePtrCh0FrmIla",
+                "ptr": "ila_reg.IlaFrmDmaWritePtr",
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "WRITEPTR_FILA_CH1",
+                "description": "Write pointer for Ch1FrmIla DMA command queue",
+                "name": "DmaWritePtrCh1FrmIla",
+                "ptr": "ila_reg.IlaFrmDmaWritePtr",
+                "type": "reg"
+            },
+            "0x00000090": {
+                "altname": "QSTS_TILA_CH0",
+                "description": "Queue status for Ch0ToIla DMA command queue",
+                "name": "DmaQStatusCh0ToIla",
+                "ptr": "ila_reg.IlaDmaQueueStatus",
+                "type": "reg"
+            },
+            "0x00000094": {
+                "altname": "QSTS_TILA_CH1",
+                "description": "Queue status for Ch1ToIla DMA command queue",
+                "name": "DmaQStatusCh1ToIla",
+                "ptr": "ila_reg.IlaDmaQueueStatus",
+                "type": "reg"
+            },
+            "0x00000098": {
+                "altname": "QSTS_FILA_CH0",
+                "description": "Queue status for Ch0FrmIla DMA command queue",
+                "name": "DmaQStatusCh0FrmIla",
+                "ptr": "ila_reg.IlaDmaQueueStatus",
+                "type": "reg"
+            },
+            "0x0000009c": {
+                "altname": "QSTS_FILA_CH1",
+                "description": "Queue status for Ch1FrmIla DMA command queue",
+                "name": "DmaQStatusCh1FrmIla",
+                "ptr": "ila_reg.IlaDmaQueueStatus",
+                "type": "reg"
+            }
+        },
+        "ila_reg.IlaErrorCode": {
+            "0x00000000": {
+                "altname": "ILA_ERROR_CODE",
+                "description": "ACCEL Mode ILA Error Code Command",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaErrorCode",
+                "ptr": "ila_reg.IlaErrorCodeEntry",
+                "type": "reg"
+            }
+        },
+        "ila_reg.IlaSSram": {
+            "0x00000000": {
+                "altname": "ILA_SSRAM_ENTRY%d",
+                "description": "ILA Shared SRAM Entry %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaSSramEntry%d",
+                "offinc1": "0x00000004",
+                "ptr": "ila_reg.IlaSSramEntry",
+                "repeat1": 16384,
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "ila_reg.CppToIlaBar": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_CH_SEL",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Selects which ILA Channel to send the command on",
+                    "mode": "RW",
+                    "name": "IlaChSel"
+                },
+                {
+                    "altname": "ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 20,
+                    "description": "In 32-bit mode: ILA address bits [47:27]; In 40-bit mode: ILA address bits[47:35]",
+                    "mode": "RW",
+                    "name": "Address"
+                }
+            ]
+        },
+        "ila_reg.IlaDmaCommand": {
+            "bit_length": 128,
+            "fields": [
+                {
+                    "altname": "LENGTH",
+                    "bit_lsb": 116,
+                    "bit_msb": 127,
+                    "description": "Length of transfer in bytes",
+                    "mode": "WO",
+                    "name": "XferLength"
+                },
+                {
+                    "altname": "ILA_ADDR_HI",
+                    "bit_lsb": 96,
+                    "bit_msb": 111,
+                    "description": "Upper 16 bits of 48-bit ILA address",
+                    "mode": "WO",
+                    "name": "IlaAddressHi"
+                },
+                {
+                    "altname": "ILA_ADDR_LO",
+                    "bit_lsb": 66,
+                    "bit_msb": 95,
+                    "description": "Next 30 bits of 48-bit ILA address",
+                    "mode": "WO",
+                    "name": "IlaAddressLo"
+                },
+                {
+                    "altname": "CPL",
+                    "bit_lsb": 48,
+                    "bit_msb": 65,
+                    "description": "Event to generate on completed command.  Can be either no signal, generate an event on the event bus, or send a signal directly to a CPP master.",
+                    "mode": "WO",
+                    "name": "CompletionIndication"
+                },
+                {
+                    "altname": "TOKEN",
+                    "bit_lsb": 46,
+                    "bit_msb": 47,
+                    "description": "CPP token bits for CPP command",
+                    "mode": "WO",
+                    "name": "Token"
+                },
+                {
+                    "altname": "SIGNAL_BOTH_ON_ERR_EN",
+                    "bit_lsb": 45,
+                    "bit_msb": 45,
+                    "description": "Use to enable signaling both odd and even signals when a DMA encounters an ILA Rx Error.",
+                    "mode": "WO",
+                    "name": "SignalBothOnErrEn"
+                },
+                {
+                    "altname": "TARGET64",
+                    "bit_lsb": 44,
+                    "bit_msb": 44,
+                    "description": "CPP target is 64-bit.  Set if target supports 64-bit transactions, or cleared if target only supports 32-bit transaction.",
+                    "mode": "WO",
+                    "name": "Target64"
+                },
+                {
+                    "altname": "CPP_TARGET",
+                    "bit_lsb": 40,
+                    "bit_msb": 43,
+                    "description": "Target ID for CPP transaction",
+                    "mode": "WO",
+                    "name": "CppTarget"
+                },
+                {
+                    "altname": "CPP_ADDR_HI",
+                    "bit_lsb": 32,
+                    "bit_msb": 39,
+                    "description": "CPP bus address",
+                    "mode": "WO",
+                    "name": "CppAddressHi"
+                },
+                {
+                    "altname": "CPP_ADDR_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "CPP bus address",
+                    "mode": "WO",
+                    "name": "CppAddressLo"
+                }
+            ]
+        },
+        "ila_reg.IlaDmaControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "DESC_ERROR",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Set to clear the error indication for descriptor reads.  Setting to 0 has no effect.",
+                    "mode": "W1C",
+                    "name": "DescReadError"
+                },
+                {
+                    "altname": "ILA_ERROR",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Set to clear the error indication for ILA transaction failures.  Setting to 0 has no effect.",
+                    "mode": "W1C",
+                    "name": "IlaError"
+                },
+                {
+                    "altname": "QUEUE_OVERFLOW",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Set to clear queue overflow indication.  Setting to 0 has no effect",
+                    "mode": "W1C",
+                    "name": "QueueOverflow"
+                },
+                {
+                    "altname": "CONT_ON_ERROR",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Setting this bit will stop errors from blocking DMAs",
+                    "mode": "RW",
+                    "name": "ContinueOnError"
+                },
+                {
+                    "altname": "QUEUE_STOP",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Setting this bit will stop DMA engine from executing from queue.  Clearing the bit will start up execution again.",
+                    "mode": "RW",
+                    "name": "QueueStop"
+                }
+            ]
+        },
+        "ila_reg.IlaDmaQueueStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "AVAIL",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Amount of available space in queue.  A value of 0 indicates 256 entries available.  Use QueueFull flag to determine if there is no space.",
+                    "mode": "RO",
+                    "name": "Avail"
+                },
+                {
+                    "altname": "READ_PTR",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Pointer to the next descriptor to be issued by the DMA engine.",
+                    "mode": "RO",
+                    "name": "ReadPointer"
+                },
+                {
+                    "altname": "POP_PTR",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Pointer to the next descriptor to be completed by the DMA engine. The DMA queue write pointer can be calculated as (DmaQueueStatus[PopPointer] - DmaQueueStatus[Avail]) mod 256.",
+                    "mode": "RO",
+                    "name": "PopPointer"
+                },
+                {
+                    "altname": "QUEUE_FULL",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Set when queue is full, cleared otherwise.",
+                    "mode": "RO",
+                    "name": "QueueFull"
+                },
+                {
+                    "altname": "DESC_ERROR",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Set when a multi-bit error is detected on reading the descriptor from the SRAM queue.  Must be cleared explicitly by writing the DMA Queue Control register.",
+                    "mode": "RO",
+                    "name": "DescReadError"
+                },
+                {
+                    "altname": "ILA_ERROR",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Set when an error is detected in the received ILA transaction.  Must be cleared explicitly by writing the DMA Queue Control register. Specific error latched in the IlaErrStat register.",
+                    "mode": "RO",
+                    "name": "IlaError"
+                },
+                {
+                    "altname": "QUEUE_OVERFLOW",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Set when a descriptor is written to a full queue. Must be cleared explicitly by writing the DMA Queue Control register.",
+                    "mode": "RO",
+                    "name": "QueueOverflow"
+                },
+                {
+                    "altname": "CONT_ON_ERROR",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "If set errors will not block further DMAs.",
+                    "mode": "RO",
+                    "name": "ContinueOnError"
+                },
+                {
+                    "altname": "QUEUE_STOP",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set when the DMA engine is stopped due to an error, or if DMA engine is explicitly stopped by writing to the DMA Queue Control Register.",
+                    "mode": "RO",
+                    "name": "QueueStop"
+                }
+            ]
+        },
+        "ila_reg.IlaErrorCodeEntry": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_ERRORCODE_GEN",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Enable ILA Error Code Command",
+                    "mode": "RW",
+                    "name": "IlaErrorCodeGen"
+                },
+                {
+                    "altname": "ILA_ERRORCODE_CHAN",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Select ILA Error Code Command Channel",
+                    "mode": "RW",
+                    "name": "IlaErrorCodeChan"
+                }
+            ]
+        },
+        "ila_reg.IlaFrmDmaWritePtr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 8,
+                    "description": "Write pointer address in queue memory",
+                    "mode": "RO",
+                    "name": "Pointer"
+                }
+            ]
+        },
+        "ila_reg.IlaSSramEntry": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SSRAM_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "32-bits of data within the ILA Shared SRAM",
+                    "mode": "RW",
+                    "name": "SSRAMData"
+                }
+            ]
+        },
+        "ila_reg.IlaToCppBar": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TGTID",
+                    "bit_lsb": 25,
+                    "bit_msb": 29,
+                    "description": "CPP target ID. Local Registers are accessed when TargetID=0",
+                    "mode": "RW",
+                    "name": "TargetID"
+                },
+                {
+                    "altname": "TOKSEL",
+                    "bit_lsb": 23,
+                    "bit_msb": 24,
+                    "description": "CPP token field.",
+                    "mode": "RW",
+                    "name": "Token"
+                },
+                {
+                    "altname": "LEN",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Used to select the size of the CPP length field.",
+                    "mode": "RW",
+                    "name": "LengthSelect"
+                }
+            ]
+        },
+        "ila_reg.IlaToDmaWritePtr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CMPL_FIFO_POP_PTR",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Number of entries popped from the Completion FIFO.",
+                    "mode": "RO",
+                    "name": "CmplFifoPopPtr"
+                },
+                {
+                    "altname": "PTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 8,
+                    "description": "Write pointer address in queue memory",
+                    "mode": "RO",
+                    "name": "Pointer"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,27 @@
+Copyright (C) 2015-2016 Netronome Systems, Inc.  All rights reserved.
+
+Instructions to setup Upstart job for SDK 6 RTE
+
+Upstart is included and the default start-up (init) architecture for Ubuntu so
+installation of extra programs should not be neccescary if SDK6 installation
+procedure was followed.
+
+If the SDK6 RTE is started up using Upstart is will run as deamon with all info
+and error output logged with syslog to /var/log/upstart/nfp-sdk6-rte.log
+
+1. Copy the preconfigured included job file (nfp-sdk6-rte.conf) to /etc/init/
+
+2. Copy the pif_rte executable (found in .../nfp_pif.hg/user/rte/out/) to
+   /opt/netronome/bin/
+   
+3. Copy the configure script nfp_ctl_nfd.sh and shared/ directory found in
+   .../nfp_pif.hg/user/rte/scripts/ to /opt/netronome/etc/
+   
+When the system is restarted the SDK6 RTE (pif_rte) will be started at system
+startup, ready for design and firmware files to be loaded.
+
+The RTE can be stopped manually by calling:
+    stop nfp-sdk6-rte
+    
+The RTE can be started again manually by calling:
+    start nfp-sdk6-rte

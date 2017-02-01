@@ -1,0 +1,260 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "pcie_ctrl_HAL_reg.PcieHalSwitchRegs": {
+            "0x00000000": {
+                "altname": "HALSWITCHPFVFMAP0",
+                "description": "PF/VF Map.",
+                "name": "HalSwitchPfVfMap0",
+                "ptr": "pcie_ctrl_HAL_reg.HalSwitchPfVfMap0",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "HALSWITCHPFVFMAP1",
+                "description": "PF/VF Map.",
+                "name": "HalSwitchPfVfMap1",
+                "ptr": "pcie_ctrl_HAL_reg.HalSwitchPfVfMap1",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "HALSWITCHPFVFMAP2",
+                "description": "PF/VF Map.",
+                "name": "HalSwitchPfVfMap2",
+                "ptr": "pcie_ctrl_HAL_reg.HalSwitchPfVfMap2",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "HALSWITCHPFVFMAP3",
+                "description": "PF/VF Map.",
+                "name": "HalSwitchPfVfMap3",
+                "ptr": "pcie_ctrl_HAL_reg.HalSwitchPfVfMap3",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "HALSWITCHPFVFMAP4",
+                "description": "PF/VF Map.",
+                "name": "HalSwitchPfVfMap4",
+                "ptr": "pcie_ctrl_HAL_reg.HalSwitchPfVfMap4",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "HALSWITCHPFVFMAP5",
+                "description": "PF/VF Map.",
+                "name": "HalSwitchPfVfMap5",
+                "ptr": "pcie_ctrl_HAL_reg.HalSwitchPfVfMap5",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "HALSWITCHPFVFMAP6",
+                "description": "PF/VF Map.",
+                "name": "HalSwitchPfVfMap6",
+                "ptr": "pcie_ctrl_HAL_reg.HalSwitchPfVfMap6",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "HALSWITCHPFVFMAP7",
+                "description": "PF/VF Map.",
+                "name": "HalSwitchPfVfMap7",
+                "ptr": "pcie_ctrl_HAL_reg.HalSwitchPfVfMap7",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "HALSWITCHTARGETCOMPLDWRRCONFIG",
+                "description": "HAL Target Completions DWRR Config.",
+                "name": "HalSwitchTargetComplDwrrConfig",
+                "ptr": "pcie_ctrl_HAL_reg.HalSwitchTargetComplDwrrConfig",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "HALSWITCHMASTERREQDWRRCONFIG",
+                "description": "HAL Target Completions DWRR Config.",
+                "name": "HalSwitchMasterReqDwrrConfig",
+                "ptr": "pcie_ctrl_HAL_reg.HalSwitchMasterReqDwrrConfig",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "pcie_ctrl_HAL_reg.HalSwitchMasterReqDwrrConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "WRDATA",
+                    "bit_lsb": 3,
+                    "bit_msb": 10,
+                    "description": "Allotment credits.",
+                    "mode": "RW",
+                    "name": "WrData"
+                },
+                {
+                    "altname": "SELECT",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Selects one of the 2 ports.",
+                    "mode": "RW",
+                    "name": "Select"
+                },
+                {
+                    "altname": "LOAD",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Loads the allotment credits.",
+                    "mode": "RW",
+                    "name": "Load"
+                },
+                {
+                    "altname": "DISABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Disables DWRR.",
+                    "mode": "RW",
+                    "name": "Disable"
+                }
+            ]
+        },
+        "pcie_ctrl_HAL_reg.HalSwitchPfVfMap0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HALSWITCHPFVFMAP0",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "bit 0 represents function number 0 .. bit 31 represents function number 31",
+                    "mode": "RW",
+                    "name": "HalSwitchPfVfMap0"
+                }
+            ]
+        },
+        "pcie_ctrl_HAL_reg.HalSwitchPfVfMap1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HALSWITCHPFVFMAP1",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "bit 0 represents function number 32 .. bit 31 represents function number 63",
+                    "mode": "RW",
+                    "name": "HalSwitchPfVfMap1"
+                }
+            ]
+        },
+        "pcie_ctrl_HAL_reg.HalSwitchPfVfMap2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HALSWITCHPFVFMAP2",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "bit 0 represents function number 64 .. bit 31 represents function number 95",
+                    "mode": "RW",
+                    "name": "HalSwitchPfVfMap2"
+                }
+            ]
+        },
+        "pcie_ctrl_HAL_reg.HalSwitchPfVfMap3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HALSWITCHPFVFMAP3",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "bit 0 represents function number 96 .. bit 31 represents function number 127",
+                    "mode": "RW",
+                    "name": "HalSwitchPfVfMap3"
+                }
+            ]
+        },
+        "pcie_ctrl_HAL_reg.HalSwitchPfVfMap4": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HALSWITCHPFVFMAP4",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "bit 0 represents function number 128 .. bit 31 represents function number 159",
+                    "mode": "RW",
+                    "name": "HalSwitchPfVfMap4"
+                }
+            ]
+        },
+        "pcie_ctrl_HAL_reg.HalSwitchPfVfMap5": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HALSWITCHPFVFMAP5",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "bit 0 represents function number 160 .. bit 31 represents function number 191",
+                    "mode": "RW",
+                    "name": "HalSwitchPfVfMap5"
+                }
+            ]
+        },
+        "pcie_ctrl_HAL_reg.HalSwitchPfVfMap6": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HALSWITCHPFVFMAP6",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "bit 0 represents function number 192 .. bit 31 represents function number 223",
+                    "mode": "RW",
+                    "name": "HalSwitchPfVfMap6"
+                }
+            ]
+        },
+        "pcie_ctrl_HAL_reg.HalSwitchPfVfMap7": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HALSWITCHPFVFMAP7",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "bit 0 represents function number 224 .. bit 31 represents function number 255",
+                    "mode": "RW",
+                    "name": "HalSwitchPfVfMap7"
+                }
+            ]
+        },
+        "pcie_ctrl_HAL_reg.HalSwitchTargetComplDwrrConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "WRDATA",
+                    "bit_lsb": 3,
+                    "bit_msb": 10,
+                    "description": "Allotment credits.",
+                    "mode": "RW",
+                    "name": "WrData"
+                },
+                {
+                    "altname": "SELECT",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Selects one of the 2 ports.",
+                    "mode": "RW",
+                    "name": "Select"
+                },
+                {
+                    "altname": "LOAD",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Loads the allotment credits.",
+                    "mode": "RW",
+                    "name": "Load"
+                },
+                {
+                    "altname": "DISABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Disables DWRR.",
+                    "mode": "RW",
+                    "name": "Disable"
+                }
+            ]
+        }
+    }
+}

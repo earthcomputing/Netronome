@@ -1,0 +1,288 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "island_overlay.IslandOverlayExtMap": {
+            "0x00005410": {
+                "altname": "MISC_CTRL",
+                "description": "Island-specific miscellaneous control",
+                "name": "MiscControl",
+                "ptr": "island_overlay.OvlMiscCtrl",
+                "type": "reg"
+            }
+        },
+        "island_overlay.IslandOverlayMap": {
+            "0x00040000": {
+                "altname": "ISLAND_CTL",
+                "description": "Island control, including resets, clocks, and other miscellanea",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IslandControl",
+                "ptr": "island_overlay.OvlControl",
+                "type": "regmap"
+            }
+        },
+        "island_overlay.OvlControl": {
+            "0x00004000": {
+                "altname": "FILT_MASK%d",
+                "description": "Event Filter Mask Reg",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "EventFilterMask%d",
+                "offinc1": "0x00000008",
+                "ptr": "island_overlay.OvlEventFilterMask",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00004004": {
+                "altname": "FILT_MATCH%d",
+                "description": "Event Filter Match Reg",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "EventFilterMatch%d",
+                "offinc1": "0x00000008",
+                "ptr": "island_overlay.OvlEventFilterMatch",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00004040": {
+                "altname": "EVT_CFG",
+                "description": "Event plane routing configuration, for local ring and global chain as it passes through the island",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "EventRouteConfig",
+                "ptr": "island_overlay.OvlEventConfig",
+                "type": "reg"
+            },
+            "0x00005400": {
+                "altname": "RST_CLK_CTRL0",
+                "description": "Clock and reset control for the island",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ClockResetControl",
+                "ptr": "island_overlay.OvlClkRstControl",
+                "type": "reg"
+            },
+            "0x00005404": {
+                "altname": "RST_CLK_CTRL1",
+                "description": "Island-level memory control, for sleep etc",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MemControl",
+                "ptr": "island_overlay.OvlMemControl",
+                "type": "reg"
+            },
+            "0x00005410": {
+                "altname": "MISC_CTRL",
+                "description": "Island-specific miscellaneous control",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MiscControl",
+                "ptr": "island_overlay.OvlMiscCtrl",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "island_overlay.OvlClkRstControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLK_EN",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Set to enable the clock for a clock domain.  Each bit (0-7) applies to each reset/clock domain (0-7) for the current island. ",
+                    "mode": "RW",
+                    "name": "ClockEnable"
+                },
+                {
+                    "altname": "MANUAL_SRESET",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Set to deassert soft reset for a clock/reset domain (unless the global soft reset signal is asserted and not maksed).  Each bit (0-7) applies to each reset/clock domain (0-7) for the current island. ",
+                    "mode": "RW",
+                    "name": "RemoveReset"
+                },
+                {
+                    "altname": "SRESET_MASK",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "When set, masks (ignores) the Global soft reset signal.  Each bit (0-7) applies to each reset/clock domain (0-7) for the current island.",
+                    "mode": "RW",
+                    "name": "ResetMask"
+                },
+                {
+                    "altname": "LOCK",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "When set, prevents modifying the corresponding bits in registers OvlClkRstControl and OvlMemControl for the current island.  For instance, when bit 0 of Lock is set, the settings in OvlClkRstControl and OvlMemControl corresponding to reset/clock domain 0 cannot be modified.",
+                    "mode": "RW",
+                    "name": "DomainLock"
+                }
+            ]
+        },
+        "island_overlay.OvlEventConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BYPASS_MUX",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Bypass Mux - for bypassing the interior of the island.",
+                    "mode": "RW",
+                    "name": "BypassInterior"
+                },
+                {
+                    "altname": "CHKPT_NODE_SEL",
+                    "bit_lsb": 21,
+                    "bit_msb": 22,
+                    "description": "Selects to which corner overlay port in the event bus plane to send events filtered from the local chain as 'global'",
+                    "mode": "RW",
+                    "name": "GlobalInjection"
+                },
+                {
+                    "altname": "GLOBAL_MUX",
+                    "bit_lsb": 19,
+                    "bit_msb": 20,
+                    "description": "For the ARM island only, selects which overlay corner input port drives the global event bus into the ARM for use with the global event manger",
+                    "mode": "RW",
+                    "name": "GlobalMux"
+                },
+                {
+                    "altname": "MUX_INT",
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "Selects which event plane input (from one of the 4 corners of the island or from the island interior) to use as the input to the interior output mux to drive the overlay interior output",
+                    "mode": "RW",
+                    "name": "IntInput"
+                },
+                {
+                    "altname": "MUX_BR2",
+                    "bit_lsb": 13,
+                    "bit_msb": 15,
+                    "description": "Selects which event plane input (from one of the 4 corners of the island or from the island interior) to use as the input to the bottom-right corner output mux to drive the overlay bottom-right corner output",
+                    "mode": "RW",
+                    "name": "BRInput"
+                },
+                {
+                    "altname": "MUX_BL2",
+                    "bit_lsb": 10,
+                    "bit_msb": 12,
+                    "description": "Selects which event plane input (from one of the 4 corners of the island or from the island interior) to use as the input to the bottom-left corner output mux to drive the overlay bottom-left corner output",
+                    "mode": "RW",
+                    "name": "BLInput"
+                },
+                {
+                    "altname": "MUX_TR2",
+                    "bit_lsb": 7,
+                    "bit_msb": 9,
+                    "description": "Selects which event plane input (from one of the 4 corners of the island or from the island interior) to use as the input to the top-right corner output mux to drive the overlay top-right corner output",
+                    "mode": "RW",
+                    "name": "TRInput"
+                },
+                {
+                    "altname": "MUX_TL2",
+                    "bit_lsb": 4,
+                    "bit_msb": 6,
+                    "description": "Selects which event plane input (from one of the 4 corners of the island or from the island interior) to use as the input to the top-left corner output mux to drive the overlay top-left corner output",
+                    "mode": "RW",
+                    "name": "TLInput"
+                },
+                {
+                    "altname": "RBR",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "REMOVED NOW DO NOT USE If asserted, route the bottom-right island ports in/out of the center; if clear, engage loopbacks (external loop to external, internal to internal)",
+                    "mode": "RW",
+                    "name": "RouteBR"
+                },
+                {
+                    "altname": "RBL",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "REMOVED NOW DO NOT USE If asserted, route the bottom-left island ports in/out of the center; if clear, engage loopbacks (external loop to external, internal to internal)",
+                    "mode": "RW",
+                    "name": "RouteBL"
+                },
+                {
+                    "altname": "RTR",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "REMOVED NOW DO NOT USE If asserted, route the top-right island ports in/out of the center; if clear, engage loopbacks (external loop to external, internal to internal)",
+                    "mode": "RW",
+                    "name": "RouteTR"
+                },
+                {
+                    "altname": "RTL",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "REMOVED NOW DO NOT USE If asserted, route the top-left island ports in/out of the center; if clear, engage loopbacks (external loop to external, internal to internal)",
+                    "mode": "RW",
+                    "name": "RouteTL"
+                }
+            ]
+        },
+        "island_overlay.OvlEventFilterMask": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "Mask for which of the event bits must be set; see also the Peripheral Event Manager FilterMask",
+                    "mode": "RW",
+                    "name": "EventMask"
+                }
+            ]
+        },
+        "island_overlay.OvlEventFilterMatch": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MATCH",
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "Values of the event bits, masked by FilterMask, which must be set for the event to be 'filtered' onto the global event chain; see also the Peripheral Event Manager EventFilterMatch",
+                    "mode": "RW",
+                    "name": "EventMatch"
+                }
+            ]
+        },
+        "island_overlay.OvlMemControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MEM_SHUT_DOWN",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Set to enable memories in the reset/clock domains.  Each bit (0-7) applies to each reset/clock domain (0-7) for the current island.",
+                    "mode": "RW",
+                    "name": "Enable"
+                }
+            ]
+        },
+        "island_overlay.OvlMiscCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MISC_CTRL",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Miscellaneous Control Register - function depends on island.",
+                    "mode": "RW",
+                    "name": "MiscCtrl"
+                }
+            ]
+        }
+    }
+}

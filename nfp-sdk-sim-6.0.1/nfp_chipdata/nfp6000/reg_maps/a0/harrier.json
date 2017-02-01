@@ -1,0 +1,178 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "harrier.HarrierXpbMap": {
+            "0x01060000": {
+                "altname": "ARM_ISLAND_XPB",
+                "description": "ARM Island XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ArmIsldXpbMap",
+                "ptr": "arm_island.ArmIsldXpbMap",
+                "type": "regmap"
+            },
+            "0x04060000": {
+                "altname": "PCIE%d_ISLAND_XPB",
+                "description": "PCIe%d Island XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Pcie%dIsldXpbMap",
+                "offinc1": "0x01000000",
+                "ptr": "pcie_island.PcieIsldXpbMap",
+                "repeat1": 4,
+                "type": "regmap"
+            },
+            "0x08060000": {
+                "altname": "NBI%d_ISLAND_XPB",
+                "description": "Nbi%d Island XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Nbi%dIsldXpbMap",
+                "offinc1": "0x01000000",
+                "ptr": "nbi_island.NbiIsldXpbMap",
+                "repeat1": 2,
+                "type": "regmap"
+            },
+            "0x0c060000": {
+                "altname": "CRYPTO%d_ISLAND_XPB",
+                "description": "Crypto%d Island XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Crypto%dIsldXpbMap",
+                "offinc1": "0x01000000",
+                "ptr": "crypto_island.CryptoIsldXpbMap",
+                "repeat1": 2,
+                "type": "regmap"
+            },
+            "0x20060000": {
+                "altname": "ME%d_ISLAND_XPB",
+                "description": "Me%d Island XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Me%dIsldXpbMap",
+                "offinc1": "0x01000000",
+                "ptr": "me_island.MeIsldXpbMap",
+                "repeat1": 7,
+                "type": "regmap"
+            },
+            "0x30060000": {
+                "altname": "ILA%d_ISLAND_XPB",
+                "description": "Ila%d Island XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Ila%dIsldXpbMap",
+                "offinc1": "0x01000000",
+                "ptr": "ila_island.IlaIsldXpbMap",
+                "repeat1": 2,
+                "type": "regmap"
+            }
+        },
+        "harrier.HarrierXpbmMap": {
+            "0x01000000": {
+                "altname": "ARM_ISLAND_XPBM",
+                "description": "ARM Island XPBM Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ArmIsldXpbmMap",
+                "ptr": "arm_island.ArmIsldXpbmMap",
+                "type": "regmap"
+            },
+            "0x04000000": {
+                "altname": "PCIE%d_ISLAND_XPBM",
+                "description": "PCIe%d Island XPBM Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Pcie%dIsldXpbmMap",
+                "offinc1": "0x01000000",
+                "ptr": "pcie_island.PcieIsldXpbmMap",
+                "repeat1": 4,
+                "type": "regmap"
+            },
+            "0x08000000": {
+                "altname": "NBI%d_ISLAND_XPBM",
+                "description": "Nbi%d Island XPBM Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Nbi%dIsldXpbmMap",
+                "offinc1": "0x01000000",
+                "ptr": "nbi_island.NbiIsldXpbmMap",
+                "repeat1": 2,
+                "type": "regmap"
+            },
+            "0x0c000000": {
+                "altname": "CRYPTO%d_ISLAND_XPBM",
+                "description": "Crypto%d Island XPBM Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Crypto%dIsldXpbmMap",
+                "offinc1": "0x01000000",
+                "ptr": "crypto_island.CryptoIsldXpbmMap",
+                "repeat1": 2,
+                "type": "regmap"
+            },
+            "0x18000000": {
+                "altname": "EXTMU%d_ISLAND_XPB",
+                "description": "ExtMu%d Island XPBM Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ExtMu%dIsldXpbmMap",
+                "offinc1": "0x01000000",
+                "ptr": "ext_mu_island.ExtMuIsldXpbmMap",
+                "repeat1": 3,
+                "type": "regmap"
+            },
+            "0x1c000000": {
+                "altname": "INTMU%d_ISLAND_XPB",
+                "description": "IntMu%d Island XPBM Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IntMu%dIsldXpbmMap",
+                "offinc1": "0x01000000",
+                "ptr": "int_mu_island.IntMuIsldXpbmMap",
+                "repeat1": 2,
+                "type": "regmap"
+            },
+            "0x20000000": {
+                "altname": "ME%d_ISLAND_XPBM",
+                "description": "Me%d Island XPBM Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Me%dIsldXpbmMap",
+                "offinc1": "0x01000000",
+                "ptr": "me_island.MeIsldXpbmMap",
+                "repeat1": 7,
+                "type": "regmap"
+            },
+            "0x30000000": {
+                "altname": "ILA%d_ISLAND_XPBM",
+                "description": "Ila%d Island XPBM Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Ila%dIsldXpbmMap",
+                "offinc1": "0x01000000",
+                "ptr": "ila_island.IlaIsldXpbmMap",
+                "repeat1": 2,
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

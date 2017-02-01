@@ -1,0 +1,276 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "macle_eth_lt.EthLt": {
+            "0x00000000": {
+                "altname": "ETH_LT_KR_CONTROL",
+                "description": "Control Operation",
+                "name": "EthLtKrControl",
+                "ptr": "macle_eth_lt.EthLtKrControl",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "ETH_LT_KR_STATUS",
+                "description": "Status Information",
+                "name": "EthLtKrStatus",
+                "ptr": "macle_eth_lt.EthLtKrStatus",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "ETH_LT_KR_LP_COEF",
+                "description": "Link Partner Coefficient Update request received.",
+                "name": "EthLtKrLpCoef",
+                "ptr": "macle_eth_lt.EthLtKrLpCoef",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "ETH_LT_KR_LP_STAT",
+                "description": "Link Partner Status Report received.",
+                "name": "EthLtKrLpStat",
+                "ptr": "macle_eth_lt.EthLtKrLpStat",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "ETH_LT_KR_LD_COEF",
+                "description": "Local Device Coefficient Update request to send.",
+                "name": "EthLtKrLdCoef",
+                "ptr": "macle_eth_lt.EthLtKrLdCoef",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "ETH_LT_KR_LD_STAT",
+                "description": "Local Device Status Report to send.",
+                "name": "EthLtKrLdStat",
+                "ptr": "macle_eth_lt.EthLtKrLdStat",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "ETH_LT_KR_TRAINING_PATTERN",
+                "description": "Select PRBS11 polynomial and define seed to use for transmitted training pattern.",
+                "name": "EthLtKrTrainingPattern",
+                "ptr": "macle_eth_lt.EthLtKrTrainingPattern",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "ETH_LT_KR_RX_PATTERN",
+                "description": "Configure receive training pattern checker function.",
+                "name": "EthLtKrRxPattern",
+                "ptr": "macle_eth_lt.EthLtKrRxPattern",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "ETH_LT_KR_RX_PATTERN_ERR",
+                "description": "Counter for PRBS11 errors detected by receive pattern checker function.",
+                "name": "EthLtKrRxPatternErr",
+                "ptr": "macle_eth_lt.EthLtKrRxPatternErr",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "ETH_LT_KR_RX_PATTERN_BEGIN",
+                "description": "Holds first 16 bits from the training pattern of received training frames.",
+                "name": "EthLtKrRxPatternBegin",
+                "ptr": "macle_eth_lt.EthLtKrRxPatternBegin",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "macle_eth_lt.EthLtKrControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TRAINING_ENABLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Set to 1 to enable the Base-R startup protocol. Should be set to 0 to disable the Base-R startup protocol.",
+                    "mode": "RW",
+                    "name": "EthTrainingEnable"
+                },
+                {
+                    "altname": "ETH_RESTART_TRAINING",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Self-Clearing bit, should be set to 1 to restart the Base-R startup protocol. This register should always be written with RestartTraining bit set to 1.",
+                    "mode": "RW",
+                    "name": "EthRestartTraining"
+                }
+            ]
+        },
+        "macle_eth_lt.EthLtKrLdCoef": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_COEFF_UPDATE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "16bit Coefficient Update Request to send to link partner.",
+                    "mode": "RW",
+                    "name": "EthCoeffUpdate"
+                }
+            ]
+        },
+        "macle_eth_lt.EthLtKrLdStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_STATUS_REPORT",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "16bit Status report field to send to the link partner.",
+                    "mode": "RW",
+                    "name": "EthStatusReport"
+                }
+            ]
+        },
+        "macle_eth_lt.EthLtKrLpCoef": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_COEFF_UPDATE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "16bit coefficient update information received from link partner.",
+                    "mode": "RO",
+                    "name": "EthCoeffUpdate"
+                }
+            ]
+        },
+        "macle_eth_lt.EthLtKrLpStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_STATUS_REPORT",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "16bit Status report received from link partner.",
+                    "mode": "RO",
+                    "name": "EthStatusReport"
+                }
+            ]
+        },
+        "macle_eth_lt.EthLtKrRxPattern": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_IGNORE_FIRST_DATA",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "If set 1 the checker ignores the first data of the training pattern to allow loading the prbs register from the incoming data. If set 0 the seed value is used and check begins at the first bit.",
+                    "mode": "RW",
+                    "name": "EthIgnoreFirstData"
+                },
+                {
+                    "altname": "ETH_PRBS_SELECT",
+                    "bit_lsb": 11,
+                    "bit_msb": 13,
+                    "description": "Select which PRBS11 polynomial should be used.",
+                    "mode": "RW",
+                    "name": "EthPrbsSelect"
+                },
+                {
+                    "altname": "ETH_SEED",
+                    "bit_lsb": 0,
+                    "bit_msb": 10,
+                    "description": "Seed value to load into PRBS11 checker register at begin of every training frame.",
+                    "mode": "RW",
+                    "name": "EthSeed"
+                }
+            ]
+        },
+        "macle_eth_lt.EthLtKrRxPatternBegin": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PATTERN_BEGIN",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Holds the first 16 bits from the training pattern of received training frames. Bit 15 holds the first bit received.",
+                    "mode": "RO",
+                    "name": "EthPatternBegin"
+                }
+            ]
+        },
+        "macle_eth_lt.EthLtKrRxPatternErr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ERRORS",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Counter for PRBS11 errors found in received training frames by the receive pattern checker. Counter saturates at 0xffff and clears on read.",
+                    "mode": "RO",
+                    "name": "EthErrors"
+                }
+            ]
+        },
+        "macle_eth_lt.EthLtKrStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_SIGNAL_DETECTION",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "When 1 indicates training process is complete (signal detect is now propagating to the PCS allowig it to establish a link).",
+                    "mode": "RO",
+                    "name": "EthSignalDetection"
+                },
+                {
+                    "altname": "ETH_TRAINING_FAILURE",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "When 1 indicates that Training failure has been detected.",
+                    "mode": "RO",
+                    "name": "EthTrainingFailure"
+                },
+                {
+                    "altname": "ETH_STATUS",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "When 0 indicates that the startup protocol is completed. When 1 indicates that the startup protocol is in progress.",
+                    "mode": "RO",
+                    "name": "EthStatus"
+                },
+                {
+                    "altname": "ETH_FRAME_LOCK",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "When 1 indicates that Training Frame delineation is detected.",
+                    "mode": "RO",
+                    "name": "EthFrameLock"
+                },
+                {
+                    "altname": "ETH_RECEIVER_STATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When set 0, indicates that the receiver training is proceeding. When written with 1 by the application, indicates that the receiver is trained and is ready to receive data.",
+                    "mode": "RW",
+                    "name": "EthReceiverStatus"
+                }
+            ]
+        },
+        "macle_eth_lt.EthLtKrTrainingPattern": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PRBS_SELECT",
+                    "bit_lsb": 11,
+                    "bit_msb": 13,
+                    "description": "Select which PRBS11 polynomial should be used for the training pattern within transmitted training frames.",
+                    "mode": "RW",
+                    "name": "EthPrbsSelect"
+                },
+                {
+                    "altname": "ETH_SEED",
+                    "bit_lsb": 0,
+                    "bit_msb": 10,
+                    "description": "Seed value to load into PRBS11 at begin of training pattern.",
+                    "mode": "RW",
+                    "name": "EthSeed"
+                }
+            ]
+        }
+    }
+}

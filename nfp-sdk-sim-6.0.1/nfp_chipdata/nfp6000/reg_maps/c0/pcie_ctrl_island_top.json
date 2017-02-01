@@ -1,0 +1,278 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "pcie_ctrl_island_top.PcieCtrlIslandXpbTopL0": {
+            "0x00000000": {
+                "altname": "PCIE_CTRL_COMPONENT_CFG_XPB",
+                "description": "PCIe Ctrl Island Component and PHY Configuration registers for Link0",
+                "name": "PcieCtrlComponentCfgXpb",
+                "ptr": "pcie_ctrl_island_comp.PcieCtrlComponentCfgXpbL0",
+                "type": "regmap"
+            },
+            "0x00100000": {
+                "altname": "PCIE_CTRL_HALM_COMPL_ECC",
+                "description": "Error check and correct status registers for Halm Compl RAMs. See Peripheral ECC Monitor documentation for more details. Implemented using ecc_monitor macro.",
+                "name": "PcieCtrlHalmComplECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_8",
+                "type": "regmap"
+            },
+            "0x00200000": {
+                "altname": "PCIE_PF0_REG",
+                "description": "PCIe Controller Core Link0 Physical Function 0 Registers",
+                "name": "Pcie_Pf0_Reg",
+                "ptr": "cdn_pcie_ctrl_client_PF0.cdn_pcie_ctrl_client_PF0_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00201000": {
+                "altname": "PCIE_PF1_REG",
+                "description": "PCIe Controller Core Link0 Physical Function 1 Registers",
+                "name": "Pcie_Pf1_Reg",
+                "ptr": "cdn_pcie_ctrl_client_PF1.cdn_pcie_ctrl_client_PF1_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00202000": {
+                "altname": "PCIE_PF2_REG",
+                "description": "PCIe Controller Core Link0 Physical Function 2 Registers",
+                "name": "Pcie_Pf2_Reg",
+                "ptr": "cdn_pcie_ctrl_client_PF2.cdn_pcie_ctrl_client_PF2_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00203000": {
+                "altname": "PCIE_PF3_REG",
+                "description": "PCIe Controller Core Link0 Physical Function 3 Registers",
+                "name": "Pcie_Pf3_Reg",
+                "ptr": "cdn_pcie_ctrl_client_PF3.cdn_pcie_ctrl_client_PF3_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00204000": {
+                "altname": "PCIE_PF4_REG",
+                "description": "PCIe Controller Core Link0 Physical Function 4 Registers",
+                "name": "Pcie_Pf4_Reg",
+                "ptr": "cdn_pcie_ctrl_client_PF4.cdn_pcie_ctrl_client_PF4_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00205000": {
+                "altname": "PCIE_PF5_REG",
+                "description": "PCIe Controller Core Link0 Physical Function 5 Registers",
+                "name": "Pcie_Pf5_Reg",
+                "ptr": "cdn_pcie_ctrl_client_PF5.cdn_pcie_ctrl_client_PF5_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00206000": {
+                "altname": "PCIE_PF6_REG",
+                "description": "PCIe Controller Core Link0 Physical Function 6 Registers",
+                "name": "Pcie_Pf6_Reg",
+                "ptr": "cdn_pcie_ctrl_client_PF6.cdn_pcie_ctrl_client_PF6_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00207000": {
+                "altname": "PCIE_PF7_REG",
+                "description": "PCIe Controller Core Link0 Physical Function 7 Registers",
+                "name": "Pcie_Pf7_Reg",
+                "ptr": "cdn_pcie_ctrl_client_PF7.cdn_pcie_ctrl_client_PF7_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00210000": {
+                "altname": "PCIE_RC_REG",
+                "description": "PCIe Controller Core Link0 Root Complex Registers",
+                "name": "Pcie_Rc_Reg",
+                "ptr": "cdn_pcie_ctrl_client_RC.cdn_pcie_ctrl_client_RC_addrmap_rc_cl",
+                "type": "regmap"
+            },
+            "0x00220000": {
+                "altname": "PCIE_LM_REG",
+                "description": "PCIe Controller Core Link0 Local Management Registers",
+                "name": "Pcie_Lm_Reg",
+                "ptr": "cdn_pcie_ctrl_client_LM.cdn_pcie_ctrl_client_LM_addrmap",
+                "type": "regmap"
+            },
+            "0x00230000": {
+                "altname": "PCIE_VF_REG_GROUP8",
+                "description": "PCIe Controller Core link0 Virtual function Registers",
+                "name": "Pcie_Vf_Reg_Group8",
+                "ptr": "pcie_ctrl_island_top.PcieCtrlLink0VfRegGroup8",
+                "type": "regmap"
+            },
+            "0x00240000": {
+                "altname": "PCIE_VF_REG_GROUP16_%d",
+                "description": "PCIe Controller Core link0 Virtual function Registers",
+                "name": "Pcie_Vf_Reg_Group16_%d",
+                "offinc1": "0x00010000",
+                "ptr": "pcie_ctrl_island_top.PcieCtrlLink0VfRegGroup16",
+                "repeat1": 15,
+                "type": "regmap"
+            }
+        },
+        "pcie_ctrl_island_top.PcieCtrlIslandXpbTopL1": {
+            "0x00000000": {
+                "altname": "PCIE_CTRL_COMPONENT_CFG_XPB",
+                "description": "PCIe Ctrl Island Component and PHY Configuration registers for Link1",
+                "name": "PcieCtrlComponentCfgXpb",
+                "ptr": "pcie_ctrl_island_comp.PcieCtrlComponentCfgXpbL1",
+                "type": "regmap"
+            },
+            "0x00100000": {
+                "altname": "PCIE_CTRL_HALM_COMPL_ECC",
+                "description": "Error check and correct status registers for Halm Compl RAMs. See Peripheral ECC Monitor documentation for more details. Implemented using ecc_monitor macro.",
+                "name": "PcieCtrlHalmComplECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_8",
+                "type": "regmap"
+            },
+            "0x00200000": {
+                "altname": "PCIE_PF0_REG",
+                "description": "PCIe Controller Core Link1 Physical Function 0 Registers",
+                "name": "Pcie_Pf0_Reg",
+                "ptr": "cdn_pcie_ctrl_link1_client_PF0.cdn_pcie_ctrl_link1_client_PF0_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00201000": {
+                "altname": "PCIE_PF1_REG",
+                "description": "PCIe Controller Core Link1 Physical Function 1 Registers",
+                "name": "Pcie_Pf1_Reg",
+                "ptr": "cdn_pcie_ctrl_link1_client_PF1.cdn_pcie_ctrl_link1_client_PF1_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00202000": {
+                "altname": "PCIE_PF2_REG",
+                "description": "PCIe Controller Core Link1 Physical Function 2 Registers",
+                "name": "Pcie_Pf2_Reg",
+                "ptr": "cdn_pcie_ctrl_link1_client_PF2.cdn_pcie_ctrl_link1_client_PF2_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00203000": {
+                "altname": "PCIE_PF3_REG",
+                "description": "PCIe Controller Core Link1 Physical Function 3 Registers",
+                "name": "Pcie_Pf3_Reg",
+                "ptr": "cdn_pcie_ctrl_link1_client_PF3.cdn_pcie_ctrl_link1_client_PF3_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00204000": {
+                "altname": "PCIE_PF4_REG",
+                "description": "PCIe Controller Core Link1 Physical Function 4 Registers",
+                "name": "Pcie_Pf4_Reg",
+                "ptr": "cdn_pcie_ctrl_link1_client_PF4.cdn_pcie_ctrl_link1_client_PF4_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00205000": {
+                "altname": "PCIE_PF5_REG",
+                "description": "PCIe Controller Core Link1 Physical Function 5 Registers",
+                "name": "Pcie_Pf5_Reg",
+                "ptr": "cdn_pcie_ctrl_link1_client_PF5.cdn_pcie_ctrl_link1_client_PF5_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00206000": {
+                "altname": "PCIE_PF6_REG",
+                "description": "PCIe Controller Core Link1 Physical Function 6 Registers",
+                "name": "Pcie_Pf6_Reg",
+                "ptr": "cdn_pcie_ctrl_link1_client_PF6.cdn_pcie_ctrl_link1_client_PF6_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00207000": {
+                "altname": "PCIE_PF7_REG",
+                "description": "PCIe Controller Core Link1 Physical Function 7 Registers",
+                "name": "Pcie_Pf7_Reg",
+                "ptr": "cdn_pcie_ctrl_link1_client_PF7.cdn_pcie_ctrl_link1_client_PF7_addrmap_cl",
+                "type": "regmap"
+            },
+            "0x00210000": {
+                "altname": "PCIE_RC_REG",
+                "description": "PCIe Controller Core Link1 Root Complex Registers",
+                "name": "Pcie_Rc_Reg",
+                "ptr": "cdn_pcie_ctrl_link1_client_RC.cdn_pcie_ctrl_link1_client_RC_addrmap_rc_cl",
+                "type": "regmap"
+            },
+            "0x00220000": {
+                "altname": "PCIE_LM_REG",
+                "description": "PCIe Controller Core Link1 Local Management Registers",
+                "name": "Pcie_Lm_Reg",
+                "ptr": "cdn_pcie_ctrl_link1_client_LM.cdn_pcie_ctrl_link1_client_LM_addrmap",
+                "type": "regmap"
+            },
+            "0x00230000": {
+                "altname": "PCIE_VF_REG_GROUP8",
+                "description": "PCIe Controller Core Link1 Virtual function Registers",
+                "name": "Pcie_Vf_Reg_Group8",
+                "ptr": "pcie_ctrl_island_top.PcieCtrlLink1VfRegGroup8",
+                "type": "regmap"
+            },
+            "0x00240000": {
+                "altname": "PCIE_VF_REG_GROUP16_%d",
+                "description": "PCIe Controller Core Link1 Virtual function Registers",
+                "name": "Pcie_Vf_Reg_Group16_%d",
+                "offinc1": "0x00010000",
+                "ptr": "pcie_ctrl_island_top.PcieCtrlLink1VfRegGroup16",
+                "repeat1": 15,
+                "type": "regmap"
+            },
+            "0x002f0000": {
+                "altname": "XPB_2_JTAG",
+                "description": "Controls for XPB2JTAg",
+                "name": "XPB2Jtag",
+                "ptr": "island_overlay.IslandOverlayExtMap",
+                "type": "regmap"
+            }
+        },
+        "pcie_ctrl_island_top.PcieCtrlLink0VfRegGroup16": {
+            "0x00000000": {
+                "altname": "PCIE_VF_REG1_%d",
+                "description": "PCIe Ctrl Link0 Virtual Function regmap",
+                "name": "PcieVfReg1_%d",
+                "offinc1": "0x00001000",
+                "ptr": "cdn_pcie_ctrl_client_VF1.cdn_pcie_ctrl_client_VF1_addrmap_vf_cl",
+                "repeat1": 16,
+                "type": "regmap"
+            }
+        },
+        "pcie_ctrl_island_top.PcieCtrlLink0VfRegGroup8": {
+            "0x00000000": {
+                "altname": "PCIE_VF_REG0",
+                "description": "PCIe Ctrl Link0 Virtual Function 0 regmap",
+                "name": "PcieVfReg0",
+                "ptr": "cdn_pcie_ctrl_client_VF0.cdn_pcie_ctrl_client_VF0_addrmap_vf_cl",
+                "type": "regmap"
+            },
+            "0x00001000": {
+                "altname": "PCIE_VF_REG1_%d",
+                "description": "PCIe Ctrl Link0 Virtual Function regmap",
+                "name": "PcieVfReg1_%d",
+                "offinc1": "0x00001000",
+                "ptr": "cdn_pcie_ctrl_client_VF1.cdn_pcie_ctrl_client_VF1_addrmap_vf_cl",
+                "repeat1": 7,
+                "type": "regmap"
+            }
+        },
+        "pcie_ctrl_island_top.PcieCtrlLink1VfRegGroup16": {
+            "0x00000000": {
+                "altname": "PCIE_VF_REG1_%d",
+                "description": "PCIe Ctrl Link1 Virtual Function regmap",
+                "name": "PcieVfReg1_%d",
+                "offinc1": "0x00001000",
+                "ptr": "cdn_pcie_ctrl_link1_client_VF1.cdn_pcie_ctrl_link1_client_VF1_addrmap_vf_cl",
+                "repeat1": 16,
+                "type": "regmap"
+            }
+        },
+        "pcie_ctrl_island_top.PcieCtrlLink1VfRegGroup8": {
+            "0x00000000": {
+                "altname": "PCIE_VF_REG0",
+                "description": "PCIe Ctrl Link1 Virtual Function 0 regmap",
+                "name": "PcieVfReg0",
+                "ptr": "cdn_pcie_ctrl_link1_client_VF0.cdn_pcie_ctrl_link1_client_VF0_addrmap_vf_cl",
+                "type": "regmap"
+            },
+            "0x00001000": {
+                "altname": "PCIE_VF_REG1_%d",
+                "description": "PCIe Ctrl Link1 Virtual Function regmap",
+                "name": "PcieVfReg1_%d",
+                "offinc1": "0x00001000",
+                "ptr": "cdn_pcie_ctrl_link1_client_VF1.cdn_pcie_ctrl_link1_client_VF1_addrmap_vf_cl",
+                "repeat1": 7,
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

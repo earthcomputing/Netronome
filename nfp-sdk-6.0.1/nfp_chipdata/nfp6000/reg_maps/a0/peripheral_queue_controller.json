@@ -1,0 +1,254 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "peripheral_queue_controller.QC_Queue_CPP": {
+            "0x00000000": {
+                "altname": "ADD_RPTR",
+                "description": "Add to a queue's read pointer",
+                "name": "AddToReadPtr",
+                "ptr": "peripheral_queue_controller.QueueAddToReadPtr",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "ADD_WPTR",
+                "description": "Add to a queue's write pointer",
+                "name": "AddToWritePtr",
+                "ptr": "peripheral_queue_controller.QueueAddToWritePtr",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "STS_LO",
+                "description": "Configuration and Status Register for the Queue",
+                "name": "ConfigStatusLow",
+                "ptr": "peripheral_queue_controller.QueueConfigStatusLow",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "STS_HI",
+                "description": "Configuration and Status Register for the Queue",
+                "name": "ConfigStatusHigh",
+                "ptr": "peripheral_queue_controller.QueueConfigStatusHigh",
+                "type": "reg"
+            }
+        },
+        "peripheral_queue_controller.QC_Queue_x4SSB": {
+            "0x00000000": {
+                "altname": "ADD_RPTR",
+                "description": "Add to a queue's read pointer",
+                "name": "AddToReadPtr",
+                "ptr": "peripheral_queue_controller.QueueAddToReadPtr",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "ADD_WPTR",
+                "description": "Add to a queue's write pointer",
+                "name": "AddToWritePtr",
+                "ptr": "peripheral_queue_controller.QueueAddToWritePtr",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "STS_LO",
+                "description": "Configuration and Status Register for the Queue",
+                "name": "ConfigStatusLow",
+                "ptr": "peripheral_queue_controller.QueueConfigStatusLow",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "STS_HI",
+                "description": "Configuration and Status Register for the Queue",
+                "name": "ConfigStatusHigh",
+                "ptr": "peripheral_queue_controller.QueueConfigStatusHigh",
+                "type": "reg"
+            }
+        },
+        "peripheral_queue_controller.QC_x4SSB": {
+            "0x00000000": {
+                "altname": "QUEUE%d",
+                "description": "Queue registers and operations for queue  %d, (four-byte access)",
+                "name": "Queue%d",
+                "offinc1": "0x00000010",
+                "ptr": "peripheral_queue_controller.QC_Queue_x4SSB",
+                "repeat1": 256,
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {
+        "peripheral_queue_controller.QueueAddToReadPtr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VAL",
+                    "bit_lsb": 0,
+                    "bit_msb": 17,
+                    "description": "Amount to add to the read pointer; if this would underflow the queue then the add will not happen and an underflow event is generated.",
+                    "mode": "WO",
+                    "name": "Operand"
+                }
+            ]
+        },
+        "peripheral_queue_controller.QueueAddToWritePtr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VAL",
+                    "bit_lsb": 0,
+                    "bit_msb": 17,
+                    "description": "Amount to add to the write pointer; if this would overflow the queue then the add will not happen and an overflow event is generated.",
+                    "mode": "WO",
+                    "name": "Operand"
+                }
+            ]
+        },
+        "peripheral_queue_controller.QueueConfigStatusHigh": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "OVERFLOWED",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Asserted if the queue has overflowed",
+                    "mode": "RW",
+                    "name": "Overflowed"
+                },
+                {
+                    "altname": "UNDERFLOWED",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Asserted if the queue has underflowed",
+                    "mode": "RW",
+                    "name": "Underflowed"
+                },
+                {
+                    "altname": "WMREACHED",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Asserted if the queue has more than or equal to Watermark entries",
+                    "mode": "RW",
+                    "name": "WMReached"
+                },
+                {
+                    "altname": "FULL",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Asserted if the queue is full",
+                    "mode": "RW",
+                    "name": "Full"
+                },
+                {
+                    "altname": "EMPTY",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "Asserted if the queue is empty",
+                    "mode": "RW",
+                    "name": "Empty"
+                },
+                {
+                    "altname": "WATERMARK",
+                    "bit_lsb": 22,
+                    "bit_msb": 24,
+                    "description": "Logarithmic number of entries that makes the 'Watermark' for the queue.",
+                    "mode": "RW",
+                    "name": "Watermark"
+                },
+                {
+                    "altname": "SIZE",
+                    "bit_lsb": 18,
+                    "bit_msb": 21,
+                    "description": "Logarithmic size of the queue",
+                    "mode": "RW",
+                    "name": "Size"
+                },
+                {
+                    "altname": "WRITEPTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 17,
+                    "description": "Write pointer for the queue",
+                    "mode": "RW",
+                    "name": "WritePtr"
+                }
+            ]
+        },
+        "peripheral_queue_controller.QueueConfigStatusLow": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RPTR_ENABLE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "If 1 then the writing of the read pointer is enabled and ECC checking disabled for this access; if 0 then ECC checking is not disabled and only the EventData and EventType fields are written.  Events may be generated if the new event type differs from the previous event type.",
+                    "mode": "WO",
+                    "name": "ReadPtrEnable"
+                },
+                {
+                    "altname": "OVERFLOWED",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Asserted if the queue has overflowed",
+                    "mode": "RO",
+                    "name": "Overflowed"
+                },
+                {
+                    "altname": "UNDERFLOWED",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Asserted if the queue has underflowed",
+                    "mode": "RO",
+                    "name": "Underflowed"
+                },
+                {
+                    "altname": "WMREACHED",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Asserted if the queue has more than or equal to Watermark entries",
+                    "mode": "RO",
+                    "name": "WMReached"
+                },
+                {
+                    "altname": "FULL",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Asserted if the queue is full",
+                    "mode": "RO",
+                    "name": "Full"
+                },
+                {
+                    "altname": "EMPTY",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "Asserted if the queue is empty",
+                    "mode": "RO",
+                    "name": "Empty"
+                },
+                {
+                    "altname": "EVENT_DATA",
+                    "bit_lsb": 20,
+                    "bit_msb": 25,
+                    "description": "Data for top 6 bits of any generated event's 'data' field.  The lower 6 bits of the queue number will be used as the lower 6-bits of any event's 'data' field.  The most significant 4 bits of this field are used if the queue controller is configured to send 8 bits of queue number in the event 'data' field.  This configuration is controlled by an external pin to this peripheral that should be controlled by a CSR of the instantiating design.",
+                    "mode": "RW",
+                    "name": "EventData"
+                },
+                {
+                    "altname": "EVENT_TYPE",
+                    "bit_lsb": 18,
+                    "bit_msb": 19,
+                    "description": "When to generate an event",
+                    "mode": "RW",
+                    "name": "EventType"
+                },
+                {
+                    "altname": "READPTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 17,
+                    "description": "Value to write into the read pointer, if ReadPtrEnable bit is asserted",
+                    "mode": "RW",
+                    "name": "ReadPtr"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,2698 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "pl.PLLCntlXpb": {
+            "0x00000000": {
+                "altname": "PLL_CONTROL_AND_STATUS",
+                "description": "Primary Control and Status Register",
+                "name": "PLLControlAndStatus",
+                "ptr": "pl.PLLControlAndStatus",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "PLL_CONFIG",
+                "description": "Configuration Settings for the PLL",
+                "name": "PLLConfig",
+                "ptr": "pl.PLLConfig",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "PLL_OUTPUT_DIVIDERS",
+                "description": "Configuration Settings for the Output Dividers",
+                "name": "PLLOutputDividers",
+                "ptr": "pl.PLLOutputDividers",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "PLL_MISC_CONTROLS",
+                "description": "Misc Tuning and Configuration Settings",
+                "name": "PLLMiscControls",
+                "ptr": "pl.PLLMiscControls",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "PLL_MAN_OVERRIDE",
+                "description": "Manual Override Register",
+                "name": "PLLManualOverride",
+                "ptr": "pl.PLLManualOverride",
+                "type": "reg"
+            }
+        },
+        "pl.PluIOXpb": {
+            "0x00000000": {
+                "altname": "PLU_LVCMOS0_IO_CTRL",
+                "description": "LVCMOS0 IO Control",
+                "name": "PluLvcmos0IOCtrl",
+                "ptr": "pl.PluLvcmosIOCtrl",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "PLU_LVCMOS0_IO_CTRL2",
+                "description": "LVCMOS0 IO Control 2",
+                "name": "PluLvcmos0IOCtrl2",
+                "ptr": "pl.PluLvcmosIOCtrl2",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "PLU_LVCMOS0_IO_DFT",
+                "description": "LVCMOS0 IO DFT Control",
+                "name": "PluLvcmos0IODFT",
+                "ptr": "pl.PluLvcmosIODFT",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "PLU_LVCMOS0_IO_DFT2",
+                "description": "For debug only.",
+                "name": "PluLvcmos0IODFT2",
+                "ptr": "pl.PluLvcmosIODFT2",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "PLU_LVCMOS0_IO_COMP",
+                "description": "LVCMOS0 IO COMP Control.",
+                "name": "PluLvcmos0IOComp",
+                "ptr": "pl.PluLvcmosIOComp",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "PLU_LVCMOS0_IO_COMP2",
+                "description": "LVCMOS0 IO COMP Control 2.",
+                "name": "PluLvcmos0IOComp2",
+                "ptr": "pl.PluLvcmosIOComp2",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "PLU_LVCMOS1_IO_CTRL",
+                "description": "LVCMOS1 IO Control",
+                "name": "PluLvcmos1IOCtrl",
+                "ptr": "pl.PluLvcmosIOCtrl",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "PLU_LVCMOS1_IO_CTRL2",
+                "description": "LVCMOS1 IO Control 2",
+                "name": "PluLvcmos1IOCtrl2",
+                "ptr": "pl.PluLvcmosIOCtrl2",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "PLU_LVCMOS1_IO_DFT",
+                "description": "LVCMOS1 IO DFT Control",
+                "name": "PluLvcmos1IODFT",
+                "ptr": "pl.PluLvcmosIODFT",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "PLU_LVCMOS1_IO_DFT2",
+                "description": "For debug only.",
+                "name": "PluLvcmos1IODFT2",
+                "ptr": "pl.PluLvcmosIODFT2",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "PLU_LVCMOS1_IO_COMP",
+                "description": "LVCMOS1 IO COMP Control.",
+                "name": "PluLvcmos1IOComp",
+                "ptr": "pl.PluLvcmosIOComp",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "PLU_LVCMOS1_IO_COMP2",
+                "description": "LVCMOS1 IO COMP Control 2.",
+                "name": "PluLvcmos1IOComp2",
+                "ptr": "pl.PluLvcmosIOComp2",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "PLU_GPIO_B0_DRIVE",
+                "description": "GPIO driver controls for B0.",
+                "name": "GpioB0Drive",
+                "ptr": "pl.GpioB0Drive",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "PLU_GPIO_B1_DRIVE",
+                "description": "GPIO driver controls for B1.",
+                "name": "GpioB1Drive",
+                "ptr": "pl.GpioB1Drive",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "PLU_GPIO_B2_DRIVE",
+                "description": "GPIO driver controls for B2.",
+                "name": "GpioB2Drive",
+                "ptr": "pl.GpioB2Drive",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "PLU_GPIO_B3_DRIVE",
+                "description": "GPIO driver controls for B3.",
+                "name": "GpioB3Drive",
+                "ptr": "pl.GpioB3Drive",
+                "type": "reg"
+            },
+            "0x00000048": {
+                "altname": "PLU_SPI_DRIVE",
+                "description": "SPI driver controls.",
+                "name": "SpiDrive",
+                "ptr": "pl.SpiDrive",
+                "type": "reg"
+            },
+            "0x0000004c": {
+                "altname": "PLU_MISC_DRIVE",
+                "description": "Misc. driver controls.",
+                "name": "MiscDrive",
+                "ptr": "pl.MiscDrive",
+                "type": "reg"
+            },
+            "0x00000050": {
+                "altname": "PLU_LVTTL_IO_SLEW",
+                "description": "Drive slew rate for LVTTL IO buffers.",
+                "name": "LvttlIoSlew",
+                "ptr": "pl.LvttlIoSlew",
+                "type": "reg"
+            },
+            "0x00000054": {
+                "altname": "PLU_GPIO_WKPULL_EN",
+                "description": "Weak pull up pull down for GPIO.",
+                "name": "GpioWkpullEn",
+                "ptr": "pl.GpioWkpullEn",
+                "type": "reg"
+            },
+            "0x00000058": {
+                "altname": "PLU_GPIO_WK_POLARITY",
+                "description": "Weak pull polarity for GPIO.",
+                "name": "GpioWkPolarity",
+                "ptr": "pl.GpioWkPolarity",
+                "type": "reg"
+            },
+            "0x0000005c": {
+                "altname": "PLU_GPIO_WKPULL_VAL",
+                "description": "Weak pull up pull down value for GPIO.",
+                "name": "GpioWkpullVal",
+                "ptr": "pl.GpioWkpullVal",
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "PLU_SR_TEST_TX_ENB",
+                "description": "Buffer output enable for Serial port, backup test pins.",
+                "name": "SrTestTxEnb",
+                "ptr": "pl.SrTestTxEnb",
+                "type": "reg"
+            },
+            "0x00000064": {
+                "altname": "PLU_GPIO_RX_ENB",
+                "description": "Buffer input enable for GPIO.",
+                "name": "GpioRxEnb",
+                "ptr": "pl.GpioRxEnb",
+                "type": "reg"
+            },
+            "0x00000068": {
+                "altname": "PLU_SPI_RX_ENB",
+                "description": "Buffer input enable for SPI, serial port and backup test pins.",
+                "name": "SpiRxEnb",
+                "ptr": "pl.SpiRxEnb",
+                "type": "reg"
+            },
+            "0x0000006c": {
+                "altname": "PLU_GPIO_OPENDRAIN",
+                "description": "Open drain enable for GPIO.",
+                "name": "GpioOpendrain",
+                "ptr": "pl.GpioOpendrain",
+                "type": "reg"
+            },
+            "0x00000070": {
+                "altname": "PLU_MISC_OPENDRAIN",
+                "description": "Open drain enable for SPI, reset output and other IO pins.",
+                "name": "MiscOpendrain",
+                "ptr": "pl.MiscOpendrain",
+                "type": "reg"
+            },
+            "0x00000074": {
+                "altname": "PLU_MISC_CONTROL",
+                "description": "Misc controls.",
+                "name": "MiscControl",
+                "ptr": "pl.MiscControl",
+                "type": "reg"
+            },
+            "0x00000078": {
+                "altname": "PLU_VID_CONTROL",
+                "description": "VID controls.",
+                "name": "VidControl",
+                "ptr": "pl.VidControl",
+                "type": "reg"
+            }
+        },
+        "pl.PluMiscXpb": {
+            "0x00000000": {
+                "altname": "PLU_MASTER_RESET",
+                "description": "Programmable Reset Controls",
+                "name": "PluMasterReset",
+                "ptr": "pl.PluMasterReset",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "PLU_DEVICE_ID",
+                "description": "Chip Device ID Register.",
+                "name": "PluDeviceID",
+                "ptr": "pl.PluDeviceID",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "PLU_POWER_STATE",
+                "description": "Indicators for Power and Power-Domain Status",
+                "name": "PluPowerState",
+                "ptr": "pl.PluPowerState",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "PLU_VID",
+                "description": "VID Control Register",
+                "name": "PluVID",
+                "ptr": "pl.PluVID",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "PLU_BAUD_RATE_GEN",
+                "description": "Control Register for Baud Rate Generator.",
+                "name": "PluBaudRateGen",
+                "ptr": "pl.PluBaudRateGen",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "PLU_ARM_CLK_SEL",
+                "description": "ARM Clock Generation Control",
+                "name": "PluArmClockSelect",
+                "ptr": "pl.PluArmClockSelect",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "PLU_JTAG_TCK_CONTROL",
+                "description": "JTAG_TCK Internal Generation Control",
+                "name": "PluJtagTckControl",
+                "ptr": "pl.PluJtagTckControl",
+                "type": "reg"
+            }
+        },
+        "pl.PluXpb": {
+            "0x00000000": {
+                "altname": "PLU_MISC",
+                "description": "PL_UNIT Misc CSRs",
+                "name": "PluMisc",
+                "ptr": "pl.PluMiscXpb",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "PLU_TS_XPB",
+                "description": "Thermal Sensor Controls",
+                "name": "PluTSXpb",
+                "ptr": "pl.TSXpb",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "PLL0_CNTL",
+                "description": "Controls for PLL0 (P_CLK)",
+                "name": "PLL0Controls",
+                "ptr": "pl.PLLCntlXpb",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "PLL1_CNTL",
+                "description": "Controls for PLL1 (T_CLK)",
+                "name": "PLL1Controls",
+                "ptr": "pl.PLLCntlXpb",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "PLU_IO_CNTL",
+                "description": "Controls for LVCMOS and GPIO",
+                "name": "PluIOControls",
+                "ptr": "pl.PluIOXpb",
+                "type": "regmap"
+            }
+        },
+        "pl.TSXpb": {
+            "0x00000000": {
+                "altname": "PLU_TS_CONTROL0",
+                "description": "Thermal Sensor Basic Controls",
+                "name": "PluTSControl0",
+                "ptr": "pl.PluTSControl0",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "PLU_TS_CONTROL1",
+                "description": "Thermal Sensor Minor Controls",
+                "name": "PluTSControl1",
+                "ptr": "pl.PluTSControl1",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "PLU_TS_CONTROL2",
+                "description": "Thermal Sensor Calibration Controls",
+                "name": "PluTSControl2",
+                "ptr": "pl.PluTSControl2",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "PLU_TS_READINGS",
+                "description": "Thermal Sensor Readings",
+                "name": "PluTSReadings",
+                "ptr": "pl.PluTSReadings",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "pl.GpioB0Drive": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "GPIO_B0_PUP_DRV",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Driver pull up strength for GPIO[7:0].",
+                    "mode": "RW",
+                    "name": "gpio_b0_pup_drv"
+                },
+                {
+                    "altname": "GPIO_B0_PDN_DRV",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Driver pull down strength for GPIO[7:0].",
+                    "mode": "RW",
+                    "name": "gpio_b0_pdn_drv"
+                }
+            ]
+        },
+        "pl.GpioB1Drive": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "GPIO_B1_PUP_DRV",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Driver pull up strength for GPIO[15:8].",
+                    "mode": "RW",
+                    "name": "gpio_b1_pup_drv"
+                },
+                {
+                    "altname": "GPIO_B1_PDN_DRV",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Driver pull down strength for GPIO[15:8].",
+                    "mode": "RW",
+                    "name": "gpio_b1_pdn_drv"
+                }
+            ]
+        },
+        "pl.GpioB2Drive": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "GPIO_B2_PUP_DRV",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Driver pull up strength for GPIO[23:16].",
+                    "mode": "RW",
+                    "name": "gpio_b2_pup_drv"
+                },
+                {
+                    "altname": "GPIO_B2_PDN_DRV",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Driver pull down strength for GPIO[23:16].",
+                    "mode": "RW",
+                    "name": "gpio_b2_pdn_drv"
+                }
+            ]
+        },
+        "pl.GpioB3Drive": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "GPIO_B3_PUP_DRV",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Driver pull up strength for GPIO[31:24].",
+                    "mode": "RW",
+                    "name": "gpio_b3_pup_drv"
+                },
+                {
+                    "altname": "GPIO_B3_PDN_DRV",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Driver pull down strength for GPIO[31:24].",
+                    "mode": "RW",
+                    "name": "gpio_b3_pdn_drv"
+                }
+            ]
+        },
+        "pl.GpioOpendrain": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "GPIO_OPENDRN",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Open drain enable for GPIO[31:0].",
+                    "mode": "RW",
+                    "name": "gpio_opendrn"
+                }
+            ]
+        },
+        "pl.GpioRxEnb": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "GPIO_RCVENV",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Buffer input enable for GPIO[31:0], active low.",
+                    "mode": "RW",
+                    "name": "gpio_rcvenv"
+                }
+            ]
+        },
+        "pl.GpioWkPolarity": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "GPIO_WK_POLARITY",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Weak pull polarity for GPIO[31:0] (1: weak pull up effective, 0: weal pull down effective).",
+                    "mode": "RW",
+                    "name": "gpio_wk_polarity"
+                }
+            ]
+        },
+        "pl.GpioWkpullEn": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "GPIO_WKPULL_EN",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Weak pull up pull down enable for GPIO[31:0] (1: weak pull up/down enabled, 0: weak pull up/down disabled).",
+                    "mode": "RW",
+                    "name": "gpio_wkpull_en"
+                }
+            ]
+        },
+        "pl.GpioWkpullVal": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "GPIO_WKPULL_VALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Weak pull up pull down value for GPIO[31:0] (1: 20kohm, 0: 2kohm).",
+                    "mode": "RW",
+                    "name": "gpio_wkpull_value"
+                }
+            ]
+        },
+        "pl.LvttlIoSlew": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MISC_PUP_SLEW",
+                    "bit_lsb": 22,
+                    "bit_msb": 23,
+                    "description": "Driver pull up slew rate for all remaining LVTTL IO pins.",
+                    "mode": "RW",
+                    "name": "misc_pup_slew"
+                },
+                {
+                    "altname": "MISC_PDN_SLEW",
+                    "bit_lsb": 20,
+                    "bit_msb": 21,
+                    "description": "Driver pull down slew rate for all remaining LVTTL IO pins.",
+                    "mode": "RW",
+                    "name": "misc_pdn_slew"
+                },
+                {
+                    "altname": "SPI_PUP_SLEW",
+                    "bit_lsb": 18,
+                    "bit_msb": 19,
+                    "description": "Driver pull up slew rate for all SPI pins.",
+                    "mode": "RW",
+                    "name": "spi_pup_slew"
+                },
+                {
+                    "altname": "SPI_PDN_SLEW",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Driver pull down slew rate for all SPI pins.",
+                    "mode": "RW",
+                    "name": "spi_pdn_slew"
+                },
+                {
+                    "altname": "GPIO_B3_PUP_SLEW",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "Driver pull up slew rate for GPIO[31:24].",
+                    "mode": "RW",
+                    "name": "gpio_b3_pup_slew"
+                },
+                {
+                    "altname": "GPIO_B3_PDN_SLEW",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "Driver pull down slew rate for GPIO[31:24].",
+                    "mode": "RW",
+                    "name": "gpio_b3_pdn_slew"
+                },
+                {
+                    "altname": "GPIO_B2_PUP_SLEW",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Driver pull up slew rate for GPIO[23:16].",
+                    "mode": "RW",
+                    "name": "gpio_b2_pup_slew"
+                },
+                {
+                    "altname": "GPIO_B2_PDN_SLEW",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Driver pull down slew rate for GPIO[23:16].",
+                    "mode": "RW",
+                    "name": "gpio_b2_pdn_slew"
+                },
+                {
+                    "altname": "GPIO_B1_PUP_SLEW",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Driver pull up slew rate for GPIO[15:8].",
+                    "mode": "RW",
+                    "name": "gpio_b1_pup_slew"
+                },
+                {
+                    "altname": "GPIO_B1_PDN_SLEW",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Driver pull down slew rate for GPIO[15:8].",
+                    "mode": "RW",
+                    "name": "gpio_b1_pdn_slew"
+                },
+                {
+                    "altname": "GPIO_B0_PUP_SLEW",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Driver pull up slew rate for GPIO[7:0].",
+                    "mode": "RW",
+                    "name": "gpio_b0_pup_slew"
+                },
+                {
+                    "altname": "GPIO_B0_PDN_SLEW",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Driver pull down slew rate for GPIO[7:0].",
+                    "mode": "RW",
+                    "name": "gpio_b0_pdn_slew"
+                }
+            ]
+        },
+        "pl.MiscControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TEST_FORCE0",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Force 0 on test pins.",
+                    "mode": "RW",
+                    "name": "test_force0"
+                },
+                {
+                    "altname": "TEST_FORCE_TRISTATE",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Force tristate on test pins.",
+                    "mode": "RW",
+                    "name": "test_force_tristate"
+                },
+                {
+                    "altname": "MISC_FORCE0",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Force 0 on misc pins.",
+                    "mode": "RW",
+                    "name": "misc_force0"
+                },
+                {
+                    "altname": "MISC_FORCE_TRISTATE",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Force tristate on misc pins.",
+                    "mode": "RW",
+                    "name": "misc_force_tristate"
+                },
+                {
+                    "altname": "SPI_FORCE0",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Force 0 on spi pins.",
+                    "mode": "RW",
+                    "name": "spi_force0"
+                },
+                {
+                    "altname": "SPI_FORCE_TRISTATE",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Force tristate on spi pins.",
+                    "mode": "RW",
+                    "name": "spi_force_tristate"
+                },
+                {
+                    "altname": "GPIO_FORCE0",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Force 0 on gpio pins.",
+                    "mode": "RW",
+                    "name": "gpio_force0"
+                },
+                {
+                    "altname": "GPIO_FORCE_TRISTATE",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Force tristate on gpio pins.",
+                    "mode": "RW",
+                    "name": "gpio_force_tristate"
+                },
+                {
+                    "altname": "MISC_WKPULL_VALUE",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Weak pull up pull down value for misc pins.",
+                    "mode": "RW",
+                    "name": "misc_wkpull_value"
+                },
+                {
+                    "altname": "MISC_WK_POLARITY",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Weak pull polarity for misc pins.",
+                    "mode": "RW",
+                    "name": "misc_wk_polarity"
+                },
+                {
+                    "altname": "MISC_WKPULL_EN",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Weak pull up pull down enable for misc pins.",
+                    "mode": "RW",
+                    "name": "misc_wkpull_en"
+                },
+                {
+                    "altname": "SPI_WKPULL_VALUE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Weak pull up pull down value for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi_wkpull_value"
+                },
+                {
+                    "altname": "SPI_WK_POLARITY",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Weak pull polarity for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi_wk_polarity"
+                },
+                {
+                    "altname": "SPI_WKPULL_EN",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Weak pull up pull down enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi_wkpull_en"
+                }
+            ]
+        },
+        "pl.MiscDrive": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MISC_PUP_DRV",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Driver pull up strength for all remaining LVTTL IO pins.",
+                    "mode": "RW",
+                    "name": "misc_pup_drv"
+                },
+                {
+                    "altname": "MISC_PDN_DRV",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Driver pull down strength for all remaining LVTTL IO pins.",
+                    "mode": "RW",
+                    "name": "misc_pdn_drv"
+                }
+            ]
+        },
+        "pl.MiscOpendrain": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TEST_OPENDRN",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Open drain enable for test pin.",
+                    "mode": "RW",
+                    "name": "test_opendrn"
+                },
+                {
+                    "altname": "MISC_OPENDRN",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Open drain enable for misc pin.",
+                    "mode": "RW",
+                    "name": "misc_opendrn"
+                },
+                {
+                    "altname": "TEST_BACKUP3_OPENDRN",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "Open drain enable for test backup pins.",
+                    "mode": "RW",
+                    "name": "test_backup3_opendrn"
+                },
+                {
+                    "altname": "TEST_BACKUP2_OPENDRN",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Open drain enable for test backup pins.",
+                    "mode": "RW",
+                    "name": "test_backup2_opendrn"
+                },
+                {
+                    "altname": "TEST_BACKUP1_OPENDRN",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Open drain enable for test backup pins.",
+                    "mode": "RW",
+                    "name": "test_backup1_opendrn"
+                },
+                {
+                    "altname": "TEST_BACKUP0_OPENDRN",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Open drain enable for test backup pins.",
+                    "mode": "RW",
+                    "name": "test_backup0_opendrn"
+                },
+                {
+                    "altname": "SR_TX_OPENDRN",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Open drain enable for Serial pins.",
+                    "mode": "RW",
+                    "name": "sr_tx_opendrn"
+                },
+                {
+                    "altname": "PCIE3_RESET_OUT_L_OPENDRN",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Open drain enable for PCIE reset output pins.",
+                    "mode": "RW",
+                    "name": "pcie3_reset_out_l_opendrn"
+                },
+                {
+                    "altname": "PCIE2_RESET_OUT_L_OPENDRN",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Open drain enable for PCIE reset output pins.",
+                    "mode": "RW",
+                    "name": "pcie2_reset_out_l_opendrn"
+                },
+                {
+                    "altname": "PCIE1_RESET_OUT_L_OPENDRN",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "Open drain enable for PCIE reset output pins.",
+                    "mode": "RW",
+                    "name": "pcie1_reset_out_l_opendrn"
+                },
+                {
+                    "altname": "PCIE0_RESET_OUT_L_OPENDRN",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "Open drain enable for PCIE reset output pins.",
+                    "mode": "RW",
+                    "name": "pcie0_reset_out_l_opendrn"
+                },
+                {
+                    "altname": "CLK_NRESET_OUT_L_OPENDRN",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Open drain enable for reset output pins.",
+                    "mode": "RW",
+                    "name": "clk_nreset_out_l_opendrn"
+                },
+                {
+                    "altname": "SPIX_SEL3_OPENDRN",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spix_sel3_opendrn"
+                },
+                {
+                    "altname": "SPIX_SEL2_OPENDRN",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spix_sel2_opendrn"
+                },
+                {
+                    "altname": "SPIX_SEL1_OPENDRN",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spix_sel1_opendrn"
+                },
+                {
+                    "altname": "SPIX_D3_OPENDRN",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spix_d3_opendrn"
+                },
+                {
+                    "altname": "SPIX_D2_OPENDRN",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spix_d2_opendrn"
+                },
+                {
+                    "altname": "SPI3_SCK_OPENDRN",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi3_sck_opendrn"
+                },
+                {
+                    "altname": "SPI3_MOSI_OPENDRN",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi3_mosi_opendrn"
+                },
+                {
+                    "altname": "SPI2_SCK_OPENDRN",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi2_sck_opendrn"
+                },
+                {
+                    "altname": "SPI2_MOSI_OPENDRN",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi2_mosi_opendrn"
+                },
+                {
+                    "altname": "SPI1_CFG_SEL_OPENDRN",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi1_cfg_sel_opendrn"
+                },
+                {
+                    "altname": "SPI1_CFG_SCK_OPENDRN",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi1_cfg_sck_opendrn"
+                },
+                {
+                    "altname": "SPI1_CFG_MOSI_OPENDRN",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi1_cfg_mosi_opendrn"
+                },
+                {
+                    "altname": "SPI1_CFG_MISO_OPENDRN",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi1_cfg_miso_opendrn"
+                },
+                {
+                    "altname": "SPI0_SEL_OPENDRN",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi0_sel_opendrn"
+                },
+                {
+                    "altname": "SPI0_SCK_OPENDRN",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi0_sck_opendrn"
+                },
+                {
+                    "altname": "SPI0_MOSI_OPENDRN",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi0_mosi_opendrn"
+                },
+                {
+                    "altname": "SPI0_MISO_OPENDRN",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Open drain enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi0_miso_opendrn"
+                }
+            ]
+        },
+        "pl.PLLConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PLL_LOCK_MULT",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Write 1 to Set, cannot be cleared without hard_reset.  Setting the lock bit captures the current values of the multipliers (integer and fraction) as limits for all future settings",
+                    "mode": "RW",
+                    "name": "PLLLockMult"
+                },
+                {
+                    "altname": "PLL_SYNTH_MODE",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Synthesizer mode: 1=Fractional mode, 0=integer mode",
+                    "mode": "RW",
+                    "name": "PLLSynthMode"
+                },
+                {
+                    "altname": "PLL_SYNTH_REF_DIV",
+                    "bit_lsb": 24,
+                    "bit_msb": 29,
+                    "description": "Reference clock input divider ratio",
+                    "mode": "RW",
+                    "name": "PLLSynthRefDiv"
+                },
+                {
+                    "altname": "PLL_SYNTH_MDIV",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Synthesizer feedback divider value",
+                    "mode": "RW",
+                    "name": "PLLSynthMDiv"
+                },
+                {
+                    "altname": "PLL_SYNTH_SSC_MODE_GAIN",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Signed 16-bit magnitude SSC modulation depth control word, as Fraction div ratio.",
+                    "mode": "RW",
+                    "name": "PLLSynthSSCModGain"
+                }
+            ]
+        },
+        "pl.PLLControlAndStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PLL_PD_SYNTH",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "FSM Control: 1=Normal Power-Up 0=PowerDown.  When transitioned to 1, the PLL State Machine will execute an automatic PLL bringup sequence and lockout rights to all but the Manual Override configuration register.",
+                    "mode": "RW",
+                    "name": "PLLPdSynth"
+                },
+                {
+                    "altname": "PLLCLK1_OUTPUT_ENABLE",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "FSM Control: Enable for PLLCLK1 Output",
+                    "mode": "RW",
+                    "name": "PLLCLK1OutputEn"
+                },
+                {
+                    "altname": "PLLCLK0_OUTPUT_ENABLE",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "FSM Control: Enable for PLLCLK0 Output",
+                    "mode": "RW",
+                    "name": "PLLCLK0OutputEn"
+                },
+                {
+                    "altname": "PLL_AUTO_RELOCK",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Mode bit to select behavior upon the occurence of a Lock Fault",
+                    "mode": "RW",
+                    "name": "PLLAutoReLock"
+                },
+                {
+                    "altname": "PLL_LOCK_FAULT_COUNT",
+                    "bit_lsb": 8,
+                    "bit_msb": 23,
+                    "description": "Once the PLL has been spun-up, counts how many times that lock is lost.  This field will be cleared whenever PLLPdSynth transitions from 0 to 1. ",
+                    "mode": "RO",
+                    "name": "PLLLockFaultCount"
+                },
+                {
+                    "altname": "PLL_LOCK_FAULT",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Indicates that the PLL has lost lock during normal operation. This field will be cleared whenever PLLPdSynth transitions from 0 to 1.",
+                    "mode": "RO",
+                    "name": "PLLLockFault"
+                },
+                {
+                    "altname": "PLL_SYNTH_LOCK",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "PLL Lock Indicator",
+                    "mode": "RO",
+                    "name": "PLLSynthLock"
+                },
+                {
+                    "altname": "PLL_SYNTHOUT1_EN",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "FSM Output: Enable for synthesizer clock output 1",
+                    "mode": "RO",
+                    "name": "PLLSynthOut1En"
+                },
+                {
+                    "altname": "PLL_SYNTHOUT_BYPASS1",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "FSM Output: Bypass synthesizer clock output 1 with ICK_SYNTHREF with the PLL",
+                    "mode": "RO",
+                    "name": "PLLSynthOutByPass1"
+                },
+                {
+                    "altname": "PLL_WRAPOUT_BYPASS1",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "FSM Output: Bypass synthesizer clock output 1 with ICK_SYNTHREF outside the PLL",
+                    "mode": "RO",
+                    "name": "PLLWrapOutByPass1"
+                },
+                {
+                    "altname": "PLL_SYNTHOUT0_EN",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "FSM Output: Enable for synthesizer clock output 0",
+                    "mode": "RO",
+                    "name": "PLLSynthOut0En"
+                },
+                {
+                    "altname": "PLL_SYNTHOUT_BYPASS0",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "FSM Output: Bypass synthesizer clock output 0 with ICK_SYNTHREF within the PLL",
+                    "mode": "RO",
+                    "name": "PLLSynthOutByPass0"
+                },
+                {
+                    "altname": "PLL_WRAPOUT_BYPASS0",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "FSM Output: Bypass synthesizer clock output 0 with ICK_SYNTHREF outside the PLL",
+                    "mode": "RO",
+                    "name": "PLLWrapOutByPass0"
+                }
+            ]
+        },
+        "pl.PLLManualOverride": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PLL_MANUAL_OVERRIDE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Setting this bit to 1 enables manual override control for the PLLs.  This takes control away from the PLL State Machine.  This will also enable writes to the other config regs that would normally be blocked by the PLL State Machine",
+                    "mode": "RW",
+                    "name": "PLLManualOverride"
+                },
+                {
+                    "altname": "OVD_PD_SYNTH",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Manual Override: PLL Power Down Mode: 1=Normal 0=PowerDown",
+                    "mode": "RW",
+                    "name": "OvdPdSynth"
+                },
+                {
+                    "altname": "OVD_RESET_SYNTH",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Manual Override: Reset mode: 1=Normal, 0=Reset",
+                    "mode": "RW",
+                    "name": "OvdResetSynth"
+                },
+                {
+                    "altname": "OVD_SYNTHOUT1_EN",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Manual Override: Enable for synthesizer clock output 1",
+                    "mode": "RW",
+                    "name": "OvdSynthOut1En"
+                },
+                {
+                    "altname": "OVD_SYNTHOUT_BYPASS1",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Manual Override: Bypass synthesizer clock output 1 with ICK_SYNTHREF with the PLL",
+                    "mode": "RW",
+                    "name": "OvdSynthOutByPass1"
+                },
+                {
+                    "altname": "OVD_WRAPOUT_BYPASS1",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Manual Override: Bypass synthesizer clock output 1 with ICK_SYNTHREF outside the PLL",
+                    "mode": "RW",
+                    "name": "OvdWrapOutByPass1"
+                },
+                {
+                    "altname": "OVD_SYNTHOUT0_EN",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Manual Override: Enable for synthesizer clock output 0",
+                    "mode": "RW",
+                    "name": "OvdSynthOut0En"
+                },
+                {
+                    "altname": "OVD_SYNTHOUT_BYPASS0",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Manual Override: Bypass synthesizer clock output 0 with ICK_SYNTHREF within the PLL",
+                    "mode": "RW",
+                    "name": "OvdSynthOutByPass0"
+                },
+                {
+                    "altname": "OVD_WRAPOUT_BYPASS0",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Manual Override: Bypass synthesizer clock output 0 with ICK_SYNTHREF outside the PLL",
+                    "mode": "RW",
+                    "name": "OvdWrapOutByPass0"
+                }
+            ]
+        },
+        "pl.PLLMiscControls": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PLL_SYNTH_FAST_LOCK_EN",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Fast lock enable.",
+                    "mode": "RW",
+                    "name": "PLLSynthFastLockEn"
+                },
+                {
+                    "altname": "PLL_SYNTHOUT_PH_INC_SAT",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Control saturation behavior for phase increments.",
+                    "mode": "RW",
+                    "name": "PLLSynthOutPhIncSat"
+                },
+                {
+                    "altname": "PLL_SYNTH_PROP_GAIN",
+                    "bit_lsb": 16,
+                    "bit_msb": 22,
+                    "description": "Synthesizer loop bandwidth control.",
+                    "mode": "RW",
+                    "name": "PLLSynthPropGain"
+                },
+                {
+                    "altname": "PLL_SYNTH_SSC_GEN_COUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "SSC Frequency Control",
+                    "mode": "RW",
+                    "name": "PLLSynthSSCGenCount"
+                }
+            ]
+        },
+        "pl.PLLOutputDividers": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PLL_SYNTHOUT_PH_RST",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Reset phase rotator to initial startup value.",
+                    "mode": "RW",
+                    "name": "PLLSynthOutPhRst"
+                },
+                {
+                    "altname": "PLL_SYNTHOUT1_DIV",
+                    "bit_lsb": 8,
+                    "bit_msb": 13,
+                    "description": "Synthesizer clock output 1 divider value",
+                    "mode": "RW",
+                    "name": "PLLSynthOut1Div"
+                },
+                {
+                    "altname": "PLL_SYNTHOUT_PH_INC1",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Increments phase of synthesizer clock outputs 1 by 1/8 of 1 period on rising edge",
+                    "mode": "RW",
+                    "name": "PLLSynthOutPhInc1"
+                },
+                {
+                    "altname": "PLL_SYNTHOUT0_DIV",
+                    "bit_lsb": 1,
+                    "bit_msb": 6,
+                    "description": "Synthesizer clock output 0 divider value",
+                    "mode": "RW",
+                    "name": "PLLSynthOut0Div"
+                },
+                {
+                    "altname": "PLL_SYNTHOUT_PH_INC0",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Increments phase of synthesizer clock outputs 0 by 1/8 of 1 period on rising edge",
+                    "mode": "RW",
+                    "name": "PLLSynthOutPhInc0"
+                }
+            ]
+        },
+        "pl.PluArmClockSelect": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ACLK_SELECT",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Select which PLL's secondary output (PLLCLK1) will be used for generating the ARM Clock.",
+                    "mode": "RW",
+                    "name": "AclkSelect"
+                }
+            ]
+        },
+        "pl.PluBaudRateGen": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BAUD_CTRL_A",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Control A for Baud Rate Generator. See Baud Rate Generator Table",
+                    "mode": "RW",
+                    "name": "BaudControlA"
+                },
+                {
+                    "altname": "BAUD_CTRL_B",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Control B for Baud Rate Generator. See Baud Rate Generator Table",
+                    "mode": "RW",
+                    "name": "BaudControlB"
+                }
+            ]
+        },
+        "pl.PluDeviceID": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PART_NUM",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Major Part Number Designation (Hard Coded)",
+                    "mode": "RO",
+                    "name": "PartNumber"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "SKU Designation (From Fuses)",
+                    "mode": "RO",
+                    "name": "SKU"
+                },
+                {
+                    "altname": "MAJOR_REV_ID",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Major Revision ID (Hard Coded)",
+                    "mode": "RO",
+                    "name": "MajorRevID"
+                },
+                {
+                    "altname": "MINOR_REV_ID",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Minor Revision ID (From Fuses or Special Metal Structure)",
+                    "mode": "RO",
+                    "name": "MinorRevID"
+                }
+            ]
+        },
+        "pl.PluJtagTckControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLK_DIV_BYPASS",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Clock Divider will be bypassed when in SCAN_MODE or in HARD_RESET or when this bit is set to 1.",
+                    "mode": "RW",
+                    "name": "ClkDivBypass"
+                },
+                {
+                    "altname": "CLK_DIV_RATIO",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "REF_CLK divider ratio to internally generate JTAG_TCK. Legal values: 3-255",
+                    "mode": "RW",
+                    "name": "ClkDivRatio"
+                }
+            ]
+        },
+        "pl.PluLvcmosIOComp": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "GDCDRVOFST_1",
+                    "bit_lsb": 27,
+                    "bit_msb": 29,
+                    "description": "Analog offset control for RCOMP pull up operation.",
+                    "mode": "RW",
+                    "name": "gdcdrvofst_1"
+                },
+                {
+                    "altname": "GDCDRVOFST_0",
+                    "bit_lsb": 24,
+                    "bit_msb": 26,
+                    "description": "Analog offset control for RCOMP pull down operation.",
+                    "mode": "RW",
+                    "name": "gdcdrvofst_0"
+                },
+                {
+                    "altname": "DRIVERSEGEN_0",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Driver segment control.",
+                    "mode": "RW",
+                    "name": "driversegen_0"
+                },
+                {
+                    "altname": "DRIVERODTSEGEN_0",
+                    "bit_lsb": 18,
+                    "bit_msb": 19,
+                    "description": "Driver ODT segment control.",
+                    "mode": "RW",
+                    "name": "driverodtsegen_0"
+                },
+                {
+                    "altname": "COMPCK_DIV",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "RCOMP clock divider ratio.",
+                    "mode": "RW",
+                    "name": "compck_div"
+                },
+                {
+                    "altname": "RCOMP_PUP_EN",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "RCOMP function pull up only enable.",
+                    "mode": "RW",
+                    "name": "rcomp_pup_en"
+                },
+                {
+                    "altname": "RCOMP_PUP_OVRD_EN",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "RCOMP pull up override enable, use override values.",
+                    "mode": "RW",
+                    "name": "rcomp_pup_ovrd_en"
+                },
+                {
+                    "altname": "PUP_DRV_OVRD",
+                    "bit_lsb": 8,
+                    "bit_msb": 13,
+                    "description": "Driver pull up drive strength override value.",
+                    "mode": "RW",
+                    "name": "pup_drv_ovrd"
+                },
+                {
+                    "altname": "RCOMP_PDN_EN",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "RCOMP function pull down only enable.",
+                    "mode": "RW",
+                    "name": "rcomp_pdn_en"
+                },
+                {
+                    "altname": "RCOMP_PDN_OVRD_EN",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "RCOMP pull down override enable, use override values.",
+                    "mode": "RW",
+                    "name": "rcomp_pdn_ovrd_en"
+                },
+                {
+                    "altname": "PDN_DRV_OVRD",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "Driver pull down drive strength override value.",
+                    "mode": "RW",
+                    "name": "pdn_drv_ovrd"
+                }
+            ]
+        },
+        "pl.PluLvcmosIOComp2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RCOMP_START",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Start RCOMP Sequence.",
+                    "mode": "RW",
+                    "name": "rcomp_start"
+                },
+                {
+                    "altname": "RCOMP_RESET",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Synchronous high-active RCOMP Reset.",
+                    "mode": "RW",
+                    "name": "rcomp_reset"
+                },
+                {
+                    "altname": "RCOMP_READY",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "RCOMP ready signal.",
+                    "mode": "RO",
+                    "name": "rcomp_ready"
+                },
+                {
+                    "altname": "RCOMP_UPDATE",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "RCOMP FSM update signal.",
+                    "mode": "RO",
+                    "name": "rcomp_update"
+                },
+                {
+                    "altname": "RCOMP_TIMEOUT",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "RCOMP FSM TIMEOUT - ready never came.",
+                    "mode": "RO",
+                    "name": "rcomp_timeout"
+                },
+                {
+                    "altname": "PDN_DRV_RCOMP",
+                    "bit_lsb": 8,
+                    "bit_msb": 13,
+                    "description": "IO buffer drive strength pull down setting from RCOMP.",
+                    "mode": "RO",
+                    "name": "pdn_drv_rcomp"
+                },
+                {
+                    "altname": "PUP_DRV_RCOMP",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "IO buffer drive strength pull up setting from RCOMP.",
+                    "mode": "RO",
+                    "name": "pup_drv_rcomp"
+                }
+            ]
+        },
+        "pl.PluLvcmosIOCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILK1_TX_WK_PULL_EN",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Weak pull enable for ILK1_OOB_TCLK, TSYNC, TDATA pins.",
+                    "mode": "RW",
+                    "name": "ILK1_TX_wk_pull_en"
+                },
+                {
+                    "altname": "ILK1_TX_WK_POLARITY",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "Weak pull polarity for ILK1_OOB_TCLK, TSYNC, TDATA pins.",
+                    "mode": "RW",
+                    "name": "ILK1_TX_wk_polarity"
+                },
+                {
+                    "altname": "ILK1_TX_RCVEN",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Receive enable for ILK1_OOB_TCLK, TSYNC, TDATA pins. High Active.",
+                    "mode": "RW",
+                    "name": "ILK1_TX_rcven"
+                },
+                {
+                    "altname": "ILK1_TX_OENB",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Output enable for ILK1_OOB_TCLK, TSYNC, TDATA pins. Low active.",
+                    "mode": "RW",
+                    "name": "ILK1_TX_oenb"
+                },
+                {
+                    "altname": "ILK1_RX_WK_PULL_EN",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Weak pull enable for ILK1_OOB_RCLK, RSYNC, RDATA pins.",
+                    "mode": "RW",
+                    "name": "ILK1_RX_wk_pull_en"
+                },
+                {
+                    "altname": "ILK1_RX_WK_POLARITY",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "Weak pull polarity for ILK1_OOB_RCLK, RSYNC, RDATA pins.",
+                    "mode": "RW",
+                    "name": "ILK1_RX_wk_polarity"
+                },
+                {
+                    "altname": "ILK1_RX_RCVHYS",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "Receiver hysterisis enable for ILK1_OOB_RCLK, RSYNC, RDATA pins. High active.",
+                    "mode": "RW",
+                    "name": "ILK1_RX_rcvhys"
+                },
+                {
+                    "altname": "ILK1_RX_RCVEN",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Receive enable for ILK1_OOB_RCLK, RSYNC, RDATA pins. High Active.",
+                    "mode": "RW",
+                    "name": "ILK1_RX_rcven"
+                },
+                {
+                    "altname": "ILK1_RX_OENB",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Output enable for ILK1_OOB_RCLK, RSYNC, RDATA pins. Low active.",
+                    "mode": "RW",
+                    "name": "ILK1_RX_oenb"
+                },
+                {
+                    "altname": "ILK0_TX_WK_PULL_EN",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Weak pull enable for ILK0_OOB_TCLK, TSYNC, TDATA pins.",
+                    "mode": "RW",
+                    "name": "ILK0_TX_wk_pull_en"
+                },
+                {
+                    "altname": "ILK0_TX_WK_POLARITY",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Weak pull polarity for ILK0_OOB_TCLK, TSYNC, TDATA pins.",
+                    "mode": "RW",
+                    "name": "ILK0_TX_wk_polarity"
+                },
+                {
+                    "altname": "ILK0_TX_RCVEN",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Receive enable for ILK0_OOB_TCLK, TSYNC, TDATA pins. High Active.",
+                    "mode": "RW",
+                    "name": "ILK0_TX_rcven"
+                },
+                {
+                    "altname": "ILK0_TX_OENB",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Output enable for ILK0_OOB_TCLK, TSYNC, TDATA pins. Low active.",
+                    "mode": "RW",
+                    "name": "ILK0_TX_oenb"
+                },
+                {
+                    "altname": "ILK0_RX_WK_PULL_EN",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Weak pull enable for ILK0_OOB_RCLK, RSYNC, RDATA pins.",
+                    "mode": "RW",
+                    "name": "ILK0_RX_wk_pull_en"
+                },
+                {
+                    "altname": "ILK0_RX_WK_POLARITY",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Weak pull polarity for ILK0_OOB_RCLK, RSYNC, RDATA pins.",
+                    "mode": "RW",
+                    "name": "ILK0_RX_wk_polarity"
+                },
+                {
+                    "altname": "ILK0_RX_RCVHYS",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Receiver hysterisis enable for ILK0_OOB_RCLK, RSYNC, RDATA pins. High active.",
+                    "mode": "RW",
+                    "name": "ILK0_RX_rcvhys"
+                },
+                {
+                    "altname": "ILK0_RX_RCVEN",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Receive enable for ILK0_OOB_RCLK, RSYNC, RDATA pins. High Active.",
+                    "mode": "RW",
+                    "name": "ILK0_RX_rcven"
+                },
+                {
+                    "altname": "ILK0_RX_OENB",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Output enable for ILK0_OOB_RCLK, RSYNC, RDATA pins. Low active.",
+                    "mode": "RW",
+                    "name": "ILK0_RX_oenb"
+                }
+            ]
+        },
+        "pl.PluLvcmosIOCtrl2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TCO_COMPR",
+                    "bit_lsb": 27,
+                    "bit_msb": 31,
+                    "description": "Driver TCO delay control rise.",
+                    "mode": "RW",
+                    "name": "tco_compr"
+                },
+                {
+                    "altname": "PUP_SCOMP_CODE",
+                    "bit_lsb": 22,
+                    "bit_msb": 26,
+                    "description": "Driver pull up slew rate control setting.",
+                    "mode": "RW",
+                    "name": "pup_scomp_code"
+                },
+                {
+                    "altname": "PUP_ODT_RCOMP",
+                    "bit_lsb": 16,
+                    "bit_msb": 21,
+                    "description": "Pull up ODT setting for all LVCMOS pins.",
+                    "mode": "RW",
+                    "name": "pup_odt_rcomp"
+                },
+                {
+                    "altname": "TCO_COMPF",
+                    "bit_lsb": 11,
+                    "bit_msb": 15,
+                    "description": "Driver TCO delay control fall.",
+                    "mode": "RW",
+                    "name": "tco_compf"
+                },
+                {
+                    "altname": "PDN_SCOMP_CODE",
+                    "bit_lsb": 6,
+                    "bit_msb": 10,
+                    "description": "Driver pull down slew rate control setting.",
+                    "mode": "RW",
+                    "name": "pdn_scomp_code"
+                },
+                {
+                    "altname": "PDN_ODT_RCOMP",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "Pull down ODT setting for all LVCMOS pins.",
+                    "mode": "RW",
+                    "name": "pdn_odt_rcomp"
+                }
+            ]
+        },
+        "pl.PluLvcmosIODFT": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PADRX2TXLB",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "LVCMOS pins RX to TX internal loopback enable. High active.",
+                    "mode": "RW",
+                    "name": "padrx2txlb"
+                },
+                {
+                    "altname": "TSEL",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Test mode select for all ILK LVCMOS pins.",
+                    "mode": "RW",
+                    "name": "tsel"
+                },
+                {
+                    "altname": "TOENB",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Test output enable. Low active.",
+                    "mode": "RW",
+                    "name": "toenb"
+                },
+                {
+                    "altname": "OPEN_DRAIN",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Open drain mode enable for all ILK LVCMOS pins.",
+                    "mode": "RW",
+                    "name": "open_drain"
+                },
+                {
+                    "altname": "FORCE_TRISTATEB",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Tri-state enable for all ILK LVCMOS pins.",
+                    "mode": "RW",
+                    "name": "force_tristateb"
+                },
+                {
+                    "altname": "RXOFFSETEN",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Receiver offset enable for all ILK LVCMOS pins.",
+                    "mode": "RW",
+                    "name": "rxoffseten"
+                },
+                {
+                    "altname": "RXOFFSET",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "Receiver offset setting for all ILK LVCMOS pins.",
+                    "mode": "RW",
+                    "name": "rxoffset"
+                }
+            ]
+        },
+        "pl.PluLvcmosIODFT2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILK1_RDATA_PODODTMODE",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_pododtmode"
+                },
+                {
+                    "altname": "ILK1_RDATA_DLYCELLMUX",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_dlycellmux"
+                },
+                {
+                    "altname": "ILK1_RDATA_DLYCELLSTATICLEG",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_dlycellstaticleg"
+                },
+                {
+                    "altname": "ILK1_RDATA_ODTENB",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_odtenb"
+                },
+                {
+                    "altname": "ILK1_RDATA_PDNDRVODTRCOMPSTATIC",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_pdndrvodtrcompstatic"
+                },
+                {
+                    "altname": "ILK1_RDATA_PDNDRVRCOMPSTATIC",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_pdndrvrcompstatic"
+                },
+                {
+                    "altname": "ILK1_RDATA_PUPDRVODTRCOMPSTATIC",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_pupdrvodtrcompstatic"
+                },
+                {
+                    "altname": "ILK1_RDATA_PUPDRVRCOMPSTATIC",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_pupdrvrcompstatic"
+                },
+                {
+                    "altname": "ILK1_RDATA_RXEN1_15",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_rxen1_15"
+                },
+                {
+                    "altname": "ILK1_RDATA_RXEN1_H1X",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_rxen1_h1x"
+                },
+                {
+                    "altname": "ILK1_RDATA_RXEN2_15",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_rxen2_15"
+                },
+                {
+                    "altname": "ILK1_RDATA_RXEN2_H1X",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_rxen2_h1x"
+                },
+                {
+                    "altname": "ILK1_RDATA_SPECMODESEL",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_specmodesel"
+                },
+                {
+                    "altname": "ILK1_RDATA_DRVODTSEGEN",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_drvodtsegen"
+                },
+                {
+                    "altname": "ILK1_RDATA_ODTMODE",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_odtmode"
+                },
+                {
+                    "altname": "ILK1_RDATA_RXPATHSEL",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_rxpathsel"
+                },
+                {
+                    "altname": "ILK1_RDATA_DRVSEGEN",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "For debug only.",
+                    "mode": "RW",
+                    "name": "ilk1_rdata_drvsegen"
+                }
+            ]
+        },
+        "pl.PluMasterReset": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "When set to 1, PCIE3_RESET_OUT_L will not be reset by SRESETN",
+                    "mode": "RW",
+                    "name": "PCIE3_RESET_MASK"
+                },
+                {
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "When set to 1, PCIE2_RESET_OUT_L will not be reset by SRESETN",
+                    "mode": "RW",
+                    "name": "PCIE2_RESET_MASK"
+                },
+                {
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "When set to 1, PCIE1_RESET_OUT_L will not be reset by SRESETN",
+                    "mode": "RW",
+                    "name": "PCIE1_RESET_MASK"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "When set to 1, PCIE0_RESET_OUT_L will not be reset by SRESETN",
+                    "mode": "RW",
+                    "name": "PCIE0_RESET_MASK"
+                },
+                {
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "PCIE3 Reset Out",
+                    "mode": "RW",
+                    "name": "PCIE3_RESET_OUT_L"
+                },
+                {
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "PCIE2 Reset Out",
+                    "mode": "RW",
+                    "name": "PCIE2_RESET_OUT_L"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "PCIE1 Reset Out",
+                    "mode": "RW",
+                    "name": "PCIE1_RESET_OUT_L"
+                },
+                {
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "PCIE0 Reset Out",
+                    "mode": "RW",
+                    "name": "PCIE0_RESET_OUT_L"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "PowerOn Reset Out",
+                    "mode": "RW",
+                    "name": "CLK_NRESET_OUT_L"
+                }
+            ]
+        },
+        "pl.PluPowerState": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Crypto Power Domain Locked",
+                    "mode": "RO",
+                    "name": "CRYPTO_PDL"
+                },
+                {
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Bottom of Chip Power Domain Locked.",
+                    "mode": "RO",
+                    "name": "BOTTOM_PDL"
+                },
+                {
+                    "altname": "POWER_GOOD4",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Power Domain 4 Power Good Indicator.",
+                    "mode": "RO",
+                    "name": "POWERGOOD4"
+                },
+                {
+                    "altname": "POWER_GOOD3",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Power Domain 3 Power Good Indicator.",
+                    "mode": "RO",
+                    "name": "POWERGOOD3"
+                },
+                {
+                    "altname": "POWER_GOOD2",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Power Domain 2 Power Good Indicator.",
+                    "mode": "RO",
+                    "name": "POWERGOOD2"
+                },
+                {
+                    "altname": "POWER_GOOD1",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Power Domain 1 Power Good Indicator.",
+                    "mode": "RO",
+                    "name": "POWERGOOD1"
+                }
+            ]
+        },
+        "pl.PluTSControl0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TS_RESET",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Reset all Thermal Sensor Registers. Recommended at each power up after powergood is asserted.",
+                    "mode": "RW",
+                    "name": "TSitsrst"
+                },
+                {
+                    "altname": "TS_ENABLE",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "0 = Disable all circuits. Leave this bit always on, also in power on, beside debugging.",
+                    "mode": "RW",
+                    "name": "TSitsen"
+                },
+                {
+                    "altname": "TS_TRIP_THRESH",
+                    "bit_lsb": 10,
+                    "bit_msb": 13,
+                    "description": "When temperature reaches the value indicated by this bus, trip signal, also called catastrophic (otstemperaturetrip) is turned on. 115 C + 15 steps (1 C) for trip point configuration. (Default is 130 C",
+                    "mode": "RW",
+                    "name": "TSitstripthreshon"
+                },
+                {
+                    "altname": "TS_ALERT_THRESH",
+                    "bit_lsb": 2,
+                    "bit_msb": 9,
+                    "description": "When temperature reaches the value indicated by this bus, alert signal otstemperaturealrt is turned on Where 0 is -50 C, resolution of 1 C. Default is 125 C",
+                    "mode": "RW",
+                    "name": "TSitsalertthreshon"
+                },
+                {
+                    "altname": "TS_HYSTERESIS",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Provides hysteresis below the alert threshold trip point while temp is going down; the otstemperaturealrt gets deasserted below [alert threshold point (itsalertthreshon) + hysteresis values].",
+                    "mode": "RW",
+                    "name": "TSitsalerthysteresis"
+                }
+            ]
+        },
+        "pl.PluTSControl1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TS_CHOP_SEL",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Select where Chopping is Done - 0 for chopping in Sense, 1 for chopping in SD ADC",
+                    "mode": "RW",
+                    "name": "TSianachopctr"
+                },
+                {
+                    "altname": "TS_SUPPLY_MODE",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "Select signal to keep the sense stage reference signal voltage the same.",
+                    "mode": "RW",
+                    "name": "TSitssupplymode"
+                },
+                {
+                    "altname": "TS_FILTER_RATE",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Selects CIC filter decimation factor.",
+                    "mode": "RW",
+                    "name": "TSitsfilterrate"
+                },
+                {
+                    "altname": "TS_FILTER_RANGE",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Range select for filter output bits according to the gain of the TS analog circuit",
+                    "mode": "RW",
+                    "name": "TSitsfilterrangesel"
+                },
+                {
+                    "altname": "TS_DFT_PORT_SEL",
+                    "bit_lsb": 18,
+                    "bit_msb": 22,
+                    "description": "DFT test port select",
+                    "mode": "RW",
+                    "name": "TSidfttpsel"
+                },
+                {
+                    "altname": "TS_DFT_ANALOG_EN",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Enables the ATF Circuit, allowing testin of Analog signals digitally with odftatf port to SoC",
+                    "mode": "RW",
+                    "name": "TSidftatfen"
+                },
+                {
+                    "altname": "TS_DISABLE_POWER_SEQ",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Disables the power control sequence",
+                    "mode": "RW",
+                    "name": "TSitsdigpwrctrlovrd"
+                },
+                {
+                    "altname": "TS_SN_CURRENT_SEL",
+                    "bit_lsb": 11,
+                    "bit_msb": 12,
+                    "description": "Selects the current value for the four current sources within sense stage. The following are the base branch bias current values:",
+                    "mode": "RW",
+                    "name": "TSisnscurrentsel"
+                },
+                {
+                    "altname": "TS_SN_CURRENT_RATIO",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Sense State Current Ratio.",
+                    "mode": "RW",
+                    "name": "TSisnscurratio3p5"
+                },
+                {
+                    "altname": "TS_SN_WASTE_SEL",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Selects the wast current target (when isnscurratio3p5 = 0):",
+                    "mode": "RW",
+                    "name": "TSisnswastesel"
+                },
+                {
+                    "altname": "TS_SN_DEM_EN",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Enable Dynamic Element Matching (DEM)",
+                    "mode": "RW",
+                    "name": "TSisnsdemen"
+                },
+                {
+                    "altname": "TS_SN_DEM_DFX",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "DFX mode pin (In Normal DEM operation, connect isnsdenstpctr = 1)",
+                    "mode": "RW",
+                    "name": "TSisnsdemstpctr"
+                },
+                {
+                    "altname": "TS_SN_INT_VREF",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Enables an internal reference voltage gnerated by a resistor divider. External reference voltage is used for DFT when isnsintvrefen=0, that is, with an external reference voltage of 0.920 V.",
+                    "mode": "RW",
+                    "name": "TSisnsintvrefen"
+                },
+                {
+                    "altname": "TS_DS_FILTER_TEST",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Input signal to test digital filter",
+                    "mode": "RW",
+                    "name": "TSitsfiltertst"
+                },
+                {
+                    "altname": "TS_SD_CLKSEL",
+                    "bit_lsb": 3,
+                    "bit_msb": 4,
+                    "description": "Sigma Delta select bits",
+                    "mode": "RW",
+                    "name": "TSisdfssel"
+                },
+                {
+                    "altname": "TS_SD_DOUBLE_DELAY",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Double the internal delays in the phase generator in SD ADC",
+                    "mode": "RW",
+                    "name": "TSisdx2delayen"
+                },
+                {
+                    "altname": "TS_SD_MODE_SEL",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "SD ADC mode selection (Tie to 1, no voltage reference is available)",
+                    "mode": "RW",
+                    "name": "TSisdmodesel"
+                },
+                {
+                    "altname": "TS_SD_STAND_ALONE_EN",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "SDC ADC stand-alone test (Tie to 0 for normal operation)",
+                    "mode": "RW",
+                    "name": "TSisdstandaloneen"
+                }
+            ]
+        },
+        "pl.PluTSControl2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TS_CAL_GAMMA",
+                    "bit_lsb": 18,
+                    "bit_msb": 22,
+                    "description": "Used to calibrate the TS for temperature curvature correction for ratiometric mode.",
+                    "mode": "RW",
+                    "name": "TSicalgamma"
+                },
+                {
+                    "altname": "TS_CAL_CONFIG",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "TS Calibration Controls",
+                    "mode": "RW",
+                    "name": "TSicalconfigsel"
+                },
+                {
+                    "altname": "TS_CAL_OFFSET",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Calibration fuses used for temperature offset cancellation with resolution of 0.5 C. NOTE: During the calibration process, add an option to get these inputs from a register with the defaults declared.",
+                    "mode": "RW",
+                    "name": "TSicaldatoffset"
+                },
+                {
+                    "altname": "TS_CAL_SLOPE",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Calibration fuses used for temperature slope calibraryion. NOTE: During the calibration process, add an option to get these inputs from a register with the defaults declared.",
+                    "mode": "RW",
+                    "name": "TSicaldatslope"
+                }
+            ]
+        },
+        "pl.PluTSReadings": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TS_TEMPERATURE_TRIP",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Temperature catastrophic alert signal according to itstripthreshon[3:0] pin settings; this signal wil get asserted when temp on die goes above the threshold set by itstripthreshon[3:0]; gets deasserted only when the Thermal Sensor IP is reset.",
+                    "mode": "RO",
+                    "name": "TSotstemperaturetrip"
+                },
+                {
+                    "altname": "TS_TEMPERATURE_ALERT",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Temperature trip point alert signal based on the thresholds set by itsalwerthysteresis[1:0] and itsalertthreshon[7:0] pins; the alert signal will be asserted when temp on the die crosses the threshold set by itsalertthreshon[7:0] bits, when temp goes down on the die, the alert signal also gets deasserted.",
+                    "mode": "RO",
+                    "name": "TSotstemperaturealrt"
+                },
+                {
+                    "altname": "TS_TEMPERATURE_VALID",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Valid pulse for temperature sampling (when it is 1, temp reading is valid)",
+                    "mode": "RO",
+                    "name": "TSotstemperaturevalid"
+                },
+                {
+                    "altname": "TS_TEMPERATURE",
+                    "bit_lsb": 0,
+                    "bit_msb": 8,
+                    "description": "9 bit temperature reading Where 0 = -50 C, resolution of 0.5 C",
+                    "mode": "RO",
+                    "name": "TSotstemperature"
+                }
+            ]
+        },
+        "pl.PluVID": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VID_PROCESS_METRIC",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "8-bit process metric used by software to determine proper VIDValue",
+                    "mode": "RO",
+                    "name": "VIDProcessMetric"
+                },
+                {
+                    "altname": "VID_ENABLE",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Under ideal conditions, this will Enable VID outputs.  However, in B0 Stepping of NFP-6xxx, writing to this bit has no effect.  VID outputs will remain enabled at all times after powering up the chip.",
+                    "mode": "RW",
+                    "name": "VIDEnable"
+                },
+                {
+                    "altname": "VID_VALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "VID Control Bus Value: After POWERGOOD1 is asserted, VIDValue samples value seen on VID pins for 16 clock cycles and then turns on VIDEnable = 1. VID pins will only be sampled during this initial period.",
+                    "mode": "RW",
+                    "name": "VIDValue"
+                }
+            ]
+        },
+        "pl.SpiDrive": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SPI_PUP_DRV",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Driver pull up strength for all SPI pins.",
+                    "mode": "RW",
+                    "name": "spi_pup_drv"
+                },
+                {
+                    "altname": "SPI_PDN_DRV",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Driver pull down strength for all SPI pins.",
+                    "mode": "RW",
+                    "name": "spi_pdn_drv"
+                }
+            ]
+        },
+        "pl.SpiRxEnb": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TEST_BACKUP3_RCVENB",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Buffer input enable for test backup pins.",
+                    "mode": "RW",
+                    "name": "test_backup3_rcvenb"
+                },
+                {
+                    "altname": "TEST_BACKUP2_RCVENB",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Buffer input enable for test backup pins.",
+                    "mode": "RW",
+                    "name": "test_backup2_rcvenb"
+                },
+                {
+                    "altname": "TEST_BACKUP1_RCVENB",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Buffer input enable for test backup pins.",
+                    "mode": "RW",
+                    "name": "test_backup1_rcvenb"
+                },
+                {
+                    "altname": "TEST_BACKUP0_RCVENB",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Buffer input enable for test backup pins.",
+                    "mode": "RW",
+                    "name": "test_backup0_rcvenb"
+                },
+                {
+                    "altname": "SR_TX_RCVENB",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "Buffer input enable for Serial port pins (0: on, 1: off).",
+                    "mode": "RW",
+                    "name": "sr_tx_rcvenb"
+                },
+                {
+                    "altname": "SR_RX_RCVENB",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "Buffer input enable for Serial port pins (0: on, 1: off).",
+                    "mode": "RW",
+                    "name": "sr_rx_rcvenb"
+                },
+                {
+                    "altname": "SPIX_SEL3_RCVENB",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spix_sel3_rcvenb"
+                },
+                {
+                    "altname": "SPIX_SEL2_RCVENB",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spix_sel2_rcvenb"
+                },
+                {
+                    "altname": "SPIX_SEL1_RCVENB",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spix_sel1_rcvenb"
+                },
+                {
+                    "altname": "SPIX_HOLD_L_RCVENB",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spix_hold_l_rcvenb"
+                },
+                {
+                    "altname": "SPIX_D3_RCVENB",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spix_d3_rcvenb"
+                },
+                {
+                    "altname": "SPIX_D2_RCVENB",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spix_d2_rcvenb"
+                },
+                {
+                    "altname": "SPI3_SCK_RCVENB",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi3_sck_rcvenb"
+                },
+                {
+                    "altname": "SPI3_MOSI_RCVENB",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi3_mosi_rcvenb"
+                },
+                {
+                    "altname": "SPI2_SCK_RCVENB",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi2_sck_rcvenb"
+                },
+                {
+                    "altname": "SPI2_MOSI_RCVENB",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi2_mosi_rcvenb"
+                },
+                {
+                    "altname": "SPI1_CFG_SEL_RCVENB",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi1_cfg_sel_rcvenb"
+                },
+                {
+                    "altname": "SPI1_CFG_SCK_RCVENB",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi1_cfg_sck_rcvenb"
+                },
+                {
+                    "altname": "SPI1_CFG_MOSI_RCVENB",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi1_cfg_mosi_rcvenb"
+                },
+                {
+                    "altname": "SPI1_CFG_MISO_RCVENB",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi1_cfg_miso_rcvenb"
+                },
+                {
+                    "altname": "SPI0_SEL_RCVENB",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi0_sel_rcvenb"
+                },
+                {
+                    "altname": "SPI0_SCK_RCVENB",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi0_sck_rcvenb"
+                },
+                {
+                    "altname": "SPI0_MOSI_RCVENB",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi0_mosi_rcvenb"
+                },
+                {
+                    "altname": "SPI0_MISO_RCVENB",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Buffer input enable for SPI pins.",
+                    "mode": "RW",
+                    "name": "spi0_miso_rcvenb"
+                }
+            ]
+        },
+        "pl.SrTestTxEnb": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TEST_BACKUP3_OENB",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Buffer output enable for backup3 pin.",
+                    "mode": "RW",
+                    "name": "test_backup3_oenb"
+                },
+                {
+                    "altname": "TEST_BACKUP2_OENB",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Buffer output enable for backup2 pin.",
+                    "mode": "RW",
+                    "name": "test_backup2_oenb"
+                },
+                {
+                    "altname": "TEST_BACKUP1_OENB",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Buffer output enable for backup1 pin.",
+                    "mode": "RW",
+                    "name": "test_backup1_oenb"
+                },
+                {
+                    "altname": "TEST_BACKUP0_OENB",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Buffer output enable for backup0 pin.",
+                    "mode": "RW",
+                    "name": "test_backup0_oenb"
+                },
+                {
+                    "altname": "SR_TX_OENB",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Buffer output enable for Serial port (1: off, 0: on).",
+                    "mode": "RW",
+                    "name": "sr_tx_oenb"
+                },
+                {
+                    "altname": "SR_RX_OENB",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Buffer output enable for Serial port (1: off, 0: on).",
+                    "mode": "RW",
+                    "name": "sr_rx_oenb"
+                }
+            ]
+        },
+        "pl.VidControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VID_WK_POLARITY",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Weak pull polarity for VID pins.",
+                    "mode": "RW",
+                    "name": "vid_wk_polarity"
+                },
+                {
+                    "altname": "VID_WK_PULL_EN",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Weak pull enable for VID pins.",
+                    "mode": "RW",
+                    "name": "vid_wk_pull_en"
+                },
+                {
+                    "altname": "VID_PDN_DRV_RCOMP",
+                    "bit_lsb": 8,
+                    "bit_msb": 13,
+                    "description": "VID pins pull down drive strength.",
+                    "mode": "RW",
+                    "name": "vid_pdn_drv_rcomp"
+                },
+                {
+                    "altname": "VID_PUP_DRV_RCOMP",
+                    "bit_lsb": 2,
+                    "bit_msb": 7,
+                    "description": "VID pins pull up drive strength.",
+                    "mode": "RW",
+                    "name": "vid_pup_drv_rcomp"
+                },
+                {
+                    "altname": "VID_OPENDRN",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Open drain enable for VID pins.",
+                    "mode": "RW",
+                    "name": "vid_opendrn"
+                },
+                {
+                    "altname": "VID_FORCE_TRISTATEB",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Tri-state enable for VID pins.",
+                    "mode": "RW",
+                    "name": "vid_force_tristateb"
+                }
+            ]
+        }
+    }
+}

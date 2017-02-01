@@ -1,0 +1,94 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "me_island.MEGUStore2Map": {
+            "0x00000000": {
+                "altname": "MEG0_USTORE_ECC",
+                "description": "ECC for ME Group0 UStore, Implemented using ecc_monitor8 macro.",
+                "name": "MEG0UStoreECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_8",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "MEG1_USTORE_ECC",
+                "description": "ECC for ME Group1 UStore, Implemented using ecc_monitor8 macro.",
+                "name": "MEG1UStoreECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_8",
+                "type": "regmap"
+            }
+        },
+        "me_island.MEGUStore3Map": {
+            "0x00000000": {
+                "altname": "MEG0_USTORE_ECC",
+                "description": "ECC for ME Group0 UStore, Implemented using ecc_monitor8 macro.",
+                "name": "MEG0UStoreECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_8",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "MEG1_USTORE_ECC",
+                "description": "ECC for ME Group1 UStore, Implemented using ecc_monitor8 macro.",
+                "name": "MEG1UStoreECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_8",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "MEG2_USTORE_ECC",
+                "description": "ECC for ME Group2 UStore, Implemented using ecc_monitor8 macro.",
+                "name": "MEG2UStoreECC",
+                "ptr": "peripheral_ecc_monitor.ECCControl_8",
+                "type": "regmap"
+            }
+        },
+        "me_island.MeIsldXpbMap": {
+            "0x00000000": {
+                "altname": "CTM_XPB",
+                "description": "Cluster Target Memory XPB Address Map",
+                "name": "CTMXpbMap",
+                "ptr": "mu.CTMXpbMap",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "ISLAND_MSTR_BRIDGE",
+                "description": "Island Master Bridge XPB Address Map",
+                "name": "IMBXpbMap",
+                "ptr": "island_master_bridge.IMBxpb",
+                "type": "regmap"
+            },
+            "0x00050000": {
+                "altname": "CLS_XPB",
+                "description": "Cluster Scratch XPB Address Map",
+                "name": "ClusterScratchXPB",
+                "ptr": "cluster_scratch.ClusterScratchXPB",
+                "type": "regmap"
+            },
+            "0x002a0000": {
+                "altname": "MEG_USTORE3",
+                "description": "ME Group UStore ECC Monitor Address Map",
+                "name": "MEGUStore3Map",
+                "ptr": "me_island.MEGUStore3Map",
+                "type": "regmap"
+            }
+        },
+        "me_island.MeIsldXpbmMap": {
+            "0x00000000": {
+                "altname": "ME_ISLAND_OVL_XPBM",
+                "description": "ME Island Overlay XPB Address Map",
+                "name": "Overlay",
+                "ptr": "island_overlay.IslandOverlayMap",
+                "type": "regmap"
+            },
+            "0x00060000": {
+                "altname": "ME_ISLAND_XPB",
+                "description": "ME Island XPB Address Map",
+                "name": "Island",
+                "ptr": "me_island.MeIsldXpbMap",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

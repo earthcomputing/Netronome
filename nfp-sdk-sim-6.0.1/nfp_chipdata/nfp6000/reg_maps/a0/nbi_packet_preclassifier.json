@@ -1,0 +1,1351 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "nbi_packet_preclassifier.NbiPreXPBCharacterization": {
+            "0x00000004": {
+                "altname": "CFG",
+                "description": "Configuration of characterization",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Config",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharCfg",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "TCAMTAGCTL%d",
+                "description": "Configuration of Ethernet Tcam Tag %d control",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "TcamTagControl%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharEnetTcamTagCtrl",
+                "repeat1": 2,
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "TCAMTAG%d",
+                "description": "Configuration of Ethernet Tcam Tag %d mask and match values",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "TcamTag%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharEnetTcamTag",
+                "repeat1": 2,
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "SEQUENCE",
+                "description": "Sequence number of last packet characterized - internal use only",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Sequence",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharSequence",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "TABLESET",
+                "description": "Table set configuration and status",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "TableSet",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharTableSet",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "OVERRIDE",
+                "description": "Configuration of characterization override - internal use only",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Override",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharOverride",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "OVPORT",
+                "description": "Configuration of characterization override - internal use only",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "OverridePort",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharOverridePort",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "OVFLAG",
+                "description": "Configuration of characterization override - internal use only",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "OverrideFlags",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharOverrideFlags",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "OVOFFSET",
+                "description": "Configuration of characterization override - internal use only",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "OverrideOffsets",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharOverrideOffsets",
+                "type": "reg"
+            },
+            "0x00000200": {
+                "altname": "TCAMMATCHLOW%d",
+                "description": "Results TCAM match low for entry %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "TcamMatchLow%d",
+                "offinc1": "0x00000010",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharResultTcamMatchLo",
+                "repeat1": 7,
+                "type": "reg"
+            },
+            "0x00000204": {
+                "altname": "TCAMMATCHHIGH%d",
+                "description": "Results TCAM match high for entry %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "TcamMatchHigh%d",
+                "offinc1": "0x00000010",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharResultTcamMatchHi",
+                "repeat1": 7,
+                "type": "reg"
+            },
+            "0x00000208": {
+                "altname": "TCAMMASKLOW%d",
+                "description": "Results TCAM mask low for entry %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "TcamMaskLow%d",
+                "offinc1": "0x00000010",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharResultTcamMaskLo",
+                "repeat1": 7,
+                "type": "reg"
+            },
+            "0x0000020c": {
+                "altname": "TCAMMASKHIGH%d",
+                "description": "Results TCAM mask high for entry %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "TcamMaskHigh%d",
+                "offinc1": "0x00000010",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharResultTcamMaskHi",
+                "repeat1": 7,
+                "type": "reg"
+            },
+            "0x00000300": {
+                "altname": "TCAMMAPPING%d",
+                "description": "Picoengine start data for a match with TCAM %d of characterization results",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "TcamMapping%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharResultTcamMapping",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000400": {
+                "altname": "PORTCFG%d",
+                "description": "Characterization port config %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PortCfg%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPreCharPortCfg",
+                "repeat1": 128,
+                "type": "reg"
+            }
+        },
+        "nbi_packet_preclassifier.NbiPreXPBPicoengine": {
+            "0x00000004": {
+                "altname": "SETUP",
+                "description": "Initial state of picoengine CSRs when next allocated",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PicoengineSetup",
+                "ptr": "nbi_packet_preclassifier.NbiPrePicoengSetup",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "RUNCONTROL",
+                "description": "Controls execution of the picoengines",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PicoengineRunControl",
+                "ptr": "nbi_packet_preclassifier.NbiPrePicoengRunControl",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "TBLEXT",
+                "description": "Extension of table configuration",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "TableExtend",
+                "ptr": "nbi_packet_preclassifier.NbiPrePicoengTableConfigExtend",
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "ACTSET0L",
+                "description": "Bit-mask indicating which of the first 32 picoengines are actively classifying (i.e. neither ready with finished classification nor idle) using table set 0",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ActiveSet0Low",
+                "ptr": "nbi_packet_preclassifier.NbiPrePicoengActiveLow",
+                "type": "reg"
+            },
+            "0x00000084": {
+                "altname": "ACTSET0H",
+                "description": "Bit-mask indicating which of the last 16 picoengines are actively classifying (i.e. neither ready with finished classification nor idle) using table set 0",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ActiveSet0High",
+                "ptr": "nbi_packet_preclassifier.NbiPrePicoengActiveHigh",
+                "type": "reg"
+            },
+            "0x00000088": {
+                "altname": "ACTSET1L",
+                "description": "Bit-mask indicating which of the first 32 picoengines are actively classifying (i.e. neither ready with finished classification nor idle) using table set 1",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ActiveSet1Low",
+                "ptr": "nbi_packet_preclassifier.NbiPrePicoengActiveLow",
+                "type": "reg"
+            },
+            "0x0000008c": {
+                "altname": "ACTSET1H",
+                "description": "Bit-mask indicating which of the last 16 picoengines are actively classifying (i.e. neither ready with finished classification nor idle) using table set 1",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ActiveSet1High",
+                "ptr": "nbi_packet_preclassifier.NbiPrePicoengActiveHigh",
+                "type": "reg"
+            },
+            "0x000000c0": {
+                "altname": "CLASSSMALL",
+                "description": "Statistics register for packets of 256 bytes or fewer that have completed classification",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ClassifiedSmall",
+                "ptr": "nbi_packet_preclassifier.NbiPreClassifiedSmallStatistics",
+                "type": "reg"
+            },
+            "0x000000c4": {
+                "altname": "CLASSLARGE",
+                "description": "Statistics register for packets of larger than 256 bytes that have completed classification",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ClassifiedLarge",
+                "ptr": "nbi_packet_preclassifier.NbiPreClassifiedLargeStatistics",
+                "type": "reg"
+            },
+            "0x000000c8": {
+                "altname": "CLASSSTUNN",
+                "description": "Statistics register for packets that have been recirculated as tunneled as part of their classification",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Tunnel",
+                "ptr": "nbi_packet_preclassifier.NbiPreTunnelStatistics",
+                "type": "reg"
+            },
+            "0x00000100": {
+                "altname": "LOCALDATA%d",
+                "description": "Local SRAM data table description %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "LocalData%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPreLocalDataTable",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000120": {
+                "altname": "LOCALINST%d",
+                "description": "Local SRAM instruction table description %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "LocalInst%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPreLocalInstTable",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000140": {
+                "altname": "SHAREDDATA%d",
+                "description": "Shared SRAM data table description %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "SharedData%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPreSharedDataTable",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000160": {
+                "altname": "SHAREDINST%d",
+                "description": "Shared SRAM instruction table description %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "SharedInst%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPreSharedInstTable",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000180": {
+                "altname": "MULTCYCLE%dSET0",
+                "description": "Multicycle lookup table description %d for table set 0",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MulticycleTable%dSet0",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPreMulticycleTable",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x000001a0": {
+                "altname": "MULTCYCLE%dSET1",
+                "description": "Multicycle lookup table description %d for table set 1",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MulticycleTable%dSet1",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPreMulticycleTable",
+                "repeat1": 8,
+                "type": "reg"
+            }
+        },
+        "nbi_packet_preclassifier.NbiPreXPBPolicer": {
+            "0x00000000": {
+                "altname": "ACC%d",
+                "description": "Accumulator for policer %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Accumulator%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPrePoliceAccumulator",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "RATE%d",
+                "description": "Credit rate adjuster for policer %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CreditRate%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPrePoliceCreditRate",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "CMP%d",
+                "description": "Policing comparator %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Comparator%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPrePoliceComparator",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "CNFG",
+                "description": "Policing configuration",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Config",
+                "ptr": "nbi_packet_preclassifier.NbiPrePoliceConfig",
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "SEQUENCE%d",
+                "description": "Picoengine sequencer %d",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Sequence%d",
+                "offinc1": "0x00000004",
+                "ptr": "nbi_packet_preclassifier.NbiPreSequence",
+                "repeat1": 8,
+                "type": "reg"
+            }
+        },
+        "nbi_packet_preclassifier.PreclassifierXPBs": {
+            "0x00000000": {
+                "altname": "PICOENGINE",
+                "description": "Picoengine control",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Picoengine",
+                "ptr": "nbi_packet_preclassifier.NbiPreXPBPicoengine",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "CHARACTERIZATION",
+                "description": "Hardware characterization pipeline configuration",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Characterization",
+                "ptr": "nbi_packet_preclassifier.NbiPreXPBCharacterization",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "POLICER",
+                "description": "Policer and sequencer configuration and status",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "PolicerSequencer",
+                "ptr": "nbi_packet_preclassifier.NbiPreXPBPolicer",
+                "type": "regmap"
+            },
+            "0x000d0000": {
+                "altname": "LOCALTABLEECC",
+                "description": "ECC monitor for local tables.Implemented using ecc_monitor12 macro.",
+                "name": "LocalTableECC",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            },
+            "0x000e0000": {
+                "altname": "SHAREDTABLEECC",
+                "description": "ECC monitor for shared tables. Implemented using ecc_monitor2 macro.",
+                "name": "SharedTableECC",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            },
+            "0x000f0000": {
+                "altname": "PACKETSRAMECC",
+                "description": "ECC for packet FIFO SRAM. Implemented using ecc_monitor8 macro.",
+                "name": "PacketSRAMECC",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {
+        "nbi_packet_preclassifier.NbiPreCharCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MAXDEPTH",
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Maximum depth of characterization for packets on minipacket bus minus one, in units of 16 bytes - a setting of zero is taken to mean 15",
+                    "mode": "RW",
+                    "name": "MaxDepth"
+                },
+                {
+                    "altname": "EXTENDSKIP",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Set to make the initial skip provided by ports to be four bits, using user_type[1] as the most significant bit; if clear, only a 3-bit initial skip is used",
+                    "mode": "RW",
+                    "name": "ExtendInitialSkip"
+                },
+                {
+                    "altname": "INNERDISABLE",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "Set to disable inner protocol analysis for any packets that are characterized as IPv4/IPv6/MPLS etc; no further analysis is done beyond that point",
+                    "mode": "RW",
+                    "name": "DisableInner"
+                },
+                {
+                    "altname": "PPPDISABLE",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Set to disable PPP analysis for any packets that are characterized as PPP; no further analysis is done beyond that point",
+                    "mode": "RW",
+                    "name": "DisablePPP"
+                },
+                {
+                    "altname": "ETHDISABLE",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Set to disable ethernet analysis for any packets that are characterized as Ethernet; no further analysis is done beyond that point",
+                    "mode": "RW",
+                    "name": "DisableEthernet"
+                },
+                {
+                    "altname": "PPPADDSKP",
+                    "bit_lsb": 20,
+                    "bit_msb": 21,
+                    "description": "Number of 16-bit octets to skip for PPP packets from start to protocol field",
+                    "mode": "RW",
+                    "name": "PPPAddressSkip"
+                },
+                {
+                    "altname": "GFPCTLIGN",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "Set to ignore ",
+                    "mode": "RW",
+                    "name": "GFPControlIgn"
+                },
+                {
+                    "altname": "GFPBARK",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Set to enable Barker scrambling on GFP headers",
+                    "mode": "RW",
+                    "name": "GFPBarker"
+                },
+                {
+                    "altname": "GFPEXT",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Set to enable linear extension on GFP-F",
+                    "mode": "RW",
+                    "name": "GFPExtension"
+                },
+                {
+                    "altname": "PBBENABLE",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Set to enable PBB detection (0x88a8, X, 0x88e7) in Ethernet packets",
+                    "mode": "RW",
+                    "name": "PBBEnable"
+                },
+                {
+                    "altname": "INITTAGEN",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Set to enable TCAM0 as an initial tag; the port's user_type[0] bit must also be set for packets on the port to use TCAM0 as an initial tag",
+                    "mode": "RW",
+                    "name": "EnableInitialTag"
+                },
+                {
+                    "altname": "MAXVLANS",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Maximum number of VLAN tags permitted, from 0 to 3",
+                    "mode": "RW",
+                    "name": "MaxVlans"
+                },
+                {
+                    "altname": "INITIALTAGSIZE",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Number of 16-bit words to skip if TCAM0 is used as an initial tag and it matches",
+                    "mode": "RW",
+                    "name": "InitialTagSize"
+                },
+                {
+                    "altname": "PROTSKIP",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Number of 16-bit words to skip after start of Ethernet packet before looking for VLAN tags and other Ethernet Protocol types",
+                    "mode": "RW",
+                    "name": "ProtSkip"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharEnetTcamTag": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MASK",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Mask for ANDing with 16-bit of Ethernet packet data",
+                    "mode": "RW",
+                    "name": "Mask"
+                },
+                {
+                    "altname": "VALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Value to compare 16-bits of the Ethernet packet to after masking",
+                    "mode": "RW",
+                    "name": "Value"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharEnetTcamTagCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "LENGTH",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Number of 16-bit words to skip if the tag matches",
+                    "mode": "RO",
+                    "name": "Length"
+                },
+                {
+                    "altname": "ENABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set to enable use of the TCAM tag in Ethernet packets",
+                    "mode": "RW",
+                    "name": "Enable"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharOverride": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ONESHOT",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Set if characterization override enable should be cleared after it is used once",
+                    "mode": "WO",
+                    "name": "OneShot"
+                },
+                {
+                    "altname": "ENB",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set if characterization override should be used - for internal test purposes only",
+                    "mode": "WO",
+                    "name": "Enable"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharOverrideFlags": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "FLAGS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Value to be used for the 'flags' if characterization override is used for the picoengines",
+                    "mode": "WO",
+                    "name": "Flags"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharOverrideOffsets": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "OFFSETS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Value to be used for the 'offsets' if characterization override is used for the picoengines",
+                    "mode": "WO",
+                    "name": "Offsets"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharOverridePort": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PORT",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Value to be used for the 'port' if characterization override is used for the picoengines",
+                    "mode": "WO",
+                    "name": "Port"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharPortCfg": {
+            "bit_length": 8,
+            "fields": [
+                {
+                    "altname": "USERTYPE",
+                    "bit_lsb": 5,
+                    "bit_msb": 7,
+                    "description": "Logical port type as passed to the output of the hardware characterization",
+                    "mode": "WO",
+                    "name": "UserType"
+                },
+                {
+                    "altname": "SKIP",
+                    "bit_lsb": 2,
+                    "bit_msb": 4,
+                    "description": "Initial number of 16-bits to skip before the packet starts on the logical port; use this to skip any MAC prepend or any proprietary pre-DA/SA tagging for Ethernet packets",
+                    "mode": "WO",
+                    "name": "Skip"
+                },
+                {
+                    "altname": "ANALYSIS",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Type of outer characterization to attempt for packets on the logical port",
+                    "mode": "WO",
+                    "name": "Analysis"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharResultTcamMapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INDEX",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Index to use if MetadataOverride is set",
+                    "mode": "WO",
+                    "name": "Index"
+                },
+                {
+                    "altname": "OVERRIDE",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Set to override the use of the metadata as an index; use index in this register instead",
+                    "mode": "WO",
+                    "name": "Override"
+                },
+                {
+                    "altname": "METADATA",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Which metadata to use as an index for the instruction lookup, unless metadata override is set",
+                    "mode": "WO",
+                    "name": "Metadata"
+                },
+                {
+                    "altname": "TABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Local instruction table to use for initial instructions ",
+                    "mode": "WO",
+                    "name": "Table"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharResultTcamMaskHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mask value for characterization TCAM; compared with the characterization result high 32 bits before comparison with the match high",
+                    "mode": "WO",
+                    "name": "Value"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharResultTcamMaskLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mask value for characterization TCAM; masked with the characterization result low 32 bits before comparison with the match low",
+                    "mode": "WO",
+                    "name": "Value"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharResultTcamMatchHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Match value for characterization TCAM; compared with the characterization result high 32 bits ANDed with the mask",
+                    "mode": "WO",
+                    "name": "Value"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharResultTcamMatchLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Match value for characterization TCAM; compared with the characterization result low 32 bits ANDed with the mask",
+                    "mode": "WO",
+                    "name": "Value"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharSequence": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQNUM",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of packets presented by characterizer to picoengine pool",
+                    "mode": "RO",
+                    "name": "Number"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreCharTableSet": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ONESHOT",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "If asserted, the active table set will be cleared after the next packet utilizes table set 1; for internal use only",
+                    "mode": "RW",
+                    "name": "OneShot"
+                },
+                {
+                    "altname": "CHINUSE",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "One bit per table set indicating that the characterizer is actively working on packets belonging to those table sets",
+                    "mode": "RO",
+                    "name": "CharacterizerInUse"
+                },
+                {
+                    "altname": "PEINUSE",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "One bit per table set indicating that picoengines are actively working on packets belonging to those table sets",
+                    "mode": "RO",
+                    "name": "PicoengineInUse"
+                },
+                {
+                    "altname": "ACTIVE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Table set to use for packets that complete characterization",
+                    "mode": "RW",
+                    "name": "Active"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreClassifiedLargeStatistics": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SATURATED",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "If set then the number of 'large' packets that have fully completed classification (and passed to DMA) since the last read of this register exceeds 0x7fffffff",
+                    "mode": "RC",
+                    "name": "Saturated"
+                },
+                {
+                    "altname": "COUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 30,
+                    "description": "Count of 'large' packets that have fully completed classification (and passed to DMA) since the last read of this register",
+                    "mode": "RC",
+                    "name": "Count"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreClassifiedSmallStatistics": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SATURATED",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "If set then the number of 'small' packets that have fully completed classification (and passed to DMA) since the last read of this register exceeds 0x7fffffff",
+                    "mode": "RC",
+                    "name": "Saturated"
+                },
+                {
+                    "altname": "COUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 30,
+                    "description": "Count of 'small' packets that have fully completed classification (and passed to DMA) since the last read of this register",
+                    "mode": "RC",
+                    "name": "Count"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreLocalDataTable": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BASE1",
+                    "bit_lsb": 22,
+                    "bit_msb": 31,
+                    "description": "Base address for table set 1 accesses",
+                    "mode": "WO",
+                    "name": "Base1"
+                },
+                {
+                    "altname": "BASE0",
+                    "bit_lsb": 12,
+                    "bit_msb": 21,
+                    "description": "Base address for table set 0 accesses",
+                    "mode": "WO",
+                    "name": "Base0"
+                },
+                {
+                    "altname": "TABLESIZE",
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "Number of entries in the table - effects masking of input data, and offset into the table",
+                    "mode": "WO",
+                    "name": "TableSize"
+                },
+                {
+                    "altname": "SELECT",
+                    "bit_lsb": 4,
+                    "bit_msb": 8,
+                    "description": "Starting bit divide by 2 for determining offset into table for an access",
+                    "mode": "WO",
+                    "name": "Select"
+                },
+                {
+                    "altname": "LOOKUP",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Method of interpreting the SRAM data read, to produce a result for the lookup",
+                    "mode": "WO",
+                    "name": "Lookup"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreLocalInstTable": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BASE1",
+                    "bit_lsb": 22,
+                    "bit_msb": 31,
+                    "description": "Base address for table set 1 accesses",
+                    "mode": "WO",
+                    "name": "Base1"
+                },
+                {
+                    "altname": "BASE0",
+                    "bit_lsb": 12,
+                    "bit_msb": 21,
+                    "description": "Base address for table set 0 accesses",
+                    "mode": "WO",
+                    "name": "Base0"
+                },
+                {
+                    "altname": "TABLESIZE",
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "Number of entries in the table - effects masking of input data, and offset into the table",
+                    "mode": "WO",
+                    "name": "TableSize"
+                },
+                {
+                    "altname": "SELECT",
+                    "bit_lsb": 4,
+                    "bit_msb": 8,
+                    "description": "Starting bit divide by 2 for determining offset into table for an access",
+                    "mode": "WO",
+                    "name": "Select"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreMulticycleTable": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "32-bit table value (equivalent to MU lookup engine result) to present to MU lookup engine with the full 64-bit data",
+                    "mode": "WO",
+                    "name": "Table"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPrePicoengActiveHigh": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "STATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "One bit per picoengine indicating that the picoengine is actively classifying with a particular TableSet value; actively classifying means not idle and not presenting a result",
+                    "mode": "RO",
+                    "name": "Status"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPrePicoengActiveLow": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "STATUS",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "One bit per picoengine indicating that the picoengine is actively classifying with a particular TableSet value; actively classifying means not idle and not presenting a result",
+                    "mode": "RO",
+                    "name": "Status"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPrePicoengRunControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SMEM",
+                    "bit_lsb": 28,
+                    "bit_msb": 29,
+                    "description": "One bit per picoengine shared memory to enable the power",
+                    "mode": "RW",
+                    "name": "SMem"
+                },
+                {
+                    "altname": "GRPMEM",
+                    "bit_lsb": 16,
+                    "bit_msb": 27,
+                    "description": "One bit per picoengine group to enable the power to the memory in those groups",
+                    "mode": "RW",
+                    "name": "GroupMem"
+                },
+                {
+                    "altname": "GRPCLK",
+                    "bit_lsb": 4,
+                    "bit_msb": 15,
+                    "description": "One bit per picoengine group to enable the clocks to those groups",
+                    "mode": "RW",
+                    "name": "GroupClock"
+                },
+                {
+                    "altname": "IGNRES",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "If set, ignore result of any picoengine completion (i.e. do not pass to tunnel or the NBI DMA on finish)",
+                    "mode": "RW",
+                    "name": "IgnoreResult"
+                },
+                {
+                    "altname": "ALLOC",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Enable allocation of picoengines",
+                    "mode": "RW",
+                    "name": "Alloc"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPrePicoengSetup": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HASHPREMULT",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Set the initial value for the picoengine hash preaddition of data to residue on hash generation",
+                    "mode": "RW",
+                    "name": "HashPremult"
+                },
+                {
+                    "altname": "HASHSBOXEN",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Set the initial value for the picoengine hash enabling of SBOXes",
+                    "mode": "RW",
+                    "name": "HashSboxEnable"
+                },
+                {
+                    "altname": "HASHSBOX",
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Set the initial value for the picoengine hash number of SBOXes to use",
+                    "mode": "RW",
+                    "name": "HashSbox"
+                },
+                {
+                    "altname": "HASHMULT",
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Set the initial value for the picoengine hash multiplier (for enable multiply-mod-2 by 4, 36, 53, 63)",
+                    "mode": "RW",
+                    "name": "HashMult"
+                },
+                {
+                    "altname": "PRED",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "Set to specify amount of packet data prefetch to do; can be changed by the picoengine as it runs",
+                    "mode": "RW",
+                    "name": "Predicate"
+                },
+                {
+                    "altname": "PKTPREF",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Set to specify amount of packet data prefetch to do; can be changed by the picoengine as it runs",
+                    "mode": "RW",
+                    "name": "PktPref"
+                },
+                {
+                    "altname": "SEQREPL",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Set to replace metadata octets[2..3] or octets[2..5] with sequence number from a pool specified by metadata[1]",
+                    "mode": "RW",
+                    "name": "SequenceReplace"
+                },
+                {
+                    "altname": "PKTPTROP",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Initial value for picoengine to use for the default packet pointer operation for pkt ALU operations",
+                    "mode": "RW",
+                    "name": "PktPtrOp"
+                },
+                {
+                    "altname": "FETCH256",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Initial code load should be a 256-bit fetch; this is also loaded into the picoengine (BUT NOT USED THERE)",
+                    "mode": "RW",
+                    "name": "Fetch256"
+                },
+                {
+                    "altname": "STACKPTR",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Initial value for picoengine execution for the stack pointer; this is used whenever a picoengine program is initiated",
+                    "mode": "RW",
+                    "name": "StackPtr"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPrePicoengTableConfigExtend": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "LOOKUPEXT",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Top bit of table lookup, used when performing LMEM or SMEM table configurations through the XPB",
+                    "mode": "RW",
+                    "name": "LookupExt"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPrePoliceAccumulator": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SATURATE",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "If set then the credit addition saturates at 0x7fffffff when a picoengine policing operation is performed; if clear then the credit addition wraps from 0x7fffffff to 0",
+                    "mode": "RW",
+                    "name": "Saturate"
+                },
+                {
+                    "altname": "CREDIT",
+                    "bit_lsb": 0,
+                    "bit_msb": 30,
+                    "description": "Current credit for the policing accumulator",
+                    "mode": "RW",
+                    "name": "Credit"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPrePoliceComparator": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "VALUE",
+                    "bit_lsb": 0,
+                    "bit_msb": 30,
+                    "description": "Value to compare against the result of a policing operation",
+                    "mode": "RW",
+                    "name": "Value"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPrePoliceConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLKDIV",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Clock divider value, effects rate that credit 'clock' runs",
+                    "mode": "RW",
+                    "name": "ClockDivide"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPrePoliceCreditRate": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SHIFT",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "If set then the credit subtraction is by 'Credit'*256; if clear then the credit subtraction is by just 'Credit'. (Note the binary negation described in the Credit field occurs after this credit shift)",
+                    "mode": "RW",
+                    "name": "CreditShift"
+                },
+                {
+                    "altname": "CREDIT",
+                    "bit_lsb": 20,
+                    "bit_msb": 30,
+                    "description": "Value to subtract from credit at 'interval', optionally shifted left by 8. (Note that subtraction is performed with addition of ~Credit, so a value field of 0 indicates subtract 1)",
+                    "mode": "RW",
+                    "name": "Credit"
+                },
+                {
+                    "altname": "INTERVAL",
+                    "bit_lsb": 0,
+                    "bit_msb": 19,
+                    "description": "Interval between credit subtractions; if 0 then credit is not subtracted from the accumulator",
+                    "mode": "RW",
+                    "name": "Interval"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreSequence": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SEQUENCE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Sequence number to provide for next packet",
+                    "mode": "RW",
+                    "name": "Sequence"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreSharedDataTable": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BASE1",
+                    "bit_lsb": 22,
+                    "bit_msb": 31,
+                    "description": "Base address for table set 1 accesses",
+                    "mode": "WO",
+                    "name": "Base1"
+                },
+                {
+                    "altname": "BASE0",
+                    "bit_lsb": 12,
+                    "bit_msb": 21,
+                    "description": "Base address for table set 0 accesses",
+                    "mode": "WO",
+                    "name": "Base0"
+                },
+                {
+                    "altname": "TABLESIZE",
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "Number of entries in the table - effects masking of input data, and offset into the table",
+                    "mode": "WO",
+                    "name": "TableSize"
+                },
+                {
+                    "altname": "SELECT",
+                    "bit_lsb": 4,
+                    "bit_msb": 8,
+                    "description": "Starting bit divide by 2 for determining offset into table for an access",
+                    "mode": "WO",
+                    "name": "Select"
+                },
+                {
+                    "altname": "LOOKUP",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Method of interpreting the SRAM data read, to produce a result for the lookup",
+                    "mode": "WO",
+                    "name": "Lookup"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreSharedInstTable": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BASE1",
+                    "bit_lsb": 22,
+                    "bit_msb": 31,
+                    "description": "Base address for table set 1 accesses",
+                    "mode": "WO",
+                    "name": "Base1"
+                },
+                {
+                    "altname": "BASE0",
+                    "bit_lsb": 12,
+                    "bit_msb": 21,
+                    "description": "Base address for table set 0 accesses",
+                    "mode": "WO",
+                    "name": "Base0"
+                },
+                {
+                    "altname": "TABLESIZE",
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "Number of entries in the table - effects masking of input data, and offset into the table",
+                    "mode": "WO",
+                    "name": "TableSize"
+                },
+                {
+                    "altname": "SELECT",
+                    "bit_lsb": 4,
+                    "bit_msb": 8,
+                    "description": "Starting bit divide by 2 for determining offset into table for an access",
+                    "mode": "WO",
+                    "name": "Select"
+                }
+            ]
+        },
+        "nbi_packet_preclassifier.NbiPreTunnelStatistics": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "SATURATED",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "If set then the number of packets passed through the tunnel path since the last read of this register exceeds 0x7fffffff",
+                    "mode": "RC",
+                    "name": "Saturated"
+                },
+                {
+                    "altname": "COUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 30,
+                    "description": "Count of packets passed through the tunnel path since the last read of this register",
+                    "mode": "RC",
+                    "name": "Count"
+                }
+            ]
+        }
+    }
+}

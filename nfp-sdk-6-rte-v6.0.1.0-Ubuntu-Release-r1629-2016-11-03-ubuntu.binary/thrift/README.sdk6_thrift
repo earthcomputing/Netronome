@@ -1,0 +1,30 @@
+Copyright (C) 2016 Netronome Systems, Inc.  All rights reserved.
+
+In this directory you will find Thrift interface definition file sdk6_rte.thrift
+which can be used as an input to the Thrift compiler to generate code to be used
+to easily build RPC clients in any of the supported programming languages that 
+can communicate with the SDK6 RTE server.
+
+For all the information on supported platforms, supported programming 
+languages and to download Thrift compiler please visit:
+    https://thrift.apache.org/
+
+-------------------------------------------------------------------------------
+*** Example client: SDK6 RTE Command Line Interface
+-------------------------------------------------------------------------------
+An example client has implemented in Python and can be found in the client/
+subdirectory. This client is a Command Line Interface which can be used to 
+access all SDK RTE v6.0 server methods.
+
+Instructions to use the example CLI client is as follow:
+    1. Install Python 2.7.x
+    2. Go to https://thrift.apache.org/ to either download compiler (Windows) or
+       source tarball and follow the compile and install instruction for 
+       Thrift 0.9.3 or later
+    3. Generate the Python client libraries:
+            thrift --gen py sdk6_rte.thrift
+    4. Generated python source code will be located newly created gen-py/
+       directory; copy the contents of this directory to where the Python
+       CLI implementation source do is located 
+    5. SDK6 RTE CLI client is now ready for use:
+            python sdk6_rte_cli.py <input arguments>

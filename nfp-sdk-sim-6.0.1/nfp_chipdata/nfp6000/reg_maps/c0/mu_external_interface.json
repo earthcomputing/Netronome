@@ -1,0 +1,140 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "mu_external_interface.MUExtCfgXpb": {
+            "0x00000000": {
+                "altname": "DATA_MOVER",
+                "description": "Data Mover DRAM Config",
+                "name": "ConfigDrams",
+                "ptr": "mu_external_interface.MUExtCfgDrams",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "TCACHE_CFG",
+                "description": "TCache Config - Performance Adjustments",
+                "name": "ConfigPerfTweaks",
+                "ptr": "mu_external_interface.MUExtCfgPerfTweaks",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "mu_external_interface.MUExtCfgDrams": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "PACE_MODE",
+                    "bit_lsb": 28,
+                    "bit_msb": 29,
+                    "description": "Pacemaker Mode: The data mover pacemaker controls how fast read transactions may be submitted to the DDR DRAM Controller. This must be set to 0 (OFF) when the ME core clock is faster than the DDR data rate (i.e. 1.2 GHz NFP with DDR3-1066); and set to 1 (1 transaction every 4 cycles) when the ME core clock is slower than the DDR data rate (i.e. 1.2 GHz NFP with DDR3-1333).  Settings of 0x2 and 0x3 are not recommended, as these settings add additional delay with no additional benefit.",
+                    "mode": "RW",
+                    "name": "PacemkrMode"
+                },
+                {
+                    "altname": "DCACHE_DEPTH",
+                    "bit_lsb": 24,
+                    "bit_msb": 26,
+                    "description": "Dcache Request FIFO Depth: This limits the number of transactions put in flight. For most configurations the default value is correct. However, when the P_CLK is slowed running against fast memory, the number of transactions put in flight into the SDRAM latency must be limited to prevent overrunning the data FIFOs. Note that a setting 0x7 (2 transactions in flight) is always safe.",
+                    "mode": "RW",
+                    "name": "DCacheReqFIFODepth"
+                },
+                {
+                    "altname": "TFAW_DISABLE",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Controls the TFAW Timer within the Data Mover scheduler",
+                    "mode": "RW",
+                    "name": "TfawDisable"
+                },
+                {
+                    "altname": "CHANNELS",
+                    "bit_lsb": 20,
+                    "bit_msb": 22,
+                    "description": "Sets the number and type of DRAM channels and ranks in use.",
+                    "mode": "RW",
+                    "name": "Channels"
+                },
+                {
+                    "altname": "COL_BITS",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "Configures the number fo DRAM column address bits being used",
+                    "mode": "RW",
+                    "name": "Cabits"
+                },
+                {
+                    "altname": "ROW_BITS",
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "Configures the number of DRAM row address bits being used",
+                    "mode": "RW",
+                    "name": "Rabits"
+                },
+                {
+                    "altname": "TO_DWELL",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "When set to N, the Data Mover scheduler will perform N+1 snapshots processing DRAM writes before moving on to DRAM reads.",
+                    "mode": "RW",
+                    "name": "ToDwell"
+                },
+                {
+                    "altname": "FROM_DWELL",
+                    "bit_lsb": 12,
+                    "bit_msb": 13,
+                    "description": "When set to N, the Data Mover scheduler will perform N+1 snapshots processing DRAM reads before moving on to DRAM writes.",
+                    "mode": "RW",
+                    "name": "FromDwell"
+                },
+                {
+                    "altname": "TRC_TIMER",
+                    "bit_lsb": 5,
+                    "bit_msb": 11,
+                    "description": "Programmed to N, this configures the DRAM access scheduler to guarantee N+1 core clock cycles between the issue of accesses to the same bank.  The purpose of this is to mock the TRC parameter of the memories in the scheduling algorithm. N has a range of 0 to 127 and should be set to (TRC/CoreClockPeriod)-1.  This parameter can be approximate, as the actual TRC is configured in the DRAM controller.",
+                    "mode": "RW",
+                    "name": "TRCTimer"
+                },
+                {
+                    "altname": "SNAPSHOT_TIMER",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "If set to N, the DRAM access scheduler will wait a minimum of N*4 clock cycles between snapshots of transaction requests in order to gather reads and writes together.",
+                    "mode": "RW",
+                    "name": "SnapshotTmr"
+                }
+            ]
+        },
+        "mu_external_interface.MUExtCfgPerfTweaks": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "LEVEL_SETS",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Set to enable the one-way function mapping from MU address to cache/DRAM set addressing for memory load balancing",
+                    "mode": "RW",
+                    "name": "LevelSets"
+                },
+                {
+                    "altname": "CHANNEL_LEVEL",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Set to enable the one-way function mapping from MU address to cache/DRAM channel addressing for memory load balancing",
+                    "mode": "RW",
+                    "name": "LvlChans"
+                },
+                {
+                    "altname": "BANK_LEVEL",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set to enable the one-way function mapping from MU address to cache/DRAM bank addressing for memory load balancing",
+                    "mode": "RW",
+                    "name": "LevelBanks"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,148 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "mu_packet_engine.MUPacketEngineAddressMapXpb": {
+            "0x00000000": {
+                "altname": "MU_PE_MEM_CONFIG",
+                "description": "MU PE Memory Configuration ",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MUPEMemConfig",
+                "ptr": "mu_packet_engine.MUPEMemConfig",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "MU_PE_WQ_CONFIG",
+                "description": "MU PE Work Queue Config ",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MUPEWQConfig",
+                "ptr": "mu_packet_engine.MUPEWQConfig",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "MU_PE_CREDITS_%d",
+                "description": "MU PE Credit Buckets ",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MUPECredits%d",
+                "offinc1": "0x00000004",
+                "ptr": "mu_packet_engine.MUPECredits",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "MU_PE_LB_CONFIG",
+                "description": "MU PE LB Config ",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MUPELBConfig",
+                "ptr": "mu_packet_engine.MUPELBConfig",
+                "type": "reg"
+            },
+            "0x00000400": {
+                "altname": "MU_PE_ACTIVE_PACKET_COUNT",
+                "description": "Packet Stats -- Active Packet Count",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MUPEActivePacketCount",
+                "ptr": "mu_packet_engine.MUPEStats",
+                "type": "reg"
+            },
+            "0x00000404": {
+                "altname": "MU_PE_PEAK_PACKET_COUNT",
+                "description": "Packet Stats -- Peak Packet Count",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MUPEPeakPacketCount",
+                "ptr": "mu_packet_engine.MUPEStats",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "mu_packet_engine.MUPECredits": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_PACKET_CREDITS",
+                    "bit_lsb": 16,
+                    "bit_msb": 26,
+                    "description": "Packet Credits ",
+                    "mode": "RO",
+                    "name": "MUPEPacketCredits"
+                },
+                {
+                    "altname": "MU_PE_BUFFER_CREDITS",
+                    "bit_lsb": 0,
+                    "bit_msb": 8,
+                    "description": "Buffer Credits ",
+                    "mode": "RO",
+                    "name": "MUPEBufferCredits"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPELBConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_LB_CONFIG",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Load Balancer Config.",
+                    "mode": "RW",
+                    "name": "MUPELBConfig"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEMemConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_MEM_CONFIG",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Packet Mem Config",
+                    "mode": "RW",
+                    "name": "MUPEMemConfig"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEStats": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_STAT",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "Packet Count Stats",
+                    "mode": "RO",
+                    "name": "Stats"
+                }
+            ]
+        },
+        "mu_packet_engine.MUPEWQConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MU_PE_WQ_CONFIG",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Work Queue Configuration",
+                    "mode": "RW",
+                    "name": "MUPEWQConfig"
+                }
+            ]
+        }
+    }
+}

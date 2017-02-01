@@ -1,0 +1,1844 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: eca5ba006ef4"
+    ],
+    "maps": {
+        "macle_eth_pcs100.EthPcs100": {
+            "0x00000000": {
+                "altname": "ETH_PCS_100CTL_1",
+                "description": "PCS Control.",
+                "name": "EthPcs100Ctl1",
+                "ptr": "macle_eth_pcs100.EthPcs100Ctl1",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "ETH_PCS_100STATUS_1",
+                "description": "PCS Status.",
+                "name": "EthPcs100Status1",
+                "ptr": "macle_eth_pcs100.EthPcs100Status1",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "ETH_PCS_100DEVICE_ID_0",
+                "description": "PHY DevId constant always 0.",
+                "name": "EthPcs100DeviceId0",
+                "ptr": "macle_eth_pcs100.EthPcs100DeviceId0",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "ETH_PCS_100DEVICE_ID_1",
+                "description": "PHY DevId constant always 0.",
+                "name": "EthPcs100DeviceId1",
+                "ptr": "macle_eth_pcs100.EthPcs100DeviceId1",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "ETH_PCS_100SPEED_ABILITY",
+                "description": "PCS supported speeds.",
+                "name": "EthPcs100SpeedAbility",
+                "ptr": "macle_eth_pcs100.EthPcs100SpeedAbility",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "ETH_PCS_100DEV_IN_PKG_1",
+                "description": "Caluse 22 presence; DTE XS, PHY XS, PCS, WIS, PMD/PMA.",
+                "name": "EthPcs100DevInPkg1",
+                "ptr": "macle_eth_pcs100.EthPcs100DevInPkg1",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "ETH_PCS_100DEV_IN_PKG_2",
+                "description": "Vendor specific presence.",
+                "name": "EthPcs100DevInPkg2",
+                "ptr": "macle_eth_pcs100.EthPcs100DevInPkg2",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "ETH_PCS_100CTL_2",
+                "description": "PCS type indicator; 100G, 40G, 10GT, 10GW, 10GX, 10GR.",
+                "name": "EthPcs100Ctl2",
+                "ptr": "macle_eth_pcs100.EthPcs100Ctl2",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "ETH_PCS_100STATUS_2",
+                "description": "Device capabilities indicator; 100G, 40G, 10GT, 10GW, 10GX, 10GR.",
+                "name": "EthPcs100Status2",
+                "ptr": "macle_eth_pcs100.EthPcs100Status2",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "ETH_PCS_100PKG_ID_0",
+                "description": "Constant always 0.",
+                "name": "EthPcs100PkgId0",
+                "ptr": "macle_eth_pcs100.EthPcs100PkgId0",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "ETH_PCS_100PKG_ID_1",
+                "description": "Constant always 0.",
+                "name": "EthPcs100PkgId1",
+                "ptr": "macle_eth_pcs100.EthPcs100PkgId1",
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "ETH_PCS_100BASE_RSTATUS_1",
+                "description": "Base-R Link Status Information.",
+                "name": "EthPcs100BaseRStatus1",
+                "ptr": "macle_eth_pcs100.EthPcs100BaseRStatus1",
+                "type": "reg"
+            },
+            "0x00000084": {
+                "altname": "ETH_PCS_100BASE_RSTATUS_2",
+                "description": "Base-R Latches and error counters; None roll-over; Clears on read;",
+                "name": "EthPcs100BaseRStatus2",
+                "ptr": "macle_eth_pcs100.EthPcs100BaseRStatus2",
+                "type": "reg"
+            },
+            "0x000000a8": {
+                "altname": "ETH_PCS_100BASER_TEST_CONTROL",
+                "description": "Base-R Test scramble pattern enable.",
+                "name": "EthPcs100BaserTestControl",
+                "ptr": "macle_eth_pcs100.EthPcs100BaserTestControl",
+                "type": "reg"
+            },
+            "0x000000ac": {
+                "altname": "ETH_PCS_100BASER_TEST_ERR_CNT",
+                "description": "Test Pattern Error Counter; Clears on read; None roll-over.",
+                "name": "EthPcs100BaserTestErrCnt",
+                "ptr": "macle_eth_pcs100.EthPcs100BaserTestErrCnt",
+                "type": "reg"
+            },
+            "0x000000b0": {
+                "altname": "ETH_PCS_100BER_HIGH_ORDER_CNT",
+                "description": "BER High Order Counter of BER bits 21:6; None roll-over.",
+                "name": "EthPcs100BerHighOrderCnt",
+                "ptr": "macle_eth_pcs100.EthPcs100BerHighOrderCnt",
+                "type": "reg"
+            },
+            "0x000000b4": {
+                "altname": "ETH_PCS_100ERR_BLK_HIGH_ORDER_CNT",
+                "description": "Error Blocks High Order Counter bits 21:8; None roll-over.",
+                "name": "EthPcs100ErrBlkHighOrderCnt",
+                "ptr": "macle_eth_pcs100.EthPcs100ErrBlkHighOrderCnt",
+                "type": "reg"
+            },
+            "0x000000c8": {
+                "altname": "ETH_PCS_100MULTILANE_ALIGN_STAT_1",
+                "description": "Lane Alignment Status Bits and Block Lock lane 0 to 7.",
+                "name": "EthPcs100MultilaneAlignStat1",
+                "ptr": "macle_eth_pcs100.EthPcs100MultilaneAlignStat1",
+                "type": "reg"
+            },
+            "0x000000cc": {
+                "altname": "ETH_PCS_100MULTILANE_ALIGN_STAT_2",
+                "description": "Lane Alignment Block Lock lane 8 to 19.",
+                "name": "EthPcs100MultilaneAlignStat2",
+                "ptr": "macle_eth_pcs100.EthPcs100MultilaneAlignStat2",
+                "type": "reg"
+            },
+            "0x000000d0": {
+                "altname": "ETH_PCS_100MULTILANE_ALIGN_STAT_3",
+                "description": "Lane Alignment Marker Lock lane 0 to 7.",
+                "name": "EthPcs100MultilaneAlignStat3",
+                "ptr": "macle_eth_pcs100.EthPcs100MultilaneAlignStat3",
+                "type": "reg"
+            },
+            "0x000000d4": {
+                "altname": "ETH_PCS_100MULTILANE_ALIGN_STAT_4",
+                "description": "Lane Alignment Marker Lock lane 8 to 19.",
+                "name": "EthPcs100MultilaneAlignStat4",
+                "ptr": "macle_eth_pcs100.EthPcs100MultilaneAlignStat4",
+                "type": "reg"
+            },
+            "0x00000320": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_0",
+                "description": "BIP Error Counter Lane 0; Clears on read; None roll-over.",
+                "name": "EthPcs100BipErrCntLane0",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane0",
+                "type": "reg"
+            },
+            "0x00000324": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_1",
+                "description": "BIP Error Counter Lane 1; Clears on read; None roll-over.",
+                "name": "EthPcs100BipErrCntLane1",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane1",
+                "type": "reg"
+            },
+            "0x00000328": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_2",
+                "description": "BIP Error Counter Lane 2; Clears on read; None roll-over.",
+                "name": "EthPcs100BipErrCntLane2",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane2",
+                "type": "reg"
+            },
+            "0x0000032c": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_3",
+                "description": "BIP Error Counter Lane 3; Clears on read; None roll-over.",
+                "name": "EthPcs100BipErrCntLane3",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane3",
+                "type": "reg"
+            },
+            "0x00000330": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_4",
+                "description": "BIP Error Counter Lane 4; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane4",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane4",
+                "type": "reg"
+            },
+            "0x00000334": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_5",
+                "description": "BIP Error Counter Lane 5; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane5",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane5",
+                "type": "reg"
+            },
+            "0x00000338": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_6",
+                "description": "BIP Error Counter Lane 6; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane6",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane6",
+                "type": "reg"
+            },
+            "0x0000033c": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_7",
+                "description": "BIP Error Counter Lane 7; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane7",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane7",
+                "type": "reg"
+            },
+            "0x00000340": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_8",
+                "description": "BIP Error Counter Lane 8; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane8",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane8",
+                "type": "reg"
+            },
+            "0x00000344": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_9",
+                "description": "BIP Error Counter Lane 9; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane9",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane9",
+                "type": "reg"
+            },
+            "0x00000348": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_10",
+                "description": "BIP Error Counter Lane 10; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane10",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane10",
+                "type": "reg"
+            },
+            "0x0000034c": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_11",
+                "description": "BIP Error Counter Lane 11; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane11",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane11",
+                "type": "reg"
+            },
+            "0x00000350": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_12",
+                "description": "BIP Error Counter Lane 12; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane12",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane12",
+                "type": "reg"
+            },
+            "0x00000354": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_13",
+                "description": "BIP Error Counter Lane 13; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane13",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane13",
+                "type": "reg"
+            },
+            "0x00000358": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_14",
+                "description": "BIP Error Counter Lane 14; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane14",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane14",
+                "type": "reg"
+            },
+            "0x0000035c": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_15",
+                "description": "BIP Error Counter Lane 15; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane15",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane15",
+                "type": "reg"
+            },
+            "0x00000360": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_16",
+                "description": "BIP Error Counter Lane 16; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane16",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane16",
+                "type": "reg"
+            },
+            "0x00000364": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_17",
+                "description": "BIP Error Counter Lane 17; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane17",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane17",
+                "type": "reg"
+            },
+            "0x00000368": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_18",
+                "description": "BIP Error Counter Lane 18; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane18",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane18",
+                "type": "reg"
+            },
+            "0x0000036c": {
+                "altname": "ETH_PCS_100BIP_ERR_CNT_LANE_19",
+                "description": "BIP Error Counter Lane 19; Clears on read; None roll-over",
+                "name": "EthPcs100BipErrCntLane19",
+                "ptr": "macle_eth_pcs100.EthPcs100BipErrCntLane19",
+                "type": "reg"
+            },
+            "0x00000640": {
+                "altname": "ETH_PCS_100LANE_0MAPPING",
+                "description": "Lane 0 mapping bits 5:0.",
+                "name": "EthPcs100Lane0Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane0Mapping",
+                "type": "reg"
+            },
+            "0x00000644": {
+                "altname": "ETH_PCS_100LANE_1MAPPING",
+                "description": "Lane 1 mapping bits 5:0.",
+                "name": "EthPcs100Lane1Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane1Mapping",
+                "type": "reg"
+            },
+            "0x00000648": {
+                "altname": "ETH_PCS_100LANE_2MAPPING",
+                "description": "Lane 2 mapping bits 5:0.",
+                "name": "EthPcs100Lane2Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane2Mapping",
+                "type": "reg"
+            },
+            "0x0000064c": {
+                "altname": "ETH_PCS_100LANE_3MAPPING",
+                "description": "Lane 3 mapping bits 5:0.",
+                "name": "EthPcs100Lane3Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane3Mapping",
+                "type": "reg"
+            },
+            "0x00000650": {
+                "altname": "ETH_PCS_100LANE_4MAPPING",
+                "description": "Lane 4 mapping bits 5:0.",
+                "name": "EthPcs100Lane4Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane4Mapping",
+                "type": "reg"
+            },
+            "0x00000654": {
+                "altname": "ETH_PCS_100LANE_5MAPPING",
+                "description": "Lane 5 mapping bits 5:0.",
+                "name": "EthPcs100Lane5Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane5Mapping",
+                "type": "reg"
+            },
+            "0x00000658": {
+                "altname": "ETH_PCS_100LANE_6MAPPING",
+                "description": "Lane 6 mapping bits 5:0.",
+                "name": "EthPcs100Lane6Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane6Mapping",
+                "type": "reg"
+            },
+            "0x0000065c": {
+                "altname": "ETH_PCS_100LANE_7MAPPING",
+                "description": "Lane 7 mapping bits 5:0.",
+                "name": "EthPcs100Lane7Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane7Mapping",
+                "type": "reg"
+            },
+            "0x00000660": {
+                "altname": "ETH_PCS_100LANE_8MAPPING",
+                "description": "Lane 8 mapping bits 5:0.",
+                "name": "EthPcs100Lane8Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane8Mapping",
+                "type": "reg"
+            },
+            "0x00000664": {
+                "altname": "ETH_PCS_100LANE_9MAPPING",
+                "description": "Lane 9 mapping bits 5:0.",
+                "name": "EthPcs100Lane9Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane9Mapping",
+                "type": "reg"
+            },
+            "0x00000668": {
+                "altname": "ETH_PCS_100LANE_10MAPPING",
+                "description": "Lane 10 mapping bits 5:0.",
+                "name": "EthPcs100Lane10Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane10Mapping",
+                "type": "reg"
+            },
+            "0x0000066c": {
+                "altname": "ETH_PCS_100LANE_11MAPPING",
+                "description": "Lane 11 mapping bits 5:0.",
+                "name": "EthPcs100Lane11Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane11Mapping",
+                "type": "reg"
+            },
+            "0x00000670": {
+                "altname": "ETH_PCS_100LANE_12MAPPING",
+                "description": "Lane 12 mapping bits 5:0.",
+                "name": "EthPcs100Lane12Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane12Mapping",
+                "type": "reg"
+            },
+            "0x00000674": {
+                "altname": "ETH_PCS_100LANE_13MAPPING",
+                "description": "Lane 13 mapping bits 5:0.",
+                "name": "EthPcs100Lane13Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane13Mapping",
+                "type": "reg"
+            },
+            "0x00000678": {
+                "altname": "ETH_PCS_100LANE_14MAPPING",
+                "description": "Lane 14 mapping bits 5:0.",
+                "name": "EthPcs100Lane14Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane14Mapping",
+                "type": "reg"
+            },
+            "0x0000067c": {
+                "altname": "ETH_PCS_100LANE_15MAPPING",
+                "description": "Lane 15 mapping bits 5:0.",
+                "name": "EthPcs100Lane15Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane15Mapping",
+                "type": "reg"
+            },
+            "0x00000680": {
+                "altname": "ETH_PCS_100LANE_16MAPPING",
+                "description": "Lane 16 mapping bits 5:0.",
+                "name": "EthPcs100Lane16Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane16Mapping",
+                "type": "reg"
+            },
+            "0x00000684": {
+                "altname": "ETH_PCS_100LANE_17MAPPING",
+                "description": "Lane 17 mapping bits 5:0.",
+                "name": "EthPcs100Lane17Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane17Mapping",
+                "type": "reg"
+            },
+            "0x00000688": {
+                "altname": "ETH_PCS_100LANE_18MAPPING",
+                "description": "Lane 18 mapping bits 5:0.",
+                "name": "EthPcs100Lane18Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane18Mapping",
+                "type": "reg"
+            },
+            "0x0000068c": {
+                "altname": "ETH_PCS_100LANE_19MAPPING",
+                "description": "Lane 19 mapping bits 5:0.",
+                "name": "EthPcs100Lane19Mapping",
+                "ptr": "macle_eth_pcs100.EthPcs100Lane19Mapping",
+                "type": "reg"
+            },
+            "0x00008000": {
+                "altname": "ETH_PCS_100VENDOR_SCRATCH",
+                "description": "Vendor Specific Reg; Scratch Register.",
+                "name": "EthPcs100VendorScratch",
+                "ptr": "macle_eth_pcs100.EthPcs100VendorScratch",
+                "type": "reg"
+            },
+            "0x00008004": {
+                "altname": "ETH_PCS_100VENDOR_CORE_REV",
+                "description": "Vendor Specific Reg; Core Revision derived from DEV_VERSION package parameter.",
+                "name": "EthPcs100VendorCoreRev",
+                "ptr": "macle_eth_pcs100.EthPcs100VendorCoreRev",
+                "type": "reg"
+            },
+            "0x00008008": {
+                "altname": "ETH_CH_PCS_VENDOR_VL_INTVL",
+                "description": "Vendor Specific Reg; Set the amount of data between markers. (I.e. distance of markers-1).",
+                "name": "EthPcs100VendorVlIntvl",
+                "ptr": "macle_eth_pcs100.EthPcs100VendorVlIntvl",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "macle_eth_pcs100.EthPcs100BaseRStatus1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_RCV_LINK_STATUS",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Receive link status. 1=Link up; 0=link down.",
+                    "mode": "RO",
+                    "name": "EthPcsRcvLinkStatus"
+                },
+                {
+                    "altname": "ETH_PCS_HIGH_BER",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "1=PCS reporting a high BER.",
+                    "mode": "RO",
+                    "name": "EthPcsHighBer"
+                },
+                {
+                    "altname": "ETH_PCS_BLOCK_LOCKED",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "1=PCS locked to received blocks.",
+                    "mode": "RO",
+                    "name": "EthPcsBlockLocked"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BaseRStatus2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_BLOCK_LOCKED",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Block Lock; Latched low.",
+                    "mode": "RO",
+                    "name": "EthPcsBlockLocked"
+                },
+                {
+                    "altname": "ETH_PCS_HIGH_BER",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "BER flag; Latched high.",
+                    "mode": "RO",
+                    "name": "EthPcsHighBer"
+                },
+                {
+                    "altname": "ETH_PCS_BER_COUNTER",
+                    "bit_lsb": 8,
+                    "bit_msb": 13,
+                    "description": "BER counter; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsBerCounter"
+                },
+                {
+                    "altname": "ETH_PCS_ERRORED_CNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Errored blocks counter; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErroredCnt"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BaserTestControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ENABLE",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Scrambled idle test-pattern enable.",
+                    "mode": "RW",
+                    "name": "EthPcsEnable"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BaserTestErrCnt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Test pattern error counter; Clears on read; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BerHighOrderCnt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_BER_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 21:6 of BER counter; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsBerCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 0; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 1; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane10": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 10; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane11": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 11; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane12": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 12; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane13": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 13; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane14": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 14; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane15": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 15; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane16": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 16; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane17": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 17; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane18": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 18; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane19": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 19; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 2; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 3; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane4": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 4; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane5": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 5; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane6": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 6; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane7": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 7; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane8": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 8; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100BipErrCntLane9": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter for lane 9; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Ctl1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_RESET",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "1=PCS reset, 0=normal; Self clearing.",
+                    "mode": "RW1C",
+                    "name": "EthPcsReset"
+                },
+                {
+                    "altname": "ETH_PCS_LOOPBACK",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "1=Enable loopback, 0=disable loopback.",
+                    "mode": "RW",
+                    "name": "EthPcsLoopback"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_SEL_13",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Speed selection; (13,6)=11=bits 5:2 select speed.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeedSel13"
+                },
+                {
+                    "altname": "ETH_PCS_LOW_POWER",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Low power;  0=normal operation; always 0.",
+                    "mode": "RO",
+                    "name": "EthPcsLowPower"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_SEL_6",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Speed selection; (13,6)=11=bits 5:2 select speed.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeedSel6"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_SEL",
+                    "bit_lsb": 2,
+                    "bit_msb": 5,
+                    "description": "Fixed speed indicator; 0100 = 100Gb/s.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeedSel"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Ctl2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_TYPE_SELECTION",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "PCS type selection; Reads 101 for 2:0 fixed to 100GBase-R.",
+                    "mode": "RO",
+                    "name": "EthPcsTypeSelection"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100DevInPkg1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_TC_PRESENT",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "TC present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsTcPresent"
+                },
+                {
+                    "altname": "ETH_PCS_DTE_XS_PRESENT",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "DTE XS present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsDteXsPresent"
+                },
+                {
+                    "altname": "ETH_PCS_PHY_XS_PRESENT",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "PHY XS present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsPhyXsPresent"
+                },
+                {
+                    "altname": "ETH_PCS_PCSPRESENT",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "PCS present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsPCSPresent"
+                },
+                {
+                    "altname": "ETH_PCS_WIS_PRESENT",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "WIS present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsWisPresent"
+                },
+                {
+                    "altname": "ETH_PCS_PMD_PMA_PRESENT",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "PMD/PMA present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsPmdPmaPresent"
+                },
+                {
+                    "altname": "ETH_PCS_CLAUSE_22PRESENT",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Clause 22 registers present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsClause22Present"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100DevInPkg2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_VNDR_DEV_2PRESENT",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Vendor specific device 2 present",
+                    "mode": "RO",
+                    "name": "EthPcsVndrDev2Present"
+                },
+                {
+                    "altname": "ETH_PCS_VNDR_DEV_1PRESENT",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Vendor specific device 1 present",
+                    "mode": "RO",
+                    "name": "EthPcsVndrDev1Present"
+                },
+                {
+                    "altname": "ETH_PCS_CLAUSE_22PRESENT",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Clause 22 extension present",
+                    "mode": "RO",
+                    "name": "EthPcsClause22Present"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100DeviceId0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_DEV_ID",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Always 0.",
+                    "mode": "RO",
+                    "name": "EthPcsDevId"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100DeviceId1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_DEV_ID",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Always 0.",
+                    "mode": "RO",
+                    "name": "EthPcsDevId"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100ErrBlkHighOrderCnt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_HIGH_ORDER_PRESENT",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "High order counter present; Always 1.",
+                    "mode": "RO",
+                    "name": "EthPcsHighOrderPresent"
+                },
+                {
+                    "altname": "ETH_PCS_ERRORED_BLOCKS_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "Bits 21:8 of Error Blocks counter; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErroredBlocksCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane0Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 0 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane10Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 10 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane11Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 11 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane12Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 12 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane13Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 13 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane14Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 14 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane15Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 15 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane16Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 16 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane17Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 17 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane18Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 18 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane19Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 19 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane1Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 1 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane2Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 2 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane3Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 3 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane4Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 4 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane5Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 5 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane6Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 6 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane7Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 7 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane8Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 8 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Lane9Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Lane 9 mapping.",
+                    "mode": "RO",
+                    "name": "EthPcsMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100MultilaneAlignStat1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_LANE_ALIGN_STATUS",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Lane alignment status; 1=All Receive lanes locked and aligned.",
+                    "mode": "RO",
+                    "name": "EthPcsLaneAlignStatus"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_7BLOCK_LOCK",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Lane 7 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane7BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_6BLOCK_LOCK",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Lane 6 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane6BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_5BLOCK_LOCK",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Lane 5 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane5BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_4BLOCK_LOCK",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Lane 4 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane4BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_3BLOCK_LOCK",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Lane 3 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane3BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_2BLOCK_LOCK",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Lane 2 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane2BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_1BLOCK_LOCK",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Lane 1 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane1BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_0BLOCK_LOCK",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Lane 0 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane0BlockLock"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100MultilaneAlignStat2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_LANE_19BLOCK_LOCK",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Lane 19 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane19BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_18BLOCK_LOCK",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Lane 18 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane18BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_17BLOCK_LOCK",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Lane 17 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane17BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_16BLOCK_LOCK",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Lane 16 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane16BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_15BLOCK_LOCK",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Lane 15 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane15BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_14BLOCK_LOCK",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Lane 14 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane14BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_13BLOCK_LOCK",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Lane 13 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane13BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_12BLOCK_LOCK",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Lane 12 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane12BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_11BLOCK_LOCK",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Lane 11 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane11BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_10BLOCK_LOCK",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Lane 10 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane10BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_9BLOCK_LOCK",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Lane 9 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane9BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_8BLOCK_LOCK",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Lane 8 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane8BlockLock"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100MultilaneAlignStat3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_LANE_7ALIGN_MLOCK",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Lane 7 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane7AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_6ALIGN_MLOCK",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Lane 6 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane6AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_5ALIGN_MLOCK",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Lane 5 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane5AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_4ALIGN_MLOCK",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Lane 4 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane4AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_3ALIGN_MLOCK",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Lane 3 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane3AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_2ALIGN_MLOCK",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Lane 2 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane2AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_1ALIGN_MLOCK",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Lane 1 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane1AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_0ALIGN_MLOCK",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Lane 0 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane0AlignMlock"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100MultilaneAlignStat4": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_LANE_19ALIGN_MLOCK",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Lane 19 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane19AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_18ALIGN_MLOCK",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Lane 18 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane18AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_17ALIGN_MLOCK",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Lane 17 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane17AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_16ALIGN_MLOCK",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Lane 16 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane16AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_15ALIGN_MLOCK",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Lane 15 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane15AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_14ALIGN_MLOCK",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Lane 14 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane14AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_13ALIGN_MLOCK",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Lane 13 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane13AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_12ALIGN_MLOCK",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Lane 12 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane12AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_11ALIGN_MLOCK",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Lane 11 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane11AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_10ALIGN_MLOCK",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Lane 10 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane10AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_9ALIGN_MLOCK",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Lane 9 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane9AlignMlock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_8ALIGN_MLOCK",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Lane 8 alignment marker lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane8AlignMlock"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100PkgId0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_DEV_ID",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Always 0.",
+                    "mode": "RO",
+                    "name": "EthPcsDevId"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100PkgId1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_DEV_ID",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Always 0.",
+                    "mode": "RO",
+                    "name": "EthPcsDevId"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100SpeedAbility": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SPEED_100GCAPABLE",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "When 1, this PCS is 100G; (Only this bit set in this register).",
+                    "mode": "RO",
+                    "name": "EthPcsSpeed100GCapable"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_40GCAPABLE",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "When 1, this PCS is 40G capable.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeed40GCapable"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_10PASS_TS_2BASE_TL_CAPABLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "When 1, this PCS is 10PASS-TS/2Base-TL capable.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeed10PassTs2BaseTlCapable"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_10GCAPABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When 1, this PCS is 10Geth capable.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeed10GCapable"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Status1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_FAULT",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "When '1', indicates a fault condition idetected; When '0', indicates that no fault condition is detected.",
+                    "mode": "RO",
+                    "name": "EthPcsFault"
+                },
+                {
+                    "altname": "ETH_PCS_RCV_LINK_STATUS",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "When '1', indicates PCS receive link up; When '0', indicates PCS receive link is or was down (latching low).",
+                    "mode": "RO",
+                    "name": "EthPcsRcvLinkStatus"
+                },
+                {
+                    "altname": "ETH_PCS_LOW_POWER_ABLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Set to '1' to indicate that the PCS implements a low power mode.",
+                    "mode": "RO",
+                    "name": "EthPcsLowPowerAble"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100Status2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_DEV_PRESENT",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "Device present. When bits are 10 = device responding at this address.",
+                    "mode": "RO",
+                    "name": "EthPcsDevPresent"
+                },
+                {
+                    "altname": "ETH_PCS_TRANSMIT_FAULT",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Transmit fault. 1=Fault condition on transmit path. Latched high",
+                    "mode": "RO",
+                    "name": "EthPcsTransmitFault"
+                },
+                {
+                    "altname": "ETH_PCS_RECEIVE_FAULT",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Receive fault. 1=Fault condition on receive path. Latched high",
+                    "mode": "RO",
+                    "name": "EthPcsReceiveFault"
+                },
+                {
+                    "altname": "ETH_PCS_100GBASE_RCAPABLE",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "When 1, this PCS is 100GBase-R capable; always 1.",
+                    "mode": "RO",
+                    "name": "EthPcs100GBaseRCapable"
+                },
+                {
+                    "altname": "ETH_PCS_40GBASE_RCAPABLE",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "When 1, this PCS is 40GBase-R capable; always 0.",
+                    "mode": "RO",
+                    "name": "EthPcs40GBaseRCapable"
+                },
+                {
+                    "altname": "ETH_PCS_10GBASE_TCAPABLE",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "When 1, this PCS is 10GBase-T capable; always 0.",
+                    "mode": "RO",
+                    "name": "EthPcs10GBaseTCapable"
+                },
+                {
+                    "altname": "ETH_PCS_10GBASE_WCAPABLE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "When 1, this PCS is 10GBase-W capable; always 0.",
+                    "mode": "RO",
+                    "name": "EthPcs10GBaseWCapable"
+                },
+                {
+                    "altname": "ETH_PCS_10GBASE_XCAPABLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "When 1, this PCS is 10GBase-X capable; always 0.",
+                    "mode": "RO",
+                    "name": "EthPcs10GBaseXCapable"
+                },
+                {
+                    "altname": "ETH_PCS_10GBASE_RCAPABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When 1, this PCS is 10GBase-R capable; always 0.",
+                    "mode": "RO",
+                    "name": "EthPcs10GBaseRCapable"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100VendorCoreRev": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_REVISION",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Core Design version as defined by DEV_VERSION parameter in PCS package file.",
+                    "mode": "RO",
+                    "name": "EthPcsRevision"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100VendorScratch": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SCRATCH",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Scratch Register; Register address to test read and write operation.",
+                    "mode": "RW",
+                    "name": "EthPcsScratch"
+                }
+            ]
+        },
+        "macle_eth_pcs100.EthPcs100VendorVlIntvl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MARKER_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "A 16-bit value defining the amount of data between markers; (distance of markers-1).",
+                    "mode": "RW",
+                    "name": "EthPcsMarkerCounter"
+                }
+            ]
+        }
+    }
+}

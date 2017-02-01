@@ -1,0 +1,777 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "island_overlay.IslandOverlayExtMap": {
+            "0x00005410": {
+                "altname": "MISC_CTRL",
+                "description": "Island-specific miscellaneous control",
+                "name": "MiscControl",
+                "ptr": "island_overlay.OvlMiscCtrl",
+                "type": "reg"
+            }
+        },
+        "island_overlay.IslandOverlayMap": {
+            "0x00040000": {
+                "altname": "ISLAND_CTL",
+                "description": "Island control, including resets, clocks, and other miscellanea",
+                "name": "IslandControl",
+                "ptr": "island_overlay.OvlControl",
+                "type": "regmap"
+            }
+        },
+        "island_overlay.OvlControl": {
+            "0x00004000": {
+                "altname": "FILT_MASK%d",
+                "description": "Event Filter Mask Reg",
+                "name": "EventFilterMask%d",
+                "offinc1": "0x00000008",
+                "ptr": "island_overlay.OvlEventFilterMask",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00004004": {
+                "altname": "FILT_MATCH%d",
+                "description": "Event Filter Match Reg",
+                "name": "EventFilterMatch%d",
+                "offinc1": "0x00000008",
+                "ptr": "island_overlay.OvlEventFilterMatch",
+                "repeat1": 8,
+                "type": "reg"
+            },
+            "0x00004040": {
+                "altname": "EVT_CFG",
+                "description": "Event plane routing configuration, for local ring and global chain as it passes through the island",
+                "name": "EventRouteConfig",
+                "ptr": "island_overlay.OvlEventConfig",
+                "type": "reg"
+            },
+            "0x00005400": {
+                "altname": "RST_CLK_CTRL0",
+                "description": "Clock and reset control for the island",
+                "name": "ClockResetControl",
+                "ptr": "island_overlay.OvlClkRstControl",
+                "type": "reg"
+            },
+            "0x00005404": {
+                "altname": "RST_CLK_CTRL1",
+                "description": "Island-level memory control, for sleep etc",
+                "name": "MemControl",
+                "ptr": "island_overlay.OvlMemControl",
+                "type": "reg"
+            },
+            "0x00005408": {
+                "altname": "RST_CLK_CTRL2",
+                "description": "Clock and reset control for the island (sub-domain control)",
+                "name": "ClockResetControl2",
+                "ptr": "island_overlay.OvlClkRstControl2",
+                "type": "reg"
+            },
+            "0x00005410": {
+                "altname": "MISC_CTRL",
+                "description": "Island-specific miscellaneous control",
+                "name": "MiscControl",
+                "ptr": "island_overlay.OvlMiscCtrl",
+                "type": "reg"
+            },
+            "0x00005418": {
+                "altname": "OVL_CLK_THRTL",
+                "description": "Controls for T_CLK throttling.",
+                "name": "OvlClkThrtl",
+                "ptr": "island_overlay.OvlClkThrtl",
+                "type": "reg"
+            },
+            "0x00005600": {
+                "altname": "OVL_DSF_RATE_METER_CFG",
+                "description": "Config register for the DSF Rate Meters for the Overlay Ports.",
+                "name": "MeterCfg",
+                "ptr": "island_overlay.OvlDsfMtrCfg",
+                "type": "reg"
+            },
+            "0x00005604": {
+                "altname": "OVL_DSF_RATE_METER_CFG2",
+                "description": "Config register for the DSF Rate Meters for the Overlay Ports.",
+                "name": "MeterCfg2",
+                "ptr": "island_overlay.OvlDsfMtrCfg2",
+                "type": "reg"
+            },
+            "0x00005610": {
+                "altname": "OVL_DSF_OP0_RATE_M%d",
+                "description": "Overlay DSF Output Port 0 Rate Monitor for Mesh %d",
+                "name": "OvlDsfOP0RateM%d",
+                "offinc1": "0x00000004",
+                "ptr": "island_overlay.OvlDsfPrtRate",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00005620": {
+                "altname": "OVL_DSF_OP1_RATE_M%d",
+                "description": "Overlay DSF Output Port 1 Rate Monitor for Mesh %d",
+                "name": "OvlDsfOP1RateM%d",
+                "offinc1": "0x00000004",
+                "ptr": "island_overlay.OvlDsfPrtRate",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00005630": {
+                "altname": "OVL_DSF_OP2_RATE_M%d",
+                "description": "Overlay DSF Output Port 2 Rate Monitor for Mesh %d",
+                "name": "OvlDsfOP2RateM%d",
+                "offinc1": "0x00000004",
+                "ptr": "island_overlay.OvlDsfPrtRate",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00005640": {
+                "altname": "OVL_DSF_OP3_RATE_M%d",
+                "description": "Overlay DSF Output Port 3 Rate Monitor for Mesh %d",
+                "name": "OvlDsfOP3RateM%d",
+                "offinc1": "0x00000004",
+                "ptr": "island_overlay.OvlDsfPrtRate",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00005650": {
+                "altname": "OVL_DSF_OP4_RATE_M%d",
+                "description": "Overlay DSF Output Port 4 Rate Monitor for Mesh %d",
+                "name": "OvlDsfOP4RateM%d",
+                "offinc1": "0x00000004",
+                "ptr": "island_overlay.OvlDsfPrtRate",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00005660": {
+                "altname": "OVL_DSF_OP5_RATE_M%d",
+                "description": "Overlay DSF Output Port 5 Rate Monitor for Mesh %d",
+                "name": "OvlDsfOP5RateM%d",
+                "offinc1": "0x00000004",
+                "ptr": "island_overlay.OvlDsfPrtRate",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00005670": {
+                "altname": "OVL_DSF_OP6_RATE_M%d",
+                "description": "Overlay DSF Output Port 6 Rate Monitor for Mesh %d",
+                "name": "OvlDsfOP6RateM%d",
+                "offinc1": "0x00000004",
+                "ptr": "island_overlay.OvlDsfPrtRate",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00005680": {
+                "altname": "OVL_DSF_OP7_RATE_M%d",
+                "description": "Overlay DSF Output Port 7 Rate Monitor for Mesh %d",
+                "name": "OvlDsfOP7RateM%d",
+                "offinc1": "0x00000004",
+                "ptr": "island_overlay.OvlDsfPrtRate",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x00005690": {
+                "altname": "OVL_DSF_IP6_RATE_M%d",
+                "description": "Overlay DSF Input Port 6 Rate Monitor for Mesh %d",
+                "name": "OvlDsfIP6RateM%d",
+                "offinc1": "0x00000004",
+                "ptr": "island_overlay.OvlDsfPrtRate",
+                "repeat1": 4,
+                "type": "reg"
+            },
+            "0x000056a0": {
+                "altname": "OVL_DSF_IP7_RATE_M%d",
+                "description": "Overlay DSF Input Port 7 Rate Monitor for Mesh %d",
+                "name": "OvlDsfIP7RateM%d",
+                "offinc1": "0x00000004",
+                "ptr": "island_overlay.OvlDsfPrtRate",
+                "repeat1": 4,
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "island_overlay.OvlClkRstControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLK_EN",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Set to enable the clock for a clock domain.  Each bit (0-7) applies to each reset/clock domain (0-7) for the current island. ",
+                    "mode": "RW",
+                    "name": "ClockEnable"
+                },
+                {
+                    "altname": "MANUAL_SRESET",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Set to deassert soft reset for a clock/reset domain (unless the global soft reset signal is asserted and not maksed).  Each bit (0-7) applies to each reset/clock domain (0-7) for the current island. ",
+                    "mode": "RW",
+                    "name": "RemoveReset"
+                },
+                {
+                    "altname": "SRESET_MASK",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "When set, masks (ignores) the Global soft reset signal.  Each bit (0-7) applies to each reset/clock domain (0-7) for the current island.",
+                    "mode": "RW",
+                    "name": "ResetMask"
+                },
+                {
+                    "altname": "LOCK",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "When set, prevents modifying the corresponding bits in registers OvlClkRstControl and OvlMemControl for the current island.  For instance, when bit 0 of Lock is set, the settings in OvlClkRstControl and OvlMemControl corresponding to reset/clock domain 0 cannot be modified.",
+                    "mode": "RW",
+                    "name": "DomainLock"
+                }
+            ]
+        },
+        "island_overlay.OvlClkRstControl2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLK_EN",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Set to 0 to disable the clock for a clock sub-domain, otherwise the clock is controlled by the encompassing clock/reset domain.  Each bit (0-7) applies to each reset/clock sub-domain (0-7) for the current island primary domain. ",
+                    "mode": "RW",
+                    "name": "ClockEnable"
+                },
+                {
+                    "altname": "MANUAL_SRESET",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Set to 0 to assert soft reset for a clock/reset sub-domain (unless the global soft reset signal is asserted and not maksed), otherwise the manual reset is controlled by the encompassing clock/reset domain.  Each bit (0-7) applies to each reset/clock sub-domain (0-7) for the current island primary domain. ",
+                    "mode": "RW",
+                    "name": "RemoveReset"
+                },
+                {
+                    "altname": "SRESET_MASK",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "When set to 1, masks (ignores) the Global soft reset signal for this sub-domain, otherwise the reset mask is controlled by the encompassing clock/reset domain.  Each bit (0-7) applies to each reset/clock sub-domain (0-7) for the current island primary domain.",
+                    "mode": "RW",
+                    "name": "ResetMask"
+                },
+                {
+                    "altname": "MEM_SHUT_DOWN",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Set to 0 to force the memories in this sub-domain into shut down mode, otherwise memories are controlled by the encompassing clock/reset domain.  Each bit (0-7) applies to each reset/clock sub-domain (0-7) for the current island primary domain.",
+                    "mode": "RW",
+                    "name": "MemEnable"
+                }
+            ]
+        },
+        "island_overlay.OvlClkThrtl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLK_THRTL",
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "Clock Throttle Control - For a throttle value of N, suppress N T_CLK clock pulses out of every 64, effectively reducing the processing speed by N/64.  This will reduce dynamic power consumption incrementally.",
+                    "mode": "RW",
+                    "name": "ClkThrtl"
+                }
+            ]
+        },
+        "island_overlay.OvlDsfMtrCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "OVL_OP7M3_EN",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "When set enables the Rate Meter for Output Port 7, Mesh 3.",
+                    "mode": "RW",
+                    "name": "OvlOP7M3En"
+                },
+                {
+                    "altname": "OVL_OP7M2_EN",
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "When set enables the Rate Meter for Output Port 7, Mesh 2.",
+                    "mode": "RW",
+                    "name": "OvlOP7M2En"
+                },
+                {
+                    "altname": "OVL_OP7M1_EN",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "When set enables the Rate Meter for Output Port 7, Mesh 1.",
+                    "mode": "RW",
+                    "name": "OvlOP7M1En"
+                },
+                {
+                    "altname": "OVL_OP7M0_EN",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "When set enables the Rate Meter for Output Port 7, Mesh 0.",
+                    "mode": "RW",
+                    "name": "OvlOP7M0En"
+                },
+                {
+                    "altname": "OVL_OP6M3_EN",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "When set enables the Rate Meter for Output Port 6, Mesh 3.",
+                    "mode": "RW",
+                    "name": "OvlOP6M3En"
+                },
+                {
+                    "altname": "OVL_OP6M2_EN",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "When set enables the Rate Meter for Output Port 6, Mesh 2.",
+                    "mode": "RW",
+                    "name": "OvlOP6M2En"
+                },
+                {
+                    "altname": "OVL_OP6M1_EN",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "When set enables the Rate Meter for Output Port 6, Mesh 1.",
+                    "mode": "RW",
+                    "name": "OvlOP6M1En"
+                },
+                {
+                    "altname": "OVL_OP6M0_EN",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "When set enables the Rate Meter for Output Port 6, Mesh 0.",
+                    "mode": "RW",
+                    "name": "OvlOP6M0En"
+                },
+                {
+                    "altname": "OVL_OP5M3_EN",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "When set enables the Rate Meter for Output Port 5, Mesh 3.",
+                    "mode": "RW",
+                    "name": "OvlOP5M3En"
+                },
+                {
+                    "altname": "OVL_OP5M2_EN",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "When set enables the Rate Meter for Output Port 5, Mesh 2.",
+                    "mode": "RW",
+                    "name": "OvlOP5M2En"
+                },
+                {
+                    "altname": "OVL_OP5M1_EN",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "When set enables the Rate Meter for Output Port 5, Mesh 1.",
+                    "mode": "RW",
+                    "name": "OvlOP5M1En"
+                },
+                {
+                    "altname": "OVL_OP5M0_EN",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "When set enables the Rate Meter for Output Port 5, Mesh 0.",
+                    "mode": "RW",
+                    "name": "OvlOP5M0En"
+                },
+                {
+                    "altname": "OVL_OP4M3_EN",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "When set enables the Rate Meter for Output Port 4, Mesh 3.",
+                    "mode": "RW",
+                    "name": "OvlOP4M3En"
+                },
+                {
+                    "altname": "OVL_OP4M2_EN",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "When set enables the Rate Meter for Output Port 4, Mesh 2.",
+                    "mode": "RW",
+                    "name": "OvlOP4M2En"
+                },
+                {
+                    "altname": "OVL_OP4M1_EN",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "When set enables the Rate Meter for Output Port 4, Mesh 1.",
+                    "mode": "RW",
+                    "name": "OvlOP4M1En"
+                },
+                {
+                    "altname": "OVL_OP4M0_EN",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "When set enables the Rate Meter for Output Port 4, Mesh 0.",
+                    "mode": "RW",
+                    "name": "OvlOP4M0En"
+                },
+                {
+                    "altname": "OVL_OP3M3_EN",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "When set enables the Rate Meter for Output Port 3, Mesh 3.",
+                    "mode": "RW",
+                    "name": "OvlOP3M3En"
+                },
+                {
+                    "altname": "OVL_OP3M2_EN",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "When set enables the Rate Meter for Output Port 3, Mesh 2.",
+                    "mode": "RW",
+                    "name": "OvlOP3M2En"
+                },
+                {
+                    "altname": "OVL_OP3M1_EN",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "When set enables the Rate Meter for Output Port 3, Mesh 1.",
+                    "mode": "RW",
+                    "name": "OvlOP3M1En"
+                },
+                {
+                    "altname": "OVL_OP3M0_EN",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "When set enables the Rate Meter for Output Port 3, Mesh 0.",
+                    "mode": "RW",
+                    "name": "OvlOP3M0En"
+                },
+                {
+                    "altname": "OVL_OP2M3_EN",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "When set enables the Rate Meter for Output Port 2, Mesh 3.",
+                    "mode": "RW",
+                    "name": "OvlOP2M3En"
+                },
+                {
+                    "altname": "OVL_OP2M2_EN",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "When set enables the Rate Meter for Output Port 2, Mesh 2.",
+                    "mode": "RW",
+                    "name": "OvlOP2M2En"
+                },
+                {
+                    "altname": "OVL_OP2M1_EN",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "When set enables the Rate Meter for Output Port 2, Mesh 1.",
+                    "mode": "RW",
+                    "name": "OvlOP2M1En"
+                },
+                {
+                    "altname": "OVL_OP2M0_EN",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "When set enables the Rate Meter for Output Port 2, Mesh 0.",
+                    "mode": "RW",
+                    "name": "OvlOP2M0En"
+                },
+                {
+                    "altname": "OVL_OP1M3_EN",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "When set enables the Rate Meter for Output Port 1, Mesh 3.",
+                    "mode": "RW",
+                    "name": "OvlOP1M3En"
+                },
+                {
+                    "altname": "OVL_OP1M2_EN",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "When set enables the Rate Meter for Output Port 1, Mesh 2.",
+                    "mode": "RW",
+                    "name": "OvlOP1M2En"
+                },
+                {
+                    "altname": "OVL_OP1M1_EN",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "When set enables the Rate Meter for Output Port 1, Mesh 1.",
+                    "mode": "RW",
+                    "name": "OvlOP1M1En"
+                },
+                {
+                    "altname": "OVL_OP1M0_EN",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "When set enables the Rate Meter for Output Port 1, Mesh 0.",
+                    "mode": "RW",
+                    "name": "OvlOP1M0En"
+                },
+                {
+                    "altname": "OVL_OP0M3_EN",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "When set enables the Rate Meter for Output Port 0, Mesh 3.",
+                    "mode": "RW",
+                    "name": "OvlOP0M3En"
+                },
+                {
+                    "altname": "OVL_OP0M2_EN",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "When set enables the Rate Meter for Output Port 0, Mesh 2.",
+                    "mode": "RW",
+                    "name": "OvlOP0M2En"
+                },
+                {
+                    "altname": "OVL_OP0M1_EN",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "When set enables the Rate Meter for Output Port 0, Mesh 1.",
+                    "mode": "RW",
+                    "name": "OvlOP0M1En"
+                },
+                {
+                    "altname": "OVL_OP0M0_EN",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When set enables the Rate Meter for Output Port 0, Mesh 0.",
+                    "mode": "RW",
+                    "name": "OvlOP0M0En"
+                }
+            ]
+        },
+        "island_overlay.OvlDsfMtrCfg2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "OVL_IP7M3_EN",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "When set enables the Rate Meter for Input Port 7, Mesh 3.",
+                    "mode": "RW",
+                    "name": "OvlIP7M3En"
+                },
+                {
+                    "altname": "OVL_IP7M2_EN",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "When set enables the Rate Meter for Input Port 7, Mesh 2.",
+                    "mode": "RW",
+                    "name": "OvlIP7M2En"
+                },
+                {
+                    "altname": "OVL_IP7M1_EN",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "When set enables the Rate Meter for Input Port 7, Mesh 1.",
+                    "mode": "RW",
+                    "name": "OvlIP7M1En"
+                },
+                {
+                    "altname": "OVL_IP7M0_EN",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "When set enables the Rate Meter for Input Port 7, Mesh 0.",
+                    "mode": "RW",
+                    "name": "OvlIP7M0En"
+                },
+                {
+                    "altname": "OVL_IP6M3_EN",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "When set enables the Rate Meter for Input Port 6, Mesh 3.",
+                    "mode": "RW",
+                    "name": "OvlIP6M3En"
+                },
+                {
+                    "altname": "OVL_IP6M2_EN",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "When set enables the Rate Meter for Input Port 6, Mesh 2.",
+                    "mode": "RW",
+                    "name": "OvlIP6M2En"
+                },
+                {
+                    "altname": "OVL_IP6M1_EN",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "When set enables the Rate Meter for Input Port 6, Mesh 1.",
+                    "mode": "RW",
+                    "name": "OvlIP6M1En"
+                },
+                {
+                    "altname": "OVL_IP6M0_EN",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When set enables the Rate Meter for Input Port 6, Mesh 0.",
+                    "mode": "RW",
+                    "name": "OvlIP6M0En"
+                }
+            ]
+        },
+        "island_overlay.OvlDsfPrtRate": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RATE",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "This is the rate of transactions going to/from the overlay on the given Port and Mesh of the current Island.",
+                    "mode": "RO",
+                    "name": "Rate"
+                }
+            ]
+        },
+        "island_overlay.OvlEventConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BYPASS_MUX",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Bypass Mux - for bypassing the interior of the island.",
+                    "mode": "RW",
+                    "name": "BypassInterior"
+                },
+                {
+                    "altname": "CHKPT_NODE_SEL",
+                    "bit_lsb": 21,
+                    "bit_msb": 22,
+                    "description": "Selects to which corner overlay port in the event bus plane to send events filtered from the local chain as 'global'",
+                    "mode": "RW",
+                    "name": "GlobalInjection"
+                },
+                {
+                    "altname": "GLOBAL_MUX",
+                    "bit_lsb": 19,
+                    "bit_msb": 20,
+                    "description": "For the ARM island only, selects which overlay corner input port drives the global event bus into the ARM for use with the global event manger",
+                    "mode": "RW",
+                    "name": "GlobalMux"
+                },
+                {
+                    "altname": "MUX_INT",
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "Selects which event plane input (from one of the 4 corners of the island or from the island interior) to use as the input to the interior output mux to drive the event bus plane interior output",
+                    "mode": "RW",
+                    "name": "IntInput"
+                },
+                {
+                    "altname": "MUX_BR2",
+                    "bit_lsb": 13,
+                    "bit_msb": 15,
+                    "description": "Selects which event plane input (from one of the 4 corners of the island or from the island interior) to use as the input to the bottom-right corner output mux to drive the event bus plane bottom-right corner output",
+                    "mode": "RW",
+                    "name": "BRInput"
+                },
+                {
+                    "altname": "MUX_BL2",
+                    "bit_lsb": 10,
+                    "bit_msb": 12,
+                    "description": "Selects which event plane input (from one of the 4 corners of the island or from the island interior) to use as the input to the bottom-left corner output mux to drive the event bus plane bottom-left corner output",
+                    "mode": "RW",
+                    "name": "BLInput"
+                },
+                {
+                    "altname": "MUX_TR2",
+                    "bit_lsb": 7,
+                    "bit_msb": 9,
+                    "description": "Selects which event plane input (from one of the 4 corners of the island or from the island interior) to use as the input to the top-right corner output mux to drive the event bus plane top-right corner output",
+                    "mode": "RW",
+                    "name": "TRInput"
+                },
+                {
+                    "altname": "MUX_TL2",
+                    "bit_lsb": 4,
+                    "bit_msb": 6,
+                    "description": "Selects which event plane input (from one of the 4 corners of the island or from the island interior) to use as the input to the top-left corner output mux to drive the event bus plane top-left corner output",
+                    "mode": "RW",
+                    "name": "TLInput"
+                },
+                {
+                    "altname": "RBR",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "REMOVED NOW DO NOT USE If asserted, route the bottom-right island ports in/out of the center; if clear, engage loopbacks (external loop to external, internal to internal)",
+                    "mode": "RW",
+                    "name": "RouteBR"
+                },
+                {
+                    "altname": "RBL",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "REMOVED NOW DO NOT USE If asserted, route the bottom-left island ports in/out of the center; if clear, engage loopbacks (external loop to external, internal to internal)",
+                    "mode": "RW",
+                    "name": "RouteBL"
+                },
+                {
+                    "altname": "RTR",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "REMOVED NOW DO NOT USE If asserted, route the top-right island ports in/out of the center; if clear, engage loopbacks (external loop to external, internal to internal)",
+                    "mode": "RW",
+                    "name": "RouteTR"
+                },
+                {
+                    "altname": "RTL",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "REMOVED NOW DO NOT USE If asserted, route the top-left island ports in/out of the center; if clear, engage loopbacks (external loop to external, internal to internal)",
+                    "mode": "RW",
+                    "name": "RouteTL"
+                }
+            ]
+        },
+        "island_overlay.OvlEventFilterMask": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "Mask for which of the event bits must be set; see also the Peripheral Event Manager FilterMask",
+                    "mode": "RW",
+                    "name": "EventMask"
+                }
+            ]
+        },
+        "island_overlay.OvlEventFilterMatch": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MATCH",
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "Values of the event bits, masked by FilterMask, which must be set for the event to be 'filtered' onto the global event chain; see also the Peripheral Event Manager EventFilterMatch",
+                    "mode": "RW",
+                    "name": "EventMatch"
+                }
+            ]
+        },
+        "island_overlay.OvlMemControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MEM_SHUT_DOWN",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Set to enable memories in the reset/clock domains.  Each bit (0-7) applies to each reset/clock domain (0-7) for the current island.",
+                    "mode": "RW",
+                    "name": "Enable"
+                }
+            ]
+        },
+        "island_overlay.OvlMiscCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MISC_CTRL",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Miscellaneous Control Register - function depends on island.",
+                    "mode": "RW",
+                    "name": "MiscCtrl"
+                }
+            ]
+        }
+    }
+}

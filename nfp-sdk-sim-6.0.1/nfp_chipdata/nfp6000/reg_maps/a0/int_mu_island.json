@@ -1,0 +1,44 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "int_mu_island.IntMuIsldXpbMap": {
+            "0x000a0000": {
+                "altname": "INT_MU_TOP_XPB_MAP",
+                "description": "Internal MU Top Level XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IntMuXpbMap",
+                "ptr": "mu.IntMuXpbMap",
+                "type": "regmap"
+            }
+        },
+        "int_mu_island.IntMuIsldXpbmMap": {
+            "0x00000000": {
+                "altname": "INTMU_ISLAND_OVL_XPBM",
+                "description": "Internal MU Island Overlay XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Overlay",
+                "ptr": "island_overlay.IslandOverlayMap",
+                "type": "regmap"
+            },
+            "0x00060000": {
+                "altname": "INTMU_ISLAND_XPB",
+                "description": "Internal MU Island XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Island",
+                "ptr": "int_mu_island.IntMuIsldXpbMap",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

@@ -1,0 +1,892 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "ila_csr.IlaCsr": {
+            "0x00000000": {
+                "altname": "ILA_CFG",
+                "description": "Selects operation mode for the ILA controller",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaCtrlCfg",
+                "ptr": "ila_csr.IlaCtrlCfg",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "ILA_SPARE",
+                "description": "General Purpose Register",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaSpare",
+                "ptr": "ila_csr.IlaSpare",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "ILA_RX_CH_TO_INTVL",
+                "description": "ILA Rx Channel 1 and 0 Timeout Interval",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaRxChTimeOutIntvl",
+                "ptr": "ila_csr.IlaRxTimeOutIntvl",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "ILA_TXBYTE_CNT_HI",
+                "description": "ILA Tx Byte Counter High 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaTxByteCntHi",
+                "ptr": "ila_csr.IlaTxByteCntHi",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "ILA_TXBYTE_CNT_LO",
+                "description": "ILA Tx Byte Counter Low 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaTxByteCntLo",
+                "ptr": "ila_csr.IlaTxByteCntLo",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "ILA_TXPKT_CNT_HI",
+                "description": "ILA Tx Pkt Counter High 16-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaTxPktCntHi",
+                "ptr": "ila_csr.IlaTxPktCntHi",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "ILA_TXPKT_CNT_LO",
+                "description": "ILA Tx Pkt Counter Low 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaTxPktCntLo",
+                "ptr": "ila_csr.IlaTxPktCntLo",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "ILA_RXBYTE_CNT_HI",
+                "description": "ILA Rx Byte Counter High 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaRxByteCntHi",
+                "ptr": "ila_csr.IlaRxByteCntHi",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "ILA_RXBYTE_CNT_LO",
+                "description": "ILA Rx Byte Counter Low 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaRxByteCntLo",
+                "ptr": "ila_csr.IlaRxByteCntLo",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "ILA_RXPKT_CNT_HI",
+                "description": "ILA Rx Pkt Counter High 16-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaRxPktCntHi",
+                "ptr": "ila_csr.IlaRxPktCntHi",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "ILA_RXPKT_CNT_LO",
+                "description": "ILA Rx Pkt Counter Low 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaRxPktCntLo",
+                "ptr": "ila_csr.IlaRxPktCntLo",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "ILA_RXERRBYTE_CNT_HI",
+                "description": "ILA Rx Errored Byte Counter High 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaRxErrByteCntHi",
+                "ptr": "ila_csr.IlaRxErrByteCntHi",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "ILA_RXERRBYTE_CNT_LO",
+                "description": "ILA Rx Errored Byte Counter Low 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaRxErrByteCntLo",
+                "ptr": "ila_csr.IlaRxErrByteCntLo",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "ILA_RXERRPKT_CNT_HI",
+                "description": "ILA Rx Errored Pkt Counter High 16-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaRxErrPktCntHi",
+                "ptr": "ila_csr.IlaRxErrPktCntHi",
+                "type": "reg"
+            },
+            "0x00000048": {
+                "altname": "ILA_RXERRPKT_CNT_LO",
+                "description": "ILA Rx Errored Pkt Counter Low 32-bits",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaRxErrPktCntLo",
+                "ptr": "ila_csr.IlaRxErrPktCntLo",
+                "type": "reg"
+            },
+            "0x0000004c": {
+                "altname": "ILA_RETDESC_STAT",
+                "description": "Return Descriptor FIFO Status",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaRetDescStat",
+                "ptr": "ila_csr.IlaRetDescStat",
+                "type": "reg"
+            },
+            "0x00000050": {
+                "altname": "ILA_ERR_STAT",
+                "description": "ILA Error Status Register.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaErrStat",
+                "ptr": "ila_csr.IlaErrStat",
+                "type": "reg"
+            },
+            "0x00000054": {
+                "altname": "ILA_ERR_MASK",
+                "description": "ILA Error Mask Register.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaErrMask",
+                "ptr": "ila_csr.IlaErrMask",
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "ILA_ERR_CNT",
+                "description": "ILA Error Counter",
+                "name": "IlaErrCnt",
+                "ptr": "ila_csr.IlaErrCnt",
+                "type": "reg"
+            },
+            "0x00000068": {
+                "altname": "ILA_ERR_CNT_2",
+                "description": "ILA Error Counter 2",
+                "name": "IlaErrCnt_2",
+                "ptr": "ila_csr.IlaErrCnt_2",
+                "type": "reg"
+            },
+            "0x00000074": {
+                "altname": "ILA_SRAM_CTRL_RDESC",
+                "description": "SRAM Control register  for ILA Return Descriptor SRAM",
+                "name": "IlaSramCtrlRtnDesc",
+                "ptr": "ila_csr.IlaSramCtrl",
+                "type": "reg"
+            },
+            "0x00000078": {
+                "altname": "ILA_SRAM_CTRL_RXFIFO",
+                "description": "SRAM Control register  for ILA Rx FIFO SRAM",
+                "name": "IlaSramCtrlRxFifo",
+                "ptr": "ila_csr.IlaSramCtrl",
+                "type": "reg"
+            },
+            "0x00000088": {
+                "altname": "ILA_TXERR_CTRL",
+                "description": "ILA Tx Error propagation control register",
+                "name": "IlaTxErrCtrl",
+                "ptr": "ila_csr.IlaTxErrCtrl",
+                "type": "reg"
+            }
+        },
+        "ila_csr.IlaGlbAdrMap": {
+            "0x00000000": {
+                "altname": "ILA_CSR",
+                "description": "ILA Controller CSRs",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaCsr",
+                "ptr": "ila_csr.IlaCsr",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "ILA_INT_MGMT",
+                "description": "ILA Interrupt Management registers. Refer to the Peripheral Interrupt Manager specification for Register Descriptions",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IlaIntMgmt",
+                "ptr": "peripheral_interrupt_manager.InterruptManagerMap_inst1",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "ILA_SHARED_ECC",
+                "description": "ILA Shared SRAM ECC Monitor Access. Refer to the Peripheral ECC Monitor specification for Register Descriptions. Implemented using ecc_monitor and ecc_monitor4 ECC macro",
+                "name": "IlaSharedEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "ILA_QMGR_ECC",
+                "description": "ILA Que Manager SRAM ECC Monitor Access. Refer to the Peripheral ECC Monitor specification for Register Descriptions",
+                "name": "IlaQmgrEcc",
+                "ptr": "peripheral_ecc_monitor.ECCControl",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {
+        "ila_csr.IlaCtrlCfg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_RX_FIFO_PACK",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "ILA RX FIFO PACKING",
+                    "mode": "RW",
+                    "name": "IlaRxFifoPack"
+                },
+                {
+                    "altname": "ILA_TX_IDLE_CNT",
+                    "bit_lsb": 10,
+                    "bit_msb": 19,
+                    "description": "Controls how often idle packets are transmitted. Idle packets communicate the LCC value\nto the peer device when no active packets are being transmitted. Software must program this value AFTER changing the IlaMode=ACCEL. The recommended value\nis 15.",
+                    "mode": "RW",
+                    "name": "IlaTxIdleCnt"
+                },
+                {
+                    "altname": "ILA_RX_FIFO_SIZE",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "ILA RX FIFO SIZE",
+                    "mode": "RW",
+                    "name": "IlaRxFifoSize"
+                },
+                {
+                    "altname": "ILA_TX_WR_CREDIT_CNT_ENA",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "ILA TX Credit Counter Enable",
+                    "mode": "RW",
+                    "name": "IlaTxWrCreditCntEna"
+                },
+                {
+                    "altname": "ILA_ERR_POISON_EN",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Enables poisoning of push or pull data upon receipt of an ILA Receive Error. Poisoning the data sets the data_error flag on the bus during the data transfer.",
+                    "mode": "RW",
+                    "name": "IlaErrPoisonEn"
+                },
+                {
+                    "altname": "ILA_CTRL_RSVD2",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Reserved",
+                    "mode": "RW",
+                    "name": "IlaCtrlRsvd2"
+                },
+                {
+                    "altname": "BURST_MAX",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Controls the maximum size of a burst on the Interlaken Look-Aside bus. Must match the CSR setting in the Interlaken Look-Aside IP core (See MAC block registers).",
+                    "mode": "RW",
+                    "name": "BurstMax"
+                },
+                {
+                    "altname": "ILA_CTRL_RSVD",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Reserved for future use",
+                    "mode": "RW",
+                    "name": "IlaCtrlRsvd"
+                },
+                {
+                    "altname": "ILA_MODE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Configures the Mode of ILA Block",
+                    "mode": "RW",
+                    "name": "IlaMode"
+                },
+                {
+                    "altname": "ILA_CPP_ADDR_MODE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Configure whether to interpret the CPP address bits as 32-bit or 40-bit.",
+                    "mode": "RW",
+                    "name": "IlaCppAddrMode"
+                }
+            ]
+        },
+        "ila_csr.IlaErrCnt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "EOP_ERR_CNT",
+                    "bit_lsb": 20,
+                    "bit_msb": 29,
+                    "description": "Stores the ILA EOP_ERR Counter.",
+                    "mode": "RO",
+                    "name": "EopErrCnt"
+                },
+                {
+                    "altname": "CPP_PULL_DATA_ERR_CNT",
+                    "bit_lsb": 10,
+                    "bit_msb": 19,
+                    "description": "Stores the CPP Pull Data Error Counter.",
+                    "mode": "RO",
+                    "name": "CppPullDataErrCnt"
+                },
+                {
+                    "altname": "CPP_PUSH_DATA_ERR_CNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "Stores the CPP Push Data Error Counter.",
+                    "mode": "RO",
+                    "name": "CppPushDataErrCnt"
+                }
+            ]
+        },
+        "ila_csr.IlaErrCnt_2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TIME_OUT_ERR_CNT",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Stores the Time Out Error Counter.",
+                    "mode": "RO",
+                    "name": "TimeOutErrCnt"
+                },
+                {
+                    "altname": "RX_ERR_CNT",
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Stores the RX_ERR Error Counter.",
+                    "mode": "RO",
+                    "name": "RxErrCnt"
+                },
+                {
+                    "altname": "ERR_ALL_CNT",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Stores the ERR_ALL Error Counter.",
+                    "mode": "RO",
+                    "name": "ErrAllCnt"
+                },
+                {
+                    "altname": "CPPT_BAD_CMD_CNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Stores the CPPT Bad Command Error Counter.",
+                    "mode": "RO",
+                    "name": "CppTBadCmdCnt"
+                }
+            ]
+        },
+        "ila_csr.IlaErrMask": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INVALID_TAG_MASK",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Set to mask Invalid_TAG error interrupts.",
+                    "mode": "RW",
+                    "name": "InvalidTagMask"
+                },
+                {
+                    "altname": "RX_ERR_ALL_MASK",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Set to mask Rx Err_All error interrupts.",
+                    "mode": "RW",
+                    "name": "RxErrAllMask"
+                },
+                {
+                    "altname": "CPPT_BAD_CMB_MASK",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Set to mask CPPT Illegal Command error interrupts.",
+                    "mode": "RW",
+                    "name": "CppTBadCmdMask"
+                },
+                {
+                    "altname": "TGT_WR_START_ERR_MASK",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Set to mask Accel Target Write Command Start Error.",
+                    "mode": "RW",
+                    "name": "TgtWrStartErrMask"
+                },
+                {
+                    "altname": "CPP_TC_PULL_ERR_MASK",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Set to mask CPP Target pull data error interrupts",
+                    "mode": "RW",
+                    "name": "CppTCPullErrMask"
+                },
+                {
+                    "altname": "CPP_TC_PUSH_ERR_MASK",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Set to mask CPP Taget push data error interrupts.",
+                    "mode": "RW",
+                    "name": "CppTCPushErrMask"
+                },
+                {
+                    "altname": "TGT_WR_END_ERR_MASK",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Set to mask Accel Target Write Command End Error.",
+                    "mode": "RW",
+                    "name": "TgtWrEndErrMask"
+                },
+                {
+                    "altname": "RX_ERR_MASK",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Set to mask packet error interrupts.",
+                    "mode": "RW",
+                    "name": "RxErrMask"
+                },
+                {
+                    "altname": "EOP_ERR_MASK",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Set to mask EOP error interrrupts.",
+                    "mode": "RW",
+                    "name": "EopErrMask"
+                },
+                {
+                    "altname": "TIME_OUT_ERR_MASK",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Set to mask Time out error interrupts.",
+                    "mode": "RW",
+                    "name": "TimeOutErrMask"
+                },
+                {
+                    "altname": "ILA_RX_ALIGN_ERR_MASK",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set to mask ILA Rx alignment error interrupts.",
+                    "mode": "RW",
+                    "name": "IlaRxAlignErrMask"
+                }
+            ]
+        },
+        "ila_csr.IlaErrStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "INVALID_TAG",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Set when Invalid Tags are received from the ILA Rx Interface.",
+                    "mode": "RW1C",
+                    "name": "InvalidTag"
+                },
+                {
+                    "altname": "RX_ERR_ALL",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Set when all open channels are errored out by the ILA Rx Core.",
+                    "mode": "RW1C",
+                    "name": "RxErrAll"
+                },
+                {
+                    "altname": "CPPT_BAD_CMB",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Indicates Illegal CPP Target Command.",
+                    "mode": "RW1C",
+                    "name": "CppTBadCmd"
+                },
+                {
+                    "altname": "TGT_WR_START_ERR",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Accel Target Write Command Start Error.",
+                    "mode": "RW1C",
+                    "name": "TgtWrStartErr"
+                },
+                {
+                    "altname": "CPP_TC_PULL_ERR",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Indicates data going to the ILA Tx interface encountered a pull data error.",
+                    "mode": "RW1C",
+                    "name": "CppTCPullErr"
+                },
+                {
+                    "altname": "CPP_TC_PUSH_ERR",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Indicates an ILA Rx error or propagated to the CPP Target push bus.",
+                    "mode": "RW1C",
+                    "name": "CppTCPushErr"
+                },
+                {
+                    "altname": "TGT_WR_END_ERR",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Accel Target Write Command End Error.",
+                    "mode": "RW1C",
+                    "name": "TgtWrEndErr"
+                },
+                {
+                    "altname": "RX_ERR",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Set when a packet error is signaled by the ILA Rx Core.",
+                    "mode": "RW1C",
+                    "name": "RxErr"
+                },
+                {
+                    "altname": "EOP_ERR",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Set when an EOP error is signaled by the ILA Rx Core",
+                    "mode": "RW1C",
+                    "name": "EopErr"
+                },
+                {
+                    "altname": "TIME_OUT_ERR",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Set when no response has been received for a configurable amount of time.",
+                    "mode": "RW1C",
+                    "name": "TimeOutErr"
+                },
+                {
+                    "altname": "ILA_RX_ALIGN_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Set when the ILA Rx Alignment is lost. Indicates the SERDES lanes alignment has dropprd.",
+                    "mode": "RW1C",
+                    "name": "IlaRxAlignErr"
+                }
+            ]
+        },
+        "ila_csr.IlaRetDescStat": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_RETDESC_CURDEPTH",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Indicates the current depth the Return Descriptor FIFO",
+                    "mode": "RO",
+                    "name": "IlaRetDescCurDepth"
+                },
+                {
+                    "altname": "ILA_RETDESC_MAXDEPTH",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Indicates the maximum depth the Return Descriptor has reached.",
+                    "mode": "RO",
+                    "name": "IlaRetDescMaxDepth"
+                }
+            ]
+        },
+        "ila_csr.IlaRxByteCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_RXBYTE_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Upper 32-bits of 64-bit ILA Rx Byte count. Reading this register latches the value in IlaRxByteCntLo",
+                    "mode": "RC",
+                    "name": "IlaRxByteCntHi"
+                }
+            ]
+        },
+        "ila_csr.IlaRxByteCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_RXBYTE_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 64-bit ILA Rx Byte count. Reading this register after reading the IlaRxByteCntHi register",
+                    "mode": "RC",
+                    "name": "IlaRxByteCntLo"
+                }
+            ]
+        },
+        "ila_csr.IlaRxErrByteCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_RXERRBYTE_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Upper 32-bits of 64-bit ILA Rx Errored Byte count. Reading this register latches the value in IlaRxErrByteCntLo",
+                    "mode": "RC",
+                    "name": "IlaRxErrByteCntHi"
+                }
+            ]
+        },
+        "ila_csr.IlaRxErrByteCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_RXERRBYTE_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 64-bit ILA Rx Errored Byte count. Reading this register after reading the IlaRxErrByteCntHi register",
+                    "mode": "RC",
+                    "name": "IlaRxErrByteCntLo"
+                }
+            ]
+        },
+        "ila_csr.IlaRxErrPktCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_RXERRPKT_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Upper 16-bits of 48-bit ILA Rx Errored Packet count. Reading this register latches the value in IlaRxErrPktCntLo",
+                    "mode": "RC",
+                    "name": "IlaRxErrPktCntHi"
+                }
+            ]
+        },
+        "ila_csr.IlaRxErrPktCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_RXERRPKT_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 48-bit ILA Rx Errored Packet count. Reading this register after reading the IlaRxErrPktCntHi register",
+                    "mode": "RC",
+                    "name": "IlaRxErrPktCntLo"
+                }
+            ]
+        },
+        "ila_csr.IlaRxPktCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_RXPKT_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Upper 16-bits of 48-bit ILA Rx Packet count. Reading this register latches the value in IlaRxPktCntLo",
+                    "mode": "RC",
+                    "name": "IlaRxPktCntHi"
+                }
+            ]
+        },
+        "ila_csr.IlaRxPktCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_RXPKT_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 48-bit ILA Rx Packet count. Reading this register after reading the IlaRxPktCntHi register",
+                    "mode": "RC",
+                    "name": "IlaRxPktCntLo"
+                }
+            ]
+        },
+        "ila_csr.IlaRxTimeOutIntvl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_RXTO_INTVL_CH1",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Time allowed for a response from the attached device in increments of 256ns. A value of zero disables the timer.",
+                    "mode": "RW",
+                    "name": "IlaRxTimeOutIntvlCh1"
+                },
+                {
+                    "altname": "ILA_RXTO_INTVL_CH0",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Time allowed for a response from the attached device in increments of 256ns. A value of zero disables the timer.",
+                    "mode": "RW",
+                    "name": "IlaRxTimeOutIntvlCh0"
+                }
+            ]
+        },
+        "ila_csr.IlaSpare": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_SPARE",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "General use register.",
+                    "mode": "RW",
+                    "name": "IlaSpare"
+                }
+            ]
+        },
+        "ila_csr.IlaSramCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "SRAM0: Bias Level Adjust Input. This is bias control for controlling the diode connected to VSSCORE.",
+                    "mode": "RW",
+                    "name": "BC2_0"
+                },
+                {
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "SRAM0: Bias Level Adjust Input. This is bias control for controlling the diode connected to VSSCORE.",
+                    "mode": "RW",
+                    "name": "BC1_0"
+                },
+                {
+                    "altname": "TEST1B_0",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "SRAM0: Test pin for Port B to bypass self-timed circuit. The external clock controls the read and write control signals.",
+                    "mode": "RW",
+                    "name": "Test1B0"
+                },
+                {
+                    "altname": "TEST_TEST1A_0",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "SRAM0: Test pin for Port A to bypass self-timed circuit. The external clock controls the read and write control signals.",
+                    "mode": "RW",
+                    "name": "Test1Test1A0"
+                },
+                {
+                    "altname": "RA_RM_OVRD_0",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "SRAM0: Enables the override of the sense-amp controls by both RmRma0 and Rmb0 fields.",
+                    "mode": "RW",
+                    "name": "RaRmOveride0"
+                },
+                {
+                    "altname": "RA_0",
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "SRAM0: RA for 1-Port SRAMs. Read Assist(RA) to control WL under-drive. See SRAMs specs.",
+                    "mode": "RW",
+                    "name": "Ra0"
+                },
+                {
+                    "altname": "RMB_0",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "SRAM0: RMB for 2-port SRAMs. Read Margin Port B(RMB) sets the Read-Write margin by adjusting the sense amp differential setting.  See SRAMs specs.",
+                    "mode": "RW",
+                    "name": "Rmb0"
+                },
+                {
+                    "altname": "RM_RMA_0",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "SRAM0: RM for 1-Port SRAMs / RMA for 2-port SRAMs. Read Margin(RM) / Read Margin Port A(RMA) sets the Read-Write margin by adjusting the sense amp differential setting.  See SRAMs specs.",
+                    "mode": "RW",
+                    "name": "RmRma0"
+                }
+            ]
+        },
+        "ila_csr.IlaTxByteCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_TXBYTE_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Upper 32-bits of 64-bit ILA Tx Byte count. Reading this register latches the value in IlaTxByteCntLo",
+                    "mode": "RC",
+                    "name": "IlaTxByteCntHi"
+                }
+            ]
+        },
+        "ila_csr.IlaTxByteCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_TXBYTE_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 64-bit ILA Tx Byte count. Reading this register after reading the IlaTxByteCntHi register",
+                    "mode": "RC",
+                    "name": "IlaTxByteCntLo"
+                }
+            ]
+        },
+        "ila_csr.IlaTxErrCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_TX_ERR_DISABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "ILA Transmit error propagation disable. When set data errors are disabled from propagating to the Interlaken_la transmit interface.",
+                    "mode": "RW",
+                    "name": "IlaTxErrDisable"
+                }
+            ]
+        },
+        "ila_csr.IlaTxPktCntHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_TXPKT_CNT_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Upper 16-bits of 48-bit ILA Tx Packet count. Reading this register latches the value in IlaTxPktCntLo",
+                    "mode": "RC",
+                    "name": "IlaTxPktCntHi"
+                }
+            ]
+        },
+        "ila_csr.IlaTxPktCntLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ILA_TXPKT_CNT_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Lower 32-bits of 48-bit ILA Tx Packet count. Reading this register after reading the IlaTxPktCntHi register",
+                    "mode": "RC",
+                    "name": "IlaTxPktCntLo"
+                }
+            ]
+        }
+    }
+}

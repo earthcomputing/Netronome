@@ -1,0 +1,4398 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "mu_dct.MUExtDCT": {
+            "0x00000000": {
+                "altname": "I_DENALI_CTL_00",
+                "name": "i_DENALI_CTL_00",
+                "ptr": "mu_dct.DENALI_CTL_00",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "I_DENALI_CTL_01",
+                "name": "i_DENALI_CTL_01",
+                "ptr": "mu_dct.DENALI_CTL_01",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "I_DENALI_CTL_02",
+                "name": "i_DENALI_CTL_02",
+                "ptr": "mu_dct.DENALI_CTL_02",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "I_DENALI_CTL_03",
+                "name": "i_DENALI_CTL_03",
+                "ptr": "mu_dct.DENALI_CTL_03",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "I_DENALI_CTL_04",
+                "name": "i_DENALI_CTL_04",
+                "ptr": "mu_dct.DENALI_CTL_04",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "I_DENALI_CTL_05",
+                "name": "i_DENALI_CTL_05",
+                "ptr": "mu_dct.DENALI_CTL_05",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "I_DENALI_CTL_06",
+                "name": "i_DENALI_CTL_06",
+                "ptr": "mu_dct.DENALI_CTL_06",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "I_DENALI_CTL_07",
+                "name": "i_DENALI_CTL_07",
+                "ptr": "mu_dct.DENALI_CTL_07",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "I_DENALI_CTL_08",
+                "name": "i_DENALI_CTL_08",
+                "ptr": "mu_dct.DENALI_CTL_08",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "I_DENALI_CTL_09",
+                "name": "i_DENALI_CTL_09",
+                "ptr": "mu_dct.DENALI_CTL_09",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "I_DENALI_CTL_10",
+                "name": "i_DENALI_CTL_10",
+                "ptr": "mu_dct.DENALI_CTL_10",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "I_DENALI_CTL_11",
+                "name": "i_DENALI_CTL_11",
+                "ptr": "mu_dct.DENALI_CTL_11",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "I_DENALI_CTL_12",
+                "name": "i_DENALI_CTL_12",
+                "ptr": "mu_dct.DENALI_CTL_12",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "I_DENALI_CTL_13",
+                "name": "i_DENALI_CTL_13",
+                "ptr": "mu_dct.DENALI_CTL_13",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "I_DENALI_CTL_14",
+                "name": "i_DENALI_CTL_14",
+                "ptr": "mu_dct.DENALI_CTL_14",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "I_DENALI_CTL_15",
+                "name": "i_DENALI_CTL_15",
+                "ptr": "mu_dct.DENALI_CTL_15",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "I_DENALI_CTL_16",
+                "name": "i_DENALI_CTL_16",
+                "ptr": "mu_dct.DENALI_CTL_16",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "I_DENALI_CTL_17",
+                "name": "i_DENALI_CTL_17",
+                "ptr": "mu_dct.DENALI_CTL_17",
+                "type": "reg"
+            },
+            "0x00000048": {
+                "altname": "I_DENALI_CTL_18",
+                "name": "i_DENALI_CTL_18",
+                "ptr": "mu_dct.DENALI_CTL_18",
+                "type": "reg"
+            },
+            "0x0000004c": {
+                "altname": "I_DENALI_CTL_19",
+                "name": "i_DENALI_CTL_19",
+                "ptr": "mu_dct.DENALI_CTL_19",
+                "type": "reg"
+            },
+            "0x00000050": {
+                "altname": "I_DENALI_CTL_20",
+                "name": "i_DENALI_CTL_20",
+                "ptr": "mu_dct.DENALI_CTL_20",
+                "type": "reg"
+            },
+            "0x00000054": {
+                "altname": "I_DENALI_CTL_21",
+                "name": "i_DENALI_CTL_21",
+                "ptr": "mu_dct.DENALI_CTL_21",
+                "type": "reg"
+            },
+            "0x00000058": {
+                "altname": "I_DENALI_CTL_22",
+                "name": "i_DENALI_CTL_22",
+                "ptr": "mu_dct.DENALI_CTL_22",
+                "type": "reg"
+            },
+            "0x0000005c": {
+                "altname": "I_DENALI_CTL_23",
+                "name": "i_DENALI_CTL_23",
+                "ptr": "mu_dct.DENALI_CTL_23",
+                "type": "reg"
+            },
+            "0x00000060": {
+                "altname": "I_DENALI_CTL_24",
+                "name": "i_DENALI_CTL_24",
+                "ptr": "mu_dct.DENALI_CTL_24",
+                "type": "reg"
+            },
+            "0x00000064": {
+                "altname": "I_DENALI_CTL_25",
+                "name": "i_DENALI_CTL_25",
+                "ptr": "mu_dct.DENALI_CTL_25",
+                "type": "reg"
+            },
+            "0x00000068": {
+                "altname": "I_DENALI_CTL_26",
+                "name": "i_DENALI_CTL_26",
+                "ptr": "mu_dct.DENALI_CTL_26",
+                "type": "reg"
+            },
+            "0x0000006c": {
+                "altname": "I_DENALI_CTL_27",
+                "name": "i_DENALI_CTL_27",
+                "ptr": "mu_dct.DENALI_CTL_27",
+                "type": "reg"
+            },
+            "0x00000070": {
+                "altname": "I_DENALI_CTL_28",
+                "name": "i_DENALI_CTL_28",
+                "ptr": "mu_dct.DENALI_CTL_28",
+                "type": "reg"
+            },
+            "0x00000074": {
+                "altname": "I_DENALI_CTL_29",
+                "name": "i_DENALI_CTL_29",
+                "ptr": "mu_dct.DENALI_CTL_29",
+                "type": "reg"
+            },
+            "0x00000078": {
+                "altname": "I_DENALI_CTL_30",
+                "name": "i_DENALI_CTL_30",
+                "ptr": "mu_dct.DENALI_CTL_30",
+                "type": "reg"
+            },
+            "0x0000007c": {
+                "altname": "I_DENALI_CTL_31",
+                "name": "i_DENALI_CTL_31",
+                "ptr": "mu_dct.DENALI_CTL_31",
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "I_DENALI_CTL_32",
+                "name": "i_DENALI_CTL_32",
+                "ptr": "mu_dct.DENALI_CTL_32",
+                "type": "reg"
+            },
+            "0x00000084": {
+                "altname": "I_DENALI_CTL_33",
+                "name": "i_DENALI_CTL_33",
+                "ptr": "mu_dct.DENALI_CTL_33",
+                "type": "reg"
+            },
+            "0x00000088": {
+                "altname": "I_DENALI_CTL_34",
+                "name": "i_DENALI_CTL_34",
+                "ptr": "mu_dct.DENALI_CTL_34",
+                "type": "reg"
+            },
+            "0x0000008c": {
+                "altname": "I_DENALI_CTL_35",
+                "name": "i_DENALI_CTL_35",
+                "ptr": "mu_dct.DENALI_CTL_35",
+                "type": "reg"
+            },
+            "0x00000090": {
+                "altname": "I_DENALI_CTL_36",
+                "name": "i_DENALI_CTL_36",
+                "ptr": "mu_dct.DENALI_CTL_36",
+                "type": "reg"
+            },
+            "0x00000094": {
+                "altname": "I_DENALI_CTL_37",
+                "name": "i_DENALI_CTL_37",
+                "ptr": "mu_dct.DENALI_CTL_37",
+                "type": "reg"
+            },
+            "0x00000098": {
+                "altname": "I_DENALI_CTL_38",
+                "name": "i_DENALI_CTL_38",
+                "ptr": "mu_dct.DENALI_CTL_38",
+                "type": "reg"
+            },
+            "0x0000009c": {
+                "altname": "I_DENALI_CTL_39",
+                "name": "i_DENALI_CTL_39",
+                "ptr": "mu_dct.DENALI_CTL_39",
+                "type": "reg"
+            },
+            "0x000000a0": {
+                "altname": "I_DENALI_CTL_40",
+                "name": "i_DENALI_CTL_40",
+                "ptr": "mu_dct.DENALI_CTL_40",
+                "type": "reg"
+            },
+            "0x000000a4": {
+                "altname": "I_DENALI_CTL_41",
+                "name": "i_DENALI_CTL_41",
+                "ptr": "mu_dct.DENALI_CTL_41",
+                "type": "reg"
+            },
+            "0x000000a8": {
+                "altname": "I_DENALI_CTL_42",
+                "name": "i_DENALI_CTL_42",
+                "ptr": "mu_dct.DENALI_CTL_42",
+                "type": "reg"
+            },
+            "0x000000ac": {
+                "altname": "I_DENALI_CTL_43",
+                "name": "i_DENALI_CTL_43",
+                "ptr": "mu_dct.DENALI_CTL_43",
+                "type": "reg"
+            },
+            "0x000000b0": {
+                "altname": "I_DENALI_CTL_44",
+                "name": "i_DENALI_CTL_44",
+                "ptr": "mu_dct.DENALI_CTL_44",
+                "type": "reg"
+            },
+            "0x000000b4": {
+                "altname": "I_DENALI_CTL_45",
+                "name": "i_DENALI_CTL_45",
+                "ptr": "mu_dct.DENALI_CTL_45",
+                "type": "reg"
+            },
+            "0x000000b8": {
+                "altname": "I_DENALI_CTL_46",
+                "name": "i_DENALI_CTL_46",
+                "ptr": "mu_dct.DENALI_CTL_46",
+                "type": "reg"
+            },
+            "0x000000bc": {
+                "altname": "I_DENALI_CTL_47",
+                "name": "i_DENALI_CTL_47",
+                "ptr": "mu_dct.DENALI_CTL_47",
+                "type": "reg"
+            },
+            "0x000000c0": {
+                "altname": "I_DENALI_CTL_48",
+                "name": "i_DENALI_CTL_48",
+                "ptr": "mu_dct.DENALI_CTL_48",
+                "type": "reg"
+            },
+            "0x000000c4": {
+                "altname": "I_DENALI_CTL_49",
+                "name": "i_DENALI_CTL_49",
+                "ptr": "mu_dct.DENALI_CTL_49",
+                "type": "reg"
+            },
+            "0x000000c8": {
+                "altname": "I_DENALI_CTL_50",
+                "name": "i_DENALI_CTL_50",
+                "ptr": "mu_dct.DENALI_CTL_50",
+                "type": "reg"
+            },
+            "0x000000cc": {
+                "altname": "I_DENALI_CTL_51",
+                "name": "i_DENALI_CTL_51",
+                "ptr": "mu_dct.DENALI_CTL_51",
+                "type": "reg"
+            },
+            "0x000000d0": {
+                "altname": "I_DENALI_CTL_52",
+                "name": "i_DENALI_CTL_52",
+                "ptr": "mu_dct.DENALI_CTL_52",
+                "type": "reg"
+            },
+            "0x000000d4": {
+                "altname": "I_DENALI_CTL_53",
+                "name": "i_DENALI_CTL_53",
+                "ptr": "mu_dct.DENALI_CTL_53",
+                "type": "reg"
+            },
+            "0x000000d8": {
+                "altname": "I_DENALI_CTL_54",
+                "name": "i_DENALI_CTL_54",
+                "ptr": "mu_dct.DENALI_CTL_54",
+                "type": "reg"
+            },
+            "0x000000dc": {
+                "altname": "I_DENALI_CTL_55",
+                "name": "i_DENALI_CTL_55",
+                "ptr": "mu_dct.DENALI_CTL_55",
+                "type": "reg"
+            },
+            "0x000000e0": {
+                "altname": "I_DENALI_CTL_56",
+                "name": "i_DENALI_CTL_56",
+                "ptr": "mu_dct.DENALI_CTL_56",
+                "type": "reg"
+            },
+            "0x000000e4": {
+                "altname": "I_DENALI_CTL_57",
+                "name": "i_DENALI_CTL_57",
+                "ptr": "mu_dct.DENALI_CTL_57",
+                "type": "reg"
+            },
+            "0x000000e8": {
+                "altname": "I_DENALI_CTL_58",
+                "name": "i_DENALI_CTL_58",
+                "ptr": "mu_dct.DENALI_CTL_58",
+                "type": "reg"
+            },
+            "0x000000ec": {
+                "altname": "I_DENALI_CTL_59",
+                "name": "i_DENALI_CTL_59",
+                "ptr": "mu_dct.DENALI_CTL_59",
+                "type": "reg"
+            },
+            "0x000000f0": {
+                "altname": "I_DENALI_CTL_60",
+                "name": "i_DENALI_CTL_60",
+                "ptr": "mu_dct.DENALI_CTL_60",
+                "type": "reg"
+            },
+            "0x000000f4": {
+                "altname": "I_DENALI_CTL_61",
+                "name": "i_DENALI_CTL_61",
+                "ptr": "mu_dct.DENALI_CTL_61",
+                "type": "reg"
+            },
+            "0x000000f8": {
+                "altname": "I_DENALI_CTL_62",
+                "name": "i_DENALI_CTL_62",
+                "ptr": "mu_dct.DENALI_CTL_62",
+                "type": "reg"
+            },
+            "0x000000fc": {
+                "altname": "I_DENALI_CTL_63",
+                "name": "i_DENALI_CTL_63",
+                "ptr": "mu_dct.DENALI_CTL_63",
+                "type": "reg"
+            },
+            "0x00000100": {
+                "altname": "I_DENALI_CTL_64",
+                "name": "i_DENALI_CTL_64",
+                "ptr": "mu_dct.DENALI_CTL_64",
+                "type": "reg"
+            },
+            "0x00000104": {
+                "altname": "I_DENALI_CTL_65",
+                "name": "i_DENALI_CTL_65",
+                "ptr": "mu_dct.DENALI_CTL_65",
+                "type": "reg"
+            },
+            "0x00000108": {
+                "altname": "I_DENALI_CTL_66",
+                "name": "i_DENALI_CTL_66",
+                "ptr": "mu_dct.DENALI_CTL_66",
+                "type": "reg"
+            },
+            "0x0000010c": {
+                "altname": "I_DENALI_CTL_67",
+                "name": "i_DENALI_CTL_67",
+                "ptr": "mu_dct.DENALI_CTL_67",
+                "type": "reg"
+            },
+            "0x00000110": {
+                "altname": "I_DENALI_CTL_68",
+                "name": "i_DENALI_CTL_68",
+                "ptr": "mu_dct.DENALI_CTL_68",
+                "type": "reg"
+            },
+            "0x00000114": {
+                "altname": "I_DENALI_CTL_69",
+                "name": "i_DENALI_CTL_69",
+                "ptr": "mu_dct.DENALI_CTL_69",
+                "type": "reg"
+            },
+            "0x00000118": {
+                "altname": "I_DENALI_CTL_70",
+                "name": "i_DENALI_CTL_70",
+                "ptr": "mu_dct.DENALI_CTL_70",
+                "type": "reg"
+            },
+            "0x0000011c": {
+                "altname": "I_DENALI_CTL_71",
+                "name": "i_DENALI_CTL_71",
+                "ptr": "mu_dct.DENALI_CTL_71",
+                "type": "reg"
+            },
+            "0x00000120": {
+                "altname": "I_DENALI_CTL_72",
+                "name": "i_DENALI_CTL_72",
+                "ptr": "mu_dct.DENALI_CTL_72",
+                "type": "reg"
+            },
+            "0x00000124": {
+                "altname": "I_DENALI_CTL_73",
+                "name": "i_DENALI_CTL_73",
+                "ptr": "mu_dct.DENALI_CTL_73",
+                "type": "reg"
+            },
+            "0x00000128": {
+                "altname": "I_DENALI_CTL_74",
+                "name": "i_DENALI_CTL_74",
+                "ptr": "mu_dct.DENALI_CTL_74",
+                "type": "reg"
+            },
+            "0x0000012c": {
+                "altname": "I_DENALI_CTL_75",
+                "name": "i_DENALI_CTL_75",
+                "ptr": "mu_dct.DENALI_CTL_75",
+                "type": "reg"
+            },
+            "0x00000130": {
+                "altname": "I_DENALI_CTL_76",
+                "name": "i_DENALI_CTL_76",
+                "ptr": "mu_dct.DENALI_CTL_76",
+                "type": "reg"
+            },
+            "0x00000134": {
+                "altname": "I_DENALI_CTL_77",
+                "name": "i_DENALI_CTL_77",
+                "ptr": "mu_dct.DENALI_CTL_77",
+                "type": "reg"
+            },
+            "0x00000138": {
+                "altname": "I_DENALI_CTL_78",
+                "name": "i_DENALI_CTL_78",
+                "ptr": "mu_dct.DENALI_CTL_78",
+                "type": "reg"
+            },
+            "0x0000013c": {
+                "altname": "I_DENALI_CTL_79",
+                "name": "i_DENALI_CTL_79",
+                "ptr": "mu_dct.DENALI_CTL_79",
+                "type": "reg"
+            },
+            "0x00000140": {
+                "altname": "I_DENALI_CTL_80",
+                "name": "i_DENALI_CTL_80",
+                "ptr": "mu_dct.DENALI_CTL_80",
+                "type": "reg"
+            },
+            "0x00000144": {
+                "altname": "I_DENALI_CTL_81",
+                "name": "i_DENALI_CTL_81",
+                "ptr": "mu_dct.DENALI_CTL_81",
+                "type": "reg"
+            },
+            "0x00000148": {
+                "altname": "I_DENALI_CTL_82",
+                "name": "i_DENALI_CTL_82",
+                "ptr": "mu_dct.DENALI_CTL_82",
+                "type": "reg"
+            },
+            "0x0000014c": {
+                "altname": "I_DENALI_CTL_83",
+                "name": "i_DENALI_CTL_83",
+                "ptr": "mu_dct.DENALI_CTL_83",
+                "type": "reg"
+            },
+            "0x00000150": {
+                "altname": "I_DENALI_CTL_84",
+                "name": "i_DENALI_CTL_84",
+                "ptr": "mu_dct.DENALI_CTL_84",
+                "type": "reg"
+            },
+            "0x00000154": {
+                "altname": "I_DENALI_CTL_85",
+                "name": "i_DENALI_CTL_85",
+                "ptr": "mu_dct.DENALI_CTL_85",
+                "type": "reg"
+            },
+            "0x00000158": {
+                "altname": "I_DENALI_CTL_86",
+                "name": "i_DENALI_CTL_86",
+                "ptr": "mu_dct.DENALI_CTL_86",
+                "type": "reg"
+            },
+            "0x0000015c": {
+                "altname": "I_DENALI_CTL_87",
+                "name": "i_DENALI_CTL_87",
+                "ptr": "mu_dct.DENALI_CTL_87",
+                "type": "reg"
+            },
+            "0x00000160": {
+                "altname": "I_DENALI_CTL_88",
+                "name": "i_DENALI_CTL_88",
+                "ptr": "mu_dct.DENALI_CTL_88",
+                "type": "reg"
+            },
+            "0x00000164": {
+                "altname": "I_DENALI_CTL_89",
+                "name": "i_DENALI_CTL_89",
+                "ptr": "mu_dct.DENALI_CTL_89",
+                "type": "reg"
+            },
+            "0x00000168": {
+                "altname": "I_DENALI_CTL_90",
+                "name": "i_DENALI_CTL_90",
+                "ptr": "mu_dct.DENALI_CTL_90",
+                "type": "reg"
+            },
+            "0x0000016c": {
+                "altname": "I_DENALI_CTL_91",
+                "name": "i_DENALI_CTL_91",
+                "ptr": "mu_dct.DENALI_CTL_91",
+                "type": "reg"
+            },
+            "0x00000170": {
+                "altname": "I_DENALI_CTL_92",
+                "name": "i_DENALI_CTL_92",
+                "ptr": "mu_dct.DENALI_CTL_92",
+                "type": "reg"
+            },
+            "0x00000174": {
+                "altname": "I_DENALI_CTL_93",
+                "name": "i_DENALI_CTL_93",
+                "ptr": "mu_dct.DENALI_CTL_93",
+                "type": "reg"
+            },
+            "0x00000178": {
+                "altname": "I_DENALI_CTL_94",
+                "name": "i_DENALI_CTL_94",
+                "ptr": "mu_dct.DENALI_CTL_94",
+                "type": "reg"
+            },
+            "0x0000017c": {
+                "altname": "I_DENALI_CTL_95",
+                "name": "i_DENALI_CTL_95",
+                "ptr": "mu_dct.DENALI_CTL_95",
+                "type": "reg"
+            },
+            "0x00000180": {
+                "altname": "I_DENALI_CTL_96",
+                "name": "i_DENALI_CTL_96",
+                "ptr": "mu_dct.DENALI_CTL_96",
+                "type": "reg"
+            },
+            "0x00000184": {
+                "altname": "I_DENALI_CTL_97",
+                "name": "i_DENALI_CTL_97",
+                "ptr": "mu_dct.DENALI_CTL_97",
+                "type": "reg"
+            },
+            "0x00000188": {
+                "altname": "I_DENALI_CTL_98",
+                "name": "i_DENALI_CTL_98",
+                "ptr": "mu_dct.DENALI_CTL_98",
+                "type": "reg"
+            },
+            "0x0000018c": {
+                "altname": "I_DENALI_CTL_99",
+                "name": "i_DENALI_CTL_99",
+                "ptr": "mu_dct.DENALI_CTL_99",
+                "type": "reg"
+            },
+            "0x00000190": {
+                "altname": "I_DENALI_CTL_100",
+                "name": "i_DENALI_CTL_100",
+                "ptr": "mu_dct.DENALI_CTL_100",
+                "type": "reg"
+            },
+            "0x00000194": {
+                "altname": "I_DENALI_CTL_101",
+                "name": "i_DENALI_CTL_101",
+                "ptr": "mu_dct.DENALI_CTL_101",
+                "type": "reg"
+            },
+            "0x00000198": {
+                "altname": "I_DENALI_CTL_102",
+                "name": "i_DENALI_CTL_102",
+                "ptr": "mu_dct.DENALI_CTL_102",
+                "type": "reg"
+            },
+            "0x0000019c": {
+                "altname": "I_DENALI_CTL_103",
+                "name": "i_DENALI_CTL_103",
+                "ptr": "mu_dct.DENALI_CTL_103",
+                "type": "reg"
+            },
+            "0x000001a0": {
+                "altname": "I_DENALI_CTL_104",
+                "name": "i_DENALI_CTL_104",
+                "ptr": "mu_dct.DENALI_CTL_104",
+                "type": "reg"
+            },
+            "0x000001a4": {
+                "altname": "I_DENALI_CTL_105",
+                "name": "i_DENALI_CTL_105",
+                "ptr": "mu_dct.DENALI_CTL_105",
+                "type": "reg"
+            },
+            "0x000001a8": {
+                "altname": "I_DENALI_CTL_106",
+                "name": "i_DENALI_CTL_106",
+                "ptr": "mu_dct.DENALI_CTL_106",
+                "type": "reg"
+            },
+            "0x000001ac": {
+                "altname": "I_DENALI_CTL_107",
+                "name": "i_DENALI_CTL_107",
+                "ptr": "mu_dct.DENALI_CTL_107",
+                "type": "reg"
+            },
+            "0x000001b0": {
+                "altname": "I_DENALI_CTL_108",
+                "name": "i_DENALI_CTL_108",
+                "ptr": "mu_dct.DENALI_CTL_108",
+                "type": "reg"
+            },
+            "0x000001b4": {
+                "altname": "I_DENALI_CTL_109",
+                "name": "i_DENALI_CTL_109",
+                "ptr": "mu_dct.DENALI_CTL_109",
+                "type": "reg"
+            },
+            "0x000001b8": {
+                "altname": "I_DENALI_CTL_110",
+                "name": "i_DENALI_CTL_110",
+                "ptr": "mu_dct.DENALI_CTL_110",
+                "type": "reg"
+            },
+            "0x000001bc": {
+                "altname": "I_DENALI_CTL_111",
+                "name": "i_DENALI_CTL_111",
+                "ptr": "mu_dct.DENALI_CTL_111",
+                "type": "reg"
+            },
+            "0x000001c0": {
+                "altname": "I_DENALI_CTL_112",
+                "name": "i_DENALI_CTL_112",
+                "ptr": "mu_dct.DENALI_CTL_112",
+                "type": "reg"
+            },
+            "0x000001c4": {
+                "altname": "I_DENALI_CTL_113",
+                "name": "i_DENALI_CTL_113",
+                "ptr": "mu_dct.DENALI_CTL_113",
+                "type": "reg"
+            },
+            "0x000001c8": {
+                "altname": "I_DENALI_CTL_114",
+                "name": "i_DENALI_CTL_114",
+                "ptr": "mu_dct.DENALI_CTL_114",
+                "type": "reg"
+            },
+            "0x000001cc": {
+                "altname": "I_DENALI_CTL_115",
+                "name": "i_DENALI_CTL_115",
+                "ptr": "mu_dct.DENALI_CTL_115",
+                "type": "reg"
+            },
+            "0x000001d0": {
+                "altname": "I_DENALI_CTL_116",
+                "name": "i_DENALI_CTL_116",
+                "ptr": "mu_dct.DENALI_CTL_116",
+                "type": "reg"
+            },
+            "0x000001d4": {
+                "altname": "I_DENALI_CTL_117",
+                "name": "i_DENALI_CTL_117",
+                "ptr": "mu_dct.DENALI_CTL_117",
+                "type": "reg"
+            },
+            "0x000001d8": {
+                "altname": "I_DENALI_CTL_118",
+                "name": "i_DENALI_CTL_118",
+                "ptr": "mu_dct.DENALI_CTL_118",
+                "type": "reg"
+            },
+            "0x000001dc": {
+                "altname": "I_DENALI_CTL_119",
+                "name": "i_DENALI_CTL_119",
+                "ptr": "mu_dct.DENALI_CTL_119",
+                "type": "reg"
+            },
+            "0x000001e0": {
+                "altname": "I_DENALI_CTL_120",
+                "name": "i_DENALI_CTL_120",
+                "ptr": "mu_dct.DENALI_CTL_120",
+                "type": "reg"
+            },
+            "0x000001e4": {
+                "altname": "I_DENALI_CTL_121",
+                "name": "i_DENALI_CTL_121",
+                "ptr": "mu_dct.DENALI_CTL_121",
+                "type": "reg"
+            },
+            "0x000001e8": {
+                "altname": "I_DENALI_CTL_122",
+                "name": "i_DENALI_CTL_122",
+                "ptr": "mu_dct.DENALI_CTL_122",
+                "type": "reg"
+            },
+            "0x000001ec": {
+                "altname": "I_DENALI_CTL_123",
+                "name": "i_DENALI_CTL_123",
+                "ptr": "mu_dct.DENALI_CTL_123",
+                "type": "reg"
+            },
+            "0x000001f0": {
+                "altname": "I_DENALI_CTL_124",
+                "name": "i_DENALI_CTL_124",
+                "ptr": "mu_dct.DENALI_CTL_124",
+                "type": "reg"
+            },
+            "0x000001f4": {
+                "altname": "I_DENALI_CTL_125",
+                "name": "i_DENALI_CTL_125",
+                "ptr": "mu_dct.DENALI_CTL_125",
+                "type": "reg"
+            },
+            "0x000001f8": {
+                "altname": "I_DENALI_CTL_126",
+                "name": "i_DENALI_CTL_126",
+                "ptr": "mu_dct.DENALI_CTL_126",
+                "type": "reg"
+            },
+            "0x000001fc": {
+                "altname": "I_DENALI_CTL_127",
+                "name": "i_DENALI_CTL_127",
+                "ptr": "mu_dct.DENALI_CTL_127",
+                "type": "reg"
+            },
+            "0x00000200": {
+                "altname": "I_DENALI_CTL_128",
+                "name": "i_DENALI_CTL_128",
+                "ptr": "mu_dct.DENALI_CTL_128",
+                "type": "reg"
+            },
+            "0x00000204": {
+                "altname": "I_DENALI_CTL_129",
+                "name": "i_DENALI_CTL_129",
+                "ptr": "mu_dct.DENALI_CTL_129",
+                "type": "reg"
+            },
+            "0x00000208": {
+                "altname": "I_DENALI_CTL_130",
+                "name": "i_DENALI_CTL_130",
+                "ptr": "mu_dct.DENALI_CTL_130",
+                "type": "reg"
+            },
+            "0x0000020c": {
+                "altname": "I_DENALI_CTL_131",
+                "name": "i_DENALI_CTL_131",
+                "ptr": "mu_dct.DENALI_CTL_131",
+                "type": "reg"
+            },
+            "0x00000210": {
+                "altname": "I_DENALI_CTL_132",
+                "name": "i_DENALI_CTL_132",
+                "ptr": "mu_dct.DENALI_CTL_132",
+                "type": "reg"
+            },
+            "0x00000214": {
+                "altname": "I_DENALI_CTL_133",
+                "name": "i_DENALI_CTL_133",
+                "ptr": "mu_dct.DENALI_CTL_133",
+                "type": "reg"
+            },
+            "0x00000218": {
+                "altname": "I_DENALI_CTL_134",
+                "name": "i_DENALI_CTL_134",
+                "ptr": "mu_dct.DENALI_CTL_134",
+                "type": "reg"
+            },
+            "0x0000021c": {
+                "altname": "I_DENALI_CTL_135",
+                "name": "i_DENALI_CTL_135",
+                "ptr": "mu_dct.DENALI_CTL_135",
+                "type": "reg"
+            },
+            "0x00000220": {
+                "altname": "I_DENALI_CTL_136",
+                "name": "i_DENALI_CTL_136",
+                "ptr": "mu_dct.DENALI_CTL_136",
+                "type": "reg"
+            },
+            "0x00000224": {
+                "altname": "I_DENALI_CTL_137",
+                "name": "i_DENALI_CTL_137",
+                "ptr": "mu_dct.DENALI_CTL_137",
+                "type": "reg"
+            },
+            "0x00000228": {
+                "altname": "I_DENALI_CTL_138",
+                "name": "i_DENALI_CTL_138",
+                "ptr": "mu_dct.DENALI_CTL_138",
+                "type": "reg"
+            },
+            "0x0000022c": {
+                "altname": "I_DENALI_CTL_139",
+                "name": "i_DENALI_CTL_139",
+                "ptr": "mu_dct.DENALI_CTL_139",
+                "type": "reg"
+            },
+            "0x00000230": {
+                "altname": "I_DENALI_CTL_140",
+                "name": "i_DENALI_CTL_140",
+                "ptr": "mu_dct.DENALI_CTL_140",
+                "type": "reg"
+            },
+            "0x00000234": {
+                "altname": "I_DENALI_CTL_141",
+                "name": "i_DENALI_CTL_141",
+                "ptr": "mu_dct.DENALI_CTL_141",
+                "type": "reg"
+            },
+            "0x00000238": {
+                "altname": "I_DENALI_CTL_142",
+                "name": "i_DENALI_CTL_142",
+                "ptr": "mu_dct.DENALI_CTL_142",
+                "type": "reg"
+            },
+            "0x0000023c": {
+                "altname": "I_DENALI_CTL_143",
+                "name": "i_DENALI_CTL_143",
+                "ptr": "mu_dct.DENALI_CTL_143",
+                "type": "reg"
+            },
+            "0x00000240": {
+                "altname": "I_DENALI_CTL_144",
+                "name": "i_DENALI_CTL_144",
+                "ptr": "mu_dct.DENALI_CTL_144",
+                "type": "reg"
+            },
+            "0x00000244": {
+                "altname": "I_DENALI_CTL_145",
+                "name": "i_DENALI_CTL_145",
+                "ptr": "mu_dct.DENALI_CTL_145",
+                "type": "reg"
+            },
+            "0x00000248": {
+                "altname": "I_DENALI_CTL_146",
+                "name": "i_DENALI_CTL_146",
+                "ptr": "mu_dct.DENALI_CTL_146",
+                "type": "reg"
+            },
+            "0x0000024c": {
+                "altname": "I_DENALI_CTL_147",
+                "name": "i_DENALI_CTL_147",
+                "ptr": "mu_dct.DENALI_CTL_147",
+                "type": "reg"
+            },
+            "0x00000250": {
+                "altname": "I_DENALI_CTL_148",
+                "name": "i_DENALI_CTL_148",
+                "ptr": "mu_dct.DENALI_CTL_148",
+                "type": "reg"
+            },
+            "0x00000254": {
+                "altname": "I_DENALI_CTL_149",
+                "name": "i_DENALI_CTL_149",
+                "ptr": "mu_dct.DENALI_CTL_149",
+                "type": "reg"
+            },
+            "0x00000258": {
+                "altname": "I_DENALI_CTL_150",
+                "name": "i_DENALI_CTL_150",
+                "ptr": "mu_dct.DENALI_CTL_150",
+                "type": "reg"
+            },
+            "0x0000025c": {
+                "altname": "I_DENALI_CTL_151",
+                "name": "i_DENALI_CTL_151",
+                "ptr": "mu_dct.DENALI_CTL_151",
+                "type": "reg"
+            },
+            "0x00000260": {
+                "altname": "I_DENALI_CTL_152",
+                "name": "i_DENALI_CTL_152",
+                "ptr": "mu_dct.DENALI_CTL_152",
+                "type": "reg"
+            },
+            "0x00000264": {
+                "altname": "I_DENALI_CTL_153",
+                "name": "i_DENALI_CTL_153",
+                "ptr": "mu_dct.DENALI_CTL_153",
+                "type": "reg"
+            },
+            "0x00000268": {
+                "altname": "I_DENALI_CTL_154",
+                "name": "i_DENALI_CTL_154",
+                "ptr": "mu_dct.DENALI_CTL_154",
+                "type": "reg"
+            },
+            "0x0000026c": {
+                "altname": "I_DENALI_CTL_155",
+                "name": "i_DENALI_CTL_155",
+                "ptr": "mu_dct.DENALI_CTL_155",
+                "type": "reg"
+            },
+            "0x00000270": {
+                "altname": "I_DENALI_CTL_156",
+                "name": "i_DENALI_CTL_156",
+                "ptr": "mu_dct.DENALI_CTL_156",
+                "type": "reg"
+            },
+            "0x00000274": {
+                "altname": "I_DENALI_CTL_157",
+                "name": "i_DENALI_CTL_157",
+                "ptr": "mu_dct.DENALI_CTL_157",
+                "type": "reg"
+            },
+            "0x00000278": {
+                "altname": "I_DENALI_CTL_158",
+                "name": "i_DENALI_CTL_158",
+                "ptr": "mu_dct.DENALI_CTL_158",
+                "type": "reg"
+            },
+            "0x0000027c": {
+                "altname": "I_DENALI_CTL_159",
+                "name": "i_DENALI_CTL_159",
+                "ptr": "mu_dct.DENALI_CTL_159",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "mu_dct.DENALI_CTL_00": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Holds the controller version number. READ-ONLY",
+                    "mode": "RO",
+                    "name": "VERSION"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Defines the mode of operation of the controller.",
+                    "mode": "RW",
+                    "name": "DRAM_CLASS"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Initiate command processing in the controller. Set to 1 to initiate.",
+                    "mode": "RW",
+                    "name": "START"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_01": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE3"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Holds the maximum number of chip selects available. READ-ONLY",
+                    "mode": "RO",
+                    "name": "MAX_CS_REG"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Holds the maximum width of column address in DRAMs. READ-ONLY",
+                    "mode": "RO",
+                    "name": "MAX_COL_REG"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Holds the maximum width of memory address bus. READ-ONLY",
+                    "mode": "RO",
+                    "name": "MAX_ROW_REG"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_02": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "DRAM TINIT value in cycles.",
+                    "mode": "RW",
+                    "name": "TINIT"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_03": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Duration of memory reset during power-on initialization.",
+                    "mode": "RW",
+                    "name": "TRST_PWRON"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_04": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Number of cycles after reset before CKE will be active.",
+                    "mode": "RW",
+                    "name": "CKE_INACTIVE"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_05": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 23,
+                    "description": "DRAM TCPD value in cycles.",
+                    "mode": "RW",
+                    "name": "TCPD"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Number of auto-refresh commands to execute during DRAM initialization.",
+                    "mode": "RW",
+                    "name": "INITAREF"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_06": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 29,
+                    "description": "Sets latency from read command send to data receive from/to controller. Bit (0) is half-cycle increment and the upper bits define memory CAS latency for the controller.",
+                    "mode": "RW",
+                    "name": "CASLAT_LIN"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Disable DRAM commands until the TDLL parameter has expired during initialization. Set to 1 to disable.",
+                    "mode": "RW",
+                    "name": "NO_CMD_INIT"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "DRAM TDLL value in cycles.",
+                    "mode": "RW",
+                    "name": "TDLL"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_07": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 28,
+                    "description": "DRAM CAS-to-CAS value in cycles.",
+                    "mode": "RW",
+                    "name": "TCCD"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "DRAM burst interrupt interval value in cycles.",
+                    "mode": "RW",
+                    "name": "TBST_INT_INTERVAL"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 12,
+                    "description": "DRAM additive latency value in cycles.",
+                    "mode": "RW",
+                    "name": "ADDITIVE_LAT"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "DRAM WRLAT value in cycles.",
+                    "mode": "RW",
+                    "name": "WRLAT"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_08": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "DRAM TWTR value in cycles.",
+                    "mode": "RW",
+                    "name": "TWTR"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "DRAM TRAS_MIN value in cycles.",
+                    "mode": "RW",
+                    "name": "TRAS_MIN"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "DRAM TRC value in cycles.",
+                    "mode": "RW",
+                    "name": "TRC"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "DRAM TRRD value in cycles.",
+                    "mode": "RW",
+                    "name": "TRRD"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_09": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 28,
+                    "description": "DRAM TMRD value in cycles.",
+                    "mode": "RW",
+                    "name": "TMRD"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "DRAM TRTP value in cycles.",
+                    "mode": "RW",
+                    "name": "TRTP"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 13,
+                    "description": "DRAM TFAW value in cycles.",
+                    "mode": "RW",
+                    "name": "TFAW"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "DRAM TRP value in cycles.",
+                    "mode": "RW",
+                    "name": "TRP"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_10": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 24,
+                    "description": "DRAM TRAS_MAX value in cycles.",
+                    "mode": "RW",
+                    "name": "TRAS_MAX"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Number of cycles after MRS command and before any other command.",
+                    "mode": "RW",
+                    "name": "TMOD"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_100": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements where gate is aligned to rising edge of DQS for data slice 2. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_DELAY_2"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements where read DQS is placed within the DQ data eye for data slice 2. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_DELAY_2"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_101": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements for first 0 to 1 DQ transition for data slice 3. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_END_DELAY_3"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for first 1 to 0 DQ transition for data slice 3. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_BEGIN_DELAY_3"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_102": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Offset the data eye midpoint delay for data slice 3.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DELAY_3"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Calculated midpoint of DQ delay for data slice 3. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_MIDPOINT_DELAY_3"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_103": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 23,
+                    "description": "Number of delay elements where read DQS is placed within the DQ data eye for data slice 3. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_DELAY_3"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Direction of the data eye midpoint delay offset for data slice 3. Set to 1 to add delay.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DIR_3"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_104": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements for first 1 to 0 DQ transition for data slice 4. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_BEGIN_DELAY_4"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements where gate is aligned to rising edge of DQS for data slice 3. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_DELAY_3"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_105": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Calculated midpoint of DQ delay for data slice 4. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_MIDPOINT_DELAY_4"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for first 0 to 1 DQ transition for data slice 4. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_END_DELAY_4"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_106": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Direction of the data eye midpoint delay offset for data slice 4. Set to 1 to add delay.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DIR_4"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Offset the data eye midpoint delay for data slice 4.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DELAY_4"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_107": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements where gate is aligned to rising edge of DQS for data slice 4. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_DELAY_4"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements where read DQS is placed within the DQ data eye for data slice 4. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_DELAY_4"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_108": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements for first 0 to 1 DQ transition for data slice 5. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_END_DELAY_5"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for first 1 to 0 DQ transition for data slice 5. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_BEGIN_DELAY_5"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_109": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Offset the data eye midpoint delay for data slice 5.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DELAY_5"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Calculated midpoint of DQ delay for data slice 5. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_MIDPOINT_DELAY_5"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_11": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "DRAM TRCD value in cycles.",
+                    "mode": "RW",
+                    "name": "TRCD"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Allow controller to interrupt a write burst to the DRAMs with a read command. Set to 1 to allow interruption.",
+                    "mode": "RW",
+                    "name": "WRITEINTERP"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Minimum CKE low pulse width during a self-refresh.",
+                    "mode": "RW",
+                    "name": "TCKESR"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Minimum CKE pulse width.",
+                    "mode": "RW",
+                    "name": "TCKE"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_110": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 23,
+                    "description": "Number of delay elements where read DQS is placed within the DQ data eye for data slice 5. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_DELAY_5"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Direction of the data eye midpoint delay offset for data slice 5. Set to 1 to add delay.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DIR_5"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_111": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements for first 1 to 0 DQ transition for data slice 6. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_BEGIN_DELAY_6"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements where gate is aligned to rising edge of DQS for data slice 5. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_DELAY_5"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_112": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Calculated midpoint of DQ delay for data slice 6. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_MIDPOINT_DELAY_6"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for first 0 to 1 DQ transition for data slice 6. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_END_DELAY_6"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_113": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Direction of the data eye midpoint delay offset for data slice 6. Set to 1 to add delay.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DIR_6"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Offset the data eye midpoint delay for data slice 6.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DELAY_6"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_114": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements where gate is aligned to rising edge of DQS for data slice 6. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_DELAY_6"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements where read DQS is placed within the DQ data eye for data slice 6. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_DELAY_6"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_115": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements for first 0 to 1 DQ transition for data slice 7. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_END_DELAY_7"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for first 1 to 0 DQ transition for data slice 7. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_BEGIN_DELAY_7"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_116": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Offset the data eye midpoint delay for data slice 7.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DELAY_7"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Calculated midpoint of DQ delay for data slice 7. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_MIDPOINT_DELAY_7"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_117": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 23,
+                    "description": "Number of delay elements where read DQS is placed within the DQ data eye for data slice 7. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_DELAY_7"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Direction of the data eye midpoint delay offset for data slice 7. Set to 1 to add delay.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DIR_7"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_118": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements for first 1 to 0 DQ transition for data slice 8. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_BEGIN_DELAY_8"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements where gate is aligned to rising edge of DQS for data slice 7. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_DELAY_7"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_119": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Calculated midpoint of DQ delay for data slice 8. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_MIDPOINT_DELAY_8"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for first 0 to 1 DQ transition for data slice 8. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_END_DELAY_8"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_12": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Allow the controller to execute auto pre-charge commands before the TRAS_MIN parameter expires. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "TRAS_LOCKOUT"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Allow controller to issue commands to other banks while a bank is in auto pre-charge. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "CONCURRENTAP"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Enable auto pre-charge mode of controller. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "AP"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "DRAM TWR value in cycles.",
+                    "mode": "RW",
+                    "name": "TWR"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_120": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Direction of the data eye midpoint delay offset for data slice 8. Set to 1 to add delay.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DIR_8"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Offset the data eye midpoint delay for data slice 8.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DELAY_8"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_121": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements where gate is aligned to rising edge of DQS for data slice 8. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_DELAY_8"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements where read DQS is placed within the DQ data eye for data slice 8. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_DELAY_8"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_122": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Minimum cycles required for DLL reset signal dll_rst_n to be held. If this signal is not being used by the PHY, this parameter may be ignored.",
+                    "mode": "RW",
+                    "name": "DLL_RST_DELAY"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Register access to mem_rst_valid signal. READ-ONLY",
+                    "mode": "RO",
+                    "name": "MEM_RST_VALID"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Register access to cke_status signal. READ-ONLY",
+                    "mode": "RO",
+                    "name": "CKE_STATUS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_123": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 30,
+                    "description": "Defines the DFI tPHY_RDLAT timing parameter (in DFI PHY clocks), the maximum cycles between a dfi_rddata_en assertion and a dfi_rddata_valid assertion.",
+                    "mode": "RW",
+                    "name": "TDFI_PHY_RDLAT"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 22,
+                    "description": "Identifies the source of any DFI MC-initiated or PHY-initiated update errors. Value of 1 indicates a timing violation of the associated timing parameter. READ-ONLY",
+                    "mode": "RO",
+                    "name": "UPDATE_ERROR_STATUS"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 14,
+                    "description": "Holds the calculated DFI tPHY_WRLAT timing parameter (in DFI PHY clocks), the maximum cycles between a write command and a dfi_wrdata_en assertion. READ-ONLY",
+                    "mode": "RO",
+                    "name": "TDFI_PHY_WRLAT"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Minimum cycles after setting master delay in DLL until the DLL reset signal dll_rst_n may be asserted. If this signal is not being used by the PHY, this parameter may be ignored.",
+                    "mode": "RW",
+                    "name": "DLL_RST_ADJ_DLY"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_124": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE3"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Reports the DFI tCTRLUPD_MIN timing parameter (in DFI clocks), the minimum cycles that dfi_ctrlupd_req must be asserted. READ-ONLY",
+                    "mode": "RO",
+                    "name": "TDFI_CTRLUPD_MIN"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Set value for the dfi_dram_clk_disable signal. Bit (0) controls cs0, bit (1) controls cs1, etc. Set each bit to 1 to disable.",
+                    "mode": "RW",
+                    "name": "DRAM_CLK_DISABLE"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 6,
+                    "description": "Holds the calculated DFI tRDDATA_EN timing parameter (in DFI PHY clocks), the maximum cycles between a read command and a dfi_rddata_en assertion. READ-ONLY",
+                    "mode": "RO",
+                    "name": "TDFI_RDDATA_EN"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_125": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Defines the DFI tPHYUPD_TYPE0 timing parameter (in DFI clocks), the maximum cycles that dfi_phyupd_req can assert after dfi_phyupd_ack for dfi_phyupd_type 0. If programmed to a non-zero, a timing violation will cause an interrupt and bit (2) set in the UPDATE_ERROR_STATUS parameter.",
+                    "mode": "RW",
+                    "name": "TDFI_PHYUPD_TYPE0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "Defines the DFI tCTRLUPD_MAX timing parameter (in DFI clocks), the maximum cycles that dfi_ctrlupd_req can be asserted. If programmed to a non-zero, a timing violation will cause an interrupt and bit (1) set in the UPDATE_ERROR_STATUS parameter.",
+                    "mode": "RW",
+                    "name": "TDFI_CTRLUPD_MAX"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_126": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Defines the DFI tPHYUPD_TYPE2 timing parameter (in DFI clocks), the maximum cycles that dfi_phyupd_req can assert after dfi_phyupd_ack for dfi_phyupd_type 2. If programmed to a non-zero, a timing violation will cause an interrupt and bit (4) set in the UPDATE_ERROR_STATUS parameter.",
+                    "mode": "RW",
+                    "name": "TDFI_PHYUPD_TYPE2"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Defines the DFI tPHYUPD_TYPE1 timing parameter (in DFI clocks), the maximum cycles that dfi_phyupd_req can assert after dfi_phyupd_ack for dfi_phyupd_type 1. If programmed to a non-zero, a timing violation will cause an interrupt and bit (3) set in the UPDATE_ERROR_STATUS parameter.",
+                    "mode": "RW",
+                    "name": "TDFI_PHYUPD_TYPE1"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_127": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 29,
+                    "description": "Defines the DFI tPHYUPD_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_phyupd_req assertion and a dfi_phyupd_ack assertion. If programmed to a non-zero, a timing violation will cause an interrupt and bit (6) set in the UPDATE_ERROR_STATUS parameter.",
+                    "mode": "RW",
+                    "name": "TDFI_PHYUPD_RESP"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Defines the DFI tPHYUPD_TYPE3 timing parameter (in DFI clocks), the maximum cycles that dfi_phyupd_req can assert after dfi_phyupd_ack for dfi_phyupd_type 3. If programmed to a non-zero, a timing violation will cause an interrupt and bit (5) set in the UPDATE_ERROR_STATUS parameter.",
+                    "mode": "RW",
+                    "name": "TDFI_PHYUPD_TYPE3"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_128": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Defines the DFI tCTRLUPD_INTERVAL timing parameter (in DFI clocks), the maximum cycles between dfi_ctrlupd_req assertions. If programmed to a non-zero, a timing violation will cause an interrupt and bit (0) set in the UPDATE_ERROR_STATUS parameter.",
+                    "mode": "RW",
+                    "name": "TDFI_CTRLUPD_INTERVAL"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_129": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the DFI tDRAM_CLK_DISABLE timing parameter (in DFI clocks), the delay between a dfi_dram_clock_disable assertion and the memory clock disable.",
+                    "mode": "RW",
+                    "name": "TDFI_DRAM_CLK_DISABLE"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the DFI tCTRL_DELAY timing parameter (in DFI clocks), the delay between a DFI command change and a memory command.",
+                    "mode": "RW",
+                    "name": "TDFI_CTRL_DELAY"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 14,
+                    "description": "Adjustment value for PHY write timing.",
+                    "mode": "RW",
+                    "name": "WRLAT_ADJ"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 6,
+                    "description": "Adjustment value for PHY read timing.",
+                    "mode": "RW",
+                    "name": "RDLAT_ADJ"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_13": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Enable registered DIMM operation of the controller. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "REG_DIMM_ENABLE"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 20,
+                    "description": "DRAM TRP all bank value in cycles.",
+                    "mode": "RW",
+                    "name": "TRP_AB"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 10,
+                    "description": "Encoded burst length sent to DRAMs during initialization. Set to 1 for BL2, set to 2 for BL4, or set to 3 for BL8.",
+                    "mode": "RW",
+                    "name": "BSTLEN"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "DRAM TDAL value in cycles.",
+                    "mode": "RW",
+                    "name": "TDAL"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_130": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 25,
+                    "description": "Defines the DFI tWRLVL_WW timing parameter (in DFI clocks), the minimum cycles between dfi_wrlvl_strobe assertions.",
+                    "mode": "RW",
+                    "name": "TDFI_WRLVL_WW"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Defines the DFI tWRLVL_EN timing parameter (in DFI clocks), the minimum cycles from a dfi_wrlvl_en assertion to the first dfi_wrlvl_strobe assertion.",
+                    "mode": "RW",
+                    "name": "TDFI_WRLVL_EN"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the DFI tDRAM_CLK_ENABLE timing parameter (in DFI clocks), the delay between a dfi_dram_clk_disable de-assertion and the memory clock enable.",
+                    "mode": "RW",
+                    "name": "TDFI_DRAM_CLK_ENABLE"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_131": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Defines the DFI tWRLVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_wrlvl_req assertion and a dfi_wrlvl_en assertion.",
+                    "mode": "RW",
+                    "name": "TDFI_WRLVL_RESP"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_132": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Defines the DFI tWRLVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_wrlvl_en assertion and a valid dfi_wrlvl_resp.",
+                    "mode": "RW",
+                    "name": "TDFI_WRLVL_MAX"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_133": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Defines the DFI tWRLVL_RESPLAT timing parameter (in DFI clocks), the number of cycles between a dfi_wrlvl_strobe assertion and a valid dfi_wrlvl_resp.",
+                    "mode": "RW",
+                    "name": "TDFI_WRLVL_RESPLAT"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Defines the DFI tWRLVL_DLL timing parameter (in DFI clocks), the minimum cycles between a dfi_wrlvl_load assertion and a dfi_wrlvl_strobe assertion.",
+                    "mode": "RW",
+                    "name": "TDFI_WRLVL_DLL"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Maximum number of elements for the write level delay line.",
+                    "mode": "RW",
+                    "name": "DFI_WRLVL_MAX_DELAY"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_134": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Defines the DFI tRDLVL_LOAD timing parameter (in DFI clocks), the minimum cycles between dfi_rdlvl_delay_X or dfi_rdlvl_gate_delay_X programming and a dfi_rdlvl_load assertion.",
+                    "mode": "RW",
+                    "name": "TDFI_RDLVL_LOAD"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Defines the DFI tRDLVL_DLL timing parameter (in DFI clocks), the minimum cycles between a dfi_rdlvl_load assertion and a read or mode register read.",
+                    "mode": "RW",
+                    "name": "TDFI_RDLVL_DLL"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Defines the DFI tRDLVL_EN timing parameter (in DFI clocks), the minimum cycles from a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion to the first read or MRR.",
+                    "mode": "RW",
+                    "name": "TDFI_RDLVL_EN"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Defines the DFI tWRLVL_LOAD timing parameter (in DFI clocks), the minimum cycles between dfi_wrlvl_delay_X programming and a dfi_wrlvl_load assertion.",
+                    "mode": "RW",
+                    "name": "TDFI_WRLVL_LOAD"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_135": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 23,
+                    "description": "Maximum number of elements for the data eye training delay line.",
+                    "mode": "RW",
+                    "name": "RDLVL_MAX_DELAY"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Defines the DFI tRDLVL_RESPLAT timing parameter (in DFI clocks), the maximum cycles between a read or mode register read and a valid dfi_rdlvl_resp.",
+                    "mode": "RW",
+                    "name": "TDFI_RDLVL_RESPLAT"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_136": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 25,
+                    "description": "Defines the DFI tRDLVL_RR timing parameter (in DFI clocks), the minimum cycles between read commands.",
+                    "mode": "RW",
+                    "name": "TDFI_RDLVL_RR"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Maximum number of elements for the gate delay.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_MAX_DELAY"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_137": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Defines the DFI tRDLVL_RESP timing parameter (in DFI clocks), the maximum cycles between a dfi_rdlvl_req or dfi_rdlvl_gate_req assertion and a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion.",
+                    "mode": "RW",
+                    "name": "TDFI_RDLVL_RESP"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_138": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mask for the dfi_rdlvl_resp signal during data eye training.",
+                    "mode": "RW",
+                    "name": "RDLVL_RESP_MASK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_139": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mask for the dfi_rdlvl_resp signal during data eye training.  This bit field is a continuation of the DENALI_CTL_138 register, and contains bits [63:32] of RDLVL_RESP_MASK.",
+                    "mode": "RW",
+                    "name": "RDLVL_RESP_MASK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_14": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Issue auto-refresh commands to the DRAMs at the interval defined in the TREF parameter. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "TREF_ENABLE"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Reserved for future use. Must be cleared to 0x0.",
+                    "mode": "RW",
+                    "name": "RESERVED2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Initiate auto-refresh at the end of the current burst boundary. Set to 1 to trigger. WRITE-ONLY",
+                    "mode": "WO",
+                    "name": "AREFRESH"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Indicates which chip selects support address mirroring. Bit (0) controls cs0, bit (1) controls cs1, etc. Set each bit to 1 to enable.",
+                    "mode": "RW",
+                    "name": "ADDRESS_MIRRORING"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_140": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Mask for the dfi_rdlvl_resp signal during data eye training.  This bit field is a continuation of the DENALI_CTL_138 register, and contains bits [71:64] of RDLVL_RESP_MASK.",
+                    "mode": "RW",
+                    "name": "RDLVL_RESP_MASK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_141": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mask for the dfi_rdlvl_resp signal during gate training.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_RESP_MASK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_142": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mask for the dfi_rdlvl_resp signal during gate training.  This bit field is a continuation of the DENALI_CTL_141 register, and contains bits [63:32] of RDLVL_GATE_RESP_MASK.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_RESP_MASK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_143": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Enable the preamble check sequence during initial gate training. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_PREAMBLE_CHECK_EN"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Enable the MC gate training module. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_EN"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Enable the MC data eye training module. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "RDLVL_EN"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Mask for the dfi_rdlvl_resp signal during gate training.  This bit field is a continuation of the DENALI_CTL_141 register, and contains bits [71:64] of RDLVL_GATE_RESP_MASK.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_RESP_MASK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_144": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Defines the DFI tRDLVL_MAX timing parameter (in DFI clocks), the maximum cycles between a dfi_rdlvl_en or dfi_rdlvl_gate_en assertion and a valid dfi_rdlvl_resp.",
+                    "mode": "RW",
+                    "name": "TDFI_RDLVL_MAX"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_145": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Number of consecutive 0s that defines a 1 to 0 transition for gate training.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_DQ_0_COUNT"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Number of consecutive 0s that defines a 1 to 0 transition for data eye training.",
+                    "mode": "RW",
+                    "name": "RDLVL_DQ_0_COUNT"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_146": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Holds the error associated with the data eye training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_ERROR_STATUS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_147": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 23,
+                    "description": "Number of long count sequences counted between automatic data eye training commands.",
+                    "mode": "RW",
+                    "name": "RDLVL_INTERVAL"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "Holds the error associated with the data eye training error or gate training error interrupt. Uppermost bit set indicates a TDFI_RDLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_RDLVL_MAX parameter violation. Lower bits are reserved. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_ERROR_STATUS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_148": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Reports the depth of the controller core read data queue. READ-ONLY",
+                    "mode": "RO",
+                    "name": "READ_DATA_FIFO_DEPTH"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "Defines the DFI tPHY_WRDATA timing parameter (in DFI PHY clocks), the maximum cycles between a dfi_wrdata_en assertion and a dfi_wrdata signal.",
+                    "mode": "RW",
+                    "name": "TDFI_PHY_WRDATA"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of long count sequences counted between automatic gate training commands.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_INTERVAL"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_149": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE3"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Reports the width of the controller core write data latency queue pointer. READ-ONLY",
+                    "mode": "RO",
+                    "name": "WRITE_DATA_FIFO_PTR_WIDTH"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Reports the depth of the controller core write data latency queue. READ-ONLY",
+                    "mode": "RO",
+                    "name": "WRITE_DATA_FIFO_DEPTH"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Reports the width of the controller core read data queue pointer. READ-ONLY",
+                    "mode": "RO",
+                    "name": "READ_DATA_FIFO_PTR_WIDTH"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_15": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 29,
+                    "description": "DRAM TREF value in cycles.",
+                    "mode": "RW",
+                    "name": "TREF"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "DRAM TRFC value in cycles.",
+                    "mode": "RW",
+                    "name": "TRFC"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_150": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Number of long count sequences allowed between automatic ZQCS commands.",
+                    "mode": "RW",
+                    "name": "ZQ_INTERVAL"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_151": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 8,
+                    "description": "Reserved for future use. Must be cleared to 0x0.",
+                    "mode": "RW",
+                    "name": "RESERVED0"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_152": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "RDIMM control word values for DIMM 0. Bits (3:0) correlate to control word 0, bits (7:4) correlate to control word 1, etc.",
+                    "mode": "RW",
+                    "name": "RDIMM_CTL_0"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_153": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "RDIMM control word values for DIMM 0. Bits (3:0) correlate to control word 0, bits (7:4) correlate to control word 1, etc. This register is a continuation of DENALI_CTL_152, and contains bits [63:32] of RDIMM_CTL_0.",
+                    "mode": "RW",
+                    "name": "RDIMM_CTL_0"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_154": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Defines if the CKE value will be held or asserted for all DDR3 RDIMM control word accesses. Set to 1 to hold current value.",
+                    "mode": "RW",
+                    "name": "RDIMM_CW_HOLD_CKE_EN"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Triggers a control word write to all DIMMs specified in the RDIMM_CW_MAP parameter with the values in the RDIMM_CTL_X parameter(s). Ignored during initialization because an automatic control word write happens during initialization. WRITE-ONLY",
+                    "mode": "WO",
+                    "name": "RDIMM_CWW_REQ"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Defines which RDIMM control words will be updated during initialization. Bit (0) correlates to control word 0, bit (1) correlates to control word 1, etc. Set each bit to 1 to write.",
+                    "mode": "RW",
+                    "name": "RDIMM_CW_MAP"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_155": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 31,
+                    "description": "Defines the TSTAB value in cycles for the registered DIMM. This is the delay required from a control word write to CW2 or CW10 to another control word write or to a DRAM access. ",
+                    "mode": "RW",
+                    "name": "RDIMM_TSTAB"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Defines the TMRD value in cycles for the registered DIMM. This is the delay required from a control word write to another control word write or to a DRAM access. ",
+                    "mode": "RW",
+                    "name": "RDIMM_TMRD"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_156": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Contains one hot indication of registered DIMM parity errors. Bit (0) correlates to DIMM0, bit (1) correlates to DIMM1, etc. Value of 1 indicates an error on that DIMM. READ-ONLY ",
+                    "mode": "RO",
+                    "name": "CA_PARITY_ERROR"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 22,
+                    "description": "Selects bit to corrupt on the CA bus for CA parity error injection. ",
+                    "mode": "RW",
+                    "name": "CA_PARITY_ERROR_INJECT"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_157": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS ",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 20,
+                    "description": "Reduces the length of the long counter from 1024 cycles. The only supported values are 0x00 (1024 cycles), 0x10 (512 clocks), 0x18 (256 clocks), 0x1C (128 clocks), 0x1E (64 clocks) and 0x1F (32 clocks). ",
+                    "mode": "RW",
+                    "name": "LONG_COUNT_MASK"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "Defines the cycles between refreshes to different chip selects. ",
+                    "mode": "RW",
+                    "name": "TREF_INTERVAL"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_158": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 29,
+                    "description": "Defines the delay from a write command to ODT assertion.",
+                    "mode": "RW",
+                    "name": "WR_TO_ODTH"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 17,
+                    "description": "Clear mask of the INT_STATUS parameter. WRITE-ONLY ",
+                    "mode": "WO",
+                    "name": "INT_ACK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_159": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "Defines the delay from a read to ODT assertion.",
+                    "mode": "RW",
+                    "name": "RD_TO_ODTH"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_16": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 23,
+                    "description": "DRAM TPDEX value in cycles.",
+                    "mode": "RW",
+                    "name": "TPDEX"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE0"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_17": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "DRAM TXARD value in cycles.",
+                    "mode": "RW",
+                    "name": "TXARD"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "DRAM TXPDLL value in cycles.",
+                    "mode": "RW",
+                    "name": "TXPDLL"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_18": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "DRAM TXSR value in cycles.",
+                    "mode": "RW",
+                    "name": "TXSR"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "DRAM TXARDS value in cycles.",
+                    "mode": "RW",
+                    "name": "TXARDS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_19": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Disables the automatic refresh request associated with self-refresh exit. Set to 1 to disable.",
+                    "mode": "RW",
+                    "name": "SREFRESH_EXIT_NO_REFRESH"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Allow powerup via self-refresh instead of full memory initialization. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "PWRUP_SREFRESH_EXIT"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "DRAM TXSNR value in cycles.",
+                    "mode": "RW",
+                    "name": "TXSNR"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_20": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Clock hold delay on self-refresh entry.",
+                    "mode": "RW",
+                    "name": "CKSRE"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Enable refreshes while in low power mode. Bit (0) controls cs0, bit (1) controls cs1, etc. Set each bit to 1 to disable.",
+                    "mode": "RW",
+                    "name": "LOWPOWER_REFRESH_ENABLE"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 10,
+                    "description": "Additional cycles to delay CKE for status reporting.",
+                    "mode": "RW",
+                    "name": "CKE_DELAY"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Allow user to interrupt memory initialization to enter self-refresh mode. Set to 1 to allow interruption.",
+                    "mode": "RW",
+                    "name": "ENABLE_QUICK_SREFRESH"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_21": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Reports on the state of the arbiter. Bits (2:0) indicate which interface has control of the low power control module and bit (3) indicates if the software programmable interface has an active lock on the arbiter. For bits (2:0), value of 0 indicates module is idle, value of 1 indicates software programmable interface is in control, value of 2 indicates external pin interface is in control, value of 3 indicates automatic interface is in control, value of 4 indicates dynamic power control per chip select interface is in control, and value of 5 indicates that the controller is in control. READ-ONLY",
+                    "mode": "RO",
+                    "name": "LP_ARB_STATE"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 21,
+                    "description": "Low power state status parameter. Bits (4:0) indicate the current low power state and bit (5) set indicates that status bits are valid. READ-ONLY",
+                    "mode": "RO",
+                    "name": "LP_STATE"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Low power software command request interface. Bit (0) controls exit, bit (1) controls entry, bits (4:2) define the low power state, bit (5) controls memory clock gating, bit (6) controls controller clock gating, and bit (7) controls lock. WRITE-ONLY",
+                    "mode": "WO",
+                    "name": "LP_CMD"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Clock stable delay on self-refresh exit.",
+                    "mode": "RW",
+                    "name": "CKSRX"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_22": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE3"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Enable memory clock gating when entering a low power state via the auto low power counters. Bit (0) controls power-down, and bit (1) controls self-refresh. Set each bit to 1 to enable.",
+                    "mode": "RW",
+                    "name": "LP_AUTO_MEM_GATE_EN"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 10,
+                    "description": "Enable auto exit from each of the low power states when a read or write command enters the command queue. Bit (0) controls power-down, bit (1) controls self-refresh, and bit (2) controls self-refresh with memory and controller clock gating. Set each bit to 1 to enable.",
+                    "mode": "RW",
+                    "name": "LP_AUTO_EXIT_EN"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Enable auto entry into each of the low power states when the associated idle timer expires. Bit (0) controls power-down, bit (1) controls self-refresh, and bit (2) controls self-refresh with memory and controller clock gating. Set each bit to 1 to enable.",
+                    "mode": "RW",
+                    "name": "LP_AUTO_ENTRY_EN"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_23": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Number of long count sequences until the controller will place memory in self-refresh with controller and memory clock gating.",
+                    "mode": "RW",
+                    "name": "LP_AUTO_SR_MC_GATE_IDLE"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Number of long count sequences until the controller will place memory in self-refresh.",
+                    "mode": "RW",
+                    "name": "LP_AUTO_SR_IDLE"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": "Defines the idle time until the controller will place memory in active power-down.",
+                    "mode": "RW",
+                    "name": "LP_AUTO_PD_IDLE"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_24": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Reserved for future use. Must be cleared to 0x0.",
+                    "mode": "RW",
+                    "name": "RESERVED0"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_25": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 25,
+                    "description": "Write memory mode register data to the DRAMs. Bits (7:0) define the memory mode register number if bit (23) is set, bits (15:8) define the chip select if bit (24) is clear, bits (23:16) define which memory mode register/s to write, bit (24) defines whether all chip selects will be written, and bit (25) triggers the write.",
+                    "mode": "RW",
+                    "name": "WRITE_MODEREG"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_26": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 23,
+                    "description": "Data to program into memory mode register 0 for chip select 0.",
+                    "mode": "RW",
+                    "name": "MR0_DATA_0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Write memory mode register status. Bit (0) set indicates a WRITE_MODEREG parameter programming error. READ-ONLY",
+                    "mode": "RO",
+                    "name": "MRW_STATUS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_27": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Data to program into memory mode register 2 for chip select 0.",
+                    "mode": "RW",
+                    "name": "MR2_DATA_0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Data to program into memory mode register 1 for chip select 0.",
+                    "mode": "RW",
+                    "name": "MR1_DATA_0"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_28": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Data to program into memory mode register 3 for chip select 0.",
+                    "mode": "RW",
+                    "name": "MR3_DATA_0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Data to program into memory mode register single write to chip select 0.",
+                    "mode": "RW",
+                    "name": "MRSINGLE_DATA_0"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_29": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Data to program into memory mode register 1 for chip select 1.",
+                    "mode": "RW",
+                    "name": "MR1_DATA_1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Data to program into memory mode register 0 for chip select 1.",
+                    "mode": "RW",
+                    "name": "MR0_DATA_1"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_30": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Data to program into memory mode register single write to chip select 1.",
+                    "mode": "RW",
+                    "name": "MRSINGLE_DATA_1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Data to program into memory mode register 2 for chip select 1.",
+                    "mode": "RW",
+                    "name": "MR2_DATA_1"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_31": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 25,
+                    "description": "BIST operation status (pass/fail). Bit (0) indicates data check status and bit (1) indicates address check status. Value of 1 is a passing result. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_RESULT"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Initiate a BIST operation. Set to 1 to trigger. WRITE-ONLY",
+                    "mode": "WO",
+                    "name": "BIST_GO"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Data to program into memory mode register 3 for chip select 1.",
+                    "mode": "RW",
+                    "name": "MR3_DATA_1"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_32": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE3"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Enable address checking with BIST operation. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "BIST_ADDR_CHECK"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Enable data checking with BIST operation. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "BIST_DATA_CHECK"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "Sets the number of address bits to check during BIST operation.",
+                    "mode": "RW",
+                    "name": "ADDR_SPACE"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_33": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Start BIST checking at this address.",
+                    "mode": "RW",
+                    "name": "BIST_START_ADDRESS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_34": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Start BIST checking at this address.  This register is a continuation of DENALI_CTL_34, and contains bits [34:32] of BIST_START_ADDRESS.",
+                    "mode": "RW",
+                    "name": "BIST_START_ADDRESS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_35": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mask applied to data for BIST error checking. Bit (0) controls memory data path bit (0), bit (1) controls memory data path bit (1), etc. Set each bit to 1 to mask.",
+                    "mode": "RW",
+                    "name": "BIST_DATA_MASK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_36": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mask applied to data for BIST error checking. Bit (0) controls memory data path bit (0), bit (1) controls memory data path bit (1), etc. Set each bit to 1 to mask.  This register is a continuation of DENALI_CTL_35, and contains bits [63:32] of BIST_DATA_MASK",
+                    "mode": "RW",
+                    "name": "BIST_DATA_MASK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_37": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mask applied to data for BIST error checking. Bit (0) controls memory data path bit (0), bit (1) controls memory data path bit (1), etc. Set each bit to 1 to mask.  This register is a continuation of DENALI_CTL_35, and contains bits [95:64] of BIST_DATA_MASK",
+                    "mode": "RW",
+                    "name": "BIST_DATA_MASK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_38": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Mask applied to data for BIST error checking. Bit (0) controls memory data path bit (0), bit (1) controls memory data path bit (1), etc. Set each bit to 1 to mask.  This register is a continuation of DENALI_CTL_35, and contains bits [127:96] of BIST_DATA_MASK",
+                    "mode": "RW",
+                    "name": "BIST_DATA_MASK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_39": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 27,
+                    "description": "Number of cycles needed for a ZQINIT command.",
+                    "mode": "RW",
+                    "name": "ZQINIT"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Mask applied to data for BIST error checking. Bit (0) controls memory data path bit (0), bit (1) controls memory data path bit (1), etc. Set each bit to 1 to mask.  This bit field is a continuation of DENALI_CTL_35, and contains bits [143:128] of BIST_DATA_MASK",
+                    "mode": "RW",
+                    "name": "BIST_DATA_MASK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_40": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 27,
+                    "description": "Number of cycles needed for a ZQCS command.",
+                    "mode": "RW",
+                    "name": "ZQCS"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": "Number of cycles needed for a ZQCL command.",
+                    "mode": "RW",
+                    "name": "ZQCL"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_41": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Defines the type of ZQ calibration performed at self-refresh exit. Bit (0) selects ZQCS and bit (1) selects ZQCL. Set either bit to 1 to enable.",
+                    "mode": "RW",
+                    "name": "ZQ_ON_SREF_EXIT"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "User request to initiate a ZQ calibration. Bit (0) controls ZQCS and bit (1) controls ZQCL. Set either bit to 1 to trigger. WRITE-ONLY",
+                    "mode": "WO",
+                    "name": "ZQ_REQ"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_42": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE0"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_43": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 26,
+                    "description": "Difference between number of address pins available and number being used.",
+                    "mode": "RW",
+                    "name": "ROW_DIFF"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Encoded number of banks on the DRAM(s).",
+                    "mode": "RW",
+                    "name": "BANK_DIFF"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Selects whether a ZQCS command will calibrate just one chip select or all chip selects. Set to 1 for rotating CS.",
+                    "mode": "RW",
+                    "name": "ZQCS_ROTATE"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Indicates that a ZQ command is currently in progress. Value of 1 indicates command in progress. READ-ONLY",
+                    "mode": "RO",
+                    "name": "ZQ_IN_PROGRESS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_44": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Initial value of individual command aging counters for command aging.",
+                    "mode": "RW",
+                    "name": "COMMAND_AGE_COUNT"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Initial value of master aging-rate counter for command aging.",
+                    "mode": "RW",
+                    "name": "AGE_COUNT"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Location of the auto pre-charge bit in the DRAM address.",
+                    "mode": "RW",
+                    "name": "APREBIT"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Difference between number of column pins available and number being used.",
+                    "mode": "RW",
+                    "name": "COL_DIFF"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_45": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Set byte ordering as little endian or big endian. Set to 1 for big endian.",
+                    "mode": "RW",
+                    "name": "BIG_ENDIAN_EN"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Identifies the burst-on-fly bit in the memory mode registers.",
+                    "mode": "RW",
+                    "name": "BURST_ON_FLY_BIT"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Defines which chip selects are active.",
+                    "mode": "RW",
+                    "name": "CS_MAP"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Inhibit read/write command traffic and associated bank commands. Set to 1 to inhibit.",
+                    "mode": "RW",
+                    "name": "INHIBIT_DRAM_CMD"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_46": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Enable an automatic controller-initiated update (dfi_ctrlupd_req) after every refresh. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "CTRLUPD_REQ_PER_AREF_EN"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Assert the DFI controller-initiated update request signal dfi_ctrlupd_req. Set to 1 to trigger. WRITE-ONLY",
+                    "mode": "WO",
+                    "name": "CTRLUPD_REQ"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Indicator that the controller is processing a command. Evaluates all ports for outstanding transactions. Value of 1 indicates controller busy. READ-ONLY",
+                    "mode": "RO",
+                    "name": "CONTROLLER_BUSY"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Quantity that determines command queue full.",
+                    "mode": "RW",
+                    "name": "Q_FULLNESS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_47": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 18,
+                    "description": "Status of interrupt features in the controller. READ-ONLY",
+                    "mode": "RO",
+                    "name": "INT_STATUS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_48": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE1"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_49": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 18,
+                    "description": "Mask for controller_int signals from the INT_STATUS parameter.",
+                    "mode": "RW",
+                    "name": "INT_MASK"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_50": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Address of command that caused an out-of-range interrupt. READ-ONLY",
+                    "mode": "RO",
+                    "name": "OUT_OF_RANGE_ADDR"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_51": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Source ID of command that caused an out-of-range interrupt. READ-ONLY",
+                    "mode": "RO",
+                    "name": "OUT_OF_RANGE_SOURCE_ID"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 21,
+                    "description": "Type of command that caused an out-of-range interrupt. READ-ONLY",
+                    "mode": "RO",
+                    "name": "OUT_OF_RANGE_TYPE"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Length of command that caused an out-of-range interrupt. READ-ONLY",
+                    "mode": "RO",
+                    "name": "OUT_OF_RANGE_LENGTH"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Address of command that caused an out-of-range interrupt. This bit field is a continuation of DENALI_CTL_50, and contains bits [34:32] of OUT_OF_RANGE_ADDR. READ-ONLY",
+                    "mode": "RO",
+                    "name": "OUT_OF_RANGE_ADDR"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_52": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Expected data on BIST error. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_EXP_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_53": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Expected data on BIST error. This register is a continuation of DENALI_CTL_52, and contains bits [63:32] of BIST_EXP_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_EXP_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_54": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Expected data on BIST error.  This register is a continuation of DENALI_CTL_52, and contains bits [95:64] of BIST_EXP_DATA.  READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_EXP_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_55": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Expected data on BIST error. This register is a continuation of DENALI_CTL_52, and contains bits [127:96] of BIST_EXP_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_EXP_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_56": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Expected data on BIST error. This register is a continuation of DENALI_CTL_52, and contains bits [159:128] of BIST_EXP_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_EXP_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_57": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Expected data on BIST error. This register is a continuation of DENALI_CTL_52, and contains bits [191:160] of BIST_EXP_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_EXP_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_58": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Expected data on BIST error. This register is a continuation of DENALI_CTL_52, and contains bits [223:192] of BIST_EXP_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_EXP_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_59": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Expected data on BIST error. This register is a continuation of DENALI_CTL_52, and contains bits [255:224] of BIST_EXP_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_EXP_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_60": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Expected data on BIST error. This register is a continuation of DENALI_CTL_52, and contains bits [287:256] of BIST_EXP_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_EXP_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_61": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Actual data on BIST error. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_FAIL_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_62": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Actual data on BIST error. This register is a continuation of DENALI_CTL_61, and contains bits [63:32] of BIST_FAIL_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_FAIL_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_63": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Actual data on BIST error. This register is a continuation of DENALI_CTL_61, and contains bits [95:64] of BIST_FAIL_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_FAIL_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_64": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Actual data on BIST error. This register is a continuation of DENALI_CTL_61, and contains bits [127:96] of BIST_FAIL_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_FAIL_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_65": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Actual data on BIST error. This register is a continuation of DENALI_CTL_61, and contains bits [159:128] of BIST_FAIL_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_FAIL_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_66": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Actual data on BIST error. This register is a continuation of DENALI_CTL_61, and contains bits [191:160] of BIST_FAIL_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_FAIL_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_67": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Actual data on BIST error. This register is a continuation of DENALI_CTL_61, and contains bits [223:192] of BIST_FAIL_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_FAIL_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_68": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Actual data on BIST error. This register is a continuation of DENALI_CTL_61, and contains bits [255:224] of BIST_FAIL_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_FAIL_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_69": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Actual data on BIST error. This register is a continuation of DENALI_CTL_61, and contains bits [287:256] of BIST_FAIL_DATA. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_FAIL_DATA"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_70": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Address of BIST error. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_FAIL_ADDR"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_71": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 25,
+                    "description": "Determines which chip(s) will have termination when a read occurs on chip select 1. Set bit X to enable termination on csX when cs1 is performing a read.",
+                    "mode": "RW",
+                    "name": "ODT_RD_MAP_CS1"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Determines which chip(s) will have termination when a write occurs on chip select 0. Set bit X to enable termination on csX when cs0 is performing a write.",
+                    "mode": "RW",
+                    "name": "ODT_WR_MAP_CS0"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 9,
+                    "description": "Determines which chip(s) will have termination when a read occurs on chip select 0. Set bit X to enable termination on csX when cs0 is performing a read.",
+                    "mode": "RW",
+                    "name": "ODT_RD_MAP_CS0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Address of BIST error. This register is a continuation of DENALI_CTL_70, and contains bits [34:32] of BIST_FAIL_ADDR. READ-ONLY",
+                    "mode": "RO",
+                    "name": "BIST_FAIL_ADDR"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_72": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 27,
+                    "description": "Defines the DRAM minimum ODT high time after an ODT assertion for a read command.",
+                    "mode": "RW",
+                    "name": "TODTH_RD"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Defines the DRAM minimum ODT high time after an ODT assertion for a write command.",
+                    "mode": "RW",
+                    "name": "TODTH_WR"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 12,
+                    "description": "Defines the DRAM delay from an ODT de-assertion to the next non-write, non-read command.",
+                    "mode": "RW",
+                    "name": "TODTL_2CMD"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Determines which chip(s) will have termination when a write occurs on chip select 1. Set bit X to enable termination on csX when cs1 is performing a write.",
+                    "mode": "RW",
+                    "name": "ODT_WR_MAP_CS1"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_73": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 29,
+                    "description": "Additional delay to insert between different transaction types to different chip selects to meet ODT timing requirements.",
+                    "mode": "RW",
+                    "name": "ADD_ODT_CLK_DIFFTYPE_DIFFCS"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "Additional delay to insert between write and read transaction types to the same chip select to meet ODT timing requirements. Any value including 0x0 supported.",
+                    "mode": "RW",
+                    "name": "ADD_ODT_CLK_W2R_SAMECS"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Additional delay to insert between read and write transaction types to the same chip select to meet ODT timing requirements.",
+                    "mode": "RW",
+                    "name": "ADD_ODT_CLK_R2W_SAMECS"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Enable support of DRAM ODT. When enabled, controller will assert and de-assert ODT output to DRAM as needed.",
+                    "mode": "RW",
+                    "name": "ODT_EN"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_74": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 26,
+                    "description": "Additional delay to insert between writes and reads to different chip selects. Allowed programming dependent on memory system.",
+                    "mode": "RW",
+                    "name": "W2R_DIFFCS_DLY"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "Additional delay to insert between reads and writes to different chip selects. Program to a non-zero value.",
+                    "mode": "RW",
+                    "name": "R2W_DIFFCS_DLY"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 10,
+                    "description": "Additional delay to insert between reads to different chip selects. Program to a non-zero value.",
+                    "mode": "RW",
+                    "name": "R2R_DIFFCS_DLY"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Additional delay to insert between same transaction types to different chip selects to meet ODT timing requirements.",
+                    "mode": "RW",
+                    "name": "ADD_ODT_CLK_SAMETYPE_DIFFCS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_75": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 26,
+                    "description": "Additional delay to insert between writes and reads to the same chip select.",
+                    "mode": "RW",
+                    "name": "W2R_SAMECS_DLY"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 18,
+                    "description": "Additional delay to insert between reads and writes to the same chip select. Program to a non-zero value.",
+                    "mode": "RW",
+                    "name": "R2W_SAMECS_DLY"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 10,
+                    "description": "Additional delay to insert between two reads to the same chip select. Any value including 0x0 supported.",
+                    "mode": "RW",
+                    "name": "R2R_SAMECS_DLY"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Additional delay to insert between writes and writes to different chip selects. Program to a non-zero value.",
+                    "mode": "RW",
+                    "name": "W2W_DIFFCS_DLY"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_76": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 25,
+                    "description": "Defines the leveling operation for software leveling. Set to 0 for none, set to 1 for write leveling, set to 2 for data eye training, or set to 3 for gate training.",
+                    "mode": "RW",
+                    "name": "SW_LEVELING_MODE"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 20,
+                    "description": "OCD pull-up adjust setting for DRAMs for chip select 0.",
+                    "mode": "RW",
+                    "name": "OCD_ADJUST_PUP_CS_0"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 12,
+                    "description": "OCD pull-down adjust setting for DRAMs for chip select 0.",
+                    "mode": "RW",
+                    "name": "OCD_ADJUST_PDN_CS_0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "Additional delay to insert between two writes to the same chip select. Any value including 0x0 supported.",
+                    "mode": "RW",
+                    "name": "W2W_SAMECS_DLY"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_77": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Signals that software leveling is currently in progress. Value of 1 indicates operation complete. READ-ONLY",
+                    "mode": "RO",
+                    "name": "SWLVL_OP_DONE"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "User request to exit software leveling. Set to 1 to exit. WRITE-ONLY",
+                    "mode": "WO",
+                    "name": "SWLVL_EXIT"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "User request to initiate software leveling of type in the SW_LEVELING_MODE parameter. Set to 1 to trigger. WRITE-ONLY",
+                    "mode": "WO",
+                    "name": "SWLVL_START"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "User request to load delays and execute software leveling. Set to 1 to trigger. WRITE-ONLY",
+                    "mode": "WO",
+                    "name": "SWLVL_LOAD"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_78": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Leveling response for data slice 2. READ-ONLY",
+                    "mode": "RO",
+                    "name": "SWLVL_RESP_2"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Leveling response for data slice 1. READ-ONLY",
+                    "mode": "RO",
+                    "name": "SWLVL_RESP_1"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Leveling response for data slice 0. READ-ONLY",
+                    "mode": "RO",
+                    "name": "SWLVL_RESP_0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Status of write level, data eye training, and gate training requests. This is used with the LVL_REQ interrupt. Bit (0) correlates to a write leveling request, bit (1) correlates to a data eye training request, bit (2) correlates to a gate training request, and bit (3) is reserved. Value of 1 indicates request received. READ-ONLY",
+                    "mode": "RO",
+                    "name": "LVL_STATUS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_79": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Leveling response for data slice 6. READ-ONLY",
+                    "mode": "RO",
+                    "name": "SWLVL_RESP_6"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Leveling response for data slice 5. READ-ONLY",
+                    "mode": "RO",
+                    "name": "SWLVL_RESP_5"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Leveling response for data slice 4. READ-ONLY",
+                    "mode": "RO",
+                    "name": "SWLVL_RESP_4"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Leveling response for data slice 3. READ-ONLY",
+                    "mode": "RO",
+                    "name": "SWLVL_RESP_3"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_80": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Specifies the target chip select for the write leveling operation initiated\n                   through the WRLVL_REQ parameter.",
+                    "mode": "RW",
+                    "name": "WRLVL_CS"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "User request to initiate write leveling. Set to 1 to trigger. WRITE-ONLY",
+                    "mode": "WO",
+                    "name": "WRLVL_REQ"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Leveling response for data slice 8. READ-ONLY",
+                    "mode": "RO",
+                    "name": "SWLVL_RESP_8"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Leveling response for data slice 7. READ-ONLY",
+                    "mode": "RO",
+                    "name": "SWLVL_RESP_7"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_81": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE3"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Enable the MC write leveling module. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "WRLVL_EN"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 13,
+                    "description": "Delay from issuing MRS to first write leveling strobe.",
+                    "mode": "RW",
+                    "name": "WLMRD"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 5,
+                    "description": "Delay from issuing MRS to first DQS strobe for write leveling.",
+                    "mode": "RW",
+                    "name": "WLDQSEN"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_82": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of long count sequences counted between automatic write leveling commands.",
+                    "mode": "RW",
+                    "name": "WRLVL_INTERVAL"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_83": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Enable the dfi_wrlvl_delay_X signals to be programmed when hardware and software leveling are disabled. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "WRLVL_REG_EN"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 19,
+                    "description": "Holds the error associated with the write level error interrupt. Uppermost bit set indicates a TDFI_WRLVL_RESP parameter violation. Next uppermost bit set indicates a TDFI_WRLVL_MAX parameter violation. Lower bits are reserved. READ-ONLY",
+                    "mode": "RO",
+                    "name": "WRLVL_ERROR_STATUS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_84": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements for write data slice 1. This is read-only if the WRLVL_EN parameter is 1. If both the WRLVL_EN and the WRLVL_REG_EN parameters are 0, this can only be programmed during initialization or through software leveling. If the WRLVL_EN parameter is 0 and the WRLVL_REG_EN parameter is 1, this can be programmed at any time.",
+                    "mode": "RW",
+                    "name": "WRLVL_DELAY_1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for write data slice 0. This is read-only if the WRLVL_EN parameter is 1. If both the WRLVL_EN and the WRLVL_REG_EN parameters are 0, this can only be programmed during initialization or through software leveling. If the WRLVL_EN parameter is 0 and the WRLVL_REG_EN parameter is 1, this can be programmed at any time.",
+                    "mode": "RW",
+                    "name": "WRLVL_DELAY_0"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_85": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements for write data slice 3. This is read-only if the WRLVL_EN parameter is 1. If both the WRLVL_EN and the WRLVL_REG_EN parameters are 0, this can only be programmed during initialization or through software leveling. If the WRLVL_EN parameter is 0 and the WRLVL_REG_EN parameter is 1, this can be programmed at any time.",
+                    "mode": "RW",
+                    "name": "WRLVL_DELAY_3"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for write data slice 2. This is read-only if the WRLVL_EN parameter is 1. If both the WRLVL_EN and the WRLVL_REG_EN parameters are 0, this can only be programmed during initialization or through software leveling. If the WRLVL_EN parameter is 0 and the WRLVL_REG_EN parameter is 1, this can be programmed at any time.",
+                    "mode": "RW",
+                    "name": "WRLVL_DELAY_2"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_86": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements for write data slice 5. This is read-only if the WRLVL_EN parameter is 1. If both the WRLVL_EN and the WRLVL_REG_EN parameters are 0, this can only be programmed during initialization or through software leveling. If the WRLVL_EN parameter is 0 and the WRLVL_REG_EN parameter is 1, this can be programmed at any time.",
+                    "mode": "RW",
+                    "name": "WRLVL_DELAY_5"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for write data slice 4. This is read-only if the WRLVL_EN parameter is 1. If both the WRLVL_EN and the WRLVL_REG_EN parameters are 0, this can only be programmed during initialization or through software leveling. If the WRLVL_EN parameter is 0 and the WRLVL_REG_EN parameter is 1, this can be programmed at any time.",
+                    "mode": "RW",
+                    "name": "WRLVL_DELAY_4"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_87": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements for write data slice 7. This is read-only if the WRLVL_EN parameter is 1. If both the WRLVL_EN and the WRLVL_REG_EN parameters are 0, this can only be programmed during initialization or through software leveling. If the WRLVL_EN parameter is 0 and the WRLVL_REG_EN parameter is 1, this can be programmed at any time.",
+                    "mode": "RW",
+                    "name": "WRLVL_DELAY_7"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for write data slice 6. This is read-only if the WRLVL_EN parameter is 1. If both the WRLVL_EN and the WRLVL_REG_EN parameters are 0, this can only be programmed during initialization or through software leveling. If the WRLVL_EN parameter is 0 and the WRLVL_REG_EN parameter is 1, this can be programmed at any time.",
+                    "mode": "RW",
+                    "name": "WRLVL_DELAY_6"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_88": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "User request to initiate gate training. Set to 1 to trigger. WRITE-ONLY",
+                    "mode": "WO",
+                    "name": "RDLVL_GATE_REQ"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "User request to initiate data eye training. Set to 1 to trigger. WRITE-ONLY",
+                    "mode": "WO",
+                    "name": "RDLVL_REQ"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for write data slice 8. This is read-only if the WRLVL_EN parameter is 1. If both the WRLVL_EN and the WRLVL_REG_EN parameters are 0, this can only be programmed during initialization or through software leveling. If the WRLVL_EN parameter is 0 and the WRLVL_REG_EN parameter is 1, this can be programmed at any time.",
+                    "mode": "RW",
+                    "name": "WRLVL_DELAY_8"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_89": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Enable the dfi_rdlvl_delay_X signals to be programmed when hardware and software leveling are disabled. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "RDLVL_REG_EN"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Enable the data eye training logic to find the DQ data eye. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "RDLVL_BEGIN_DELAY_EN"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Specifies the read DQS edge positive or negative to be used for the data eye training operation. Set to 1 for negative edge.",
+                    "mode": "RW",
+                    "name": "RDLVL_EDGE"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Specifies the target chip select for the data eye training operation initiated through the RDLVL_REQ parameter or the gate training operation initiated through the RDLVL_GATE_REQ parameter.",
+                    "mode": "RW",
+                    "name": "RDLVL_CS"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_90": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 23,
+                    "description": "Number of delay elements for first 1 to 0 DQ transition for data slice 0. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_BEGIN_DELAY_0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Enable the dfi_rdlvl_gate_delay_X signals to be programmed when hardware and software leveling are disabled. Set to 1 to enable.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_REG_EN"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_91": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Calculated midpoint of DQ delay for data slice 0. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_MIDPOINT_DELAY_0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for first 0 to 1 DQ transition for data slice 0. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_END_DELAY_0"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_92": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Direction of the data eye midpoint delay offset for data slice 0. Set to 1 to add delay.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DIR_0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Offset the data eye midpoint delay for data slice 0.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DELAY_0"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_93": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements where gate is aligned to rising edge of DQS for data slice 0. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_DELAY_0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements where read DQS is placed within the DQ data eye for data slice 0. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_DELAY_0"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_94": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements for first 0 to 1 DQ transition for data slice 1. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_END_DELAY_1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for first 1 to 0 DQ transition for data slice 1. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_BEGIN_DELAY_1"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_95": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Offset the data eye midpoint delay for data slice 1.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DELAY_1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Calculated midpoint of DQ delay for data slice 1. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_MIDPOINT_DELAY_1"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_96": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 23,
+                    "description": "Number of delay elements where read DQS is placed within the DQ data eye for data slice 1. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_DELAY_1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Direction of the data eye midpoint delay offset for data slice 1. Set to 1 to add delay.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DIR_1"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_97": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Number of delay elements for first 1 to 0 DQ transition for data slice 2. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_BEGIN_DELAY_2"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements where gate is aligned to rising edge of DQS for data slice 1. This can only be programmed during initialization or through software leveling.",
+                    "mode": "RW",
+                    "name": "RDLVL_GATE_DELAY_1"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_98": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Calculated midpoint of DQ delay for data slice 2. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_MIDPOINT_DELAY_2"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Number of delay elements for first 0 to 1 DQ transition for data slice 2. READ-ONLY",
+                    "mode": "RO",
+                    "name": "RDLVL_END_DELAY_2"
+                }
+            ]
+        },
+        "mu_dct.DENALI_CTL_99": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "PADDING_BITS",
+                    "mode": "RO",
+                    "name": "OBSOLETE2"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Direction of the data eye midpoint delay offset for data slice 2. Set to 1 to add delay.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DIR_2"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Offset the data eye midpoint delay for data slice 2.",
+                    "mode": "RW",
+                    "name": "RDLVL_OFFSET_DELAY_2"
+                }
+            ]
+        }
+    }
+}

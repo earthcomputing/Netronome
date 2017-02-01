@@ -1,0 +1,179 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: eca5ba006ef4"
+    ],
+    "maps": {
+        "harrier.HarrierXpbMap": {
+            "0x01060000": {
+                "altname": "ARM_ISLAND_XPB",
+                "description": "ARM Island XPB Address Map",
+                "name": "ArmIsldXpbMap",
+                "ptr": "arm_island.ArmIsldXpbMap",
+                "type": "regmap"
+            },
+            "0x04060000": {
+                "altname": "PCIE0_ISLAND_XPB",
+                "description": "PCIe0 Island XPB Address Map",
+                "name": "Pcie0IsldXpbMap",
+                "ptr": "pcie_island_l0.PcieIsldXpbMapL0",
+                "type": "regmap"
+            },
+            "0x05060000": {
+                "altname": "PCIE1_ISLAND_XPB",
+                "description": "PCIe1 Island XPB Address Map",
+                "name": "Pcie1IsldXpbMap",
+                "ptr": "pcie_island_l1.PcieIsldXpbMapL1",
+                "type": "regmap"
+            },
+            "0x06060000": {
+                "altname": "PCIE2_ISLAND_XPB",
+                "description": "PCIe2 Island XPB Address Map",
+                "name": "Pcie2IsldXpbMap",
+                "ptr": "pcie_island_l0.PcieIsldXpbMapL0",
+                "type": "regmap"
+            },
+            "0x07060000": {
+                "altname": "PCIE3_ISLAND_XPB",
+                "description": "PCIe3 Island XPB Address Map",
+                "name": "Pcie3IsldXpbMap",
+                "ptr": "pcie_island_l1.PcieIsldXpbMapL1",
+                "type": "regmap"
+            },
+            "0x08060000": {
+                "altname": "NBI%d_ISLAND_XPB",
+                "description": "Nbi%d Island XPB Address Map",
+                "name": "Nbi%dIsldXpbMap",
+                "offinc1": "0x01000000",
+                "ptr": "nbi_island.NbiIsldXpbMap",
+                "repeat1": 2,
+                "type": "regmap"
+            },
+            "0x20060000": {
+                "altname": "ME%d_ISLAND_XPB",
+                "description": "Me%d Island XPB Address Map",
+                "name": "Me%dIsldXpbMap",
+                "offinc1": "0x01000000",
+                "ptr": "me_island.MeIsldXpbMap",
+                "repeat1": 8,
+                "type": "regmap"
+            },
+            "0x38060000": {
+                "altname": "ME8_ISLAND_XPB",
+                "description": "Me8 Island XPB Address Map",
+                "name": "Me8IsldXpbMap",
+                "ptr": "me_island.MeIsldXpbMap",
+                "type": "regmap"
+            },
+            "0x39060000": {
+                "altname": "ME9_ISLAND_XPB",
+                "description": "Me9 Island XPB Address Map",
+                "name": "Me9IsldXpbMap",
+                "ptr": "me_island.MeIsldXpbMap",
+                "type": "regmap"
+            },
+            "0x3d060000": {
+                "altname": "ME10_ISLAND_XPB",
+                "description": "Me10 Island XPB Address Map",
+                "name": "Me10IsldXpbMap",
+                "ptr": "me_island.MeIsldXpbMap",
+                "type": "regmap"
+            }
+        },
+        "harrier.HarrierXpbmMap": {
+            "0x01000000": {
+                "altname": "ARM_ISLAND_XPBM",
+                "description": "ARM Island XPBM Address Map",
+                "name": "ArmIsldXpbmMap",
+                "ptr": "arm_island.ArmIsldXpbmMap",
+                "type": "regmap"
+            },
+            "0x04000000": {
+                "altname": "PCIE0_ISLAND_XPBM",
+                "description": "PCIe0 Island XPBM Address Map",
+                "name": "Pcie0IsldXpbmMap",
+                "ptr": "pcie_island_l0.PcieIsldXpbmMapL0",
+                "type": "regmap"
+            },
+            "0x05000000": {
+                "altname": "PCIE1_ISLAND_XPBM",
+                "description": "PCIe1 Island XPBM Address Map",
+                "name": "Pcie1IsldXpbmMap",
+                "ptr": "pcie_island_l1.PcieIsldXpbmMapL1",
+                "type": "regmap"
+            },
+            "0x06000000": {
+                "altname": "PCIE2_ISLAND_XPBM",
+                "description": "PCIe2 Island XPBM Address Map",
+                "name": "Pcie2IsldXpbmMap",
+                "ptr": "pcie_island_l0.PcieIsldXpbmMapL0",
+                "type": "regmap"
+            },
+            "0x07000000": {
+                "altname": "PCIE3_ISLAND_XPBM",
+                "description": "PCIe3 Island XPBM Address Map",
+                "name": "Pcie3IsldXpbmMap",
+                "ptr": "pcie_island_l1.PcieIsldXpbmMapL1",
+                "type": "regmap"
+            },
+            "0x08000000": {
+                "altname": "NBI%d_ISLAND_XPBM",
+                "description": "Nbi%d Island XPBM Address Map",
+                "name": "Nbi%dIsldXpbmMap",
+                "offinc1": "0x01000000",
+                "ptr": "nbi_island.NbiIsldXpbmMap",
+                "repeat1": 2,
+                "type": "regmap"
+            },
+            "0x18000000": {
+                "altname": "EXTMU%d_ISLAND_XPB",
+                "description": "ExtMu%d Island XPBM Address Map",
+                "name": "ExtMu%dIsldXpbmMap",
+                "offinc1": "0x01000000",
+                "ptr": "ext_mu_island.ExtMuIsldXpbmMap",
+                "repeat1": 3,
+                "type": "regmap"
+            },
+            "0x1c000000": {
+                "altname": "INTMU%d_ISLAND_XPB",
+                "description": "IntMu%d Island XPBM Address Map",
+                "name": "IntMu%dIsldXpbmMap",
+                "offinc1": "0x01000000",
+                "ptr": "int_mu_island.IntMuIsldXpbmMap",
+                "repeat1": 2,
+                "type": "regmap"
+            },
+            "0x20000000": {
+                "altname": "ME%d_ISLAND_XPBM",
+                "description": "Me%d Island XPBM Address Map",
+                "name": "Me%dIsldXpbmMap",
+                "offinc1": "0x01000000",
+                "ptr": "me_island.MeIsldXpbmMap",
+                "repeat1": 8,
+                "type": "regmap"
+            },
+            "0x38000000": {
+                "altname": "ME8_ISLAND_XPBM",
+                "description": "Me8 Island XPBM Address Map",
+                "name": "Me8IsldXpbmMap",
+                "ptr": "me_island.MeIsldXpbmMap",
+                "type": "regmap"
+            },
+            "0x39000000": {
+                "altname": "ME9_ISLAND_XPBM",
+                "description": "Me9 Island XPBM Address Map",
+                "name": "Me9IsldXpbmMap",
+                "ptr": "me_island.MeIsldXpbmMap",
+                "type": "regmap"
+            },
+            "0x3d000000": {
+                "altname": "ME10_ISLAND_XPBM",
+                "description": "Me10 Island XPBM Address Map",
+                "name": "Me10IsldXpbmMap",
+                "ptr": "me_island.MeIsldXpbmMap",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

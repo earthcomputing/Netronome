@@ -1,0 +1,659 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "crypto_bulkeng.CryptoBulkEngXpb": {
+            "0x00000000": {
+                "altname": "ERRLO",
+                "description": "Error register low bits [31:0].\n                                 Reading this register will show all errors that have occurred regardless of mask value. \n                                 Writing a '1' to a bit will clear the appropriate bit in this register and the \"who's on first\" Lo register.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ErrRegLo",
+                "ptr": "crypto_bulkeng.ErrRegLo",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "ERRHI",
+                "description": "Error register high bits [63:32].\n                                 Reading this register will show all errors that have occurred regardless of mask value.\n                                 Writing a '1' to a bit will clear the appropriate bit in this register and the \"who's on first\" Hi register.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ErrRegHi",
+                "ptr": "crypto_bulkeng.ErrRegHi",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "FERRLO",
+                "description": "Who's on first error register low bits [31:0]. Each bit maps directly to a bit in the Error Lo Register.\n                                 This register captures the first error bit which is selected by the Mask Lo register, \n                                 blocking future error bits into this register until the register has been cleared.\n                                 This register is used to determine which error happened first if multiple errors are indicated \n                                 in the error register. Writing a '1' to a bit will clear the appropriate bit in this register.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "WhosOnFrstLo",
+                "ptr": "crypto_bulkeng.WhosOnFrstLo",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "FERRHI",
+                "description": "Who's on first error register high bits [63:32]. Each bit maps directly to a bit in the Error Hi Register.\n                                 This register captures the first error bit which is selected by the Mask Hi register,\n                                 blocking future error bits into this register until the register has been cleared.\n                                 This register is used to determine which error happened first if multiple errors are indicated \n                                 in the error register. Writing a '1' to a bit will clear the appropriate bit in this register.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "WhosOnFrstHi",
+                "ptr": "crypto_bulkeng.WhosOnFrstHi",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "ERRMASKLO",
+                "description": "Error mask low bits [31:0]. Each bit maps directly to a bit in the Error Lo Register. \n                                 This mask is used with the \"Who's on First\" Lo register and the Clock Stop Lo Mask. \n                                 Setting a bit position to a '1' will enable the associated error to be detected.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ErrMaskLo",
+                "ptr": "crypto_bulkeng.ErrMaskLo",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "ERRMASKHI",
+                "description": "Error mask high bits [63:32]. Each bit maps directly to a bit in the Error Hi Register.\n                                 This mask is used with the \"Who's on First\" Hi register and the Clock Stop Hi Mask.\n                                 Setting a bit position to a '1' will enable the associated error to be detected.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ErrMaskHi",
+                "ptr": "crypto_bulkeng.ErrMaskHi",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "CLKSTOPLO",
+                "description": "Clock stop mask low bits [31:0]. This register is used along with the Error Mask Lo register \n                               to select which error bits will trigger a local clock stop. \n                               Setting a bit position to a '1' will enable the associated error to cause a local clock stop.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ClkStpMskLo",
+                "ptr": "crypto_bulkeng.ClkStpMskLo",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "CLKSTOPHI",
+                "description": "Clock stop mask high bits [63:32]. This register is used along with the Error Mask Hi register \n                               to select which error bits will trigger a local clock stop. \n                               Setting a bit position to a '1' will enable the associated error to cause a local clock stop.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ClkStpMskHi",
+                "ptr": "crypto_bulkeng.ClkStpMskHi",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "description": "Test Mode And Error Inject.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "TstMdErrInj",
+                "ptr": "crypto_bulkeng.TstMdErrInj",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "crypto_bulkeng.ClkStpMskHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLK_STP_MSK_HI_1",
+                    "bit_lsb": 16,
+                    "bit_msb": 27,
+                    "description": "Same bitmap as ErrRegHi.",
+                    "mode": "RW",
+                    "name": "ClkStpMskHi1"
+                },
+                {
+                    "altname": "CLK_STP_MSK_HI_0",
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": "Same bitmap as ErrRegHi.",
+                    "mode": "RW",
+                    "name": "ClkStpMskHi0"
+                }
+            ]
+        },
+        "crypto_bulkeng.ClkStpMskLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CLK_STP_MSK_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 29,
+                    "description": "Same bitmap as ErrRegLo.",
+                    "mode": "RW",
+                    "name": "ClkStpMskLo"
+                }
+            ]
+        },
+        "crypto_bulkeng.ErrMaskHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ERR_MASK_HI_1",
+                    "bit_lsb": 16,
+                    "bit_msb": 27,
+                    "description": "Same bitmap as ErrRegHi.",
+                    "mode": "RW",
+                    "name": "ErrMaskHi1"
+                },
+                {
+                    "altname": "ERR_MASK_HI_0",
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": "Same bitmap as ErrRegHi.",
+                    "mode": "RW",
+                    "name": "ErrMaskHi0"
+                }
+            ]
+        },
+        "crypto_bulkeng.ErrMaskLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ERR_MASK_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 29,
+                    "description": "Same bitmap as ErrRegLo.",
+                    "mode": "RW",
+                    "name": "ErrMaskLo"
+                }
+            ]
+        },
+        "crypto_bulkeng.ErrRegHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CRC_MEM_ERR",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Read data error from SRAM controller (seq-num or RERR).",
+                    "mode": "W1C",
+                    "name": "CrcMemErr"
+                },
+                {
+                    "altname": "CRC_ICF_CMD",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "Compressed instruction collision with normal instruction.",
+                    "mode": "W1C",
+                    "name": "CrcIcfCmd"
+                },
+                {
+                    "altname": "CPS_FLAG",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Flag/type mismatch on input data.",
+                    "mode": "W1C",
+                    "name": "CpsFlag"
+                },
+                {
+                    "altname": "CPS_CPK_HOLE",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Packing function encountered hole in byte-stream.",
+                    "mode": "W1C",
+                    "name": "CpsCpkHole"
+                },
+                {
+                    "altname": "CDI_FIFO_PTY",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Fifo output parity error.",
+                    "mode": "W1C",
+                    "name": "CdiFifoPty"
+                },
+                {
+                    "altname": "CDI_FIFO_OV",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Fifo overflow.",
+                    "mode": "W1C",
+                    "name": "CdiFifoOv"
+                },
+                {
+                    "altname": "ICF_PTR_1",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Parity error on pointer_1 read.",
+                    "mode": "W1C",
+                    "name": "IcfPtr1"
+                },
+                {
+                    "altname": "ICF_PTR_0",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Parity error on pointer_0 read.",
+                    "mode": "W1C",
+                    "name": "IcfPtr0"
+                },
+                {
+                    "altname": "ICF_DATA",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "Parity error on instruction read.",
+                    "mode": "W1C",
+                    "name": "IcfData"
+                },
+                {
+                    "altname": "RDR_BUSY_ERR",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "New request while still busy or clear request when not busy.",
+                    "mode": "W1C",
+                    "name": "RdrBusyErr"
+                },
+                {
+                    "altname": "RDR_FIFO_PTY",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Fifo output parity error.",
+                    "mode": "W1C",
+                    "name": "RdrFifoPty"
+                },
+                {
+                    "altname": "RDR_FIFO_OV",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Fifo overflow.",
+                    "mode": "W1C",
+                    "name": "RdrFifoOv"
+                },
+                {
+                    "altname": "CRC16_TOP_FLAG",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Input data has flag/type mismatch.",
+                    "mode": "W1C",
+                    "name": "CRC16TopFlag"
+                },
+                {
+                    "altname": "CRC16_CFG_SIZE",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Config data from 4B path has size or sequence errors.",
+                    "mode": "W1C",
+                    "name": "CRC16CfgSize"
+                },
+                {
+                    "altname": "CRC16_CFG_PTY",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Config data from 4B path has parity error.",
+                    "mode": "W1C",
+                    "name": "CRC16CfgPty"
+                },
+                {
+                    "altname": "HASH_WRT_FDAT",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Fifo overflow.",
+                    "mode": "W1C",
+                    "name": "HashWrtFdat"
+                },
+                {
+                    "altname": "SHA_CFG_SIZE",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Config data from 4B path has size or sequence errors.",
+                    "mode": "W1C",
+                    "name": "ShaCfgSize"
+                },
+                {
+                    "altname": "SHA_CFG_PTY",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Config data from 4B path has parity error.",
+                    "mode": "W1C",
+                    "name": "ShaCfgPty"
+                },
+                {
+                    "altname": "GF_TOP_FLAG",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Input data has flag/type mismatch.",
+                    "mode": "W1C",
+                    "name": "GfTopFlag"
+                },
+                {
+                    "altname": "GF_CFG_SIZE",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Config data from 4B path has size or sequence errors.",
+                    "mode": "W1C",
+                    "name": "GfCfgSize"
+                },
+                {
+                    "altname": "GF_CFG_PTY",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Config data from 4B path has parity error.",
+                    "mode": "W1C",
+                    "name": "GfCfgPty"
+                },
+                {
+                    "altname": "CPH_CPK_HOLE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Packing function encountered hole in byte-stream.",
+                    "mode": "W1C",
+                    "name": "CphCpkHole"
+                },
+                {
+                    "altname": "CPH_FIFO_OV",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Fifo overflow.",
+                    "mode": "W1C",
+                    "name": "CphFifoOv"
+                },
+                {
+                    "altname": "CPH_FIFO_PRTY",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Parity error on fifo output (data, flags, parity).",
+                    "mode": "W1C",
+                    "name": "CphFifoPrty"
+                }
+            ]
+        },
+        "crypto_bulkeng.ErrRegLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "KASUMI_CFG_PTY",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Config data from 4B path has parity error.",
+                    "mode": "W1C",
+                    "name": "KasumiCfgPty"
+                },
+                {
+                    "altname": "KASUMI_CFG_SIZE",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Config data from 4B path has size or sequence errors.",
+                    "mode": "W1C",
+                    "name": "KasumiCfgSize"
+                },
+                {
+                    "altname": "SNOW_3G_CFG_PTY",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Config data from 4B path has parity error.",
+                    "mode": "W1C",
+                    "name": "Snow3GCfgPty"
+                },
+                {
+                    "altname": "SNOW_3G_CFG_SIZE",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "Config data from 4B path has size or sequence errors.",
+                    "mode": "W1C",
+                    "name": "Snow3GCfgSize"
+                },
+                {
+                    "altname": "CIPH_WRT_PSER",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Serial path fifo parity error.",
+                    "mode": "W1C",
+                    "name": "CiphWrtPser"
+                },
+                {
+                    "altname": "CIPH_WRT_FSER",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Fifo overflow.",
+                    "mode": "W1C",
+                    "name": "CiphWrtFser"
+                },
+                {
+                    "altname": "CIPH_WRT_FDAT",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Fifo overflow.",
+                    "mode": "W1C",
+                    "name": "CiphWrtFdat"
+                },
+                {
+                    "altname": "ARC_4_RD_PTY",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Ready data from state ram has parity error.",
+                    "mode": "W1C",
+                    "name": "Arc4RdPty"
+                },
+                {
+                    "altname": "ARC_4_CFG_PTY",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Config data from 4B path has parity error or key read parity.",
+                    "mode": "W1C",
+                    "name": "Arc4CfgPty"
+                },
+                {
+                    "altname": "ARC_4_CFG_SIZE",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "Config data from 4B path has size or sequence errors.",
+                    "mode": "W1C",
+                    "name": "Arc4CfgSize"
+                },
+                {
+                    "altname": "DES_FIFO_FDM",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "Fifo overflow ( mask ).",
+                    "mode": "W1C",
+                    "name": "DesFifoFdm"
+                },
+                {
+                    "altname": "DES_FIFO_FDF",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "Fifo overflow ( flag ).",
+                    "mode": "W1C",
+                    "name": "DesFifoFdf"
+                },
+                {
+                    "altname": "DES_FIFO_FDO",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Fifo overflow ( data out ).",
+                    "mode": "W1C",
+                    "name": "DesFifoFdo"
+                },
+                {
+                    "altname": "DES_FIFO_FDI",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Fifo overflow ( data in ).",
+                    "mode": "W1C",
+                    "name": "DesFifoFdi"
+                },
+                {
+                    "altname": "DES_CFG_PTY",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Config data from 4B path has parity error.",
+                    "mode": "W1C",
+                    "name": "DesCfgPty"
+                },
+                {
+                    "altname": "DES_CFG_SIZE",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Config data from 4B path has size or sequence errors.",
+                    "mode": "W1C",
+                    "name": "DesCfgSize"
+                },
+                {
+                    "altname": "AES_FIFO_GCMX",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Fifo overflow ( flag ).",
+                    "mode": "W1C",
+                    "name": "AesFifoGcmx"
+                },
+                {
+                    "altname": "AES_FIFO_GCM",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Fifo overflow ( data ).",
+                    "mode": "W1C",
+                    "name": "AesFifoGcm"
+                },
+                {
+                    "altname": "AES_FIFO_FDM",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Fifo overflow ( mask ).",
+                    "mode": "W1C",
+                    "name": "AesFifoFdm"
+                },
+                {
+                    "altname": "AES_FIFO_FDF",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "aes_fifo_fdf - fifo overflow ( flag ).",
+                    "mode": "W1C",
+                    "name": "AesFifoFdf"
+                },
+                {
+                    "altname": "AES_FIFO_FDO",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Fifo overflow ( data out ).",
+                    "mode": "W1C",
+                    "name": "AesFifoFdo"
+                },
+                {
+                    "altname": "AES_FIFO_FDI",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Fifo overflow ( data in ).",
+                    "mode": "W1C",
+                    "name": "AesFifoFdi"
+                },
+                {
+                    "altname": "AES_KEY_RPTY",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Key read from ram has parity error.",
+                    "mode": "W1C",
+                    "name": "AesKeyRpty"
+                },
+                {
+                    "altname": "AES_KEY_IPTY",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Input key data from 4B path has parity error.",
+                    "mode": "W1C",
+                    "name": "AesKeyIpty"
+                },
+                {
+                    "altname": "AES_KEY_SIZE",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Input key data from 4B path has size or sequence errors.",
+                    "mode": "W1C",
+                    "name": "AesKeySize"
+                },
+                {
+                    "altname": "AES_CFG_PTY",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Config data from 4B path has parity error.",
+                    "mode": "W1C",
+                    "name": "AesCfgPty"
+                },
+                {
+                    "altname": "AES_CFG_SIZE",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Config data from 4B path has size or sequence errors.",
+                    "mode": "W1C",
+                    "name": "AesCfgSize"
+                },
+                {
+                    "altname": "CPC_CPK_HOLE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Packing function encountered hole in byte-stream.",
+                    "mode": "W1C",
+                    "name": "CpcCpkHole"
+                },
+                {
+                    "altname": "CPC_FIFO_OV",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Fifo overflow.",
+                    "mode": "W1C",
+                    "name": "CpcFifoOv"
+                },
+                {
+                    "altname": "CPC_FIFO_PARITY",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Parity error on fifo output (data, flags, parity)",
+                    "mode": "W1C",
+                    "name": "CpcFifoParity"
+                }
+            ]
+        },
+        "crypto_bulkeng.TstMdErrInj": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "TARGET",
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Select target logic to send error inject pulse.  See following target table.",
+                    "mode": "WO",
+                    "name": "Target"
+                },
+                {
+                    "altname": "DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "Set specific bit(s) to '1' to inject error pulse.  See following bit map tables for each target.",
+                    "mode": "WO",
+                    "name": "Data"
+                }
+            ]
+        },
+        "crypto_bulkeng.WhosOnFrstHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "WHOS_ON_FRST_HI",
+                    "bit_lsb": 0,
+                    "bit_msb": 27,
+                    "description": "Same bitmap as ErrRegHi.",
+                    "mode": "W1C",
+                    "name": "WhosOnFrstHi"
+                }
+            ]
+        },
+        "crypto_bulkeng.WhosOnFrstLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "WHOS_ON_FRST_LO",
+                    "bit_lsb": 0,
+                    "bit_msb": 29,
+                    "description": "Same bitmap as ErrRegLo.",
+                    "mode": "W1C",
+                    "name": "WhosOnFrstLo"
+                }
+            ]
+        }
+    }
+}

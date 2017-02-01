@@ -1,0 +1,1058 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "crypto_cif.CryptoCifXpb": {
+            "0x00000000": {
+                "altname": "CIF_CFG",
+                "description": "CIF Configuration",
+                "name": "CIFConfig",
+                "ptr": "crypto_cif.CIFConfig",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "CIF_FERR1",
+                "description": "Tracks the first error reported in error register since last clear.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFErrFrst1",
+                "ptr": "crypto_cif.CIFErrFrst1",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "CIF_FERR2",
+                "description": "Tracks the first error reported in error register since last clear.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFErrFrst2",
+                "ptr": "crypto_cif.CIFErrFrst2",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "CIF_FERR3",
+                "description": "Tracks the first error reported in error register since last clear.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFErrFrst3",
+                "ptr": "crypto_cif.CIFErrFrst3",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "CIF_ERR1",
+                "description": "Set bits in this register will generate events if not masked.  Use CIFErrClear1 to clear.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFErr1",
+                "ptr": "crypto_cif.CIFErr1",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "CIF_ERR2",
+                "description": "Set bits in this register will generate events if not masked.  Use CIFErrClear2 to clear.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFErr2",
+                "ptr": "crypto_cif.CIFErr2",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "CIF_ERR3",
+                "description": "Set bits in this register will generate events if not masked.  Use CIFErrClear3 to clear.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFErr3",
+                "ptr": "crypto_cif.CIFErr3",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "CIF_ERRMASK1",
+                "description": "Error mask enables.  If set, the corresponding bit in the CIFErr1 register will generate an event.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFErrMask1",
+                "ptr": "crypto_cif.CIFErrMask1",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "CIF_ERRMASK2",
+                "description": "Error mask enables.  If set, the corresponding bit in the CIFErr2 register will generate an event.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFErrMask2",
+                "ptr": "crypto_cif.CIFErrMask2",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "CIF_ERRMASK3",
+                "description": "Error mask enables.  If set, the corresponding bit in the CIFErr3 register will generate an event.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFErrMask3",
+                "ptr": "crypto_cif.CIFErrMask3",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "CIF_ERRCLR1",
+                "description": "Clears both the CIFErrFrst1 and CIFErr1 registers on a per bit basis.  Write 1 to clear.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFErrClear1",
+                "ptr": "crypto_cif.CIFErrClear1",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "CIF_ERRCLR2",
+                "description": "Clears both the CIFErrFrst2 and CIFErr2 registers on a per bit basis.  Write 1 to clear.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFErrClear2",
+                "ptr": "crypto_cif.CIFErrClear2",
+                "type": "reg"
+            },
+            "0x00000048": {
+                "altname": "CIF_ERRCLR3",
+                "description": "Clears both the CIFErrFrst3 and CIFErr3 registers on a per bit basis.  Write 1 to clear.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFErrClear3",
+                "ptr": "crypto_cif.CIFErrClear3",
+                "type": "reg"
+            },
+            "0x00000054": {
+                "altname": "CIF_DBGRC",
+                "description": "Control debug reads of context queues or DMA channel state.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFDbgRdCtrl",
+                "ptr": "crypto_cif.CIFDbgRdCtrl",
+                "type": "reg"
+            },
+            "0x00000058": {
+                "altname": "CIF_DBGRA",
+                "description": "Address control for debug reads.",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CIFDbgRdAddr",
+                "ptr": "crypto_cif.CIFDbgRdAddr",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "crypto_cif.CIFConfig": {
+            "bit_length": 32,
+            "fields": []
+        },
+        "crypto_cif.CIFDbgRdAddr": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CRYPTO_ADDR",
+                    "bit_lsb": 16,
+                    "bit_msb": 28,
+                    "description": "Starting address of the crypto buffer.  16B read debug words will be written to consecutive addresses starting at this one.",
+                    "mode": "RW",
+                    "name": "CryptoAddr"
+                },
+                {
+                    "altname": "CTXTINC",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Valid only if Source = 0:",
+                    "mode": "RW",
+                    "name": "CtxtInc"
+                },
+                {
+                    "altname": "SRC_ADDR",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Starting address for the read source:  For Source = 0 (Dispatcher): [7:4] = 16B entry pointer, [3:0] = context ID; For Source = 1 (DMA Controller): [4:0] = DMA channel",
+                    "mode": "RW",
+                    "name": "SrcAddr"
+                }
+            ]
+        },
+        "crypto_cif.CIFDbgRdCtrl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BUSY",
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Write 1 to kick off the debug read.  Logic will clear this bit after the data is written to the crypto buffer.",
+                    "mode": "RW",
+                    "name": "Busy"
+                },
+                {
+                    "altname": "SOURCE",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Source of the read data",
+                    "mode": "RW",
+                    "name": "Source"
+                },
+                {
+                    "altname": "COUNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Number of 16B words to read",
+                    "mode": "RW",
+                    "name": "Count"
+                }
+            ]
+        },
+        "crypto_cif.CIFErr1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CDS_ERROR",
+                    "bit_lsb": 18,
+                    "bit_msb": 29,
+                    "description": "CDS Error.  See CIFErrFrst1 register description.",
+                    "mode": "RO",
+                    "name": "CDSError"
+                },
+                {
+                    "altname": "CBG_ERROR_1",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "CBG Error.  See CIFErrFrst1 register description.",
+                    "mode": "RO",
+                    "name": "CBGError1"
+                },
+                {
+                    "altname": "CBG_ERROR_0",
+                    "bit_lsb": 8,
+                    "bit_msb": 13,
+                    "description": "CBG Error.  See CIFErrFrst1 register description.",
+                    "mode": "RO",
+                    "name": "CBGError0"
+                },
+                {
+                    "altname": "CDC_ERROR",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "CDC Error.  See CIFErrFrst1 register description.",
+                    "mode": "RO",
+                    "name": "CDCError"
+                },
+                {
+                    "altname": "CPM_ERROR",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "CPM Error.  See CIFErrFrst1 register description.",
+                    "mode": "RO",
+                    "name": "CPMError"
+                }
+            ]
+        },
+        "crypto_cif.CIFErr2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CNTXT_UNDFLW",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "31 = Context 15 Queue underflow ... 16 = Context 0 Queue underflow",
+                    "mode": "RO",
+                    "name": "CntxtUndflw"
+                },
+                {
+                    "altname": "CNTXT_OVRFLW",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "15 = Context 15 Queue overflow ... 0 = Context 0 Queue overflow",
+                    "mode": "RO",
+                    "name": "CntxtOvrflw"
+                }
+            ]
+        },
+        "crypto_cif.CIFErr3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BLK_SYNC_ERR",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Crypto Dispatcher Request Sync Error.  When set, the dispatcher and bulk have permanently lost sync.",
+                    "mode": "RO",
+                    "name": "BlkSyncErr"
+                },
+                {
+                    "altname": "DEC_ERR",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Crypto Dispatcher instruction decode error.  When set, an invalid instruction was popped from a context queue.",
+                    "mode": "RO",
+                    "name": "DecErr"
+                },
+                {
+                    "altname": "CPT_PS_UFLW",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "CPP Target fault.  PS FIFO Underflow.",
+                    "mode": "RO",
+                    "name": "CPTPsUflw"
+                },
+                {
+                    "altname": "CPT_PS_OFLW",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "CPP Target fault.  PS FIFO Overflow.",
+                    "mode": "RO",
+                    "name": "CPTPsOflw"
+                },
+                {
+                    "altname": "CPT_DN_UFLW",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "CPP Target fault.  DN FIFO Underflow.",
+                    "mode": "RO",
+                    "name": "CPTDnUflw"
+                },
+                {
+                    "altname": "CPT_DN_OFLW",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "CPP Target fault.  DN FIFO Overflow.",
+                    "mode": "RO",
+                    "name": "CPTDnOflw"
+                },
+                {
+                    "altname": "CPT_PH_UFLW",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "CPP Target fault.  PH FIFO Underflow.",
+                    "mode": "RO",
+                    "name": "CPTPhUflw"
+                },
+                {
+                    "altname": "CPT_PH_OFLW",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "CPP Target fault.  PH FIFO Overflow.",
+                    "mode": "RO",
+                    "name": "CPTPhOflw"
+                },
+                {
+                    "altname": "CPT_CPP_DTA",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "CPP Target fault.  CPP Data Error.",
+                    "mode": "RO",
+                    "name": "CPTCppDta"
+                },
+                {
+                    "altname": "CMD_ERR",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "CPP Target command error (Causes dispatcher shutdown)",
+                    "mode": "RO",
+                    "name": "CmdErr"
+                },
+                {
+                    "altname": "CBG_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Buffer Gasket multi-bit ECC error (Causes dispatcher shutdown)",
+                    "mode": "RO",
+                    "name": "CBGErr"
+                }
+            ]
+        },
+        "crypto_cif.CIFErrClear1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CDS_ERROR",
+                    "bit_lsb": 18,
+                    "bit_msb": 29,
+                    "description": "Clears CDS Error.  See CIFErrFrst1 register description.",
+                    "mode": "W1C",
+                    "name": "CDSError"
+                },
+                {
+                    "altname": "CBG_ERROR_1",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Clears CBG Error.  See CIFErrFrst1 register description.",
+                    "mode": "W1C",
+                    "name": "CBGError1"
+                },
+                {
+                    "altname": "CBG_ERROR",
+                    "bit_lsb": 8,
+                    "bit_msb": 13,
+                    "description": "Clears CBG Error.  See CIFErrFrst1 register description.",
+                    "mode": "W1C",
+                    "name": "CBGError"
+                },
+                {
+                    "altname": "CDC_ERROR",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Clears CDC Error.  See CIFErrFrst1 register description.",
+                    "mode": "W1C",
+                    "name": "CDCError"
+                },
+                {
+                    "altname": "CPM_ERROR",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Clears CPM Error.  See CIFErrFrst1 register description.",
+                    "mode": "W1C",
+                    "name": "CPMError"
+                }
+            ]
+        },
+        "crypto_cif.CIFErrClear2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CNTXT_UNDFLW",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Clears Error: 31 = Context 15 Queue underflow ... 16 = Context 0 Queue underflow",
+                    "mode": "W1C",
+                    "name": "CntxtUndflw"
+                },
+                {
+                    "altname": "CNTXT_OVRFLW",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Clears Error: 15 = Context 15 Queue overflow ... 0 = Context 0 Queue overflow",
+                    "mode": "W1C",
+                    "name": "CntxtOvrflw"
+                }
+            ]
+        },
+        "crypto_cif.CIFErrClear3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BLK_SYNC_ERR",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Clears Error: Crypto Dispatcher Request Sync Error.",
+                    "mode": "W1C",
+                    "name": "BlkSyncErr"
+                },
+                {
+                    "altname": "DEC_ERR",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Clears Error: Crypto Dispatcher instruction decode error.",
+                    "mode": "W1C",
+                    "name": "DecErr"
+                },
+                {
+                    "altname": "CPT_PS_UFLW",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Clears Error: CPP Target fault.  PS FIFO Underflow.",
+                    "mode": "W1C",
+                    "name": "CPTPsUflw"
+                },
+                {
+                    "altname": "CPT_PS_OFLW",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Clears Error: CPP Target fault.  PS FIFO Overflow.",
+                    "mode": "W1C",
+                    "name": "CPTPsOflw"
+                },
+                {
+                    "altname": "CPT_DN_UFLW",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Clears Error: CPP Target fault.  DN FIFO Underflow.",
+                    "mode": "W1C",
+                    "name": "CPTDnUflw"
+                },
+                {
+                    "altname": "CPT_DN_OFLW",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Clears Error: CPP Target fault.  DN FIFO Overflow.",
+                    "mode": "W1C",
+                    "name": "CPTDnOflw"
+                },
+                {
+                    "altname": "CPT_PH_UFLW",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Clears Error: CPP Target fault.  PH FIFO Underflow.",
+                    "mode": "W1C",
+                    "name": "CPTPhUflw"
+                },
+                {
+                    "altname": "CPT_PH_OFLW",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Clears Error: CPP Target fault.  PH FIFO Overflow.",
+                    "mode": "W1C",
+                    "name": "CPTPhOflw"
+                },
+                {
+                    "altname": "CPT_CPP_DTA",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Clears Error: CPP Target fault.  CPP Data Error.",
+                    "mode": "W1C",
+                    "name": "CPTCppDta"
+                },
+                {
+                    "altname": "CMD_ERR",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Clears Error: CPP Target command error (Causes dispatcher shutdown)",
+                    "mode": "W1C",
+                    "name": "CmdErr"
+                },
+                {
+                    "altname": "CBG_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Clears Error: Buffer Gasket multi-bit ECC error (Causes dispatcher shutdown)",
+                    "mode": "W1C",
+                    "name": "CBGErr"
+                }
+            ]
+        },
+        "crypto_cif.CIFErrFrst1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CDS_BLK_UNDFLW",
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "CDS Error.  Dispatcher Bulk Req FIFO underflow",
+                    "mode": "RO",
+                    "name": "CDSBlkUndflw"
+                },
+                {
+                    "altname": "CDS_BLK_OVRFLW",
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "CDS Error.  Dispatcher Bulk Req FIFO overflow",
+                    "mode": "RO",
+                    "name": "CDSBlkOvrflw"
+                },
+                {
+                    "altname": "CDS_DMA_UNDFLW",
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "CDS Error.  Dispatcher DMA Req FIFO underflow",
+                    "mode": "RO",
+                    "name": "CDSDmaUndflw"
+                },
+                {
+                    "altname": "CDS_DMS_OVRFLW",
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "CDS Error.  Dispatcher DMA Req FIFO overflow",
+                    "mode": "RO",
+                    "name": "CDSDmsOvrflw"
+                },
+                {
+                    "altname": "CDS_CBG_UNDFLW",
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "CDS Error.  Dispatcher CBG Req FIFO underflow",
+                    "mode": "RO",
+                    "name": "CDSCbgUndflw"
+                },
+                {
+                    "altname": "CDS_CBG_OVRFLW",
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "CDS Error.  Dispatcher CBG Req FIFO overflow",
+                    "mode": "RO",
+                    "name": "CDSCbgOvrflw"
+                },
+                {
+                    "altname": "CDS_EVT_UNDFLW",
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "CDS Error.  Dispatcher Event Req FIFO underflow",
+                    "mode": "RO",
+                    "name": "CDSEvtUndflw"
+                },
+                {
+                    "altname": "CDS_EVT_OVRFLW",
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "CDS Error.  Dispatcher Event Req FIFO overflow",
+                    "mode": "RO",
+                    "name": "CDSEvtOvrflw"
+                },
+                {
+                    "altname": "CDS_PRE_UNDFLW",
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "CDS Error.  Dispatcher Prefetch FIFO underflow",
+                    "mode": "RO",
+                    "name": "CDSPreUndflw"
+                },
+                {
+                    "altname": "CDS_PRE_OVRFLW",
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "CDS Error.  Dispatcher Prefetch FIFO overflow",
+                    "mode": "RO",
+                    "name": "CDSPreOvrflw"
+                },
+                {
+                    "altname": "CDS_SGL_UNDFLW",
+                    "bit_lsb": 19,
+                    "bit_msb": 19,
+                    "description": "CDS Error.  Dispatcher Signal FIFO underflow",
+                    "mode": "RO",
+                    "name": "CDSSglUndflw"
+                },
+                {
+                    "altname": "CDS_SGL_OVRFLW",
+                    "bit_lsb": 18,
+                    "bit_msb": 18,
+                    "description": "CDS Error.  Dispatcher Signal FIFO overflow",
+                    "mode": "RO",
+                    "name": "CDSSglOvrflw"
+                },
+                {
+                    "altname": "CBG_RD_UNDFLW",
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "CBG Error.  Buffer Gasket Read Debug FIFO underflow",
+                    "mode": "RO",
+                    "name": "CBGRdUndflw"
+                },
+                {
+                    "altname": "CBG_RD_OVRFLW",
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "CBG Error.  Buffer Gasket Read Debug FIFO overflow",
+                    "mode": "RO",
+                    "name": "CBGRdOvrflw"
+                },
+                {
+                    "altname": "CBG_BLK_UNDFLW",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "CBG Error.  Buffer Gasket Bulk FIFO underflow",
+                    "mode": "RO",
+                    "name": "CBGBlkUndflw"
+                },
+                {
+                    "altname": "CBG_BLK_OVRFLW",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "CBG Error.  Buffer Gasket Bulk FIFO overflow",
+                    "mode": "RO",
+                    "name": "CBGBlkOvrflw"
+                },
+                {
+                    "altname": "CBG_CPP_UNDFLW",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "CBG Error.  Buffer Gasket CPP Target FIFO underflow",
+                    "mode": "RO",
+                    "name": "CBGCppUndflw"
+                },
+                {
+                    "altname": "CBG_CPP_OVRFLW",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "CBG Error.  Buffer Gasket CPP Target FIFO overflow",
+                    "mode": "RO",
+                    "name": "CBGCppOvrflw"
+                },
+                {
+                    "altname": "CBG_DSP_UNDFLW",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "CBG Error.  Buffer Gasket Dispatcher FIFO underflow",
+                    "mode": "RO",
+                    "name": "CBGDspUndflw"
+                },
+                {
+                    "altname": "CBG_DSP_OVRFLW",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "CBG Error.  Buffer Gasket Dispatcher FIFO overflow",
+                    "mode": "RO",
+                    "name": "CBGDspOvrflw"
+                },
+                {
+                    "altname": "CDC_DSP_UNDFLW",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "CDC Error.  DMA Controller Dispatcher response FIFO underflow",
+                    "mode": "RO",
+                    "name": "CDCDspUndflw"
+                },
+                {
+                    "altname": "CDC_DSP_OVRFLW",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "CDC Error.  DMA Controller Dispatcher response FIFO overflow",
+                    "mode": "RO",
+                    "name": "CDCDspOvrflw"
+                },
+                {
+                    "altname": "CPM_PSH_UNDFLW",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "CPM Error.  CPP Master Push Signal FIFO underflow",
+                    "mode": "RO",
+                    "name": "CPMPshUndflw"
+                },
+                {
+                    "altname": "CPM_PSH_OVRFLW",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "CPM Error.  CPP Master Push Signal FIFO overflow",
+                    "mode": "RO",
+                    "name": "CPMPshOvrflw"
+                },
+                {
+                    "altname": "CPM_PUL_UNDFLW",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "CPM Error.  CPP Master Pull Signal FIFO underflow",
+                    "mode": "RO",
+                    "name": "CPMPulUndflw"
+                },
+                {
+                    "altname": "CPM_PUL_OVRFLW",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "CPM Error.  CPP Master Pull Signal FIFO overflow",
+                    "mode": "RO",
+                    "name": "CPMPulOvrflw"
+                }
+            ]
+        },
+        "crypto_cif.CIFErrFrst2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CNTXT_UNDFLW",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "31 = Context 15 Queue underflow ... 16 = Context 0 Queue underflow",
+                    "mode": "RO",
+                    "name": "CntxtUndflw"
+                },
+                {
+                    "altname": "CNTXT_OVRFLW",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "15 = Context 15 Queue overflow ... 0 = Context 0 Queue overflow",
+                    "mode": "RO",
+                    "name": "CntxtOvrflw"
+                }
+            ]
+        },
+        "crypto_cif.CIFErrFrst3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "BLK_SYNC_ERR",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Crypto Dispatcher Request Sync Error.  When set, the dispatcher and bulk have permanently lost sync.",
+                    "mode": "RO",
+                    "name": "BlkSyncErr"
+                },
+                {
+                    "altname": "DEC_ERR",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Crypto Dispatcher instruction decode error.  When set, an invalid instruction was popped from a context queue.",
+                    "mode": "RO",
+                    "name": "DecErr"
+                },
+                {
+                    "altname": "CPT_PS_UFLW",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "CPP Target fault.  Push Signal FIFO Underflow.",
+                    "mode": "RO",
+                    "name": "CPTPsUflw"
+                },
+                {
+                    "altname": "CPT_PS_OFLW",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "CPP Target fault.  Push Signal FIFO Overflow.",
+                    "mode": "RO",
+                    "name": "CPTPsOflw"
+                },
+                {
+                    "altname": "CPT_DN_UFLW",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "CPP Target fault.  Data Narrowing FIFO Underflow.",
+                    "mode": "RO",
+                    "name": "CPTDnUflw"
+                },
+                {
+                    "altname": "CPT_DN_OFLW",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "CPP Target fault.  Data Narrowing FIFO Overflow.",
+                    "mode": "RO",
+                    "name": "CPTDnOflw"
+                },
+                {
+                    "altname": "CPT_PH_UFLW",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "CPP Target fault.  Push Hold FIFO Underflow.",
+                    "mode": "RO",
+                    "name": "CPTPhUflw"
+                },
+                {
+                    "altname": "CPT_PH_OFLW",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "CPP Target fault.  Push Hold FIFO Overflow.",
+                    "mode": "RO",
+                    "name": "CPTPhOflw"
+                },
+                {
+                    "altname": "CPT_CPP_DTA",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "CPP Target fault.  CPP Pull Data Error.",
+                    "mode": "RO",
+                    "name": "CPTCppDta"
+                },
+                {
+                    "altname": "CMD_ERR",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "CPP Target command error (Causes dispatcher shutdown)",
+                    "mode": "RO",
+                    "name": "CmdErr"
+                },
+                {
+                    "altname": "CBG_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Buffer Gasket multi-bit ECC error from Shared Memory (Causes Dispatcher shutdown)",
+                    "mode": "RO",
+                    "name": "CBGErr"
+                }
+            ]
+        },
+        "crypto_cif.CIFErrMask1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RESERVED__U",
+                    "bit_lsb": 30,
+                    "bit_msb": 31,
+                    "description": "Reserved",
+                    "mode": "RW",
+                    "name": "Reserved_U"
+                },
+                {
+                    "altname": "CDS_ER_R_WR",
+                    "bit_lsb": 18,
+                    "bit_msb": 29,
+                    "description": "Masks CDS ErRWr.  See CIFErrFrst1 register description.",
+                    "mode": "RW",
+                    "name": "CDSErRWr"
+                },
+                {
+                    "altname": "CBG_ER_R_WR_1",
+                    "bit_lsb": 16,
+                    "bit_msb": 17,
+                    "description": "Masks CBG ErRWr.  See CIFErrFrst1 register description.",
+                    "mode": "RW",
+                    "name": "CBGErRWr1"
+                },
+                {
+                    "altname": "RESERVED__M",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "Reserved",
+                    "mode": "RW",
+                    "name": "Reserved_M"
+                },
+                {
+                    "altname": "CBG_ER_R_WR",
+                    "bit_lsb": 8,
+                    "bit_msb": 13,
+                    "description": "Masks CBG ErRWr.  See CIFErrFrst1 register description.",
+                    "mode": "RW",
+                    "name": "CBGErRWr"
+                },
+                {
+                    "altname": "RESERVED__L",
+                    "bit_lsb": 6,
+                    "bit_msb": 7,
+                    "description": "Reserved",
+                    "mode": "RW",
+                    "name": "Reserved_L"
+                },
+                {
+                    "altname": "CDC_ER_R_WR",
+                    "bit_lsb": 4,
+                    "bit_msb": 5,
+                    "description": "Masks CDC ErRWr.  See CIFErrFrst1 register description.",
+                    "mode": "RW",
+                    "name": "CDCErRWr"
+                },
+                {
+                    "altname": "CPM_ER_R_WR",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Masks CPM Error.  See CIFErrFrst1 register description.",
+                    "mode": "RW",
+                    "name": "CPMErRWr"
+                }
+            ]
+        },
+        "crypto_cif.CIFErrMask2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "CNTXT_UNDFLW",
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Masks Error: 31 = Context 15 Queue underflow ... 16 = Context 0 Queue underflow",
+                    "mode": "RW",
+                    "name": "CntxtUndflw"
+                },
+                {
+                    "altname": "CNTXT_OVRFLW",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Masks Error: 15 = Context 15 Queue overflow ... 0 = Context 0 Queue overflow",
+                    "mode": "RW",
+                    "name": "CntxtOvrflw"
+                }
+            ]
+        },
+        "crypto_cif.CIFErrMask3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "RESERVED",
+                    "bit_lsb": 12,
+                    "bit_msb": 31,
+                    "description": "Reserved",
+                    "mode": "RW",
+                    "name": "Reserved"
+                },
+                {
+                    "altname": "BLK_SYNC_ERR",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Masks Error: Crypto Dispatcher Request Sync Error.",
+                    "mode": "RW",
+                    "name": "BlkSyncErr"
+                },
+                {
+                    "altname": "DEC_ERR",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Masks Error: Crypto Dispatcher instruction decode error.",
+                    "mode": "RW",
+                    "name": "DecErr"
+                },
+                {
+                    "altname": "CPT_PS_UFLW",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Masks Error: CPP Target fault.  PS FIFO Underflow.",
+                    "mode": "RW",
+                    "name": "CPTPsUflw"
+                },
+                {
+                    "altname": "CPT_PS_OFLW",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Masks Error: CPP Target fault.  PS FIFO Overflow.",
+                    "mode": "RW",
+                    "name": "CPTPsOflw"
+                },
+                {
+                    "altname": "CPT_DN_UFLW",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Masks Error: CPP Target fault.  DN FIFO Underflow.",
+                    "mode": "RW",
+                    "name": "CPTDnUflw"
+                },
+                {
+                    "altname": "CPT_DN_OFLW",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Masks Error: CPP Target fault.  DN FIFO Overflow.",
+                    "mode": "RW",
+                    "name": "CPTDnOflw"
+                },
+                {
+                    "altname": "CPT_PH_UFLW",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Masks Error: CPP Target fault.  PH FIFO Underflow.",
+                    "mode": "RW",
+                    "name": "CPTPhUflw"
+                },
+                {
+                    "altname": "CPT_PH_OFLW",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Masks Error: CPP Target fault.  PH FIFO Overflow.",
+                    "mode": "RW",
+                    "name": "CPTPhOflw"
+                },
+                {
+                    "altname": "CPT_CPP_DTA",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Masks Error: CPP Target fault.  CPP Data Error.",
+                    "mode": "RW",
+                    "name": "CPTCppDta"
+                },
+                {
+                    "altname": "CMD_ERR",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Masks Error: CPP Target command error (Causes dispatcher shutdown)",
+                    "mode": "RW",
+                    "name": "CmdErr"
+                },
+                {
+                    "altname": "CBG_ERR",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Masks Error: Buffer Gasket multi-bit ECC error (Causes dispatcher shutdown)",
+                    "mode": "RW",
+                    "name": "CBGErr"
+                }
+            ]
+        }
+    }
+}

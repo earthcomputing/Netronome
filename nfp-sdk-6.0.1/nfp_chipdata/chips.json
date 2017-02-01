@@ -1,0 +1,3978 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2015 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset: ade0020e9035",
+        "Decription:",
+        "This file provides configuration data for a list of chips. The",
+        "'family' attribute must be present and a supported value, one of:",
+        "['nfp3200', 'nfp4000', 'nfp6000'] (note that nfp4000 is handled as",
+        "nfp6000 in nfp_chipdata)",
+        ""
+    ],
+    "boards": {
+        "AMDA0057-0001": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "bataan"
+                    },
+                    "clocks": {
+                        "ARM": "600",
+                        "D0_CLK": "933",
+                        "D1_CLK": "933",
+                        "D2_CLK": "933",
+                        "P_CLK": "1000",
+                        "T_CLK": "1200"
+                    },
+                    "i24": {
+                        "emem": {
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x200000000"
+                        }
+                    },
+                    "i25": {
+                        "emem": {
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x200000000"
+                        }
+                    },
+                    "i26": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0x1e0000000 to 0x1ffffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x1e0000000"
+                        }
+                    }
+                },
+                "description": "",
+                "family": "nfp6000",
+                "inherit": "nfp-6xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    12,
+                    13,
+                    24,
+                    25,
+                    26,
+                    28,
+                    29,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    48,
+                    49
+                ],
+                "models": {
+                    "b0": "0x64801c10"
+                }
+            }
+        ],
+        "AMDA0058-0001": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "starfighter1"
+                    },
+                    "clocks": {
+                        "ARM": "600",
+                        "D0_CLK": "933",
+                        "D1_CLK": "933",
+                        "D2_CLK": "933",
+                        "P_CLK": "1000",
+                        "T_CLK": "1200"
+                    },
+                    "i24": {
+                        "emem": {
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x100000000"
+                        }
+                    },
+                    "i25": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0xe0000000 to 0xffffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0xe0000000"
+                        }
+                    },
+                    "i26": {
+                        "emem_cache": {
+                            "base": "0x0",
+                            "cache_as_ddr": "Y",
+                            "size": "0x300000"
+                        }
+                    }
+                },
+                "description": "",
+                "family": "nfp6000",
+                "inherit": "nfp-6xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    5,
+                    8,
+                    9,
+                    12,
+                    13,
+                    24,
+                    25,
+                    26,
+                    28,
+                    29,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    48,
+                    49
+                ],
+                "models": {
+                    "b0": "0x60110010"
+                }
+            }
+        ],
+        "AMDA0058-0002": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "starfighter1"
+                    },
+                    "clocks": {
+                        "ARM": "600",
+                        "D0_CLK": "933",
+                        "D1_CLK": "933",
+                        "D2_CLK": "933",
+                        "P_CLK": "1000",
+                        "T_CLK": "1200"
+                    },
+                    "i24": {
+                        "emem": {
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x100000000"
+                        }
+                    },
+                    "i25": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0xe0000000 to 0xffffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0xe0000000"
+                        }
+                    },
+                    "i26": {
+                        "emem_cache": {
+                            "base": "0x0",
+                            "cache_as_ddr": "Y",
+                            "size": "0x300000"
+                        }
+                    }
+                },
+                "description": "",
+                "family": "nfp6000",
+                "inherit": "nfp-6xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    5,
+                    8,
+                    9,
+                    12,
+                    13,
+                    24,
+                    25,
+                    26,
+                    28,
+                    29,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    48,
+                    49
+                ],
+                "models": {
+                    "b0": "0x60010010"
+                }
+            }
+        ],
+        "AMDA0058-0011": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "starfighter1"
+                    },
+                    "clocks": {
+                        "ARM": "600",
+                        "D0_CLK": "933",
+                        "D1_CLK": "933",
+                        "D2_CLK": "933",
+                        "P_CLK": "1000",
+                        "T_CLK": "1200"
+                    },
+                    "i24": {
+                        "emem": {
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x100000000"
+                        }
+                    },
+                    "i25": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0xe0000000 to 0xffffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0xe0000000"
+                        }
+                    },
+                    "i26": {
+                        "emem_cache": {
+                            "base": "0x0",
+                            "cache_as_ddr": "Y",
+                            "size": "0x300000"
+                        }
+                    }
+                },
+                "description": "",
+                "family": "nfp6000",
+                "inherit": "nfp-6xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    5,
+                    8,
+                    9,
+                    12,
+                    13,
+                    24,
+                    25,
+                    26,
+                    28,
+                    29,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    48,
+                    49
+                ],
+                "models": {
+                    "b0": "0x60110010"
+                }
+            }
+        ],
+        "AMDA0058-0012": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "starfighter1"
+                    },
+                    "clocks": {
+                        "ARM": "600",
+                        "D0_CLK": "933",
+                        "D1_CLK": "933",
+                        "D2_CLK": "933",
+                        "P_CLK": "1000",
+                        "T_CLK": "1200"
+                    },
+                    "i24": {
+                        "emem": {
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x100000000"
+                        }
+                    },
+                    "i25": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0xe0000000 to 0xffffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0xe0000000"
+                        }
+                    },
+                    "i26": {
+                        "emem_cache": {
+                            "base": "0x0",
+                            "cache_as_ddr": "Y",
+                            "size": "0x300000"
+                        }
+                    }
+                },
+                "description": "",
+                "family": "nfp6000",
+                "inherit": "nfp-6xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    5,
+                    8,
+                    9,
+                    12,
+                    13,
+                    24,
+                    25,
+                    26,
+                    28,
+                    29,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    48,
+                    49
+                ],
+                "models": {
+                    "b0": "0x60120010"
+                }
+            }
+        ],
+        "AMDA0078-0011": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "starfighter1"
+                    },
+                    "clocks": {
+                        "ARM": "600",
+                        "D0_CLK": "933",
+                        "D1_CLK": "933",
+                        "D2_CLK": "933",
+                        "P_CLK": "1000",
+                        "T_CLK": "1200"
+                    },
+                    "i24": {
+                        "emem": {
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x100000000"
+                        }
+                    },
+                    "i25": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0xe0000000 to 0xffffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0xe0000000"
+                        }
+                    },
+                    "i26": {
+                        "emem_cache": {
+                            "base": "0x0",
+                            "cache_as_ddr": "Y",
+                            "size": "0x300000"
+                        }
+                    }
+                },
+                "description": "",
+                "family": "nfp6000",
+                "inherit": "nfp-6xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    5,
+                    8,
+                    9,
+                    12,
+                    13,
+                    24,
+                    25,
+                    26,
+                    28,
+                    29,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    48,
+                    49
+                ],
+                "models": {
+                    "b0": "0x60110010"
+                }
+            }
+        ],
+        "AMDA0078-0012": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "starfighter1"
+                    },
+                    "clocks": {
+                        "ARM": "600",
+                        "D0_CLK": "933",
+                        "D1_CLK": "933",
+                        "D2_CLK": "933",
+                        "P_CLK": "1000",
+                        "T_CLK": "1200"
+                    },
+                    "i24": {
+                        "emem": {
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x100000000"
+                        }
+                    },
+                    "i25": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0xe0000000 to 0xffffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0xe0000000"
+                        }
+                    },
+                    "i26": {
+                        "emem_cache": {
+                            "base": "0x0",
+                            "cache_as_ddr": "Y",
+                            "size": "0x300000"
+                        }
+                    }
+                },
+                "description": "",
+                "family": "nfp6000",
+                "inherit": "nfp-6xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    5,
+                    8,
+                    9,
+                    12,
+                    13,
+                    24,
+                    25,
+                    26,
+                    28,
+                    29,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    48,
+                    49
+                ],
+                "models": {
+                    "b0": "0x60120010"
+                }
+            }
+        ],
+        "AMDA0081-0001": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "hydrogen"
+                    },
+                    "clocks": {
+                        "ARM": "466",
+                        "D0_CLK": "800",
+                        "P_CLK": "700",
+                        "T_CLK": "700"
+                    },
+                    "i24": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0x60000000 to 0x7fffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x60000000"
+                        }
+                    },
+                    "i25": {
+                        "emem_cache": {
+                            "base": "0x0",
+                            "cache_as_ddr": "Y",
+                            "size": "0x300000"
+                        }
+                    }
+                },
+                "description": "",
+                "family": "nfp4000",
+                "inherit": "nfp-4xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    8,
+                    24,
+                    25,
+                    28,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    48
+                ],
+                "models": {
+                    "b0": "0x40071c10"
+                }
+            }
+        ],
+        "AMDA0096-0001": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "lithium"
+                    },
+                    "clocks": {
+                        "ARM": "600",
+                        "D0_CLK": "800",
+                        "P_CLK": "600",
+                        "T_CLK": "600"
+                    },
+                    "i24": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0x60000000 to 0x7fffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x60000000"
+                        }
+                    },
+                    "i25": {
+                        "emem_cache": {
+                            "base": "0x0",
+                            "cache_as_ddr": "Y",
+                            "size": "0x300000"
+                        }
+                    }
+                },
+                "description": "",
+                "family": "nfp4000",
+                "inherit": "nfp-4xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    8,
+                    24,
+                    25,
+                    28,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    48
+                ],
+                "models": {
+                    "b0": "0x40010010"
+                }
+            }
+        ],
+        "AMDA0097-0001": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "beryllium"
+                    },
+                    "clocks": {
+                        "ARM": "533",
+                        "D0_CLK": "800",
+                        "P_CLK": "800",
+                        "T_CLK": "800"
+                    },
+                    "i24": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0x60000000 to 0x7fffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x60000000"
+                        }
+                    },
+                    "i25": {
+                        "emem_cache": {
+                            "base": "0x0",
+                            "cache_as_ddr": "Y",
+                            "size": "0x300000"
+                        }
+                    }
+                },
+                "family": "nfp4000",
+                "inherit": "nfp-4xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    8,
+                    24,
+                    25,
+                    28,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    48
+                ],
+                "models": {
+                    "b0": "0x40010010"
+                }
+            }
+        ],
+        "AMDA0097-0002": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "beryllium"
+                    },
+                    "clocks": {
+                        "ARM": "533",
+                        "D0_CLK": "800",
+                        "P_CLK": "800",
+                        "T_CLK": "800"
+                    },
+                    "i24": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0x60000000 to 0x7fffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x60000000"
+                        }
+                    },
+                    "i25": {
+                        "emem_cache": {
+                            "base": "0x0",
+                            "cache_as_ddr": "Y",
+                            "size": "0x300000"
+                        }
+                    }
+                },
+                "family": "nfp4000",
+                "inherit": "nfp-4xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    8,
+                    12,
+                    24,
+                    25,
+                    28,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    48
+                ],
+                "models": {
+                    "b0": "0x40020010"
+                }
+            }
+        ],
+        "AMDA0097-0003": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "beryllium"
+                    },
+                    "clocks": {
+                        "ARM": "533",
+                        "D0_CLK": "800",
+                        "P_CLK": "800",
+                        "T_CLK": "800"
+                    },
+                    "i24": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0x60000000 to 0x7fffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x60000000"
+                        }
+                    },
+                    "i25": {
+                        "emem_cache": {
+                            "base": "0x0",
+                            "cache_as_ddr": "Y",
+                            "size": "0x300000"
+                        }
+                    }
+                },
+                "family": "nfp4000",
+                "inherit": "nfp-4xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    8,
+                    24,
+                    25,
+                    28,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    48
+                ],
+                "models": {
+                    "b0": "0x40030010"
+                }
+            }
+        ],
+        "AMDA0099-0001": [
+            {
+                "config": {
+                    "assembly": {
+                        "model": "carbon"
+                    },
+                    "clocks": {
+                        "ARM": "533",
+                        "D0_CLK": "800",
+                        "P_CLK": "800",
+                        "T_CLK": "800"
+                    },
+                    "i24": {
+                        "emem": {
+                            "_comment": [
+                                "ARM uses 0x60000000 to 0x7fffffff"
+                            ],
+                            "base": "0x0",
+                            "channels": "0x2",
+                            "size": "0x60000000"
+                        }
+                    },
+                    "i25": {
+                        "emem_cache": {
+                            "base": "0x0",
+                            "cache_as_ddr": "Y",
+                            "size": "0x300000"
+                        }
+                    }
+                },
+                "family": "nfp4000",
+                "inherit": "nfp-4xxxc-b0",
+                "islands": [
+                    1,
+                    4,
+                    8,
+                    24,
+                    25,
+                    28,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    48
+                ],
+                "models": {
+                    "b0": "0x40010010"
+                }
+            }
+        ],
+        "_comment": [
+            "Boards are one or more chips with some specific parameters, such as",
+            "external memory sizes. While any config can be applied to either a",
+            "chip or a board's chip, usually only boards will do so since",
+            "some board configs will override NFP toolchain command line",
+            "arguments, while others like memory regions can only be shrunk on",
+            "the command line (the config sizes are maximum).",
+            "",
+            "Currently supported config keys are:",
+            "* iX.emem.base: String value, converted to uint64 when used.",
+            "* iX.emem.alloc_base: String value, converted to uint64 when used.",
+            "* iX.emem.size: String value, converted to uint64 when used.",
+            "* iX.emem_cache.cache_as_ddr: String value, one of 'Y', 'y', 'N', 'n'.",
+            "",
+            "* config.clocks.Dn_CLK == nfp-hwinfo ddr.speed / 2"
+        ]
+    },
+    "chips": {
+        "NFP-4001-0C": {
+            "family": "nfp4000",
+            "inherit": "nfp-4xxxc",
+            "islands": [
+                1,
+                4,
+                8,
+                12,
+                13,
+                24,
+                25,
+                28,
+                32,
+                33,
+                34,
+                35,
+                36,
+                48
+            ]
+        },
+        "NFP-4001-0C-B0": {
+            "family": "nfp4000",
+            "inherit": "NFP-4001-0C",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-4001-0N": {
+            "family": "nfp4000",
+            "inherit": "nfp-4xxx",
+            "islands": [
+                1,
+                4,
+                8,
+                24,
+                25,
+                28,
+                32,
+                33,
+                34,
+                35,
+                36,
+                48
+            ]
+        },
+        "NFP-4001-0N-B0": {
+            "family": "nfp4000",
+            "inherit": "NFP-4001-0N",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-4100-0C": {
+            "family": "nfp4000",
+            "inherit": "nfp-4xxxc",
+            "islands": [
+                1,
+                4,
+                5,
+                8,
+                12,
+                13,
+                24,
+                25,
+                28,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                48
+            ]
+        },
+        "NFP-4100-0C-B0": {
+            "family": "nfp4000",
+            "inherit": "NFP-4100-0C",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-6080-0C": {
+            "description": "48 FPCs, 8 Network SerDes, 8 PCIe Gen3lanes, 2 32-bit DDR3, 1 Crypto",
+            "family": "nfp6000",
+            "inherit": "nfp-6xxxc",
+            "islands": [
+                1,
+                4,
+                8,
+                12,
+                24,
+                28,
+                32,
+                33,
+                34
+            ],
+            "models": {
+                "a0": "0x60800C00",
+                "b0": "0x60800C10"
+            },
+            "serdes_cnt": 8
+        },
+        "NFP-6080-0C-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6080-0C",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-6080-0C-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6080-0C",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-6080-0N": {
+            "description": "44 FPCs, 8 Network SerDes, 8 PCIe Gen3lanes, 2 32-bit DDR3, no Crypto",
+            "family": "nfp6000",
+            "inherit": "nfp-6xxx",
+            "islands": [
+                1,
+                4,
+                8,
+                24,
+                28,
+                32,
+                33,
+                34
+            ],
+            "models": {
+                "a0": "0x60800000",
+                "b0": "0x60800010"
+            },
+            "serdes_cnt": 8
+        },
+        "NFP-6080-0N-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6080-0N",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-6080-0N-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6080-0N",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-6160-0C": {
+            "description": "60 FPCs, 16 Network SerDes, 8 PCIe Gen3lanes, 4 32-bit DDR3, 1 Crypto",
+            "family": "nfp6000",
+            "inherit": "nfp-6xxxc",
+            "islands": [
+                1,
+                4,
+                8,
+                12,
+                24,
+                25,
+                28,
+                32,
+                33,
+                34,
+                35
+            ],
+            "models": {
+                "a0": "0x61600C00",
+                "b0": "0x61600C10"
+            },
+            "serdes_cnt": 16
+        },
+        "NFP-6160-0C-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6160-0C",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-6160-0C-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6160-0C",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-6160-0N": {
+            "description": "56 FPCs, 16 Network SerDes, 8 PCIe Gen3lanes, 4 32-bit DDR3, no Crypto",
+            "family": "nfp6000",
+            "inherit": "nfp-6xxx",
+            "islands": [
+                1,
+                4,
+                8,
+                24,
+                25,
+                28,
+                32,
+                33,
+                34,
+                35
+            ],
+            "models": {
+                "a0": "0x61600000",
+                "b0": "0x61600010"
+            },
+            "serdes_cnt": 16
+        },
+        "NFP-6160-0N-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6160-0N",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-6160-0N-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6160-0N",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-6240-0C": {
+            "description": "84 FPCs, 24 Network SerDes, 16 PCIe Gen3lanes, 4 32-bit DDR3, 2 Crypto",
+            "family": "nfp6000",
+            "inherit": "nfp-6xxxc",
+            "islands": [
+                1,
+                4,
+                5,
+                8,
+                12,
+                13,
+                24,
+                25,
+                28,
+                32,
+                33,
+                34,
+                35,
+                36,
+                48
+            ],
+            "models": {
+                "a0": "0x62400C00",
+                "b0": "0x62400C10"
+            },
+            "serdes_cnt": 24
+        },
+        "NFP-6240-0C-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6240-0C",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-6240-0C-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6240-0C",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-6240-0N": {
+            "description": "76 FPCs, 24 Network SerDes, 16 PCIe Gen3lanes, 4 32-bit DDR3, no Crypto",
+            "family": "nfp6000",
+            "inherit": "nfp-6xxx",
+            "islands": [
+                1,
+                4,
+                5,
+                8,
+                24,
+                25,
+                28,
+                32,
+                33,
+                34,
+                35,
+                36,
+                48
+            ],
+            "models": {
+                "a0": "0x62400000",
+                "b0": "0x62400010"
+            },
+            "serdes_cnt": 24
+        },
+        "NFP-6240-0N-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6240-0N",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-6240-0N-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6240-0N",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-624A-0C": {
+            "description": "Starfighter",
+            "family": "nfp6000",
+            "inherit": "NFP-6480-1C",
+            "islands": [
+                1,
+                4,
+                5,
+                8,
+                12,
+                13,
+                24,
+                25,
+                28,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                48
+            ],
+            "models": {
+                "a0": "0x624A0C00",
+                "b0": "0x624A0C10"
+            }
+        },
+        "NFP-624A-0C-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-624A-0C",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-624A-0C-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-624A-0C",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-624B-0C": {
+            "family": "nfp6000",
+            "inherit": "NFP-624A-0C",
+            "models": {
+                "a0": "0x624B0C00",
+                "b0": "0x624B0C10"
+            }
+        },
+        "NFP-624B-0C-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-624B-0C",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-624B-0C-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-624B-0C",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-624C-0C": {
+            "family": "nfp6000",
+            "inherit": "NFP-624A-0C",
+            "models": {
+                "a0": "0x624C0C00",
+                "b0": "0x624C0C10"
+            }
+        },
+        "NFP-624C-0C-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-624C-0C",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-624C-0C-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-624C-0C",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-6320-1C": {
+            "description": "108 FPCs, 32 Network SerDes, 32 PCIeGen3 lanes, 6 32-bit DDR3, 2 Crypto",
+            "family": "nfp6000",
+            "inherit": "nfp-6xxxc",
+            "islands": [
+                1,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                12,
+                13,
+                24,
+                25,
+                26,
+                28,
+                29,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                48,
+                49
+            ],
+            "models": {
+                "a0": "0x63201C00",
+                "b0": "0x63201C10"
+            },
+            "serdes_cnt": 32
+        },
+        "NFP-6320-1C-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6320-1C",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-6320-1C-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6320-1C",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-6320-1N": {
+            "family": "nfp6000",
+            "inherit": "nfp-6xxx",
+            "islands": [
+                1,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                24,
+                25,
+                26,
+                28,
+                29,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                48,
+                49
+            ],
+            "models": {
+                "a0": "0x63201000",
+                "b0": "0x63201010"
+            },
+            "serdes_cnt": 32
+        },
+        "NFP-6320-1N-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6320-1N",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-6320-1N-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6320-1N",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-6480-1C": {
+            "description": "Full feature, 120 FPCs, full operation",
+            "family": "nfp6000",
+            "inherit": "nfp-6xxxc",
+            "models": {
+                "a0": "0x64801C00",
+                "b0": "0x64801C10"
+            }
+        },
+        "NFP-6480-1C-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6480-1C",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-6480-1C-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6480-1C",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-6480-1N": {
+            "description": "Full feature, 112 FPCs, full operation, no Crypto",
+            "family": "nfp6000",
+            "inherit": "nfp-6xxx",
+            "models": {
+                "a0": "0x64801000",
+                "b0": "0x64801010"
+            }
+        },
+        "NFP-6480-1N-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6480-1N",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-6480-1N-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-6480-1N",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "NFP-648A-1C": {
+            "description": "Starfighter",
+            "family": "nfp6000",
+            "inherit": "NFP-6480-1C",
+            "models": {
+                "a0": "0x648A1C00",
+                "b0": "0x648A1C10"
+            }
+        },
+        "NFP-648A-1C-A0": {
+            "family": "nfp6000",
+            "inherit": "NFP-648A-1C",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "NFP-648A-1C-B0": {
+            "family": "nfp6000",
+            "inherit": "NFP-648A-1C",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "nfp-3216": {
+            "description": "16 microengine NFP3200",
+            "family": "nfp3200",
+            "inherit": "nfp-32xx",
+            "microengine_cluster_count": 2,
+            "models": {
+                "a0": "0x32160000",
+                "a1": "0x32160001",
+                "a2": "0x32160002"
+            }
+        },
+        "nfp-3216-a0": {
+            "family": "nfp3200",
+            "inherit": "nfp-3216",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "nfp-3216-a1": {
+            "family": "nfp3200",
+            "inherit": "nfp-3216",
+            "revisions": [
+                "a1"
+            ]
+        },
+        "nfp-3216-a2": {
+            "family": "nfp3200",
+            "inherit": "nfp-3216",
+            "revisions": [
+                "a2"
+            ]
+        },
+        "nfp-3216c": {
+            "description": "16 microengine NFP3200, with crypto",
+            "family": "nfp3200",
+            "inherit": "nfp-32xxc",
+            "microengine_cluster_count": 2,
+            "models": {
+                "a0": "0x32160000",
+                "a1": "0x32160001",
+                "a2": "0x32160002"
+            }
+        },
+        "nfp-3216c-a0": {
+            "family": "nfp3200",
+            "inherit": "nfp-3216c",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "nfp-3216c-a1": {
+            "family": "nfp3200",
+            "inherit": "nfp-3216c",
+            "revisions": [
+                "a1"
+            ]
+        },
+        "nfp-3216c-a2": {
+            "family": "nfp3200",
+            "inherit": "nfp-3216c",
+            "revisions": [
+                "a2"
+            ]
+        },
+        "nfp-3240": {
+            "description": "40 microengine NFP3200",
+            "family": "nfp3200",
+            "inherit": "nfp-32xx",
+            "microengine_cluster_count": 5,
+            "models": {
+                "a0": "0x32400000",
+                "a1": "0x32400001",
+                "a2": "0x32400002"
+            }
+        },
+        "nfp-3240-a0": {
+            "family": "nfp3200",
+            "inherit": "nfp-3240",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "nfp-3240-a1": {
+            "family": "nfp3200",
+            "inherit": "nfp-3240",
+            "revisions": [
+                "a1"
+            ]
+        },
+        "nfp-3240-a2": {
+            "family": "nfp3200",
+            "inherit": "nfp-3240",
+            "revisions": [
+                "a2"
+            ]
+        },
+        "nfp-3240c": {
+            "description": "40 microengine NFP3200, with crypto",
+            "family": "nfp3200",
+            "inherit": "nfp-32xxc",
+            "microengine_cluster_count": 5,
+            "models": {
+                "a0": "0x32400000",
+                "a1": "0x32400001",
+                "a2": "0x32400002"
+            }
+        },
+        "nfp-3240c-a0": {
+            "family": "nfp3200",
+            "inherit": "nfp-3240c",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "nfp-3240c-a1": {
+            "family": "nfp3200",
+            "inherit": "nfp-3240c",
+            "revisions": [
+                "a1"
+            ]
+        },
+        "nfp-3240c-a2": {
+            "family": "nfp3200",
+            "inherit": "nfp-3240c",
+            "revisions": [
+                "a2"
+            ]
+        },
+        "nfp-32xx": {
+            "config": {
+                "dram": {
+                    "base": "0",
+                    "cache_as_ddr": "N",
+                    "size": "max"
+                }
+            },
+            "cpp_targets": [
+                1,
+                2,
+                3,
+                4,
+                7,
+                8,
+                9,
+                10,
+                13,
+                14,
+                15
+            ],
+            "description": "Generic, full feature without crypto. For use when not targeting a specific NFP-32xx.",
+            "family": "nfp3200",
+            "microengine_cluster_count": 5,
+            "models": {
+                "a0": "0x32400000",
+                "a1": "0x32400001",
+                "a2": "0x32400002"
+            },
+            "revisions": [
+                "a0",
+                "a1",
+                "a2"
+            ]
+        },
+        "nfp-32xx-a0": {
+            "family": "nfp3200",
+            "inherit": "nfp-32xx",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "nfp-32xx-a1": {
+            "family": "nfp3200",
+            "inherit": "nfp-32xx",
+            "revisions": [
+                "a1"
+            ]
+        },
+        "nfp-32xx-a2": {
+            "family": "nfp3200",
+            "inherit": "nfp-32xx",
+            "revisions": [
+                "a2"
+            ]
+        },
+        "nfp-32xxc": {
+            "config": {
+                "dram": {
+                    "base": "0",
+                    "cache_as_ddr": "N",
+                    "size": "max"
+                }
+            },
+            "cpp_targets": [
+                1,
+                2,
+                3,
+                4,
+                7,
+                8,
+                9,
+                10,
+                12,
+                13,
+                14,
+                15
+            ],
+            "description": "Generic, full feature. For use when not targeting a specific NFP-32xx.",
+            "family": "nfp3200",
+            "microengine_cluster_count": 5,
+            "models": {
+                "a0": "0x32400000",
+                "a1": "0x32400001",
+                "a2": "0x32400002"
+            },
+            "revisions": [
+                "a0",
+                "a1",
+                "a2"
+            ]
+        },
+        "nfp-32xxc-a0": {
+            "family": "nfp3200",
+            "inherit": "nfp-32xxc",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "nfp-32xxc-a1": {
+            "family": "nfp3200",
+            "inherit": "nfp-32xxc",
+            "revisions": [
+                "a1"
+            ]
+        },
+        "nfp-32xxc-a2": {
+            "family": "nfp3200",
+            "inherit": "nfp-32xxc",
+            "revisions": [
+                "a2"
+            ]
+        },
+        "nfp-4xxx": {
+            "description": "Generic, full feature without crypto. For use when not targeting a specific NFP-4xxx.",
+            "family": "nfp4000",
+            "inherit": "nfp-4xxxc",
+            "islands": [
+                1,
+                4,
+                5,
+                8,
+                24,
+                25,
+                28,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                48
+            ],
+            "models": {
+                "b0": "0x4fff0010"
+            },
+            "revisions": [
+                "b0"
+            ],
+            "serdes_cnt": 24
+        },
+        "nfp-4xxx-b0": {
+            "family": "nfp4000",
+            "inherit": "nfp-4xxx",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "nfp-4xxxc": {
+            "_comment": [
+                "This is the top-level chip for NFP-4xxx and it usesa family ID of 'nfp4000' here, but once the NFP-4xxxspecific family data is loaded, this needs to behandled as if it was an 'nfp6000'. This is becauseNFP-4xxx is, from a chipdata viewpoint, the sameas an NFP-6xxx with some islands removed/disabledand no ILA CPP Target. Describing this as a separatefamily in chipdata is cleaner and more readable,but to any chipdata user the NFP-4xxx and NFP-6xxxfamilies are the same."
+            ],
+            "description": "Generic, full feature. For use when not targeting a specific NFP-4xxx.",
+            "family": "nfp4000",
+            "imbcppats": {
+                "1": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "4": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "5": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "12": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "13": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "32": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "33": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "34": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "35": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "36": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "37": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "48": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                }
+            },
+            "islands": [
+                1,
+                4,
+                5,
+                8,
+                12,
+                13,
+                24,
+                25,
+                28,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                48
+            ],
+            "models": {
+                "b0": "0x4fff0C10"
+            },
+            "nbimuats": {
+                "8": {
+                    "isld0": 0,
+                    "isld1": 24,
+                    "mode": 3
+                }
+            },
+            "revisions": [
+                "b0"
+            ],
+            "serdes_cnt": 24
+        },
+        "nfp-4xxxc-b0": {
+            "family": "nfp4000",
+            "inherit": "nfp-4xxxc",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "nfp-6xxx": {
+            "description": "Generic, full feature without crypto. For use when not targeting a specific NFP-6xxx.",
+            "family": "nfp6000",
+            "inherit": "nfp-6xxxc",
+            "islands": [
+                1,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                24,
+                25,
+                26,
+                28,
+                29,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                48,
+                49
+            ],
+            "models": {
+                "a0": "0x64801000",
+                "b0": "0x64801010"
+            },
+            "revisions": [
+                "a0",
+                "b0"
+            ],
+            "serdes_cnt": 48
+        },
+        "nfp-6xxx-a0": {
+            "family": "nfp6000",
+            "inherit": "nfp-6xxx",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "nfp-6xxx-b0": {
+            "family": "nfp6000",
+            "inherit": "nfp-6xxx",
+            "revisions": [
+                "b0"
+            ]
+        },
+        "nfp-6xxx-c0": {
+            "description": "Generic, full feature. For use when not targeting a specific NFP-6xxx.",
+            "family": "nfp6000",
+            "imbcppats": {
+                "1": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "4": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "5": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "6": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "7": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "32": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "33": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "34": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "35": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "36": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "37": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "38": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "39": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "56": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "57": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "61": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                }
+            },
+            "islands": [
+                1,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                24,
+                25,
+                26,
+                28,
+                29,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                56,
+                57,
+                61
+            ],
+            "models": {
+                "c0": "0x6fff0020"
+            },
+            "nbimuats": {
+                "8": {
+                    "isld0": 0,
+                    "isld1": 24,
+                    "mode": 3
+                },
+                "9": {
+                    "isld0": 0,
+                    "isld1": 24,
+                    "mode": 3
+                }
+            },
+            "revisions": [
+                "c0"
+            ],
+            "serdes_cnt": 0
+        },
+        "nfp-6xxxc": {
+            "description": "Generic, full feature. For use when not targeting a specific NFP-6xxx.",
+            "family": "nfp6000",
+            "imbcppats": {
+                "1": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "4": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "5": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "6": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "7": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "12": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "13": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "32": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "33": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "34": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "35": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "36": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "37": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "38": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "48": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                },
+                "49": {
+                    "1": {
+                        "addr40": 1,
+                        "isld0": 8,
+                        "isld1": 10,
+                        "mode": 2
+                    },
+                    "2": {
+                        "addr40": 0,
+                        "isld0": 24,
+                        "isld1": 24,
+                        "mode": 1
+                    },
+                    "6": {
+                        "addr40": 1,
+                        "isld0": 48,
+                        "isld1": 50,
+                        "mode": 2
+                    },
+                    "7": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 24,
+                        "mode": 3
+                    },
+                    "9": {
+                        "addr40": 1,
+                        "isld0": 4,
+                        "isld1": 6,
+                        "mode": 2
+                    },
+                    "10": {
+                        "addr40": 0,
+                        "isld0": 1,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "12": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 12,
+                        "mode": 2
+                    },
+                    "14": {
+                        "addr40": 0,
+                        "isld0": 0,
+                        "isld1": 1,
+                        "mode": 1
+                    },
+                    "15": {
+                        "addr40": 1,
+                        "isld0": 0,
+                        "isld1": 0,
+                        "mode": 0
+                    }
+                }
+            },
+            "islands": [
+                1,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                12,
+                13,
+                24,
+                25,
+                26,
+                28,
+                29,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                48,
+                49
+            ],
+            "models": {
+                "a0": "0x64801C00",
+                "b0": "0x64801C10"
+            },
+            "nbimuats": {
+                "8": {
+                    "isld0": 0,
+                    "isld1": 24,
+                    "mode": 3
+                },
+                "9": {
+                    "isld0": 0,
+                    "isld1": 24,
+                    "mode": 3
+                }
+            },
+            "revisions": [
+                "a0",
+                "b0"
+            ],
+            "serdes_cnt": 48
+        },
+        "nfp-6xxxc-a0": {
+            "family": "nfp6000",
+            "inherit": "nfp-6xxxc",
+            "revisions": [
+                "a0"
+            ]
+        },
+        "nfp-6xxxc-b0": {
+            "family": "nfp6000",
+            "inherit": "nfp-6xxxc",
+            "revisions": [
+                "b0"
+            ]
+        }
+    }
+}

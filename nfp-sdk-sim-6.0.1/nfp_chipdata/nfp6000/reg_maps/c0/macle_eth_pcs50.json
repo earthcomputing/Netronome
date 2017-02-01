@@ -1,0 +1,1528 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "macle_eth_pcs50.EthPcs50": {
+            "0x00000000": {
+                "altname": "ETH_CH_PCS_CTL_1",
+                "description": "PCS Control.",
+                "name": "EthChPcsCtl1",
+                "ptr": "macle_eth_pcs50.EthPcs50Ctl1",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "ETH_CH_PCS_STATUS_1",
+                "description": "PCS Status.",
+                "name": "EthChPcsStatus1",
+                "ptr": "macle_eth_pcs50.EthPcs50Status1",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "ETH_CH_PCS_DEVICE_ID_0",
+                "description": "PHY DevId constant from package parameter PHY_IDENTIFIER bits 15:4. Bits 3:0 always 0.",
+                "name": "EthChPcsDeviceId0",
+                "ptr": "macle_eth_pcs50.EthPcs50DeviceId0",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "ETH_CH_PCS_DEVICE_ID_1",
+                "description": "PHY DevId constant from package parameter PHY_IDENTIFIER bits 31:16.",
+                "name": "EthChPcsDeviceId1",
+                "ptr": "macle_eth_pcs50.EthPcs50DeviceId1",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "ETH_CH_PCS_SPEED_ABILITY",
+                "description": "PCS supported speeds (values as defined by standard only, no proprietary speeds).",
+                "name": "EthChPcsSpeedAbility",
+                "ptr": "macle_eth_pcs50.EthPcs50SpeedAbility",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "ETH_CH_PCS_DEV_IN_PKG_1",
+                "description": "Constant indicating PCS presence.",
+                "name": "EthChPcsDevInPkg1",
+                "ptr": "macle_eth_pcs50.EthPcs50DevInPkg1",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "ETH_CH_PCS_DEV_IN_PKG_2",
+                "description": "Vendor specific presence.",
+                "name": "EthChPcsDevInPkg2",
+                "ptr": "macle_eth_pcs50.EthPcs50DevInPkg2",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "ETH_CH_PCS_CTL_2",
+                "description": "Operating speed indication/control.",
+                "name": "EthChPcsCtl2",
+                "ptr": "macle_eth_pcs50.EthPcs50Ctl2",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "ETH_CH_PCS_STATUS_2",
+                "description": "Fault status; Device capabilities",
+                "name": "EthChPcsStatus2",
+                "ptr": "macle_eth_pcs50.EthPcs50Status2",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "ETH_CH_PCS_PKG_ID_0",
+                "description": "Constant from package parameter PACK_IDENTIFIER bits 15:0.",
+                "name": "EthChPcsPkgId0",
+                "ptr": "macle_eth_pcs50.EthPcs50PkgId0",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "ETH_CH_PCS_PKG_ID_1",
+                "description": "Constant from package parameter PACK_IDENTIFIER bits 31:0.",
+                "name": "EthChPcsPkgId1",
+                "ptr": "macle_eth_pcs50.EthPcs50PkgId1",
+                "type": "reg"
+            },
+            "0x00000050": {
+                "altname": "ETH_CH_PCS_EEE_CTRL_CAPABILITY",
+                "description": "EEE Control and Capabilities (exists only if EEE is available).",
+                "name": "EthChPcsEeeCtrlCapability",
+                "ptr": "macle_eth_pcs50.EthPcs50EeeCtrlCapability",
+                "type": "reg"
+            },
+            "0x00000058": {
+                "altname": "ETH_CH_PCS_WAKE_ERROR_COUNTER",
+                "description": "EEE Wake error counter (exists only if EEE is available); Clears on read.",
+                "name": "EthChPcsWakeErrorCounter",
+                "ptr": "macle_eth_pcs50.EthPcs50WakeErrorCounter",
+                "type": "reg"
+            },
+            "0x00000080": {
+                "altname": "ETH_CH_PCS_BASE_RSTATUS_1",
+                "description": "Link Status Information.",
+                "name": "EthChPcsBaseRStatus1",
+                "ptr": "macle_eth_pcs50.EthPcs50BaseRStatus1",
+                "type": "reg"
+            },
+            "0x00000084": {
+                "altname": "ETH_CH_PCS_BASE_RSTATUS_2",
+                "description": "Link Status latches and error counters.",
+                "name": "EthChPcsBaseRStatus2",
+                "ptr": "macle_eth_pcs50.EthPcs50BaseRStatus2",
+                "type": "reg"
+            },
+            "0x00000088": {
+                "altname": "ETH_CH_PCS_SEED_A0",
+                "description": "10G Base-R Test Pattern Seed A bits 15:0.",
+                "name": "EthChPcsSeedA0",
+                "ptr": "macle_eth_pcs50.EthPcs50SeedA0",
+                "type": "reg"
+            },
+            "0x0000008c": {
+                "altname": "ETH_CH_PCS_SEED_A1",
+                "description": "10G Base-R Test Pattern Seed A bits 31:16.",
+                "name": "EthChPcsSeedA1",
+                "ptr": "macle_eth_pcs50.EthPcs50SeedA1",
+                "type": "reg"
+            },
+            "0x00000090": {
+                "altname": "ETH_CH_PCS_SEED_A2",
+                "description": "10G Base-R Test Pattern Seed A bits 47:32.",
+                "name": "EthChPcsSeedA2",
+                "ptr": "macle_eth_pcs50.EthPcs50SeedA2",
+                "type": "reg"
+            },
+            "0x00000094": {
+                "altname": "ETH_CH_PCS_SEED_A3",
+                "description": "10G Base-R Test Pattern Seed A bits 57:48.",
+                "name": "EthChPcsSeedA3",
+                "ptr": "macle_eth_pcs50.EthPcs50SeedA3",
+                "type": "reg"
+            },
+            "0x00000098": {
+                "altname": "ETH_CH_PCS_SEED_B0",
+                "description": "10G Base-R Test Pattern Seed B bits 15:0.",
+                "name": "EthChPcsSeedB0",
+                "ptr": "macle_eth_pcs50.EthPcs50SeedB0",
+                "type": "reg"
+            },
+            "0x0000009c": {
+                "altname": "ETH_CH_PCS_SEED_B1",
+                "description": "10G Base-R Test Pattern Seed B bits 31:16.",
+                "name": "EthChPcsSeedB1",
+                "ptr": "macle_eth_pcs50.EthPcs50SeedB1",
+                "type": "reg"
+            },
+            "0x000000a0": {
+                "altname": "ETH_CH_PCS_SEED_B2",
+                "description": "10G Base-R Test Pattern Seed B bits 47:32.",
+                "name": "EthChPcsSeedB2",
+                "ptr": "macle_eth_pcs50.EthPcs50SeedB2",
+                "type": "reg"
+            },
+            "0x000000a4": {
+                "altname": "ETH_CH_PCS_SEED_B3",
+                "description": "10G Base-R Test Pattern Seed B bits 57:48.",
+                "name": "EthChPcsSeedB3",
+                "ptr": "macle_eth_pcs50.EthPcs50SeedB3",
+                "type": "reg"
+            },
+            "0x000000a8": {
+                "altname": "ETH_CH_PCS_BASER_TEST_CONTROL",
+                "description": "Test Pattern Generator and Checker controls.",
+                "name": "EthChPcsBaserTestControl",
+                "ptr": "macle_eth_pcs50.EthPcs50BaserTestControl",
+                "type": "reg"
+            },
+            "0x000000ac": {
+                "altname": "ETH_CH_PCS_BASER_TEST_ERR_CNT",
+                "description": "Test Pattern Error Counter; Clears on read; None roll-over.",
+                "name": "EthChPcsBaserTestErrCnt",
+                "ptr": "macle_eth_pcs50.EthPcs50BaserTestErrCnt",
+                "type": "reg"
+            },
+            "0x000000b0": {
+                "altname": "ETH_CH_PCS_BER_HIGH_ORDER_CNT",
+                "description": "BER High Order Counter of BER bits 21:6; None roll-over.",
+                "name": "EthChPcsBerHighOrderCnt",
+                "ptr": "macle_eth_pcs50.EthPcs50BerHighOrderCnt",
+                "type": "reg"
+            },
+            "0x000000b4": {
+                "altname": "ETH_CH_PCS_ERR_BLK_HIGH_ORDER_CNT",
+                "description": "Error Blocks High Order Counter bits 21:8; None roll-over.",
+                "name": "EthChPcsErrBlkHighOrderCnt",
+                "ptr": "macle_eth_pcs50.EthPcs50ErrBlkHighOrderCnt",
+                "type": "reg"
+            },
+            "0x000000c8": {
+                "altname": "ETH_CH_PCS_MULTILANE_ALIGN_STAT_1",
+                "description": "Lane Alignment Status Bits and Block Lock.",
+                "name": "EthChPcsMultilaneAlignStat1",
+                "ptr": "macle_eth_pcs50.EthPcs50MultilaneAlignStat1",
+                "type": "reg"
+            },
+            "0x000000d0": {
+                "altname": "ETH_CH_PCS_MULTILANE_ALIGN_STAT_3",
+                "description": "Lane Alignment Marker Lock Status bits.",
+                "name": "EthChPcsMultilaneAlignStat3",
+                "ptr": "macle_eth_pcs50.EthPcs50MultilaneAlignStat3",
+                "type": "reg"
+            },
+            "0x00000320": {
+                "altname": "ETH_CH_PCS_BIP_ERR_CNT_LANE_0",
+                "description": "BIP Error Counter Lane 0; Clears on read; None roll-over.",
+                "name": "EthChPcsBipErrCntLane0",
+                "ptr": "macle_eth_pcs50.EthPcs50BipErrCntLane0",
+                "type": "reg"
+            },
+            "0x00000324": {
+                "altname": "ETH_CH_PCS_BIP_ERR_CNT_LANE_1",
+                "description": "BIP Error Counter Lane 1; Clears on read; None roll-over.",
+                "name": "EthChPcsBipErrCntLane1",
+                "ptr": "macle_eth_pcs50.EthPcs50BipErrCntLane1",
+                "type": "reg"
+            },
+            "0x00000328": {
+                "altname": "ETH_CH_PCS_BIP_ERR_CNT_LANE_2",
+                "description": "BIP Error Counter Lane 2; Clears on read; None roll-over.",
+                "name": "EthChPcsBipErrCntLane2",
+                "ptr": "macle_eth_pcs50.EthPcs50BipErrCntLane2",
+                "type": "reg"
+            },
+            "0x0000032c": {
+                "altname": "ETH_CH_PCS_BIP_ERR_CNT_LANE_3",
+                "description": "BIP Error Counter Lane 3; Clears on read; None roll-over.",
+                "name": "EthChPcsBipErrCntLane3",
+                "ptr": "macle_eth_pcs50.EthPcs50BipErrCntLane3",
+                "type": "reg"
+            },
+            "0x00000640": {
+                "altname": "ETH_CH_PCS_LANE_0MAPPING",
+                "description": "Lane Channel 0 mapping bits 1:0.",
+                "name": "EthChPcsLane0Mapping",
+                "ptr": "macle_eth_pcs50.EthPcs50Lane0Mapping",
+                "type": "reg"
+            },
+            "0x00000644": {
+                "altname": "ETH_CH_PCS_LANE_1MAPPING",
+                "description": "Lane Channel 1 mapping bits 1:0.",
+                "name": "EthChPcsLane1Mapping",
+                "ptr": "macle_eth_pcs50.EthPcs50Lane1Mapping",
+                "type": "reg"
+            },
+            "0x00000648": {
+                "altname": "ETH_CH_PCS_LANE_2MAPPING",
+                "description": "Lane Channel 2 mapping bits 1:0.",
+                "name": "EthChPcsLane2Mapping",
+                "ptr": "macle_eth_pcs50.EthPcs50Lane2Mapping",
+                "type": "reg"
+            },
+            "0x0000064c": {
+                "altname": "ETH_CH_PCS_LANE_3MAPPING",
+                "description": "Lane Channel 3 mapping bits 1:0.",
+                "name": "EthChPcsLane3Mapping",
+                "ptr": "macle_eth_pcs50.EthPcs50Lane3Mapping",
+                "type": "reg"
+            },
+            "0x00008000": {
+                "altname": "ETH_CH_PCS_VENDOR_SCRATCH",
+                "description": "Vendor Specific Reg; Scratch Register.",
+                "name": "EthChPcsVendorScratch",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorScratch",
+                "type": "reg"
+            },
+            "0x00008004": {
+                "altname": "ETH_CH_PCS_VENDOR_CORE_REV",
+                "description": "Vendor Specific Reg; Core Revision derived from DEV_VERSION package parameter.",
+                "name": "EthChPcsVendorCoreRev",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorCoreRev",
+                "type": "reg"
+            },
+            "0x00008008": {
+                "altname": "ETH_CH_PCS_VENDOR_VL_INTVL",
+                "description": "Vendor Specific Reg; Set the amount of data between markers. (I.e. distance of markers-1).",
+                "name": "EthChPcsVendorVlIntvl",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorVlIntvl",
+                "type": "reg"
+            },
+            "0x0000800c": {
+                "altname": "ETH_CH_PCS_VENDOR_TXLANE_THRESH",
+                "description": "Vendor Specific Reg; Defines the transmit line decoupling FIFOs almost full threshold.",
+                "name": "EthChPcsVendorTxlaneThresh",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorTxlaneThresh",
+                "type": "reg"
+            },
+            "0x00008010": {
+                "altname": "ETH_CH_PCS_VENDOR_RXLAUI_CONFIG",
+                "description": "Vendor Specific Reg; Define Reduced-XLAUI PMA mode using 2 lanes.",
+                "name": "EthChPcsVendorRxlauiConfig",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorRxlauiConfig",
+                "type": "reg"
+            },
+            "0x00008020": {
+                "altname": "ETH_CH_PCS_VENDOR_VL_00",
+                "description": "Vendor Specific Reg; Marker pattern for PCS Virtual Lane 0.",
+                "name": "EthChPcsVendorVl00",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorVl00",
+                "type": "reg"
+            },
+            "0x00008024": {
+                "altname": "ETH_CH_PCS_VENDOR_VL_01",
+                "description": "Vendor Specific Reg; Last byte of PCS Virtual Lane 0 marker pattern.",
+                "name": "EthChPcsVendorVl01",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorVl01",
+                "type": "reg"
+            },
+            "0x00008028": {
+                "altname": "ETH_CH_PCS_VENDOR_VL_10",
+                "description": "Vendor Specific Reg; Marker pattern for PCS Virtual Lane 1.",
+                "name": "EthChPcsVendorVl10",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorVl10",
+                "type": "reg"
+            },
+            "0x0000802c": {
+                "altname": "ETH_CH_PCS_VENDOR_VL_11",
+                "description": "Vendor Specific Reg; Last byte of PCS Virtual Lane 1 marker pattern.",
+                "name": "EthChPcsVendorVl11",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorVl11",
+                "type": "reg"
+            },
+            "0x00008030": {
+                "altname": "ETH_CH_PCS_VENDOR_VL_20",
+                "description": "Vendor Specific Reg; Marker pattern for PCS Virtual Lane 2.",
+                "name": "EthChPcsVendorVl20",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorVl20",
+                "type": "reg"
+            },
+            "0x00008034": {
+                "altname": "ETH_CH_PCS_VENDOR_VL_21",
+                "description": "Vendor Specific Reg; Last byte of PCS Virtual Lane 2 marker pattern.",
+                "name": "EthChPcsVendorVl21",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorVl21",
+                "type": "reg"
+            },
+            "0x00008038": {
+                "altname": "ETH_CH_PCS_VENDOR_VL_30",
+                "description": "Vendor Specific Reg; Marker pattern for PCS Virtual Lane 3.",
+                "name": "EthChPcsVendorVl30",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorVl30",
+                "type": "reg"
+            },
+            "0x0000803c": {
+                "altname": "ETH_CH_PCS_VENDOR_VL_31",
+                "description": "Vendor Specific Reg; Last byte of PCS Virtual Lane 3 marker pattern.",
+                "name": "EthChPcsVendorVl31",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorVl31",
+                "type": "reg"
+            },
+            "0x00008040": {
+                "altname": "ETH_CH_PCS_VENDOR_PCS_MODE",
+                "description": "Vendor Specific Reg; Configure PCS supporting Clause 49 or 82 Encoder/Decoder, MLD.",
+                "name": "EthChPcsVendorPcsMode",
+                "ptr": "macle_eth_pcs50.EthPcs50VendorPcsMode",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "macle_eth_pcs50.EthPcs50BaseRStatus1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_RCV_LINK_STATUS",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Receive link status. 1=Link up; 0=link down.",
+                    "mode": "RO",
+                    "name": "EthPcsRcvLinkStatus"
+                },
+                {
+                    "altname": "ETH_PCS_HIGH_BER",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "1=PCS reporting a high BER.",
+                    "mode": "RO",
+                    "name": "EthPcsHighBer"
+                },
+                {
+                    "altname": "ETH_PCS_BLOCK_LOCKED",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "1=PCS locked to received blocks.",
+                    "mode": "RO",
+                    "name": "EthPcsBlockLocked"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50BaseRStatus2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_BLOCK_LOCKED",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Block Lock; Latched low.",
+                    "mode": "RO",
+                    "name": "EthPcsBlockLocked"
+                },
+                {
+                    "altname": "ETH_PCS_HIGH_BER",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "BER flag; Latched high.",
+                    "mode": "RO",
+                    "name": "EthPcsHighBer"
+                },
+                {
+                    "altname": "ETH_PCS_BER_COUNTER",
+                    "bit_lsb": 8,
+                    "bit_msb": 13,
+                    "description": "BER counter; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsBerCounter"
+                },
+                {
+                    "altname": "ETH_PCS_ERRORED_CNT",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Errored blocks counter; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErroredCnt"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50BaserTestControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SELECT_RANDOM",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Select Random Idle test pattern (40G); Overrides bits 1:0 when set.",
+                    "mode": "RW",
+                    "name": "EthPcsSelectRandom"
+                },
+                {
+                    "altname": "ETH_PCS_TX_TEST_PATTERN",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Transmit test-pattern enable.",
+                    "mode": "RW",
+                    "name": "EthPcsTxTestPattern"
+                },
+                {
+                    "altname": "ETH_PCS_RX_TEST_PATTERN",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Receive test-pattern enable.",
+                    "mode": "RW",
+                    "name": "EthPcsRxTestPattern"
+                },
+                {
+                    "altname": "ETH_PCS_SELECT_SQUARE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Select Square Wave (1) or Pseudo Random (0) test pattern; 10G only.",
+                    "mode": "RW",
+                    "name": "EthPcsSelectSquare"
+                },
+                {
+                    "altname": "ETH_PCS_DATA_PATTERN_SEL",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Data Pattern Select: 1=all Zero, 0=2x Local Fault; 10G only.",
+                    "mode": "RW",
+                    "name": "EthPcsDataPatternSel"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50BaserTestErrCnt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Test pattern error counter; Clears on read; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50BerHighOrderCnt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_BER_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 21:6 of BER counter; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsBerCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50BipErrCntLane0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_BIP_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter lane 0; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsBipErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50BipErrCntLane1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_BIP_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter lane 1; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsBipErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50BipErrCntLane2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_BIP_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter lane 2; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsBipErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50BipErrCntLane3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_BIP_ERROR_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "BIP error counter lane 3; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsBipErrorCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50Ctl1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_RESET",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "1=PCS reset, 0=normal; Self clearing.",
+                    "mode": "RW",
+                    "name": "EthPcsReset"
+                },
+                {
+                    "altname": "ETH_PCS_LOOPBACK",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "1=Enable loopback, 0=disable loopback.",
+                    "mode": "RW",
+                    "name": "EthPcsLoopback"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_SELECTION_13",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Always 1.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeedSelection13"
+                },
+                {
+                    "altname": "ETH_PCS_LOW_POWER",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "0=normal operation (Always 0).",
+                    "mode": "RO",
+                    "name": "EthPcsLowPower"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_SELECTION_6",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Always 1.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeedSelection6"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_SEL",
+                    "bit_lsb": 2,
+                    "bit_msb": 5,
+                    "description": "0011 = 40 Gb/s; 0000 = 10Gb/s.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeedSel"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50Ctl2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_TYPE_SELECTION",
+                    "bit_lsb": 0,
+                    "bit_msb": 2,
+                    "description": "PCS type selection; Writing 0 sets PCS_MODE to 0x03 setting Clause 49 mode and disabling MLD.",
+                    "mode": "RW",
+                    "name": "EthPcsTypeSelection"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50DevInPkg1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_TC_PRESENT",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "TC present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsTcPresent"
+                },
+                {
+                    "altname": "ETH_PCS_DTE_XS_PRESENT",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "DTE XS present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsDteXsPresent"
+                },
+                {
+                    "altname": "ETH_PCS_PHY_XS_PRESENT",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "PHY XS present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsPhyXsPresent"
+                },
+                {
+                    "altname": "ETH_PCS_PCSPRESENT",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "PCS present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsPCSPresent"
+                },
+                {
+                    "altname": "ETH_PCS_WIS_PRESENT",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "WIS present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsWisPresent"
+                },
+                {
+                    "altname": "ETH_PCS_PMD_PMA_PRESENT",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "PMD/PMA present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsPmdPmaPresent"
+                },
+                {
+                    "altname": "ETH_PCS_CLAUSE_22PRESENT",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Clause 22 registers present when 1.",
+                    "mode": "RO",
+                    "name": "EthPcsClause22Present"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50DevInPkg2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_VNDR_DEV_2PRESENT",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Vendor specific device 2 present",
+                    "mode": "RO",
+                    "name": "EthPcsVndrDev2Present"
+                },
+                {
+                    "altname": "ETH_PCS_VNDR_DEV_1PRESENT",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Vendor specific device 1 present",
+                    "mode": "RO",
+                    "name": "EthPcsVndrDev1Present"
+                },
+                {
+                    "altname": "ETH_PCS_CLAUSE_22PRESENT",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Clause 22 extension present",
+                    "mode": "RO",
+                    "name": "EthPcsClause22Present"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50DeviceId0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_DEV_ID",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 15:0 of Device DevId defined by parameter PHY_IDENTIFIER in PCS package file.",
+                    "mode": "RO",
+                    "name": "EthPcsDevId"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50DeviceId1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_DEV_ID",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 31:16 of Device DevId defined by parameter PHY_IDENTIFIER in PCS package file.",
+                    "mode": "RO",
+                    "name": "EthPcsDevId"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50EeeCtrlCapability": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_EEE_40GBASE_RSLEEP",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "When 1, EEE deep sleep is supported for 40GBASE-R.",
+                    "mode": "RO",
+                    "name": "EthPcsEee40GBaseRSleep"
+                },
+                {
+                    "altname": "ETH_PCS_EEE_40GBASE_RAWAKE",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "When 1, EEE fast wake is supported for 40GBASE-R.",
+                    "mode": "RO",
+                    "name": "EthPcsEee40GBaseRAwake"
+                },
+                {
+                    "altname": "ETH_PCS_EEE_10GBASE_KR",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "When 1, EEE is supported for 10GBASE-KR.",
+                    "mode": "RO",
+                    "name": "EthPcsEee10GBaseKr"
+                },
+                {
+                    "altname": "ETH_PCS_LPI_FW",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Mode for selecting select 40G EEE mode; 1 = Fast wake mode; 0 = Deep sleep for LPI function.",
+                    "mode": "RW",
+                    "name": "EthPcsLpiFw"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50ErrBlkHighOrderCnt": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_HIGH_ORDER_PRESENT",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "High order counter present; Always 1.",
+                    "mode": "RO",
+                    "name": "EthPcsHighOrderPresent"
+                },
+                {
+                    "altname": "ETH_PCS_ERRORED_BLOCKS_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 13,
+                    "description": "Bits 21:8 of Error Blocks counter; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsErroredBlocksCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50Lane0Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_LANE_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Lane 0 mapping bits 1:0.",
+                    "mode": "RO",
+                    "name": "EthPcsLaneMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50Lane1Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_LANE_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Lane 1 mapping bits 1:0.",
+                    "mode": "RO",
+                    "name": "EthPcsLaneMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50Lane2Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_LANE_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Lane 2 mapping bits 1:0.",
+                    "mode": "RO",
+                    "name": "EthPcsLaneMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50Lane3Mapping": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_LANE_MAPPING",
+                    "bit_lsb": 0,
+                    "bit_msb": 1,
+                    "description": "Lane 3 mapping bits 1:0.",
+                    "mode": "RO",
+                    "name": "EthPcsLaneMapping"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50MultilaneAlignStat1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_LANE_ALIGN_STATUS",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Lane alignment status; 1=All Receive lanes locked and aligned.",
+                    "mode": "RO",
+                    "name": "EthPcsLaneAlignStatus"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_3BLOCK_LOCK",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Lane 3 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane3BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_2BLOCK_LOCK",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Lane 2 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane2BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_1BLOCK_LOCK",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Lane 1 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane1BlockLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_0BLOCK_LOCK",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Lane 0 block lock.",
+                    "mode": "RO",
+                    "name": "EthPcsLane0BlockLock"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50MultilaneAlignStat3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_LANE_3MARKER_LOCK",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Lane 3 alignment marker lock",
+                    "mode": "RO",
+                    "name": "EthPcsLane3MarkerLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_2MARKER_LOCK",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Lane 2 alignment marker lock",
+                    "mode": "RO",
+                    "name": "EthPcsLane2MarkerLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_1MARKER_LOCK",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Lane 1 alignment marker lock",
+                    "mode": "RO",
+                    "name": "EthPcsLane1MarkerLock"
+                },
+                {
+                    "altname": "ETH_PCS_LANE_0MARKER_LOCK",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Lane 0 alignment marker lock",
+                    "mode": "RO",
+                    "name": "EthPcsLane0MarkerLock"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50PkgId0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_DEV_ID",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 15:0 of Package DevId defined by parameter PACK_IDENTIFIER in PCS package file.",
+                    "mode": "RO",
+                    "name": "EthPcsDevId"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50PkgId1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_DEV_ID",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Bits 31:16 of Package DevId defined by parameter PACK_IDENTIFIER in PCS package file.",
+                    "mode": "RO",
+                    "name": "EthPcsDevId"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50SeedA0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SEED",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "10GBase-R Test Pattern Seed A: Bits 15:0.",
+                    "mode": "RW",
+                    "name": "EthPcsSeed"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50SeedA1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SEED",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "10GBase-R Test Pattern Seed A: Bits 31:16.",
+                    "mode": "RW",
+                    "name": "EthPcsSeed"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50SeedA2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SEED",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "10GBase-R Test Pattern Seed A: Bits 47:32.",
+                    "mode": "RW",
+                    "name": "EthPcsSeed"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50SeedA3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SEED",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "10GBase-R Test Pattern Seed A: Bits 57:48.",
+                    "mode": "RW",
+                    "name": "EthPcsSeed"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50SeedB0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SEED",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "10GBase-R Test Pattern Seed B: Bits 15:0.",
+                    "mode": "RW",
+                    "name": "EthPcsSeed"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50SeedB1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SEED",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "10GBase-R Test Pattern Seed B: Bits 31:16.",
+                    "mode": "RW",
+                    "name": "EthPcsSeed"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50SeedB2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SEED",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "10GBase-R Test Pattern Seed B: Bits 47:32.",
+                    "mode": "RW",
+                    "name": "EthPcsSeed"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50SeedB3": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SEED",
+                    "bit_lsb": 0,
+                    "bit_msb": 9,
+                    "description": "10GBase-R Test Pattern Seed B: Bits 57:48.",
+                    "mode": "RW",
+                    "name": "EthPcsSeed"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50SpeedAbility": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SPEED_25GCAPABLE",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "When 1, this PCS is 25G capable.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeed25GCapable"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_100GCAPABLE",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "When 1, this PCS is 100G capable.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeed100GCapable"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_40GCAPABLE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "When 1, this PCS is 40G capable.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeed40GCapable"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_10PASS_TS_2BASE_TL_CAPABLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "When 1, this PCS is 10PASS-TS/2Base-TL capable.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeed10PassTs2BaseTlCapable"
+                },
+                {
+                    "altname": "ETH_PCS_SPEED_10GCAPABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When 1, this PCS is 10Geth capable.",
+                    "mode": "RO",
+                    "name": "EthPcsSpeed10GCapable"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50Status1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_TX_LPI",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "1: transmit is or was in LPI state;  0: normal operation; Latching high.",
+                    "mode": "RO",
+                    "name": "EthPcsTxLpi"
+                },
+                {
+                    "altname": "ETH_PCS_RX_LPI",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "1: receive is or was in LPI state;  0: normal operation; Latching high.",
+                    "mode": "RO",
+                    "name": "EthPcsRxLpi"
+                },
+                {
+                    "altname": "ETH_PCS_TX_LPI_ACTIVE",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "1: transmit is currently in LPI state;  0: normal operation.",
+                    "mode": "RO",
+                    "name": "EthPcsTxLpiActive"
+                },
+                {
+                    "altname": "ETH_PCS_RX_LPI_ACTIVE",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "1: receive is currently in LPI state;  0: normal operation.",
+                    "mode": "RO",
+                    "name": "EthPcsRxLpiActive"
+                },
+                {
+                    "altname": "ETH_PCS_FAULT",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "When 1, indicates a fault condition idetected; When '0', indicates that no fault condition is detected.",
+                    "mode": "RO",
+                    "name": "EthPcsFault"
+                },
+                {
+                    "altname": "ETH_PCS_RCV_LINK_STATUS",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "When 1, indicates PCS receive link up; When '0', indicates PCS receive link is or was down (latching low).",
+                    "mode": "RO",
+                    "name": "EthPcsRcvLinkStatus"
+                },
+                {
+                    "altname": "ETH_PCS_LOW_POWER_ABLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Set to 1 to indicate that the PCS implements a low power mode.",
+                    "mode": "RO",
+                    "name": "EthPcsLowPowerAble"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50Status2": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_DEV_PRESENT",
+                    "bit_lsb": 14,
+                    "bit_msb": 15,
+                    "description": "Device present. When bits are 10 = device responding at this address.",
+                    "mode": "RO",
+                    "name": "EthPcsDevPresent"
+                },
+                {
+                    "altname": "ETH_PCS_TRANSMIT_FAULT",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Transmit fault. 1=Fault condition on transmit path. Latched high",
+                    "mode": "RO",
+                    "name": "EthPcsTransmitFault"
+                },
+                {
+                    "altname": "ETH_PCS_RECEIVE_FAULT",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Receive fault. 1=Fault condition on receive path. Latched high",
+                    "mode": "RO",
+                    "name": "EthPcsReceiveFault"
+                },
+                {
+                    "altname": "ETH_PCS_100GBASE_RCAPABLE",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "When 1, this PCS is 100GBase-R capable.",
+                    "mode": "RO",
+                    "name": "EthPcs100GBaseRCapable"
+                },
+                {
+                    "altname": "ETH_PCS_40GBASE_RCAPABLE",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "When 1, this PCS is 40GBase-R capable.",
+                    "mode": "RO",
+                    "name": "EthPcs40GBaseRCapable"
+                },
+                {
+                    "altname": "ETH_PCS_10GBASE_TCAPABLE",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "When 1, this PCS is 10GBase-T capable.",
+                    "mode": "RO",
+                    "name": "EthPcs10GBaseTCapable"
+                },
+                {
+                    "altname": "ETH_PCS_10GBASE_WCAPABLE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "When 1, this PCS is 10GBase-W capable.",
+                    "mode": "RO",
+                    "name": "EthPcs10GBaseWCapable"
+                },
+                {
+                    "altname": "ETH_PCS_10GBASE_XCAPABLE",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "When 1, this PCS is 10GBase-X capable.",
+                    "mode": "RO",
+                    "name": "EthPcs10GBaseXCapable"
+                },
+                {
+                    "altname": "ETH_PCS_10GBASE_RCAPABLE",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When 1, this PCS is 10GBase-R capable.",
+                    "mode": "RO",
+                    "name": "EthPcs10GBaseRCapable"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorCoreRev": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_REVISION",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Core Design version as defined by DEV_VERSION parameter in PCS package file.",
+                    "mode": "RO",
+                    "name": "EthPcsRevision"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorPcsMode": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ST_DISABLE_MLD",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Current status of MLD setting.",
+                    "mode": "RO",
+                    "name": "EthPcsStDisableMld"
+                },
+                {
+                    "altname": "ETH_PCS_ST_ENA_CLAUSE_49",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Current status of Clause 49 setting.",
+                    "mode": "RO",
+                    "name": "EthPcsStEnaClause49"
+                },
+                {
+                    "altname": "ETH_PCS_DISABLE_MLD",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "When 0 PCS 4-lane MLD function is active; When 1 the MLD function is disabled.",
+                    "mode": "RW",
+                    "name": "EthPcsDisableMld"
+                },
+                {
+                    "altname": "ETH_PCS_ENA_CLAUSE_49",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "When 0 PCS uses Clause 82 encoder/decoder functions; When 1 PCS uses Clause 49 encoder/decoder functions.",
+                    "mode": "RW",
+                    "name": "EthPcsEnaClause49"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorRxlauiConfig": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_ENA_STATUS",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Indicates if currently the RXLAUI mode is enabled.",
+                    "mode": "RO",
+                    "name": "EthPcsEnaStatus"
+                },
+                {
+                    "altname": "ETH_PCS_TX_MAP_LANE_1",
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "Set VL (0..3) to transmit to RXLAUI lane 1.",
+                    "mode": "RW",
+                    "name": "EthPcsTxMapLane1"
+                },
+                {
+                    "altname": "ETH_PCS_TX_MAP_LANE_0",
+                    "bit_lsb": 4,
+                    "bit_msb": 7,
+                    "description": "Set VL (0..3) to transmit to RXLAUI lane 0.",
+                    "mode": "RW",
+                    "name": "EthPcsTxMapLane0"
+                },
+                {
+                    "altname": "ETH_PCS_RESERVED_WRITEABLE_BITS",
+                    "bit_lsb": 1,
+                    "bit_msb": 3,
+                    "description": "These bits are writeable but have no effect.",
+                    "mode": "RW",
+                    "name": "EthPcsReservedWriteableBits"
+                },
+                {
+                    "altname": "ETH_PCS_RXLAUI_ENA",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Enable Reduced-XLAUI PMA mode using 2 lanes.",
+                    "mode": "RW",
+                    "name": "EthPcsRxlauiEna"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorScratch": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_SCRATCH",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Scratch Register; Register address to test read and write operation.",
+                    "mode": "RW",
+                    "name": "EthPcsScratch"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorTxlaneThresh": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_THRESHOLD",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "A 4-bit value to define the transmit line decoupling FIFOs almost full threshold; Valid values are 4..9.",
+                    "mode": "RW",
+                    "name": "EthPcsThreshold"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorVl00": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_M1",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Lane 0 Marker pattern for m1.",
+                    "mode": "RW",
+                    "name": "EthPcsM1"
+                },
+                {
+                    "altname": "ETH_PCS_M0",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Lane 0 Marker pattern for m0.",
+                    "mode": "RW",
+                    "name": "EthPcsM0"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorVl01": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_M2",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Lane 0 last btye of Marker pattern for m2.",
+                    "mode": "RW",
+                    "name": "EthPcsM2"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorVl10": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_M1",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Lane 1 Marker pattern for m1.",
+                    "mode": "RW",
+                    "name": "EthPcsM1"
+                },
+                {
+                    "altname": "ETH_PCS_M0",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Lane 1 Marker pattern for m0.",
+                    "mode": "RW",
+                    "name": "EthPcsM0"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorVl11": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_M2",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Lane 1 last btye of Marker pattern for m2.",
+                    "mode": "RW",
+                    "name": "EthPcsM2"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorVl20": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_M1",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Lane 2 Marker pattern for m1.",
+                    "mode": "RW",
+                    "name": "EthPcsM1"
+                },
+                {
+                    "altname": "ETH_PCS_M0",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Lane 2 Marker pattern for m0.",
+                    "mode": "RW",
+                    "name": "EthPcsM0"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorVl21": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_M2",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Lane 2 last btye of Marker pattern for m2.",
+                    "mode": "RW",
+                    "name": "EthPcsM2"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorVl30": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_M1",
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Lane 3 Marker pattern for m1.",
+                    "mode": "RW",
+                    "name": "EthPcsM1"
+                },
+                {
+                    "altname": "ETH_PCS_M0",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Lane 3 Marker pattern for m0.",
+                    "mode": "RW",
+                    "name": "EthPcsM0"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorVl31": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_M2",
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Lane 3 last btye of Marker pattern for m2.",
+                    "mode": "RW",
+                    "name": "EthPcsM2"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50VendorVlIntvl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_MARKER_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "A 16-bit value defining the amount of data between markers; (distance of markers-1).",
+                    "mode": "RW",
+                    "name": "EthPcsMarkerCounter"
+                }
+            ]
+        },
+        "macle_eth_pcs50.EthPcs50WakeErrorCounter": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PCS_COUNTER",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Increments each time the LPI enters the RX_WTF state indicating a wake time fault; None roll-over.",
+                    "mode": "RO",
+                    "name": "EthPcsCounter"
+                }
+            ]
+        }
+    }
+}

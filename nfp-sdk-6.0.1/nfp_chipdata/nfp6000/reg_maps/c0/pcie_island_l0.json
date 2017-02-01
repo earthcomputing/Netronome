@@ -1,0 +1,69 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: eca5ba006ef4"
+    ],
+    "maps": {
+        "pcie_island_l0.PcieIsldXpbMapL0": {
+            "0x00000000": {
+                "altname": "CTM_XPB",
+                "description": "Cluster Target Memory XPB Address Map",
+                "name": "CTMXpbMap",
+                "ptr": "mu.CTMXpbMap",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "ISLAND_MSTR_BRIDGE",
+                "description": "Island Master Bridge XPB Address Map",
+                "name": "IMBXpbMap",
+                "ptr": "island_master_bridge.IMBxpb",
+                "type": "regmap"
+            },
+            "0x00050000": {
+                "altname": "CLS_XPB",
+                "description": "Cluster Local Scratch XPB Address Map",
+                "name": "ClusterScratchXPB",
+                "ptr": "cluster_scratch.ClusterScratchXPB",
+                "type": "regmap"
+            },
+            "0x000a0000": {
+                "altname": "PCIE_XPB",
+                "description": "PCIe XPB Address Map",
+                "name": "PcieXpb",
+                "ptr": "pcie_x8_top.PcieXpb",
+                "type": "regmap"
+            },
+            "0x002a0000": {
+                "altname": "MEG_USTORE2",
+                "description": "ME Group UStore ECC Monitor Address Map",
+                "name": "MEGUStore2Map",
+                "ptr": "me_island.MEGUStore2Map",
+                "type": "regmap"
+            },
+            "0x003a0000": {
+                "altname": "PCIE_CTRL_ISLAND_XPB_TOP_L0",
+                "description": "PCIE Control Island L0 Address Map",
+                "name": "PcieCtrlIslandXpbTopL0",
+                "ptr": "pcie_ctrl_island_top.PcieCtrlIslandXpbTopL0",
+                "type": "regmap"
+            }
+        },
+        "pcie_island_l0.PcieIsldXpbmMapL0": {
+            "0x00000000": {
+                "altname": "PCIE_ISLAND_OVL_XPBM",
+                "description": "PCIe Island Overlay XPB Address Map",
+                "name": "Overlay",
+                "ptr": "island_overlay.IslandOverlayMap",
+                "type": "regmap"
+            },
+            "0x00060000": {
+                "altname": "PCIE_ISLAND_XPB",
+                "description": "PCIe Island XPB Address Map",
+                "name": "Island",
+                "ptr": "pcie_island_l0.PcieIsldXpbMapL0",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

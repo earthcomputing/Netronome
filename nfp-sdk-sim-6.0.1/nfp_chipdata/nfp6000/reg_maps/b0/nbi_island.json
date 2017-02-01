@@ -1,0 +1,44 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "nbi_island.NbiIsldXpbMap": {
+            "0x000a0000": {
+                "altname": "NBI_TOP_XPB_MAP",
+                "description": "NBI Top Level XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "NbiTopXpbMap",
+                "ptr": "nbi_reg.NbiTopXpbMap",
+                "type": "regmap"
+            }
+        },
+        "nbi_island.NbiIsldXpbmMap": {
+            "0x00000000": {
+                "altname": "NBI_ISLAND_OVL_XPBM",
+                "description": "NBI Island Overlay XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Overlay",
+                "ptr": "island_overlay.IslandOverlayMap",
+                "type": "regmap"
+            },
+            "0x00060000": {
+                "altname": "NBI_ISLAND_XPB",
+                "description": "NBI Island XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Island",
+                "ptr": "nbi_island.NbiIsldXpbMap",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

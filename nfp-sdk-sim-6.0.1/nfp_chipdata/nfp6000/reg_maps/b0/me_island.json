@@ -1,0 +1,64 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: b01c6c1b8bae"
+    ],
+    "maps": {
+        "me_island.MeIsldXpbMap": {
+            "0x00000000": {
+                "altname": "CTM_XPB",
+                "description": "Cluster Target Memory XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "CTMXpbMap",
+                "ptr": "mu.CTMXpbMap",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "ISLAND_MSTR_BRIDGE",
+                "description": "Island Master Bridge XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "IMBXpbMap",
+                "ptr": "island_master_bridge.IMBxpb",
+                "type": "regmap"
+            },
+            "0x00050000": {
+                "altname": "CLS_XPB",
+                "description": "Cluster Scratch XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "ClusterScratchXPB",
+                "ptr": "cluster_scratch.ClusterScratchXPB",
+                "type": "regmap"
+            }
+        },
+        "me_island.MeIsldXpbmMap": {
+            "0x00000000": {
+                "altname": "ME_ISLAND_OVL_XPBM",
+                "description": "ME Island Overlay XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Overlay",
+                "ptr": "island_overlay.IslandOverlayMap",
+                "type": "regmap"
+            },
+            "0x00060000": {
+                "altname": "ME_ISLAND_XPB",
+                "description": "ME Island XPB Address Map",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "Island",
+                "ptr": "me_island.MeIsldXpbMap",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {}
+}

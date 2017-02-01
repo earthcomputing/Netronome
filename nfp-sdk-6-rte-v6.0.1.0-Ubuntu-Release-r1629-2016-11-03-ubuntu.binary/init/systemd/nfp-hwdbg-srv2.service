@@ -1,0 +1,9 @@
+[Unit]
+Description=NFP Hardware Debug Server
+After=network.target
+
+[Service]
+ExecStart=/opt/netronome/nfp-sdk-hwdbgsrv/server/nfp-sdk-hwdbgsrv -n 2 -p 20408 -I -f /var/log/nfp-hwdbg-srv2.log
+
+[Install]
+WantedBy=multi-user.target

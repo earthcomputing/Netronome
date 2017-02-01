@@ -1,0 +1,131 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "mu_lb_engine.MULBControl": {
+            "0x00000000": {
+                "altname": "MULB_HASH_MULTIPLY",
+                "description": "Memory Unit Load Balancer Hash Multiply",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MULBHashMultiply",
+                "ptr": "mu_lb_engine.MULBHashMultiply",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "MULB_HASH_SBOXES",
+                "description": "Memory Unit Load Balancer Hash SBoxes",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MULBHashSBoxes",
+                "ptr": "mu_lb_engine.MULBHashSBoxes",
+                "type": "reg"
+            }
+        },
+        "mu_lb_engine.MULoadBalance": {
+            "0x00000000": {
+                "altname": "MULB_CONTROL",
+                "description": "Memory Unit Load Balancer Engine Config/Control",
+                "flags": [
+                    "sdk_sim_backdoor"
+                ],
+                "name": "MULBControl",
+                "ptr": "mu_lb_engine.MULBControl",
+                "type": "regmap"
+            },
+            "0x00010000": {
+                "altname": "MULB_ECC_MONITOR_DESCRIPTOR",
+                "description": "MU Load Balancer Engine ECC Monitor for the Descriptor SRAM - ECCControl Registers 0,1,2",
+                "name": "MULBECCControlDescriptor",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            },
+            "0x00020000": {
+                "altname": "MULB_ECC_MONITOR_LOCAL_HASH",
+                "description": "MU Load Balancer Engine ECC Monitor for the Local Hash SRAM - ECCControl Registers 0,1",
+                "name": "MULBECCControlLocalHash",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            },
+            "0x00030000": {
+                "altname": "MULB_ECC_MONITOR_LOCAL_STAT",
+                "description": "MU Load Balancer Engine ECC Monitor for the Local Stat SRAM - ECCControl Registers 0,1,2,3",
+                "name": "MULBECCControlLocalStat",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            },
+            "0x00040000": {
+                "altname": "MULB_ECC_MONITOR_LOCAL_ID",
+                "description": "MU Load Balancer Engine ECC Monitor for the Local ID Table SRAM - ECCControl Registers 0",
+                "name": "MULBECCControlLocalID",
+                "ptr": "peripheral_ecc_monitor.ECCControlMany",
+                "type": "regmap"
+            }
+        }
+    },
+    "regs": {
+        "mu_lb_engine.MULBHashMultiply": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "MULT63",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Value of 'm63' for hash multiplication equation m63.x^63 + m53.x^53 + m36.x^36 + m4.x^4",
+                    "mode": "RW",
+                    "name": "Mult63"
+                },
+                {
+                    "altname": "MULT53",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Value of 'm53' for hash multiplication equation m63.x^63 + m53.x^53 + m36.x^36 + m4.x^4",
+                    "mode": "RW",
+                    "name": "Mult53"
+                },
+                {
+                    "altname": "MULT36",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Value of 'm36' for hash multiplication equation m63.x^63 + m53.x^53 + m36.x^36 + m4.x^4",
+                    "mode": "RW",
+                    "name": "Mult36"
+                },
+                {
+                    "altname": "MULT4",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Value of 'm4' for hash multiplication equation m63.x^63 + m53.x^53 + m36.x^36 + m4.x^4",
+                    "mode": "RW",
+                    "name": "Mult4"
+                }
+            ]
+        },
+        "mu_lb_engine.MULBHashSBoxes": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "HASH_SBOX_ENABLE",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "If deasserted, residue is not put through sboxes.",
+                    "mode": "RW",
+                    "name": "HashSboxEnable"
+                },
+                {
+                    "altname": "HASH_SBOX",
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Number of sboxes to use, minus 1 - bottom 4*(n+1) bits are put through sboxes, rest not.",
+                    "mode": "RW",
+                    "name": "HashSbox"
+                }
+            ]
+        }
+    }
+}

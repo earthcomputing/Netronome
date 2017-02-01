@@ -1,0 +1,680 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: c40185e20ecf"
+    ],
+    "maps": {
+        "macle_eth_pcs_sgmii.EthPcsSgmii": {
+            "0x00000000": {
+                "altname": "ETH_SGMII_CONTROL",
+                "description": "Control register",
+                "name": "EthSgmiiControl",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsControl",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "ETH_SGMII_STATUS",
+                "description": "Status indications",
+                "name": "EthSgmiiStatus",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsStatus",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "ETH_SGMII_PHY_ID_0",
+                "description": "PHY DevId lower 16 bits",
+                "name": "EthSgmiiPhyId0",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsPhyId0",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "ETH_SGMII_PHY_ID_1",
+                "description": "PHY DevId upper 16 bits",
+                "name": "EthSgmiiPhyId1",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsPhyId1",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "ETH_SGMII_DEV_ABILITY",
+                "description": "Local Device Abilities for Autonegotiation. Contents differs for 1000Base-X or SGMII mode.",
+                "name": "EthSgmiiDevAbility",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsDevAbility",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "ETH_SGMII_PARTNER_ABILITY",
+                "description": "Received Abilities during Autonegotiation. Contents differ depending on 1000Base-X or SGMII mode.",
+                "name": "EthSgmiiPartnerAbility",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsPartnerAbility",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "ETH_SGMII_AN_EXPANSION",
+                "description": "Autonegotiation Expansion Register",
+                "name": "EthSgmiiAnExpansion",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsAnExpansion",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "ETH_SGMII_NP_TX",
+                "description": "Next Page data to transmit",
+                "name": "EthSgmiiNpTx",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsNpTx",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "ETH_SGMII_LP_NP_RX",
+                "description": "Received Next Page data from link partner",
+                "name": "EthSgmiiLpNpRx",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsLpNpRx",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "ETH_SGMII_SCRATCH",
+                "description": "General Purpose Test register",
+                "name": "EthSgmiiScratch",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsScratch",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "ETH_SGMII_REV",
+                "description": "Core Revision",
+                "name": "EthSgmiiRev",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsRev",
+                "type": "reg"
+            },
+            "0x00000048": {
+                "altname": "ETH_SGMII_LINK_TIMER_LO",
+                "description": "Autonegotiation link timer lower 16 bits",
+                "name": "EthSgmiiLinkTimerLo",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsLinkTimerLo",
+                "type": "reg"
+            },
+            "0x0000004c": {
+                "altname": "ETH_SGMII_LINK_TIMER_HI",
+                "description": "Autonegotiation link timer uppest 5 bits",
+                "name": "EthSgmiiLinkTimerHi",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsLinkTimerHi",
+                "type": "reg"
+            },
+            "0x00000050": {
+                "altname": "ETH_SGMII_IF_MODE",
+                "description": "SGMII Mode Control",
+                "name": "EthSgmiiIfMode",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsIfMode",
+                "type": "reg"
+            },
+            "0x00000054": {
+                "altname": "ETH_SGMII_DECODE_ERRORS",
+                "description": "10B decoder error counter for test/debug; May not exist in all Core Variants;",
+                "name": "EthSgmiiDecodeErrors",
+                "ptr": "macle_eth_pcs_sgmii.EthSgmiiPcsDecodeErrors",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "macle_eth_pcs_sgmii.EthSgmiiPcsAnExpansion": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_NEXT_PAGE_ABLE",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Indicate PCS supports next page exchange for autonegotiation",
+                    "mode": "RO",
+                    "name": "EthNextPageAble"
+                },
+                {
+                    "altname": "ETH_PAGE_RECEIVED",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Autoneg page received indication; latch-high",
+                    "mode": "RO",
+                    "name": "EthPageReceived"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsControl": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_RESET",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "PCS soft-reset command; self-clearing",
+                    "mode": "RW",
+                    "name": "EthReset"
+                },
+                {
+                    "altname": "ETH_LOOPBACK",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Enable loopback",
+                    "mode": "RW",
+                    "name": "EthLoopback"
+                },
+                {
+                    "altname": "ETH_SPEED_SELECTION_13",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Speed Selection Indication; always 0",
+                    "mode": "RO",
+                    "name": "EthSpeedSelection13"
+                },
+                {
+                    "altname": "ETH_AN_ENABLE",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Autonegotiation enable",
+                    "mode": "RW",
+                    "name": "EthAnEnable"
+                },
+                {
+                    "altname": "ETH_POWERDOWN",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Enable powerdown state, if supported.",
+                    "mode": "RW",
+                    "name": "EthPowerdown"
+                },
+                {
+                    "altname": "ETH_ISOLATE",
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Set PCS isolate mode; Controls toplevel pin only, no internal function.",
+                    "mode": "RW",
+                    "name": "EthIsolate"
+                },
+                {
+                    "altname": "ETH_AN_RESTART",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Restart Autonegotiation",
+                    "mode": "RW",
+                    "name": "EthAnRestart"
+                },
+                {
+                    "altname": "ETH_DUPLEX",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Indicate full-duplex operation; always 1",
+                    "mode": "RO",
+                    "name": "EthDuplex"
+                },
+                {
+                    "altname": "ETH_SPEED_SELECTION_6",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Speed Selection Indication; always 1",
+                    "mode": "RO",
+                    "name": "EthSpeedSelection6"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsDecodeErrors": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ERRORS",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "RX 10B/8B code errors; May not be supported in all Core variants; Counter is not accurate and intended only to be of help during test/debug; Clears when writing Control.15 or Control.10 with 1.",
+                    "mode": "RO",
+                    "name": "EthErrors"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsDevAbility": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_NP",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Next Page support; SGMII:=reserved",
+                    "mode": "RW",
+                    "name": "EthNp"
+                },
+                {
+                    "altname": "ETH_ACK",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Acknowledge during autonegotiation",
+                    "mode": "RW",
+                    "name": "EthAck"
+                },
+                {
+                    "altname": "ETH_RF_2",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Remote fault 2; SGMII:=reserved",
+                    "mode": "RW",
+                    "name": "EthRf2"
+                },
+                {
+                    "altname": "ETH_RF_1",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Remote fault 1; SGMII:=reserved",
+                    "mode": "RW",
+                    "name": "EthRf1"
+                },
+                {
+                    "altname": "ETH_ABILITY_RSV_9",
+                    "bit_lsb": 9,
+                    "bit_msb": 11,
+                    "description": "reserved; SGMII:=reserved",
+                    "mode": "RW",
+                    "name": "EthAbilityRsv9"
+                },
+                {
+                    "altname": "ETH_PS_2",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Pause Support 2; SGMII:=EEE clock stop enable to PHY",
+                    "mode": "RW",
+                    "name": "EthPs2"
+                },
+                {
+                    "altname": "ETH_PS_1",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Pause Support 1; SGMII:=reserved",
+                    "mode": "RW",
+                    "name": "EthPs1"
+                },
+                {
+                    "altname": "ETH_HD",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Indicate half-duplex support; SGMII:=reserved",
+                    "mode": "RW",
+                    "name": "EthHd"
+                },
+                {
+                    "altname": "ETH_FD",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Indicate full-duplex support; SGMII:=reserved",
+                    "mode": "RW",
+                    "name": "EthFd"
+                },
+                {
+                    "altname": "ETH_ABILITY_RSV_05",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "reserved; SGMII:=set to 1 to indicate SGMII to PHY",
+                    "mode": "RW",
+                    "name": "EthAbilityRsv05"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsIfMode": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_IFMODE_RSV_5",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "reserved; writeable for backward compatibility; write 0 always",
+                    "mode": "RW",
+                    "name": "EthIfmodeRsv5"
+                },
+                {
+                    "altname": "ETH_SGMII_DUPLEX",
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Set SGMII half-duplex mode when not using autonegotiation",
+                    "mode": "RW",
+                    "name": "EthSgmiiDuplex"
+                },
+                {
+                    "altname": "ETH_SGMII_SPEED",
+                    "bit_lsb": 2,
+                    "bit_msb": 3,
+                    "description": "Set SGMII speed when not using autonegotiation",
+                    "mode": "RW",
+                    "name": "EthSgmiiSpeed"
+                },
+                {
+                    "altname": "ETH_USE_SGMII_AN",
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Use the SGMII autonegotiation results to set SGMII speed",
+                    "mode": "RW",
+                    "name": "EthUseSgmiiAn"
+                },
+                {
+                    "altname": "ETH_SGMII_ENA",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Enable SGMII mode",
+                    "mode": "RW",
+                    "name": "EthSgmiiEna"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsLinkTimerHi": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TIMER_2016",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "Link timer uppest 5 bits of 21bit timer",
+                    "mode": "RW",
+                    "name": "EthTimer2016"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsLinkTimerLo": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_TIMER_151",
+                    "bit_lsb": 1,
+                    "bit_msb": 15,
+                    "description": "Bits 15:1 of link timer value",
+                    "mode": "RW",
+                    "name": "EthTimer151"
+                },
+                {
+                    "altname": "ETH_TIMER_0",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Bit 0 of link timer value; not writeable and always 0",
+                    "mode": "RO",
+                    "name": "EthTimer0"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsLpNpRx": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_NP",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Next Pages to follow indication",
+                    "mode": "RO",
+                    "name": "EthNp"
+                },
+                {
+                    "altname": "ETH_ACK",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Acknowledge during page exchange",
+                    "mode": "RO",
+                    "name": "EthAck"
+                },
+                {
+                    "altname": "ETH_MP",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Message Next Page type identification",
+                    "mode": "RO",
+                    "name": "EthMp"
+                },
+                {
+                    "altname": "ETH_ACK_2",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Next Page data acknowledge indication",
+                    "mode": "RO",
+                    "name": "EthAck2"
+                },
+                {
+                    "altname": "ETH_TOGGLE",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Next Page toggle handshaking bit",
+                    "mode": "RO",
+                    "name": "EthToggle"
+                },
+                {
+                    "altname": "ETH_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 10,
+                    "description": "Next Page data",
+                    "mode": "RO",
+                    "name": "EthData"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsNpTx": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_NP",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Next Pages to follow indication",
+                    "mode": "RW",
+                    "name": "EthNp"
+                },
+                {
+                    "altname": "ETH_ACK",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Acknowledge during page exchange",
+                    "mode": "RW",
+                    "name": "EthAck"
+                },
+                {
+                    "altname": "ETH_MP",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Message Next Page type identification",
+                    "mode": "RW",
+                    "name": "EthMp"
+                },
+                {
+                    "altname": "ETH_ACK_2",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Next Page data acknowledge indication",
+                    "mode": "RW",
+                    "name": "EthAck2"
+                },
+                {
+                    "altname": "ETH_TOGGLE",
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Next Page toggle handshaking bit",
+                    "mode": "RW",
+                    "name": "EthToggle"
+                },
+                {
+                    "altname": "ETH_DATA",
+                    "bit_lsb": 0,
+                    "bit_msb": 10,
+                    "description": "Next Page data",
+                    "mode": "RW",
+                    "name": "EthData"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsPartnerAbility": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_NP",
+                    "bit_lsb": 15,
+                    "bit_msb": 15,
+                    "description": "Next Page support; SGMII:=Copper Link Status from PHY",
+                    "mode": "RO",
+                    "name": "EthNp"
+                },
+                {
+                    "altname": "ETH_ACK",
+                    "bit_lsb": 14,
+                    "bit_msb": 14,
+                    "description": "Acknowledge during autonegotiation",
+                    "mode": "RO",
+                    "name": "EthAck"
+                },
+                {
+                    "altname": "ETH_RF_2",
+                    "bit_lsb": 13,
+                    "bit_msb": 13,
+                    "description": "Remote fault 2; SGMII:=reserved",
+                    "mode": "RO",
+                    "name": "EthRf2"
+                },
+                {
+                    "altname": "ETH_RF_1",
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "Remote fault 1; SGMII:=Copper Duplex status from PHY",
+                    "mode": "RO",
+                    "name": "EthRf1"
+                },
+                {
+                    "altname": "ETH_PABILITY_RSV_10",
+                    "bit_lsb": 10,
+                    "bit_msb": 11,
+                    "description": "reserved; SGMII:=Copper Speed indication from PHY",
+                    "mode": "RO",
+                    "name": "EthPabilityRsv10"
+                },
+                {
+                    "altname": "ETH_PABILITY_RSV_9",
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "reserved; SGMII:=EEE capability from PHY",
+                    "mode": "RO",
+                    "name": "EthPabilityRsv9"
+                },
+                {
+                    "altname": "ETH_PS_2",
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Pause Support 2; SGMII:=EEE clock stop capability from PHY",
+                    "mode": "RO",
+                    "name": "EthPs2"
+                },
+                {
+                    "altname": "ETH_PS_1",
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Pause Support 1; SGMII:=reserved",
+                    "mode": "RO",
+                    "name": "EthPs1"
+                },
+                {
+                    "altname": "ETH_HD",
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Indicate half-duplex support; SGMII:=reserved",
+                    "mode": "RO",
+                    "name": "EthHd"
+                },
+                {
+                    "altname": "ETH_FD",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Indicate full-duplex support; SGMII:=reserved",
+                    "mode": "RO",
+                    "name": "EthFd"
+                },
+                {
+                    "altname": "ETH_PABILITY_RSV_05",
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "reserved; SGMII:=1",
+                    "mode": "RO",
+                    "name": "EthPabilityRsv05"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsPhyId0": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PHYID",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "PHY DevId from package file parameter PHY_IDENTIFIER lower 16 bits.",
+                    "mode": "RO",
+                    "name": "EthPhyid"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsPhyId1": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_PHYID",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "PHY DevId from package file parameter PHY_IDENTIFIER upper 16 bits.",
+                    "mode": "RO",
+                    "name": "EthPhyid"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsRev": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_REVISION",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "from package parameter DEV_VERSION",
+                    "mode": "RO",
+                    "name": "EthRevision"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsScratch": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_SCRATCH",
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Arbitrary value for read/write test",
+                    "mode": "RW",
+                    "name": "EthScratch"
+                }
+            ]
+        },
+        "macle_eth_pcs_sgmii.EthSgmiiPcsStatus": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "altname": "ETH_ANEG_COMPLETE",
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Autonegotiation completed indication",
+                    "mode": "RO",
+                    "name": "EthAnegComplete"
+                },
+                {
+                    "altname": "ETH_ANEG_ABILITY",
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "Autonegotiation ability; always 1",
+                    "mode": "RO",
+                    "name": "EthAnegAbility"
+                },
+                {
+                    "altname": "ETH_LINK_STATUS",
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Indicate link status; latch-low",
+                    "mode": "RO",
+                    "name": "EthLinkStatus"
+                },
+                {
+                    "altname": "ETH_EXTDCAPABILITY",
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Indicate extended register support; always 1",
+                    "mode": "RO",
+                    "name": "EthExtdcapability"
+                }
+            ]
+        }
+    }
+}

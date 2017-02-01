@@ -1,0 +1,353 @@
+/*
+ * Copyright (C) 2013, Netronome Systems, Inc.  All rights reserved.
+ *
+ * Disclaimer: this file is provided without any warranty
+ * as part of an early-access program, and the content is
+ * bound to change before the final release.
+ */
+
+#ifndef __ME_CSR_INFO_
+#define __ME_CSR_INFO_
+
+#ifndef NULL
+#define NULL 0
+#endif
+
+struct MECSR_INFO {
+    const char *name;
+    int        offset;
+    int        ctx;
+};
+
+struct MECSR_INFO all_mecsr_info[] = {
+    {"UstorAddr", 0x0, 0},
+    {"UstorDataLwr", 0x4, 0},
+    {"UstorDataUpr", 0x8, 0},
+    {"UstorErrStat", 0xc, 0},
+    {"ALUOut", 0x10, 0},
+    {"CtxArbCtrl", 0x14, 0},
+    {"CtxEnables", 0x18, 0},
+    {"CondCodeEn", 0x1c, 0},
+    {"CSRCtxPtr", 0x20, 0},
+    {"PcBreakpoint0", 0x24, 0},
+    {"PcBreakpoint1", 0x28, 0},
+    {"PcBreakpointStatus", 0x2c, 0},
+    {"RegErrStatus", 0x30, 0},
+    {"LMErrStatus", 0x34, 0},
+    {"LMeccErrorMask", 0x38, 0},
+    {"IndCtxStatus", 0x40, 0xff},
+    {"IndCtxStatus_0", 0x40, 0},
+    {"IndCtxStatus_1", 0x40, 1},
+    {"IndCtxStatus_2", 0x40, 2},
+    {"IndCtxStatus_3", 0x40, 3},
+    {"IndCtxStatus_4", 0x40, 4},
+    {"IndCtxStatus_5", 0x40, 5},
+    {"IndCtxStatus_6", 0x40, 6},
+    {"IndCtxStatus_7", 0x40, 7},
+    {"ActCtxStatus", 0x44, 0},
+    {"IndCtxSglEvt", 0x48, 0xff},
+    {"IndCtxSglEvt_0", 0x48, 0},
+    {"IndCtxSglEvt_1", 0x48, 1},
+    {"IndCtxSglEvt_2", 0x48, 2},
+    {"IndCtxSglEvt_3", 0x48, 3},
+    {"IndCtxSglEvt_4", 0x48, 4},
+    {"IndCtxSglEvt_5", 0x48, 5},
+    {"IndCtxSglEvt_6", 0x48, 6},
+    {"IndCtxSglEvt_7", 0x48, 7},
+    {"ActCtxSglEvt", 0x4c, 0},
+    {"IndCtxWkpEvt", 0x50, 0xff},
+    {"IndCtxWkpEvt_0", 0x50, 0},
+    {"IndCtxWkpEvt_1", 0x50, 1},
+    {"IndCtxWkpEvt_2", 0x50, 2},
+    {"IndCtxWkpEvt_3", 0x50, 3},
+    {"IndCtxWkpEvt_4", 0x50, 4},
+    {"IndCtxWkpEvt_5", 0x50, 5},
+    {"IndCtxWkpEvt_6", 0x50, 6},
+    {"IndCtxWkpEvt_7", 0x50, 7},
+    {"ActCtxWkpEvt", 0x54, -1},
+    {"IndCtxFtrCnt", 0x58, 0xff},
+    {"IndCtxFtrCnt_0", 0x58, 0},
+    {"IndCtxFtrCnt_1", 0x58, 1},
+    {"IndCtxFtrCnt_2", 0x58, 2},
+    {"IndCtxFtrCnt_3", 0x58, 3},
+    {"IndCtxFtrCnt_4", 0x58, 4},
+    {"IndCtxFtrCnt_5", 0x58, 5},
+    {"IndCtxFtrCnt_6", 0x58, 6},
+    {"IndCtxFtrCnt_7", 0x58, 7},
+    {"ActCtxFtrCnt", 0x5c, -1},
+    {"IndLMAddr0", 0x60, 0xff},
+    {"IndLMAddr0_0", 0x60, 0},
+    {"IndLMAddr0_1", 0x60, 1},
+    {"IndLMAddr0_2", 0x60, 2},
+    {"IndLMAddr0_3", 0x60, 3},
+    {"IndLMAddr0_4", 0x60, 4},
+    {"IndLMAddr0_5", 0x60, 5},
+    {"IndLMAddr0_6", 0x60, 6},
+    {"IndLMAddr0_7", 0x60, 7},
+    {"ActLMAddr0", 0x64, 0},
+    {"IndLMAddr1", 0x68, 0xff},
+    {"IndLMAddr1_0", 0x68, 0},
+    {"IndLMAddr1_1", 0x68, 1},
+    {"IndLMAddr1_2", 0x68, 2},
+    {"IndLMAddr1_3", 0x68, 3},
+    {"IndLMAddr1_4", 0x68, 4},
+    {"IndLMAddr1_5", 0x68, 5},
+    {"IndLMAddr1_6", 0x68, 6},
+    {"IndLMAddr1_7", 0x68, 7},
+    {"ActLMAddr1", 0x6c, 0},
+    {"ByteIndex", 0x70, 0},
+    {"XferIndex", 0x74, 0},
+    {"IndFtrCntSgl", 0x78, 0xff},
+    {"IndFtrCntSgl_0", 0x78, 0},
+    {"IndFtrCntSgl_1", 0x78, 1},
+    {"IndFtrCntSgl_2", 0x78, 2},
+    {"IndFtrCntSgl_3", 0x78, 3},
+    {"IndFtrCntSgl_4", 0x78, 4},
+    {"IndFtrCntSgl_5", 0x78, 5},
+    {"IndFtrCntSgl_6", 0x78, 6},
+    {"IndFtrCntSgl_7", 0x78, 7},
+    {"ActFtrCntSgl", 0x7c, -1},
+    {"NNPut", 0x80, 0},
+    {"NNGet", 0x84, 0},
+    {"IndLMAddr2", 0x90, 0xff},
+    {"IndLMAddr2_0", 0x90, 0},
+    {"IndLMAddr2_1", 0x90, 1},
+    {"IndLMAddr2_2", 0x90, 2},
+    {"IndLMAddr2_3", 0x90, 3},
+    {"IndLMAddr2_4", 0x90, 4},
+    {"IndLMAddr2_5", 0x90, 5},
+    {"IndLMAddr2_6", 0x90, 6},
+    {"IndLMAddr2_7", 0x90, 7},
+    {"ActLMAddr2", 0x94, 0},
+    {"IndLMAddr3", 0x98, 0xff},
+    {"IndLMAddr3_0", 0x98, 0},
+    {"IndLMAddr3_1", 0x98, 1},
+    {"IndLMAddr3_2", 0x98, 2},
+    {"IndLMAddr3_3", 0x98, 3},
+    {"IndLMAddr3_4", 0x98, 4},
+    {"IndLMAddr3_5", 0x98, 5},
+    {"IndLMAddr3_6", 0x98, 6},
+    {"IndLMAddr3_7", 0x98, 7},
+    {"ActLMAddr3", 0x9c, 0},
+    {"IndLMAddr2BytIdx", 0xa0, 0xff},
+    {"IndLMAddr2BytIdx_0", 0xa0, 0},
+    {"IndLMAddr2BytIdx_1", 0xa0, 1},
+    {"IndLMAddr2BytIdx_2", 0xa0, 2},
+    {"IndLMAddr2BytIdx_3", 0xa0, 3},
+    {"IndLMAddr2BytIdx_4", 0xa0, 4},
+    {"IndLMAddr2BytIdx_5", 0xa0, 5},
+    {"IndLMAddr2BytIdx_6", 0xa0, 6},
+    {"IndLMAddr2BytIdx_7", 0xa0, 7},
+    {"ActLMAddr2BytIdx", 0xa4, 0},
+    {"IndLMAddr3BytIdx", 0xa8, 0xff},
+    {"IndLMAddr3BytIdx_0", 0xa8, 0},
+    {"IndLMAddr3BytIdx_1", 0xa8, 1},
+    {"IndLMAddr3BytIdx_2", 0xa8, 2},
+    {"IndLMAddr3BytIdx_3", 0xa8, 3},
+    {"IndLMAddr3BytIdx_4", 0xa8, 4},
+    {"IndLMAddr3BytIdx_5", 0xa8, 5},
+    {"IndLMAddr3BytIdx_6", 0xa8, 6},
+    {"IndLMAddr3BytIdx_7", 0xa8, 7},
+    {"ActLMAddr3BytIdx", 0xac, 0},
+    {"IndPredCC", 0xb0, 0xff},
+    {"IndPredCC_0", 0xb0, 0},
+    {"IndPredCC_1", 0xb0, 1},
+    {"IndPredCC_2", 0xb0, 2},
+    {"IndPredCC_3", 0xb0, 3},
+    {"IndPredCC_4", 0xb0, 4},
+    {"IndPredCC_5", 0xb0, 5},
+    {"IndPredCC_6", 0xb0, 6},
+    {"IndPredCC_7", 0xb0, 7},
+    {"TimestampLow", 0xc0, 0},
+    {"TimestampHgh", 0xc4, 0},
+    {"InstructionSignature", 0xc8, 0},
+    {"IndLMAddr0BytIdx", 0xe0, 0xff},
+    {"IndLMAddr0BytIdx_0", 0xe0, 0},
+    {"IndLMAddr0BytIdx_1", 0xe0, 1},
+    {"IndLMAddr0BytIdx_2", 0xe0, 2},
+    {"IndLMAddr0BytIdx_3", 0xe0, 3},
+    {"IndLMAddr0BytIdx_4", 0xe0, 4},
+    {"IndLMAddr0BytIdx_5", 0xe0, 5},
+    {"IndLMAddr0BytIdx_6", 0xe0, 6},
+    {"IndLMAddr0BytIdx_7", 0xe0, 7},
+    {"ActLMAddr0BytIdx", 0xe4, 0},
+    {"IndLMAddr1BytIdx", 0xe8, 0xff},
+    {"IndLMAddr1BytIdx_0", 0xe8, 0},
+    {"IndLMAddr1BytIdx_1", 0xe8, 1},
+    {"IndLMAddr1BytIdx_2", 0xe8, 2},
+    {"IndLMAddr1BytIdx_3", 0xe8, 3},
+    {"IndLMAddr1BytIdx_4", 0xe8, 4},
+    {"IndLMAddr1BytIdx_5", 0xe8, 5},
+    {"IndLMAddr1BytIdx_6", 0xe8, 6},
+    {"IndLMAddr1BytIdx_7", 0xe8, 7},
+    {"ActLMAddr1BytIdx", 0xec, 0},
+    {"XfrAndBytIdx", 0xf4, 0},
+    {"NxtNghbrSgl", 0x100, -1},
+    {"PrvNghbrSgl", 0x104, -1},
+    {"SameMESignal", 0x108, -1},
+    {"CRCRemainder", 0x140, 0},
+    {"ProfileCnt", 0x144, 0},
+    {"PseudoRndNum", 0x148, 0},
+    {"TestSignature", 0x14c, 0},
+    {"SignatureEnable", 0x150, 0},
+    {"Debug", 0x154, 0},
+    {"MiscControl", 0x160, 0},
+    {"PcBreakpoint0Mask", 0x164, 0},
+    {"PcBreakpoint1Mask", 0x168, 0},
+    {"Mailbox0", 0x170, 0},
+    {"Mailbox1", 0x174, 0},
+    {"Mailbox2", 0x178, 0},
+    {"Mailbox3", 0x17c, 0},
+    {"CmdIndirectRef0", 0x190, 0},
+    {"CmdIndirectRef1", 0x194, 0},
+    {"SramControlCS", 0x1a0, 0},
+    {"SramControlRF", 0x1a4, 0},
+    {NULL, 0}
+};
+
+/* Defines for ME CSRs */
+#define NFP_ME_USTORADDR 0x0
+#define NFP_ME_USTORDATALWR 0x4
+#define NFP_ME_USTORDATAUPR 0x8
+#define NFP_ME_USTORERRSTAT 0xc
+#define NFP_ME_ALUOUT 0x10
+#define NFP_ME_CTXARBCTRL 0x14
+#define NFP_ME_CTXENABLES 0x18
+#define NFP_ME_CONDCODEEN 0x1c
+#define NFP_ME_CSRCTXPTR 0x20
+#define NFP_ME_PCBREAKPOINT0 0x24
+#define NFP_ME_PCBREAKPOINT1 0x28
+#define NFP_ME_PCBREAKPOINTSTATUS 0x2c
+#define NFP_ME_REGERRSTATUS 0x30
+#define NFP_ME_LMERRSTATUS 0x34
+#define NFP_ME_LMECCERRORMASK 0x38
+#define NFP_ME_INDCTXSTATUS 0x40
+#define NFP_ME_ACTCTXSTATUS 0x44
+#define NFP_ME_INDCTXSGLEVT 0x48
+#define NFP_ME_ACTCTXSGLEVT 0x4c
+#define NFP_ME_INDCTXWKPEVT 0x50
+#define NFP_ME_ACTCTXWKPEVT 0x54
+#define NFP_ME_INDCTXFTRCNT 0x58
+#define NFP_ME_ACTCTXFTRCNT 0x5c
+#define NFP_ME_INDLMADDR0 0x60
+#define NFP_ME_ACTLMADDR0 0x64
+#define NFP_ME_INDLMADDR1 0x68
+#define NFP_ME_ACTLMADDR1 0x6c
+#define NFP_ME_BYTEINDEX 0x70
+#define NFP_ME_XFERINDEX 0x74
+#define NFP_ME_INDFTRCNTSGL 0x78
+#define NFP_ME_ACTFTRCNTSGL 0x7c
+#define NFP_ME_NNPUT 0x80
+#define NFP_ME_NNGET 0x84
+#define NFP_ME_INDLMADDR2 0x90
+#define NFP_ME_ACTLMADDR2 0x94
+#define NFP_ME_INDLMADDR3 0x98
+#define NFP_ME_ACTLMADDR3 0x9c
+#define NFP_ME_INDLMADDR2BYTIDX 0xa0
+#define NFP_ME_ACTLMADDR2BYTIDX 0xa4
+#define NFP_ME_INDLMADDR3BYTIDX 0xa8
+#define NFP_ME_ACTLMADDR3BYTIDX 0xac
+#define NFP_ME_INDPREDCC 0xb0
+#define NFP_ME_TIMESTAMPLOW 0xc0
+#define NFP_ME_TIMESTAMPHGH 0xc4
+#define NFP_ME_INSTRUCTIONSIGNATURE 0xc8
+#define NFP_ME_INDLMADDR0BYTIDX 0xe0
+#define NFP_ME_ACTLMADDR0BYTIDX 0xe4
+#define NFP_ME_INDLMADDR1BYTIDX 0xe8
+#define NFP_ME_ACTLMADDR1BYTIDX 0xec
+#define NFP_ME_XFRANDBYTIDX 0xf4
+#define NFP_ME_NXTNGHBRSGL 0x100
+#define NFP_ME_PRVNGHBRSGL 0x104
+#define NFP_ME_SAMEMESIGNAL 0x108
+#define NFP_ME_CRCREMAINDER 0x140
+#define NFP_ME_PROFILECNT 0x144
+#define NFP_ME_PSEUDORNDNUM 0x148
+#define NFP_ME_TESTSIGNATURE 0x14c
+#define NFP_ME_SIGNATUREENABLE 0x150
+#define NFP_ME_DEBUG 0x154
+#define NFP_ME_MISCCONTROL 0x160
+#define NFP_ME_PCBREAKPOINT0MASK 0x164
+#define NFP_ME_PCBREAKPOINT1MASK 0x168
+#define NFP_ME_MAILBOX0 0x170
+#define NFP_ME_MAILBOX1 0x174
+#define NFP_ME_MAILBOX2 0x178
+#define NFP_ME_MAILBOX3 0x17c
+#define NFP_ME_CMDINDIRECTREF0 0x190
+#define NFP_ME_CMDINDIRECTREF1 0x194
+#define NFP_ME_SRAMCONTROLCS 0x1a0
+#define NFP_ME_SRAMCONTROLRF 0x1a4
+
+
+/* Defines for ME CSRs */
+#define NFP_ME_UstorAddr 0x0
+#define NFP_ME_UstorDataLwr 0x4
+#define NFP_ME_UstorDataUpr 0x8
+#define NFP_ME_UstorErrStat 0xc
+#define NFP_ME_ALUOut 0x10
+#define NFP_ME_CtxArbCtrl 0x14
+#define NFP_ME_CtxEnables 0x18
+#define NFP_ME_CondCodeEn 0x1c
+#define NFP_ME_CSRCtxPtr 0x20
+#define NFP_ME_PcBreakpoint0 0x24
+#define NFP_ME_PcBreakpoint1 0x28
+#define NFP_ME_PcBreakpointStatus 0x2c
+#define NFP_ME_RegErrStatus 0x30
+#define NFP_ME_LMErrStatus 0x34
+#define NFP_ME_LMeccErrorMask 0x38
+#define NFP_ME_IndCtxStatus 0x40
+#define NFP_ME_ActCtxStatus 0x44
+#define NFP_ME_IndCtxSglEvt 0x48
+#define NFP_ME_ActCtxSglEvt 0x4c
+#define NFP_ME_IndCtxWkpEvt 0x50
+#define NFP_ME_ActCtxWkpEvt 0x54
+#define NFP_ME_IndCtxFtrCnt 0x58
+#define NFP_ME_ActCtxFtrCnt 0x5c
+#define NFP_ME_IndLMAddr0 0x60
+#define NFP_ME_ActLMAddr0 0x64
+#define NFP_ME_IndLMAddr1 0x68
+#define NFP_ME_ActLMAddr1 0x6c
+#define NFP_ME_ByteIndex 0x70
+#define NFP_ME_XferIndex 0x74
+#define NFP_ME_IndFtrCntSgl 0x78
+#define NFP_ME_ActFtrCntSgl 0x7c
+#define NFP_ME_NNPut 0x80
+#define NFP_ME_NNGet 0x84
+#define NFP_ME_IndLMAddr2 0x90
+#define NFP_ME_ActLMAddr2 0x94
+#define NFP_ME_IndLMAddr3 0x98
+#define NFP_ME_ActLMAddr3 0x9c
+#define NFP_ME_IndLMAddr2BytIdx 0xa0
+#define NFP_ME_ActLMAddr2BytIdx 0xa4
+#define NFP_ME_IndLMAddr3BytIdx 0xa8
+#define NFP_ME_ActLMAddr3BytIdx 0xac
+#define NFP_ME_IndPredCC 0xb0
+#define NFP_ME_TimestampLow 0xc0
+#define NFP_ME_TimestampHgh 0xc4
+#define NFP_ME_InstructionSignature 0xc8
+#define NFP_ME_IndLMAddr0BytIdx 0xe0
+#define NFP_ME_ActLMAddr0BytIdx 0xe4
+#define NFP_ME_IndLMAddr1BytIdx 0xe8
+#define NFP_ME_ActLMAddr1BytIdx 0xec
+#define NFP_ME_XfrAndBytIdx 0xf4
+#define NFP_ME_NxtNghbrSgl 0x100
+#define NFP_ME_PrvNghbrSgl 0x104
+#define NFP_ME_SameMESignal 0x108
+#define NFP_ME_CRCRemainder 0x140
+#define NFP_ME_ProfileCnt 0x144
+#define NFP_ME_PseudoRndNum 0x148
+#define NFP_ME_TestSignature 0x14c
+#define NFP_ME_SignatureEnable 0x150
+#define NFP_ME_Debug 0x154
+#define NFP_ME_MiscControl 0x160
+#define NFP_ME_PcBreakpoint0Mask 0x164
+#define NFP_ME_PcBreakpoint1Mask 0x168
+#define NFP_ME_Mailbox0 0x170
+#define NFP_ME_Mailbox1 0x174
+#define NFP_ME_Mailbox2 0x178
+#define NFP_ME_Mailbox3 0x17c
+#define NFP_ME_CmdIndirectRef0 0x190
+#define NFP_ME_CmdIndirectRef1 0x194
+#define NFP_ME_SramControlCS 0x1a0
+#define NFP_ME_SramControlRF 0x1a4
+
+#endif

@@ -1,0 +1,1776 @@
+{
+    "_comment": [
+        "Copyright: Copyright (C) 2012-2016 Netronome Systems, Inc.  All rights reserved.",
+        "Changeset Desc: 587d39ed6b9b",
+        "Changeset Path: 800b3c32e24a"
+    ],
+    "maps": {
+        "pcie_lm_reg.pcie_LM_addrmap": {
+            "0x00000000": {
+                "altname": "I_REGF_LM_PCIE_BASE",
+                "name": "i_regf_lm_pcie_base",
+                "ptr": "pcie_lm_reg.regf_lm_pcie_base",
+                "type": "regmap"
+            }
+        },
+        "pcie_lm_reg.regf_lm_pcie_base": {
+            "0x00000000": {
+                "altname": "I_PL_CONFIG_0_REG",
+                "name": "i_pl_config_0_reg",
+                "ptr": "pcie_lm_reg.pl_config_0_reg",
+                "type": "reg"
+            },
+            "0x00000004": {
+                "altname": "I_PL_CONFIG_1_REG",
+                "name": "i_pl_config_1_reg",
+                "ptr": "pcie_lm_reg.pl_config_1_reg",
+                "type": "reg"
+            },
+            "0x00000008": {
+                "altname": "I_DLL_TMR_CONFIG_REG",
+                "name": "i_dll_tmr_config_reg",
+                "ptr": "pcie_lm_reg.dll_tmr_config_reg",
+                "type": "reg"
+            },
+            "0x0000000c": {
+                "altname": "I_RCV_CRED_LIM_0_REG",
+                "name": "i_rcv_cred_lim_0_reg",
+                "ptr": "pcie_lm_reg.rcv_cred_lim_0_reg",
+                "type": "reg"
+            },
+            "0x00000010": {
+                "altname": "I_RCV_CRED_LIM_1_REG",
+                "name": "i_rcv_cred_lim_1_reg",
+                "ptr": "pcie_lm_reg.rcv_cred_lim_1_reg",
+                "type": "reg"
+            },
+            "0x00000014": {
+                "altname": "I_TRANSM_CRED_LIM_0_REG",
+                "name": "i_transm_cred_lim_0_reg",
+                "ptr": "pcie_lm_reg.transm_cred_lim_0_reg",
+                "type": "reg"
+            },
+            "0x00000018": {
+                "altname": "I_TRANSM_CRED_LIM_1_REG",
+                "name": "i_transm_cred_lim_1_reg",
+                "ptr": "pcie_lm_reg.transm_cred_lim_1_reg",
+                "type": "reg"
+            },
+            "0x0000001c": {
+                "altname": "I_TRANSM_CRED_UPDATE_INT_CONFIG_0_REG",
+                "name": "i_transm_cred_update_int_config_0_reg",
+                "ptr": "pcie_lm_reg.transm_cred_update_int_config_0_reg",
+                "type": "reg"
+            },
+            "0x00000020": {
+                "altname": "I_TRANSM_CRED_UPDATE_INT_CONFIG_1_REG",
+                "name": "i_transm_cred_update_int_config_1_reg",
+                "ptr": "pcie_lm_reg.transm_cred_update_int_config_1_reg",
+                "type": "reg"
+            },
+            "0x00000024": {
+                "altname": "I_L0S_TIMEOUT_LIMIT_REG",
+                "name": "i_L0S_timeout_limit_reg",
+                "ptr": "pcie_lm_reg.L0S_timeout_limit_reg",
+                "type": "reg"
+            },
+            "0x00000028": {
+                "altname": "I_TRANSMIT_TLP_COUNT_REG",
+                "name": "i_transmit_tlp_count_reg",
+                "ptr": "pcie_lm_reg.transmit_tlp_count_reg",
+                "type": "reg"
+            },
+            "0x0000002c": {
+                "altname": "I_TRANSMIT_TLP_PAYLOAD_DWORD_COUNT_REG",
+                "name": "i_transmit_tlp_payload_dword_count_reg",
+                "ptr": "pcie_lm_reg.transmit_tlp_payload_dword_count_reg",
+                "type": "reg"
+            },
+            "0x00000030": {
+                "altname": "I_RECEIVE_TLP_COUNT_REG",
+                "name": "i_receive_tlp_count_reg",
+                "ptr": "pcie_lm_reg.receive_tlp_count_reg",
+                "type": "reg"
+            },
+            "0x00000034": {
+                "altname": "I_RECEIVE_TLP_PAYLOAD_DWORD_COUNT_REG",
+                "name": "i_receive_tlp_payload_dword_count_reg",
+                "ptr": "pcie_lm_reg.receive_tlp_payload_dword_count_reg",
+                "type": "reg"
+            },
+            "0x00000038": {
+                "altname": "I_COMPLN_TMOUT_LIM_0_REG",
+                "name": "i_compln_tmout_lim_0_reg",
+                "ptr": "pcie_lm_reg.compln_tmout_lim_0_reg",
+                "type": "reg"
+            },
+            "0x0000003c": {
+                "altname": "I_COMPLN_TMOUT_LIM_1_REG",
+                "name": "i_compln_tmout_lim_1_reg",
+                "ptr": "pcie_lm_reg.compln_tmout_lim_1_reg",
+                "type": "reg"
+            },
+            "0x00000040": {
+                "altname": "I_L1_ST_REENTRY_DELAY_REG",
+                "name": "i_L1_st_reentry_delay_reg",
+                "ptr": "pcie_lm_reg.L1_st_reentry_delay_reg",
+                "type": "reg"
+            },
+            "0x00000044": {
+                "altname": "I_VENDOR_ID_REG",
+                "name": "i_vendor_id_reg",
+                "ptr": "pcie_lm_reg.vendor_id_reg",
+                "type": "reg"
+            },
+            "0x00000048": {
+                "altname": "I_ASPM_L1_ENTRY_TMOUT_DELAY_REG",
+                "name": "i_aspm_L1_entry_tmout_delay_reg",
+                "ptr": "pcie_lm_reg.aspm_L1_entry_tmout_delay_reg",
+                "type": "reg"
+            },
+            "0x0000004c": {
+                "altname": "I_PME_TURNOFF_ACK_DELAY_REG",
+                "name": "i_pme_turnoff_ack_delay_reg",
+                "ptr": "pcie_lm_reg.pme_turnoff_ack_delay_reg",
+                "type": "reg"
+            },
+            "0x00000050": {
+                "altname": "I_LINKWIDTH_CONTROL_REG",
+                "name": "i_linkwidth_control_reg",
+                "ptr": "pcie_lm_reg.linkwidth_control_reg",
+                "type": "reg"
+            },
+            "0x00000200": {
+                "altname": "I_NEGOTIATED_LANE_MAP_REG",
+                "name": "i_negotiated_lane_map_reg",
+                "ptr": "pcie_lm_reg.negotiated_lane_map_reg",
+                "type": "reg"
+            },
+            "0x00000204": {
+                "altname": "I_RECEIVE_FTS_COUNT_REG",
+                "name": "i_receive_fts_count_reg",
+                "ptr": "pcie_lm_reg.receive_fts_count_reg",
+                "type": "reg"
+            },
+            "0x00000208": {
+                "altname": "I_DEBUG_MUX_CONTROL_REG",
+                "name": "i_debug_mux_control_reg",
+                "ptr": "pcie_lm_reg.debug_mux_control_reg",
+                "type": "reg"
+            },
+            "0x0000020c": {
+                "altname": "I_LOCAL_ERROR_STATUS_REGISTER",
+                "name": "i_local_error_status_register",
+                "ptr": "pcie_lm_reg.local_error_status_register",
+                "type": "reg"
+            },
+            "0x00000210": {
+                "altname": "I_LOCAL_INTRPT_MASK_REG",
+                "name": "i_local_intrpt_mask_reg",
+                "ptr": "pcie_lm_reg.local_intrpt_mask_reg",
+                "type": "reg"
+            },
+            "0x00000214": {
+                "altname": "I_LCRC_ERR_COUNT_REG",
+                "name": "i_lcrc_err_count_reg",
+                "ptr": "pcie_lm_reg.lcrc_err_count_reg",
+                "type": "reg"
+            },
+            "0x00000218": {
+                "altname": "I_ECC_CORR_ERR_COUNT_REG",
+                "name": "i_ecc_corr_err_count_reg",
+                "ptr": "pcie_lm_reg.ecc_corr_err_count_reg",
+                "type": "reg"
+            },
+            "0x00000224": {
+                "altname": "I_PME_SERVICE_TIMEOUT_DELAY_REG",
+                "name": "i_pme_service_timeout_delay_reg",
+                "ptr": "pcie_lm_reg.pme_service_timeout_delay_reg",
+                "type": "reg"
+            },
+            "0x00000228": {
+                "altname": "I_ROOT_PORT_REQUESTOR_ID_REG",
+                "name": "i_root_port_requestor_id_reg",
+                "ptr": "pcie_lm_reg.root_port_requestor_id_reg",
+                "type": "reg"
+            },
+            "0x00000240": {
+                "altname": "I_PF_0_BAR_CONFIG_0_REG",
+                "name": "i_pf_0_BAR_config_0_reg",
+                "ptr": "pcie_lm_reg.pf_BAR_config_0_reg",
+                "type": "reg"
+            },
+            "0x00000244": {
+                "altname": "I_PF_0_BAR_CONFIG_1_REG",
+                "name": "i_pf_0_BAR_config_1_reg",
+                "ptr": "pcie_lm_reg.pf_BAR_config_1_reg",
+                "type": "reg"
+            },
+            "0x00000280": {
+                "altname": "I_PF_0_VF_BAR_CONFIG_0_REG",
+                "name": "i_pf_0_vf_BAR_config_0_reg",
+                "ptr": "pcie_lm_reg.vf_BAR_config_0_reg",
+                "type": "reg"
+            },
+            "0x00000284": {
+                "altname": "I_PF_0_VF_BAR_CONFIG_1_REG",
+                "name": "i_pf_0_vf_BAR_config_1_reg",
+                "ptr": "pcie_lm_reg.vf_BAR_config_1_reg",
+                "type": "reg"
+            },
+            "0x000002c0": {
+                "altname": "I_PF_CONFIG_REG",
+                "name": "i_pf_config_reg",
+                "ptr": "pcie_lm_reg.pf_config_reg",
+                "type": "reg"
+            },
+            "0x00000300": {
+                "altname": "I_RC_BAR_CONFIG_REG",
+                "name": "i_rc_BAR_config_reg",
+                "ptr": "pcie_lm_reg.rc_BAR_config_reg",
+                "type": "reg"
+            },
+            "0x00000340": {
+                "altname": "I_GEN3_SCRAMBLER_SEED_VALUE_0_REG",
+                "name": "i_gen3_scrambler_seed_value_0_reg",
+                "ptr": "pcie_lm_reg.gen3_scrambler_seed_value_0_reg",
+                "type": "reg"
+            },
+            "0x00000344": {
+                "altname": "I_GEN3_SCRAMBLER_SEED_VALUE_1_REG",
+                "name": "i_gen3_scrambler_seed_value_1_reg",
+                "ptr": "pcie_lm_reg.gen3_scrambler_seed_value_1_reg",
+                "type": "reg"
+            },
+            "0x00000348": {
+                "altname": "I_GEN3_SCRAMBLER_SEED_VALUE_2_REG",
+                "name": "i_gen3_scrambler_seed_value_2_reg",
+                "ptr": "pcie_lm_reg.gen3_scrambler_seed_value_2_reg",
+                "type": "reg"
+            },
+            "0x0000034c": {
+                "altname": "I_GEN3_SCRAMBLER_SEED_VALUE_3_REG",
+                "name": "i_gen3_scrambler_seed_value_3_reg",
+                "ptr": "pcie_lm_reg.gen3_scrambler_seed_value_3_reg",
+                "type": "reg"
+            },
+            "0x00000350": {
+                "altname": "I_GEN3_SCRAMBLER_SEED_VALUE_4_REG",
+                "name": "i_gen3_scrambler_seed_value_4_reg",
+                "ptr": "pcie_lm_reg.gen3_scrambler_seed_value_4_reg",
+                "type": "reg"
+            },
+            "0x00000354": {
+                "altname": "I_GEN3_SCRAMBLER_SEED_VALUE_5_REG",
+                "name": "i_gen3_scrambler_seed_value_5_reg",
+                "ptr": "pcie_lm_reg.gen3_scrambler_seed_value_5_reg",
+                "type": "reg"
+            },
+            "0x00000358": {
+                "altname": "I_GEN3_SCRAMBLER_SEED_VALUE_6_REG",
+                "name": "i_gen3_scrambler_seed_value_6_reg",
+                "ptr": "pcie_lm_reg.gen3_scrambler_seed_value_6_reg",
+                "type": "reg"
+            },
+            "0x0000035c": {
+                "altname": "I_GEN3_SCRAMBLER_SEED_VALUE_7_REG",
+                "name": "i_gen3_scrambler_seed_value_7_reg",
+                "ptr": "pcie_lm_reg.gen3_scrambler_seed_value_7_reg",
+                "type": "reg"
+            },
+            "0x00000360": {
+                "altname": "I_GEN3_DEFAULT_PRESET_REG",
+                "name": "i_gen3_default_preset_reg",
+                "ptr": "pcie_lm_reg.gen3_default_preset_reg",
+                "type": "reg"
+            }
+        }
+    },
+    "regs": {
+        "pcie_lm_reg.L0S_timeout_limit_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 17,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R4"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Enable L2 Entry: This bit applies to RC mode only. When this bit is 0, the core will not transition the link to L2 when its link partner enters the L23_Ready power management state. When this bit is 1, the core will set its link to L2 when the link partner enters L23_Ready. Once the core enters L2, a reset is needed to transition it out of L2.",
+                    "mode": "RW",
+                    "name": "ELE"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "L0S Timeout: Contains the timeout value (in units of 4 ns) for transitioning to the L0S power state. Setting this parameter to 0 permanently disables the transition to the L0S power state.",
+                    "mode": "RW",
+                    "name": "LT"
+                }
+            ]
+        },
+        "pcie_lm_reg.L1_st_reentry_delay_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "L1 Re-Entry Delay: Delay to re-enter L1 after no activity (in units of 4 ns cycles).",
+                    "mode": "RW",
+                    "name": "L1RD"
+                }
+            ]
+        },
+        "pcie_lm_reg.aspm_L1_entry_tmout_delay_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R7"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 19,
+                    "description": "L1 Timeout: Contains the timeout value (in units of 4 ns) for transitioning to the L1 power state. Setting it to 0 permanently disables the transition to the L1 power state.",
+                    "mode": "RW",
+                    "name": "L1T"
+                }
+            ]
+        },
+        "pcie_lm_reg.compln_tmout_lim_0_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R5"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 23,
+                    "description": "Completion Timeout Limit: Timeout limit for completion timers (in 4 ns cycles).",
+                    "mode": "RW",
+                    "name": "CTL"
+                }
+            ]
+        },
+        "pcie_lm_reg.compln_tmout_lim_1_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 28,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R6"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 27,
+                    "description": "Completion Timeout Limit: Timeout limit for completion timers (in 4 ns cycles).",
+                    "mode": "RW",
+                    "name": "CTL"
+                }
+            ]
+        },
+        "pcie_lm_reg.debug_mux_control_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Enable Function-Specific Reporting of Type-1 Configuration Accesses: Setting this bit to 0 causes all the enabled Functions to report an error when a Type-1 configuration access is received by the core, targeted at any Function. Setting it to 1 limits the error reporting to the type-0 Function whose number matches with the Function number specified in the request. If the Function number in the request refers to an unimplemented or disabled Function, all enabled Functions report the error regardless of the setting of this bit.",
+                    "mode": "RW",
+                    "name": "EFSRTCA"
+                },
+                {
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Disable Ordering Checks: Setting this bit to 1 disables the ordering check in the core between Completions and Posted requests received from the link.",
+                    "mode": "RW",
+                    "name": "DOC"
+                },
+                {
+                    "bit_lsb": 29,
+                    "bit_msb": 29,
+                    "description": "Disable Flow Control Update Timeout: When this bit is 0, the core will time out and re-train the link when no Flow Control Update DLLPs are received from the link within an interval of 128 us. Setting this bit to 1 disables this timeout. When the advertised receive credit of the link partner is infinity for the header and payload of all credit types, this timeout is always suppressed. The setting of this bit has no effect in this case. This bit should not be set during normal operation, but is useful for testing.",
+                    "mode": "RW",
+                    "name": "DFCUT"
+                },
+                {
+                    "bit_lsb": 28,
+                    "bit_msb": 28,
+                    "description": "Disable Electrical Idle Infer in L0 State: Setting this bit to 1 disables the inferring of electrical idle in the L0 state. Electrical idle is inferred when no flow control updates and no SKP sequences are received within an interval of 128 us. This bit should not be set during normal operation, but is useful for testing.",
+                    "mode": "RW",
+                    "name": "DEI"
+                },
+                {
+                    "bit_lsb": 27,
+                    "bit_msb": 27,
+                    "description": "Disable Gen3 LFSR Update from SKP: Setting this bit to 1 disables the update of the LFSRs in the Gen3 descramblers of the core, from the values received in SKP sequences. This bit should not be set during normal operation, but is useful for testing.",
+                    "mode": "RW",
+                    "name": "DGLUS"
+                },
+                {
+                    "bit_lsb": 26,
+                    "bit_msb": 26,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R10C"
+                },
+                {
+                    "bit_lsb": 25,
+                    "bit_msb": 25,
+                    "description": "Enable Slot Power Capture: When this bit is set to 1, the core will capture the Slot Power Limit Value and Slot Power Limit Scale parameters from a Set_Slot_Power_Limit message received in the Device Capabilities Register. When this bit is 0, the capture is disabled. This bit is valid only when the core is configured as an EndPoint. It has no effect when the core is a Root Complex.",
+                    "mode": "RW",
+                    "name": "ESPC"
+                },
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 24,
+                    "description": "Enable Fast Link Training: This bit is provided to shorten the link training time to facilitate fast simulation of the design, especially at the gate level. Enabling this bit has the following effects:  1. The 1 ms, 2 ms, 12 ms, 24 ms, 32 ms and 48 ms timeout intervals in the LTSSM are shortened by a factor of 500. 2. In the Polling.Active state of the LTSSM, only 16 training sequences are required to be transmitted (Instead of 1024) to make the transition to the Configuration state. This bit should not be set during normal operation of the core. ",
+                    "mode": "RW",
+                    "name": "EFLT"
+                },
+                {
+                    "bit_lsb": 23,
+                    "bit_msb": 23,
+                    "description": "Disable Link Upconfigure Capability: The user may set this bit to turn off the link upconfigure capability of the core. Setting this bit prevents the core from advertising the link upconfigure capability in training sequences transmitted in the Configuration.Complete state.",
+                    "mode": "RW",
+                    "name": "DLUC"
+                },
+                {
+                    "bit_lsb": 22,
+                    "bit_msb": 22,
+                    "description": "Disable Link Re-Training on Framing Error: When this bit is 1, the core will not transition its LTSSM into the Recovery state when it detects a Framing Error at 8 GT/s speed (as defined in Section 4.2.2.3.3 of the PCIe Base Specification 3.0. This bit must normally be set to 0 so that a Framing Error will cause the LTSSM to enter Recovery. The setting of this bit has no effect on the operation of the core at 2.5 and 5 GT/s speeds.",
+                    "mode": "RW",
+                    "name": "DLRFE"
+                },
+                {
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "Disable Sync Header Error Check: When this bit is 0, the core will signal a framing error if it detects a sync header error in the received blocks at 8 GT/s speed (A 00 or 11 binary setting of the sync header on the received blocks in any lane constitutes a framing error). Setting this bit to 1 suppresses this error check. This bit should normally be set to 0, as the sync header check is mandatory in the PCIe 3.0 Specifications.",
+                    "mode": "RW",
+                    "name": "DSHEC"
+                },
+                {
+                    "bit_lsb": 18,
+                    "bit_msb": 20,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R8C"
+                },
+                {
+                    "bit_lsb": 17,
+                    "bit_msb": 17,
+                    "description": "Disable HAL Parity Check: When this bit is 1, parity check is disabled on the receive side of the HAL interfaces.",
+                    "mode": "RW",
+                    "name": "HPRSUPP"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R8A"
+                },
+                {
+                    "bit_lsb": 4,
+                    "bit_msb": 15,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R8"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Mux Select: Bits 3:2 select the module and bits 1:0 select the group of signals within the module that are driven on the debug bus. The assignments of signals on the debug outputs of the core are given in Appendix B.",
+                    "mode": "RW",
+                    "name": "MS"
+                }
+            ]
+        },
+        "pcie_lm_reg.dll_tmr_config_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 25,
+                    "bit_msb": 31,
+                    "description": "Reserved bits.",
+                    "mode": "RO",
+                    "name": "R1"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 24,
+                    "description": "Receive-Side ACK-NAK Replay Timeout: Timeout setting of receive side ACK-NAK replay (in units of 4 ns). Its value is defined in the RTL header file defines.h. This field is re-written by the internal logic when the negotiated link width, link speed, or the maximum payload setting changes, to correspond to the recommended settings defined in the PCIe Specifications. The user may override this default value by writing into this register field. The value written will be lost on a change in the negotiated link width/speed, or a change in the max payload size setting in the Device Control Register.",
+                    "mode": "RW",
+                    "name": "RSART"
+                },
+                {
+                    "bit_lsb": 9,
+                    "bit_msb": 15,
+                    "description": "Reserved bits.",
+                    "mode": "RO",
+                    "name": "R0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 8,
+                    "description": "Transmit-Side Replay Timeout: Transmit-side replay timer timeout value (in units of 4 ns). Its value is defined in the RTL header file defines.h in the top-level RTL directory, based on the configuration of the core. This field is re-written by the internal logic when the negotiated link width, link speed, or the maximum payload setting changes, to correspond to the recommended setting defined in the PCIe Specifications. The user may override this default value by writing into this register field. The value written will be lost on a change in the negotiated link width/speed, or a change in the max payload size setting in the Device Control Register.",
+                    "mode": "RW",
+                    "name": "TSRT"
+                }
+            ]
+        },
+        "pcie_lm_reg.ecc_corr_err_count_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "TPH ST RAM Correctable Error Count: Number of correctable errors detected while reading from the TPH Steering Tag RAM. This is an 8-bit saturating counter that can be cleared by writing all 1s into it.",
+                    "mode": "W1C",
+                    "name": "R12"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Replay RAM Correctable Error Count: Number of correctable errors detected while reading from the Replay Buffer RAM. This is an 8-bit saturating counter that can be cleared by writing all 1's into it.",
+                    "mode": "W1C",
+                    "name": "RRCER"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "SC FIFO RAM Correctable Error Count: Number of correctable errors detected while reading from the SC FIFO RAM. This is an 8-bit saturating counter that can be cleared by writing all 1's into it.",
+                    "mode": "W1C",
+                    "name": "SFRCER"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "PNP FIFO RAM Correctable Error Count: Number of correctable errors detected while reading from the PNP FIFO RAM. This is an 8-bit saturating counter that can be cleared by writing all 1's into it.",
+                    "mode": "W1C",
+                    "name": "PFRCER"
+                }
+            ]
+        },
+        "pcie_lm_reg.gen3_default_preset_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 7,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R25"
+                },
+                {
+                    "bit_lsb": 4,
+                    "bit_msb": 6,
+                    "description": "Default Receiver Preset Hint: Default receiver preset hint value used for a lane that did not receive EQ TS2 in Recovery.RcvrCfg LTSSM state",
+                    "mode": "RW",
+                    "name": "GDRXPH"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "Default Transmitter Preset: Default transmitter preset value used for a lane that did not receive EQ TS2 in Recovery.RcvrCfg LTSSM state",
+                    "mode": "RW",
+                    "name": "GDTXP"
+                }
+            ]
+        },
+        "pcie_lm_reg.gen3_scrambler_seed_value_0_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 23,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "GSSR0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 22,
+                    "description": "Gen3 Scrambler Seed Value: Seed value used by the scrambler of lane 0.",
+                    "mode": "RW",
+                    "name": "GSSV0"
+                }
+            ]
+        },
+        "pcie_lm_reg.gen3_scrambler_seed_value_1_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 23,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "GSSR1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 22,
+                    "description": "Gen3 Scrambler Seed Value: Seed value used by the scrambler of lane 1.",
+                    "mode": "RW",
+                    "name": "GSSV1"
+                }
+            ]
+        },
+        "pcie_lm_reg.gen3_scrambler_seed_value_2_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 23,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "GSSR2"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 22,
+                    "description": "Gen3 Scrambler Seed Value: Seed value used by the scrambler of lane 2.",
+                    "mode": "RW",
+                    "name": "GSSV2"
+                }
+            ]
+        },
+        "pcie_lm_reg.gen3_scrambler_seed_value_3_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 23,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "GSSR3"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 22,
+                    "description": "Gen3 Scrambler Seed Value: Seed value used by the scrambler of lane 3.",
+                    "mode": "RW",
+                    "name": "GSSV3"
+                }
+            ]
+        },
+        "pcie_lm_reg.gen3_scrambler_seed_value_4_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 23,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "GSSR4"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 22,
+                    "description": "Gen3 Scrambler Seed Value: Seed value used by the scrambler of lane 4.",
+                    "mode": "RW",
+                    "name": "GSSV4"
+                }
+            ]
+        },
+        "pcie_lm_reg.gen3_scrambler_seed_value_5_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 23,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "GSSR5"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 22,
+                    "description": "Gen3 Scrambler Seed Value: Seed value used by the scrambler of lane 5.",
+                    "mode": "RW",
+                    "name": "GSSV5"
+                }
+            ]
+        },
+        "pcie_lm_reg.gen3_scrambler_seed_value_6_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 23,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "GSSR6"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 22,
+                    "description": "Gen3 Scrambler Seed Value: Seed value used by the scrambler of lane 6.",
+                    "mode": "RW",
+                    "name": "GSSV6"
+                }
+            ]
+        },
+        "pcie_lm_reg.gen3_scrambler_seed_value_7_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 23,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "GSSR7"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 22,
+                    "description": "Gen3 Scrambler Seed Value: Seed value used by the scrambler of lane 7.",
+                    "mode": "RW",
+                    "name": "GSSV7"
+                }
+            ]
+        },
+        "pcie_lm_reg.lcrc_err_count_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R11"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "LCRC Error Count: Number of TLPs received with LCRC errors.",
+                    "mode": "W1C",
+                    "name": "LEC"
+                }
+            ]
+        },
+        "pcie_lm_reg.linkwidth_control_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 17,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R1"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Retrain Link: Writing a 1 into this field results in the core re-training the link to change its width. When setting this bit to 1, the software must also set the target lane-map field to indicate the lanes it desires to be part of the link. The core will attempt to form a link with this set of lanes. The link formed at the end of the retraining may include all of these lanes (if both nodes agree on them during re-training), or the largest subset that both sides were able to activate. This bit is cleared by the internal logic of the core after the re-training has been completed and link has reached the L0 state. Software must wait for the bit to be clear before setting it again to change the link width.",
+                    "mode": "RW",
+                    "name": "RL"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Target Lane Map: This field contains the bitmap of the lanes to be included in forming the link during the re-training. Legal settings are: - 0xff (x8 link) - 0x0f and 0xf0 (x4 link) - 0x3, 0xc, 0x30, 0xc0 (x2 link) - 0x1, 0x2, 0x4, 0x8, 0x10, 0x20, 0x40, 0x80 (x1 link) Retraining the link with any other value in this field can cause the training to fail. If the target lane map includes lanes that were inactive when retraining is initiated, then both the core and its link partner must support the LinkWidth Upconfigure Capability to be able to activate those lanes. The user can check if the remote node has this capability by reading the Remote Link Upconfigure Capability Status bit in Physical Layer Configuration Register 0 after the link first came up.",
+                    "mode": "RW",
+                    "name": "TLM"
+                }
+            ]
+        },
+        "pcie_lm_reg.local_error_status_register": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 13,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R9"
+                },
+                {
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "TPH ST RAM Parity Error: Uncorrectable parity error detected while reading from the TPH Steering Tag RAM",
+                    "mode": "W1C",
+                    "name": "TSRPE"
+                },
+                {
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Completion Timeout: A request timed out waiting for completion.",
+                    "mode": "W1C",
+                    "name": "CT"
+                },
+                {
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Flow Control Error: An error was observed in the flow control advertisements from the other side.",
+                    "mode": "W1C",
+                    "name": "FCE"
+                },
+                {
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Unexpected Completion Received: Unexpected Completion received from the link.",
+                    "mode": "W1C",
+                    "name": "UCR"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Malformed TLP Received: Malformed TLP received from the link.",
+                    "mode": "W1C",
+                    "name": "MTR"
+                },
+                {
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Phy Error: Phy error detected on receive side.",
+                    "mode": "W1C",
+                    "name": "PE"
+                },
+                {
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Replay Timer Rollover: Replay timer rolled over after 4 transmissions of the same TLP.",
+                    "mode": "W1C",
+                    "name": "RTR"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Replay Timeout: Replay timer timed out",
+                    "mode": "W1C",
+                    "name": "RT"
+                },
+                {
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Completion RX FIFO Overflow: Overflow occurred in the Completion Receive FIFO.",
+                    "mode": "W1C",
+                    "name": "CRFO"
+                },
+                {
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "PNP RX FIFO Overflow: Overflow occurred in the PNP Receive FIFO.",
+                    "mode": "W1C",
+                    "name": "PRFO"
+                },
+                {
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Replay RAM Parity Error: Parity error detected while reading from Replay Buffer RAM.",
+                    "mode": "W1C",
+                    "name": "RRPE"
+                },
+                {
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Completion RX FIFO Parity Error: Parity error detected while reading from the Completion Receive FIFO RAM.",
+                    "mode": "W1C",
+                    "name": "CRFPE"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "PNP RX FIFO Parity Error: Parity error detected while reading from the PNP Receive FIFO RAM.",
+                    "mode": "W1C",
+                    "name": "PRFPE"
+                }
+            ]
+        },
+        "pcie_lm_reg.local_intrpt_mask_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 13,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R10"
+                },
+                {
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "TPH ST RAM Parity Error: Setting this bit prevents the TPH_ST_RAM_parity_error status from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "TSRPE"
+                },
+                {
+                    "bit_lsb": 11,
+                    "bit_msb": 11,
+                    "description": "Completion Timeout: Setting this bit prevents the Completion timeout condition from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "CT"
+                },
+                {
+                    "bit_lsb": 10,
+                    "bit_msb": 10,
+                    "description": "Flow Control Error: Setting this bit prevents the flow control error from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "FCE"
+                },
+                {
+                    "bit_lsb": 9,
+                    "bit_msb": 9,
+                    "description": "Unexpected Completion Received: Setting this bit prevents the Unexpected Completion Received condition from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "UCR"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 8,
+                    "description": "Malformed TLP Received: Setting this bit prevents the Malformed TLP Received condition from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "MTR"
+                },
+                {
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Phy Error: Setting this bit prevents a phy error from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "PE"
+                },
+                {
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "Replay Timer Rollover: Setting this bit prevents the Replay Timer Rollover error from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "RTR"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Replay Timeout: Setting this bit prevents a replay timeout event from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "RT"
+                },
+                {
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "Completion RX FIFO Overflow: Setting this bit prevents the Completion RX FIFO Overflow condition from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "CRFO"
+                },
+                {
+                    "bit_lsb": 3,
+                    "bit_msb": 3,
+                    "description": "PNP RX FIFO Overflow: Setting this bit prevents the PNP RX FIFO Overflow condition from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "PRFO"
+                },
+                {
+                    "bit_lsb": 2,
+                    "bit_msb": 2,
+                    "description": "Replay RAM Parity Error: Setting this bit prevents the Replay RAM Parity Error from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "RRPE"
+                },
+                {
+                    "bit_lsb": 1,
+                    "bit_msb": 1,
+                    "description": "Completion RX FIFO Parity Error: Setting this bit prevents the Completion RX FIFO Parity Error from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "CRFPE"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "PNP RX FIFO Parity Error: Setting this bit prevents the PNP RX FIFO Parity Error from raising a local interrupt.",
+                    "mode": "RW",
+                    "name": "PRFPE"
+                }
+            ]
+        },
+        "pcie_lm_reg.negotiated_lane_map_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 17,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R71"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 16,
+                    "description": "Lane Reversal Status:  This bit set by the core at the end of link training if the LTSSM had to reverse the lane numbers to form the link.",
+                    "mode": "RO",
+                    "name": "LRS"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R70"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Negotiated Lane Map: Bit i of this field is set to 1 at the end of link training if Lane i is part of the PCIe link. The value of this field is valid only when the link is in L0 or L0s states.",
+                    "mode": "RO",
+                    "name": "NLM"
+                }
+            ]
+        },
+        "pcie_lm_reg.pf_BAR_config_0_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 29,
+                    "bit_msb": 31,
+                    "description": "BAR 3 Control: Specifies the configuration of BAR3. The various encodings are: 000: Disabled 001: 32bit IO BAR 010-011: Reserved 100: 32bit memory BAR, non prefetchable 101: 32bit memory BAR, prefetchable 110-111: Reserved",
+                    "mode": "RW",
+                    "name": "BAR3C"
+                },
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 28,
+                    "description": "BAR 3 Aperture: Specifies the aperture of the BAR 3 when it is configured as a 32-bit BAR.  The encodings are: 00000-00011 = 1 Kbytes, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 01100 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010 = 32 Mbytes, 10011 = 64 Mbytes, 10100 = 128 Mbytes, 10101 = 256 Mbytes, 10110 = 512 Mbytes, 10111 = 1 Gbyte, 11000 = 2 Gbytes",
+                    "mode": "RW",
+                    "name": "BAR3A"
+                },
+                {
+                    "bit_lsb": 21,
+                    "bit_msb": 23,
+                    "description": "BAR 2 Control: Specifies the configuration of BAR2. The various encodings are: 000: Disabled 001: 32bit IO BAR 010-011: Reserved 100: 32bit memory BAR, non prefetchable 101: 32bit memory BAR, prefetchable 110: 64bit memory BAR, non prefetchable 111: 64bit memory BAR, prefetchable",
+                    "mode": "RW",
+                    "name": "BAR2C"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 20,
+                    "description": "BAR 2 Aperture: Specifies the aperture of the 32-bit BAR 2 or 64bit BAR2-3.  The encodings are: 00000-00011 = 1 Kbytes, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 01100 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010 = 32 Mbytes, 10011 = 64 Mbytes, 10100 = 128 Mbytes, 10101 = 256 Mbytes, 10110 = 512 Mbytes, 10111 = 1 Gbyte, 11000 = 2 Gbytes,  11001 = 4 Gbytes, 11010 = 8 Gbytes, 11011 = 16 Gbytes, 11100 = 32 Gbytes, 11101 = 64 Gbytes, 11110 = 128 Gbytes, 11111 = 256 Gbytes ",
+                    "mode": "RW",
+                    "name": "BAR2A"
+                },
+                {
+                    "bit_lsb": 13,
+                    "bit_msb": 15,
+                    "description": "BAR 1 Control: Specifies the configuration of BAR1. The various encodings are: 000: Disabled 001: 32bit IO BAR 010-011: Reserved 100: 32bit memory BAR, non prefetchable 101: 32bit memory BAR, prefetchable 110-111: Reserved",
+                    "mode": "RW",
+                    "name": "BAR1C"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 12,
+                    "description": "BAR 1 Aperture: Specifies the aperture of the BAR 1 when it is configured as a 32-bit BAR.  The encodings are: 00000-00011 = 1 Kbytes, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 01100 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010 = 32 Mbytes, 10011 = 64 Mbytes, 10100 = 128 Mbytes, 10101 = 256 Mbytes, 10110 = 512 Mbytes, 10111 = 1 Gbyte, 11000 = 2 Gbytes",
+                    "mode": "RW",
+                    "name": "BAR1A"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 7,
+                    "description": "BAR 0 Control: Specifies the configuration of BAR0. The various encodings are: 000: Disabled 001: 32bit IO BAR 010-011: Reserved 100: 32bit memory BAR, non prefetchable 101: 32bit memory BAR, prefetchable 110: 64bit memory BAR, non prefetchable 111: 64bit memory BAR, prefetchable",
+                    "mode": "RW",
+                    "name": "BAR0C"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "BAR 0 Aperture: Specifies the aperture of the 32-bit BAR 0 or 64bit BAR0-1.  The encodings are: 00000-00011 = 1 Kbytes, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 01100 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010 = 32 Mbytes, 10011 = 64 Mbytes, 10100 = 128 Mbytes, 10101 = 256 Mbytes, 10110 = 512 Mbytes, 10111 = 1 Gbyte, 11000 = 2 Gbytes,  11001 = 4 Gbytes, 11010 = 8 Gbytes, 11011 = 16 Gbytes, 11100 = 32 Gbytes, 11101 = 64 Gbytes, 11110 = 128 Gbytes, 11111 = 256 Gbytes ",
+                    "mode": "RW",
+                    "name": "BAR0A"
+                }
+            ]
+        },
+        "pcie_lm_reg.pf_BAR_config_1_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Enable Resizable BAR Capability: Setting this bit to 1 enables the Resizable BAR Capability in the PCI Express Configuration Space of the associated Function. When the Resizable BAR Capability is enabled, the apertures of the memory BARs of the corresponding Function are no longer selected by the fields in this register, but by the setting of the registers in the Resizable BAR Capability Structure.",
+                    "mode": "RW",
+                    "name": "ERBC"
+                },
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 30,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R24"
+                },
+                {
+                    "bit_lsb": 22,
+                    "bit_msb": 23,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R22"
+                },
+                {
+                    "bit_lsb": 21,
+                    "bit_msb": 21,
+                    "description": "EXP-ROM BAR Enable: This bit must be set to enable the Expansion ROM BAR associated with the Function.",
+                    "mode": "RW",
+                    "name": "ERBE"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 20,
+                    "description": "EXP-ROM BAR Aperture: Specifies the aperture of the Expansion ROM BAR. The encodings are: 00000-00001 = 256 bytes, 00010 = 512 bytes, 00011 = 1 Kbyte, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 00110 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010-11111 = undefined",
+                    "mode": "RW",
+                    "name": "ERBA"
+                },
+                {
+                    "bit_lsb": 13,
+                    "bit_msb": 15,
+                    "description": "BAR 5 Control: Specifies the configuration of BAR5. The various encodings are: 000: Disabled 001: 32bit IO BAR 010-011: Reserved 100: 32bit memory BAR, non prefetchable 101: 32bit memory BAR, prefetchable 110-111: Reserved",
+                    "mode": "RW",
+                    "name": "BAR5C"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 12,
+                    "description": "BAR 5 Aperture: Specifies the aperture of the BAR 5 when it is configured as a 32-bit BAR.  The encodings are: 00000-00011 = 1 Kbytes, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 01100 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010 = 32 Mbytes, 10011 = 64 Mbytes, 10100 = 128 Mbytes, 10101 = 256 Mbytes, 10110 = 512 Mbytes, 10111 = 1 Gbyte, 11000 = 2 Gbytes",
+                    "mode": "RW",
+                    "name": "BAR5A"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 7,
+                    "description": "BAR 4 Control: Specifies the configuration of BAR4. The various encodings are: 000: Disabled 001: 32bit IO BAR 010-011: Reserved 100: 32bit memory BAR, non prefetchable 101: 32bit memory BAR, prefetchable 110: 64bit memory BAR, non prefetchable 111: 64bit memory BAR, prefetchable",
+                    "mode": "RW",
+                    "name": "BAR4C"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "BAR 4 Aperture: Specifies the aperture of the 32-bit BAR 4 or 64bit BAR4-5.  The encodings are: 00000-00011 = 1 Kbytes, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 01100 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010 = 32 Mbytes, 10011 = 64 Mbytes, 10100 = 128 Mbytes, 10101 = 256 Mbytes, 10110 = 512 Mbytes, 10111 = 1 Gbyte, 11000 = 2 Gbytes,  11001 = 4 Gbytes, 11010 = 8 Gbytes, 11011 = 16 Gbytes, 11100 = 32 Gbytes, 11101 = 64 Gbytes, 11110 = 128 Gbytes, 11111 = 256 Gbytes ",
+                    "mode": "RW",
+                    "name": "BAR4A"
+                }
+            ]
+        },
+        "pcie_lm_reg.pf_config_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 1,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Function 0 Enable: Enable for Function 0. This bit is hardwired to 1.",
+                    "mode": "RO",
+                    "name": "F0E"
+                }
+            ]
+        },
+        "pcie_lm_reg.pl_config_0_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "Master Loopback Enable: When the core is operating as a Root Complex, setting this to 1 causes the LTSSM to initiate a loopback and become the loopback master. This bit is not used in the EndPoint Mode.",
+                    "mode": "RW",
+                    "name": "MLE"
+                },
+                {
+                    "bit_lsb": 30,
+                    "bit_msb": 30,
+                    "description": "Remote Linkwidth Upconfigure Capability Status: A 1 in this field indicates that the remote note advertised Linkwidth Upconfigure Capability in the training sequences in the Configuration.Complete state when the link came up. A 0 indicates that the remote node did not set the Link Upconfigure bit.",
+                    "mode": "RO",
+                    "name": "R0"
+                },
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 29,
+                    "description": "LTSSM State: Current state of the LTSSM. The encoding of the states is given in Appendix C.",
+                    "mode": "RO",
+                    "name": "LTSSM"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Received Link ID: Link ID received from other side during link training.",
+                    "mode": "RO",
+                    "name": "RLID"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Received FTS Count: FTS count received from the other side during link training. The core transmits this many FTS sequences while exiting the L0S state.",
+                    "mode": "RO",
+                    "name": "RFC"
+                },
+                {
+                    "bit_lsb": 7,
+                    "bit_msb": 7,
+                    "description": "Tx Swing Setting: This bit drives the PIPE_TX_SWING output of the core.",
+                    "mode": "RW",
+                    "name": "TSS"
+                },
+                {
+                    "bit_lsb": 6,
+                    "bit_msb": 6,
+                    "description": "All Phy Error Reporting: When this bit is set to 1, the core will report all phy errors detected at the PIPE interface, regardless of whether it caused packet corruption. If set to 0, the core will report only those error that caused a TLP or DLLP to be dropped because of the phy error.",
+                    "mode": "RW",
+                    "name": "APER"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 5,
+                    "description": "Link Training Direction: When crosslink is enabled, the state of this bit indicates whether the core completed link training as an upstream port or a downstream port (0 = upstream, 1 = downstream).",
+                    "mode": "RO",
+                    "name": "LTD"
+                },
+                {
+                    "bit_lsb": 3,
+                    "bit_msb": 4,
+                    "description": "Negotiated Speed: Current operating speed of link (00 = 2.5G, 01 = 5G, 10 = 8G).",
+                    "mode": "RO",
+                    "name": "NS"
+                },
+                {
+                    "bit_lsb": 1,
+                    "bit_msb": 2,
+                    "description": "Negotiated Lane Count: Lane count negotiated with other side during link training (00 = x1, 01 = x2,  10 = x4, 11 = x8).",
+                    "mode": "RO",
+                    "name": "NLC"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 0,
+                    "description": "Link Status: Current state of link (1 = link training complete, 0 = link training not complete).",
+                    "mode": "RO",
+                    "name": "LS"
+                }
+            ]
+        },
+        "pcie_lm_reg.pl_config_1_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Transmitted FTS Count at 8 GT/s Speed: FTS count transmitted by the core in TS1/TS2 sequences during link training. This value must be set based on the time needed by the receiver to acquire sync while exiting from L0S state.",
+                    "mode": "RW",
+                    "name": "TFC3"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 23,
+                    "description": "Transmitted FTS Count at 5 GT/s Speed: FTS count transmitted by the core in TS1/TS2 sequences during link training. This value must be set based on the time needed by the receiver to acquire sync while exiting from L0S state.",
+                    "mode": "RW",
+                    "name": "TFC2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Transmitted FTS Count at 2.5 GT/s Speed: FTS count transmitted by the core in TS1/TS2 sequences during link training. This value must be set based on the time needed by the receiver on the other side to acquire sync while exiting from L0S state.",
+                    "mode": "RW",
+                    "name": "TFC1"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Transmitted Link ID: Link ID transmitted by the device in training sequences in the RC mode.",
+                    "mode": "RW",
+                    "name": "TLI"
+                }
+            ]
+        },
+        "pcie_lm_reg.pme_service_timeout_delay_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R0"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 19,
+                    "description": "PME Service Timeout Delay: Specifies the timeout delay for retransmission of PM_PME messages. The value is in units of microseconds.",
+                    "mode": "RW",
+                    "name": "PSTD"
+                }
+            ]
+        },
+        "pcie_lm_reg.pme_turnoff_ack_delay_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R7"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "PME Turnoff Ack Delay: Time in microseconds between the core receiving a PME_TurnOff message TLP and the core sending a PME_TO_Ack response to it. This field must be set to a non-zero value in order for the core to send a response. Setting this field to 0 suppresses the core's response to PME_TurnOff message, so that the client may transmit the PME_TO_Ack message through the HAL master interface",
+                    "mode": "RW",
+                    "name": "PTOAD"
+                }
+            ]
+        },
+        "pcie_lm_reg.rc_BAR_config_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 31,
+                    "bit_msb": 31,
+                    "description": "RC BAR Check Enable: This bit must be set to 1 to enable BAR checking in the RC mode. When this bit is set to 0, the core will forward all incoming memory requests to the client logic without checking their address ranges.",
+                    "mode": "RW",
+                    "name": "RCBCE"
+                },
+                {
+                    "bit_lsb": 21,
+                    "bit_msb": 30,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R22"
+                },
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 20,
+                    "description": "RC BAR 4-5 Enable: This bit must be set to enable address checking by RC BAR 4-5.",
+                    "mode": "RW",
+                    "name": "RCB45E"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 19,
+                    "description": "RC BAR 4-5 Aperture: Specifies the aperture of the 64-bit RC BAR 4-5. The encodings are: 0000 = 4 Kbytes, 0001 = 8 Kbytes, ... , 1111 = 128 Gbytes",
+                    "mode": "RW",
+                    "name": "RCB45A"
+                },
+                {
+                    "bit_lsb": 13,
+                    "bit_msb": 15,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R21"
+                },
+                {
+                    "bit_lsb": 12,
+                    "bit_msb": 12,
+                    "description": "RC BAR 2-3 Enable: This bit must be set to enable address checking by RC BAR 2-3.",
+                    "mode": "RW",
+                    "name": "RCB23E"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 11,
+                    "description": "RC BAR 2-3 Aperture: Specifies the aperture of the 64-bit RC BAR 2-3 The encodings are: 0000 = 4 Kbytes, 0001 = 8 Kbytes, ... , 1111 = 128 Gbytes",
+                    "mode": "RW",
+                    "name": "RCB23A"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 7,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R20"
+                },
+                {
+                    "bit_lsb": 4,
+                    "bit_msb": 4,
+                    "description": "RC BAR 0-1 Enable: This bit must be set to enable address checking by RC BAR 0-1.",
+                    "mode": "RW",
+                    "name": "RCB01E"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 3,
+                    "description": "RC BAR 0-1 Aperture: This field specifies the aperture of the 64-bit RC BAR 0-1. The encodings are: 0000 = 4 Kbytes, 0001 = 8 Kbytes, ... , 1111 = 128 Gbytes",
+                    "mode": "RW",
+                    "name": "RCB01A"
+                }
+            ]
+        },
+        "pcie_lm_reg.rcv_cred_lim_0_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 31,
+                    "description": "Non-Posted Payload Credit: Non-Posted payload credit limit advertised by the core for VC 0 (in units of 4 Dwords).",
+                    "mode": "RW",
+                    "name": "NPPC"
+                },
+                {
+                    "bit_lsb": 12,
+                    "bit_msb": 19,
+                    "description": "Posted Header Credit: Posted header credit limit advertised by the core for VC 0 (in number of packets).",
+                    "mode": "RW",
+                    "name": "PHC"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": "Posted Payload Credit: Posted payload credit limit advertised by the core for VC 0 (in units of 4 Dwords).",
+                    "mode": "RW",
+                    "name": "PPC"
+                }
+            ]
+        },
+        "pcie_lm_reg.rcv_cred_lim_1_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Completion Header Credit: Completion header credit limit advertised by the core for VC 0 (in number of packets).",
+                    "mode": "RW",
+                    "name": "CHC"
+                },
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R2"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 19,
+                    "description": "Completion Payload Credit: Completion payload credit limit advertised by the core for VC 0 (in units of 4 Dwords).",
+                    "mode": "RW",
+                    "name": "CPC"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Non-Posted Header Credit Limit: Non-Posted header credit limit advertised by the core for VC 0 (in number of packets).",
+                    "mode": "RW",
+                    "name": "NPHCL"
+                }
+            ]
+        },
+        "pcie_lm_reg.receive_fts_count_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R72"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 15,
+                    "description": "Received FTS Count for 8GT/s Speed: FTS count received from the other side during link training for use at the 8 GT/s link speed. The core transmits this many FTS sequences while exiting the L0S state, when operating at the 8 GT/s speed.",
+                    "mode": "RO",
+                    "name": "RFC8S"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Received FTS Count for 5GT/s Speed: FTS count received from the other side during link training for use at the 5 GT/s link speed. The core transmits this many FTS sequences while exiting the L0S state, when operating at the 5 GT/s speed.",
+                    "mode": "RO",
+                    "name": "RFC5S"
+                }
+            ]
+        },
+        "pcie_lm_reg.receive_tlp_count_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Receive TLP Count: Count of TLPs received",
+                    "mode": "W1C",
+                    "name": "RTC"
+                }
+            ]
+        },
+        "pcie_lm_reg.receive_tlp_payload_dword_count_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Receive TLP Payload Byte Count: Count of TLP payload Dwords received",
+                    "mode": "W1C",
+                    "name": "RTPDC"
+                }
+            ]
+        },
+        "pcie_lm_reg.root_port_requestor_id_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Root Port Requestor ID: RID (bus, device & function numbers) for all TLPs internally generated by Root Port",
+                    "mode": "RW",
+                    "name": "RPRI"
+                }
+            ]
+        },
+        "pcie_lm_reg.transm_cred_lim_0_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 31,
+                    "description": "Non-Posted Payload Credit: Non-Posted payload credit limit received by the core for Link 0 (in units of 4 Dwords).",
+                    "mode": "RO",
+                    "name": "NPPC"
+                },
+                {
+                    "bit_lsb": 12,
+                    "bit_msb": 19,
+                    "description": "Posted Header Credit: Posted header credit limit received by the core for this link (in number of packets).",
+                    "mode": "RO",
+                    "name": "PHC"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 11,
+                    "description": "Posted Payload Credit: Posted payload credit limit received by the core for this link (in units of 4 Dwords).",
+                    "mode": "RO",
+                    "name": "PPC"
+                }
+            ]
+        },
+        "pcie_lm_reg.transm_cred_lim_1_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 31,
+                    "description": "Completion Header Credit: Completion header credit limit received by the core for VC (in number of packets).",
+                    "mode": "RO",
+                    "name": "CHC"
+                },
+                {
+                    "bit_lsb": 20,
+                    "bit_msb": 23,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R3"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 19,
+                    "description": "Completion Payload Credit: Completion payload credit limit received by the core for VC 0 (in units of 4 Dwords).",
+                    "mode": "RO",
+                    "name": "CPC"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 7,
+                    "description": "Non-Posted Header Credit: Non-Posted header credit limit received by the core for VC 0 (in number of packets).",
+                    "mode": "RO",
+                    "name": "NPHC"
+                }
+            ]
+        },
+        "pcie_lm_reg.transm_cred_update_int_config_0_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Minimum Non-Posted Update Interval: Minimum credit update interval for non-posted transactions. The core follows this minimum interval between issuing posted credit updates on the link. This is to limit the bandwidth use of credit updates. If new credit becomes available in the receive FIFO since the last update was sent, the core will issue a new update only after this interval has elapsed since the last update. The value is in units of 4 ns. This field is re-written by the internal logic when the negotiated link width or link speed changes, to correspond to the default values defined in defines.h. The user may override this default value by writing into this register field. The value written will be lost on a change in the negotiated link width/speed.",
+                    "mode": "RW",
+                    "name": "MNUI"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Minimum Posted Update Interval: Minimum credit update interval for posted transactions. The core follows this minimum interval between issuing posted credit updates on the link. This is to limit the bandwidth use of credit updates. If new credit becomes available in the receive FIFO since the last update was sent, the core will issue a new update only after this interval has elapsed since the last update. The value is in units of 4 ns. This field is re-written by the internal logic when the negotiated link width or link speed changes, to correspond to the default values defined in defines.h. The user may override this default value by writing into this register field. The value written will be lost on a change in the negotiated link width/speed.",
+                    "mode": "RW",
+                    "name": "MPUI"
+                }
+            ]
+        },
+        "pcie_lm_reg.transm_cred_update_int_config_1_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Maximum Update Interval: Maximum credit update interval for all transactions. If no new credit has become available since the last update, the core will repeat the last update after this interval. This is to recover from any losses of credit update packets. The value is in units of 4 ns. This field could be re-written by the internal logic when the negotiated link width or link speed changes, to correspond to the default values defined in defines.h. The user may override this default value by writing into this register field. The value written will be lost on a change in the negotiated link width/speed.",
+                    "mode": "RW",
+                    "name": "MUI"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Completion Update Interval: Minimum credit update interval for Completion packets. The core follows this minimum interval between issuing posted credit updates on the link. This is to limit the bandwidth use of credit updates. If new credit becomes available in the receive FIFO since the last update was sent, the core will issue a new update only after this interval has elapsed since the last update. The value is in units of 4 ns. This parameter is not used when the Completion credit is infinity.",
+                    "mode": "RW",
+                    "name": "CUI"
+                }
+            ]
+        },
+        "pcie_lm_reg.transmit_tlp_count_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Transmit TLP Count: Count of TLPs transmitted",
+                    "mode": "W1C",
+                    "name": "TTC"
+                }
+            ]
+        },
+        "pcie_lm_reg.transmit_tlp_payload_dword_count_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 31,
+                    "description": "Transmit TLP Payload Byte Count: Count of TLPs payload Dwords transmitted",
+                    "mode": "W1C",
+                    "name": "TTPBC"
+                }
+            ]
+        },
+        "pcie_lm_reg.vendor_id_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Subsystem Vendor ID: Subsystem Vendor ID",
+                    "mode": "RW",
+                    "name": "SVID"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 15,
+                    "description": "Vendor ID: Vendor ID",
+                    "mode": "RW",
+                    "name": "VID"
+                }
+            ]
+        },
+        "pcie_lm_reg.vf_BAR_config_0_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 29,
+                    "bit_msb": 31,
+                    "description": "VF BAR 3 Control: Specifies the configuration of VF BAR3. The various encodings are: 000: Disabled 001-011: Reserved 100: 32bit memory BAR, non prefetchable 101: 32bit memory BAR, prefetchable 110-111: Reserved",
+                    "mode": "RW",
+                    "name": "VFBAR3C"
+                },
+                {
+                    "bit_lsb": 24,
+                    "bit_msb": 28,
+                    "description": "VF BAR 3 Aperture: Specifies the aperture of the VF BAR 3 when it is configured as a 32-bit BAR.  The encodings are: 00000-00011 = 1 Kbytes, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 01100 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010 = 32 Mbytes, 10011 = 64 Mbytes, 10100 = 128 Mbytes, 10101 = 256 Mbytes, 10110 = 512 Mbytes, 10111 = 1 Gbyte, 11000 = 2 Gbytes",
+                    "mode": "RW",
+                    "name": "VFBAR3A"
+                },
+                {
+                    "bit_lsb": 21,
+                    "bit_msb": 23,
+                    "description": "VF BAR 2 Control: Specifies the configuration of VF BAR2. The various encodings are: 000: Disabled 001-011: Reserved 100: 32bit memory BAR, non prefetchable 101: 32bit memory BAR, prefetchable 110: 64bit memory BAR, non prefetchable 111: 64bit memory BAR, prefetchable",
+                    "mode": "RW",
+                    "name": "VFBAR2C"
+                },
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 20,
+                    "description": "VF BAR 2 Aperture: Specifies the aperture of the 32-bit VF BAR 2 or 64bit VF BAR2-3.  The encodings are: 00000-00011 = 1 Kbytes, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 01100 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010 = 32 Mbytes, 10011 = 64 Mbytes, 10100 = 128 Mbytes, 10101 = 256 Mbytes, 10110 = 512 Mbytes, 10111 = 1 Gbyte, 11000 = 2 Gbytes,  11001 = 4 Gbytes, 11010 = 8 Gbytes, 11011 = 16 Gbytes, 11100 = 32 Gbytes, 11101 = 64 Gbytes, 11110 = 128 Gbytes, 11111 = 256 Gbytes ",
+                    "mode": "RW",
+                    "name": "VFBAR2A"
+                },
+                {
+                    "bit_lsb": 13,
+                    "bit_msb": 15,
+                    "description": "VF BAR 1 Control: Specifies the configuration of VF BAR1. The various encodings are: 000: Disabled 001-011: Reserved 100: 32bit memory BAR, non prefetchable 101: 32bit memory BAR, prefetchable 110-111: Reserved",
+                    "mode": "RW",
+                    "name": "VFBAR1C"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 12,
+                    "description": "VF BAR 1 Aperture: Specifies the aperture of the VF BAR 1 when it is configured as a 32-bit BAR.  The encodings are: 00000-00011 = 1 Kbytes, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 01100 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010 = 32 Mbytes, 10011 = 64 Mbytes, 10100 = 128 Mbytes, 10101 = 256 Mbytes, 10110 = 512 Mbytes, 10111 = 1 Gbyte, 11000 = 2 Gbytes",
+                    "mode": "RW",
+                    "name": "VFBAR1A"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 7,
+                    "description": "VF BAR 0 Control: Specifies the configuration of VF BAR0. The various encodings are: 000: Disabled 001-011: Reserved 100: 32bit memory BAR, non prefetchable 101: 32bit memory BAR, prefetchable 110: 64bit memory BAR, non prefetchable 111: 64bit memory BAR, prefetchable",
+                    "mode": "RW",
+                    "name": "VFBAR0C"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "VF BAR 0 Aperture: Specifies the aperture of the 32-bit VF BAR 0 or 64bit VF BAR0-1.  The encodings are: 00000-00011 = 1 Kbytes, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 01100 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010 = 32 Mbytes, 10011 = 64 Mbytes, 10100 = 128 Mbytes, 10101 = 256 Mbytes, 10110 = 512 Mbytes, 10111 = 1 Gbyte, 11000 = 2 Gbytes,  11001 = 4 Gbytes, 11010 = 8 Gbytes, 11011 = 16 Gbytes, 11100 = 32 Gbytes, 11101 = 64 Gbytes, 11110 = 128 Gbytes, 11111 = 256 Gbytes ",
+                    "mode": "RW",
+                    "name": "VFBAR0A"
+                }
+            ]
+        },
+        "pcie_lm_reg.vf_BAR_config_1_reg": {
+            "bit_length": 32,
+            "fields": [
+                {
+                    "bit_lsb": 16,
+                    "bit_msb": 31,
+                    "description": "Reserved: ",
+                    "mode": "RO",
+                    "name": "R16"
+                },
+                {
+                    "bit_lsb": 13,
+                    "bit_msb": 15,
+                    "description": "VF BAR 5 Control: Specifies the configuration of VF BAR5. The various encodings are: 000: Disabled 001-011: Reserved 100: 32bit memory BAR, non prefetchable 101: 32bit memory BAR, prefetchable 110-111: Reserved",
+                    "mode": "RW",
+                    "name": "VFBAR5C"
+                },
+                {
+                    "bit_lsb": 8,
+                    "bit_msb": 12,
+                    "description": "VF BAR 5 Aperture: Specifies the aperture of the VF BAR 5 when it is configured as a 32-bit BAR.  The encodings are: 00000-00011 = 1 Kbytes, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 01100 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010 = 32 Mbytes, 10011 = 64 Mbytes, 10100 = 128 Mbytes, 10101 = 256 Mbytes, 10110 = 512 Mbytes, 10111 = 1 Gbyte, 11000 = 2 Gbytes",
+                    "mode": "RW",
+                    "name": "VFBAR5A"
+                },
+                {
+                    "bit_lsb": 5,
+                    "bit_msb": 7,
+                    "description": "VF BAR 4 Control: Specifies the configuration of VF BAR4. The various encodings are: 000: Disabled 001-011: Reserved 100: 32bit memory BAR, non prefetchable 101: 32bit memory BAR, prefetchable 110: 64bit memory BAR, non prefetchable 111: 64bit memory BAR, prefetchable",
+                    "mode": "RW",
+                    "name": "VFBAR4C"
+                },
+                {
+                    "bit_lsb": 0,
+                    "bit_msb": 4,
+                    "description": "VF BAR 4 Aperture: Specifies the aperture of the 32-bit VF BAR 4 or 64bit VF BAR4-5.  The encodings are: 00000-00011 = 1 Kbytes, 00100 = 2 Kbytes, 00101 = 4 Kbytes, 00110 = 8 Kbytes, 00111 = 16 Kbytes, 01000 = 32 Kbytes, 01001 = 64 Kbytes, 01010 = 128 Kbytes, 01011 = 256 Kbytes, 01100 = 512 Kbytes, 01101 = 1 Mbyte, 01110 = 2 Mbytes, 01111 = 4 Mbytes, 10000 = 8 Mbytes, 10001 = 16 Mbytes, 10010 = 32 Mbytes, 10011 = 64 Mbytes, 10100 = 128 Mbytes, 10101 = 256 Mbytes, 10110 = 512 Mbytes, 10111 = 1 Gbyte, 11000 = 2 Gbytes,  11001 = 4 Gbytes, 11010 = 8 Gbytes, 11011 = 16 Gbytes, 11100 = 32 Gbytes, 11101 = 64 Gbytes, 11110 = 128 Gbytes, 11111 = 256 Gbytes ",
+                    "mode": "RW",
+                    "name": "VFBAR4A"
+                }
+            ]
+        }
+    }
+}
