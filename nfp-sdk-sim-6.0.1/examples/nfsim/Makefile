@@ -3,7 +3,8 @@
 #
 SHELL=/bin/sh
 
-LIB_INC_PATH=../../lib
+#LIB_INC_PATH=../../lib
+LIB_INC_PATH=/mnt/hgfs/atsushi/earthcomputing/Netronome/nfp-sdk-sim-6.0.1/lib
 
 CC=gcc
 CPP=g++
@@ -16,7 +17,7 @@ EX_FILES = 	read_xpb.c \
 			exttcache.c ilkn_pcap_play.c ilkn_pcap_record.c ilkn_loopback.c\
 			history.c pstats.c log_level.c read_meattn.c \
 			watch_meattn.c mac_stats.c mac_ports.c \
-			exec_pausesim.c
+			exec_pausesim.c signal_test_run.c entl_test_run.c
 
 # multisource source examples - specifically handled
 EX_APPS = interactive

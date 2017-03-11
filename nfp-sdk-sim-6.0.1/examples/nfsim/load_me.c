@@ -373,10 +373,23 @@ int sim_stop(struct nfp_device *nfp, int timeout)
 int sim_run(struct nfp_device *nfp, int timeout)
 {
     /* Issue a Run SIM */
-    prime_for_sim_event(SIMEVENT_RUN_START);
-    if (nfp_sal_run(nfp) < 0)
-        return -1;
-    return wait_for_sim_event(timeout);
+    /* Check if SIM is running */
+    int retval = nfp_sal_is_running(nfp);
+    if (retval < 0) {
+        fprintf(stderr, "Error checking is SIM is running\n");
+        exit(EXIT_FAILURE);
+    }
+    if (retval == 1) {
+        printf("sim_run() SIM is running\n");
+    } else if (retval == 0) {
+        printf("sim_run() SIM is not running\n");
+        prime_for_sim_event(SIMEVENT_RUN_START);
+        if (nfp_sal_run(nfp) < 0)
+             return -1;
+        return wait_for_sim_event(timeout);   
+    }
+    return 0 ;
+
 }
 
 /**
@@ -515,6 +528,10 @@ void sim_info()
     printf("%d Island Clocks\n", c);
 
     {
+        int ret ;
+        int menum = NFP6000_MEID(32, 0);
+        uint32_t val;
+
         /* List Clock Frequencies */
         int clockids[7] = {NFP_SAL_CLOCK_TYPE_TCLK,
                            NFP_SAL_CLOCK_TYPE_PCLK,
@@ -537,6 +554,14 @@ void sim_info()
                 printf("fTarget: %.0f\t\tfActual: %.0f\n",
                        1000000.0 / target_period, 1000000.0 / actual_period);
         }
+
+#define NFP_ME_MAILBOX_0                                     0x00000170
+
+        ret = nfp_mecsr_read(g_nfp, menum, -1, NFP_ME_MAILBOX_0 , &val);
+        if (ret)
+            printf("error reading Mailbox%d: %s\n", 0, strerror(errno));
+        else
+            printf("Mailbox%d = %x\n", 0, val);
     }
 }
 
@@ -704,13 +729,28 @@ int sim_island_clocks()
         if (retval == 1) {
             /* Only disable the clock if it was enabled */
             if ((dis_clks[i] == 1) && (en_clks[i] == 0)) {
+                if (globalargs.verbose) {
+                    printf("Calling nfp_sal_island_clock_disable on %d\n", i);
+                }
+
                 retval = nfp_sal_island_clock_disable(g_nfp, i);
+
+                if (globalargs.verbose) {
+                    printf("Called nfp_sal_island_clock_disable on %d and got %d\n", i, retval);
+                }
+
             }
         }
         /* Island clock is disabled */
         if (retval == 0) {
             if (en_clks[i] == 1) {
+                if (globalargs.verbose) {
+                    printf("Calling nfp_sal_island_clock_enable on %d\n", i);
+                }
                 retval = nfp_sal_island_clock_enable(g_nfp, i);
+                if (globalargs.verbose) {
+                    printf("Called nfp_sal_island_clock_enable on %d and got %d\n", i, retval);
+                }
             }
         }
     }
