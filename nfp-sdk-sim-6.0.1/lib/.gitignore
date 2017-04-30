@@ -1,0 +1,14 @@
+libboost_chrono.so.1.59.0
+libboost_date_time.so.1.59.0
+libboost_system.so.1.59.0
+libboost_thread.so.1.59.0
+libchip_model_a0.so
+libchip_model_b0.so
+libjansson.so
+libnfp.so
+libnfp_common.so
+libnfp_hwdbg.so
+libse_simulation_engine.so
+libz.so
+libz.so.1
+libz.so.1.2.8
