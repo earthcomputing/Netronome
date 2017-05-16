@@ -15,6 +15,8 @@
 
 #define BACKOFF_SLEEP           256
 
+#define PKT_NBI_OFFSET 62
+
 #ifndef PKT_NBI_OFFSET
 #define PKT_NBI_OFFSET 64
 #endif
@@ -33,8 +35,9 @@
 
 struct pkt_hdr {
     struct {
-        uint32_t mac_timestamp;
-        uint32_t mac_prepend;
+        //uint32_t mac_timestamp;
+        //uint32_t mac_prepend;
+        uint16_t dummy;
     };
     struct eth_hdr pkt;
 };
@@ -151,7 +154,7 @@ int receive_packet( struct pkt_rxed *pkt_rxed, size_t size )
     int64_t s_addr ;
     int64_t d_addr ;
     int ret ;
-    unsigned int mbox0, mbox1, mbox2 ;
+    unsigned int mbox0, mbox1, mbox2, mbox3 ;
 
     pkt_nbi_recv(&pkt_rxed_in, sizeof(pkt_rxed->nbi_meta));
     pkt_rxed->nbi_meta = pkt_rxed_in.nbi_meta;
@@ -168,10 +171,12 @@ int receive_packet( struct pkt_rxed *pkt_rxed, size_t size )
     s_addr = (uint64_t)wmem[6]<<40 | (uint64_t)wmem[7]<<32 | (uint64_t)wmem[8]<<24 | (uint64_t)wmem[9]<<16 | (uint64_t)wmem[10]<<8 | (uint64_t)wmem[11] ; 
     mbox0 = d_addr >> 32 ;
     mbox1 = d_addr ;
-    mbox2 = s_addr ;
+    mbox2 = s_addr >> 32 ;
+    mbox3 = s_addr ;
     local_csr_write(local_csr_mailbox0, mbox0 );
     local_csr_write(local_csr_mailbox1, mbox1 );
     local_csr_write(local_csr_mailbox2, mbox2 );
+    local_csr_write(local_csr_mailbox3, mbox3 );
     MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
     ret = entl_received( &state, s_addr, d_addr, 0, 0 ) ;
     MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;

@@ -54,12 +54,18 @@ struct __attribute__((__packed__)) eth_hdr {
 #define ENTL_STATE_BH       8
 #define ENTL_STATE_ERROR    9
 
-#define ENTL_MESSAGE_HELLO  0x0000
-#define ENTL_MESSAGE_EVENT  0x0001
-#define ENTL_MESSAGE_NOP    0x0002
-#define ENTL_MESSAGE_AIT    0x0003
-#define ENTL_MESSAGE_ACK    0x0004
-#define ENTL_MESSAGE_ONLY   0x8000
+// Message sent on the MAC dst addr
+#define ENTL_MESSAGE_HELLO  0x000000000000
+#define ENTL_MESSAGE_EVENT  0x000100000000
+#define ENTL_MESSAGE_NOP    0x000200000000
+#define ENTL_MESSAGE_AIT    0x000300000000
+#define ENTL_MESSAGE_ACK    0x000400000000
+
+#define ENTL_MESSAGE_ONLY     0x800000000000
+#define ENTL_TEST_MASK        0x7f0000000000
+#define ENTL_MESSAGE_MASK     0x00ff00000000
+#define ENTL_COUNTER_MASK     0x0000ffffffff
+
 
 
 /* NBI number to use (0-1) */
@@ -89,7 +95,7 @@ static void show_mailboxes(struct nfp_device *dev, int menum) {
         if (ret)
             printf("error reading Mailbox%d: %s\n", j, strerror(errno));
         else {
-            printf("Mailbox%d = %x\n", j, val);
+            printf("Mailbox%d = %08x\n", j, val);
         }
     }
 
@@ -103,8 +109,9 @@ static int send_back( struct nfp_device *dev ) {
     int i ;
 
     st = entl_next_send( &state, &d_addr, 0 ) ; 
+    d_addr |= ENTL_MESSAGE_ONLY ;
     if( st & ENTL_ACTION_SEND ) {
-        printf( "entl_next_send sending %x %d %d\n", d_addr, state.state.current_state, st) ;
+        printf( "entl_next_send sending %x %d %d %012lx\n", d_addr, state.state.current_state, st, d_addr) ;
         wmem[0] = d_addr >> 40 ;
         wmem[1] = d_addr >> 32 ;
         wmem[2] = d_addr >> 24 ;
@@ -121,6 +128,12 @@ static int send_back( struct nfp_device *dev ) {
         wmem[13] = ETH_P_ECLP ;
         for( i = 14 ; i < 64 ; i++) {
             wmem[i] = i ;
+        }
+        for( i = 0 ; i < 64 ; i++ ) {
+            printf("%02x ", (unsigned char) wmem[i]);
+            if (i % 16 == 15) {
+                printf("\n");
+            }            
         }
         st = nfp_sal_packet_ingress(dev, 0, 0, (void *) wmem, 64, 0);
         step_sim(dev, 300);
