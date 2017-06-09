@@ -1,0 +1,44 @@
+/**
+ * Copyright (C) 2017 Earth Computing, Inc.  All rights reserved.
+ */
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "bp_entry" {
+            "type" : "object", 
+            "properties" : {
+                "bp"                    : { "type" : "number" },
+                "drop_enable"           : { "type" : "boolean" },
+                "ctm_offset"            : { "type" : "number" },
+                "primary_buffer_list"   : { "type" : "number" },
+                "secondary_buffer_list" : { "type" : "number" },
+                "ctm_split_length"      : { "type" : "number" },
+                "bpe_head"              : { "type" : "number" },
+                "bpe_chain_end"         : { "type" : "number" }
+            },
+
+            "required" : 
+                [ "bp", "drop_enable", "ctm_offset", "primary_buffer_list", 
+                  "secondary_buffer_list", "ctm_split_length", "bpe_head", "bpe_chain_end" ]
+        },
+    }
+    "type" : "object",
+
+    "properties" : {
+        "nfp_nbi_dma_bp_config" : {
+            "type" : "object" {
+                "properties" : {  /* Poorly defined by Netronome person, not knowing schema concept.. */
+                    "0" : { "$ref" : "#/definitions/bp_entry" }, 
+                    "1" : { "$ref" : "#/definitions/bp_entry" }, 
+                    "2" : { "$ref" : "#/definitions/bp_entry" }, 
+                    "3" : { "$ref" : "#/definitions/bp_entry" }, 
+                    "4" : { "$ref" : "#/definitions/bp_entry" }, 
+                    "5" : { "$ref" : "#/definitions/bp_entry" }, 
+                    "6" : { "$ref" : "#/definitions/bp_entry" }, 
+                    "7" : { "$ref" : "#/definitions/bp_entry" }, 
+                }
+            }
+        }
+    }
+    
+}

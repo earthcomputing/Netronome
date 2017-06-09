@@ -13,7 +13,8 @@
     #endif
 #endif
 
-
+#define generic_ind_t unsigned int
+    
 /** @file nfp_cls.h
  * @addtogroup cls_ring CLS Ring Intrinsics
  * @{

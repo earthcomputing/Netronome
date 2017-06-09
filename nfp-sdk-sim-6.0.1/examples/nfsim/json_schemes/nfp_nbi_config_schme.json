@@ -1,0 +1,133 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "bp_entry" : {
+            "type" : "object", 
+            "properties" : {
+                "bp"                    : { "type" : "number" },
+                "drop_enable"           : { "type" : "boolean" },
+                "ctm_offset"            : { "type" : "number" },
+                "primary_buffer_list"   : { "type" : "number" },
+                "secondary_buffer_list" : { "type" : "number" },
+                "ctm_split_length"      : { "type" : "number" },
+                "bpe_head"              : { "type" : "number" },
+                "bpe_chain_end"         : { "type" : "number" }
+            },
+
+            "required" : 
+                [ "bp", "drop_enable", "ctm_offset", "primary_buffer_list", 
+                  "secondary_buffer_list", "ctm_split_length", "bpe_head", "bpe_chain_end" ]
+        },
+        "bpe_entry" : {
+            "type" : "object", 
+            "properties" : {
+                "bpe"                   : { "type" : "number" },
+                "ctm_target"            : { "type" : "number" },
+                "packet_credits"        : { "type" : "number" },
+                "buffer_credits"        : { "type" : "number" }
+            }, 
+            "required" : [
+                "bpe", "ctm_target", "packet_credits", "buffer_credits"
+            ]
+        },
+        "mu_entry" : {
+            "type" : "object",
+            "properties" : {
+                "blq"                   : { "type" : "number" },
+                "use_murtsym"           : { "type" : "boolean" },
+                "mu_addr"               : { "type" : "string" },
+                "buffer_cnt"            : { "type" : "number" },
+                "buffer_ratio"          : { "type" : "number" },
+                "base_offset"           : { "type" : "number" }
+            }, 
+            "required" : [
+                "blq", "use_murtsym", "mu_addr", "buffer_cnt", "buffer_ratio", "base_offset"
+            ]
+        }
+
+    },
+
+    "type" : "object",
+    "properties" : {
+        "nfp_nbi_dma_nbi_dma_config" :
+        {
+            "type" : "object",
+            "properties" : {
+                "ctm_poll_search_enable"    : { "type" : "boolean" },
+                "rate_limit_enable"         : { "type" : "boolean" },
+                "ctm_poll_interval"         : { "type" : "number" },
+                "ctm_poll_enable"           : { "type" : "boolean" },
+                "nbi_number"                : { "type" : "number" },
+                "dis_rx_blq_wr_in_err"      : { "type" : "boolean" },
+                "dis_rx_alloc_in_err"       : { "type" : "boolean" },
+                "dis_rx_push_last_err"      : { "type" : "boolean" },
+                "dis_buf_rd_err"            : { "type" : "boolean" },
+                "dis_bd_ram_err"            : { "type" : "boolean" },
+                "dis_ds_ram_err"            : { "type" : "boolean" },
+                "dis_bc_ram_err"            : { "type" : "boolean" },
+                "dis_push_bus_select"       : { "type" : "number" }
+            },
+            "required" : [
+                "ctm_poll_search_enable",
+                "rate_limit_enable",
+                "ctm_poll_interval",
+                "ctm_poll_enable",
+                "nbi_number",
+                "dis_rx_blq_wr_in_err",
+                "dis_rx_alloc_in_err",
+                "dis_rx_push_last_err",
+                "dis_buf_rd_err",
+                "dis_bd_ram_err",
+                "dis_ds_ram_err",
+                "dis_bc_ram_err",
+                "dis_push_bus_select"
+            ]
+        },
+
+        "nfp_nbi_dma_bp_config" : {
+            "type" : "object",
+            "properties" : {  
+                "0" : { "$ref" : "#/definitions/bp_entry" }, 
+                "1" : { "$ref" : "#/definitions/bp_entry" }, 
+                "2" : { "$ref" : "#/definitions/bp_entry" }, 
+                "3" : { "$ref" : "#/definitions/bp_entry" }, 
+                "4" : { "$ref" : "#/definitions/bp_entry" }, 
+                "5" : { "$ref" : "#/definitions/bp_entry" }, 
+                "6" : { "$ref" : "#/definitions/bp_entry" }, 
+                "7" : { "$ref" : "#/definitions/bp_entry" }
+            }
+        }, 
+
+        "nfp_nbi_dma_bpe_config":
+        {
+            "type" : "object",
+            "properties" : {
+                "0": { "$ref" : "#/definitions/bpe_entry" },
+                "1": { "$ref" : "#/definitions/bpe_entry" },
+                "2": { "$ref" : "#/definitions/bpe_entry" },
+                "3": { "$ref" : "#/definitions/bpe_entry" },
+                "4": { "$ref" : "#/definitions/bpe_entry" },
+                "5": { "$ref" : "#/definitions/bpe_entry" },
+                "6": { "$ref" : "#/definitions/bpe_entry" },
+                "7": { "$ref" : "#/definitions/bpe_entry" }
+            }
+        },
+
+        "nfp_nbi_dma_mu_config":
+        {
+            "type" : "object",
+            "properties" : {
+                "0": { "$ref" : "#/definitions/mu_entry" },
+                "1": { "$ref" : "#/definitions/mu_entry" },
+                "2": { "$ref" : "#/definitions/mu_entry" },
+                "3": { "$ref" : "#/definitions/mu_entry" },
+                "4": { "$ref" : "#/definitions/mu_entry" },
+                "5": { "$ref" : "#/definitions/mu_entry" },
+                "6": { "$ref" : "#/definitions/mu_entry" },
+                "7": { "$ref" : "#/definitions/mu_entry" }
+            }
+        }
+
+    } 
+    
+}
