@@ -40,6 +40,7 @@
 
 void entl_state_init( __lmem entl_state_machine_t *mcn ) 
 {
+    int i ;
     mcn->error_flag = 0 ;
     mcn->p_error_flag = 0 ;
     mcn->error_count = 0 ;
@@ -48,6 +49,10 @@ void entl_state_init( __lmem entl_state_machine_t *mcn )
     mcn->state.event_i_sent = 0 ;
     mcn->state.event_send_next = 0 ;
     mcn->state.current_state = 0 ;
+    for( i = 0 ; i < 32 ; i++) mcn->ao.reg[i] = 0 ;
+    mcn->result_buffer = 0 ;
+    mcn->flags = 0 ;
+
     entl_set_random_addr(mcn) ;
 }
 
@@ -64,7 +69,7 @@ static uint32_t l_rand()
 void entl_set_random_addr( __lmem entl_state_machine_t *mcn ) 
 {
     // uint64_t  addr = l_rand() ;
-    mcn->my_addr = 0xbadbeef ; //((addr << 32 ) | l_rand()) & 0xffffffffffff ;
+    mcn->my_value = 0xbadbeef ; //((addr << 32 ) | l_rand()) & 0xffffffffffff ;
 }
 
 static void set_error(__lmem entl_state_machine_t *mcn, int flag )
@@ -226,7 +231,7 @@ int entl_received( __lmem entl_state_machine_t *mcn, uint64_t s_addr, uint64_t d
                 if( mcn->state.event_i_know + 2 == (d_addr & ENTL_COUNTER_MASK) ) {
                     mcn->state.event_i_know = (d_addr & ENTL_COUNTER_MASK) ;
                     mcn->state.event_send_next = (d_addr & ENTL_COUNTER_MASK) + 1 ;
-                    mcn->state.current_state = ENTL_STATE_AH ;
+                    mcn->state.current_state = ENTL_STATE_SB ;
                     if( is_ENTT_queue_full( ait_receive ) ) {
                         //ENTL_DEBUG( "%s AIT message %d received on Receive with queue full -> Ah @ %ld sec\n", mcn->name, l_daddr, ts.tv_sec ) ;            
                         retval = ENTL_ACTION_PROC_AIT ;
@@ -258,13 +263,13 @@ int entl_received( __lmem entl_state_machine_t *mcn, uint64_t s_addr, uint64_t d
         }
         break ;
         // AIT 
-        case ENTL_STATE_AM:     // AIT message sent, waiting for ack
+        case ENTL_STATE_RA:     // AIT message sent, waiting for ack
         {
             if( (d_addr & ENTL_MESSAGE_MASK) == ENTL_MESSAGE_ACK ) {
                 if( mcn->state.event_i_know + 2 == (d_addr & ENTL_COUNTER_MASK) ) {
                     mcn->state.event_i_know = (d_addr & ENTL_COUNTER_MASK) ;
                     mcn->state.event_send_next = (d_addr & ENTL_COUNTER_MASK) + 1 ;
-                    mcn->state.current_state = ENTL_STATE_BM ;
+                    mcn->state.current_state = ENTL_STATE_SA ;
                     retval = ENTL_ACTION_SEND ;
                     // ENTL_DEBUG( "%s ETL Ack %d received on Am -> Bm @ %ld sec\n", mcn->name, l_daddr, ts.tv_sec ) ;         
                 }
@@ -292,7 +297,7 @@ int entl_received( __lmem entl_state_machine_t *mcn, uint64_t s_addr, uint64_t d
             }
         }
         break ;
-        case ENTL_STATE_BM:  // AIT sent, Ack received, sending Ack
+        case ENTL_STATE_SA:  // AIT sent, Ack received, sending Ack
         {
             if( (d_addr & ENTL_MESSAGE_MASK) == ENTL_MESSAGE_ACK ) {
                 if( mcn->state.event_i_know == (d_addr & ENTL_COUNTER_MASK) )
@@ -312,7 +317,7 @@ int entl_received( __lmem entl_state_machine_t *mcn, uint64_t s_addr, uint64_t d
             }
         }
         break ;
-        case ENTL_STATE_AH:  // AIT message received, sending Ack
+        case ENTL_STATE_SB:  // AIT message received, sending Ack
         {
             if( (d_addr & ENTL_MESSAGE_MASK) == ENTL_MESSAGE_AIT ) {
                 if( (d_addr & ENTL_COUNTER_MASK) == mcn->state.event_i_know ) {
@@ -331,7 +336,7 @@ int entl_received( __lmem entl_state_machine_t *mcn, uint64_t s_addr, uint64_t d
             }
         }
         break ;
-        case ENTL_STATE_BH:  // got AIT, Ack sent, waiting for ack
+        case ENTL_STATE_RB:  // got AIT, Ack sent, waiting for ack
         {
             if( (d_addr & ENTL_MESSAGE_MASK) == ENTL_MESSAGE_ACK ) {
                 if( mcn->state.event_i_know + 2 == (d_addr & ENTL_COUNTER_MASK) ) {
@@ -425,7 +430,7 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint32_t a
             *addr = mcn->state.event_i_sent ;
             // Avoiding to send AIT on the very first loop where other side will be in Hello state
             if( event_i_know && event_i_sent && ait_queue ) {
-                mcn->state.current_state = ENTL_STATE_AM ;          
+                mcn->state.current_state = ENTL_STATE_RA ;          
                 *addr |= ENTL_MESSAGE_AIT ;
                 retval = ENTL_ACTION_SEND | ENTL_ACTION_SEND_AIT  ;
                 //ENTL_DEBUG( "%s ETL AIT Message %d requested on Send state -> Am @ %ld sec\n", mcn->name, *l_addr, ts.tv_sec ) ;            
@@ -445,12 +450,12 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint32_t a
         }
         break ;
         // AIT 
-        case ENTL_STATE_AM:
+        case ENTL_STATE_RA:
         {
             *addr = ENTL_MESSAGE_NOP ;
         }
         break ;
-        case ENTL_STATE_BM:
+        case ENTL_STATE_SA:
         {
             mcn->state.event_i_sent = mcn->state.event_send_next ;
             mcn->state.event_send_next += 2 ;
@@ -460,7 +465,7 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint32_t a
             //ENTL_DEBUG( "%s ETL AIT ACK %d requested on BM state -> Receive @ %ld sec\n", mcn->name, *l_addr, ts.tv_sec ) ;         
         }
         break ;
-        case ENTL_STATE_AH:
+        case ENTL_STATE_SB:
         {
             if( ait_queue == 0 ) {  // ait receive queue is full
                 *addr = ENTL_MESSAGE_NOP ;
@@ -475,7 +480,7 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint32_t a
             }
         }
         break ;
-        case ENTL_STATE_BH:
+        case ENTL_STATE_RB:
         {
             *addr = ENTL_MESSAGE_NOP ;
         }

@@ -37,6 +37,10 @@ modules.builtin
 Module.symvers
 *.dwo
 *.su
+a.out
+
+#gcov
+*.gcda
 
 #
 #Netronome development files

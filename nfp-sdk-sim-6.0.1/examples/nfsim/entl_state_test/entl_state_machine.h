@@ -18,10 +18,6 @@
 //typedef unsigned int            uint32_t;
 //typedef unsigned long long int  uint64_t;
 
-#define __lmem 
-
-#define ENTL_DEBUG(fmt, args...) printf( fmt, ## args )
-
 #else
 
 #include <nfp.h>
@@ -31,16 +27,18 @@
 #endif  // NETRONOME_HOST
 #include <stdint.h>
 
+#include "atomic_link_op.h"
+
 // State definition
 #define ENTL_STATE_IDLE     0
 #define ENTL_STATE_HELLO    1
 #define ENTL_STATE_WAIT     2
 #define ENTL_STATE_SEND     3
 #define ENTL_STATE_RECEIVE  4
-#define ENTL_STATE_AM       5
-#define ENTL_STATE_BM       6
-#define ENTL_STATE_AH       7
-#define ENTL_STATE_BH       8
+#define ENTL_STATE_RA       5
+#define ENTL_STATE_SA       6
+#define ENTL_STATE_SB       7
+#define ENTL_STATE_RB       8
 #define ENTL_STATE_ERROR    9
 
 // return value flag for entl_received
@@ -99,13 +97,21 @@ typedef struct entl_state {
   uint32_t current_state ;			// 0: idle  1: H 2: W 3:S 4:R
 } entl_state_t ;
 
+typedef struct atomic_op_regs {
+  uint64_t reg[32] ;
+} atomic_op_regs_t ;
+
 typedef volatile struct entl_state_machine {
   entl_state_t state ;
   uint32_t error_flag ;				// first error flag 
   uint32_t p_error_flag ;			// when more than 1 error is detected, those error bits or ored to this flag
   uint32_t error_count ;				// Count multiple error, cleared in got_error_state()
   uint32_t state_count ;
-  uint64_t my_addr ;
+  uint32_t my_value ;
+  // Atomic Operation Registers
+  atomic_op_regs_t ao ;
+  uint64_t result_buffer ;
+  uint32_t flags ;
 } entl_state_machine_t ;
 
 void entl_state_init( __lmem entl_state_machine_t *mcn ) ;
@@ -113,7 +119,7 @@ void entl_set_random_addr( __lmem entl_state_machine_t *mcn ) ;
 
 // On Received message, this should be called with the massage (MAC source & destination addr)
 //   return value : bit 0: send, bit 1: send AIT, bit 2: process AIT
-int entl_received( __lmem entl_state_machine_t *mcn, uint64_t s_addr, uint64_t d_addr, uint32_t ait_queue, uint32_t ait_receive ) ;
+int entl_received( __lmem entl_state_machine_t *mcn, uint64_t s_addr, uint64_t d_addr, uint32_t ait_queue, uint32_t ait_command, uint32_t ait_receive, uint32_t egress_queue ) ;
 // On sending ethernet packet, this function should be called to get the destination MAC address for message
 //   return value : bit 0: send, bit 1: send AIT, bit 2: process AIT
 int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint32_t ait_queue ) ; 
