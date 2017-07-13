@@ -21,7 +21,7 @@ __intrinsic int wait_with_timeout( unsigned int cycle ) {
 }
 
 #define RETRY_CYCLE 1000
-#define MY_MAC_ADDR 0xbadbeef
+#define MY_MAC_VALUE 0xbeee
 int
 main(void)
 {
@@ -34,7 +34,7 @@ main(void)
         MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
         entl_state_init( &state ) ;
         //entl_set_random_addr( &state ) ;
-        state.my_addr = MY_MAC_ADDR ; //((addr << 32 ) | l_rand()) & 0xffffffffffff ;
+        state.my_addr = MY_MAC_VALUE ; //((addr << 32 ) | l_rand()) & 0xffffffffffff ;
         state.state.current_state = ENTL_STATE_HELLO ;
         MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
         for (;;) {
@@ -62,7 +62,7 @@ main(void)
         sleep(100) ;
         //mbox2 = state.my_addr ;
         //local_csr_write(local_csr_mailbox2, mbox2 );
-        while( state.my_addr != MY_MAC_ADDR ) {
+        while( state.my_value != MY_MAC_VALUE ) {
             sleep(100) ;            
         }
         mbox2 = state.my_addr ;

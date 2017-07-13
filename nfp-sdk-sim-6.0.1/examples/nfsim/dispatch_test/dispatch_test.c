@@ -56,41 +56,67 @@ main(void)
             //local_csr_write(local_csr_mailbox0, seq_num++); 
         }
         local_csr_write(local_csr_mailbox0, seq_num++); 
-
-        cls_ring_workq_add_thread_ptr32(&pkt_in, PACKET_RING_NUM, 4, ctx_swap, &sig ) ;
+        //cls_ring_workq_add_thread_ptr32(&pkt_in, PACKET_RING_NUM, 4, ctx_swap, &sig ) ;
+        cls_ring_workq_add_thread_ptr40(&pkt_in, PACKET_RING_NUM, 4, 32, ctx_swap, &sig ) ;
         local_csr_write(local_csr_mailbox0, seq_num++);   
         pkt_in_reg = pkt_in ;
         //pkt_in_reg.__raw[0] = pkt_in.__raw[0] ;
 
-        local_csr_write(local_csr_mailbox1, pkt_in_reg.__raw[0]);    
-        local_csr_write(local_csr_mailbox2, pkt_in_reg.__raw[1]); 
+        local_csr_write(local_csr_mailbox1, pkt_in_reg.__raw[2]);    
+        local_csr_write(local_csr_mailbox2, pkt_in_reg.__raw[3]); 
 
-        while(1) {
+        for(;;) {
+            sleep(800) ;
+            local_csr_write(local_csr_mailbox0, seq_num++); 
             cls_read_ring_ptr( &ring_ptr, PACKET_RING_NUM ) ;
             local_csr_write(local_csr_mailbox3, ring_ptr);      
-            sleep(50) ;
+            cls_ring_workq_add_thread_ptr40(&pkt_in, PACKET_RING_NUM, 4, 32, ctx_swap, &sig ) ;
+            //cls_ring_workq_add_thread_ptr32(&pkt_in, PACKET_RING_NUM, 4, ctx_swap, &sig ) ;
+            local_csr_write(local_csr_mailbox0, seq_num++);   
+            pkt_in_reg = pkt_in ;
+            //pkt_in_reg.__raw[0] = pkt_in.__raw[0] ;
+            local_csr_write(local_csr_mailbox1, pkt_in_reg.__raw[2]);    
+            local_csr_write(local_csr_mailbox2, pkt_in_reg.__raw[3]);            
         }
+
 
     }
     else 
     {
         SIGNAL sig;
         unsigned int ctx = __ctx() ;
-        unsigned int dly = INITIAL_DELAY + (100 * ctx) + ((ctx>3)?MIDDLE_DELAY:0); // Half will get the work immediately
+        unsigned int dly = INITIAL_DELAY + (100 * ctx) + ((ctx>2)?MIDDLE_DELAY:0); // Half will get the work immediately
         unsigned int seq_num = 0x1000 * ctx ;
         __xread packet_data_t pkt_in;
         __gpr packet_data_t pkt_in_reg ;
+        __xread unsigned int ring_ptr ;
 
         sleep(dly) ;
         local_csr_write(local_csr_mailbox0, seq_num++); 
-        cls_ring_workq_add_thread_ptr32(&pkt_in, PACKET_RING_NUM, 4, ctx_swap, &sig ) ;
+        cls_read_ring_ptr( &ring_ptr, PACKET_RING_NUM ) ;
+        local_csr_write(local_csr_mailbox3, ring_ptr);      
+        cls_ring_workq_add_thread_ptr40(&pkt_in, PACKET_RING_NUM, 4, 32, ctx_swap, &sig ) ;
+        //cls_ring_workq_add_thread_ptr32(&pkt_in, PACKET_RING_NUM, 4, ctx_swap, &sig ) ;
         local_csr_write(local_csr_mailbox0, seq_num++);   
         pkt_in_reg = pkt_in ;
         //pkt_in_reg.__raw[0] = pkt_in.__raw[0] ;
-        local_csr_write(local_csr_mailbox1, pkt_in_reg.__raw[0]);    
-        local_csr_write(local_csr_mailbox2, pkt_in_reg.__raw[1]);    
+        local_csr_write(local_csr_mailbox1, pkt_in_reg.__raw[2]);    
+        local_csr_write(local_csr_mailbox2, pkt_in_reg.__raw[3]);    
         //local_csr_write(local_csr_mailbox3, pkt_in_reg.__raw[2]);    
-
+        for(;;) {
+            sleep(800) ;
+            local_csr_write(local_csr_mailbox0, seq_num++); 
+            cls_read_ring_ptr( &ring_ptr, PACKET_RING_NUM ) ;
+            local_csr_write(local_csr_mailbox3, ring_ptr);      
+            cls_ring_workq_add_thread_ptr40(&pkt_in, PACKET_RING_NUM, 4, 32, ctx_swap, &sig ) ;
+            //cls_ring_workq_add_thread_ptr32(&pkt_in, PACKET_RING_NUM, 4, ctx_swap, &sig ) ;
+            local_csr_write(local_csr_mailbox0, seq_num++);   
+            pkt_in_reg = pkt_in ;
+            //pkt_in_reg.__raw[0] = pkt_in.__raw[0] ;
+            local_csr_write(local_csr_mailbox1, pkt_in_reg.__raw[2]);    
+            local_csr_write(local_csr_mailbox2, pkt_in_reg.__raw[3]);            
+        }
+ 
         sleep(29900) ;
 
     }

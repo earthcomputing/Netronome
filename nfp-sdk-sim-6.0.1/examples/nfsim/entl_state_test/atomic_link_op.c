@@ -34,7 +34,7 @@
 
 #include "atomic_link_op.h"
 
-void alo_regs_init( __lmem alo_regs_t *alr ) 
+void alo_regs_init( __lmem volatile alo_regs_t *alr ) 
 {
     int i ;
     for( i = 0 ; i < 32 ; i++) alr->reg[i] = 0 ;
@@ -44,7 +44,7 @@ void alo_regs_init( __lmem alo_regs_t *alr )
 }
 
 // Initiate Atomic Link Operation at source
-uint32_t alo_initiate( __lmem alo_regs_t *alr, uint16_t opcode, uint16_t sr, uint64_t *s_value ) 
+uint32_t alo_initiate( __lmem volatile alo_regs_t *alr, uint16_t opcode, uint16_t sr, uint64_t *s_value ) 
 {
     uint16_t type = ALO_TYPE(opcode) ;
     uint32_t retval = ALO_RESULT_ALO_FAIL ;
@@ -187,7 +187,7 @@ uint32_t alo_initiate( __lmem alo_regs_t *alr, uint16_t opcode, uint16_t sr, uin
 
 }
 
-int alo_complete( __lmem alo_regs_t *alr, uint16_t status, uint64_t r_value ){
+int alo_complete( __lmem volatile alo_regs_t *alr, uint16_t status, uint64_t r_value ){
 	if( alr->state && (status & 1) ) {
 		uint16_t sr = alr->state & 0x1f ;
         alr->flags |= 1 ;
@@ -213,10 +213,11 @@ int alo_complete( __lmem alo_regs_t *alr, uint16_t status, uint64_t r_value ){
 }
  
 // Execute Atomic Link Operation 
-uint32_t alo_exec( __lmem alo_regs_t *alr, uint16_t opcode, uint16_t dt, uint64_t s_value, uint64_t *r_value) 
+uint32_t alo_exec( __lmem volatile alo_regs_t *alr, uint16_t opcode, uint16_t dt, uint64_t s_value ) 
 {
     uint16_t type = ALO_TYPE(opcode) ;
     uint32_t retval = ALO_RESULT_ALO_FAIL ;
+    alr->return_flag = 0x0000 ;
     if( type == 0 ) {  // no field ops
     	switch(opcode) {
     		case ALO_NOP:
@@ -224,62 +225,74 @@ uint32_t alo_exec( __lmem alo_regs_t *alr, uint16_t opcode, uint16_t dt, uint64_
     			alr->state = 0 ; // no pending operation
     			break ;
     		case ALO_ADD:
-    			alr->result_buffer = *r_value = s_value + alr->reg[dt] ;
+    			alr->result_buffer = alr->return_value = s_value + alr->reg[dt] ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;
     			break ;
     		case ALO_SUBS:
-    			alr->result_buffer = *r_value = alr->reg[dt] - s_value ;
+    			alr->result_buffer = alr->return_value = alr->reg[dt] - s_value ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;
     			break ;
     		case ALO_SUBD:
-    			alr->result_buffer = *r_value = s_value - alr->reg[dt] ;
+    			alr->result_buffer = alr->return_value = s_value - alr->reg[dt] ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;
     			break ;
     		case ALO_AND:
-    			alr->result_buffer = *r_value = s_value & alr->reg[dt] ;
+    			alr->result_buffer = alr->return_value = s_value & alr->reg[dt] ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;
     			break ;
     		case ALO_OR:
-    			alr->result_buffer = *r_value = s_value | alr->reg[dt] ;
+    			alr->result_buffer = alr->return_value = s_value | alr->reg[dt] ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;    		
     			break ;
     		case ALO_INC:
-    			alr->result_buffer = *r_value = alr->reg[dt] + 1 ;
+    			alr->result_buffer = alr->return_value = alr->reg[dt] + 1 ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;    		
     			break ;
     		case ALO_DEC:
-    			alr->result_buffer = *r_value = alr->reg[dt] - 1 ;
+    			alr->result_buffer = alr->return_value = alr->reg[dt] - 1 ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;    		
     			break ;
     		case ALO_INCS:
-    			alr->result_buffer = *r_value = s_value ; // already incremented at source
+    			alr->result_buffer = alr->return_value = s_value ; // already incremented at source
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;    		
     			break ;
     		case ALO_INCD:
-    			alr->result_buffer = *r_value = alr->reg[dt] + 1 ;
+    			alr->result_buffer = alr->return_value = alr->reg[dt] + 1 ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;    		
     			break ;
     		case ALO_DECS:
-    			alr->result_buffer = *r_value = s_value ; // already decremented at source
+    			alr->result_buffer = alr->return_value = s_value ; // already decremented at source
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;    		
     			break ;
     		case ALO_DECD:
-    			alr->result_buffer = *r_value = alr->reg[dt] -1 ;
+    			alr->result_buffer = alr->return_value = alr->reg[dt] -1 ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;    		
     			break ;
     		default:
     			alr->state = 0 ;
+                alr->return_flag = 0x0000 ;
     			retval = ALO_RESULT_ALO_FAIL ;
     			break ;
     	}
@@ -310,6 +323,7 @@ uint32_t alo_exec( __lmem alo_regs_t *alr, uint16_t opcode, uint16_t dt, uint64_
     	}
     	if( res == 0 ) {
     		alr->state = 0 ;
+            alr->return_flag = 0x0000 ;
     		retval = ALO_RESULT_ALO_FAIL ;
     		return retval ;
     	}
@@ -317,17 +331,20 @@ uint32_t alo_exec( __lmem alo_regs_t *alr, uint16_t opcode, uint16_t dt, uint64_
         retval = ALO_RESULT_ALO_SUCCESS ;
     	switch(opcode & ALO_COND_OP_MASK) {
     		case ALO_RD:
-    			*r_value = alr->reg[dt] ;
+    			alr->return_value = alr->reg[dt] ;
+                alr->return_flag = 0x0001 ;
     			alr->state = 0 ;
     			break ;
     		case ALO_WR:
-    			alr->result_buffer = s_value ;
+    			alr->result_buffer = alr->return_value = s_value ;
+                alr->return_flag = 0x0001 ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
     			retval = ALO_RESULT_ALO_SUCCESS ;    		
     			break ;
     		case ALO_SWAP:
-    			*r_value = alr->reg[dt] ;
+    			alr->return_value = alr->reg[dt] ;
     			alr->result_buffer = s_value ;
+                alr->return_flag = 0x0001 ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
     			retval = ALO_RESULT_ALO_SUCCESS ;    		
     			break ;
@@ -337,42 +354,48 @@ uint32_t alo_exec( __lmem alo_regs_t *alr, uint16_t opcode, uint16_t dt, uint64_
     	uint16_t bit = opcode & ALO_BIT_MASK ;
         switch(opcode & ALO_COND_OP_MASK) {
     		case ALO_BSET:
-    			*r_value = s_value ;
+    			alr->return_value = s_value ;
     			alr->result_buffer = alr->reg[dt] | ((uint64_t)1 << bit) ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;    		
     			break ;
      		case ALO_BRESET:
-    			*r_value = s_value ;
+    			alr->return_value = s_value ;
                 if( alr->reg[dt] & ((uint64_t)1 << bit) )
     			     alr->result_buffer = alr->reg[dt] ^ ((uint64_t)1 << bit) ;
                 else alr->result_buffer = alr->reg[dt] ;
     			alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                alr->return_flag = 0x0001 ;
     			retval = ALO_RESULT_ALO_SUCCESS ;    		
     			break ;
     		case ALO_BTESTSET:
-    			*r_value = s_value ;
+    			alr->return_value = s_value ;
     			if( (alr->reg[dt] & ((uint64_t)1 << bit)) == 0 ) {
                     //printf( "yes %lx %lx %lx\n", alr->reg[dt], ((uint64_t)1 << bit), alr->reg[dt] & ((uint64_t)1 << bit)) ;
     				alr->result_buffer = alr->reg[dt] | ((uint64_t)1 << bit) ;
     				alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                    alr->return_flag = 0x0001 ;
     				retval = ALO_RESULT_ALO_SUCCESS ;    		
     			}
     			else {
                     //printf( "no %lx %lx %lx\n", alr->reg[dt], ((uint64_t)1 << bit), alr->reg[dt] & ((uint64_t)1 << bit)) ;
     				alr->state = 0 ;
+                    alr->return_flag = 0x0000 ;
     				retval = ALO_RESULT_ALO_FAIL ;
     			}
     			break ;
     		case ALO_BTESTRESET:
-    			*r_value = s_value ;
+    			alr->return_value = s_value ;
     			if( (alr->reg[dt] & ((uint64_t)1 << bit)) != 0 ) {
     				alr->result_buffer = alr->reg[dt] ^ ((uint64_t)1 << bit) ;
     				alr->state = 0x80000000 | dt ; // set valid flag & keep update destination
+                    alr->return_flag = 0x0001 ;
     				retval = ALO_RESULT_ALO_SUCCESS ;    		
     			}
     			else {
     				alr->state = 0 ;
+                    alr->return_flag = 0x0000 ;
     				retval = ALO_RESULT_ALO_FAIL ;
     			}
     			break ;
@@ -381,12 +404,19 @@ uint32_t alo_exec( __lmem alo_regs_t *alr, uint16_t opcode, uint16_t dt, uint64_
     else {
     	// unsupported opcode
     	alr->state = 0 ;
+        alr->return_flag = 0x0000 ;
     	retval = ALO_RESULT_ALO_FAIL ;
     }
     return retval ;
 }
 
-int alo_update( __lmem alo_regs_t *alr, uint16_t status ){
+int alo_state(__lmem volatile alo_regs_t *alr ) 
+{
+    if( alr->state ) return 1 ;
+    return 0 ;
+}
+
+int alo_update( __lmem volatile alo_regs_t *alr, uint16_t status ){
 	if( alr->state && (status & 1) ) {
 		uint16_t dt = alr->state & 0x1f ;
 		alr->reg[dt] = alr->result_buffer ;

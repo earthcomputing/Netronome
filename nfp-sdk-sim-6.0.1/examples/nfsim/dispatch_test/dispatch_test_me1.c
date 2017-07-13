@@ -23,7 +23,7 @@
 
 __import __shared __cls __align(PACKET_RING_SIZE_LW*sizeof(packet_data_t)) char packet_ring_mem[PACKET_RING_SIZE_LW*sizeof(packet_data_t)] ;
 
-#define RING_OFFSET 0x9000
+#define RING_OFFSET 0x90000
 
 //  #define INITIAL_DELAY 900
 
@@ -39,11 +39,11 @@ main(void)
         __xwrite packet_data_t pkt_out;
         __gpr packet_data_t pkt_out_reg ;
         unsigned int dly = INITIAL_DELAY + (100 * ctx) ; // reprder the sequence
-        unsigned int sequence = RING_OFFSET + (ctx)  ;
+        unsigned int sequence = RING_OFFSET + seq_num  ;
         pkt_out_reg.__raw[0] = sequence ;
-        pkt_out_reg.__raw[1] = 0 ;
-        pkt_out_reg.__raw[2] = 0 ;
-        pkt_out_reg.__raw[3] = 0 ;
+        pkt_out_reg.__raw[1] = sequence + 1 ;
+        pkt_out_reg.__raw[2] = sequence + 2 ;
+        pkt_out_reg.__raw[3] = sequence + 3 ;
         pkt_out = pkt_out_reg ;
         sleep(dly) ;
         local_csr_write(local_csr_mailbox0, seq_num++); 
@@ -54,8 +54,20 @@ main(void)
         local_csr_write(local_csr_mailbox1, pkt_out_reg.__raw[0]);    
         local_csr_write(local_csr_mailbox2, pkt_out_reg.__raw[1]);    
         local_csr_write(local_csr_mailbox3, pkt_out_reg.__raw[2]);    
-        sleep(100000) ;
-
+        for(;;) {
+            sleep(800) ;
+            // second try
+            local_csr_write(local_csr_mailbox0, seq_num++); 
+            cls_ring_workq_add_work_ptr40(&pkt_out, PACKET_RING_NUM, 4, 32, ctx_swap, &sig ) ;
+            local_csr_write(local_csr_mailbox0, seq_num++);   
+            pkt_out = pkt_out_reg ;
+            //pkt_in_reg.__raw[0] = pkt_in.__raw[0] ;
+            local_csr_write(local_csr_mailbox1, pkt_out_reg.__raw[0]);    
+            local_csr_write(local_csr_mailbox2, pkt_out_reg.__raw[1]);    
+            local_csr_write(local_csr_mailbox3, pkt_out_reg.__raw[2]);                        
+        }
+ 
+        sleep(10000) ;
     }
     
     return 0;

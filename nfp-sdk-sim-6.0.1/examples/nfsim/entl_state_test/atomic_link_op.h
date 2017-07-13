@@ -76,27 +76,30 @@ extern "C" {
 typedef struct alo_regs {
   uint64_t reg[32] ;
   uint64_t result_buffer ;
+  uint64_t return_value ;  // keep the result value of alo_exec to simplify data transfer
+  uint32_t return_flag ;
   uint32_t flags ;
   uint32_t state ;
 } alo_regs_t ;
 
 
-void alo_regs_init( __lmem alo_regs_t *alr ) ;
+void alo_regs_init( __lmem volatile alo_regs_t *alr ) ;
 
 // result of alo_exec flags
 #define ALO_RESULT_ALO_SUCCESS  0x0001
 #define ALO_RESULT_ALO_FAIL     0x0000
 
 // Initiate Atomic Link Operation at source
-uint32_t alo_initiate( __lmem alo_regs_t *alr, uint16_t opcode, uint16_t sr, uint64_t *s_value ) ;
+uint32_t alo_initiate( __lmem volatile alo_regs_t *alr, uint16_t opcode, uint16_t sr, uint64_t *s_value ) ;
 
-int alo_complete( __lmem alo_regs_t *alr, uint16_t status, uint64_t r_value ) ;
+int alo_complete( __lmem volatile alo_regs_t *alr, uint16_t status, uint64_t r_value ) ;
 
 // Execute Atomic Link Operation at destination 
-uint32_t alo_exec( __lmem alo_regs_t *alr, uint16_t opcode, uint16_t dt, uint64_t s_value, uint64_t *d_value ) ;
+uint32_t alo_exec( __lmem volatile alo_regs_t *alr, uint16_t opcode, uint16_t dt, uint64_t s_value ) ;
 
+int alo_state(__lmem volatile alo_regs_t *alr ) ;
 
-int alo_update( __lmem alo_regs_t *alr, uint16_t status ) ; 
+int alo_update( __lmem volatile alo_regs_t *alr, uint16_t status ) ; 
 
 #ifdef __cplusplus 
 }

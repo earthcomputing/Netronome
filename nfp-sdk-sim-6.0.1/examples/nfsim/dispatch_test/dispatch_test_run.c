@@ -99,9 +99,9 @@ int main(int argc, char **argv)
         step_sim(dev, 50);
         show_mailboxes(dev, menum);
         show_mailboxes(dev, menum1);
-        if( p_mbox3 != mbox3 ) {
-            read_imem( dev ) ;
-        }
+        //if( p_mbox3 != mbox3 ) {
+        //    read_imem( dev ) ;
+        //}
     }
     printf("Read mailbox after\n");
     show_mailboxes(dev, menum);

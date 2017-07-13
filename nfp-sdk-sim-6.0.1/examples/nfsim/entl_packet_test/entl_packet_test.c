@@ -10,8 +10,8 @@
 
 #define ETH_P_ECLP  0xEAC0    /* Earth Computing Link Protocol [ NOT AN OFFICIALLY REGISTERED ID ] */
 
-#define ENTL_STATE_HELLO    1
-#define ENTL_MESSAGE_ONLY     0x800000000000
+//#define ENTL_STATE_HELLO    1
+//#define ENTL_MESSAGE_ONLY     0x800000000000
 
 #define BACKOFF_SLEEP           256
 
@@ -40,6 +40,7 @@ struct pkt_hdr {
         uint16_t dummy;
     };
     struct eth_hdr pkt;
+    uint64_t data ;
 };
 
 struct pkt_rxed {
@@ -48,14 +49,16 @@ struct pkt_rxed {
 };
 
 #define CTM_ALLOC_ERR 0xffffffff
-#define MY_MAC_ADDR 0xbadbeef
+#define MY_VALUE 0xbeef
 #define RETRY_CYCLE 1000
 
 volatile uint32_t  ctm_pkt_num ;
 
-__shared uint64_t  keep_pkt_num ;
+__shared volatile uint64_t  keep_pkt_num ;
+//__shared uint32_t alo_command ;
+//__shared int  next_flag ;
 
-__shared __lmem entl_state_machine_t state;
+__shared __lmem volatile entl_state_machine_t state;
 MUTEXLV state_lock = 0;
 #define STATE_LOCK_BIT 0
 
@@ -63,7 +66,7 @@ SIGNAL entl_send_sig;
 
 #define MAX_CREDITS         255
 
-__export __shared __cls struct ctm_pkt_credits ctm_credits =
+__export __shared __cls volatile struct ctm_pkt_credits ctm_credits =
     {MAX_CREDITS, MAX_CREDITS};
 
 __intrinsic int wait_with_timeout( unsigned int cycle ) {
@@ -115,7 +118,7 @@ __my_pkt_msd_write(__addr40 void *pbuf, unsigned char off,
                       size, sync, sig);
     }
     //mbox2 = msi.off_enc << 16 | msi.len_adj ;
-    local_csr_write(local_csr_mailbox2, mbox2);
+    //local_csr_write(local_csr_mailbox2, mbox2);
 
     /* Set the length adjustment to point to the start of packet. */
     msi.len_adj = off;
@@ -153,6 +156,8 @@ int receive_packet( struct pkt_rxed *pkt_rxed, size_t size )
     uint8_t *wmem ;
     int64_t s_addr ;
     int64_t d_addr ;
+    int64_t data ;
+    int64_t d_value ;
     int ret ;
     unsigned int mbox0, mbox1, mbox2, mbox3 ;
 
@@ -169,18 +174,32 @@ int receive_packet( struct pkt_rxed *pkt_rxed, size_t size )
     wmem = &pkt_rxed->pkt_hdr.pkt ;
     d_addr = (uint64_t)wmem[0]<<40 | (uint64_t)wmem[1]<<32 | (uint64_t)wmem[2]<<24 | (uint64_t)wmem[3]<<16 | (uint64_t)wmem[4]<<8 | (uint64_t)wmem[5] ; 
     s_addr = (uint64_t)wmem[6]<<40 | (uint64_t)wmem[7]<<32 | (uint64_t)wmem[8]<<24 | (uint64_t)wmem[9]<<16 | (uint64_t)wmem[10]<<8 | (uint64_t)wmem[11] ; 
-    mbox0 = d_addr >> 32 ;
-    mbox1 = d_addr ;
-    mbox2 = s_addr >> 32 ;
-    mbox3 = s_addr ;
+    wmem = &pkt_rxed->pkt_hdr.data ;
+    data = (uint64_t)wmem[0]<<56 | (uint64_t)wmem[1]<<48 | (uint64_t)wmem[2]<<40 | (uint64_t)wmem[3]<<32 | (uint64_t)wmem[4]<<24 | (uint64_t)wmem[5]<<16 |  (uint64_t)wmem[6]<<8 |(uint64_t)wmem[7] ; 
+#ifdef ENTL_STATE_DEBUG
+    state.r_addr = d_addr ;
+    state.r_data = data ;
+#endif
+    //data = (uint64_t)wmem[14]<<56 | (uint64_t)wmem[15]<<48 | (uint64_t)wmem[16]<<40 | (uint64_t)wmem[17]<<32 | (uint64_t)wmem[18]<<24 | (uint64_t)wmem[19]<<16 | (uint64_t)wmem[20]<<8 | (uint64_t)wmem[21] ; 
+    //alo_command = ALO_OPCODE(d_addr) ; // keep it for nex_to_send
+    //mbox0 = d_addr >> 32 ;
+    //mbox1 = d_addr ;
+    //mbox2 = data >> 32 ;
+    //mbox3 = data ;
+    mbox0 = data >> 32 ;
+    mbox1 = data ;
     local_csr_write(local_csr_mailbox0, mbox0 );
     local_csr_write(local_csr_mailbox1, mbox1 );
-    local_csr_write(local_csr_mailbox2, mbox2 );
-    local_csr_write(local_csr_mailbox3, mbox3 );
+    //local_csr_write(local_csr_mailbox0, mbox0 );
+    //local_csr_write(local_csr_mailbox1, mbox1 );
+    //local_csr_write(local_csr_mailbox2, mbox2 );
     MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
-    ret = entl_received( &state, s_addr, d_addr, 0, 0 ) ;
+// int entl_received( __lmem entl_state_machine_t *mcn, uint64_t d_addr, uint64_t s_value, uint64_t *d_value, uint32_t ait_queue, uint32_t ait_command, uint32_t egress_queue ) ;
+    ret = entl_received( &state, d_addr, data, 0, 0, 0 ) ;
     MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
-    if( d_addr & ENTL_MESSAGE_ONLY )
+    mbox3 = state.state.current_state ;
+    local_csr_write(local_csr_mailbox3, mbox3 );
+    if( (d_addr & ECLP_FW_MASK) == 0 )
     {
       keep_pkt_num = 0x800000000000 | pnum ;
     }
@@ -190,20 +209,37 @@ int receive_packet( struct pkt_rxed *pkt_rxed, size_t size )
 }
 
 void
-rewrite_packet( __addr40 char *pbuf, uint64_t s_addr, uint64_t d_addr )
+rewrite_packet( __addr40 char *pbuf, uint64_t s_addr, uint64_t d_addr, uint64_t data )
 {
-  SIGNAL sig;
-  __xread uint32_t pkt_buf[4];
-  volatile __declspec(write_reg) uint32_t w_pkt[4] ;
-  uint8_t pkt[16] ;
+  //SIGNAL sig;
+  //__xread uint32_t pkt_buf[6];
+  volatile __declspec(write_reg) uint32_t w_pkt[6] ;
+  uint8_t pkt[22] ;
+  unsigned int mbox0, mbox1, mbox2, mbox3 ;
 
-  mem_read32( &pkt_buf[0], pbuf, 16 ) ;
+  //mem_read32( &pkt_buf[0], pbuf, 24 ) ;
   pkt[0] = d_addr >> 40 ;
   pkt[1] = d_addr >> 32 ;
   pkt[2] = d_addr >> 24 ;
   pkt[3] = d_addr >> 16 ;
   pkt[4] = d_addr >> 8 ;
   pkt[5] = d_addr ;
+
+  mbox2 = d_addr >> 32 ;
+  mbox3 = d_addr ;
+  //mbox0 = data >> 32 ;
+  //mbox1 = data ;
+  //local_csr_write(local_csr_mailbox0, mbox0 );
+  //local_csr_write(local_csr_mailbox1, mbox1 );
+  local_csr_write(local_csr_mailbox2, mbox2 );
+  local_csr_write(local_csr_mailbox3, mbox3 );
+
+#ifdef ENTL_STATE_DEBUG
+  state.addr = d_addr ;
+  state.data = data ;
+#endif
+
+
   pkt[6] = s_addr >> 40 ;
   pkt[7] = s_addr >> 32 ;
   pkt[8] = s_addr >> 24 ;
@@ -212,12 +248,23 @@ rewrite_packet( __addr40 char *pbuf, uint64_t s_addr, uint64_t d_addr )
   pkt[11] = s_addr ;
   pkt[12] = ETH_P_ECLP >> 8 ;
   pkt[13] = ETH_P_ECLP ;
-  w_pkt[0] = pkt[0] << 24 | pkt[1] << 16 | pkt[2] << 8 | pkt[3] ;
-  w_pkt[1] = pkt[4] << 24 | pkt[5] << 16 | pkt[6] << 8 | pkt[7] ;
-  w_pkt[2] = pkt[8] << 24 | pkt[9] << 16 | pkt[10] << 8 | pkt[11] ;
-  w_pkt[3] = pkt[12] << 24 | pkt[13] << 16 | pkt_buf[3] & 0xffff ;
+  pkt[14] = data >> 56 ;
+  pkt[15] = data >> 48 ;
+  pkt[16] = data >> 40 ;
+  pkt[17] = data >> 32 ;
+  pkt[18] = data >> 24 ;
+  pkt[19] = data >> 16 ;
+  pkt[20] = data >> 8 ;
+  pkt[21] = data ;
 
-  mem_write32( (void*)w_pkt, (__addr40 uint8_t *)pbuf , 16 );
+  w_pkt[0] = (uint32_t)pkt[0] << 24 | (uint32_t)pkt[1] << 16 | (uint32_t)pkt[2] << 8 | (uint32_t)pkt[3] ;
+  w_pkt[1] = (uint32_t)pkt[4] << 24 | (uint32_t)pkt[5] << 16 | (uint32_t)pkt[6] << 8 | (uint32_t)pkt[7] ;
+  w_pkt[2] = (uint32_t)pkt[8] << 24 | (uint32_t)pkt[9] << 16 | (uint32_t)pkt[10] << 8 | (uint32_t)pkt[11] ;
+  w_pkt[3] = (uint32_t)pkt[12] << 24 | (uint32_t)pkt[13] << 16 | (uint32_t)pkt[14] << 8 | (uint32_t)pkt[15] ;
+  w_pkt[4] = (uint32_t)pkt[16] << 24 | (uint32_t)pkt[17] << 16 | (uint32_t)pkt[18] << 8 | (uint32_t)pkt[19] ;
+  w_pkt[5] = (uint32_t)pkt[20] << 24 | (uint32_t)pkt[21] << 16 ;
+
+  mem_write32( (void*)w_pkt, (__addr40 uint8_t *)pbuf , 24 );
 
 }
 
@@ -261,13 +308,14 @@ main(void)
         int ret ;
         int64_t s_addr ;
         int64_t d_addr ;
+        int64_t data ;
         unsigned int mbox3, mbox2, mbox1 ;
         __addr40 char *pkt_hdr;    /* The packet in the CTM */
         int pkt_off = PKT_NBI_OFFSET + MAC_PREPEND_BYTES ;
         unsigned int seq_num = 0 ;
         int pnum ;
         local_csr_write(local_csr_mailbox0, 0);
-        state.my_addr = MY_MAC_ADDR ;
+        state.my_value = MY_VALUE ;
         ctm_pkt_num = pkt_ctm_alloc( &ctm_credits, __ISLAND, PKT_CTM_SIZE_256, 1, 0);
         while (ctm_pkt_num == CTM_ALLOC_ERR)
         {
@@ -276,23 +324,26 @@ main(void)
           ctm_pkt_num = pkt_ctm_alloc( &ctm_credits, __ISLAND, PKT_CTM_SIZE_256, 1, 0);
         }
         keep_pkt_num = 0 ; 
+        //next_flag = 0 ;
         MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
         entl_state_init( &state ) ;
+        alo_regs_init( &state.ao ) ;
         //entl_set_random_addr( &state ) ;
-        state.my_addr = MY_MAC_ADDR ; //((addr << 32 ) | l_rand()) & 0xffffffffffff ;
+        state.my_value = MY_VALUE ; //((addr << 32 ) | l_rand()) & 0xffffffffffff ;
         state.state.current_state = ENTL_STATE_HELLO ;
+        data = 0 ;
+        d_addr = 0 ;
         MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
-        mbox3 = state.my_addr ;
         for (;;) {
           int flag ;
           ret = wait_with_timeout(RETRY_CYCLE);
           MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
-          ret = entl_next_send( &state, &d_addr, 0 ) ; 
+//int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *alo_data, uint32_t alo_command, uint32_t ait_queue) ;
+          ret = entl_next_send( &state, &d_addr, &data, 0, 0 ) ; 
           MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
-          local_csr_write(local_csr_mailbox3, mbox3);
+          //local_csr_write(local_csr_mailbox3, mbox3);
           if( ret ) {
-            d_addr |= ENTL_MESSAGE_ONLY ;
-            mbox3 = (d_addr >>16 &0xffff0000) | 0x8000 | state.state.current_state ;
+            //mbox3 = (d_addr >>32) ;
             //local_csr_write(local_csr_mailbox3, mbox3);
             if( keep_pkt_num ) {
               pnum = keep_pkt_num & 0xffffffff ;
@@ -304,8 +355,8 @@ main(void)
               flag = 0 ;
             }
             pkt_hdr  = pkt_ctm_ptr40(__ISLAND, pnum, pkt_off);
-            s_addr = state.my_addr ;
-            rewrite_packet( pkt_hdr, s_addr, d_addr ) ;
+            s_addr = 0 ;
+            rewrite_packet( pkt_hdr, s_addr, d_addr, data ) ;
             send_packet( __ISLAND, pnum, 64 + 4, seq_num++, flag ) ;
             //local_csr_write(local_csr_mailbox2, seq_num );
           }
@@ -319,17 +370,17 @@ main(void)
         int ret ;
         int i = 0 ;
         sleep(100) ;
-        while( state.my_addr != MY_MAC_ADDR ) {
+        while( state.my_value != MY_VALUE ) {
             sleep(100) ;            
         }
-        mbox2 = state.my_addr ;
-        local_csr_write(local_csr_mailbox2, mbox2 );
+        //mbox2 = state.my_value ;
+        //local_csr_write(local_csr_mailbox2, mbox2 );
         sleep(100) ;             
         signal_ctx(0, __signal_number(&entl_send_sig)) ;  // send hello first       
         sleep(100) ;             
         for (;;) {
           ret = receive_packet(&pkt_rxed, sizeof(pkt_rxed));
-          mbox0 = (ret << 16) | 0x8000 | state.state.current_state ;
+          //mbox0 = (ret << 16) | 0x8000 | state.state.current_state ;
           //local_csr_write(local_csr_mailbox0, mbox0 );
           if( ret & ENTL_ACTION_SEND ) {
             //sleep(100) ;

@@ -31,6 +31,7 @@ void dump_regs ( alo_regs_t *eng, char *name ) {
         ENTL_DEBUG( "  reg[%d] : %lx\n", i, eng->reg[i] ) ;
     }
     ENTL_DEBUG( "  result_buffer: %lx flags: %x state: %x \n", eng->result_buffer, eng->flags, eng->state) ;
+    ENTL_DEBUG( "  return_value: %lx return_flag: %x state: %x \n", eng->return_value, eng->return_flag ) ;
 }
 
 void clear_regs( alo_regs_t *eng ) {
@@ -107,10 +108,10 @@ int alo_exec_ops( alo_regs_t *se, alo_regs_t *de, uint16_t sr, uint16_t dt, uint
 
     if( res0 ) {
         d_value = 0xbadbeef ;
-        res1 = alo_exec( de, opcode, dt, s_value, &d_value ) ;
+        res1 = alo_exec( de, opcode, dt, s_value ) ;
         ENTL_DEBUG( "alo_exec dt %lx opcode:%x s_value:%lx d_value:%lx state %x res:%x \n", de->reg[dt], opcode, s_value, d_value, de->state, res1) ;
 
-        res2 = alo_complete( se, res1, d_value ) ;
+        res2 = alo_complete( se, de->return_flag, de->return_value ) ;
         ENTL_DEBUG( "alo_complete sr %lx opcode:%x d_value:%lx flag:%x res:%x \n", se->reg[sr], opcode, d_value, se->flags, res2) ;
 
         ENTL_DEBUG( "before alo_update dt %lx opcode:%x state %x flag:%x res:%x \n", de->reg[dt], opcode, de->state, de->flags, res2) ;

@@ -33,6 +33,7 @@
 #include <stdint.h>
 
 #define PACKET_RING_SIZE_LW 256
+// #define PACKET_RING_SIZE_LW 8
 #define PACKET_RING_NUM 1
 
  

@@ -44,14 +44,19 @@ void entl_state_init( __lmem entl_state_machine_t *mcn )
     mcn->state.event_i_sent = 0 ;
     mcn->state.event_send_next = 0 ;
     mcn->state.current_state = 0 ;
-    entl_set_random_addr(mcn) ;
+    mcn->state_count = 0 ;
+    mcn->error_state.event_i_know = 0 ;
+    mcn->error_state.event_i_sent = 0 ;
+    mcn->error_state.event_send_next = 0 ;
+    mcn->error_state.current_state = 0 ;
+    mcn->my_value = 0 ;
 }
 
-void entl_set_random_addr( __lmem entl_state_machine_t *mcn ) 
-{
-    uint64_t  addr = rand() ;
-    mcn->my_addr = ((addr << 32 ) | rand()) & 0xffffffffffff ;
-}
+//void entl_set_random_addr( __lmem entl_state_machine_t *mcn ) 
+//{
+//    uint64_t  addr = rand() ;
+//    mcn->my_addr = ((addr << 32 ) | rand()) & 0xffffffffffff ;
+//}
 
 // On Received message, this should be called with the massage (MAC source & destination addr)
 //   return value : bit 0: send, bit 1: send AIT, bit 2: process AIT

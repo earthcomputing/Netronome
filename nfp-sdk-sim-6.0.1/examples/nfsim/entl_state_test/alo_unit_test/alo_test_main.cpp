@@ -39,6 +39,7 @@ protected:
     std::string testName ;
 };
 
+
 // Testing NOP instruction
 TEST_F( AloUnitTest, AloNopTest ) {
     int i, result, sr, dt ;
@@ -71,6 +72,7 @@ TEST_F( AloUnitTest, AloAddTest ) {
     }
 
 }
+
 
 // Testing SUBS instruction
 TEST_F( AloUnitTest, AloSubsTest ) {
@@ -157,6 +159,8 @@ TEST_F( AloUnitTest, AloIncTest ) {
 
 }
 
+
+
 // Testing DEC instruction
 TEST_F( AloUnitTest, AloDecTest ) {
     int i, result, sr, dt ;
@@ -173,6 +177,7 @@ TEST_F( AloUnitTest, AloDecTest ) {
     }
 
 }
+
 
 // Testing INC instruction
 TEST_F( AloUnitTest, AloIncsTest ) {
@@ -280,7 +285,7 @@ TEST_F( AloUnitTest, AloRdTest ) {
         rand_regs( &de ) ;
         result = alo_rd_test( &se, &de, sr, dt, ALO_COND_GE) ;
         EXPECT_EQ( result, 1 ) ;
-               /**/
+               
     }
 
 }
@@ -322,7 +327,7 @@ TEST_F( AloUnitTest, AloWrTest ) {
         rand_regs( &de ) ;
         result = alo_wr_test( &se, &de, sr, dt, ALO_COND_GE) ;
         EXPECT_EQ( result, 1 ) ;
-               /**/
+               
     }
 
 }
@@ -364,7 +369,7 @@ TEST_F( AloUnitTest, AloSwapTest ) {
         rand_regs( &de ) ;
         result = alo_swap_test( &se, &de, sr, dt, ALO_COND_GE) ;
         EXPECT_EQ( result, 1 ) ;
-               /**/
+               
     }
 
 }
@@ -445,6 +450,7 @@ TEST_F( AloUnitTest, AloBtestresetTest ) {
     }
 
 }
+
 
 
 GTEST_API_ int main(int argc, char **argv) {
