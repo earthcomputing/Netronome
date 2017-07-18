@@ -57,6 +57,11 @@ struct __attribute__((__packed__)) eth_hdr {
 
 static entl_state_machine_t state ;
 
+
+typedef struct imem_entry {
+    uint32_t __raw[16] ; // 64 byte
+} imem_entry_t;  
+
 void step_sim(struct nfp_device *dev, int steps)
 {
     printf("stepping %d cycles\n", steps);
@@ -79,9 +84,48 @@ static void show_mailboxes(struct nfp_device *dev, int menum) {
 
 }
 
-typedef struct imem_entry {
-    uint32_t __raw[16] ; // 64 byte
-} imem_entry_t;  
+
+
+static void read_imem(struct nfp_device *devint, islnum, void *buffer, unsigned long long length, unsigned long long offset) {
+    int i, j ;
+    //int err ;
+    imem_entry_t *entry ;
+    char *buf = (char *)buffer ;
+    nfp_imem_read(dev, islnum, buffer, length, offset );
+
+    for( i = 0 ; i < length ; i+= 64 ) {
+        entry = &buf[i] ;
+        printf( "%08lx: ", i + offset ) ;
+        for( j = 0 ; j < 16 ; j++ ) {
+            printf( "%08x ", entry.__raw[j]) ;
+            if( j == 7 ) printf( "\n%08lx: ", i + 32 + offset ) ;
+        }
+        printf( "\n" ) ;
+    }
+}
+
+
+static void write_imem(struct nfp_device *dev, int islnum, void *buffer, unsigned long long length, unsigned long long offset ) {
+    int i, j ;
+    //int err ;
+    imem_entry_t entry ;
+
+    // ssize_t nfp_imem_write(struct nfp_device *dev, int islnum, const void *buffer, unsigned long long length, unsigned long long offset);
+
+    // ssize_t nfp_imem_read(struct nfp_device *dev, int islnum, void *buffer, unsigned long long length, unsigned long long offset);
+
+    nfp_imem_write(dev, islnum, buffer, length, offset ) ;
+
+    //for( i = 0 ; i < 4 ; i++ ) {
+    //    nfp_imem_read(dev, 28, (void*)&entry, sizeof(entry), (i * sizeof(entry)) );
+    //    printf( "%08lx: ", (i * sizeof(entry) ) ) ;
+    //    for( j = 0 ; j < 16 ; j++ ) {
+    //        printf( "%08x ", entry.__raw[j]) ;
+    //        if( j == 7 ) printf( "\n%08lx: ", (i * sizeof(entry) ) + 32 ) ;
+    //    }
+    //    printf( "\n" ) ;
+    //}
+}
 
 static void read_lmem(struct nfp_device *dev, int menum) {
     int i, j ;
@@ -314,13 +358,12 @@ void alo_wr_read(struct nfp_device *dev, int menum)
 
 int main(int argc, char **argv)
 {
-    int i, j, k;
+    int i, j;
     //uint32_t val;
     int ret;
     struct nfp_device *dev;
-    int menum, menum1  ;
+    int menum  ;
     menum = NFP6000_MEID(32, 0);
-    menum1 = NFP6000_MEID(32, 1);
 
     entl_state_init( &state ) ;
     alo_regs_init( &state.ao ) ;
@@ -333,17 +376,13 @@ int main(int argc, char **argv)
         fprintf(stderr, "error: nfp_device_open failed\n");
         return -1;
     }
-    j = k = 0 ;
+    j = 0 ;
     for( i = 0; i < 5000 ; i++ ) {
         step_sim(dev, 100);
-        printf( "cycle:%d  k %d\n", i, k++) ;
         read_lmem(dev, menum) ;
-        show_mailboxes(dev, menum);
-        show_mailboxes(dev, menum1);
 
         ret = read_packet(dev, menum) ;
         if( ret ) {
-            k = 0 ;
             if( j++ == 2 ) {
                 alo_wr_read(dev, menum) ;
             }            
@@ -352,6 +391,7 @@ int main(int argc, char **argv)
             }
         }
 
+        show_mailboxes(dev, menum);
     }
  
     printf("Read mailbox after\n");

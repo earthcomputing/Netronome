@@ -26,7 +26,7 @@ LIST=$(PROJECT).list
 ELF=$(PROJECT).fw
 UC_INC=$(NFP_TOOLCHAIN_DIR)/components/standardlibrary/microcode/src/
 UC_DEFS=-DNFP_LIB_ANY_NFAS_VERSION -DENTL_STATE_DEBUG
-UC_FLAGS=-chip nfp-6xxx -DENTL_STATE_DEBUG
+UC_FLAGS=-chip nfp-6xxx
 LDFLAGS=-chip nfp-6xxx
 
 # sim client application
@@ -64,7 +64,6 @@ TO_NET_DIR=$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib
 
 #overwrite from Makefile.nfp.config
 NFCC_BASE_INC := -I. -I../entl_state_test -I$(TO_NET_DIR) -I$(base_dir)/microc/include -I$(base_dir)/microc/lib -I$(base_dir)/microc/lib/nfp  
-#NFCC_FLAGS=-chip nfp-6xxx -DENTL_STATE_DEBUG
 
 
 FW_BUILD     := $(app_src_dir)
@@ -76,28 +75,15 @@ include $(scripts_dir)/Makefile.templates
 # Application definition starts here
 #
 #signal_test_obj.list: signal_test.c
-$(eval $(call micro_c.compile_with_rtl,entl_packet_sender_obj,entl_packet_sender.c,.))
-$(eval $(call micro_c.add_src_lib,entl_packet_sender_obj,entl_state_machine,../entl_state_test))
-$(eval $(call micro_c.add_src_lib,entl_packet_sender_obj,atomic_link_op,../entl_state_test))
-$(eval $(call micro_c.add_src_lib,entl_packet_sender_obj,me,$(base_dir)/microc/lib/nfp/_c))
+$(eval $(call micro_c.compile_with_rtl,entl_packet_test_obj,entl_packet_test.c,.))
+$(eval $(call micro_c.add_src_lib,entl_packet_test_obj,entl_state_machine,../entl_state_test))
+$(eval $(call micro_c.add_src_lib,entl_packet_test_obj,atomic_link_op,../entl_state_test))
+$(eval $(call micro_c.add_src_lib,entl_packet_test_obj,me,$(base_dir)/microc/lib/nfp/_c))
 #$(eval $(call micro_c.add_src_lib,pgen_test_obj,pkt_ops,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/nfp_pif/me/apps/common/src))
-$(eval $(call micro_c.add_src_lib,entl_packet_sender_obj,libpkt,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/pkt))
-$(eval $(call micro_c.add_src_lib,entl_packet_sender_obj,mem_bulk,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c))
-$(eval $(call micro_c.add_src_lib,entl_packet_sender_obj,reg_utils,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/std/_c))
-
-$(eval $(call micro_c.compile_with_rtl,entl_packet_receiver_obj,entl_packet_receiver.c,.))
-$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,entl_reflect,.))
-$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,entl_state_machine,../entl_state_test))
-$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,atomic_link_op,../entl_state_test))
-$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,me,$(base_dir)/microc/lib/nfp/_c))
-#$(eval $(call micro_c.add_src_lib,pgen_test_obj,pkt_ops,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/nfp_pif/me/apps/common/src))
-$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,libpkt,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/pkt))
-$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,mem_bulk,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c))
-$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,reg_utils,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/std/_c))
-
-$(eval $(call fw.add_obj,entl_packet_test,entl_packet_receiver_obj,i32.me1 ))
-$(eval $(call fw.add_obj,entl_packet_test,entl_packet_sender_obj,i32.me0 ))
-
+$(eval $(call micro_c.add_src_lib,entl_packet_test_obj,libpkt,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/pkt))
+$(eval $(call micro_c.add_src_lib,entl_packet_test_obj,mem_bulk,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c))
+$(eval $(call micro_c.add_src_lib,entl_packet_test_obj,reg_utils,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/std/_c))
+$(eval $(call fw.add_obj,entl_packet_test,entl_packet_test_obj,i32.me0 ))
 $(eval $(call fw.link_with_rtsyms,entl_packet_test))
 
 include $(scripts_dir)/Makefile.debug

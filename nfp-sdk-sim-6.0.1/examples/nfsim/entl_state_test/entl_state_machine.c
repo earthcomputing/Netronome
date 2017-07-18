@@ -625,7 +625,10 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
 {
     int retval = ENTL_ACTION_NOP ;
     if( mcn->error_count ) {
-        *addr =  mcn->addr = ENTL_ETYPE_NOP ;
+        *addr = ENTL_ETYPE_NOP ;
+#ifdef ENTL_STATE_DEBUG
+            mcn->addr = *addr ;
+#endif
         //ENTL_DEBUG( "%s entl_next_send called on error count set %d\n", mcn->name, mcn->error_state.error_count ) ;
         return retval ;     
     }
@@ -635,7 +638,10 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
         {
             // say something here as attempt to send something on idle state
             //ENTL_DEBUG( "%s Message requested on Idle state @ %ld sec\n", mcn->name, ts.tv_sec ) ;          
-            *addr = mcn->addr = ENTL_ETYPE_NOP ;
+            *addr = ENTL_ETYPE_NOP ;
+#ifdef ENTL_STATE_DEBUG
+            mcn->addr = *addr ;
+#endif
         }
         break ;
         case ENTL_STATE_HELLO:
@@ -643,7 +649,10 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
 #ifdef NETRONOME_HOST
             ENTL_DEBUG( "%s entl_next_send Hello Message requested on Hello state \n", mcn->name ) ;          
 #endif
-            *addr =  mcn->addr = ENTL_ETYPE_HELLO | mcn->my_value ;
+            *addr =  ENTL_ETYPE_HELLO | mcn->my_value ;
+#ifdef ENTL_STATE_DEBUG
+            mcn->addr = *addr ;
+#endif
             retval = ENTL_ACTION_SEND ;
         }
         break ;
@@ -652,7 +661,10 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
 #ifdef NETRONOME_HOST
             ENTL_DEBUG( "%s entl_next_send ENTL Message requested on Wait state \n", mcn->name ) ;           
 #endif
-            *addr =  mcn->addr = ENTL_ETYPE_ENTL ;   // send message with count 0
+            *addr = ENTL_ETYPE_ENTL ;   // send message with count 0
+#ifdef ENTL_STATE_DEBUG
+            mcn->addr = *addr ;
+#endif
             retval = ENTL_ACTION_SEND ;    // used be done in hello loop in driver, now flag it here
         }
         break ;
@@ -671,7 +683,9 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
                     if( ret ) {
                         mcn->state.current_state = ENTL_STATE_RAL ;          
                         *addr |= ENTL_ETYPE_AITS | SET_ECLP_ALO(alo_command) ;
+#ifdef ENTL_STATE_DEBUG
                         mcn->addr = *addr ;
+#endif
                         if( ALO_COMMAND_FW(alo_command) ) *addr |= ECLP_FW_MASK ;
                         retval = ENTL_ACTION_SEND | ENTL_ACTION_SEND_ALO  ;
 #ifdef NETRONOME_HOST
@@ -681,7 +695,9 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
                     else if( ait_queue ) {
                          mcn->state.current_state = ENTL_STATE_RA ;          
                         *addr |= ENTL_ETYPE_AITS ;
+#ifdef ENTL_STATE_DEBUG
                         mcn->addr = *addr ;
+#endif
                         if( ALO_COMMAND_FW(alo_command) ) *addr |= ECLP_FW_MASK ;
                         retval = ENTL_ACTION_SEND | ENTL_ACTION_SEND_AIT  ;
 #ifdef NETRONOME_HOST
@@ -695,7 +711,9 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
                 else {
                     mcn->state.current_state = ENTL_STATE_RA ;          
                     *addr |= ENTL_ETYPE_AITS ;
-                    mcn->addr = *addr ;
+#ifdef ENTL_STATE_DEBUG
+                        mcn->addr = *addr ;
+#endif
                     retval = ENTL_ACTION_SEND | ENTL_ACTION_SEND_AIT  ;
 #ifdef NETRONOME_HOST
                     ENTL_DEBUG( "%s ETL AIT Message %d requested on Send state -> RA \n", mcn->name, ait_queue ) ;
@@ -708,7 +726,9 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
 #endif
                 mcn->state.current_state = ENTL_STATE_RECEIVE ;         
                 *addr |= ENTL_ETYPE_ENTL ;
+#ifdef ENTL_STATE_DEBUG
                 mcn->addr = *addr ;
+#endif
                 retval = ENTL_ACTION_SEND | ENTL_ACTION_SEND_DAT ;  // data send as optional
             }
             //ENTL_DEBUG( "%s ETL Message %d requested on Send state -> Receive @ %ld sec\n", mcn->name,  ) ;         
@@ -732,7 +752,9 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
             mcn->state.event_i_sent = mcn->state.event_send_next ;
             mcn->state.event_send_next = ECLP_VALUE_PLUS2(mcn->state.event_send_next) ;
             *addr = ENTL_ETYPE_AITA | mcn->state.event_i_sent ;
+#ifdef ENTL_STATE_DEBUG
             mcn->addr = *addr ;
+#endif
             retval = ENTL_ACTION_SEND | ENTL_ACTION_SIG_AIT | ENTL_ACTION_DROP_AIT ;
             mcn->state.current_state = ENTL_STATE_RECEIVE ;
 #ifdef NETRONOME_HOST
@@ -745,7 +767,9 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
             mcn->state.event_i_sent = mcn->state.event_send_next ;
             mcn->state.event_send_next = ECLP_VALUE_PLUS2(mcn->state.event_send_next) ;
             *addr = ENTL_ETYPE_AITA | mcn->state.event_i_sent | 0x10000 ; // T flag set
+#ifdef ENTL_STATE_DEBUG
             mcn->addr = *addr ;
+#endif
             retval = ENTL_ACTION_SEND | ENTL_ACTION_SIG_AIT | ENTL_ACTION_DROP_AIT ;
             mcn->state.current_state = ENTL_STATE_RECEIVE ;
 #ifdef NETRONOME_HOST
@@ -758,7 +782,9 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
             mcn->state.event_i_sent = mcn->state.event_send_next ;
             mcn->state.event_send_next = ECLP_VALUE_PLUS2(mcn->state.event_send_next) ;
             *addr = ENTL_ETYPE_AITR | mcn->state.event_i_sent ;
+#ifdef ENTL_STATE_DEBUG
             mcn->addr = *addr ;
+#endif
             retval = ENTL_ACTION_SEND ;
             mcn->state.current_state = ENTL_STATE_RB ;          
 #ifdef NETRONOME_HOST
@@ -771,7 +797,9 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
             mcn->state.event_i_sent = mcn->state.event_send_next ;
             mcn->state.event_send_next = ECLP_VALUE_PLUS2(mcn->state.event_send_next) ;
             *addr = ENTL_ETYPE_AITR | mcn->state.event_i_sent | ( (uint64_t)mcn->ao.return_flag << 16 ) ; // T flag set
+#ifdef ENTL_STATE_DEBUG
             mcn->addr = *addr ;
+#endif
             *alo_data = mcn->ao.return_value ;
             retval = ENTL_ACTION_SEND | ENTL_ACTION_SEND_ALO ;
             mcn->state.current_state = ENTL_STATE_RBL ;          
@@ -785,13 +813,17 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
         case ENTL_STATE_RBL:
         {
             *addr = ENTL_ETYPE_NOP ;
+#ifdef ENTL_STATE_DEBUG
             mcn->addr = *addr ;
+#endif
         }
         break ;
         default:
         {
             *addr = ENTL_ETYPE_NOP ;
+#ifdef ENTL_STATE_DEBUG
             mcn->addr = *addr ;
+#endif
         }
         break ; 
     }

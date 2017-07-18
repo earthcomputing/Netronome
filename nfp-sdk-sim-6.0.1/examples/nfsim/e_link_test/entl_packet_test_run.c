@@ -314,13 +314,12 @@ void alo_wr_read(struct nfp_device *dev, int menum)
 
 int main(int argc, char **argv)
 {
-    int i, j, k;
+    int i, j;
     //uint32_t val;
     int ret;
     struct nfp_device *dev;
-    int menum, menum1  ;
+    int menum  ;
     menum = NFP6000_MEID(32, 0);
-    menum1 = NFP6000_MEID(32, 1);
 
     entl_state_init( &state ) ;
     alo_regs_init( &state.ao ) ;
@@ -333,17 +332,13 @@ int main(int argc, char **argv)
         fprintf(stderr, "error: nfp_device_open failed\n");
         return -1;
     }
-    j = k = 0 ;
+    j = 0 ;
     for( i = 0; i < 5000 ; i++ ) {
         step_sim(dev, 100);
-        printf( "cycle:%d  k %d\n", i, k++) ;
         read_lmem(dev, menum) ;
-        show_mailboxes(dev, menum);
-        show_mailboxes(dev, menum1);
 
         ret = read_packet(dev, menum) ;
         if( ret ) {
-            k = 0 ;
             if( j++ == 2 ) {
                 alo_wr_read(dev, menum) ;
             }            
@@ -352,6 +347,7 @@ int main(int argc, char **argv)
             }
         }
 
+        show_mailboxes(dev, menum);
     }
  
     printf("Read mailbox after\n");
