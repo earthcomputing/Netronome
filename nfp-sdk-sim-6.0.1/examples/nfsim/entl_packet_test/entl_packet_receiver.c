@@ -329,6 +329,7 @@ main(void)
         entl_data_out.data = 0 ;
         entl_data_out.island = 0 ;
         entl_data_out.pnum = 0 ;
+    if (__ctx() == 0) {
         local_csr_write(local_csr_mailbox0, 1 );
         // initial trigger to send hello  
         entl_reflect( ENTL_SENDER_ME, __xfer_reg_number(&entl_data_in, ENTL_SENDER_ME),
@@ -336,10 +337,11 @@ main(void)
           sizeof(entl_data_out)
         ) ;
         local_csr_write(local_csr_mailbox0, 2 );
+      }
         sleep(100) ;       
         for (;;) {
           ret = receive_packet(&pkt_rxed, sizeof(pkt_rxed));
-          local_csr_write(local_csr_mailbox1, ++i );
+          local_csr_write(local_csr_mailbox1, ++i | (__ctx() << 16) );
           //mbox0 = (ret << 16) | 0x8000 | state.state.current_state ;
           //local_csr_write(local_csr_mailbox0, mbox0 );
           if( ret & ENTL_ACTION_SEND ) {

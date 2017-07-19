@@ -81,6 +81,13 @@ __intrinsic int wait_with_timeout( unsigned int cycle ) {
     return signal_test(&entl_timeout_sig);
 }
 
+__intrinsic int wait_without_timeout( unsigned int cycle ) {
+    //SIGNAL entl_timeout_sig;
+    //set_alarm( cycle, &entl_timeout_sig );
+    wait_sig_mask(__signals(&entl_send_sig) );
+    return 1 ; // signal_test(&entl_timeout_sig);
+}
+
 __intrinsic struct pkt_ms_info
 __my_pkt_msd_write(__addr40 void *pbuf, unsigned char off,
                 __xwrite uint32_t xms[2], size_t size, sync_t sync,
@@ -345,7 +352,7 @@ main(void)
 
         for (;;) {
           int flag ;
-          ret = wait_with_timeout(RETRY_CYCLE);
+          ret = wait_without_timeout(RETRY_CYCLE);
           local_csr_write(local_csr_mailbox1, seq_num+1);
           data = entl_data_in.data ;
           d_addr = entl_data_in.d_addr ;
