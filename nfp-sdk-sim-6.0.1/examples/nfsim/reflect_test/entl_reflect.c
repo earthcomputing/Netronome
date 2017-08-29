@@ -28,6 +28,9 @@ entl_reflect(unsigned int dst_me, unsigned int dst_xfer,
      * not compile time constants */
     addr = ((dst_me & 0xFF0)<<20 | ((dst_me & 0xF)<<10 | (dst_xfer & 0x3F)<<2));
 
+    local_csr_write(local_csr_mailbox2, addr );
+    local_csr_write(local_csr_mailbox3, sig_no );      
+
     indirect.__raw = 0;
     indirect.signal_num = sig_no;
     indirect.signal_ctx = 0; //Only ctx0 is waiting for a signal 

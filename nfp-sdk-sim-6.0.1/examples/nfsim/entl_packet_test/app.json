@@ -1,0 +1,185 @@
+{
+  "name": "entl_packet_test",
+  "chip": {
+    "minimum_revision": "0x10"
+  },
+  "vars": {
+    "PIFOUTDIR": "",
+    "PIFROOTDIR": "p4/components/nfp_pif",
+    "PROJECT": "",
+    "PIFAPPDIR": "me/apps/pif_app_nfd",
+    "PIFSHARED": "shared",
+    "PIFAPPCOMMONDIR": "me/apps/common",
+    "PIFLIBDIR": "me/lib/pif",
+    "HASHMAPLIBDIR": "me/lib/hashmap",
+    "PIF_MASTER_ME":                "mei0.me0",
+    "APP_MASTER_ME":                "i48.me2",
+    "NFD_SVC_ME_0":                 "i48.me0",
+    "NFD_PCIE0_SB_ME":              "i33.me10",
+    "NFD_PCIE0_PD0_ME":             "i33.me11",
+    "NFD_PCIE0_PCI_OUT_ME0_ME":     "pcie0.me0",
+    "NFD_PCIE0_PCI_IN_GATHER_ME":   "pcie0.me1",
+    "NFD_PCIE0_PCI_IN_ISSUE0_ME":   "pcie0.me2",
+    "NFD_PCIE0_NOTIFY_ME":          "pcie0.me3",
+    "MAC_FLUSH_ME":                 "i32.me10",
+    "RTU_NCTX": 8
+  },
+  "common": {
+    "defines": [
+    ],
+    "compiler": {
+      "flags": ["W3", "Qno_decl_volatile", "O2", "mIPOPT_nfp=2"]
+    },
+    "assembler": {
+    },
+    "linker": {
+      "flags": [
+        "rtsyms", "mip"
+      ],
+      "pico": {
+        "i8": "catamaran",
+        "i9": "catamaran"
+      }
+    }
+  },
+  "components": {
+    "entl_state_lib": {
+      "dir": "../entl_libs",
+      "compiler": {
+        "src": [
+          "entl_state_machine",
+          "atomic_link_op"
+        ]
+      }
+    },
+    "entl_reflect": {
+      "dir": "../entl_libs",
+      "compiler": {
+        "src": [
+          "entl_reflect"
+        ]
+      }
+    },
+    "nfp_me": {
+      "dir": "$(base_dir)/microc/lib/nfp/_c",
+      "compiler": {
+        "src": [
+          "me"
+        ]
+      }
+    },
+    "libpkt": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/pkt",
+      "compiler": {
+        "src": [
+          "libpkt"
+        ]
+      }
+    },
+    "mem_bulk": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c",
+      "compiler": {
+        "src": [
+          "mem_bulk"
+        ]
+      }
+    },
+    "reg_utils": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/std/_c",
+      "compiler": {
+        "src": [
+          "reg_utils"
+        ]
+      }
+    },
+    "pif_app_lib_incl": {
+      "dir": "%(PIFROOTDIR)s",
+      "compiler": {
+        "include": [
+          "%(PIFAPPDIR)s/include"
+        ]
+      },
+      "assembler": {
+        "include": [
+          "%(PIFAPPDIR)s/include"
+        ]
+      }
+    },
+    "entl_packet_sender": {
+      "dir": ".",
+      "compiler": {
+        "src": [
+          "entl_packet_sender"
+        ]
+      }
+    },
+    "entl_packet_receiver": {
+      "dir": ".",
+      "compiler": {
+        "src": [
+          "entl_packet_receiver"
+        ]
+      }
+    }
+  },
+  "targets": {
+    "entl_packet_sender": {
+      "list": "entl_packet_sender_obj.list",
+      "type": "application",
+      "components": [
+        "entl_state_lib",
+        "nfp_me",
+        "libpkt",
+        "mem_bulk",
+        "reg_utils",
+        "entl_packet_sender"
+      ]
+    },
+    "entl_packet_receiver": {
+      "list": "entl_packet_receiver_obj.list",
+      "type": "application",
+      "components": [
+        "entl_state_lib",
+        "entl_reflect",
+        "nfp_me",
+        "libpkt",
+        "mem_bulk",
+        "reg_utils",
+        "entl_packet_receiver"
+      ]
+    }
+  },
+  "platforms": {
+    "entl_packet_test": {
+      "chip": {
+        "minimum_revision": "0x10",
+        "sku": "NFP-6480-1C-B0"
+      },
+      "common": {
+        "defines": [
+          "PLATFORM_PORT_SELECTION=CDP_PLATFORM",
+          "PIF_APP_CONFIG=PIF_APP_DEFAULT",
+          "NUM_IMU=2",
+          "NUM_EMU=2"
+        ],
+        "linker": {
+          "flags": [
+            "rtsyms", "mip"
+          ]
+        }
+      },
+      "targets": {
+        "entl_packet_sender": {
+          "mes": [
+            "i32.me0"
+          ]
+        },
+        "entl_packet_receiver": {
+          "mes": [
+            "i32.me1"
+          ]
+        }
+      }
+    }
+  }
+}

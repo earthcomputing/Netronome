@@ -26,11 +26,10 @@
 
 #include "entl_state_machine.h"
 
-#include "alo_tester.h"
-
 //#define ETH_P_ECLP  0xEAC0    /* Earth Computing Link Protocol [ NOT AN OFFICIALLY REGISTERED ID ] */
 #define NET_ETH_ALEN 6
 
+uint64_t d_addr ;
 
 
 /**
@@ -136,7 +135,7 @@ static void read_lmem(struct nfp_device *dev, int menum) {
 //NFP_API
 //ssize_t nfp_lmem_read(struct nfp_device *dev, int meid, void *buffer, unsigned long long length, unsigned long long offset);
 
-    for( i = 0 ; i < 8 ; i++ ) {
+    for( i = 0 ; i < 2 ; i++ ) {
         int n = nfp_lmem_read(dev, menum, (void*)&entry, sizeof(entry), (i * sizeof(entry)) );
         if( n > 0 ) {
             printf( "%08lx: ", (i * sizeof(entry) ) ) ;
@@ -153,15 +152,15 @@ static void read_lmem(struct nfp_device *dev, int menum) {
 static int send_back( struct nfp_device *dev, uint32_t alo_command ) {
     char wmem[1024*8*8];
     int ret, st;
-    uint64_t d_addr ;
     uint64_t data ;
-    uint32_t val;
     int i ;
 
-    st = entl_next_send( &state, &d_addr, &data, alo_command, 0 ) ; 
+    data = 0x0102030405060708 ;
+
+
     //d_addr |= ENTL_MESSAGE_ONLY ;
     if( st & ENTL_ACTION_SEND ) {
-        printf( "entl_next_send %x sending %llx %d %d %llx\n", alo_command, d_addr, state.state.current_state, st, data ) ;
+        printf( "entl_next_send sending %llx %d %d %llx\n", d_addr, state.state.current_state, st, data ) ;
         wmem[0] = d_addr >> 40 ;
         wmem[1] = d_addr >> 32 ;
         wmem[2] = d_addr >> 24 ;
@@ -216,7 +215,6 @@ static int read_packet( struct nfp_device *dev, int menum ) {
     int i, j, n, m ;
     uint64_t val64;
     uint64_t s_addr ;
-    uint64_t d_addr ;
     uint64_t data ;
     uint16_t type ;
     int ret = 0 ;
@@ -242,7 +240,8 @@ static int read_packet( struct nfp_device *dev, int menum ) {
         }
         printf( "  d_addr %llx s_addr %llx  type %0x ETH_P_ECLP %x == %d data %llx \n", d_addr, s_addr, type, ETH_P_ECLP, type == ETH_P_ECLP, data ) ;
         if( type == ETH_P_ECLP ) {
-            ret = entl_received( &state, d_addr, data, 0, 0, 0 ) ;
+            ret = 1 ;
+            d_addr++ ;
             printf( "ret = %x\n", ret ) ;
         }
         else {
@@ -261,105 +260,6 @@ static int read_packet( struct nfp_device *dev, int menum ) {
     return ret ;
 }
 
-static alo_regs_t src_copy ;
-
-void alo_wr_read(struct nfp_device *dev, struct nfp_cpp *nfp_cpp, int menum, int menum1 ) 
-{
-    int ret;
-    rand_regs(&state.ao) ;
-
-    copy_regs(&state.ao, &src_copy) ;
-
-    printf( "alo_wr_read() test starts\n" ) ;
-
-    if( expect_state_only( &state.state, ENTL_STATE_SEND) == 0 ) {
-        printf( "Error, state is not SEND, but %d\n", state.state.current_state) ;
-    }
-    ret = send_back( dev, ALO_WR ) ; // wr reg 0
-    if( expect_state_only( &state.state, ENTL_STATE_RAL) == 0 ) {
-        printf( "Error, state is not RAL, but %d\n", state.state.current_state) ;
-    }
-
-    printf( "alo_wr_read() test 0\n" ) ;
-
-    ret = 0 ;
-    while( ret == 0 ) {
-        step_sim(dev, 100);
-        ret = read_packet(dev, menum) ;
-        read_lmem(dev, menum) ;
-        show_mailboxes(dev, menum);
-        show_mailboxes(dev, menum1);
-        show_packet_stat(nfp_cpp) ;
-    }
-    printf( "alo_wr_read() test 1\n" ) ;
-        read_lmem(dev, menum) ;
-        show_mailboxes(dev, menum);
-        show_mailboxes(dev, menum1);
-        show_packet_stat(nfp_cpp) ;
-    if( expect_state_only( &state.state, ENTL_STATE_SAL) == 0 ) {
-        printf( "Error, state is not SAL, but %d\n", state.state.current_state) ;
-    }
-    ret = send_back( dev, 0 ) ;
-
-    if( expect_state_only( &state.state, ENTL_STATE_RECEIVE) == 0 ) {
-        printf( "Error, state is not RECEIVE, but %d\n", state.state.current_state) ;
-    }
-    
-    ret = 0 ;
-    while( ret == 0 ) {
-        step_sim(dev, 100);
-        ret = read_packet(dev, menum) ;
-        read_lmem(dev, menum) ;
-        show_mailboxes(dev, menum);
-        show_mailboxes(dev, menum1);
-        show_packet_stat(nfp_cpp) ;
-    }
-    printf( "alo_wr_read() test 2\n" ) ;
-        read_lmem(dev, menum) ;
-        show_mailboxes(dev, menum);
-        show_mailboxes(dev, menum1);
-        show_packet_stat(nfp_cpp) ;
-    clear_regs(&state.ao) ;
-    if( expect_state_only( &state.state, ENTL_STATE_SEND) == 0 ) {
-        printf( "Error, state is not SEND, but %d\n", state.state.current_state) ;
-    }
-    ret = send_back( dev, ALO_RD ) ; // rd reg 0
-    if( expect_state_only( &state.state, ENTL_STATE_RAL) == 0 ) {
-        printf( "Error, state is not RAL, but %d\n", state.state.current_state) ;
-    }
-    
-    ret = 0 ;
-    while( ret == 0 ) {
-        step_sim(dev, 100);
-        ret = read_packet(dev, menum) ;
-        read_lmem(dev, menum) ;
-        show_mailboxes(dev, menum);
-        show_mailboxes(dev, menum1);
-        show_packet_stat(nfp_cpp) ;
-    }
-    printf( "alo_wr_read() test 3\n" ) ;
-        read_lmem(dev, menum) ;
-        show_mailboxes(dev, menum);
-        show_mailboxes(dev, menum1);
-        show_packet_stat(nfp_cpp) ;
-    if( expect_state_only( &state.state, ENTL_STATE_SAL) == 0 ) {
-        printf( "Error, state is not SAL, but %d\n", state.state.current_state) ;
-    }
-    ret = send_back( dev, 0 ) ;
-
-    if( expect_state_only( &state.state, ENTL_STATE_RECEIVE) == 0 ) {
-        printf( "Error, state is not RECEIVE, but %d\n", state.state.current_state) ;
-    }
-    
-    if( state.ao.reg[0] != src_copy.reg[0]) {
-        printf( "Error Read reg[0] %llx is not expected %llx\n", state.ao.reg[0], src_copy.reg[0]) ;
-    }
-    else {
-        printf( "ALO WR -> Read reg[0] %llx passed\n", state.ao.reg[0] ) ;        
-    }
-
-}
-
 int main(int argc, char **argv)
 {
     int i, j, k;
@@ -371,8 +271,6 @@ int main(int argc, char **argv)
     menum = NFP6000_MEID(32, 0);
     menum1 = NFP6000_MEID(32, 1);
 
-    entl_state_init( &state ) ;
-    alo_regs_init( &state.ao ) ;
     state.my_value = 0xbeef - 1 ; 
     state.state.current_state = ENTL_STATE_HELLO ;
     state.name = "DUT" ;
@@ -393,17 +291,13 @@ int main(int argc, char **argv)
         printf( "cycle:%d  k %d\n", i, k++) ;
         read_lmem(dev, menum) ;
         show_mailboxes(dev, menum);
+        read_lmem(dev, menum1) ;
         show_mailboxes(dev, menum1);
         show_packet_stat(nfp_cpp) ;
         ret = read_packet(dev, menum) ;
         if( ret ) {
             k = 0 ;
-            if( j++ == 4 ) {
-                alo_wr_read(dev, nfp_cpp, menum, menum1) ;
-            }            
-            else {
-                ret = send_back( dev, 0 ) ;
-            }
+            ret = send_back( dev, 0 ) ;
         }
 
     }

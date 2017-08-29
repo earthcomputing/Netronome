@@ -677,6 +677,9 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
             mcn->state.event_send_next = ECLP_VALUE_PLUS2(mcn->state.event_send_next) ;
             *addr = mcn->state.event_i_sent ;
             // Avoiding to send AIT on the very first loop where other side will be in Hello state
+#ifdef NETRONOME_HOST
+            ENTL_DEBUG( "%s entl_next_send case ENTL_STATE_SEND: i_know %d i_sent %d alo_command %x op %x sc %x \n", mcn->name, event_i_know, event_i_sent, alo_command, ALO_COMMAND_OPCODE(alo_command), ALO_COMMAND_SC(alo_command) ) ;
+#endif
             if( (event_i_know || event_i_sent) && (ait_queue || ALO_COMMAND_OPCODE(alo_command) ) ) {
                 if( ALO_COMMAND_OPCODE(alo_command) ) {
                     uint32_t ret =  alo_initiate( &mcn->ao, ALO_COMMAND_OPCODE(alo_command), ALO_COMMAND_SC(alo_command), alo_data ) ;
@@ -689,7 +692,7 @@ int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *
                         if( ALO_COMMAND_FW(alo_command) ) *addr |= ECLP_FW_MASK ;
                         retval = ENTL_ACTION_SEND | ENTL_ACTION_SEND_ALO  ;
 #ifdef NETRONOME_HOST
-                        ENTL_DEBUG( "%s ETL ALO %x requested on Send state -> SAL %lx %x %x\n", mcn->name, alo_command, *alo_data, ALO_COMMAND_OPCODE(alo_command), ALO_COMMAND_SC(alo_command) ) ;
+                        ENTL_DEBUG( "%s ETL ALO %x requested on Send state -> RAL %lx %x %x\n", mcn->name, alo_command, *alo_data, ALO_COMMAND_OPCODE(alo_command), ALO_COMMAND_SC(alo_command) ) ;
 #endif
                     }
                     else if( ait_queue ) {

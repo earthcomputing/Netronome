@@ -60,8 +60,8 @@ __visible volatile __xread entl_reflect_data_t entl_data_in ;
 
 __shared __lmem volatile entl_state_machine_t state;
 
-__shared __lmem volatile uint64_t  keep_pkt_num ;
-__shared __lmem volatile  entl_send_sig_num;
+//__shared __lmem volatile uint64_t  keep_pkt_num ;
+//__shared __lmem volatile  entl_send_sig_num;
 
 MUTEXLV state_lock = 0;
 #define STATE_LOCK_BIT 0
@@ -157,68 +157,6 @@ struct eth_hdr_padded {
       };
       uint32_t __raw[8];
 } __PACKED;
-
-
-int receive_packet( struct pkt_rxed *pkt_rxed, size_t size )
-{
-    __xread struct pkt_rxed pkt_rxed_in;
-    int island, pnum;
-    int pkt_off;
-    __mem struct pkt_hdr *pkt_hdr;
-    uint8_t *wmem ;
-    int64_t s_addr ;
-    int64_t d_addr ;
-    int64_t data ;
-    int64_t d_value ;
-    int ret ;
-    unsigned int mbox0, mbox1, mbox2, mbox3 ;
-
-    pkt_nbi_recv(&pkt_rxed_in, sizeof(pkt_rxed->nbi_meta));
-    pkt_rxed->nbi_meta = pkt_rxed_in.nbi_meta;
-
-    pkt_off  = PKT_NBI_OFFSET;
-    island   = pkt_rxed->nbi_meta.pkt_info.isl;
-    pnum     = pkt_rxed->nbi_meta.pkt_info.pnum;
-    pkt_hdr  = pkt_ctm_ptr40(island, pnum, pkt_off);
-
-    mem_read32(&(pkt_rxed_in.pkt_hdr), pkt_hdr, sizeof(pkt_rxed_in.pkt_hdr));
-    pkt_rxed->pkt_hdr = pkt_rxed_in.pkt_hdr;
-    wmem = &pkt_rxed->pkt_hdr.pkt ;
-    d_addr = (uint64_t)wmem[0]<<40 | (uint64_t)wmem[1]<<32 | (uint64_t)wmem[2]<<24 | (uint64_t)wmem[3]<<16 | (uint64_t)wmem[4]<<8 | (uint64_t)wmem[5] ; 
-    s_addr = (uint64_t)wmem[6]<<40 | (uint64_t)wmem[7]<<32 | (uint64_t)wmem[8]<<24 | (uint64_t)wmem[9]<<16 | (uint64_t)wmem[10]<<8 | (uint64_t)wmem[11] ; 
-    wmem = &pkt_rxed->pkt_hdr.data ;
-    data = (uint64_t)wmem[0]<<56 | (uint64_t)wmem[1]<<48 | (uint64_t)wmem[2]<<40 | (uint64_t)wmem[3]<<32 | (uint64_t)wmem[4]<<24 | (uint64_t)wmem[5]<<16 |  (uint64_t)wmem[6]<<8 |(uint64_t)wmem[7] ; 
-#ifdef ENTL_STATE_DEBUG
-    state.r_addr = d_addr ;
-    state.r_data = data ;
-#endif
-    //data = (uint64_t)wmem[14]<<56 | (uint64_t)wmem[15]<<48 | (uint64_t)wmem[16]<<40 | (uint64_t)wmem[17]<<32 | (uint64_t)wmem[18]<<24 | (uint64_t)wmem[19]<<16 | (uint64_t)wmem[20]<<8 | (uint64_t)wmem[21] ; 
-    //alo_command = ALO_OPCODE(d_addr) ; // keep it for nex_to_send
-    //mbox0 = d_addr >> 32 ;
-    //mbox1 = d_addr ;
-    //mbox2 = data >> 32 ;
-    //mbox3 = data ;
-    mbox0 = data >> 32 ;
-    mbox1 = data ;
-    local_csr_write(local_csr_mailbox0, mbox0 );
-    local_csr_write(local_csr_mailbox1, mbox1 );
-    //local_csr_write(local_csr_mailbox0, mbox0 );
-    //local_csr_write(local_csr_mailbox1, mbox1 );
-    //local_csr_write(local_csr_mailbox2, mbox2 );
-    MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
-// int entl_received( __lmem entl_state_machine_t *mcn, uint64_t d_addr, uint64_t s_value, uint64_t *d_value, uint32_t ait_queue, uint32_t ait_command, uint32_t egress_queue ) ;
-    ret = entl_received( &state, d_addr, data, 0, 0, 0 ) ;
-    MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
-    mbox3 = state.state.current_state ;
-    local_csr_write(local_csr_mailbox3, mbox3 );
-    if( (d_addr & ECLP_FW_MASK) == 0 )
-    {
-      keep_pkt_num = 0x800000000000 | pnum ;
-    }
-
-
-    return ret;
-}
 
 void
 rewrite_packet( __addr40 char *pbuf, volatile uint64_t s_addr, volatile uint64_t d_addr, volatile uint64_t data )
@@ -332,7 +270,7 @@ main(void)
         int island ;
         int s_count = 0 ;
         local_csr_write(local_csr_mailbox0, 0);
-        entl_send_sig_num = __signal_number(&entl_send_sig) ;
+        //entl_send_sig_num = __signal_number(&entl_send_sig) ;
         state.my_value = MY_VALUE ;
         ctm_pkt_num = pkt_ctm_alloc( &ctm_credits, __ISLAND, PKT_CTM_SIZE_256, 1, 0);
         while (ctm_pkt_num == CTM_ALLOC_ERR)
@@ -341,17 +279,13 @@ main(void)
           //PIF_COUNT(ERROR_WAIT_CTM_PKT_ALLOC);
           ctm_pkt_num = pkt_ctm_alloc( &ctm_credits, __ISLAND, PKT_CTM_SIZE_256, 1, 0);
         }
-        keep_pkt_num = 0 ; 
+        //keep_pkt_num = 0 ; 
         //next_flag = 0 ;
-        MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
-        entl_state_init( &state ) ;
-        alo_regs_init( &state.ao ) ;
         //entl_set_random_addr( &state ) ;
         state.my_value = MY_VALUE ; //((addr << 32 ) | l_rand()) & 0xffffffffffff ;
         state.state.current_state = ENTL_STATE_HELLO ;
         data = 0 ;
         d_addr = 0 ;
-        MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
         //local_csr_write(local_csr_mailbox0, 1);
 
         for (;;) {
@@ -363,7 +297,6 @@ main(void)
           d_addr = entl_data_in.d_addr ;
           //MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
 // int entl_received( __lmem entl_state_machine_t *mcn, uint64_t d_addr, uint64_t s_value, uint64_t *d_value, uint32_t ait_queue, uint32_t ait_command, uint32_t egress_queue ) ;
-          ret = entl_received( &state, d_addr, data, 0, 0, 0 ) ;
           //MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
           if( entl_data_in.island ) {
             island = entl_data_in.island ;
@@ -377,14 +310,15 @@ main(void)
           }
           //MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
 //int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *alo_data, uint32_t alo_command, uint32_t ait_queue) ;
-          ret = entl_next_send( &state, &d_addr, &data, 0, 0 ) ; 
           //MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
           //local_csr_write(local_csr_mailbox3, mbox3);
           if( ret ) {
             //mbox3 = (d_addr >>32) ;
             //local_csr_write(local_csr_mailbox3, mbox3);
+            d_addr++ ;
+            data++ ;
             pkt_hdr  = pkt_ctm_ptr40(island, pnum, pkt_off);
-            s_addr = 0 ;
+            s_addr = 0x0a0b0c0d0e0f ;
             rewrite_packet( pkt_hdr, s_addr, d_addr, data ) ;
             send_packet( island, pnum, 64 + 4, seq_num++, flag ) ;
             local_csr_write(local_csr_mailbox2, island );

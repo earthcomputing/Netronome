@@ -56,6 +56,11 @@ __import __shared __cls __align(uint32_t) uint32_t sequence_num_array1[SEQUENCE_
 
 #endif
 
+#ifdef ENTL_FORWARDER_0
+#define SEQUENCE_NUM_ARRAY sequence_num_array0
+#else
+#define SEQUENCE_NUM_ARRAY sequence_num_array1
+#endif
 
 void get_packet_data( __xread packet_data_t *pkt_in, uint32_t ring ) ;
 

@@ -99,9 +99,31 @@ void init_sequence_num() {
 #endif
 
 uint32_t get_sequence_num( uint32_t port ) {
-	__xread void *data_r ;
-	__xwrite void *data_w ;
+	__xread uint32_t data_r ;
+	__xwrite uint32_t data_w ;
+	uint32_t seq_num ;
+	
+	// This function does not use any mutex protection. 
+	// This should be called within the mutexed resion provided with reorder mechanism
 
+	SIGNAL sig;
+	cls_read_ptr32(
+    	&data_r,
+    	&SEQUENCE_NUM_ARRAY[i],
+    	sizeof(uint32_t),
+    	sig_done,
+    	&sig 
+	);
+	seq_num = (uint32_t)*data_r ;
+	data_w = seq_num + 1 ;
+	cls_write_ptr32(
+    	&data_w,
+    	&SEQUENCE_NUM_ARRAY[i],
+    	sizeof(uint32_t),
+    	sig_done,
+    	&sig 
+	);
 
+	return seq_num ;
 
 }
