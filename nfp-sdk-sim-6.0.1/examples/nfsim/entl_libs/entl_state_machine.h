@@ -135,13 +135,8 @@ typedef struct entl_state {
 } entl_state_t ;
 
 typedef volatile struct entl_state_machine {
-#ifdef ENTL_STATE_DEBUG
-  uint64_t addr ;
-  uint64_t data ;
-  uint64_t r_addr ;
-  uint64_t r_data ;
-#endif
   entl_state_t state ;
+  alo_regs_t ao ;
   entl_state_t error_state ;
   uint32_t error_flag ;				// first error flag 
   uint32_t p_error_flag ;			// when more than 1 error is detected, those error bits or ored to this flag
@@ -149,8 +144,13 @@ typedef volatile struct entl_state_machine {
   uint32_t state_count ;
   uint32_t my_value ;
   // Atomic Operation Registers
-  alo_regs_t ao ;
   uint32_t credit ;
+#ifdef ENTL_STATE_DEBUG
+  uint64_t addr ;
+  uint64_t data ;
+  uint64_t r_addr ;
+  uint64_t r_data ;
+#endif
 #ifdef NETRONOME_HOST
   char *name ;
 #endif

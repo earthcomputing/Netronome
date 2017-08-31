@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>ENTL state test on Netronome NFP Simulator</title>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<style>
+		svg { width: 800px; height: 800px; border: 1px solid black; }
+		.bar { fill : orange; }
+		.circle { fill:white;stroke:black;stroke-width:2 }
+		.transit( border: 1px solid black; fill : blue; )
+		.tx { fill : black; font-size: 24px ; }
+		.rect { fill: white; border: 1px solid black; width:500px; height: 200px }
+	</style>
+	</head>
+	<body>
+<script type='text/javascript' src='node_modules/jquery/dist/jquery.js'></script>
+<script src="js/d3.min.js" type="text/Javascript"></script>
+<script src="node_modules/d3-selection-multi/build/d3-selection-multi.min.js" type="text/Javascript">implements .attrs for d3.v4 GGG</script>
+<script src="node_modules/socket.io/node_modules/socket.io-client/socket.io.js" type="text/Javascript"></script>
+<script src="datamock.js"></script>
+	<h1>ENTL state test on Netronome NFP Simulator</h1>
+
+	<script>
+	var width = 960,
+    height = 500;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+
+var state_bubbles = []
+
+var t0 = svg.append("ellipse")
+	.attr( "cx", 150)
+	.attr( "cy", 250)
+	.attr( "rx", 50)
+	.attr( "ry", 100)
+	.attr( "class", "circle")
+	.attr( "id", "e0")
+
+
+svg.append("ellipse")
+	.attr( "cx", 250)
+	.attr( "cy", 250)
+	.attr( "rx", 50)
+	.attr( "ry", 100)
+	.attr( "class", "circle")
+	.attr( "id", "e1")
+
+svg.append("ellipse")
+	.attr( "cx", 550)
+	.attr( "cy", 250)
+	.attr( "rx", 50)
+	.attr( "ry", 100)
+	.attr( "class", "circle")
+
+svg.append("ellipse")
+	.attr( "cx", 650)
+	.attr( "cy", 250)
+	.attr( "rx", 50)
+	.attr( "ry", 100)
+	.attr( "class", "circle")
+
+var c0 = svg.append( "circle")
+	.attr( "cx", 200)
+	.attr( "cy", 100)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S0_H")	
+
+svg.append("text")
+	.attr("x", 200-5)
+	.attr("y", 100+5)
+	.text("H")
+
+state_bubbles.push(c0)
+
+var c1 = svg.append( "circle")
+	.attr( "cx", 200)
+	.attr( "cy", 200)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S0_R")	
+
+svg.append("text")
+	.attr("x", 200-5)
+	.attr("y", 200+5)
+	.text("R")
+
+state_bubbles.push(c1)
+
+var c2 = svg.append( "circle")
+	.attr( "cx", 200)
+	.attr( "cy", 300)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S0_S")	
+
+svg.append("text")
+	.attr("x", 200-5)
+	.attr("y", 300+5)
+	.text("S")
+
+state_bubbles.push(c2)
+
+var c3 = svg.append( "circle")
+	.attr( "cx", 100)
+	.attr( "cy", 200)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S0_Sa")	
+
+svg.append("text")
+	.attr("x", 100-5)
+	.attr("y", 200+5)
+	.text("Sa")
+
+state_bubbles.push(c3)
+
+var c4 = svg.append( "circle")
+	.attr( "cx", 100)
+	.attr( "cy", 300)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S0_Ra")	
+
+svg.append("text")
+	.attr("x", 100-5)
+	.attr("y", 300+5)
+	.text("Ra")
+
+state_bubbles.push(c4)
+
+var c5 = svg.append( "circle")
+	.attr( "cx", 300)
+	.attr( "cy", 200)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S0_Sb")	
+
+svg.append("text")
+	.attr("x", 300-5)
+	.attr("y", 200+5)
+	.text("Sb")
+
+state_bubbles.push(c5)
+
+var c6 = svg.append( "circle")
+	.attr( "cx", 300)
+	.attr( "cy", 300)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S0_Rb")	
+
+svg.append("text")
+	.attr("x", 300-5)
+	.attr("y", 300+5)
+	.text("Rb")
+
+state_bubbles.push(c6)
+
+
+
+var c7 = svg.append( "circle")
+	.attr( "cx", 600)
+	.attr( "cy", 100)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S1_H")	
+
+svg.append("text")
+	.attr("x", 600-5)
+	.attr("y", 100+5)
+	.text("H")
+
+state_bubbles.push(c7)
+
+var c8 = svg.append( "circle")
+	.attr( "cx", 600)
+	.attr( "cy", 200)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S1_R")	
+
+svg.append("text")
+	.attr("x", 600-5)
+	.attr("y", 200+5)
+	.text("R")
+
+state_bubbles.push(c8)
+
+var c9 = svg.append( "circle")
+	.attr( "cx", 600)
+	.attr( "cy", 300)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S1_S")	
+
+svg.append("text")
+	.attr("x", 600-5)
+	.attr("y", 300+5)
+	.text("S")
+
+state_bubbles.push(c9)
+
+var c10 = svg.append( "circle")
+	.attr( "cx", 500)
+	.attr( "cy", 200)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S1_Sa")	
+
+svg.append("text")
+	.attr("x", 500-5)
+	.attr("y", 200+5)
+	.text("Sa")
+
+state_bubbles.push(c10)
+
+var c11 = svg.append( "circle")
+	.attr( "cx", 500)
+	.attr( "cy", 300)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S1_Ra")	
+
+svg.append("text")
+	.attr("x", 500-5)
+	.attr("y", 300+5)
+	.text("Ra")
+
+state_bubbles.push(c11)
+
+var c12 = svg.append( "circle")
+	.attr( "cx", 700)
+	.attr( "cy", 200)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S1_Sb")	
+
+svg.append("text")
+	.attr("x", 700-5)
+	.attr("y", 200+5)
+	.text("Sb")
+
+state_bubbles.push(c12)
+
+var c13 = svg.append( "circle")
+	.attr( "cx", 700)
+	.attr( "cy", 300)
+	.attr("r", 30 )
+	.attr("stroke","black")
+	.attr("fill", "white")
+	.attr("id", "S1_Rb")	
+
+svg.append("text")
+	.attr("x", 700-5)
+	.attr("y", 300+5)
+	.text("Rb")
+
+state_bubbles.push(c13)
+
+var reg0_text = [] ;
+var reg1_text = [] ;
+var reg_y_base = 400 ;
+var reg_x0_base = 50 ;
+var reg_x1_base = 450 ;
+var i = 0
+for( var i = 0 ; i < 5 ; i++ ) {
+	svg.append("rect")
+		.attr("x", reg_x0_base )
+		.attr("y", (reg_y_base+(30*i)))
+		.attr("width", "300px")
+		.attr("height", "30px")
+		.attr("fill", "white")
+		.attr("stroke","black")
+
+	var tx0 = svg.append("text")
+		.attr("x", reg_x0_base + 100)
+		.attr("y", (reg_y_base+(30*i)) + 20)
+		.text( "0000000000000000" )
+
+	reg0_text.push(tx0) ;
+
+	svg.append("rect")
+		.attr("x", reg_x1_base )
+		.attr("y", (reg_y_base+(30*i)))
+		.attr("width", "300px")
+		.attr("height", "30px")
+		.attr("fill", "white")
+		.attr("stroke","black")
+
+	var tx1 = svg.append("text")
+		.attr("x", reg_x1_base + 100)
+		.attr("y", (reg_y_base+(30*i)) + 20)
+		.text( "0000000000000000" )
+	reg1_text.push(tx1) ;
+
+}
+
+svg.append("rect")
+		.attr("x", reg_x0_base )
+		.attr("y", (reg_y_base+(200)))
+		.attr("width", "300px")
+		.attr("height", "30px")
+		.attr("fill", "white")
+		.attr("stroke","black")
+
+var buf0 = svg.append("text")
+		.attr("x", reg_x0_base + 100)
+		.attr("y", (reg_y_base+(200)) + 20)
+		.text( "0000000000000000" )
+
+svg.append("rect")
+		.attr("x", reg_x1_base )
+		.attr("y", (reg_y_base+(200)))
+		.attr("width", "300px")
+		.attr("height", "30px")
+		.attr("fill", "white")
+		.attr("stroke","black")
+
+var buf1 = svg.append("text")
+		.attr("x", reg_x1_base + 100)
+		.attr("y", (reg_y_base+(200)) + 20)
+		.text( "0000000000000000" )
+
+
+//d3.selectAll("g").selectAll("circle").select("#S0_H")
+//svg.select("e0").style("fill","red") ;
+
+
+var active_s0 = 0 ;
+var active_s1 = 7 ;
+
+state_bubbles[active_s0].style("fill","red") ;
+state_bubbles[active_s1].style("fill","red") ;
+
+var processPacket=(function(){
+	var val0={};
+	var duration=400;
+	return function(packet){
+		var state0=parseInt(packet.state0);
+		var state1=parseInt(packet.state1);
+
+		if( state0 != active_s0) {
+			state_bubbles[active_s0].style("fill","white") ;
+			active_s0 = state0 ;
+			state_bubbles[active_s0].style("fill","red") ;
+		}
+		if( state1 + 7 != active_s1) {
+			state_bubbles[active_s1].style("fill","white") ;
+			active_s1 = state1 + 7 ;
+			state_bubbles[active_s1].style("fill","red") ;
+		}
+    	
+    	var r0 = packet.s0r0
+    	if (r0) {
+    		reg0_text[0].text(r0)
+    	}
+    	var r1 = packet.s0r1
+    	if (r1) {
+    		reg0_text[1].text(r1)
+    	}
+    	var r2 = packet.s0r2
+    	if (r2) {
+    		reg0_text[2].text(r2)
+    	}
+    	var r3 = packet.s0r3
+    	if (r3) {
+    		reg0_text[3].text(r3)
+    	}
+    	var r4 = packet.s0r4
+    	if (r4) {
+    		reg0_text[4].text(r4)
+    	}
+
+    	var b0 = packet.buf0
+    	if( b0 ) {
+    		buf0.text(b0)
+    	}
+
+    	var rr0 = packet.s1r0
+    	if (rr0) {
+    		reg1_text[0].text(rr0)
+    	}
+    	var rr1 = packet.s1r1
+    	if (rr1) {
+    		reg1_text[1].text(rr1)
+    	}
+    	var rr2 = packet.s1r2
+    	if (rr2) {
+    		reg1_text[2].text(rr2)
+    	}
+    	var rr3 = packet.s1r3
+    	if (rr3) {
+    		reg1_text[3].text(rr3)
+    	}
+    	var rr4 = packet.s1r4
+    	if (rr4) {
+    		reg1_text[4].text(rr4)
+    	}
+
+    	var b1 = packet.buf1
+    	if( b1 ) {
+    		buf1.text(b1)
+    	}
+
+	};
+})();
+
+// =============================== the real stuff
+var socket = io();
+socket.on('earth-update', function(data){
+    console.log( 'get earth-update', data.toString())
+    data = JSON.parse(data.toString()) ;
+	processPacket(data);
+
+});
+      
+
+
+	</script>
+	</body>
+</html>

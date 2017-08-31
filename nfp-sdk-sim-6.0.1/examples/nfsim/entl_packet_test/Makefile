@@ -131,6 +131,9 @@ HOST_LIBS = -lpcap -lnfp_hwdbg -lnfp -lrt -lnfp_common -ljansson -lz
 # Compile Switch for Host code
 HOST_FLAGS+= -DNETRONOME_HOST 
 
+entl_packet_test_demo: entl_packet_test_demo.c ../entl_libs/entl_state_machine.c ../entl_state_test/entl_sm_unit_test/entl_sm_tester.c ../entl_libs/atomic_link_op.c ../entl_state_test/alo_unit_test/alo_tester.c ../entl_state_test/alo_unit_test/cyc_random.c
+	$(CC) $(HOST_FLAGS) $(HOST_INC) -pthread -o $@ $^ $(HOST_LIBS) 
+
 entl_packet_test_run: entl_packet_test_run.c ../entl_libs/entl_state_machine.c ../entl_state_test/entl_sm_unit_test/entl_sm_tester.c ../entl_libs/atomic_link_op.c ../entl_state_test/alo_unit_test/alo_tester.c ../entl_state_test/alo_unit_test/cyc_random.c
 	$(CC) $(HOST_FLAGS) $(HOST_INC) -pthread -o $@ $^ $(HOST_LIBS) 
 
