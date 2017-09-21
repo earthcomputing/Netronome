@@ -339,6 +339,18 @@ var buf1 = svg.append("text")
 		.text( "0000000000000000" )
 
 
+var packet0 = svg.append("text")
+	.attr("x", 360)
+	.attr("y", 200)
+	.attr("font-size", 10)
+	.text( "______________")
+
+var packet1 = svg.append("text")
+	.attr("x", 340)
+	.attr("y", 300)
+	.attr("font-size", 10)
+	.text( "______________")
+
 //d3.selectAll("g").selectAll("circle").select("#S0_H")
 //svg.select("e0").style("fill","red") ;
 
@@ -353,71 +365,86 @@ var processPacket=(function(){
 	var val0={};
 	var duration=400;
 	return function(packet){
-		var state0=parseInt(packet.state0);
-		var state1=parseInt(packet.state1);
+		var p0 = packet.packet0
+    	if( p0 ) {
+    		packet0.text(p0)
+    	}
+    	else {
+	    	var p1 = packet.packet1
+	    	if( p1 ) {
+	    		packet1.text(p1)
+	    	}
+	    	else {
+				var state0=parseInt(packet.state0);
+				var state1=parseInt(packet.state1);
 
-		if( state0 != active_s0) {
-			state_bubbles[active_s0].style("fill","white") ;
-			active_s0 = state0 ;
-			state_bubbles[active_s0].style("fill","red") ;
-		}
-		if( state1 + 7 != active_s1) {
-			state_bubbles[active_s1].style("fill","white") ;
-			active_s1 = state1 + 7 ;
-			state_bubbles[active_s1].style("fill","red") ;
-		}
-    	
-    	var r0 = packet.s0r0
-    	if (r0) {
-    		reg0_text[0].text(r0)
-    	}
-    	var r1 = packet.s0r1
-    	if (r1) {
-    		reg0_text[1].text(r1)
-    	}
-    	var r2 = packet.s0r2
-    	if (r2) {
-    		reg0_text[2].text(r2)
-    	}
-    	var r3 = packet.s0r3
-    	if (r3) {
-    		reg0_text[3].text(r3)
-    	}
-    	var r4 = packet.s0r4
-    	if (r4) {
-    		reg0_text[4].text(r4)
+				if( state0 != active_s0) {
+					state_bubbles[active_s0].style("fill","white") ;
+					active_s0 = state0 ;
+					state_bubbles[active_s0].style("fill","red") ;
+				}
+				if( state1 + 7 != active_s1) {
+					state_bubbles[active_s1].style("fill","white") ;
+					active_s1 = state1 + 7 ;
+					state_bubbles[active_s1].style("fill","red") ;
+				}
+		    	
+		    	var r0 = packet.s0r0
+		    	if (r0) {
+		    		reg0_text[0].text(r0)
+		    	}
+		    	var r1 = packet.s0r1
+		    	if (r1) {
+		    		reg0_text[1].text(r1)
+		    	}
+		    	var r2 = packet.s0r2
+		    	if (r2) {
+		    		reg0_text[2].text(r2)
+		    	}
+		    	var r3 = packet.s0r3
+		    	if (r3) {
+		    		reg0_text[3].text(r3)
+		    	}
+		    	var r4 = packet.s0r4
+		    	if (r4) {
+		    		reg0_text[4].text(r4)
+		    	}
+
+		    	var b0 = packet.buf0
+		    	if( b0 ) {
+		    		buf0.text(b0)
+		    	}
+
+		    	var rr0 = packet.s1r0
+		    	if (rr0) {
+		    		reg1_text[0].text(rr0)
+		    	}
+		    	var rr1 = packet.s1r1
+		    	if (rr1) {
+		    		reg1_text[1].text(rr1)
+		    	}
+		    	var rr2 = packet.s1r2
+		    	if (rr2) {
+		    		reg1_text[2].text(rr2)
+		    	}
+		    	var rr3 = packet.s1r3
+		    	if (rr3) {
+		    		reg1_text[3].text(rr3)
+		    	}
+		    	var rr4 = packet.s1r4
+		    	if (rr4) {
+		    		reg1_text[4].text(rr4)
+		    	}
+
+		    	var b1 = packet.buf1
+		    	if( b1 ) {
+		    		buf1.text(b1)
+		    	}
+	    	}
+
     	}
 
-    	var b0 = packet.buf0
-    	if( b0 ) {
-    		buf0.text(b0)
-    	}
 
-    	var rr0 = packet.s1r0
-    	if (rr0) {
-    		reg1_text[0].text(rr0)
-    	}
-    	var rr1 = packet.s1r1
-    	if (rr1) {
-    		reg1_text[1].text(rr1)
-    	}
-    	var rr2 = packet.s1r2
-    	if (rr2) {
-    		reg1_text[2].text(rr2)
-    	}
-    	var rr3 = packet.s1r3
-    	if (rr3) {
-    		reg1_text[3].text(rr3)
-    	}
-    	var rr4 = packet.s1r4
-    	if (rr4) {
-    		reg1_text[4].text(rr4)
-    	}
-
-    	var b1 = packet.buf1
-    	if( b1 ) {
-    		buf1.text(b1)
-    	}
 
 	};
 })();

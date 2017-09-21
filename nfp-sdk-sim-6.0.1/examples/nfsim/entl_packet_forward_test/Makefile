@@ -26,7 +26,7 @@ LIST=$(PROJECT).list
 ELF=$(PROJECT).fw
 UC_INC=$(NFP_TOOLCHAIN_DIR)/components/standardlibrary/microcode/src/
 UC_DEFS=-DNFP_LIB_ANY_NFAS_VERSION -DENTL_STATE_DEBUG
-UC_FLAGS=-chip nfp-6xxx
+UC_FLAGS=-chip nfp-6xxx -DENTL_STATE_DEBUG
 LDFLAGS=-chip nfp-6xxx
 
 # sim client application
@@ -63,7 +63,8 @@ TO_NET_DIR=$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib
 #  /Users/atsushi/earthcomputing/Netronome/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/mem_bulk.h
 
 #overwrite from Makefile.nfp.config
-NFCC_BASE_INC := -I. -I../entl_state_test -I$(TO_NET_DIR) -I$(base_dir)/microc/include -I$(base_dir)/microc/lib -I$(base_dir)/microc/lib/nfp  
+NFCC_BASE_INC := -I. -I../entl_libs -I$(TO_NET_DIR) -I$(base_dir)/microc/include -I$(base_dir)/microc/lib -I$(base_dir)/microc/lib/nfp  
+#NFCC_FLAGS=-chip nfp-6xxx -DENTL_STATE_DEBUG
 
 
 FW_BUILD     := $(app_src_dir)
@@ -75,17 +76,32 @@ include $(scripts_dir)/Makefile.templates
 # Application definition starts here
 #
 #signal_test_obj.list: signal_test.c
-$(eval $(call micro_c.add_src_lib,entl_packet_test_obj,entl_state_machine,../entl_state_test))
-$(eval $(call micro_c.add_src_lib,entl_packet_test_obj,atomic_link_op,../entl_state_test))
-$(eval $(call micro_c.add_src_lib,entl_packet_test_obj,me,$(base_dir)/microc/lib/nfp/_c))
-$(eval $(call micro_c.add_src_lib,entl_packet_test_obj,libpkt,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/pkt))
-$(eval $(call micro_c.add_src_lib,entl_packet_test_obj,mem_bulk,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c))
-$(eval $(call micro_c.add_src_lib,entl_packet_test_obj,reg_utils,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/std/_c))
-$(eval $(call micro_c.compile_with_rtl,entl_packet_test_obj,entl_packet_test.c,.))
-
+$(eval $(call micro_c.add_src_lib,entl_packet_sender_obj,entl_state_machine,../entl_libs))
+$(eval $(call micro_c.add_src_lib,entl_packet_sender_obj,atomic_link_op,../entl_libs))
+$(eval $(call micro_c.add_src_lib,entl_packet_sender_obj,me,$(base_dir)/microc/lib/nfp/_c))
 #$(eval $(call micro_c.add_src_lib,pgen_test_obj,pkt_ops,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/nfp_pif/me/apps/common/src))
+$(eval $(call micro_c.add_src_lib,entl_packet_sender_obj,libpkt,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/pkt))
+$(eval $(call micro_c.add_src_lib,entl_packet_sender_obj,mem_bulk,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c))
+$(eval $(call micro_c.add_src_lib,entl_packet_sender_obj,reg_utils,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/std/_c))
+$(eval $(call micro_c.compile_with_rtl,entl_packet_sender_obj,entl_packet_sender.c,.))
 
-$(eval $(call fw.add_obj,entl_packet_test,entl_packet_test_obj,i32.me0 ))
+#$(eval $(call micro_c.compile_with_rtl,entl_packet_receiver_obj,entl_packet_test.c,.))
+$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,entl_reflect,../entl_libs))
+$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,entl_state_machine,../entl_libs))
+$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,atomic_link_op,../entl_libs))
+$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,me,$(base_dir)/microc/lib/nfp/_c))
+#$(eval $(call micro_c.add_src_lib,pgen_test_obj,pkt_ops,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/nfp_pif/me/apps/common/src))
+$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,libpkt,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/pkt))
+$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,mem_bulk,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c))
+$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,reg_utils,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/std/_c))
+$(eval $(call micro_c.compile_with_rtl,entl_packet_receiver_obj,entl_packet_receiver.c,.))
+
+$(eval $(call fw.add_obj,entl_packet_test,entl_packet_receiver_obj,i32.me1))
+$(eval $(call fw.add_obj,entl_packet_test,entl_packet_sender_obj,i32.me0 ))
+
+$(eval $(call fw.add_ppc,entl_packet_test,i8,$(PICO_CODE)))
+$(eval $(call fw.add_ppc,entl_packet_test,i9,$(PICO_CODE)))
+
 $(eval $(call fw.link_with_rtsyms,entl_packet_test))
 
 include $(scripts_dir)/Makefile.debug
@@ -107,7 +123,7 @@ HOST_EXEC_C = 	entl_packet_test_run.c
 HOST_SUB_C = entl_state_machine.c
 
 HOST_EXEC = $(addprefix ,$(HOST_EXEC_C:.c=))
-HOST_INC = -I../../../include -I../../include -I. -I../entl_state_test -I../entl_state_test/alo_unit_test
+HOST_INC = -I../../../include -I../../include -I. -I../entl_libs -I../entl_state_test -I../entl_state_test/alo_unit_test
 HOST_FLAGS = -Wall -L${LIB_INC_PATH} -g -Wl,-rpath,'$$ORIGIN/../../../lib' -DPACKAGE_NAME="\"nfp-sim-tools\"" -DPACKAGE_VERSION="\"beta\""
 HOST_LIBS = -lpcap -lnfp_hwdbg -lnfp -lrt -lnfp_common -ljansson -lz
 
@@ -115,7 +131,10 @@ HOST_LIBS = -lpcap -lnfp_hwdbg -lnfp -lrt -lnfp_common -ljansson -lz
 # Compile Switch for Host code
 HOST_FLAGS+= -DNETRONOME_HOST 
 
-entl_packet_test_run: entl_packet_test_run.c ../entl_state_test/entl_state_machine.c ../entl_state_test/entl_sm_unit_test/entl_sm_tester.c ../entl_state_test/atomic_link_op.c ../entl_state_test/alo_unit_test/alo_tester.c ../entl_state_test/alo_unit_test/cyc_random.c
+entl_packet_test_demo: entl_packet_test_demo.c ../entl_libs/entl_state_machine.c ../entl_state_test/entl_sm_unit_test/entl_sm_tester.c ../entl_libs/atomic_link_op.c ../entl_state_test/alo_unit_test/alo_tester.c ../entl_state_test/alo_unit_test/cyc_random.c
+	$(CC) $(HOST_FLAGS) $(HOST_INC) -pthread -o $@ $^ $(HOST_LIBS) 
+
+entl_packet_test_run: entl_packet_test_run.c ../entl_libs/entl_state_machine.c ../entl_state_test/entl_sm_unit_test/entl_sm_tester.c ../entl_libs/atomic_link_op.c ../entl_state_test/alo_unit_test/alo_tester.c ../entl_state_test/alo_unit_test/cyc_random.c
 	$(CC) $(HOST_FLAGS) $(HOST_INC) -pthread -o $@ $^ $(HOST_LIBS) 
 
 %.cpp.o: %.cpp
@@ -131,6 +150,7 @@ clean:
 	find . -name "*.c.o" -print -delete
 	find . -name "*.c~" -print -delete
 	find . -name "*.h~" -print -delete
+	find . -name "*.obj" -print -delete
 	rm -f Makefile~ core
 	rm -f $(HOST_EXEC)
 

@@ -40,3 +40,38 @@ entl_reflect(unsigned int dst_me, unsigned int dst_xfer,
            __ct_const_val(count)], indirect_ref;
     };
 }
+
+uint32_t get_entl_sender_me( uint32_t port ) {
+    switch(port) {
+        case 0:     return 0 ;
+        case 1:     return 0 ;
+        case 2:     return 0 ;
+        case 3:     return 0 ;
+        case 4:     return 0 ;
+        case 5:     return 0 ;
+        case 6:     return 0 ;
+        case 7:     return 1 ;  
+        //case 8:     return 0 ;
+        //case 9:     return 1 ;
+        //case 10:    return 0 ;
+        //case 11:    return 1 ;  // netronome can handle up to 12 ports
+        default:    return 0xffffffff ;
+    }
+}
+uint32_t get_entl_sender_meid( uint32_t port ) {
+    switch(port) {
+        case 0:     return __nfp_meid(32,0) ;
+        case 1:     return __nfp_meid(33,0) ;
+        case 2:     return __nfp_meid(34,0) ;
+        case 3:     return __nfp_meid(35,0) ;
+        case 4:     return __nfp_meid(36,0) ;
+        case 5:     return __nfp_meid(37,0) ;
+        case 6:     return __nfp_meid(38,0) ;
+        case 7:     return __nfp_meid(38,1) ;  
+        //case 8:     return __nfp_meid(36,0) ;
+        //case 9:     return __nfp_meid(36,1) ;
+        //case 10:    return __nfp_meid(37,0) ;
+        //case 11:    return __nfp_meid(37,1) ;  // netronome can handle up to 12 ports
+        default:    return 0xffffffff ;
+    }
+}

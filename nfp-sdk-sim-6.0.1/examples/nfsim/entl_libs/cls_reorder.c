@@ -2,7 +2,7 @@
  * Copyright (C) 2017,  Earth Computing Inc.  All rights reserved.
  *
  *
- * @file          cls_reorder.h
+ * @file          cls_reorder.c
  * @brief         CLS Reorder code 
  *
  * Author:        Atsushi Kasuya

@@ -28,7 +28,7 @@ if jso is None:
     exit(1)
 proj_name = jso.get("name")
 print(proj_name)
-proj_obj_name = proj_name + "_obj"
+#proj_obj_name = proj_name + "_obj"
 
 var_obj = jso.get("vars")
 var_list = list(var_obj)
@@ -93,6 +93,8 @@ platforms_obj = jso.get( 'platforms' )
 
 tgets_obj = jso.get( "targets" )
 
+targets_list = list(tgets_obj)
+
 
 def var_convert( s ):
     import re
@@ -115,8 +117,8 @@ def var_convert( s ):
                 #print ( nn + " is not " + v )
     return s
 
-def gen_compo( compo_name, list_name, last ):
-    print( "component:%s List:%s" %(compo_name, list_name))
+def gen_compo( name, compo_name, last ):
+    print( "platform %s component:%s" %(name, compo_name))
     compo_obj = components_obj.get( compo_name )
     if compo_obj is None:
         return
@@ -126,7 +128,7 @@ def gen_compo( compo_name, list_name, last ):
         if not inc_list is None:
             for inc in inc_list:
                 inc = var_convert(inc)
-                print( "microc.add_include( %s, %s )" % (compo_name, inc))
+                mfile.write( "$(eval $(call microc.add_include,%s,%s ))" % (name, inc))
         dir = compo_obj.get( "dir" )
         if dir is None:
             dir = "."
@@ -143,17 +145,16 @@ def gen_compo( compo_name, list_name, last ):
                 #src = src.split('.', 1)[0]
                 if last is True and index == length:
                     #print( "$(eval $(call micro_c.compile_with_rtl, %s, %s, %s))" %(list_name, src, dir))
-                    mfile.write( "$(eval $(call micro_c.compile_with_rtl,%s,%s.c,%s))\n" %(list_name, src, dir))
+                    mfile.write( "$(eval $(call micro_c.compile_with_rtl,%s,%s.c,%s))\n" %(name, src, dir))
                 else:
                     #print( "$(eval $(call micro_c.add_src_lib, %s, %s, %s))" %(list_name, src, dir))
-                    mfile.write("$(eval $(call micro_c.add_src_lib,%s,%s,%s))\n" % (list_name, src, dir))
+                    mfile.write("$(eval $(call micro_c.add_src_lib,%s,%s,%s))\n" % (name, src, dir))
                 index += 1
 
 
-
+## Compile target per platform level to refrect the flags per platform level
+#  name carries the 
 def gen_target( name, tgt_obj ):
-    list_name = tgt_obj.get("list")
-    l_name = list_name.split('.',1)[0]
     compo_list = tgt_obj.get("components")
     comp_flags = ""
     comp_def = ""
@@ -164,13 +165,13 @@ def gen_target( name, tgt_obj ):
             for f in flag_list:
                 f = var_convert( f )
                 #print( "$(eval $(microc.add_flags( %s, %s ))" % (l_name, f))
-                mfile.write("$(eval $(microc.add_flags( %s,%s ))\n" % (l_name, f))
+                mfile.write("$(eval $(call microc.add_flags, %s, %s ))\n" % (name, f))
         def_list = comp_obj.get("defines")
         if not def_list is None:
             for d in def_list:
                 d = var_convert( d )
                 #print( "$(eval $(microc.add_define( %s, %s ))" % (l_name, d))
-                mfile.write( "$(eval $(microc.add_define( %s,%s ))\n" % (l_name, d))
+                mfile.write( "$(eval $(call microc.add_define, %s, %s ))\n" % (name, d))
     length = 0
     for compo_name in compo_list:
         if compo_name in valid_compo_list:
@@ -179,37 +180,60 @@ def gen_target( name, tgt_obj ):
     for compo_name in compo_list:
         if compo_name in valid_compo_list:
             #print( "index %d length %d" % (index, length))
-            mfile.write( "\n")
-            gen_compo( compo_name, l_name, index == length-1 )
+            #mfile.write( "\n")
+            gen_compo( name, compo_name, index == length-1 )
             index += 1
-    mes = tgt_obj.get("mes")
-    if not mes is None:
-        for me in mes:
-            me = var_convert( me )
-            #print('$(eval $(call fw.add_obj, %s, %s, %s))' % (proj_obj_name, l_name, me))
-            mfile.write('$(eval $(call fw.add_obj,%s,%s,%s))\n' % (proj_obj_name, l_name, me))
+    # mes in target is not supported for now
+    #mes = tgt_obj.get("mes")
+    #if not mes is None:
+    #    for me in mes:
+    #        me = var_convert( me )
+    #        #print('$(eval $(call fw.add_obj, %s, %s, %s))' % (proj_obj_name, l_name, me))
+    #        mfile.write('$(eval $(call fw.add_obj,%s,%s,%s))\n' % (proj_obj_name, l_name, me))
 
-def gen_platform( name, p_obj ):
+def gen_platform( platform, p_obj ):
+    # process "common" : "defines"
+    common_obj = p_obj.get( "common" )
+    if not common_obj is None:
+        common_defs = common_obj.get("defines")
+        #if not defs is None:
+        #    for def in defs:
+        #        mfile.write( "$(eval $(microc.add_define( %s,%s ))\n" % (name, def))
     targets_obj = p_obj.get( "targets" )
-    targets_list = list( targets_obj )
-    for target in targets_list:
-        t_obj = tgets_obj.get( target )
-        list_name = t_obj.get("list")
-        l_name = list_name.split('.', 1)[0]
+    t_list = list( targets_obj )
+    for target in t_list:
         targ_obj = targets_obj.get( target )
+        platform_target_name = platform + "_" + target
         mes_list = targ_obj.get( "mes" )
         if not mes_list is None:
+            #process common defines
+            if not common_defs is None:
+                for d in common_defs:
+                    mfile.write( "$(eval $(call microc.add_define, %s, %s ))\n" % (platform_target_name, d))
+            # process per target defines 
+            compiler_obj = targ_obj.get("compiler")
+            if not compiler_obj is None:
+                defines_array = compiler_obj.get("defines")
+                if not defines_array is None:
+                    for d in defines_array:
+                        mfile.write( "$(eval $(call microc.add_define, %s, %s ))\n" % (platform_target_name, d))
+                includes_array = compiler_obj.get("include")
+                if not includes_array is None:
+                    for inc in includes_array:
+                        inc = var_convert(inc)
+                        mfile.write("$(eval $(call microc.add_include,%s,%s ))" % (platform_target_name, inc))
+            tgt_obj = tgets_obj.get(target)
+            gen_target( platform_target_name, tgt_obj )
             for me in mes_list:
                 me = var_convert( me )
                 #print( '$(eval $(call fw.add_obj,%s,%s,%s))' % ( proj_obj_name, target, me ))
-                mfile.write('$(eval $(call fw.add_obj,%s,%s,%s))\n' % (proj_obj_name, l_name, me))
+                mfile.write('$(eval $(call fw.add_obj,%s,%s,%s))\n' % (proj_name, platform_target_name, me))
 
 #testing gen_target
-targets_list = list(tgets_obj)
-for tgt in targets_list:
+#for tgt in targets_list:
     #if( tgt == "pif_app_nfd" ):
-    tgt_obj = tgets_obj.get( tgt )
-    gen_target( tgt, tgt_obj )
+    #tgt_obj = tgets_obj.get( tgt )
+    #gen_target( tgt, tgt_obj )
 
 
 if platforms_obj is None:
@@ -219,11 +243,11 @@ platforms_list = list( platforms_obj )
 for platform in platforms_list:
     if platform == platfom_name:
         plf_obj = platforms_obj.get(platform)
-        gen_platform( platform, plf_obj)
+        gen_platform( platform, plf_obj )
 
-        mfile.write("$(eval $(call fw.add_ppc,%s,i8,$(PICO_CODE)))\n" % proj_obj_name )
-        mfile.write("$(eval $(call fw.add_ppc,%s,i9,$(PICO_CODE)))\n" % proj_obj_name )
-        mfile.write("$(eval $(call fw.link_with_rtsyms,%s))\n" % proj_obj_name )
+        mfile.write("$(eval $(call fw.add_ppc,%s,i8,$(PICO_CODE)))\n" % proj_name )
+        mfile.write("$(eval $(call fw.add_ppc,%s,i9,$(PICO_CODE)))\n" % proj_name )
+        mfile.write("$(eval $(call fw.link_with_rtsyms,%s))\n" % proj_name )
 
 """ testing var_convert
 compos = jso.get('components')

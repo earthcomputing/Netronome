@@ -9,4 +9,11 @@
  *
  */
 
+void forward_packet() 
+{
+	for(;;) {
+		
+	}
+
+}
 

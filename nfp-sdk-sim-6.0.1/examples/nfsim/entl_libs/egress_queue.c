@@ -10,11 +10,17 @@
  */
 
 #include "nfp_cls.h"
+
+#define PACKET_RING_IMPORT
+
 #include "egress_queue.h"
 
 void egress_queue_init() {
-    cls_ring_setup(PACKET_RING_NUM,
-                   (__cls void *)packet_ring_mem,
+    cls_ring_setup(PACKET_RING_NUM_0,
+                   (__cls void *)packet_ring_mem0,
+                   (PACKET_RING_SIZE_LW*sizeof(packet_data_t)));
+    cls_ring_setup(PACKET_RING_NUM_1,
+                   (__cls void *)packet_ring_mem0,
                    (PACKET_RING_SIZE_LW*sizeof(packet_data_t)));
 }
 
@@ -54,19 +60,36 @@ void put_packet_data( __xwrite packet_data_t *pkt_out, uint32_t island_ring  )
 
 uint32_t get_island_ring( uint32_t port ) {
 	switch(port) {
-		case 0: 	return 0xffffffff ;  // to host
-		case 1:		return 32 << 16 | PACKET_RING_NUM_0 ;
-		case 2:		return 32 << 16 | PACKET_RING_NUM_1 ;
-		case 3:		return 33 << 16 | PACKET_RING_NUM_0 ;
-		case 4:		return 33 << 16 | PACKET_RING_NUM_1 ;
-		case 5:		return 34 << 16 | PACKET_RING_NUM_0 ;
-		case 6:		return 34 << 16 | PACKET_RING_NUM_1 ;
-		case 7:		return 35 << 16 | PACKET_RING_NUM_0 ;
-		case 8:		return 35 << 16 | PACKET_RING_NUM_1 ;
-		case 9:		return 36 << 16 | PACKET_RING_NUM_0 ;
-		case 10:	return 36 << 16 | PACKET_RING_NUM_1 ;
-		case 11:	return 37 << 16 | PACKET_RING_NUM_0 ;
-		case 12:	return 37 << 16 | PACKET_RING_NUM_1 ;  // netronome can handle up to 12 ports
+		case 0:		return 32 << 16 | PACKET_RING_NUM_0 ;
+		case 1:		return 33 << 16 | PACKET_RING_NUM_0 ;
+		case 2:		return 34 << 16 | PACKET_RING_NUM_0 ;
+		case 3:		return 35 << 16 | PACKET_RING_NUM_0 ;
+		case 4:		return 36 << 16 | PACKET_RING_NUM_0 ;
+		case 5:		return 37 << 16 | PACKET_RING_NUM_0 ;
+		case 6:		return 38 << 16 | PACKET_RING_NUM_0 ;
+		case 7:		return 38 << 16 | PACKET_RING_NUM_1 ;  // Optimized for 8 port 
+//		case 8:		return 37 << 16 | PACKET_RING_NUM_1 ;
+//		case 9:		return 36 << 16 | PACKET_RING_NUM_1 ;
+//		case 10:	return 35 << 16 | PACKET_RING_NUM_1 ;
+//		case 11:	return 34 << 16 | PACKET_RING_NUM_1 ;  // netronome can handle up to 12 ports
+		default:	return 0xffffffff ;
+	}
+}
+
+uint32_t get_nbi( uint32_t port ) {
+	switch(port) {
+		case 0:		return 0 ;
+		case 1:		return 1 ;
+		case 2:		return 0 ;
+		case 3:		return 1 ;
+		case 4:		return 0 ;
+		case 5:		return 1 ;
+		case 6:		return 0 ;
+		case 7:		return 1 ;  // reality, up to 8 ports can be supported on current hw
+//		case 8:		return 0 ;
+//		case 9:		return 1 ;
+//		case 10:	return 0 ;
+//		case 11:	return 1 ;  // netronome can handle up to 12 ports
 		default:	return 0xffffffff ;
 	}
 }
@@ -83,14 +106,14 @@ void init_sequence_num() {
     		&data_w,
     		&sequence_num_array0[i],
     		sizeof(uint32_t),
-    		sig_done,
+    		ctx_swap,
     		&sig 
 		);
 		cls_write_ptr32(
     		&data_w,
     		&sequence_num_array1[i],
     		sizeof(uint32_t),
-    		sig_done,
+    		ctx_swap,
     		&sig 
 		);
 	}
@@ -102,27 +125,50 @@ uint32_t get_sequence_num( uint32_t port ) {
 	__xread uint32_t data_r ;
 	__xwrite uint32_t data_w ;
 	uint32_t seq_num ;
-	
+	SIGNAL sig;
 	// This function does not use any mutex protection. 
 	// This should be called within the mutexed resion provided with reorder mechanism
 
-	SIGNAL sig;
-	cls_read_ptr32(
-    	&data_r,
-    	&SEQUENCE_NUM_ARRAY[i],
-    	sizeof(uint32_t),
-    	sig_done,
-    	&sig 
-	);
-	seq_num = (uint32_t)*data_r ;
-	data_w = seq_num + 1 ;
-	cls_write_ptr32(
-    	&data_w,
-    	&SEQUENCE_NUM_ARRAY[i],
-    	sizeof(uint32_t),
-    	sig_done,
-    	&sig 
-	);
+	uint32_t offset = port >> 1 ;
+
+	if( port & 1 ) {
+		cls_read_ptr32(
+	    	&data_r,
+	    	&sequence_num_array0[offset],
+	    	sizeof(uint32_t),
+	    	ctx_swap,
+	    	&sig 
+		);
+		seq_num = (uint32_t)*data_r ;
+		data_w = seq_num + 1 ;
+		cls_write_ptr32(
+	    	&data_w,
+	    	&sequence_num_array0[offset],
+	    	sizeof(uint32_t),
+	    	ctx_swap,
+	    	&sig 
+		);
+	}
+	else {
+		cls_read_ptr32(
+	    	&data_r,
+	    	&sequence_num_array1[offset],
+	    	sizeof(uint32_t),
+	    	ctx_swap,
+	    	&sig 
+		);
+		seq_num = (uint32_t)*data_r ;
+		data_w = seq_num + 1 ;
+		cls_write_ptr32(
+	    	&data_w,
+	    	&sequence_num_array1[offset],
+	    	sizeof(uint32_t),
+	    	ctx_swap,
+	    	&sig 
+		);
+	}
+
+
 
 	return seq_num ;
 

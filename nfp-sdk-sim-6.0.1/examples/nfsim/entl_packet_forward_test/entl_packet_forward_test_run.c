@@ -1,8 +1,11 @@
-/**
- * Copyright (C) 2013 Netronome Systems, Inc.  All rights reserved.
+/*
+ * Copyright (C) 2017,  Earth Computing Inc.  All rights reserved.
  *
- * @file    run.c
- * @brief   Example code for packet egress, interactiving with the simulator
+ *
+ * @file          entl_packet_forward_test_run.c
+ * @brief         Packet Forward Test Host code  
+ *
+ * Author:        Atsushi Kasuya
  *
  */
 

@@ -28,11 +28,13 @@ __intrinsic __addr40 void *imem_ptr40(unsigned int off)
 
     lo = off << 6 ;  // 64 byte per entry
 
-    if( lo & 0x400000) {  // iMem has 4M sram (22bit)
+    if( off < FW_TABLE_SIZE_0 ) {  // iMem has 4M sram (22bit)
       isl = 0x1d ;     // Internal Mem 1
     }
     else {
       isl = 0x1c ;     // Internal Mem 0
+
+      
     }
 
     hi = 0x80 | isl;

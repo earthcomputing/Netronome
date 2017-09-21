@@ -64,6 +64,7 @@ extern "C" {
 #define ENTL_ACTION_SEND_ALO_T      0x0200
 #define ENTL_ACTION_SEND_ALO_F      0x0400
 #define ENTL_ACTION_PROPAGATE_AIT   0x0800
+#define ENTL_ACTION_FORWARD         0x8000
 #define ENTL_ACTION_ERROR       -1
 
 #define ETH_P_ECLP  0xEAC0    /* Earth Computing Link Protocol [ NOT AN OFFICIALLY REGISTERED ID ] */

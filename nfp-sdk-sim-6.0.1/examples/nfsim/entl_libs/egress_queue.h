@@ -15,29 +15,34 @@
 
 #define PACKET_RING_SIZE_LW 256
 // #define PACKET_RING_SIZE_LW 8
-#define PACKET_RING_NUM_0 1
-#define PACKET_RING_NUM_1 2
+#define PACKET_RING_NUM_0 2
+#define PACKET_RING_NUM_1 3
 
 #define SEQUENCE_NUM_ARRAY_SIZE 12
+
 
 // Packet info. queued in the Egress Queue
 typedef struct packet_data {
     union {
         struct {
           unsigned int island_num:8 ;     // island number 
-          unsigned int nbi_num:8 ;        // NBI number to send the packet to
+          unsigned int nbi_num:1 ;        // NBI number to send the packet to
+          unsigned int dir:1 ;            // packet direction
+          unsigned int bls:2;             // < Buffer list of the MU buffer 
+          unsigned int reserved:4 ;       // reserved bits
           unsigned int queue_num:8 ;      // TM queue number
           unsigned int sequencer_num:8 ;  // TM sequencer number / port number
+          unsigned int len:32;            // < Length of the packet in bytes 
           unsigned int packet_num:32 ;     // packet number in CTM
           unsigned int seq_num:32 ;        // sequence number
           unsigned int next_lookup_id:32 ; // next lookup index
+          unsigned int dummy_word:32 ;     // adjusting length
         };
-        unsigned int __raw[4];          /**< Direct access to struct words */
+        unsigned int __raw[6];          /**< Direct access to struct words */
     };
 } packet_data_t ;
 
 #ifdef PACKET_RING_EXPORT
-
 __export __shared __cls __align(PACKET_RING_SIZE_LW*sizeof(packet_data_t)) char packet_ring_mem0[PACKET_RING_SIZE_LW*sizeof(packet_data_t)] ;
 __export __shared __cls __align(PACKET_RING_SIZE_LW*sizeof(packet_data_t)) char packet_ring_mem1[PACKET_RING_SIZE_LW*sizeof(packet_data_t)] ;
 __export __shared __cls __align(uint32_t) uint32_t sequence_num_array0[SEQUENCE_NUM_ARRAY_SIZE] ;
@@ -56,10 +61,11 @@ __import __shared __cls __align(uint32_t) uint32_t sequence_num_array1[SEQUENCE_
 
 #endif
 
-#ifdef ENTL_FORWARDER_0
-#define SEQUENCE_NUM_ARRAY sequence_num_array0
-#else
+#ifdef ENTL_FORWARDER_1
 #define SEQUENCE_NUM_ARRAY sequence_num_array1
+
+#else
+#define SEQUENCE_NUM_ARRAY sequence_num_array0
 #endif
 
 void get_packet_data( __xread packet_data_t *pkt_in, uint32_t ring ) ;
@@ -67,6 +73,10 @@ void get_packet_data( __xread packet_data_t *pkt_in, uint32_t ring ) ;
 void put_packet_data( __xwrite packet_data_t *pkt_out, uint32_t island_ring ) ;
 
 uint32_t get_island_ring( uint32_t port ) ;
+
+uint32_t get_sequencer( uint32_t in_port, uint32_t out_port ) ;
+
+uint32_t get_tm_queue( uint32_t port ) ;
 
 uint32_t get_sequence_num( uint32_t port ) ;
 

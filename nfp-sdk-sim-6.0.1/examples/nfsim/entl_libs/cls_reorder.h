@@ -17,8 +17,13 @@
 #define REORDER_RING_NUM0 0
 #define REORDER_RING_NUM1 1
 #define REORDER_RING_SIZE_LW 64
+#define REORDER_RING_SEQ_MASK 0x3f 
 
-
+// Reorder ring is selected by incomming port number & 1 
+// as two ports are assigned to an island.
+//  Need to redesign this scheme when we use all island to receive packets from any ports. 
+//   At this point, just use fixed island per port for a simple implementation. 
+//
 #ifdef REORDER_RING_EXPORT
 
 __export __shared __cls __align(REORDER_RING_SIZE_LW*4) char reorder_ring_mem0[REORDER_RING_SIZE_LW*4] ;
@@ -71,6 +76,10 @@ void reorder_lock( unsigned int ring_num, unsigned int sequence ) ;
 
 void reorder_unlock( unsigned int ring_num, unsigned int sequence ) ;
 
-
+// Optimized for 8 port, last Island supports two ports
+inline uint32_t get_ring_num( unsigned int port ) {
+    if( port == 7 ) return REORDER_RING_NUM1 ;
+    else return REORDER_RING_NUM0 ;
+}
 
 #endif

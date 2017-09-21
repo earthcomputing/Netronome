@@ -1,12 +1,35 @@
-#include <nfp.h>
+/*
+ * Copyright (C) 2017,  Earth Computing Inc.  All rights reserved.
+ *
+ *
+ * @file          entl_packet_receiver.c
+ * @brief         Packet Receiver Code for Packet Forward Test  
+ *
+ * Author:        Atsushi Kasuya
+ *
+ *  One Island is mapped to handle two ports
+ *  The receiver code runs on ALL thread on ME_n where n > 1
+ *  The thread 0 on ME0/1 is running ENTL send operation
+ *  The threads > 0 on ME0/1 are running Packet Forwarding
+ *
+ *  This mapping may be changed such that any Threads on any ME 
+ *
+ */
+ #include <nfp.h>
 #include <me.h>
 #include <mutexlv.h>
 #include <stdint.h>
 #include <pkt/pkt.h>
 #include <net/eth.h>
 #include <nfp/mem_bulk.h>
-//#include "system_init_c.h"
+#include "cls_reorder.h"
+#include "egress_queue.h"
+#include "entl_reflect.h"
 #include "entl_state_machine.h"
+#include "pkt_clone.h"
+
+#define PACKET_RING_IMPORT
+#include "egress_queue.h"
 
 #define ETH_P_ECLP  0xEAC0    /* Earth Computing Link Protocol [ NOT AN OFFICIALLY REGISTERED ID ] */
 
@@ -33,6 +56,10 @@
 #define MS_MAX_OFF  128
 #endif
 
+/* convert a 40 bit address to a blm buffer handle */
+#define blm_buf_ptr2handle(_bp) (blm_buf_handle_t)\
+                                ((unsigned long long)(_bp) >> 11)
+
 struct pkt_hdr {
     struct {
         //uint32_t mac_timestamp;
@@ -48,83 +75,27 @@ struct pkt_rxed {
     struct pkt_hdr            pkt_hdr;
 };
 
+
+static __xwrite entl_reflect_data_t entl_data_out ;
+
+__declspec(remote) __xread entl_reflect_data_t entl_data_in ;
+__declspec(remote) SIGNAL entl_send_sig ;
+
 #define CTM_ALLOC_ERR 0xffffffff
 #define MY_VALUE 0xbeef
 #define RETRY_CYCLE 1000
 
-volatile uint32_t  ctm_pkt_num ;
+//__import __lmem volatile uint64_t  keep_pkt_num ;
+//__shared uint32_t alo_command ;
+//__shared int  next_flag ;
+// MUTEXLV state_lock = 0;
+//#define STATE_LOCK_BIT 0
 
-#define FW_TABLE_IMPORT
-#include "fw_table_access.h"
+//__import __lmem volatile  entl_send_sig_num;
+//#define RECEIVER_ISLAND_NUM     32
+//#define RECEIVER_ME_NUM 4
+// #define RECEIVER_THREAD_NUM 0
 
-
-__import __shared __lmem volatile entl_state_machine_t state;
-__import __shared MUTEXLV state_lock = 0;
-
-#define STATE_LOCK_BIT 0
-
-__import __shared SIGNAL entl_send_sig;
-
-#define MAX_CREDITS         255
-
-__import __shared __cls volatile struct ctm_pkt_credits ctm_credits ;
-
-__intrinsic int wait_with_timeout( unsigned int cycle ) {
-    SIGNAL entl_timeout_sig;
-    set_alarm( cycle, &entl_timeout_sig );
-    wait_sig_mask(__signals(&entl_send_sig) | __signals(&entl_timeout_sig));
-    return signal_test(&entl_timeout_sig);
-}
-
-__intrinsic struct pkt_ms_info
-__my_pkt_msd_write(__addr40 void *pbuf, unsigned char off,
-                __xwrite uint32_t xms[2], size_t size, sync_t sync,
-                SIGNAL *sig)
-{
-    __gpr struct pkt_ms_info msi;
-    unsigned int mbox2 ;
-    /* Check for an illegal packet offset for direct modification script */
-    //__RT_ASSERT((off >= 16) && (off <= (MS_MAX_OFF + 16)));
-
-    /* Check if a no-op modification script is possible */
-    if (off <= MS_MAX_OFF && (off & 7) == 0) {
-        /* Write a no-op modification script right before the packet start */
-        msi.off_enc = (off >> 3) - 2;
-
-        xms[0] =  (NBI_PM_TYPE(NBI_PM_TYPE_DIRECT) |
-                  NBI_PM_OPCODE(NBI_PKT_MS_INSTRUCT_NOOP, 0, 0));
-        xms[1] = 0;
-        mbox2 = NBI_PKT_MS_INSTRUCT_NOOP ;
-        __mem_write64(xms, (__addr40 unsigned char *)pbuf + off - 8, size,
-                      size, sync, sig);
-    } else {
-        /* Determine a starting offset for the 8-byte modification script that
-         * is closest to the start of packet, that is 8-byte aligned, and that
-         * is still within the 120-byte (56-byte for A0) offset limit */
-        unsigned char ms_off = MS_MAX_OFF - 8;
-
-        if (off < MS_MAX_OFF)
-            ms_off = (off & ~0x7) - 8;
-
-        /* write a delete modification script to remove any excess bytes */
-        msi.off_enc = (ms_off >> 3) - 1;
-
-        xms[0] = (NBI_PM_TYPE(NBI_PM_TYPE_DIRECT) |
-                  NBI_PM_OPCODE(NBI_PKT_MS_INSTRUCT_DELETE,
-                                off - ms_off - 4, 0));
-        xms[1] = 0;
-        mbox2 = msi.off_enc << 24 | ms_off << 16 | off - ms_off - 4 ;
-        __mem_write64(xms, (__addr40 unsigned char *) pbuf + ms_off, size,
-                      size, sync, sig);
-    }
-    //mbox2 = msi.off_enc << 16 | msi.len_adj ;
-    //local_csr_write(local_csr_mailbox2, mbox2);
-
-    /* Set the length adjustment to point to the start of packet. */
-    msi.len_adj = off;
-
-    return msi;
-}
 
 
 __intrinsic struct pkt_ms_info
@@ -147,14 +118,13 @@ struct eth_hdr_padded {
 } __PACKED;
 
 
-int receive_packet( struct pkt_rxed *pkt_rxed, size_t size )
+int receive_packet( struct pkt_rxed *pkt_rxed, size_t size, uint64_t* s_addr )
 {
     __xread struct pkt_rxed pkt_rxed_in;
     int island, pnum;
     int pkt_off;
     __mem struct pkt_hdr *pkt_hdr;
     uint8_t *wmem ;
-    int64_t s_addr ;
     int64_t d_addr ;
     int64_t data ;
     int64_t d_value ;
@@ -173,9 +143,34 @@ int receive_packet( struct pkt_rxed *pkt_rxed, size_t size )
     pkt_rxed->pkt_hdr = pkt_rxed_in.pkt_hdr;
     wmem = &pkt_rxed->pkt_hdr.pkt ;
     d_addr = (uint64_t)wmem[0]<<40 | (uint64_t)wmem[1]<<32 | (uint64_t)wmem[2]<<24 | (uint64_t)wmem[3]<<16 | (uint64_t)wmem[4]<<8 | (uint64_t)wmem[5] ; 
-    s_addr = (uint64_t)wmem[6]<<40 | (uint64_t)wmem[7]<<32 | (uint64_t)wmem[8]<<24 | (uint64_t)wmem[9]<<16 | (uint64_t)wmem[10]<<8 | (uint64_t)wmem[11] ; 
+    *s_addr = (uint64_t)wmem[6]<<40 | (uint64_t)wmem[7]<<32 | (uint64_t)wmem[8]<<24 | (uint64_t)wmem[9]<<16 | (uint64_t)wmem[10]<<8 | (uint64_t)wmem[11] ; 
     wmem = &pkt_rxed->pkt_hdr.data ;
     data = (uint64_t)wmem[0]<<56 | (uint64_t)wmem[1]<<48 | (uint64_t)wmem[2]<<40 | (uint64_t)wmem[3]<<32 | (uint64_t)wmem[4]<<24 | (uint64_t)wmem[5]<<16 |  (uint64_t)wmem[6]<<8 |(uint64_t)wmem[7] ; 
+    if( GET_ECLP_ETYPE(d_addr) != ENTL_ETYPE_NOP ) {
+      entl_data_out.d_addr = d_addr ;
+      entl_data_out.data = data ;
+      if( (d_addr & ECLP_FW_MASK) == 0 )
+      {
+        entl_data_out.island = island ;
+        entl_data_out.pnum = pnum ;
+        local_csr_write(local_csr_mailbox2, island );
+        local_csr_write(local_csr_mailbox3, pnum );      
+      }
+      else {
+        entl_data_out.island = 0 ;
+        entl_data_out.pnum = 0 ;        
+      }
+      ret = ENTL_ACTION_SEND ;
+    }
+    if( d_addr & ECLP_FW_MASK ) {
+      ret |= ENTL_ACTION_FORWARD ;
+    }
+
+  mbox2 = d_addr >> 32 ;
+  mbox3 = d_addr ;
+  local_csr_write(local_csr_mailbox2, mbox2 );
+  local_csr_write(local_csr_mailbox3, mbox3 );
+
 #ifdef ENTL_STATE_DEBUG
     state.r_addr = d_addr ;
     state.r_data = data ;
@@ -186,210 +181,196 @@ int receive_packet( struct pkt_rxed *pkt_rxed, size_t size )
     //mbox1 = d_addr ;
     //mbox2 = data >> 32 ;
     //mbox3 = data ;
-    mbox0 = data >> 32 ;
-    mbox1 = data ;
-    local_csr_write(local_csr_mailbox0, mbox0 );
-    local_csr_write(local_csr_mailbox1, mbox1 );
+    //mbox0 = data >> 32 ;
+    //mbox1 = data ;
+    //local_csr_write(local_csr_mailbox0, mbox0 );
+    //local_csr_write(local_csr_mailbox1, mbox1 );
     //local_csr_write(local_csr_mailbox0, mbox0 );
     //local_csr_write(local_csr_mailbox1, mbox1 );
     //local_csr_write(local_csr_mailbox2, mbox2 );
-    MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
+    //MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
 // int entl_received( __lmem entl_state_machine_t *mcn, uint64_t d_addr, uint64_t s_value, uint64_t *d_value, uint32_t ait_queue, uint32_t ait_command, uint32_t egress_queue ) ;
-    ret = entl_received( &state, d_addr, data, 0, 0, 0 ) ;
-    MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
-    mbox3 = state.state.current_state ;
-    local_csr_write(local_csr_mailbox3, mbox3 );
-    if( (d_addr & ECLP_FW_MASK) == 0 )
-    {
-      keep_pkt_num = 0x800000000000 | pnum ;
-    }
-
+    //ret = entl_received( &state, d_addr, data, 0, 0, 0 ) ;
+    //MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
+    
 
     return ret;
 }
 
-void
-rewrite_packet( __addr40 char *pbuf, uint64_t s_addr, uint64_t d_addr, uint64_t data )
-{
-  //SIGNAL sig;
-  //__xread uint32_t pkt_buf[6];
-  volatile __declspec(write_reg) uint32_t w_pkt[6] ;
-  uint8_t pkt[22] ;
-  unsigned int mbox0, mbox1, mbox2, mbox3 ;
-
-  //mem_read32( &pkt_buf[0], pbuf, 24 ) ;
-  pkt[0] = d_addr >> 40 ;
-  pkt[1] = d_addr >> 32 ;
-  pkt[2] = d_addr >> 24 ;
-  pkt[3] = d_addr >> 16 ;
-  pkt[4] = d_addr >> 8 ;
-  pkt[5] = d_addr ;
-
-  mbox2 = d_addr >> 32 ;
-  mbox3 = d_addr ;
-  //mbox0 = data >> 32 ;
-  //mbox1 = data ;
-  //local_csr_write(local_csr_mailbox0, mbox0 );
-  //local_csr_write(local_csr_mailbox1, mbox1 );
-  local_csr_write(local_csr_mailbox2, mbox2 );
-  local_csr_write(local_csr_mailbox3, mbox3 );
-
-#ifdef ENTL_STATE_DEBUG
-  state.addr = d_addr ;
-  state.data = data ;
-#endif
 
 
-  pkt[6] = s_addr >> 40 ;
-  pkt[7] = s_addr >> 32 ;
-  pkt[8] = s_addr >> 24 ;
-  pkt[9] = s_addr >> 16 ;
-  pkt[10] = s_addr >> 8 ;
-  pkt[11] = s_addr ;
-  pkt[12] = ETH_P_ECLP >> 8 ;
-  pkt[13] = ETH_P_ECLP ;
-  pkt[14] = data >> 56 ;
-  pkt[15] = data >> 48 ;
-  pkt[16] = data >> 40 ;
-  pkt[17] = data >> 32 ;
-  pkt[18] = data >> 24 ;
-  pkt[19] = data >> 16 ;
-  pkt[20] = data >> 8 ;
-  pkt[21] = data ;
-
-  w_pkt[0] = (uint32_t)pkt[0] << 24 | (uint32_t)pkt[1] << 16 | (uint32_t)pkt[2] << 8 | (uint32_t)pkt[3] ;
-  w_pkt[1] = (uint32_t)pkt[4] << 24 | (uint32_t)pkt[5] << 16 | (uint32_t)pkt[6] << 8 | (uint32_t)pkt[7] ;
-  w_pkt[2] = (uint32_t)pkt[8] << 24 | (uint32_t)pkt[9] << 16 | (uint32_t)pkt[10] << 8 | (uint32_t)pkt[11] ;
-  w_pkt[3] = (uint32_t)pkt[12] << 24 | (uint32_t)pkt[13] << 16 | (uint32_t)pkt[14] << 8 | (uint32_t)pkt[15] ;
-  w_pkt[4] = (uint32_t)pkt[16] << 24 | (uint32_t)pkt[17] << 16 | (uint32_t)pkt[18] << 8 | (uint32_t)pkt[19] ;
-  w_pkt[5] = (uint32_t)pkt[20] << 24 | (uint32_t)pkt[21] << 16 ;
-
-  mem_write32( (void*)w_pkt, (__addr40 uint8_t *)pbuf , 24 );
-
-}
-
-void
-send_packet( int island, int pnum, int plen, unsigned int seq_num, int flag )
-{
-    int pkt_off;
-    __gpr struct pkt_ms_info msi;
-    __addr40 char *pbuf;
-    //unsigned int mbox2 ;
-    /* Write the MAC egress CMD and adjust offset and len accordingly */
-    pkt_off = PKT_NBI_OFFSET;  // 64
-    pbuf   = pkt_ctm_ptr40(island, pnum, 0);
-
-    pkt_off += MAC_PREPEND_BYTES; // 64 + 8 = 72
-    plen -= MAC_PREPEND_BYTES;
-    pkt_mac_egress_cmd_write(pbuf, pkt_off, 0, 0); // Write 4byte to make the packet MAC egress not generate L3 and L4 checksums
-
-    pkt_off -= 4;  // rewind back 4 byte for egress cmd
-    plen += 8;
-    msi = my_pkt_msd_write(pbuf, pkt_off); // Write a packet modification script of NULL
-    //mbox2 = msi.off_enc << 16 | msi.len_adj ;
-    //local_csr_write(local_csr_mailbox2, mbox2);
-
-    if( flag ) {
-      pkt_nbi_send(island, pnum, &msi, plen, NBI, 0,
-                 0, seq_num, PKT_CTM_SIZE_256);
-    }
-    else {
-      pkt_nbi_send_dont_free(island, pnum, &msi, plen, NBI, 0,
-                 0, seq_num, PKT_CTM_SIZE_256);
-    }
-
-}
 
 int
 main(void)
 {
 
-    if (__ctx() == 0) {
-        int ret ;
-        int64_t s_addr ;
-        int64_t d_addr ;
-        int64_t data ;
-        unsigned int mbox3, mbox2, mbox1 ;
-        __addr40 char *pkt_hdr;    /* The packet in the CTM */
-        int pkt_off = PKT_NBI_OFFSET + MAC_PREPEND_BYTES ;
-        unsigned int seq_num = 0 ;
-        int pnum ;
-        local_csr_write(local_csr_mailbox0, 0);
-        state.my_value = MY_VALUE ;
-        ctm_pkt_num = pkt_ctm_alloc( &ctm_credits, __ISLAND, PKT_CTM_SIZE_256, 1, 0);
-        while (ctm_pkt_num == CTM_ALLOC_ERR)
-        {
-          sleep(BACKOFF_SLEEP);
-          //PIF_COUNT(ERROR_WAIT_CTM_PKT_ALLOC);
-          ctm_pkt_num = pkt_ctm_alloc( &ctm_credits, __ISLAND, PKT_CTM_SIZE_256, 1, 0);
-        }
-        keep_pkt_num = 0 ; 
-        //next_flag = 0 ;
-        MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
-        entl_state_init( &state ) ;
-        alo_regs_init( &state.ao ) ;
-        //entl_set_random_addr( &state ) ;
-        state.my_value = MY_VALUE ; //((addr << 32 ) | l_rand()) & 0xffffffffffff ;
-        state.state.current_state = ENTL_STATE_HELLO ;
-        data = 0 ;
-        d_addr = 0 ;
-        MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
-        for (;;) {
-          int flag ;
-          ret = wait_with_timeout(RETRY_CYCLE);
-          MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
-//int entl_next_send( __lmem entl_state_machine_t *mcn, uint64_t *addr, uint64_t *alo_data, uint32_t alo_command, uint32_t ait_queue) ;
-          ret = entl_next_send( &state, &d_addr, &data, 0, 0 ) ; 
-          MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
-          //local_csr_write(local_csr_mailbox3, mbox3);
-          if( ret ) {
-            //mbox3 = (d_addr >>32) ;
-            //local_csr_write(local_csr_mailbox3, mbox3);
-            if( keep_pkt_num ) {
-              pnum = keep_pkt_num & 0xffffffff ;
-              keep_pkt_num = 0 ;
-              flag = 1 ;
-            }
-            else {
-              pnum = ctm_pkt_num ;
-              flag = 0 ;
-            }
-            pkt_hdr  = pkt_ctm_ptr40(__ISLAND, pnum, pkt_off);
-            s_addr = 0 ;
-            rewrite_packet( pkt_hdr, s_addr, d_addr, data ) ;
-            send_packet( __ISLAND, pnum, 64 + 4, seq_num++, flag ) ;
-            //local_csr_write(local_csr_mailbox2, seq_num );
-          }
+  
+  struct pkt_rxed pkt_rxed; /* The packet header received by the thread */
+  //__mem struct pkt_hdr *pkt_hdr;    /* The packet in the CTM */
+  unsigned int mbox0, mbox1, mbox2 ;
+  int ret ;
+  int i = 0 ;
+  if (__ctx() == 0) {
+    reorder_ring_init() ;
+  }
+  sleep(500) ;
+  //while( state.my_value != MY_VALUE ) {
+  //sleep(100) ;            
+  //}
+  //mbox2 = state.my_value ;
+  //local_csr_write(local_csr_mailbox2, mbox2 );
+  //sleep(100) ;             
+  //signal_ctx(0, __signal_number(&entl_send_sig)) ;  // send hello first       
+  entl_data_out.d_addr = 0 ;
+  entl_data_out.data = 0 ;
+  entl_data_out.island = 0 ;
+  entl_data_out.pnum = 0 ;
+  //if (__ctx() == 0) {
+    //local_csr_write(local_csr_mailbox0, 0x10000000 );
+    // initial trigger to send hello  
+    //entl_reflect( ENTL_SENDER_ME, __xfer_reg_number(&entl_data_in, ENTL_SENDER_ME),
+    //  __signal_number(&entl_send_sig, ENTL_SENDER_ME), &entl_data_out,
+    //  sizeof(entl_data_out)
+    //) ;
+    //local_csr_write(local_csr_mailbox0, 0x20000000 );
+  //}
+  //else {
+    sleep(100) ;
+  //}    
+  for (;;) {
+    uint64_t s_addr ;
+    int sent = 0 ;
+    //mbox0 = local_csr_read(local_csr_mailbox0) ;
+    //mbox0 |= (1 << __ctx()) ;
+    //local_csr_write(local_csr_mailbox0, mbox0 );
+    ret = receive_packet(&pkt_rxed, sizeof(pkt_rxed), &s_addr);
+    //local_csr_write(local_csr_mailbox1, ++i | (__ctx() << 16) );
+    mbox0 = local_csr_read(local_csr_mailbox0) ;
+    mbox0++ ;
+    local_csr_write(local_csr_mailbox0, mbox0 );
+    //mbox0 = (ret << 16) | 0x8000 | state.state.current_state ;
+    //local_csr_write(local_csr_mailbox0, mbox0 );
+    if( ret & ENTL_ACTION_SEND ) {
+      uint32_t meid = get_entl_sender_meid( pkt_rxed.nbi_meta.port ) ;
+      uint32_t me = get_entl_sender_me( pkt_rxed.nbi_meta.port ) ;
+      //sleep(100) ;
+      // __signal_me( RECEIVER_ISLAND_NUM, RECEIVER_ME_NUM, RECEIVER_THREAD_NUM, entl_send_sig_num ) ;
+      //signal_ctx(0, __signal_number(&entl_send_sig)) ;                    
+      entl_reflect( meid, __xfer_reg_number(&entl_data_in, me),
+        __signal_number(&entl_send_sig, me), &entl_data_out,
+        sizeof(entl_data_out)
+      ) ;
+      mbox1 = local_csr_read(local_csr_mailbox1) ;
+      mbox1++ ;
+      local_csr_write(local_csr_mailbox1, mbox1 );
+      if( !(ret & ENTL_ACTION_FORWARD) ) {
+        // participate in ordering 
+        int ring = get_ring_num( pkt_rxed.nbi_meta.port) ;
+        int sequence = pkt_rxed.nbi_meta.seq_num & REORDER_RING_SEQ_MASK ;
+        reorder_lock( ring, sequence) ;
+        reorder_unlock( ring, sequence ) ;
+      }
+    }
+    if( ret & ENTL_ACTION_FORWARD) {
+      int i ;
+      int ring ;
+      int sequence ;            
+      // lookup forward table 
+      __xread fw_table_entry_t entry ;
+      __xwrite packet_data_t pkt_out
 
+      read_entry( &entry, s_addr & ECLP_NLKUP_MASK ) ;
+
+      ring = get_ring_num( pkt_rxed.nbi_meta.port ) ;
+      sequence = pkt_rxed.nbi_meta.seq_num & REORDER_RING_SEQ_MASK ;
+      // do reordering here
+      reorder_lock( ring, sequence ) ;
+
+      if( s_addr & ECLP_D_MASK ) {
+        // rootward packet
+        if( entry.parent == 0 ) {
+          // sent to host, TBD
         }
+        else {
+          uint32_t port = entry.parent-1 ;
+          uint32_t e_ring = get_island_ring( port ) ;
+          pkt_out.nbi_num = get_nbi( port ) ;
+          pkt_out.dir = 1 ; // set direction bit
+          pkt_out.sequencer_num = port ; // = port number
+          pkt_out.island_num = pkt_rxed.nbi_meta.pkt_info.isl;
+          pkt_out.packet_num = pkt_rxed.nbi_meta.pkt_info.pnum ;
+          pkt_out.bls = pkt_rxed.nbi_meta.pkt_info.bls ;
+          pkt_out.len = pkt_rxed.nbi_meta.pkt_info.len ;
+          pkt_out.seq_num = get_sequence_num( port ) ;
+          pkt_out.next_lookup_id = entry.next_lookup[port] ;
+          put_packet_data( &pkt_out, e_ring ) ;
+        }
+      }
+      else {
+        uint16_t fw_vector ;
+        fw_vector = entry.fw_vector ;
+        if( fw_vector & 1 ){
+          // send to host, TBD
+          sent = 1 ;
+        }
+        for( i = 1 ; i < 15 ; i++ ) {
+          if( fw_vector & (1 << i) ) {
+            uint32_t port = i - 1 ;
+            uint32_t e_ring = get_island_ring( port ) ;
+            if( port != pkt_rxed.nbi_meta.port ) // do not send to incomming port
+            {
+              pkt_out.nbi_num = get_nbi( port ) ;
+              pkt_out.dir = 0 ; // set direction bit
+              pkt_out.sequencer_num = port ; // = port number
+              pkt_out.bls = pkt_rxed.nbi_meta.pkt_info.bls ;
+              pkt_out.len = pkt_rxed.nbi_meta.pkt_info.len ;
+              pkt_out.seq_num = get_sequence_num( port ) ;
+              pkt_out.next_lookup_id = entry.next_lookup[port] ;
+              pkt_out.island_num = pkt_rxed.nbi_meta.pkt_info.isl;
+              if( sent ) {
+                struct nbi_meta_pkt_info pkt_info;
+                __xwrite uint32_t buf_xw[2];
+                __addr40 void *ctm_ptr;
+                __gpr struct pkt_clone_destination  destination;
+                // need to copy the packet
+                destination = pkt_clone(
+                  pkt_rxed.nbi_meta.pkt_info.pnum,
+                  PKT_CTM_SIZE_256,
+                  (__addr40 __mem uint32_t *) pkt_rxed.nbi_meta.muptr,
+                  pkt_rxed.nbi_meta.pkt_info.bls, // BLM_BLQ_0 ??
+                  PKT_NBI_OFFSET + MAC_PREPEND_BYTES,
+                  pkt_rxed.nbi_meta.pkt_info.len,
+                  pkt_rxed.nbi_meta.pkt_info.split
+                );
+                pkt_out.packet_num = destination.ctm_pkt_num ;
+                // update packet meta data
+                pkt_info.isl = pkt_rxed.nbi_meta.pkt_info.isl ;
+                pkt_info.pnum = destination.ctm_pkt_num ;
+                pkt_info.split = pkt_rxed.nbi_meta.pkt_info.split ;
+                pkt_info.muptr = blm_buf_ptr2handle(destination.mu_ptr);
+                ctm_ptr = pkt_ctm_ptr40(__ISLAND, destination.ctm_pkt_num, 0);
+                buf_xw[0] = pkt_info.__raw[0];
+                buf_xw[1] = pkt_info.__raw[1];
+                mem_write32(buf_xw, ctm_ptr, sizeof(buf_xw));
+              }
+              else {
+                pkt_out.packet_num = pkt_rxed.nbi_meta.pkt_info.pnum ;
+                sent = 1 ;
+              }              
+              put_packet_data( &pkt_out, e_ring ) ;
+            }
+          }
+        }
+
+      }
+
+      // release reorder here
+      reorder_unlock( ring, sequence ) ;
     }
-    else {
-      struct pkt_rxed pkt_rxed; /* The packet header received by the thread */
-      //__mem struct pkt_hdr *pkt_hdr;    /* The packet in the CTM */
-        unsigned int mbox0, mbox1, mbox2 ;
-        int ret ;
-        int i = 0 ;
-        sleep(100) ;
-        while( state.my_value != MY_VALUE ) {
-            sleep(100) ;            
-        }
-        //mbox2 = state.my_value ;
-        //local_csr_write(local_csr_mailbox2, mbox2 );
-        sleep(100) ;             
-        signal_ctx(0, __signal_number(&entl_send_sig)) ;  // send hello first       
-        sleep(100) ;             
-        for (;;) {
-          ret = receive_packet(&pkt_rxed, sizeof(pkt_rxed));
-          //mbox0 = (ret << 16) | 0x8000 | state.state.current_state ;
-          //local_csr_write(local_csr_mailbox0, mbox0 );
-          if( ret & ENTL_ACTION_SEND ) {
-            //sleep(100) ;
-            signal_ctx(0, __signal_number(&entl_send_sig)) ;                    
-              
-          }            
-          // sleep(100) ;
+    // sleep(100) ;
+
+  } // for( ;; )
     
-        }
-    }
-    return 0;
-}	
+    
+  return 0;
+} 

@@ -59,6 +59,8 @@
 char *entlStateString[] = {"IDLE","HELLO","WAIT","SEND","RECEIVE","RA","SA","SB","RB","RA","SA","SB","RB","ERROR"};
 char json_string[512];
 
+FILE *log_file = NULL ;
+
 static int sockfd, w_socket ;
 static struct sockaddr_in sockaddr, w_sockaddr ;
 
@@ -69,6 +71,9 @@ static int sin_port ;
 
 static void toServer(char *json) {
   write( w_socket, json, strlen(json) ) ;
+  if( log_file ) {
+    fprintf( log_file, "%s\n", json ) ;
+  }
   //printf( "toServer:%s",json) ;
 }
 
@@ -337,6 +342,61 @@ static void read_lmem(struct nfp_device *dev, int menum) {
 
 }
 
+static void send_packet_json( int m, unsigned char *pkt, int dir )
+{
+    char buf[20] ;
+    char dat[10] ;
+    int i , j , k;
+    if( log_file ) {
+        for( i = 0 ; i < 16 ; i++ ) buf[i] = '_' ;
+        buf[16] = 0 ;
+        j = 0 ;
+        for( i = 0 ; i < m ; i++) {
+            if( dir ) {
+                for( k = 0 ; k < 16 ; k+=2){
+                    buf[k] = buf[k+2] ;
+                    buf[k+1] = buf[k+3] ;
+                } 
+                sprintf( dat, "%02x", pkt[i] ) ;
+                buf[14] = dat[0] ;
+                buf[15] = dat[1] ;
+            }
+            else {
+                for( k = 15 ; k > 0 ; k-=2) {
+                    buf[k] = buf[k-2] ;
+                    buf[k-1] = buf[k-3] ;
+                }
+                sprintf( dat, "%02x", pkt[i] ) ;
+                buf[0] = dat[0] ;
+                buf[1] = dat[1] ;
+            }
+            sprintf( json_string, "{ \"packet%d\": \"%s\" }", dir, buf) ;
+            fprintf( log_file, "%s\n", json_string ) ;
+        }
+        for( i = 0 ; i < 16 ; i+=2 ) {
+            if( dir ) {
+                for( k = 0 ; k < 16 ; k+=2){
+                    buf[k] = buf[k+2] ;
+                    buf[k+1] = buf[k+3] ;
+                } 
+                buf[14] = '_' ;
+                buf[15] = '_' ;
+            }
+            else {
+                for( k = 15 ; k > 0 ; k-=2) {
+                    buf[k] = buf[k-2] ;
+                    buf[k-1] = buf[k-3] ;
+                }
+                buf[0] = '_' ;
+                buf[1] = '_' ;
+            }
+            sprintf( json_string, "{ \"packet%d\": \"%s\" }", dir, buf) ;
+            fprintf( log_file, "%s\n", json_string ) ;
+        }       
+    }
+
+}
+
 static int send_back( struct nfp_device *dev, uint32_t alo_command ) {
     char wmem[1024*8*8];
     int ret, st;
@@ -382,6 +442,8 @@ static int send_back( struct nfp_device *dev, uint32_t alo_command ) {
             }            
         }
         st = nfp_sal_packet_ingress(dev, 0, 0, (void *) wmem, 64, 0);
+        send_packet_json(64, wmem, 0) ;
+
         //step_sim(dev, 300);
 
         //show_mailboxes(dev, menum) ;
@@ -398,6 +460,7 @@ static int send_back( struct nfp_device *dev, uint32_t alo_command ) {
     return st ;
 }
 
+
 static int read_packet( struct nfp_device *dev, int menum ) {
     unsigned char wmem[1024*8*8];
     int i, j, n, m ;
@@ -412,6 +475,7 @@ static int read_packet( struct nfp_device *dev, int menum ) {
     for (j = 0; j < m; j++) {
         n = nfp_sal_packet_egress(dev, 0, 0, (void *) wmem, 8000, &val64);
         printf("new egress packet @ time %lu(size = %d bytes):\n", val64, n);
+        send_packet_json(n, wmem, 1) ;
         d_addr = 0 ;
         s_addr = 0 ;
         type = wmem[12] ;
@@ -556,6 +620,10 @@ int main(int argc, char **argv)
     struct nfp_cpp *nfp_cpp ;
     int menum, menum1  ;
     int port ;
+    char *fname ;
+
+    printf( "argc = %d\n", argc ) ;
+
     menum = NFP6000_MEID(32, 0);
     menum1 = NFP6000_MEID(32, 1);
 
@@ -563,6 +631,16 @@ int main(int argc, char **argv)
     alo_regs_init( &state.ao ) ;
     entl_state_init( &nfp_state ) ;
     alo_regs_init( &nfp_state.ao ) ;
+
+    if( argc == 2 ) {
+        fname = argv[1] ;
+        printf( "fname:%s\n", fname ) ;
+        log_file = fopen( fname, "w") ;
+        if (! log_file ) {
+            printf( "Can't open log file %s\n", log_file ) ;
+            exit(1) ;
+        }
+    }
 
     state.my_value = 0xbeef - 1 ; 
     state.state.current_state = ENTL_STATE_HELLO ;

@@ -1,5 +1,5 @@
 {
-  "name": "entl_packet_test",
+  "name": "entl_packet_forward_test",
   "chip": {
     "minimum_revision": "0x10"
   },
@@ -120,11 +120,18 @@
           "entl_packet_receiver"
         ]
       }
+    },
+    "pkt_clone": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/nfp_pif/me/apps/common/src",
+      "compiler": {
+        "src": [
+          "pkt_clone"
+        ]
+      }
     }
   },
   "targets": {
     "entl_packet_sender": {
-      "list": "entl_packet_sender_obj.list",
       "type": "application",
       "components": [
         "entl_state_lib",
@@ -136,7 +143,6 @@
       ]
     },
     "entl_packet_receiver": {
-      "list": "entl_packet_receiver_obj.list",
       "type": "application",
       "components": [
         "entl_state_lib",
@@ -145,12 +151,13 @@
         "libpkt",
         "mem_bulk",
         "reg_utils",
+        "pkt_clone",
         "entl_packet_receiver"
       ]
     }
   },
   "platforms": {
-    "entl_packet_test": {
+    "entl_packet_forward_test": {
       "chip": {
         "minimum_revision": "0x10",
         "sku": "NFP-6480-1C-B0"
@@ -176,12 +183,9 @@
           "compiler": {
             "defines": [
               "ENTL_PORT_NUM=0"
-            ],
-            "include": [
-              "%(PIFAPPDIR)s/include"
             ]
-
           }
+
         },
         "entl_packet_receiver": {
           "mes": [
