@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Netronome Systems, Inc.
+ * Copyright (C) 2015-2017 Netronome Systems, Inc.
  *
  * This software is dual licensed under the GNU General License Version 2,
  * June 1991 as shown in the file COPYING in the top-level directory of this
@@ -33,26 +33,59 @@
 
 /*
  * nfp_resource.c
- * Author: Jason McMullan <jason.mcmullan@netronome.com>
+ * Author: Jakub Kicinski <jakub.kicinski@netronome.com>
+ *         Jason McMullan <jason.mcmullan@netronome.com>
  */
-
-#define NFP6000_LONGNAMES 1
-
-#include <linux/kernel.h>
-#include <linux/module.h>
-#include <linux/slab.h>
-#include <linux/sched.h>
 #include <linux/delay.h>
-
-#include "nfp.h"
-#include "nfp_cpp.h"
-
-#include "nfp3200/nfp3200.h"
+#include <linux/kernel.h>
+#include <linux/slab.h>
 
 #include "crc32.h"
+#include "nfp.h"
+#include "nfp_cpp.h"
+#include "nfp6000/nfp6000.h"
 
-#define NFP_XPB_OVERLAY(island)  (((island) & 0x3f) << 24)
-#define NFP_XPB_ISLAND(island)   (NFP_XPB_OVERLAY(island) + 0x60000)
+#define NFP_RESOURCE_TBL_TARGET		NFP_CPP_TARGET_MU
+#define NFP_RESOURCE_TBL_BASE		0x8100000000ULL
+
+/* NFP Resource Table self-identifier */
+#define NFP_RESOURCE_TBL_NAME		"nfp.res"
+#define NFP_RESOURCE_TBL_KEY		0x00000000 /* Special key for entry 0 */
+
+#define NFP_RESOURCE_ENTRY_NAME_SZ	8
+
+/**
+ * struct nfp_resource_entry - Resource table entry
+ * @owner:		NFP CPP Lock, interface owner
+ * @key:		NFP CPP Lock, posix_crc32(name, 8)
+ * @region:		Memory region descriptor
+ * @name:		ASCII, zero padded name
+ * @reserved
+ * @cpp_action:		CPP Action
+ * @cpp_token:		CPP Token
+ * @cpp_target:		CPP Target ID
+ * @page_offset:	256-byte page offset into target's CPP address
+ * @page_size:		size, in 256-byte pages
+ */
+struct nfp_resource_entry {
+	struct nfp_resource_entry_mutex {
+		u32 owner;
+		u32 key;
+	} mutex;
+	struct nfp_resource_entry_region {
+		u8  name[NFP_RESOURCE_ENTRY_NAME_SZ];
+		u8  reserved[5];
+		u8  cpp_action;
+		u8  cpp_token;
+		u8  cpp_target;
+		u32 page_offset;
+		u32 page_size;
+	} region;
+};
+
+#define NFP_RESOURCE_TBL_SIZE		4096
+#define NFP_RESOURCE_TBL_ENTRIES	(NFP_RESOURCE_TBL_SIZE /	\
+					 sizeof(struct nfp_resource_entry))
 
 struct nfp_resource {
 	char name[NFP_RESOURCE_ENTRY_NAME_SZ + 1];
@@ -62,368 +95,145 @@ struct nfp_resource {
 	struct nfp_cpp_mutex *mutex;
 };
 
-/* If the EMU is not enabled, we probably don't
- * have any resources anyway.
- */
-int nfp_cpp_resource_table(struct nfp_cpp *cpp, int *target,
-			   u64 *base, size_t *sizep)
+static int nfp_cpp_resource_find(struct nfp_cpp *cpp, struct nfp_resource *res)
 {
-	u32 model = nfp_cpp_model(cpp);
-	size_t size;
+	char name_pad[NFP_RESOURCE_ENTRY_NAME_SZ] = {};
+	struct nfp_resource_entry entry;
+	u32 cpp_id, key;
+	int ret, i;
 
-	*target = NFP_CPP_TARGET_MU;
-	size   = 4096;
+	cpp_id = NFP_CPP_ID(NFP_RESOURCE_TBL_TARGET, 3, 0);  /* Atomic read */
 
-	if (NFP_CPP_MODEL_IS_3200(model))
-		*base = 0;
-	else if (NFP_CPP_MODEL_IS_6000(model))
-		*base = 0x8100000000ULL;
-	else
-		return -EINVAL;
-
-	if (sizep)
-		*sizep = size;
-
-	return size / sizeof(struct nfp_resource_entry);
-}
-
-static int __nfp_resource_entry_init(struct nfp_cpp *cpp, int entry,
-				     const struct nfp_resource_entry_region
-				     *region,
-				     struct nfp_cpp_mutex **resource_mutex)
-{
-	struct nfp_cpp_mutex *mutex;
-	int target, entries;
-	size_t size;
-	u32 cpp_id;
-	u32 key;
-	int err;
-	u64 base;
-
-	entries = nfp_cpp_resource_table(cpp, &target, &base, &size);
-	if (entries < 0)
-		return entries;
-
-	if (entry >= entries)
-		return -EINVAL;
-
-	base += sizeof(struct nfp_resource_entry) * entry;
-
-	if (entry == 0)
-		key = NFP_RESOURCE_TABLE_KEY;
-	else
-		key = crc32_posix(region->name, 8);
-
-	err = nfp_cpp_mutex_init(cpp, target, base, key);
-	if (err < 0)
-		return err;
-
-	/* We already own the initialized lock */
-	mutex = nfp_cpp_mutex_alloc(cpp, target, base, key);
-	if (!mutex)
-		return -ENOMEM;
-
-	/* Mutex Owner and Key are already set */
-	cpp_id = NFP_CPP_ID(target, 4, 0);  /* Atomic write */
-
-	err = nfp_cpp_write(cpp, cpp_id, base +
-			offsetof(struct nfp_resource_entry, region),
-			region, sizeof(*region));
-	if (err < 0) {
-		/* Try to unlock in the face of adversity */
-		nfp_cpp_mutex_unlock(mutex);
-		nfp_cpp_mutex_free(mutex);
-		return err;
-	}
-
-	if (resource_mutex) {
-		*resource_mutex = mutex;
-	} else {
-		nfp_cpp_mutex_unlock(mutex);
-		nfp_cpp_mutex_free(mutex);
-	}
-
-	return 0;
-}
-
-/**
- * nfp_cpp_resource_init() - Construct a new NFP Resource table
- * @cpp:		NFP CPP handle
- * @mutexp:		Location to place the resource table's mutex
- *
- * NOTE: If mutexp is NULL, the mutex of the resource table is
- * implictly unlocked.
- *
- * Return: 0, or -ERRNO
- */
-int nfp_cpp_resource_init(struct nfp_cpp *cpp, struct nfp_cpp_mutex **mutexp)
-{
-	u32 cpp_id;
-	struct nfp_cpp_mutex *mutex;
-	int err;
-	int target, i, entries;
-	u64 base;
-	size_t size;
-	struct nfp_resource_entry_region region = {
-		.name = { NFP_RESOURCE_TABLE_NAME },
-		.cpp_action = NFP_CPP_ACTION_RW,
-		.cpp_token  = 1
-	};
-
-	entries = nfp_cpp_resource_table(cpp, &target, &base, &size);
-	if (entries < 0)
-		return entries;
-
-	region.cpp_target = target;
-	region.page_offset = base >> 8;
-	region.page_size   = size >> 8;
-
-	cpp_id = NFP_CPP_ID(target, 4, 0);  /* Atomic write */
-
-	err = __nfp_resource_entry_init(cpp, 0, &region, &mutex);
-	if (err < 0)
-		return err;
-
-	entries = size / sizeof(struct nfp_resource_entry);
-
-	/* We have a lock, initialize entires after 0.*/
-	for (i = sizeof(struct nfp_resource_entry); i < size; i += 4) {
-		err = nfp_cpp_writel(cpp, cpp_id, base + i, 0);
-		if (err < 0)
-			return err;
-	}
-
-	if (mutexp) {
-		*mutexp = mutex;
-	} else {
-		nfp_cpp_mutex_unlock(mutex);
-		nfp_cpp_mutex_free(mutex);
-	}
-
-	return 0;
-}
-
-/**
- * nfp_cpp_resource_add() - Construct a new NFP Resource entry
- * @cpp:		NFP CPP handle
- * @name:		Name of the resource
- * @cpp_id:		NFP CPP ID of the resource
- * @address:		NFP CPP address of the resource
- * @size:		Size, in bytes, of the resource area
- * @resource_mutex:	Location to place the resource's mutex
- *
- * NOTE: If resource_mutex is NULL, the mutex of the resource is
- * implictly unlocked.
- *
- * Return: 0, or -ERRNO
- */
-int nfp_cpp_resource_add(struct nfp_cpp *cpp, const char *name,
-			 u32 cpp_id, u64 address, u64 size,
-			 struct nfp_cpp_mutex **resource_mutex)
-{
-	int target, err, i, entries, minfree;
-	u64 base;
-	u32 key;
-	struct nfp_resource_entry_region region = {
-		.cpp_action = NFP_CPP_ID_ACTION_of(cpp_id),
-		.cpp_token  = NFP_CPP_ID_TOKEN_of(cpp_id),
-		.cpp_target = NFP_CPP_ID_TARGET_of(cpp_id),
-		.page_offset = (u32)(address >> 8),
-		.page_size  = (u32)(size >> 8),
-	};
-	struct nfp_cpp_mutex *mutex;
-	u32 tmp;
-
-	for (i = 0; i < sizeof(region.name); i++) {
-		if (*name != 0)
-			region.name[i] = *(name++);
-		else
-			region.name[i] = 0;
-	}
-
-	entries = nfp_cpp_resource_table(cpp, &target, &base, NULL);
-	if (entries < 0)
-		return entries;
-
-	cpp_id = NFP_CPP_ID(target, 3, 0);  /* Atomic read */
-
-	key = NFP_RESOURCE_TABLE_KEY;
-	mutex = nfp_cpp_mutex_alloc(cpp, target, base, key);
-	if (!mutex)
-		return -ENOMEM;
-
-	/* Wait for the lock.. */
-	err = nfp_cpp_mutex_lock(mutex);
-	if (err < 0) {
-		nfp_cpp_mutex_free(mutex);
-		return err;
-	}
-
-	/* Search for a free entry, or a duplicate */
-	minfree = 0;
-	key = crc32_posix(name, 8);
-	for (i = 1; i < entries; i++) {
-		u64 addr = base + sizeof(struct nfp_resource_entry) * i;
-
-		err = nfp_cpp_readl(cpp, cpp_id, addr +
-				offsetof(struct nfp_resource_entry, mutex.key),
-				&tmp);
-		if (err < 0) {
-			/* Unlikely to work if the read failed,
-			 * but we should at least try... */
-			nfp_cpp_mutex_unlock(mutex);
-			nfp_cpp_mutex_free(mutex);
-			return err;
-		}
-
-		if (tmp == key) {
-			/* Duplicate key! */
-			nfp_cpp_mutex_unlock(mutex);
-			nfp_cpp_mutex_free(mutex);
-			return -EEXIST;
-		}
-
-		if (tmp == 0 && minfree == 0)
-			minfree = i;
-	}
-
-	/* No available space in the table! */
-	if (minfree == 0)
-		return -ENOSPC;
-
-	err = __nfp_resource_entry_init(cpp, minfree, &region, resource_mutex);
-	nfp_cpp_mutex_unlock(mutex);
-	nfp_cpp_mutex_free(mutex);
-
-	return err;
-}
-
-static int nfp_cpp_resource_acquire(struct nfp_cpp *cpp, const char *name,
-				    u32 *r_cpp, u64 *r_addr, u64 *r_size,
-				    struct nfp_cpp_mutex **resource_mutex)
-{
-	struct nfp_resource_entry_region region;
-	struct nfp_resource_entry tmp;
-	struct nfp_cpp_mutex *mutex;
-	int target, err, i, entries;
-	u64 base;
-	u32 key;
-	u32 cpp_id;
-
-	for (i = 0; i < sizeof(region.name); i++) {
-		if (*name != 0)
-			region.name[i] = *(name++);
-		else
-			region.name[i] = 0;
-	}
-
-	entries = nfp_cpp_resource_table(cpp, &target, &base, NULL);
-	if (entries < 0)
-		return entries;
-
-	cpp_id = NFP_CPP_ID(target, 3, 0);  /* Atomic read */
-
-	key = NFP_RESOURCE_TABLE_KEY;
-	mutex = nfp_cpp_mutex_alloc(cpp, target, base, key);
-	if (!mutex)
-		return -ENOMEM;
-
-	/* Wait for the lock.. */
-	err = nfp_cpp_mutex_lock(mutex);
-	if (err < 0) {
-		nfp_cpp_mutex_free(mutex);
-		return err;
-	}
+	strncpy(name_pad, res->name, sizeof(name_pad));
 
 	/* Search for a matching entry */
-	if (memcmp(region.name,
-		   NFP_RESOURCE_TABLE_NAME "\0\0\0\0\0\0\0\0", 8) != 0)
-		key = crc32_posix(&region.name[0], sizeof(region.name));
-	for (i = 0; i < entries; i++) {
-		u64 addr = base + sizeof(struct nfp_resource_entry) * i;
-
-		err = nfp_cpp_read(cpp, cpp_id, addr, &tmp, sizeof(tmp));
-		if (err < 0) {
-			/* Unlikely to work if the read failed,
-			 * but we should at least try... */
-			nfp_cpp_mutex_unlock(mutex);
-			nfp_cpp_mutex_free(mutex);
-			return err;
-		}
-
-		if (tmp.mutex.key == key) {
-			/* Found key! */
-			if (resource_mutex)
-				*resource_mutex = nfp_cpp_mutex_alloc(cpp,
-							target, addr, key);
-
-			if (r_cpp)
-				*r_cpp = NFP_CPP_ID(tmp.region.cpp_target,
-						tmp.region.cpp_action,
-						tmp.region.cpp_token);
-
-			if (r_addr)
-				*r_addr = (u64)tmp.region.page_offset << 8;
-
-			if (r_size)
-				*r_size = (u64)tmp.region.page_size << 8;
-
-			nfp_cpp_mutex_unlock(mutex);
-			nfp_cpp_mutex_free(mutex);
-
-			return 0;
-		}
+	if (!memcmp(name_pad, NFP_RESOURCE_TBL_NAME "\0\0\0\0\0\0\0\0", 8)) {
+		nfp_err(cpp, "Grabbing device lock not supported\n");
+		return -EOPNOTSUPP;
 	}
+	key = crc32_posix(name_pad, sizeof(name_pad));
 
-	nfp_cpp_mutex_unlock(mutex);
-	nfp_cpp_mutex_free(mutex);
+	for (i = 0; i < NFP_RESOURCE_TBL_ENTRIES; i++) {
+		u64 addr = NFP_RESOURCE_TBL_BASE +
+			sizeof(struct nfp_resource_entry) * i;
+
+		ret = nfp_cpp_read(cpp, cpp_id, addr, &entry, sizeof(entry));
+		if (ret != sizeof(entry))
+			return -EIO;
+
+		if (entry.mutex.key != key)
+			continue;
+
+		/* Found key! */
+		res->mutex =
+			nfp_cpp_mutex_alloc(cpp,
+					    NFP_RESOURCE_TBL_TARGET, addr, key);
+		res->cpp_id = NFP_CPP_ID(entry.region.cpp_target,
+					 entry.region.cpp_action,
+					 entry.region.cpp_token);
+		res->addr = (u64)entry.region.page_offset << 8;
+		res->size = (u64)entry.region.page_size << 8;
+
+		return 0;
+	}
 
 	return -ENOENT;
 }
 
+static int
+nfp_resource_try_acquire(struct nfp_cpp *cpp, struct nfp_resource *res,
+			 struct nfp_cpp_mutex *dev_mutex)
+{
+	int err;
+
+	if (nfp_cpp_mutex_lock(dev_mutex))
+		return -EINVAL;
+
+	err = nfp_cpp_resource_find(cpp, res);
+	if (err)
+		goto err_unlock_dev;
+
+	err = nfp_cpp_mutex_trylock(res->mutex);
+	if (err)
+		goto err_res_mutex_free;
+
+	nfp_cpp_mutex_unlock(dev_mutex);
+
+	return 0;
+
+err_res_mutex_free:
+	nfp_cpp_mutex_free(res->mutex);
+err_unlock_dev:
+	nfp_cpp_mutex_unlock(dev_mutex);
+
+	return err;
+}
+
 /**
  * nfp_resource_acquire() - Acquire a resource handle
- * @nfp:		NFP Device handle
- * @name:		Name of the resource
+ * @cpp:	NFP CPP handle
+ * @name:	Name of the resource
  *
- * NOTE: This function implictly locks the acquired resource
+ * NOTE: This function locks the acquired resource
  *
  * Return: NFP Resource handle, or ERR_PTR()
  */
-struct nfp_resource *nfp_resource_acquire(struct nfp_device *nfp,
-					  const char *name)
+struct nfp_resource *
+nfp_resource_acquire(struct nfp_cpp *cpp, const char *name)
 {
-	struct nfp_cpp *cpp = nfp_device_cpp(nfp);
-	struct nfp_cpp_mutex *mutex;
+	unsigned long warn_at = jiffies + NFP_MUTEX_WAIT_FIRST_WARN * HZ;
+	unsigned long err_at = jiffies + NFP_MUTEX_WAIT_ERROR * HZ;
+	struct nfp_cpp_mutex *dev_mutex;
 	struct nfp_resource *res;
-	u64 addr, size;
-	u32 cpp_id;
 	int err;
 
-	err = nfp_cpp_resource_acquire(cpp, name, &cpp_id, &addr,
-				       &size, &mutex);
-	if (err < 0)
-		return ERR_PTR(err);
-
-	err = nfp_cpp_mutex_lock(mutex);
-	if (err < 0) {
-		nfp_cpp_mutex_free(mutex);
-		return ERR_PTR(err);
-	}
-
 	res = kzalloc(sizeof(*res), GFP_KERNEL);
-	if (!res) {
-		nfp_cpp_mutex_free(mutex);
+	if (!res)
+		return ERR_PTR(-ENOMEM);
+
+	strncpy(res->name, name, NFP_RESOURCE_ENTRY_NAME_SZ);
+
+	dev_mutex = nfp_cpp_mutex_alloc(cpp, NFP_RESOURCE_TBL_TARGET,
+					NFP_RESOURCE_TBL_BASE,
+					NFP_RESOURCE_TBL_KEY);
+	if (!dev_mutex) {
+		kfree(res);
 		return ERR_PTR(-ENOMEM);
 	}
 
-	strncpy(res->name, name, NFP_RESOURCE_ENTRY_NAME_SZ);
-	res->cpp_id = cpp_id;
-	res->addr = addr;
-	res->size = size;
-	res->mutex = mutex;
+	for (;;) {
+		err = nfp_resource_try_acquire(cpp, res, dev_mutex);
+		if (!err)
+			break;
+		if (err != -EBUSY)
+			goto err_free;
+
+		err = msleep_interruptible(1);
+		if (err != 0) {
+			err = -ERESTARTSYS;
+			goto err_free;
+		}
+
+		if (time_is_before_eq_jiffies(warn_at)) {
+			warn_at = jiffies + NFP_MUTEX_WAIT_NEXT_WARN * HZ;
+			nfp_warn(cpp, "Warning: waiting for NFP resource %s\n",
+				 name);
+		}
+		if (time_is_before_eq_jiffies(err_at)) {
+			nfp_err(cpp, "Error: resource %s timed out\n", name);
+			err = -EBUSY;
+			goto err_free;
+		}
+	}
+
+	nfp_cpp_mutex_free(dev_mutex);
 
 	return res;
+
+err_free:
+	nfp_cpp_mutex_free(dev_mutex);
+	kfree(res);
+	return ERR_PTR(err);
 }
 
 /**
@@ -437,6 +247,51 @@ void nfp_resource_release(struct nfp_resource *res)
 	nfp_cpp_mutex_unlock(res->mutex);
 	nfp_cpp_mutex_free(res->mutex);
 	kfree(res);
+}
+
+/**
+ * nfp_resource_wait() - Wait for resource to appear
+ * @cpp:	NFP CPP handle
+ * @name:	Name of the resource
+ * @secs:	Number of seconds to wait
+ *
+ * Wait for resource to appear in the resource table, grab and release
+ * its lock.  The wait is jiffies-based, don't expect fine granularity.
+ *
+ * Return: 0 on success, errno otherwise.
+ */
+int nfp_resource_wait(struct nfp_cpp *cpp, const char *name, unsigned int secs)
+{
+	unsigned long warn_at = jiffies + NFP_MUTEX_WAIT_FIRST_WARN * HZ;
+	unsigned long err_at = jiffies + secs * HZ;
+	struct nfp_resource *res;
+
+	while (true) {
+		res = nfp_resource_acquire(cpp, name);
+		if (!IS_ERR(res)) {
+			nfp_resource_release(res);
+			return 0;
+		}
+
+		if (PTR_ERR(res) != -ENOENT) {
+			nfp_err(cpp, "error waiting for resource %s: %ld\n",
+				name, PTR_ERR(res));
+			return PTR_ERR(res);
+		}
+		if (time_is_before_eq_jiffies(err_at)) {
+			nfp_err(cpp, "timeout waiting for resource %s\n", name);
+			return -ETIMEDOUT;
+		}
+		if (time_is_before_eq_jiffies(warn_at)) {
+			warn_at = jiffies + NFP_MUTEX_WAIT_NEXT_WARN * HZ;
+			nfp_info(cpp, "waiting for NFP resource %s\n", name);
+		}
+		if (msleep_interruptible(10)) {
+			nfp_err(cpp, "wait for resource %s interrupted\n",
+				name);
+			return -ERESTARTSYS;
+		}
+	}
 }
 
 /**

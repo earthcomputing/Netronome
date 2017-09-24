@@ -286,7 +286,7 @@ rewrite_packet_header( __addr40 char *pbuf, volatile uint64_t s_addr, volatile u
 }
 
 void
-send_packet( int island, int pnum, int plen, unsigned int seq_num, int flag )
+send_packet( int port, int island, int pnum, int plen, unsigned int seq_num, int flag )
 {
     int pkt_off;
     __gpr struct pkt_ms_info msi;
@@ -442,7 +442,7 @@ main(void)
             pkt_hdr  = pkt_ctm_ptr40(island, pnum, pkt_off);
             s_addr = 0 ;
             rewrite_packet( pkt_hdr, s_addr, d_addr, data ) ;
-            send_packet( island, pnum, 64 + 4, seq_num++, flag ) ;
+            send_packet( entl_datain.port, island, pnum, 64 + 4, seq_num++, flag ) ;
             local_csr_write(local_csr_mailbox2, island );
             local_csr_write(local_csr_mailbox3, pnum | flag << 16 );
           }

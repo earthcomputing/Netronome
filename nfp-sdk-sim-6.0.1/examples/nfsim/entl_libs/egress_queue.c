@@ -58,6 +58,7 @@ void put_packet_data( __xwrite packet_data_t *pkt_out, uint32_t island_ring  )
 }
 
 
+
 uint32_t get_island_ring( uint32_t port ) {
 	switch(port) {
 		case 0:		return 32 << 16 | PACKET_RING_NUM_0 ;
@@ -94,6 +95,44 @@ uint32_t get_nbi( uint32_t port ) {
 	}
 }
 
+uint32_t get_sequencer( uint32_t in_port ) 
+{
+	switch(in_port) {
+		case 0:		return 1 ;
+		case 1:		return 2 ;
+		case 2:		return 3 ;
+		case 3:		return 4 ;
+		case 4:		return 5 ;
+		case 5:		return 6 ;
+		case 6:		return 7 ;
+		case 7:		return 8 ;  // reality, up to 8 ports can be supported on current hw
+//		case 8:		return 0 ;
+//		case 9:		return 1 ;
+//		case 10:	return 0 ;
+//		case 11:	return 1 ;  // netronome can handle up to 12 ports
+		default:	return 0xffffffff ;
+	}
+}
+
+uint32_t get_tm_queue( uint32_t port ) 
+{
+	switch(port) {
+		case 0:		return 0 ;
+		case 1:		return 0 ;
+		case 2:		return 1 ;
+		case 3:		return 1 ;
+		case 4:		return 2 ;
+		case 5:		return 2 ;
+		case 6:		return 3 ;
+		case 7:		return 3 ;  // reality, up to 8 ports can be supported on current hw
+//		case 8:		return 0 ;
+//		case 9:		return 1 ;
+//		case 10:	return 0 ;
+//		case 11:	return 1 ;  // netronome can handle up to 12 ports
+		default:	return 0xffffffff ;
+	}	
+}
+
 #ifdef PACKET_RING_EXPORT
 
 void init_sequence_num() {
@@ -120,6 +159,8 @@ void init_sequence_num() {
 }
 
 #endif
+
+
 
 uint32_t get_sequence_num( uint32_t port ) {
 	__xread uint32_t data_r ;

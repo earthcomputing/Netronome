@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Netronome Systems, Inc.
+ * Copyright (C) 2015-2017 Netronome Systems, Inc.
  *
  * This software is dual licensed under the GNU General License Version 2,
  * June 1991 as shown in the file COPYING in the top-level directory of this
@@ -40,8 +40,8 @@
 #include "nfp.h"
 #include "nfp_cpp.h"
 #include "nfp_nbi.h"
-#include "nfp_nbi_phymod.h"
 #include "nfp_nffw.h"
+#include "nfp_nsp.h"
 
 /* Implemented in nfp_cppcore.c */
 
@@ -64,7 +64,6 @@ EXPORT_SYMBOL(nfp_cpp_area_acquire_nonblocking);
 EXPORT_SYMBOL(nfp_cpp_area_release);
 EXPORT_SYMBOL(nfp_cpp_area_read);
 EXPORT_SYMBOL(nfp_cpp_area_write);
-EXPORT_SYMBOL(nfp_cpp_area_check_range);
 EXPORT_SYMBOL(nfp_cpp_area_resource);
 EXPORT_SYMBOL(nfp_cpp_area_phys);
 EXPORT_SYMBOL(nfp_cpp_area_iomem);
@@ -106,16 +105,6 @@ EXPORT_SYMBOL(nfp_cpp_read);
 EXPORT_SYMBOL(nfp_cpp_write);
 EXPORT_SYMBOL(nfp_cpp_area_fill);
 
-/* Implemented in nfp_device.c */
-
-EXPORT_SYMBOL(nfp_device_cpp);
-EXPORT_SYMBOL(nfp_device_from_cpp);
-EXPORT_SYMBOL(nfp_device_close);
-EXPORT_SYMBOL(nfp_device_open);
-EXPORT_SYMBOL(nfp_device_id);
-EXPORT_SYMBOL(nfp_device_private);
-EXPORT_SYMBOL(nfp_device_private_alloc);
-
 /* Implemented in nfp_nbi.c */
 
 EXPORT_SYMBOL(nfp_nbi_open);
@@ -126,60 +115,20 @@ EXPORT_SYMBOL(nfp_nbi_mac_release);
 
 /* Implemented in nfp_nbi_mac_eth.c */
 
-EXPORT_SYMBOL(nfp_nbi_mac_eth_ifdown);
-EXPORT_SYMBOL(nfp_nbi_mac_eth_ifup);
 EXPORT_SYMBOL(nfp_nbi_mac_eth_read_linkstate);
 EXPORT_SYMBOL(nfp_nbi_mac_eth_read_mode);
 EXPORT_SYMBOL(nfp_nbi_mac_eth_write_mac_addr);
 EXPORT_SYMBOL(nfp_nbi_mac_eth_read_mac_addr);
 
-/* Implemented in nfp_nbi_phymod.c */
+/* Implemented in nfp_nsp_eth.c */
 
-EXPORT_SYMBOL(nfp_phymod_next);
-EXPORT_SYMBOL(nfp_phymod_get_index);
-EXPORT_SYMBOL(nfp_phymod_get_label);
-EXPORT_SYMBOL(nfp_phymod_get_nbi);
-EXPORT_SYMBOL(nfp_phymod_get_port);
-EXPORT_SYMBOL(nfp_phymod_get_type);
-EXPORT_SYMBOL(nfp_phymod_indicate_link);
-EXPORT_SYMBOL(nfp_phymod_indicate_activity);
-EXPORT_SYMBOL(nfp_phymod_read_status);
-EXPORT_SYMBOL(nfp_phymod_read_status_los);
-EXPORT_SYMBOL(nfp_phymod_read_status_fault);
-EXPORT_SYMBOL(nfp_phymod_read_status_optpower);
-EXPORT_SYMBOL(nfp_phymod_read_status_optbias);
-EXPORT_SYMBOL(nfp_phymod_read_status_voltage);
-EXPORT_SYMBOL(nfp_phymod_read_status_temp);
-EXPORT_SYMBOL(nfp_phymod_read_lanedisable);
-EXPORT_SYMBOL(nfp_phymod_write_lanedisable);
-EXPORT_SYMBOL(nfp_phymod_read8);
-EXPORT_SYMBOL(nfp_phymod_write8);
-EXPORT_SYMBOL(nfp_phymod_verify_sff_checkcode);
-EXPORT_SYMBOL(nfp_phymod_read_vendor);
-EXPORT_SYMBOL(nfp_phymod_read_oui);
-EXPORT_SYMBOL(nfp_phymod_read_product);
-EXPORT_SYMBOL(nfp_phymod_read_serial);
-EXPORT_SYMBOL(nfp_phymod_read_type);
-EXPORT_SYMBOL(nfp_phymod_read_connector);
-EXPORT_SYMBOL(nfp_phymod_read_length);
-EXPORT_SYMBOL(nfp_phymod_read_extended_compliance_code);
-EXPORT_SYMBOL(nfp_phymod_get_active_or_passive);
-EXPORT_SYMBOL(nfp_phymod_eth_next);
-EXPORT_SYMBOL(nfp_phymod_eth_get_index);
-EXPORT_SYMBOL(nfp_phymod_eth_get_phymod);
-EXPORT_SYMBOL(nfp_phymod_eth_get_mac);
-EXPORT_SYMBOL(nfp_phymod_eth_get_label);
-EXPORT_SYMBOL(nfp_phymod_eth_get_nbi);
-EXPORT_SYMBOL(nfp_phymod_eth_get_port);
-EXPORT_SYMBOL(nfp_phymod_eth_get_speed);
-EXPORT_SYMBOL(nfp_phymod_eth_get_fail_to_wire);
-EXPORT_SYMBOL(nfp_phymod_eth_set_fail_to_wire);
-EXPORT_SYMBOL(nfp_phymod_eth_read_disable);
-EXPORT_SYMBOL(nfp_phymod_eth_write_disable);
+EXPORT_SYMBOL(nfp_eth_read_ports);
+EXPORT_SYMBOL(nfp_eth_set_mod_enable);
+EXPORT_SYMBOL(nfp_eth_set_configured);
 
 /* Implemented in nfp_rtsym.c */
 
+EXPORT_SYMBOL(nfp_rtsym_table_read);
 EXPORT_SYMBOL(nfp_rtsym_count);
 EXPORT_SYMBOL(nfp_rtsym_get);
 EXPORT_SYMBOL(nfp_rtsym_lookup);
-EXPORT_SYMBOL(nfp_rtsym_reload);

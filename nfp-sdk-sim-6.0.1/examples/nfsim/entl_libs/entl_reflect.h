@@ -23,6 +23,7 @@
 typedef struct entl_reflect_data {
 	uint64_t d_addr ;
 	uint64_t data ;
+	int port ;
 	int island ;
 	int pnum ;
 } entl_reflect_data_t ;

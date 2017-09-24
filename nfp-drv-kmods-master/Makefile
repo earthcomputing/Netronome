@@ -1,14 +1,8 @@
 ######################################################
 # Work out driver version if not build from repository
-ifeq (.revision,$(wildcard .git)$(wildcard .revision))
-  ifneq (,$(shell cat .revision))
-    NFPVER := $(shell cat .revision)
-  endif
+ifeq (.revision,$(wildcard .revision))
+  export NFPVERREV := $(shell cat .revision)
 endif
-ifeq (.git,$(wildcard .git))
-  NFPVER :=
-endif
-NFPVER ?= no-src-ver
 
 #####################################
 # Work out where the kernel source is
@@ -47,10 +41,13 @@ EXTRA_CFLAGS += $(CFLAGS_EXTRA)
 ###########################################################################
 # Build rules
 
-COMMON_ARGS := nfp_src_ver:=$(NFPVER) ccflags-y:="$(CFLAGS_EXTRA)" -C $(KSRC) M=`pwd`/src
+COMMON_ARGS := -C $(KSRC) M=`pwd`/src
 
 build:
 	$(MAKE) $(COMMON_ARGS) modules
+
+nfp_net:
+	$(MAKE) $(COMMON_ARGS) CONFIG_NFP_EXPORTS=n CONFIG_NFP_USER_SPACE_CPP=n modules
 
 noisy: clean
 	$(MAKE) $(COMMON_ARGS) V=1 modules
@@ -72,3 +69,5 @@ uninstall:
 	rm -f $(INSTALL_MOD_PATH)/lib/modules/$(KVER)/extra/nfp_net.ko
 	rm -f $(INSTALL_MOD_PATH)/lib/modules/$(KVER)/extra/nfp_netvf.ko
 	depmod $(DEPMOD_PATH) $(KVER)
+
+.PHONY: build nfp_net noisy coccicheck sparse clean install uninstall

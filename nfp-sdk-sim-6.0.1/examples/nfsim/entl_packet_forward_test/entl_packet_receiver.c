@@ -128,7 +128,7 @@ int receive_packet( struct pkt_rxed *pkt_rxed, size_t size, uint64_t* s_addr )
     int64_t d_addr ;
     int64_t data ;
     int64_t d_value ;
-    int ret ;
+    int ret = 0 ;
     unsigned int mbox0, mbox1, mbox2, mbox3 ;
 
     pkt_nbi_recv(&pkt_rxed_in, sizeof(pkt_rxed->nbi_meta));
@@ -149,6 +149,7 @@ int receive_packet( struct pkt_rxed *pkt_rxed, size_t size, uint64_t* s_addr )
     if( GET_ECLP_ETYPE(d_addr) != ENTL_ETYPE_NOP ) {
       entl_data_out.d_addr = d_addr ;
       entl_data_out.data = data ;
+      entl_data_out.port = pkt_rxed.nbi_meta.port ;
       if( (d_addr & ECLP_FW_MASK) == 0 )
       {
         entl_data_out.island = island ;

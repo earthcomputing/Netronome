@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Netronome Systems, Inc.
+ * Copyright (C) 2015-2017 Netronome Systems, Inc.
  *
  * This software is dual licensed under the GNU General License Version 2,
  * June 1991 as shown in the file COPYING in the top-level directory of this
@@ -45,16 +45,45 @@
 #include <linux/pci.h>
 #include <linux/err.h>
 #include <linux/etherdevice.h>
-
-/* This is required when building common objects for
- * multiple modules
- */
-#ifndef KBUILD_MODNAME
-#define KBUILD_MODNAME	"nfpcore"
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 9, 0)
+#include <linux/bitfield.h>
 #endif
+
+#define VER_VANILLA_LT(x, y)						\
+	(!RHEL_RELEASE_CODE && LINUX_VERSION_CODE < KERNEL_VERSION(x, y, 0))
+#define VER_VANILLA_GE(x, y)						\
+	(!RHEL_RELEASE_CODE && LINUX_VERSION_CODE >= KERNEL_VERSION(x, y, 0))
+#define VER_RHEL_LT(x, y)						\
+	(RHEL_RELEASE_CODE && RHEL_RELEASE_CODE < RHEL_RELEASE_VERSION(x, y))
+#define VER_RHEL_GE(x, y)						\
+	(RHEL_RELEASE_CODE && RHEL_RELEASE_CODE >= RHEL_RELEASE_VERSION(x, y))
+#define VER_IS_VANILLA	!RHEL_RELEASE_CODE
+
+#define COMPAT__USE_DMA_SKIP_SYNC	(LINUX_VERSION_CODE >= KERNEL_VERSION(4, 10, 0))
+#define COMPAT__HAS_DEVLINK	(LINUX_VERSION_CODE >= KERNEL_VERSION(4, 6, 0))
+
+/* RHEL has a tendency to heavily patch their kernels.  Sometimes it
+ * is necessary to check for specific RHEL releases and not just for
+ * Linux kernel version.  Define RHEL version macros for Linux kernels
+ * which don't have them. */
+#ifndef RHEL_RELEASE_VERSION
+#define RHEL_RELEASE_VERSION(a, b) (((a) << 8) + (b))
+#endif
+#ifndef RHEL_RELEASE_CODE
+#define RHEL_RELEASE_CODE 0
+#endif
+
+#define COMPAT__CAN_HAVE_MULTIPLE_MOD_TABLES \
+	(LINUX_VERSION_CODE >= KERNEL_VERSION(3, 15, 0))
 
 #ifndef PCI_VENDOR_ID_NETRONOME
 #define PCI_VENDOR_ID_NETRONOME		0x19ee
+#endif
+#ifndef PCI_DEVICE_ID_NETRONOME_NFP4000
+#define PCI_DEVICE_ID_NETRONOME_NFP4000	0x4000
+#endif
+#ifndef PCI_DEVICE_ID_NETRONOME_NFP6000
+#define PCI_DEVICE_ID_NETRONOME_NFP6000	0x6000
 #endif
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 6, 0))
@@ -76,15 +105,22 @@
 #define BIT_ULL(nr)		(1ULL << (nr))
 #endif
 
-/* RHEL has a tendency to heavily patch their kernels.  Sometimes it
- * is necessary to check for specific RHEL releases and not just for
- * Linux kernel version.  Define RHEL version macros for Linux kernels
- * which don't have them. */
-#ifndef RHEL_RELEASE_VERSION
-#define RHEL_RELEASE_VERSION(a, b) (((a) << 8) + (b))
+#ifndef GENMASK
+#define GENMASK(h, l) \
+	((~0UL << (l)) & (~0UL >> (BITS_PER_LONG - (h) - 1)))
 #endif
-#ifndef RHEL_RELEASE_CODE
-#define RHEL_RELEASE_CODE 0
+
+#ifndef GENMASK_ULL
+#define GENMASK_ULL(h, l) \
+	((~0ULL << (l)) & (~0ULL >> (BITS_PER_LONG_LONG - (h) - 1)))
+#endif
+
+#ifndef dma_rmb
+#define dma_rmb() rmb()
+#endif
+
+#ifndef READ_ONCE
+#define READ_ONCE(x)	(x)
 #endif
 
 #if (LINUX_VERSION_CODE <= KERNEL_VERSION(2, 6, 27))
@@ -170,7 +206,33 @@ static inline int compat_kstrtoul(const char *str, int base, unsigned long *res)
 #endif
 #endif /* < KERNEL_VERSION(3, 0, 0) */
 
+#if VER_VANILLA_LT(3, 12) || VER_RHEL_LT(7, 1)
+static inline int PTR_ERR_OR_ZERO(const void *ptr)
+{
+	if (IS_ERR(ptr))
+		return PTR_ERR(ptr);
+	return 0;
+}
+#endif
+
+#if LINUX_VERSION_CODE < KERNEL_VERSION(3, 13, 0)
+static inline
+int compat_dma_set_mask_and_coherent(struct device *dev, u64 mask)
+{
+	int rc = dma_set_mask(dev, mask);
+
+	if (rc == 0)
+		dma_set_coherent_mask(dev, mask);
+
+	return rc;
+}
+#define dma_set_mask_and_coherent(dev, mask) \
+	compat_dma_set_mask_and_coherent(dev, mask)
+#endif
+
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3, 14, 0)
+#define request_firmware_direct	request_firmware
+
 static inline int _pci_enable_msi_range(struct pci_dev *dev,
 					int minvec, int maxvec)
 {
@@ -196,7 +258,34 @@ static inline int _pci_enable_msi_range(struct pci_dev *dev,
 
 #define pci_enable_msi_range(dev, minv, maxv) \
 	_pci_enable_msi_range(dev, minv, maxv)
-#endif
+
+static inline int compat_pci_enable_msix_range(struct pci_dev *dev,
+					       struct msix_entry *entries,
+					       int minvec, int maxvec)
+{
+	int nvec = maxvec;
+	int rc;
+
+	if (maxvec < minvec)
+		return -ERANGE;
+
+	do {
+		rc = pci_enable_msix(dev, entries, nvec);
+		if (rc < 0) {
+			return rc;
+		} else if (rc > 0) {
+			if (rc < minvec)
+				return -ENOSPC;
+			nvec = rc;
+		}
+	} while (rc);
+
+	return nvec;
+}
+
+#define pci_enable_msix_range(dev, entries, minv, maxv) \
+	compat_pci_enable_msix_range(dev, entries, minv, maxv)
+#endif /* < 3.14 */
 
 #if LINUX_VERSION_CODE <= KERNEL_VERSION(2, 6, 26)
 #include <linux/mm.h>
@@ -533,12 +622,117 @@ struct net_device *compat_alloc_netdev(int sizeof_priv,
 	list_for_each_entry((_desc), &(_dev)->dev.msi_list, list)
 #endif
 
-#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 7, 0)
+#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 6, 0)
+struct devlink_port {
+	int dummy;
+};
+
+struct devlink_ops {
+	int dummy;
+};
+
+struct devlink {
+	int dummy;
+};
+
+static inline struct devlink *
+devlink_alloc(const struct devlink_ops *ops, size_t priv_size)
+{
+	return kzalloc(priv_size, GFP_KERNEL);
+}
+
+static inline void *devlink_priv(struct devlink *p)
+{
+	return p;
+}
+
+static inline struct devlink *priv_to_devlink(void *p)
+{
+	return p;
+}
+
+static inline int devlink_register(struct devlink *p, struct device *d)
+{
+	return 0;
+}
+
+static inline void devlink_unregister(struct devlink *d) { }
+
+static inline void devlink_free(struct devlink *p)
+{
+	kfree(p);
+}
+#endif
+
+#if VER_VANILLA_LT(4, 7) || VER_RHEL_LT(7, 4)
 static inline void
 netif_trans_update(struct net_device *netdev)
 {
 	netdev->trans_start = jiffies;
 }
+#endif
+
+#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 8, 0)
+enum devlink_eswitch_mode {
+	DEVLINK_ESWITCH_MODE_LEGACY,
+	DEVLINK_ESWITCH_MODE_SWITCHDEV,
+};
+#endif
+
+#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 10, 0)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 8, 0)
+static inline const struct file_operations *
+compat_debugfs_real_fops(const struct file *file)
+{
+	return file->f_path.dentry->d_fsdata;
+}
+#define debugfs_real_fops compat_debugfs_real_fops
+#else
+/* WARNING: this one only works for the DebugFS TX vs XDP ring use case!!! */
+#define debugfs_real_fops(x) &nfp_tx_q_fops
+#endif /* >= 4.8 */
+#endif
+
+#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 9, 0)
+#define _c1(x)  ((x) & 1)
+#define _c2(x)  ((((x)& 0x0003) &&  !_c1(x)) * ( _c1((x) >>  1) +  1) +  _c1(x))
+#define _c4(x)  ((((x)& 0x000f) &&  !_c2(x)) * ( _c2((x) >>  2) +  2) +  _c2(x))
+#define _c8(x)  ((((x)& 0x00ff) &&  !_c4(x)) * ( _c4((x) >>  4) +  4) +  _c4(x))
+#define _c16(x) ((((x)& 0xffff) &&  !_c8(x)) * ( _c8((x) >>  8) +  8) +  _c8(x))
+#define _c32(x) ((((x)&    ~0U) && !_c16(x)) * (_c16((x) >> 16) + 16) + _c16(x))
+#define _c64(x) ((((x)&  ~0ULL) && !_c32(x)) * (_c32((x) >> 32) + 32) + _c32(x))
+
+#define c64(x) (_c64(x) - 1)
+
+#define FIELD_GET(MASK, val)  ((((u64)val) & (MASK)) >> c64((u64)MASK))
+#define FIELD_PREP(MASK, val)  ((((u64)val) << c64((u64)MASK)) & (MASK))
+#define __bf_shf	c64
+#endif
+
+#ifndef FIELD_FIT
+#define FIELD_FIT(mask, val)	(!((((u64)val) << __bf_shf(mask)) & ~(mask)))
+#endif
+
+static inline unsigned long compat_vmf_get_addr(struct vm_fault *vmf)
+{
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 10, 0)
+	return vmf->address;
+#else
+	return (unsigned long)vmf->virtual_address;
+#endif
+}
+
+#if !COMPAT__USE_DMA_SKIP_SYNC
+#undef DMA_ATTR_SKIP_CPU_SYNC
+#define DMA_ATTR_SKIP_CPU_SYNC 0
+#endif
+
+#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 12, 0)
+struct netlink_ext_ack;
+#endif
+
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 12, 0)
+#define pci_enable_msix pci_enable_msix_exact
 #endif
 
 #endif /* __KERNEL__NFP_COMPAT_H__ */

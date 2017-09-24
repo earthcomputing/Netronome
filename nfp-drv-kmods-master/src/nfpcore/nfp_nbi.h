@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Netronome Systems, Inc.
+ * Copyright (C) 2015-2017 Netronome Systems, Inc.
  *
  * This software is dual licensed under the GNU General License Version 2,
  * June 1991 as shown in the file COPYING in the top-level directory of this
@@ -51,7 +51,7 @@
  */
 struct nfp_nbi_dev;
 
-struct nfp_nbi_dev *nfp_nbi_open(struct nfp_device *nfp, int nbi);
+struct nfp_nbi_dev *nfp_nbi_open(struct nfp_cpp *cpp, int nbi);
 void nfp_nbi_close(struct nfp_nbi_dev *nfpnbidev);
 
 int nfp_nbi_index(struct nfp_nbi_dev *nfpnbidev);
@@ -242,8 +242,6 @@ int nfp_nbi_mac_stats_read_ilks(struct nfp_nbi_dev *nbi, int core,
 int nfp_nbi_mac_acquire(struct nfp_nbi_dev *nbi);
 int nfp_nbi_mac_release(struct nfp_nbi_dev *nbi);
 
-int nfp_nbi_mac_eth_ifdown(struct nfp_nbi_dev *nbi, int core, int port);
-int nfp_nbi_mac_eth_ifup(struct nfp_nbi_dev *nbi, int core, int port);
 int nfp_nbi_mac_eth_read_linkstate(struct nfp_nbi_dev *nbi,
 				   int core, int port, u32 *linkstate);
 int nfp_nbi_mac_eth_write_mac_addr(struct nfp_nbi_dev *nbi,

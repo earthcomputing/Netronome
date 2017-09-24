@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Netronome Systems, Inc.
+ * Copyright (C) 2015-2017 Netronome Systems, Inc.
  *
  * This software is dual licensed under the GNU General License Version 2,
  * June 1991 as shown in the file COPYING in the top-level directory of this
@@ -47,8 +47,7 @@
 #include "nfp_net_compat.h"
 #include "nfp_net_ctrl.h"
 #include "nfp_net.h"
-
-#include "nfp_modinfo.h"
+#include "nfp_main.h"
 
 /**
  * struct nfp_net_vf - NFP VF-specific device structure
@@ -67,8 +66,8 @@ struct nfp_net_vf {
 	struct dentry *ddir;
 };
 
-const char nfp_net_driver_name[] = "nfp_netvf";
-const char nfp_net_driver_version[] = "0.1";
+static const char nfp_net_driver_name[] = "nfp_netvf";
+
 #define PCI_DEVICE_NFP6000VF		0x6003
 static const struct pci_device_id nfp_netvf_pci_device_ids[] = {
 	{ PCI_VENDOR_ID_NETRONOME, PCI_DEVICE_NFP6000VF,
@@ -77,36 +76,36 @@ static const struct pci_device_id nfp_netvf_pci_device_ids[] = {
 	},
 	{ 0, } /* Required last entry. */
 };
+#if COMPAT__CAN_HAVE_MULTIPLE_MOD_TABLES
 MODULE_DEVICE_TABLE(pci, nfp_netvf_pci_device_ids);
+#endif
 
 static void nfp_netvf_get_mac_addr(struct nfp_net *nn)
 {
 	u8 mac_addr[ETH_ALEN];
 
 	put_unaligned_be32(nn_readl(nn, NFP_NET_CFG_MACADDR + 0), &mac_addr[0]);
-	/* We can't do readw for NFP-3200 compatibility */
-	put_unaligned_be16(nn_readl(nn, NFP_NET_CFG_MACADDR + 4) >> 16,
-			   &mac_addr[4]);
+	put_unaligned_be16(nn_readw(nn, NFP_NET_CFG_MACADDR + 6), &mac_addr[4]);
 
 	if (!is_valid_ether_addr(mac_addr)) {
-		eth_hw_addr_random(nn->netdev);
+		eth_hw_addr_random(nn->dp.netdev);
 		return;
 	}
 
-	ether_addr_copy(nn->netdev->dev_addr, mac_addr);
-	ether_addr_copy(nn->netdev->perm_addr, mac_addr);
+	ether_addr_copy(nn->dp.netdev->dev_addr, mac_addr);
+	ether_addr_copy(nn->dp.netdev->perm_addr, mac_addr);
 }
 
 static int nfp_netvf_pci_probe(struct pci_dev *pdev,
 			       const struct pci_device_id *pci_id)
 {
-	unsigned int wanted_irqs, num_irqs;
 	struct nfp_net_fw_version fw_ver;
 	int max_tx_rings, max_rx_rings;
 	u32 tx_bar_off, rx_bar_off;
 	u32 tx_bar_sz, rx_bar_sz;
 	int tx_bar_no, rx_bar_no;
 	struct nfp_net_vf *vf;
+	unsigned int num_irqs;
 	u8 __iomem *ctrl_bar;
 	struct nfp_net *nn;
 	u32 startq;
@@ -166,7 +165,7 @@ static int nfp_netvf_pci_probe(struct pci_dev *pdev,
 		dev_warn(&pdev->dev, "OBSOLETE Firmware detected - VF isolation not available\n");
 	} else {
 		switch (fw_ver.major) {
-		case 1 ... 4:
+		case 1 ... 5:
 			stride = 4;
 			tx_bar_no = NFP_NET_Q0_BAR;
 			rx_bar_no = tx_bar_no;
@@ -201,23 +200,13 @@ static int nfp_netvf_pci_probe(struct pci_dev *pdev,
 		max_rx_rings = (rx_bar_sz / NFP_QCP_QUEUE_ADDR_SZ) / 2;
 	}
 
-	/* XXX Implement a workaround for THB-350 here.  Ideally, we
-	 * have a different PCI ID for A rev VFs.
-	 */
-	switch (pdev->device) {
-	case PCI_DEVICE_NFP6000VF:
-		startq = readl(ctrl_bar + NFP_NET_CFG_START_TXQ);
-		tx_bar_off = NFP_PCIE_QUEUE(startq);
-		startq = readl(ctrl_bar + NFP_NET_CFG_START_RXQ);
-		rx_bar_off = NFP_PCIE_QUEUE(startq);
-		break;
-	default:
-		err = -ENODEV;
-		goto err_ctrl_unmap;
-	}
+	startq = readl(ctrl_bar + NFP_NET_CFG_START_TXQ);
+	tx_bar_off = NFP_PCIE_QUEUE(startq);
+	startq = readl(ctrl_bar + NFP_NET_CFG_START_RXQ);
+	rx_bar_off = NFP_PCIE_QUEUE(startq);
 
 	/* Allocate and initialise the netdev */
-	nn = nfp_net_netdev_alloc(pdev, max_tx_rings, max_rx_rings);
+	nn = nfp_net_alloc(pdev, true, max_tx_rings, max_rx_rings);
 	if (IS_ERR(nn)) {
 		err = PTR_ERR(nn);
 		goto err_ctrl_unmap;
@@ -225,9 +214,8 @@ static int nfp_netvf_pci_probe(struct pci_dev *pdev,
 	vf->nn = nn;
 
 	nn->fw_ver = fw_ver;
-	nn->ctrl_bar = ctrl_bar;
-	nn->is_vf = 1;
-	nn->is_nfp3200 = 0;
+	nn->dp.ctrl_bar = ctrl_bar;
+	nn->dp.is_vf = 1;
 	nn->stride_tx = stride;
 	nn->stride_rx = stride;
 
@@ -282,9 +270,10 @@ static int nfp_netvf_pci_probe(struct pci_dev *pdev,
 
 	nfp_netvf_get_mac_addr(nn);
 
-	wanted_irqs = nfp_net_irqs_wanted(nn);
 	num_irqs = nfp_net_irqs_alloc(pdev, vf->irq_entries,
-				      NFP_NET_MIN_PORT_IRQS, wanted_irqs);
+				      NFP_NET_MIN_VNIC_IRQS,
+				      NFP_NET_NON_Q_VECTORS +
+				      nn->dp.num_r_vecs);
 	if (!num_irqs) {
 		nn_warn(nn, "Unable to allocate MSI-X Vectors. Exiting\n");
 		err = -EIO;
@@ -298,13 +287,13 @@ static int nfp_netvf_pci_probe(struct pci_dev *pdev,
 	 */
 	nn->me_freq_mhz = 1200;
 
-	err = nfp_net_netdev_init(nn->netdev);
+	err = nfp_net_init(nn);
 	if (err)
 		goto err_irqs_disable;
 
 	nfp_net_info(nn);
 	vf->ddir = nfp_net_debugfs_device_add(pdev);
-	nfp_net_debugfs_port_add(nn, vf->ddir, 0);
+	nfp_net_debugfs_vnic_add(nn, vf->ddir, 0);
 
 	return 0;
 
@@ -319,7 +308,7 @@ err_unmap_tx:
 	else
 		iounmap(vf->q_bar);
 err_netdev_free:
-	nfp_net_netdev_free(nn);
+	nfp_net_free(nn);
 err_ctrl_unmap:
 	iounmap(ctrl_bar);
 err_pci_regions:
@@ -343,7 +332,7 @@ static void nfp_netvf_pci_remove(struct pci_dev *pdev)
 	nfp_net_debugfs_dir_clean(&nn->debugfs_dir);
 	nfp_net_debugfs_dir_clean(&vf->ddir);
 
-	nfp_net_netdev_clean(nn->netdev);
+	nfp_net_clean(nn);
 
 	nfp_net_irqs_disable(pdev);
 
@@ -353,9 +342,9 @@ static void nfp_netvf_pci_remove(struct pci_dev *pdev)
 	} else {
 		iounmap(vf->q_bar);
 	}
-	iounmap(nn->ctrl_bar);
+	iounmap(nn->dp.ctrl_bar);
 
-	nfp_net_netdev_free(nn);
+	nfp_net_free(nn);
 
 	pci_release_regions(pdev);
 	pci_disable_device(pdev);
@@ -364,40 +353,9 @@ static void nfp_netvf_pci_remove(struct pci_dev *pdev)
 	kfree(vf);
 }
 
-static struct pci_driver nfp_netvf_pci_driver = {
+struct pci_driver nfp_netvf_pci_driver = {
 	.name        = nfp_net_driver_name,
 	.id_table    = nfp_netvf_pci_device_ids,
 	.probe       = nfp_netvf_pci_probe,
 	.remove      = nfp_netvf_pci_remove,
 };
-
-static int __init nfp_netvf_init(void)
-{
-	int err;
-
-	pr_info("%s: NFP VF Network driver, Copyright (C) 2014-2015 Netronome Systems\n",
-		nfp_net_driver_name);
-
-	nfp_net_debugfs_create();
-	err = pci_register_driver(&nfp_netvf_pci_driver);
-	if (err) {
-		nfp_net_debugfs_destroy();
-		return err;
-	}
-
-	return 0;
-}
-
-static void __exit nfp_netvf_exit(void)
-{
-	pci_unregister_driver(&nfp_netvf_pci_driver);
-	nfp_net_debugfs_destroy();
-}
-
-module_init(nfp_netvf_init);
-module_exit(nfp_netvf_exit);
-
-MODULE_AUTHOR("Netronome Systems <oss-drivers@netronome.com>");
-MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("NFP VF network device driver");
-MODULE_INFO_NFP();
