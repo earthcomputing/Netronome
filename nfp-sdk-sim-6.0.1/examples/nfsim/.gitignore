@@ -21,3 +21,4 @@ read_xpb
 step
 watch_meattn
 write_xpb
+*.generated
