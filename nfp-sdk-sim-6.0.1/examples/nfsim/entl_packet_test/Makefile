@@ -98,6 +98,7 @@ $(eval $(call micro_c.compile_with_rtl,entl_packet_receiver_obj,entl_packet_rece
 
 $(eval $(call fw.add_obj,entl_packet_test,entl_packet_receiver_obj,i32.me1))
 $(eval $(call fw.add_obj,entl_packet_test,entl_packet_sender_obj,i32.me0 ))
+$(eval $(call fw.add_rtsyms ))
 
 $(eval $(call fw.add_ppc,entl_packet_test,i8,$(PICO_CODE)))
 $(eval $(call fw.add_ppc,entl_packet_test,i9,$(PICO_CODE)))

@@ -1,0 +1,208 @@
+##  This file provides Linux kernel build rules, for executing within the
+##  Kbuild environment.
+##
+
+## Define our own config variables.
+## A kernel Kconfig file may define these variables one day.
+CONFIG_NFP ?= m
+# Include code for /dev/nfp* user space access
+CONFIG_NFP_USER_SPACE_CPP ?= y
+# Export NFP function symbols
+CONFIG_NFP_EXPORTS ?= y
+# Include code for the PFs
+CONFIG_NFP_NET_PF ?= y
+# Include code for the VFs
+CONFIG_NFP_NET_VF ?= y
+
+ccflags-y := $(CFLAGS_EXTRA)
+
+# un-comment for debug symbols
+# ccflags-y += -g3
+
+# Perform checks only if config was evaluated (some targets e.g. clean don't
+# have CONFIG_* variables set).
+ifdef CONFIG_LOCALVERSION
+ifneq ($(CONFIG_PCI),y)
+  $(error NFP: The PCI subsystem (CONFIG_PCI) must be enabled)
+endif
+
+# FIXME: This should be encoded in Kconfig
+ifneq ($(CONFIG_NFP),n)
+  ifneq ($(CONFIG_PCI_MSI),y)
+    $(warning NFP: MSI interrupts (CONFIG_PCI_MSI) not be enabled, disabling NFP_NET drivers)
+    CONFIG_NFP_NET_PF = n
+    CONFIG_NFP_NET_VF = n
+  endif
+  ifneq ($(CONFIG_FW_LOADER),y)
+    $(warning NFP: The firmware loader (CONFIG_FW_LOADER) should be enabled)
+  endif
+endif
+endif
+
+ccflags-y += $(call cc-option, -Wenum-compare,)
+ccflags-y += $(call cc-option, -Wmaybe-uninitialized,)
+ccflags-y += -I$(src)
+
+ifneq ($(W),)
+      ccflags-y += $(call cc-option, -Wno-missing-include-dirs,)
+endif
+
+obj-$(CONFIG_NFP)	+= nfp.o
+
+nfp-objs := \
+	    nfpcore/nfp6000_pcie.o \
+	    nfpcore/nfp_nsp.o \
+	    nfpcore/nfp_cppcore.o \
+	    nfpcore/nfp_cpplib.o \
+	    nfpcore/nfp_em_manager.o \
+	    nfpcore/nfp_hwinfo.o \
+	    nfpcore/nfp_mip.o \
+	    nfpcore/nfp_mutex.o \
+	    nfpcore/nfp_nbi.o \
+	    nfpcore/nfp_nffw.o \
+	    nfpcore/nfp_nsp_cmds.o \
+	    nfpcore/nfp_nsp_eth.o \
+	    nfpcore/nfp_platform.o \
+	    nfpcore/nfp_resource.o \
+	    nfpcore/nfp_rtsym.o \
+	    nfpcore/nfp_target.o \
+	    nfpcore/nfp_nbi_mac_eth.o \
+	    nfpcore/nfp_net_vnic.o \
+	    nfp_plat.o \
+	    nfp_main.o
+
+# Select DebugFS if forced from command line or kconfig
+ifeq ($(CONFIG_NFP_DEBUG),y)
+ccflags-y += -DCONFIG_NFP_DEBUG
+
+nfp-objs += \
+		nfp_net_debugfs.o
+endif
+
+KERNEL_GE_4_6 := $(shell [ $(VERSION) -gt 4 -o \( $(VERSION) -eq 4 -a $(PATCHLEVEL) -ge 6 \) ] && echo y)
+
+KERNEL_GE_4_9 := $(shell [ $(VERSION) -gt 4 -o \( $(VERSION) -eq 4 -a $(PATCHLEVEL) -ge 9 \) ] && echo y)
+
+KERNEL_GE_4_14 := $(shell [ -e $(srctree)/include/linux/bpf.h ] && \
+		    grep SCALAR_VALUE $(srctree)/include/linux/bpf.h \
+		    > /dev/null && echo y)
+
+ifeq ($(KERNEL_GE_4_9),y)
+  nfp-objs += nfp_hwmon.o
+else
+  nfp-objs += nfp_hwmon_legacy.o
+endif
+
+ifeq ($(CONFIG_NFP_USER_SPACE_CPP),y)
+  ccflags-y += -DCONFIG_NFP_USER_SPACE_CPP
+
+  nfp-objs += nfp_dev_cpp.o
+endif
+ifeq ($(CONFIG_NFP_EXPORTS),y)
+  nfp-objs += nfpcore/nfp_export.o
+endif
+
+ifneq (,$(filter y,$(CONFIG_NFP_NET_PF) $(CONFIG_NFP_NET_VF)))
+  ccflags-y += -DCONFIG_NFP_DEBUG
+
+  nfp-objs += \
+		nfp_app.o \
+		nfp_net_common.o \
+		nfp_net_ethtool.o \
+		nfp_net_debugfs.o \
+		nfp_net_sriov.o \
+		nfp_port.o
+
+  ifeq ($(CONFIG_NFP_NET_PF),y)
+    ccflags-y += -DCONFIG_NFP_NET_PF=1
+
+    nfp-objs += \
+		nfp_app_nic.o \
+		nfp_ctrl.o \
+		nfp_net_main.o \
+		nic/main.o
+
+    ifeq ($(KERNEL_GE_4_6),y)
+      nfp-objs += \
+	       nfp_devlink.o
+    endif
+
+    ifeq ($(KERNEL_GE_4_14),y)
+      nfp-objs += \
+		bpf/main.o \
+		bpf/offload.o
+
+      ifeq ($(CONFIG_BPF_SYSCALL),y)
+        nfp-objs += \
+		bpf/verifier.o \
+		bpf/jit.o
+      endif
+    endif
+
+    metadata_h_path := $(srctree)/include/net/dst_metadata.h
+    COMPAT__HAVE_METADATA_IP_TUNNEL := \
+	    $(shell [ -e $(metadata_h_path) ] && \
+		    grep METADATA_IP_TUNNEL $(metadata_h_path) > /dev/null && \
+		    echo y)
+
+    ifeq ($(COMPAT__HAVE_METADATA_IP_TUNNEL), y)
+      ccflags-y += -DCOMPAT__HAVE_METADATA_IP_TUNNEL=1
+      nfp-objs += \
+		nfp_net_repr.o
+
+      ifeq ($(CONFIG_NET_SWITCHDEV),y)
+	ccflags-y += -DCONFIG_NFP_APP_FLOWER
+	nfp-objs += \
+		flower/action.o \
+		flower/cmsg.o \
+		flower/match.o \
+		flower/metadata.o \
+		flower/offload.o \
+		flower/main.o \
+		flower/tunnel_conf.o
+      else
+        $(warning NFP: CONFIG_NET_SWITCHDEV not enabled in the kernel, disabling apps: flower)
+      endif
+    endif
+  endif
+
+  ifeq ($(CONFIG_NFP_NET_VF),y)
+    ccflags-y += -DCONFIG_NFP_NET_VF=1
+
+    nfp-objs += nfp_netvf_main.o
+  endif
+endif # CONFIG_NFP_NET_*
+
+####################
+# Build information
+####################
+
+# Determine the NFP driver's source directory.
+nfp_src_dir := $(dir $(realpath $(src)/nfp_main.c))
+ifeq ($(nfp_src_dir),)
+nfp_src_dir := $(dir $(shell readlink $(src)/nfp_main.c))
+endif
+ifeq ($(nfp_src_dir),)
+nfp_src_dir := .
+endif
+
+# Work out driver version if build from repository
+NFPVER := $(shell git -C $(nfp_src_dir) rev-parse --short HEAD 2> /dev/null)
+ifeq ($(NFPVER),)
+  NFPVER := rev-$(NFPVERREV)
+endif
+ifeq ($(NFPVER),)
+  NFPVER := no-src-ver
+endif
+
+clean-files := $(obj)/nfp_build_info.h
+$(obj)/nfp_build_info.h: FORCE
+	@echo "/* Automatically generated file */" > $@
+	@echo "#define NFP_SRC_VERSION \"$(NFPVER) (o-o-t)\"" >> $@
+	@echo "#define NFP_BUILD_USER_ID \"$(shell id -u -n)\"" >> $@
+	@echo "#define NFP_BUILD_USER \"$(shell getent passwd `id -u -n` | cut -d ':' -f 5 | cut -d ',' -f 1)\"" >> $@
+	@echo "#define NFP_BUILD_HOST \"$(shell hostname)\"" >> $@
+	@echo "#define NFP_BUILD_PATH \"$(obj)\"" >> $@
+	@echo "#define NFP_SRC_PATH \"$(nfp_src_dir)\"" >> $@
+
+$(obj)/nfp_main.o: $(obj)/nfp_build_info.h

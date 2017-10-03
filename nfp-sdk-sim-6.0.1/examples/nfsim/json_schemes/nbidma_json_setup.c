@@ -46,6 +46,14 @@
 
 #define MAX_ISLANDS 64
 
+#ifndef true
+#define true 1
+#endif
+
+#ifndef false
+#define false 0
+#endif
+
 struct dmasetup_data {
     uint32_t arg_device;
     uint32_t arg_nbi;
@@ -65,8 +73,9 @@ struct dmasetup_data {
 int parse_json_config( WJElement config, struct nfp_nbi_dma_config *cfg)
 {
     WJElement nbi_dma_config = NULL ;
+    nbi_dma_config = WJEObject(config, "nfp_nbi_dma_nbi_dma_config", WJE_GET) ;
 
-    if( nbi_dma_config = WJEObject(config, "nfp_nbi_dma_nbi_dma_config", WJE_GET))
+    if( nbi_dma_config )
     {
         cfg->ctm_poll_search_enable = WJEBool(nbi_dma_config, "ctm_poll_search_enable", WJE_GET, true );
         cfg->rate_limit_enable = WJEBool(nbi_dma_config, "rate_limit_enable", WJE_GET, true );
@@ -93,7 +102,7 @@ int parse_json_config( WJElement config, struct nfp_nbi_dma_config *cfg)
     }
 }
 
-int parse_dma_bp_config( WJElement config, nfp_nbi_dma_bp_config **bp_cfg )
+int parse_dma_bp_config( WJElement config, struct nfp_nbi_dma_bp_config **bp_cfg )
 {
     WJElement dma_bp_config = NULL ;
     if( dma_bp_config = WJEObject(config, "nfp_nbi_dma_bp_config", WJE_GET))
@@ -103,9 +112,9 @@ int parse_dma_bp_config( WJElement config, nfp_nbi_dma_bp_config **bp_cfg )
             char num[10] ;
             WJElement bp_config = NULL ;
             sprintf( num, "%d", i ) ;
-            bp_config = WJEObject(config, num, WJE_GET)) ;
+            bp_config = WJEObject(config, num, WJE_GET) ;
             if( bp_config ) {
-                bp_cfg[i] = (nfp_nbi_dma_bp_config*)malloc(sizeof(nfp_nbi_dma_bp_config)) ;
+                bp_cfg[i] = (struct nfp_nbi_dma_bp_config*)malloc(sizeof(struct nfp_nbi_dma_bp_config)) ;
                 bp_cfg[i]->bp = WJEInt32(bp_config, "bp" , WJE_GET, 0 );
                 bp_cfg[i]->drop_enable = WJEBool(bp_config, "drop_enable" , WJE_GET, true );
                 bp_cfg[i]->ctm_offset =  WJEInt32(bp_config, "ctm_offset" , WJE_GET, 0 );
@@ -115,6 +124,7 @@ int parse_dma_bp_config( WJElement config, nfp_nbi_dma_bp_config **bp_cfg )
                 bp_cfg[i]->bpe_head =  WJEInt32(bp_config, "bpe_head" , WJE_GET, 0 );
                 bp_cfg[i]->bpe_chain_end =  WJEInt32(bp_config, "bpe_chain_end" , WJE_GET, 0 );
                 bp_cfg[i]->bpe_chain = NULL;  
+            }
             else {
                 bp_cfg[i] = NULL ;
             }
@@ -124,24 +134,24 @@ int parse_dma_bp_config( WJElement config, nfp_nbi_dma_bp_config **bp_cfg )
     else return 0 ;
 }
 
-int parse_dma_bpe_config( WJElement config, nfp_nbi_dma_bpe_config **bpe_chain )
+int parse_dma_bpe_config( WJElement config, struct nfp_nbi_dma_bpe_config **bpe_chain )
 {
     WJElement dma_bpe_config = NULL ;
-    if( dma_bp_config = WJEObject(config, "nfp_nbi_dma_bpe_config", WJE_GET))
+    if( dma_bpe_config = WJEObject(config, "nfp_nbi_dma_bpe_config", WJE_GET))
     {
         int i, j ;
         j = 0 ;
         for (i = 0 ; i < 8 ; i++) {
             char num[10] ;
-            WJElement bp_config = NULL ;
+            WJElement bpe_config = NULL ;
             sprintf( num, "%d", i ) ;
-            bpe_config = WJEObject(config, num, WJE_GET)) ;
+            bpe_config = WJEObject(config, num, WJE_GET) ;
             if( bpe_config ) {
-                bpe_chain[j] = (nfp_nbi_dma_bpe_config*)malloc(sizeof(nfp_nbi_dma_bpe_config)) ;
-                bpe_chain[j]->bpe = WJEInt32(bp_config, "bpe" , WJE_GET, 0 );
-                bpe_chain[j]->ctm_target = WJEInt32(bp_config, "ctm_target" , WJE_GET, 0 );
-                bpe_chain[j]->packet_credits = WJEInt32(bp_config, "packet_credits" , WJE_GET, 0 );
-                bpe_chain[j]->buffer_credits = WJEInt32(bp_config, "buffer_credits" , WJE_GET, 0 );
+                bpe_chain[j] = (struct nfp_nbi_dma_bpe_config*)malloc(sizeof(struct nfp_nbi_dma_bpe_config)) ;
+                bpe_chain[j]->bpe = WJEInt32(bpe_config, "bpe" , WJE_GET, 0 );
+                bpe_chain[j]->ctm_target = WJEInt32(bpe_config, "ctm_target" , WJE_GET, 0 );
+                bpe_chain[j]->packet_credits = WJEInt32(bpe_config, "packet_credits" , WJE_GET, 0 );
+                bpe_chain[j]->buffer_credits = WJEInt32(bpe_config, "buffer_credits" , WJE_GET, 0 );
                 j++ ;
             }
         }

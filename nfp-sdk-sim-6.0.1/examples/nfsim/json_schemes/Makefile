@@ -10,15 +10,16 @@ CC=gcc
 CPP=g++
 
 # simple source examples - handled generically
-EX_FILES = nbitm_setup.c 
+EX_FILES = nbidma_json_setup.c 
+#nbitm_json_setup.c 
 
 # multisource source examples - specifically handled
-EX_APPS = interactive
+#EX_APPS = nbidma_json_setup
 
 
 EX_PROGS = $(addprefix ,$(EX_FILES:.c=))
 EX_INC = -I../../../include -I../include
-EX_FLAGS = -Wall -Werror -L${LIB_INC_PATH} -g -Wl,-rpath,'$$ORIGIN/../../lib' -DPACKAGE_NAME="\"nfp-sim-tools\"" -DPACKAGE_VERSION="\"beta\""
+EX_FLAGS = -Wall -Werror -L${LIB_INC_PATH} -Wno-parentheses -g -Wl,-rpath,'$$ORIGIN/../../lib' -DPACKAGE_NAME="\"nfp-sim-tools\"" -DPACKAGE_VERSION="\"beta\""
 EX_LIBS = -L.. -lpcap -lnfp_hwdbg -lnfp -lrt -lnfp_common -ljansson -lz -lwjelement -lwjreader
 
 #IA_FLAGS = -DUSE_READLINE
