@@ -176,7 +176,7 @@ __nfp_rtsym_table_read(struct nfp_cpp *cpp, const struct nfp_mip *mip)
 	for (n = 0; n < cache->num; n++) {
 		nfp_rtsym_sw_entry_init(cache, strtab_size,
 					&cache->symtab[n], &rtsymtab[n]);
-		nfp_dbg(cpp, "sym %s addr:%llu size:%llu\n",rtsymtab[n].name, rtsymtab[n].addr, rtsymtab[n].size );
+		nfp_err(cpp, "sym %s addr:%llu size:%llu\n",cache->symtab[n].name, cache->symtab[n].addr, cache->symtab[n].size );
 	}
 
 	kfree(rtsymtab);
