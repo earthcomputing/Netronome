@@ -318,8 +318,9 @@ int main(int argc, char **argv)
     //uint32_t val;
     int ret;
     struct nfp_device *dev;
-    int menum  ;
+    int menum, menum1  ;
     menum = NFP6000_MEID(32, 0);
+    menum1 = NFP6000_MEID(33, 0);
 
     entl_state_init( &state ) ;
     alo_regs_init( &state.ao ) ;
@@ -348,6 +349,7 @@ int main(int argc, char **argv)
         }
 
         show_mailboxes(dev, menum);
+        show_mailboxes(dev, menum1);
     }
  
     printf("Read mailbox after\n");

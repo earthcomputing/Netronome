@@ -9,6 +9,11 @@
 #include "entl_reflect.h"
 #include "entl_state_machine.h"
 
+#define ENTL_SENDER_ISL 32
+#define ENTL_SENDER_ME 0
+#define ENTL_RECEIVER_ISL 33
+#define ENTL_RECEIVER_ME 0
+
 #define ETH_P_ECLP  0xEAC0    /* Earth Computing Link Protocol [ NOT AN OFFICIALLY REGISTERED ID ] */
 
 //#define ENTL_STATE_HELLO    1
@@ -336,39 +341,42 @@ main(void)
         entl_data_out.data = 0 ;
         entl_data_out.island = 0 ;
         entl_data_out.pnum = 0 ;
-    //if (__ctx() == 0) {
-        //local_csr_write(local_csr_mailbox0, 0x10000000 );
+    if (__ctx() == 0) {
+        local_csr_write(local_csr_mailbox0, 0x10000000 );
         // initial trigger to send hello  
-        entl_reflect( ENTL_SENDER_ME, __xfer_reg_number(&entl_data_in, ENTL_SENDER_ME),
-          __signal_number(&entl_send_sig, ENTL_SENDER_ME), &entl_data_out,
+            ctassert(__is_ct_const(sizeof(entl_data_out)));
+
+        entl_reflect( ENTL_SENDER_ISL, ENTL_SENDER_ME, __xfer_reg_number(&entl_data_in, __nfp_meid(ENTL_SENDER_ISL,ENTL_SENDER_ME)),
+          __signal_number(&entl_send_sig, __nfp_meid(ENTL_SENDER_ISL,ENTL_SENDER_ME)), &entl_data_out,
           sizeof(entl_data_out)
         ) ;
-        //local_csr_write(local_csr_mailbox0, 0x20000000 );
-      //}
+        local_csr_write(local_csr_mailbox0, 0x20000000 );
+      }
       //else {
         sleep(100) ;       
         for (;;) {
-          //mbox0 = local_csr_read(local_csr_mailbox0) ;
-          //mbox0 |= (1 << __ctx()) ;
-          //local_csr_write(local_csr_mailbox0, mbox0 );
-          ret = receive_packet(&pkt_rxed, sizeof(pkt_rxed));
-          //local_csr_write(local_csr_mailbox1, ++i | (__ctx() << 16) );
           mbox0 = local_csr_read(local_csr_mailbox0) ;
           mbox0++ ;
+          //mbox0 |= (1 << __ctx()) ;
           local_csr_write(local_csr_mailbox0, mbox0 );
+          ret = receive_packet(&pkt_rxed, sizeof(pkt_rxed));
+          //local_csr_write(local_csr_mailbox1, ++i | (__ctx() << 16) );
+          mbox1 = local_csr_read(local_csr_mailbox1) ;
+          mbox1++ ;
+          local_csr_write(local_csr_mailbox0, mbox1 );
           //mbox0 = (ret << 16) | 0x8000 | state.state.current_state ;
           //local_csr_write(local_csr_mailbox0, mbox0 );
           if( ret & ENTL_ACTION_SEND ) {
             //sleep(100) ;
             // __signal_me( RECEIVER_ISLAND_NUM, RECEIVER_ME_NUM, RECEIVER_THREAD_NUM, entl_send_sig_num ) ;
             //signal_ctx(0, __signal_number(&entl_send_sig)) ;                    
-            entl_reflect( ENTL_SENDER_ME, __xfer_reg_number(&entl_data_in, ENTL_SENDER_ME),
-              __signal_number(&entl_send_sig, ENTL_SENDER_ME), &entl_data_out,
+            entl_reflect( ENTL_SENDER_ISL, ENTL_SENDER_ME, __xfer_reg_number(&entl_data_in, __nfp_meid(ENTL_SENDER_ISL,ENTL_SENDER_ME)),
+              __signal_number(&entl_send_sig, __nfp_meid(ENTL_SENDER_ISL,ENTL_SENDER_ME)), &entl_data_out,
               sizeof(entl_data_out)
             ) ;
-            mbox1 = local_csr_read(local_csr_mailbox1) ;
-            mbox1++ ;
-            local_csr_write(local_csr_mailbox1, mbox1 );
+            mbox2 = local_csr_read(local_csr_mailbox2) ;
+            mbox2++ ;
+            local_csr_write(local_csr_mailbox2, mbox2 );
 
           }            
           // sleep(100) ;

@@ -26,9 +26,8 @@ typedef struct entl_reflect_data {
 	int port ;
 	int island ;
 	int pnum ;
+	int dummy ;
 } entl_reflect_data_t ;
-
-#define ENTL_SENDER_ME __nfp_meid(32,0)
 
 int entl_remote_meid( int port ) ;
 int entl_remote_signum( int port ) ;
@@ -39,7 +38,7 @@ uint32_t get_entl_sender_meid( uint32_t port ) ;
 
 /* XXX Move to some sort of CT reflect library */
 __intrinsic void
-entl_reflect(unsigned int dst_me, unsigned int dst_xfer,
+entl_reflect(unsigned int dst_isl, unsigned int dst_me, unsigned int dst_xfer,
              unsigned int sig_no, volatile __xwrite void *src_xfer,
              size_t size) ;
 

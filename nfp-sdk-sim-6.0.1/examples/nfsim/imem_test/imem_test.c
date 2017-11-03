@@ -26,95 +26,62 @@
 #define FW_TABLE_ENTRY_SIZE 64
 #define FW_TABLE_SIZE 0x10000
 
-
- __asm { .alloc_mem fw_table0 imem0 global (FW_TABLE_ENTRY_SIZE*FW_TABLE_SIZE) (FW_TABLE_ENTRY_SIZE) }
- __asm { .alloc_mem fw_table1 imem1 global (FW_TABLE_ENTRY_SIZE*FW_TABLE_SIZE) (FW_TABLE_ENTRY_SIZE) }
-
-__intrinsic __addr40 void *
-imem_ptr40(unsigned int off)
-{
-    __gpr unsigned int lo;
-    __gpr unsigned int hi;
-    unsigned char isl ;
-
-    lo = off << 6 ;  // 64 byte per entry
-
-    if( lo & 0x400000) {  // iMem has 4M sram (22bit)
-      isl = 0x1d ;     // Internal Mem 1
-    }
-    else {
-      isl = 0x1c ;     // Internal Mem 0
-    }
-
-    hi = 0x80 | isl;
-
-    return (__addr40 void *)
-        (((unsigned long long)hi << 32) | (unsigned long long)lo);
-}
-
-struct imem_entry {
-    uint32_t __raw[16] ; // 64 byte
-} __PACKED;  
-
-
-__intrinsic void update_entry ( volatile __xwrite struct imem_entry *entry, uint32_t offset ) {
-  unsigned int mbox0 ;
-  unsigned int mbox1 ;
-  unsigned int j ;
-  __addr40 void *entry_addr = imem_ptr40(offset) ;
-  mem_write32( (void*)&entry, (__addr40 uint8_t *)entry_addr , sizeof(struct imem_entry) );
-  mbox0 = (unsigned int)entry_addr ;
-  mbox1 = (unsigned int)((unsigned long long)entry_addr >> 32) ;
-  local_csr_write(local_csr_mailbox0, mbox0 );
-  local_csr_write(local_csr_mailbox1, mbox1 );
-
-}
-
-__intrinsic void read_entry ( volatile __xread struct imem_entry *entry, uint32_t offset ) {
-  unsigned int mbox0 ;
-  unsigned int mbox1 ;
-  __addr40 void *entry_addr = imem_ptr40(offset) ;
-  mem_read32( (void*)entry, (__addr40 uint8_t *)entry_addr , sizeof(struct imem_entry) );
-  mbox0 = (unsigned int)entry_addr ;
-  mbox1 = (unsigned int)((unsigned long long)entry_addr >> 32) ;
-  local_csr_write(local_csr_mailbox0, mbox0 );
-  local_csr_write(local_csr_mailbox1, mbox1 );
-}
+// Only one ME in the system should define FW_TABLE_ALLOCATE, others should define FW_TABLE_INPORT on compile time
+#define FW_TABLE_ALLOCATE
+#include "fw_table_access.h"
 
 int
 main(void)
 {
     if (__ctx() == 0) {
         unsigned int mbox3, mbox2, mbox1, mbox0 ;
-        unsigned int seq_num0 = 1 ;
-        unsigned int seq_num = 1 ;
-        int i, j ;
-        volatile __xwrite struct imem_entry _w_entry ;
-        volatile __xread struct imem_entry _r_entry ;
-        __addr40 void *entry_addr ;
-        for( i = 0 ; i < 4 ; i++ ){
-          for( j = 0 ; j < 16 ; j++ ) {
-            local_csr_write(local_csr_mailbox0, seq_num0++);    
-            _w_entry.__raw[j] = (i << 16) | j ;
-          }
-          //entry_addr = imem_ptr40(i) ;
-          //mem_write32( (void*)&_w_entry, (__addr40 uint8_t *)entry_addr , sizeof(struct imem_entry) );
-          update_entry( &_w_entry, i ) ;
-          sleep(200) ;                   // let tester see the address on mbox 0, 1
-          local_csr_write(local_csr_mailbox3, seq_num++);    // 1, 2
-          sleep(100) ;     
-        }
-        for( i = 0 ; i < 4 ; i++ ){
-          read_entry( &_r_entry, i) ;
-          sleep(200) ;                   // let tester see the address on mbox 0, 1
-          mbox0 = _r_entry.__raw[0] ;
-          mbox1 = _r_entry.__raw[1] ;
-          mbox2 = _r_entry.__raw[2];
+        fw_table_entry_t entry, entry1 ;
+        //unsigned int seq_num0 = 1 ;
+        //unsigned int seq_num = 1 ;
+        int i , j;
+        // volatile __xwrite struct imem_entry _w_entry ;
+        volatile __xread fw_table_entry_t _r_entry ;
+        mbox3 = 0x100 ;
+        local_csr_write(local_csr_mailbox3, mbox3 );    // 3, 4
+        sleep(100) ;     
+        mbox3 = 0x200 ;
+        local_csr_write(local_csr_mailbox3, mbox3 );    // 3, 4
+        for( i = 0 ; i < 100 ; i++ ){
+          //mbox3 = 0x300 ;
+          //local_csr_write(local_csr_mailbox3, mbox3 );    // 3, 4
+          read_entry( &_r_entry, i ) ;
+          //mbox3 = 0x400 ;
+          //local_csr_write(local_csr_mailbox3, mbox3 );    // 3, 4
+          //for( j = 0 ; j < 16 ; j++ ) {
+          entry = _r_entry ;
+          //  entry.__raw[j] = _r_entry.__raw[j] ;
+          //  mbox3 = 0x500 + j ;
+          //  local_csr_write(local_csr_mailbox3, mbox3 );    // 3, 4
+          //}
+          mbox3 = 0x600 ;
+          local_csr_write(local_csr_mailbox3, mbox3 );    // 3, 4
+          // uint16_t fw_vector ;      // bit 0 to host
+          // unsigned int parent:4 ;     // parent port of this tree
+          // unsigned int drop_host:1 ;  // do not forward packet from host
+          // unsigned int reserved:3 ;   
+          // uint32_t next_lookup[15] ;  // next lookup field for the packet
+
+          mbox0 = entry.fw_vector | ((unsigned int)entry.parent << 16) | ((unsigned int)entry.drop_host << 24) ;
+          mbox1 = entry.__raw[0] ;
+          //mbox1 = entry.next_lookup[0] ;
+          //mbox1 = entry.__raw[1] ;
+          entry.__raw[0] = 0 ;
+          entry1.fw_vector = 1 << (i%16) ;
+          entry1.parent = i ;
+          entry1.drop_host = (i & 1) ;
+          mbox2 = entry1.__raw[0];
+          //mbox2 = entry.__raw[2];
+          mbox3 = entry1.fw_vector | ((unsigned int)entry1.parent << 16) | ((unsigned int)entry1.drop_host << 24) ;;
           local_csr_write(local_csr_mailbox0, mbox0 );
           local_csr_write(local_csr_mailbox1, mbox1 );
           local_csr_write(local_csr_mailbox2, mbox2 );
-          local_csr_write(local_csr_mailbox3, seq_num++);    // 3, 4
-          sleep(100) ;     
+          local_csr_write(local_csr_mailbox3, mbox3 );    // 3, 4
+          sleep(100) ;               
         }
         
         sleep(1000) ;     

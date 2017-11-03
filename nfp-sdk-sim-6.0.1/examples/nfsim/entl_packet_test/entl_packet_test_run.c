@@ -96,6 +96,18 @@ static void show_packet_stat(struct nfp_cpp *nfp_cpp) {
     else
         printf( "mei0.mu_packet_engine.MUPEPeakPacketCount: %08x\n", val ) ;    
 
+    ret = nfp_xpb_readl(nfp_cpp, 0x21070400, &val);
+    if( ret )
+        printf( "error reading mei1.mu_packet_engine.MUPEActivePacketCount\n" ) ;
+    else
+        printf( "mei1.mu_packet_engine.MUPEActivePacketCount: %08x\n", val ) ;
+
+    ret = nfp_xpb_readl(nfp_cpp, 0x21070404, &val);
+    if( ret )
+        printf( "error reading mei1.mu_packet_engine.MUPEPeakPacketCount\n" ) ;
+    else
+        printf( "mei1.mu_packet_engine.MUPEPeakPacketCount: %08x\n", val ) ;    
+
     ret = nfp_xpb_readl(nfp_cpp, 0x081000c0, &val);
     if( ret )
         printf( "error reading nbi0.nbi_dma_csr.NbiDmaPktCntLo\n" ) ;
@@ -369,7 +381,7 @@ int main(int argc, char **argv)
     struct nfp_cpp *nfp_cpp ;
     int menum, menum1  ;
     menum = NFP6000_MEID(32, 0);
-    menum1 = NFP6000_MEID(32, 1);
+    menum1 = NFP6000_MEID(33, 1);
 
     entl_state_init( &state ) ;
     alo_regs_init( &state.ao ) ;

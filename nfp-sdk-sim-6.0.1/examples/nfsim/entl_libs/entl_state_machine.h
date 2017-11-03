@@ -94,7 +94,8 @@ extern "C" {
 
 // MAC Source Field Extraction Masks
 #define ECLP_D_MASK         (uint64_t)0x800000000000
-#define ECLP_CREDIT_MASK    (uint64_t)0x7fff00000000
+#define ECLP_H_MASK         (uint64_t)0x400000000000
+#define ECLP_CREDIT_MASK    (uint64_t)0x3fff00000000
 #define ECLP_NLKUP_MASK     (uint64_t)0x0000ffffffff
 
 #define GET_ECLP_ETYPE(x)     (x&ECLP_ETYPE_MASK)

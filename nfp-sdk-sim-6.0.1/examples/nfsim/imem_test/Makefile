@@ -63,7 +63,7 @@ TO_NET_DIR=$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib
 #  /Users/atsushi/earthcomputing/Netronome/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/mem_bulk.h
 
 #overwrite from Makefile.nfp.config
-NFCC_BASE_INC := -I. -I../entl_state_test -I$(TO_NET_DIR) -I$(base_dir)/microc/include -I$(base_dir)/microc/lib -I$(base_dir)/microc/lib/nfp  
+NFCC_BASE_INC := -I. -I../entl_libs -I$(TO_NET_DIR) -I$(base_dir)/microc/include -I$(base_dir)/microc/lib -I$(base_dir)/microc/lib/nfp  
 
 
 FW_BUILD     := $(app_src_dir)
@@ -76,7 +76,7 @@ include $(scripts_dir)/Makefile.templates
 #
 #signal_test_obj.list: signal_test.c
 $(eval $(call micro_c.compile_with_rtl,imem_test_obj,imem_test.c,.))
-$(eval $(call micro_c.add_src_lib,imem_test_obj,entl_state_machine,../entl_state_test))
+$(eval $(call micro_c.add_src_lib,imem_test_obj,fw_table_access,../entl_libs))
 $(eval $(call micro_c.add_src_lib,imem_test_obj,me,$(base_dir)/microc/lib/nfp/_c))
 #$(eval $(call micro_c.add_src_lib,pgen_test_obj,pkt_ops,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/nfp_pif/me/apps/common/src))
 $(eval $(call micro_c.add_src_lib,imem_test_obj,libpkt,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/pkt))

@@ -27,7 +27,7 @@ HOST_LIBS = -lpcap -lnfp_hwdbg -lnfp -lrt -lnfp_common -ljansson -lz
 # Compile Switch for Host code
 HOST_FLAGS+= -DNETRONOME_HOST 
 
-entl_packet_test_run: entl_packet_test_run.c ../entl_libs/entl_state_machine.c ../entl_state_test/entl_sm_unit_test/entl_sm_tester.c ../entl_libs/atomic_link_op.c ../entl_state_test/alo_unit_test/alo_tester.c ../entl_state_test/alo_unit_test/cyc_random.c
+entl_packet_forward_test_run: entl_packet_forward_test_run.c ../entl_libs/entl_state_machine.c ../entl_state_test/entl_sm_unit_test/entl_sm_tester.c ../entl_libs/atomic_link_op.c ../entl_state_test/alo_unit_test/alo_tester.c ../entl_state_test/alo_unit_test/cyc_random.c
 	$(CC) $(HOST_FLAGS) $(HOST_INC) -pthread -o $@ $^ $(HOST_LIBS) 
 
 %.cpp.o: %.cpp
@@ -49,12 +49,15 @@ clean:
 
 chip_setup: 
 	@echo "Running chip setup, this may take some time..."
-	@echo "Enabling island 8,32 clocks only"
+	@echo "Setting 16 sequencers in NBI TM"
 	$(EXDIR)/load_me -b
 	#$(EXDIR)/load_me -F -e 8,32
 	$(EXDIR)/nbidma_setup
-	$(EXDIR)/nbitm_setup
-	$(BINDIR)/nfp-macinit -m0 -0$(ETCDIR)/macinit/1x100GE.json -1$(ETCDIR)/macinit/1x100GE.json
+	$(EXDIR)/nbidma_setup -D
+	#$(EXDIR)/my_nbidma_setup
+	$(EXDIR)/nbitm_setup -s 5
+	#$(BINDIR)/nfp-macinit -m0 -0$(ETCDIR)/macinit/1x100GE.json -1$(ETCDIR)/macinit/1x100GE.json
+	$(BINDIR)/nfp-macinit -m0 -0$(ETCDIR)/macinit/sf1-2x40GE.json
 	@echo "loading firmware"
 	$(BINDIR)/nfp-nffw $(ELF) load
 

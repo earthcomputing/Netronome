@@ -302,13 +302,14 @@ main(void)
         int64_t s_addr ;
         int64_t d_addr ;
         int64_t data ;
-        unsigned int mbox3, mbox2, mbox1 ;
+        unsigned int mbox3, mbox2, mbox0 ;
         __addr40 char *pkt_hdr;    /* The packet in the CTM */
         int pkt_off = PKT_NBI_OFFSET + MAC_PREPEND_BYTES ;
         unsigned int seq_num = 0 ;
         int pnum ;
         int island ;
-        local_csr_write(local_csr_mailbox0, 0);
+        mbox0 = 1 ;
+        local_csr_write(local_csr_mailbox0, mbox0);
         //entl_send_sig_num = __signal_number(&entl_send_sig) ;
         //state.my_value = MY_VALUE ;
         ctm_pkt_num = pkt_ctm_alloc( &ctm_credits, __ISLAND, PKT_CTM_SIZE_256, 1, 0);
@@ -328,11 +329,17 @@ main(void)
         data = 0 ;
         d_addr = 0 ;
         MUTEXLV_unlock(state_lock,STATE_LOCK_BIT) ;
+        mbox0 = 2 ;
+        local_csr_write(local_csr_mailbox0, mbox0);
+
         for (;;) {
           int flag ;
           ret = wait_with_timeout(RETRY_CYCLE);
+          local_csr_write(local_csr_mailbox0, ++mbox0);
           data = entl_data_in.data ;
           d_addr = entl_data_in.d_addr ;
+          local_csr_write(local_csr_mailbox1, data);
+
           //MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
 // int entl_received( __lmem entl_state_machine_t *mcn, uint64_t d_addr, uint64_t s_value, uint64_t *d_value, uint32_t ait_queue, uint32_t ait_command, uint32_t egress_queue ) ;
           //ret = entl_received( &state, d_addr, data, 0, 0, 0 ) ;
@@ -359,7 +366,7 @@ main(void)
             s_addr = 0 ;
             rewrite_packet( pkt_hdr, s_addr, d_addr, data ) ;
             send_packet( island, pnum, 64 + 4, seq_num++, flag ) ;
-            //local_csr_write(local_csr_mailbox2, seq_num );
+            local_csr_write(local_csr_mailbox2, seq_num );
           }
 
         }

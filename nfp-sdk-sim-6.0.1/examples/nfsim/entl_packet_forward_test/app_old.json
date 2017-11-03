@@ -1,0 +1,363 @@
+{
+  "name": "entl_packet_forward_test",
+  "chip": {
+    "minimum_revision": "0x10"
+  },
+  "vars": {
+    "PIFOUTDIR": "",
+    "PIFROOTDIR": "p4/components/nfp_pif",
+    "PROJECT": "",
+    "PIFAPPDIR": "me/apps/pif_app_nfd",
+    "PIFSHARED": "shared",
+    "PIFAPPCOMMONDIR": "me/apps/common",
+    "PIFLIBDIR": "me/lib/pif",
+    "HASHMAPLIBDIR": "me/lib/hashmap",
+    "PIF_MASTER_ME":                "mei0.me0",
+    "APP_MASTER_ME":                "i48.me2",
+    "NFD_SVC_ME_0":                 "i48.me0",
+    "NFD_PCIE0_SB_ME":              "i33.me10",
+    "NFD_PCIE0_PD0_ME":             "i33.me11",
+    "NFD_PCIE0_PCI_OUT_ME0_ME":     "pcie0.me0",
+    "NFD_PCIE0_PCI_IN_GATHER_ME":   "pcie0.me1",
+    "NFD_PCIE0_PCI_IN_ISSUE0_ME":   "pcie0.me2",
+    "NFD_PCIE0_NOTIFY_ME":          "pcie0.me3",
+    "MAC_FLUSH_ME":                 "i32.me10",
+    "RTU_NCTX": 8
+  },
+  "common": {
+    "defines": [
+    ],
+    "compiler": {
+      "flags": ["W3", "Qno_decl_volatile", "O2", "mIPOPT_nfp=2"]
+    },
+    "assembler": {
+    },
+    "linker": {
+      "flags": [
+        "rtsyms", "mip"
+      ],
+      "pico": {
+        "i8": "catamaran",
+        "i9": "catamaran"
+      }
+    }
+  },
+  "components": {
+    "entl_state_lib": {
+      "dir": "../entl_libs",
+      "compiler": {
+        "src": [
+          "entl_state_machine",
+          "atomic_link_op"
+        ]
+      }
+    },
+    "entl_reflect": {
+      "dir": "../entl_libs",
+      "compiler": {
+        "src": [
+          "entl_reflect"
+        ]
+      }
+    },
+    "packet_fw_lib": {
+      "dir": "../entl_libs",
+      "compiler": {
+        "src": [
+          "fw_table_access",
+          "cls_reorder"
+        ]
+      }
+    },
+    "egress_queue": {
+      "dir": "../entl_libs",
+      "compiler": {
+        "src": [
+          "egress_queue"
+        ]
+      }
+    },
+    "my_cls_ring": {
+      "dir": "../entl_libs",
+      "compiler": {
+        "src": [
+          "my_cls_ring"
+        ]
+      }
+    },
+
+    "nfp_me": {
+      "dir": "$(base_dir)/microc/lib/nfp/_c",
+      "compiler": {
+        "src": [
+          "me"
+        ]
+      }
+    },
+    "libpkt": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/pkt",
+      "compiler": {
+        "src": [
+          "libpkt"
+        ]
+      }
+    },
+    "mem_bulk": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c",
+      "compiler": {
+        "src": [
+          "mem_bulk"
+        ]
+      }
+    },
+    "mem_atomic": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c/",
+      "compiler": {
+        "src": [
+          "mem_atomic"
+        ]
+      }
+    },
+    "mem_ring": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c/",
+      "compiler": {
+        "src": [
+          "mem_ring"
+        ]
+      }
+    },
+    "reg_utils": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/std/_c",
+      "compiler": {
+        "src": [
+          "reg_utils"
+        ]
+      }
+    },
+    "nfp_cls": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/components/standardlibrary/microc/src/",
+      "compiler": {
+        "src": [
+          "nfp_cls"
+        ]
+      }
+    },
+    "cls_ring": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/ng_nfd/me/blocks/vnic/utils/_c",
+      "compiler": {
+        "src": [
+          "cls_ring"
+        ]
+      }
+    },
+    "cls": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c",
+      "compiler": {
+        "src": [
+          "cls"
+        ]
+      }
+    },
+    "libblm": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/blocks/blm",
+      "compiler": {
+        "src": [
+          "libblm"
+        ]
+      }
+    },
+    "pif_app_lib_incl": {
+      "dir": "%(PIFROOTDIR)s",
+      "compiler": {
+        "include": [
+          "%(PIFAPPDIR)s/include"
+        ]
+      },
+      "assembler": {
+        "include": [
+          "%(PIFAPPDIR)s/include"
+        ]
+      }
+    },
+    "entl_packet_sender": {
+      "dir": ".",
+      "compiler": {
+        "src": [
+          "entl_packet_sender"
+        ]
+      }
+    },
+    "entl_packet_receiver": {
+      "dir": ".",
+      "compiler": {
+        "src": [
+          "entl_packet_receiver"
+        ]
+      }
+    },
+    "pkt_clone": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/nfp_pif/me/apps/common/src",
+      "compiler": {
+        "src": [
+          "pkt_clone"
+        ]
+      }
+    }
+  },
+  "targets": {
+    "entl_packet_sender0": {
+      "type": "application",
+      "components": [
+        "entl_state_lib",
+        "nfp_me",
+        "libpkt",
+        "mem_bulk",
+        "reg_utils",
+        "cls",
+        "my_cls_ring",
+        "egress_queue",
+        "entl_packet_sender"
+      ]
+    },
+    "entl_packet_receiver0": {
+      "type": "application",
+      "components": [
+        "entl_state_lib",
+        "packet_fw_lib",
+        "entl_reflect",
+        "nfp_me",
+        "libpkt",
+        "mem_bulk",
+        "reg_utils",
+        "libblm",
+        "mem_ring",
+        "pkt_clone",
+        "cls",
+        "my_cls_ring",
+        "egress_queue",
+        "entl_packet_receiver"
+      ]
+    },
+     "entl_packet_sender1": {
+      "type": "application",
+      "components": [
+        "entl_state_lib",
+        "nfp_me",
+        "libpkt",
+        "mem_bulk",
+        "reg_utils",
+        "cls",
+        "my_cls_ring",
+        "egress_queue",
+        "entl_packet_sender"
+      ]
+    },
+    "entl_packet_receiver1": {
+      "type": "application",
+      "components": [
+        "entl_state_lib",
+        "packet_fw_lib",
+        "entl_reflect",
+        "nfp_me",
+        "libpkt",
+        "mem_bulk",
+        "reg_utils",
+        "libblm",
+        "mem_ring",
+        "pkt_clone",
+        "cls",
+        "my_cls_ring",
+        "egress_queue",
+        "entl_packet_receiver"
+      ]
+    }   
+  },
+  "platforms": {
+    "entl_packet_forward_test": {
+      "chip": {
+        "minimum_revision": "0x10",
+        "sku": "NFP-6480-1C-B0"
+      },
+      "common": {
+        "defines": [
+          "PLATFORM_PORT_SELECTION=CDP_PLATFORM",
+          "PIF_APP_CONFIG=PIF_APP_DEFAULT",
+          "NUM_IMU=2",
+          "NUM_EMU=2"
+        ],
+        "linker": {
+          "flags": [
+            "rtsyms", "mip"
+          ]
+        }
+      },
+      "targets": {
+        "entl_packet_sender0": {
+          "mes": [
+            "i32.me0"
+          ],
+          "compiler": {
+            "defines": [
+              "FW_TABLE_ALLOCATE",
+              "FORWARD_RING_NUM=PACKET_RING_NUM_0",
+              "ENTL_SENDER_PORT=0",
+              "ENTL_SENDER_ME=32"
+            ]
+          }
+        },
+        "entl_packet_receiver0": {
+          "mes": [
+            "i32.me1",
+            "i32.me2",
+            "i32.me3",
+            "i32.me4",
+            "i32.me5",
+            "i32.me6",
+            "i32.me7",
+            "i32.me8",
+            "i32.me9",
+            "i32.me10",
+            "i32.me11"
+          ],
+          "compiler": {
+            "defines": [
+            ]
+          }
+        },
+        "entl_packet_sender1": {
+          "mes": [
+            "i33.me0"
+          ],
+          "compiler": {
+            "defines": [
+              "FORWARD_RING_NUM=PACKET_RING_NUM_0",
+              "ENTL_SENDER_PORT=1",
+              "ENTL_SENDER_ME=33"
+            ]
+          }
+
+        },
+        "entl_packet_receiver1": {
+          "mes": [
+            "i33.me1",
+            "i33.me2",
+            "i33.me3",
+            "i33.me4",
+            "i33.me5",
+            "i33.me6",
+            "i33.me7",
+            "i33.me8",
+            "i33.me9",
+            "i33.me10",
+            "i33.me11"            
+          ],
+          "compiler": {
+            "defines": [
+            ]
+          }
+
+        }
+      }
+    }
+  }
+}

@@ -27,10 +27,9 @@ typedef struct entl_reflect_data {
 	int pnum ;
 } entl_reflect_data_t ;
 
-#define ENTL_SENDER_ME 32
+//#define ENTL_SENDER_ME 32
+#define ENTL_SENDER_ME __nfp_meid(32,0)
 
-
-/* XXX Move to some sort of CT reflect library */
 __intrinsic void
 entl_reflect_data(unsigned int dst_me, unsigned int dst_xfer,
              unsigned int sig_no, volatile __xwrite void *src_xfer,

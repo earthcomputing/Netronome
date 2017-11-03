@@ -96,8 +96,10 @@ $(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,mem_bulk,$(TOP_DIR)/n
 $(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,reg_utils,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/std/_c))
 $(eval $(call micro_c.compile_with_rtl,entl_packet_receiver_obj,entl_packet_receiver.c,.))
 
-$(eval $(call fw.add_obj,entl_packet_test,entl_packet_receiver_obj,i32.me1))
 $(eval $(call fw.add_obj,entl_packet_test,entl_packet_sender_obj,i32.me0 ))
+#$(eval $(call fw.add_obj,entl_packet_test,entl_packet_sender_obj,i33.me0 ))
+#$(eval $(call fw.add_obj,entl_packet_test,entl_packet_receiver_obj,i32.me1))
+$(eval $(call fw.add_obj,entl_packet_test,entl_packet_receiver_obj,i33.me1))
 $(eval $(call fw.add_rtsyms ))
 
 $(eval $(call fw.add_ppc,entl_packet_test,i8,$(PICO_CODE)))

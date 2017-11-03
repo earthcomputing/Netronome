@@ -60,6 +60,32 @@
         ]
       }
     },
+    "packet_fw_lib": {
+      "dir": "../entl_libs",
+      "compiler": {
+        "src": [
+          "fw_table_access",
+          "cls_reorder"
+        ]
+      }
+    },
+    "egress_queue": {
+      "dir": "../entl_libs",
+      "compiler": {
+        "src": [
+          "egress_queue"
+        ]
+      }
+    },
+    "my_cls_ring": {
+      "dir": "../entl_libs",
+      "compiler": {
+        "src": [
+          "my_cls_ring"
+        ]
+      }
+    },
+
     "nfp_me": {
       "dir": "$(base_dir)/microc/lib/nfp/_c",
       "compiler": {
@@ -84,11 +110,59 @@
         ]
       }
     },
+    "mem_atomic": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c/",
+      "compiler": {
+        "src": [
+          "mem_atomic"
+        ]
+      }
+    },
+    "mem_ring": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c/",
+      "compiler": {
+        "src": [
+          "mem_ring"
+        ]
+      }
+    },
     "reg_utils": {
       "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/std/_c",
       "compiler": {
         "src": [
           "reg_utils"
+        ]
+      }
+    },
+    "nfp_cls": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/components/standardlibrary/microc/src/",
+      "compiler": {
+        "src": [
+          "nfp_cls"
+        ]
+      }
+    },
+    "cls_ring": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/ng_nfd/me/blocks/vnic/utils/_c",
+      "compiler": {
+        "src": [
+          "cls_ring"
+        ]
+      }
+    },
+    "cls": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c",
+      "compiler": {
+        "src": [
+          "cls"
+        ]
+      }
+    },
+    "libblm": {
+      "dir": "$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/blocks/blm",
+      "compiler": {
+        "src": [
+          "libblm"
         ]
       }
     },
@@ -139,6 +213,9 @@
         "libpkt",
         "mem_bulk",
         "reg_utils",
+        "cls",
+        "my_cls_ring",
+        "egress_queue",
         "entl_packet_sender"
       ]
     },
@@ -146,12 +223,18 @@
       "type": "application",
       "components": [
         "entl_state_lib",
+        "packet_fw_lib",
         "entl_reflect",
         "nfp_me",
         "libpkt",
         "mem_bulk",
         "reg_utils",
+        "libblm",
+        "mem_ring",
         "pkt_clone",
+        "cls",
+        "my_cls_ring",
+        "egress_queue",
         "entl_packet_receiver"
       ]
     }
@@ -175,25 +258,71 @@
           ]
         }
       },
-      "targets": {
-        "entl_packet_sender": {
+      "link_targets": {
+        "entl_packet_sender0": {
+          "target": "entl_packet_sender", 
           "mes": [
             "i32.me0"
           ],
           "compiler": {
             "defines": [
-              "ENTL_PORT_NUM=0"
+              "FW_TABLE_ALLOCATE",
+              "FORWARD_RING_NUM=PACKET_RING_NUM_0",
+              "ENTL_SENDER_PORT=0",
+              "ENTL_SENDER_ME=32"
             ]
           }
-
         },
-        "entl_packet_receiver": {
+        "entl_packet_receiver0": {
+          "target": "entl_packet_receiver", 
           "mes": [
-            "i32.me1"
+            "i32.me1",
+            "i32.me2",
+            "i32.me3",
+            "i32.me4",
+            "i32.me5",
+            "i32.me6",
+            "i32.me7",
+            "i32.me8",
+            "i32.me9",
+            "i32.me10",
+            "i32.me11"
           ],
           "compiler": {
             "defines": [
-              "ENTL_PORT_NUM=0"
+            ]
+          }
+        },
+        "entl_packet_sender1": {
+          "target": "entl_packet_sender", 
+          "mes": [
+            "i33.me0"
+          ],
+          "compiler": {
+            "defines": [
+              "FORWARD_RING_NUM=PACKET_RING_NUM_0",
+              "ENTL_SENDER_PORT=1",
+              "ENTL_SENDER_ME=33"
+            ]
+          }
+        },
+        "entl_packet_receiver1": {
+          "target": "entl_packet_receiver", 
+          "mes": [
+            "i33.me1",
+            "i33.me2",
+            "i33.me3",
+            "i33.me4",
+            "i33.me5",
+            "i33.me6",
+            "i33.me7",
+            "i33.me8",
+            "i33.me9",
+            "i33.me10",
+            "i33.me11"            
+          ],
+          "compiler": {
+            "defines": [
             ]
           }
         }

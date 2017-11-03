@@ -57,22 +57,25 @@
 struct dmasetup_data {
     uint32_t arg_device;
     uint32_t arg_nbi;
-    uint32_t arg_nislands;
-    uint32_t arg_ctmoff;
     uint32_t arg_mu;
     uint32_t arg_dumponly;
     int arg_verbose;
-    int me_list[MAX_ISLANDS];
     int isl_id;
     struct nfp_device *nfp;
     struct nfp_nbi_dev *nfp_nbi;
     const struct nfp_chipdata_chip *chip;
+    struct nfp_nbi_dma_config cfg;
+    int num_bp_cfg ;
+    int num_bpechain ;
+    struct nfp_nbi_dma_bp_config bp_cfg[8];
+    struct nfp_nbi_dma_bpe_config bpechain[8];
 };
 
 /***** Config Json parser *****/
-int parse_json_config( WJElement config, struct nfp_nbi_dma_config *cfg)
+int parse_json_config( WJElement config, struct dmasetup_data *d )
 {
     WJElement nbi_dma_config = NULL ;
+    struct nfp_nbi_dma_config *cfg = &d->cfg ;
     nbi_dma_config = WJEObject(config, "nfp_nbi_dma_nbi_dma_config", WJE_GET) ;
 
     if( nbi_dma_config )
@@ -102,31 +105,30 @@ int parse_json_config( WJElement config, struct nfp_nbi_dma_config *cfg)
     }
 }
 
-int parse_dma_bp_config( WJElement config, struct nfp_nbi_dma_bp_config **bp_cfg )
+int parse_dma_bp_config( WJElement config, struct dmasetup_data *d  )
 {
     WJElement dma_bp_config = NULL ;
     if( dma_bp_config = WJEObject(config, "nfp_nbi_dma_bp_config", WJE_GET))
     {
         int i ;
+        d->num_bp_cfg = 0 ;
         for (i = 0 ; i < 8 ; i++) {
+            struct nfp_nbi_dma_bp_config *bp_cfg = &d->bp_cfg[d->num_bp_cfg] ;
             char num[10] ;
             WJElement bp_config = NULL ;
             sprintf( num, "%d", i ) ;
-            bp_config = WJEObject(config, num, WJE_GET) ;
+            bp_config = WJEObject(dma_bp_config, num, WJE_GET) ;
             if( bp_config ) {
-                bp_cfg[i] = (struct nfp_nbi_dma_bp_config*)malloc(sizeof(struct nfp_nbi_dma_bp_config)) ;
-                bp_cfg[i]->bp = WJEInt32(bp_config, "bp" , WJE_GET, 0 );
-                bp_cfg[i]->drop_enable = WJEBool(bp_config, "drop_enable" , WJE_GET, true );
-                bp_cfg[i]->ctm_offset =  WJEInt32(bp_config, "ctm_offset" , WJE_GET, 0 );
-                bp_cfg[i]->primary_buffer_list =  WJEInt32(bp_config, "primary_buffer_list" , WJE_GET, 0 );
-                bp_cfg[i]->secondary_buffer_list =  WJEInt32(bp_config, "secondary_buffer_list" , WJE_GET, 0 );
-                bp_cfg[i]->ctm_split_length =  WJEInt32(bp_config, "ctm_split_length" , WJE_GET, 0 );
-                bp_cfg[i]->bpe_head =  WJEInt32(bp_config, "bpe_head" , WJE_GET, 0 );
-                bp_cfg[i]->bpe_chain_end =  WJEInt32(bp_config, "bpe_chain_end" , WJE_GET, 0 );
-                bp_cfg[i]->bpe_chain = NULL;  
-            }
-            else {
-                bp_cfg[i] = NULL ;
+                d->num_bp_cfg++ ;
+                bp_cfg->bp = WJEInt32(bp_config, "bp" , WJE_GET, 0 );
+                bp_cfg->drop_enable = WJEBool(bp_config, "drop_enable" , WJE_GET, true );
+                bp_cfg->ctm_offset =  WJEInt32(bp_config, "ctm_offset" , WJE_GET, 0 );
+                bp_cfg->primary_buffer_list =  WJEInt32(bp_config, "primary_buffer_list" , WJE_GET, 0 );
+                bp_cfg->secondary_buffer_list =  WJEInt32(bp_config, "secondary_buffer_list" , WJE_GET, 0 );
+                bp_cfg->ctm_split_length =  WJEInt32(bp_config, "ctm_split_length" , WJE_GET, 0 );
+                bp_cfg->bpe_head =  WJEInt32(bp_config, "bpe_head" , WJE_GET, 0 );
+                bp_cfg->bpe_chain_end =  WJEInt32(bp_config, "bpe_chain_end" , WJE_GET, 0 );
+                bp_cfg->bpe_chain = NULL;  
             }
         }
         return 1 ;
@@ -134,25 +136,25 @@ int parse_dma_bp_config( WJElement config, struct nfp_nbi_dma_bp_config **bp_cfg
     else return 0 ;
 }
 
-int parse_dma_bpe_config( WJElement config, struct nfp_nbi_dma_bpe_config **bpe_chain )
+int parse_dma_bpe_config( WJElement config, struct dmasetup_data *d )
 {
     WJElement dma_bpe_config = NULL ;
     if( dma_bpe_config = WJEObject(config, "nfp_nbi_dma_bpe_config", WJE_GET))
     {
-        int i, j ;
-        j = 0 ;
+        int i;
+        d->num_bpechain = 0 ;
         for (i = 0 ; i < 8 ; i++) {
             char num[10] ;
+            struct nfp_nbi_dma_bpe_config *bpe_chain = &d->bpechain[d->num_bpechain] ;
             WJElement bpe_config = NULL ;
             sprintf( num, "%d", i ) ;
-            bpe_config = WJEObject(config, num, WJE_GET) ;
+            bpe_config = WJEObject(dma_bpe_config, num, WJE_GET) ;
             if( bpe_config ) {
-                bpe_chain[j] = (struct nfp_nbi_dma_bpe_config*)malloc(sizeof(struct nfp_nbi_dma_bpe_config)) ;
-                bpe_chain[j]->bpe = WJEInt32(bpe_config, "bpe" , WJE_GET, 0 );
-                bpe_chain[j]->ctm_target = WJEInt32(bpe_config, "ctm_target" , WJE_GET, 0 );
-                bpe_chain[j]->packet_credits = WJEInt32(bpe_config, "packet_credits" , WJE_GET, 0 );
-                bpe_chain[j]->buffer_credits = WJEInt32(bpe_config, "buffer_credits" , WJE_GET, 0 );
-                j++ ;
+                d->num_bpechain++ ;
+                bpe_chain->bpe = WJEInt32(bpe_config, "bpe" , WJE_GET, 0 );
+                bpe_chain->ctm_target = WJEInt32(bpe_config, "ctm_target" , WJE_GET, 0 );
+                bpe_chain->packet_credits = WJEInt32(bpe_config, "packet_credits" , WJE_GET, 0 );
+                bpe_chain->buffer_credits = WJEInt32(bpe_config, "buffer_credits" , WJE_GET, 0 );
             }
         }
         return 1 ;
@@ -161,6 +163,122 @@ int parse_dma_bpe_config( WJElement config, struct nfp_nbi_dma_bpe_config **bpe_
 
 }
 
+/*
+  callback: load more schema from files based on "name" and a pattern argument
+*/
+static WJElement schema_load(const char *name, void *client,
+                             const char *file, const int line) {
+    char *format;
+    char *path;
+    FILE *schemafile;
+    WJReader readschema;
+    WJElement schema;
+
+    schema = NULL;
+    if(client && name) {
+        format = (char *)client;
+        path = malloc(strlen(format) + strlen(name));
+        sprintf(path, format, name);
+
+        if ((schemafile = fopen(path, "r"))) {
+            if((readschema = WJROpenFILEDocument(schemafile, NULL, 0))) {
+                schema = WJEOpenDocument(readschema, NULL, NULL, NULL);
+            } else {
+                fprintf(stderr, "json document failed to open: '%s'\n", path);
+            }
+            fclose(schemafile);
+        } else {
+            fprintf(stderr, "json file not found: '%s'\n", path);
+        }
+        free(path);
+    }
+  WJEDump(schema);
+    return schema;
+}
+
+/*
+  callback: cleanup/free open schema
+*/
+static void schema_free(WJElement schema, void *client) {
+    WJECloseDocument(schema);
+    return;
+}
+
+/*
+  callback: plop validation errors to stderr
+*/
+static void schema_error(void *client, const char *format, ...) {
+    va_list ap;
+    va_start(ap, format);
+    vfprintf(stderr, format, ap);
+    va_end(ap);
+    fprintf(stderr, "\n");
+}
+
+
+int process_json_file( char *str, struct dmasetup_data *data )
+{
+    FILE *jsonfile;
+    FILE *schemafile;
+    WJReader readjson;
+    WJReader readschema;
+    WJElement json;
+    WJElement schema;
+    char *format = NULL ;
+    if(!(jsonfile = fopen(str, "r"))) {
+        fprintf(stderr, "json file not found: '%s'\n", str );
+        return 0;
+    }
+    if(!(readjson = WJROpenFILEDocument(jsonfile, NULL, 0)) ||
+       !(json = WJEOpenDocument(readjson, NULL, NULL, NULL))) {
+        fprintf(stderr, "json file '%s' could not be read.\n", str);
+        return 0;
+    }
+
+    if(!(schemafile = fopen( "nfp_nbi_config_scheme.json", "r"))) {
+        fprintf(stderr, "schema file '%s' not found, skipping check \n", "nfp_nbi_config_scheme.json" );
+    }
+    else {
+        // schemma check on the json file
+        if(!(readschema = WJROpenFILEDocument(schemafile, NULL, 0)) ||
+           !(schema = WJEOpenDocument(readschema, NULL, NULL, NULL))) {
+            fprintf(stderr, "schema 'nfp_nbi_config_scheme.json' could not be read.\n");
+            //WJECloseDocument(json);
+            return 0;
+        }
+        if(WJESchemaValidate(schema, json, schema_error, schema_load, schema_free, format)) {
+            printf("validation: PASS\n");
+            //WJECloseDocument(schema);
+            //fclose(schemafile);
+        } else {
+            WJEDump(json);
+            printf("json: %s\n", readjson->depth ? "bad" : "good");
+            WJEDump(schema);
+            printf("schema: %s\n", readschema->depth ? "bad" : "good");
+            printf("validation: FAIL\n");
+            //WJECloseDocument(schema);
+            //fclose(schemafile);
+            return 0;
+        }
+    }
+
+    if( !parse_json_config(json, data ) ){
+        return 0 ;
+    }
+    if( !parse_dma_bp_config(json, data ) ) {
+        return 0 ;
+    }
+    if( !parse_dma_bpe_config(json, data ) ) {
+        return 0 ;
+    }
+
+    //WJECloseDocument(json);
+    //WJRCloseDocument(readjson);
+    //WJRCloseDocument(readschema);
+    //fclose(jsonfile);
+    return 1;
+
+}
 
 /***** Command line argument handling *****/
 
@@ -282,16 +400,13 @@ static void usage(char *progname)
             "\nWhere options are:\n"
             "        -d <device>            -- select NFP device; default 0\n"
             "        -n <nbi>               -- select NBI; default 0\n"
-            "        -I <list of islands>   -- list of islands (separated with , or -); default 32\n"
-            "        -m <mu island>         -- MU island; default 25\n"
-            "        -o <offset_value>      -- value to use as ctm_offset (default 1:64B)\n"
+            "        -j <json file name>    -- json file for nbi dma config, MUST BE SPECIFIED!\n"
             "        -c                     -- generate cscript output, directed to stdout\n"
             "        -D                     -- dump config and status only\n\n"
             "        -h                     -- print help\n\n"
             "example usage:\n"
-            "        %s -n 0 -I 32,33,34 -m 25     -- setup nbi0 dma for ME islands 32,33,34 using MU island 25\n"
-            "        %s -n 1 -I 36,37,38 -m 26     -- setup nbi1 dma for ME islands 36,37,38 using MU island 26\n"
-            , progname, progname, progname);
+            "        %s -n 0 -j nbi_0_dma.json    -- setup nbi0 dma with nbi_0_dma.json file\n"
+            , progname, progname);
 }
 
 static int uintarg(const char *s, uint64_t *val)
@@ -309,22 +424,18 @@ static int uintarg(const char *s, uint64_t *val)
 
 static void parse_options(struct dmasetup_data *data, int argc, char **argv)
 {
-    int o, i;
+    int o;
     uint64_t val;
     int retval;
+
+    retval = 0 ;
 
     data->arg_device = ARG_DEFAULT_DEVICE;
     data->arg_nbi = ARG_DEFAULT_NBI;
     data->arg_mu = ARG_DEFAULT_MU;
     data->arg_dumponly = 0;
-    data->arg_ctmoff = ARG_DEFAULT_CTMOFF;
 
-    /* Default the ME list */
-    for (i = 0; i < MAX_ISLANDS; i++)
-        data->me_list[i] = 0;
-    data->me_list[ARG_DEFAULT_ME] = 1;
-
-    while ((o = getopt(argc, argv, "d:n:I:m:o:cvhD")) != -1) {
+    while ((o = getopt(argc, argv, "d:n:j:cvhD")) != -1) {
         switch(o) {
         case 'D':
             data->arg_dumponly = 1;
@@ -343,27 +454,12 @@ static void parse_options(struct dmasetup_data *data, int argc, char **argv)
             }
             data->arg_nbi = (uint32_t) val;
             break;
-        case 'I':
-            data->me_list[ARG_DEFAULT_ME] = 0;
-            retval = process_num_str(optarg, data->me_list, MAX_ISLANDS);
+        case 'j':
+            retval = process_json_file(optarg, data);
             if (retval < 1) {
                 usage(argv[0]);
                 exit(1);
             }
-            break;
-        case 'm':
-            if (uintarg(optarg, &val)) {
-                usage(argv[0]);
-                exit(1);
-            }
-            data->arg_mu = (uint32_t) val;
-            break;
-        case 'o':
-            if (uintarg(optarg, &val)) {
-                usage(argv[0]);
-                exit(1);
-            }
-            data->arg_ctmoff = (uint32_t) val;
             break;
         case 'h':
             usage(argv[0]);
@@ -375,36 +471,22 @@ static void parse_options(struct dmasetup_data *data, int argc, char **argv)
             break;
         }
     }
+    if( data->arg_dumponly==0 && retval == 0 ) {
+        fprintf(stderr, "JSON file for NBI DMA must be specified with -j option\n" ) ;
+        usage(argv[0]);
+        exit(1);        
+    }
 }
 
 /***** NBI DMA Config *****/
 
 int nbi_dma_config(struct dmasetup_data *d)
 {
-    struct nfp_nbi_dma_config cfg;
     struct nfp_nbi_dma_blq_event_config evt;
     int i;
     int ret;
 
-    cfg.ctm_poll_search_enable = 1;
-    cfg.rate_limit_enable = 0;
-    cfg.ctm_poll_interval = 3; /* 512us */
-    cfg.ctm_poll_enable = 1;
-    cfg.nbi_number = d->isl_id;
-    cfg.dis_rx_blq_wr_in_err = 0;
-    cfg.dis_rx_alloc_in_err = 0;
-    cfg.dis_rx_push_last_err = 0;
-    cfg.dis_buf_rd_err = 0;
-    cfg.dis_bd_ram_err = 0;
-    cfg.dis_ds_ram_err = 0;
-    cfg.dis_bc_ram_err = 0;
-    cfg.dis_push_bus_select = 0;
-    cfg.credit_rate0 = 3;
-    cfg.credit_rate1 = 3;
-    cfg.credit_rate2 = 3;
-    cfg.credit_rate3 = 3;
-
-    ret = nfp_nbi_dma_cfg_nbidma(d->nfp_nbi, &cfg);
+    ret = nfp_nbi_dma_cfg_nbidma(d->nfp_nbi, &d->cfg);
     if (ret < 0) {
         fprintf(stderr, "nfp_nbi_dma_cfg_nbidma() failed (%s)\n",
                 strerror(errno));
@@ -429,23 +511,7 @@ int nbi_dma_config(struct dmasetup_data *d)
 
 int nbi_bp_config(struct dmasetup_data *d)
 {
-    struct nfp_nbi_dma_bp_config bp_cfg;
-    struct nfp_nbi_dma_bpe_config bpechain[32];
-    uint32_t me_island[MAX_ISLANDS];
-    int me_isl_cnt;
-    int i, j;
-
-    /* Get a list of the islands to configure */
-    for (i = 0; i< MAX_ISLANDS; i++)
-        me_island[i] = 0;
-
-    me_isl_cnt = 0;
-    for (i = 0; i < MAX_ISLANDS; i++) {
-        if (d->me_list[i] != 0) {
-            me_island[me_isl_cnt] = i;
-            me_isl_cnt++;
-        }
-    }
+    int i;
 
     if (nfp_nbi_dma_reset_bpechained(d->nfp_nbi) < 0) {
         fprintf(stderr,
@@ -453,23 +519,9 @@ int nbi_bp_config(struct dmasetup_data *d)
         return -1;
     }
 
-    for (i = 0; i < 8; i++) {
-        bp_cfg.bp = i;
-        bp_cfg.drop_enable = 0;
-        bp_cfg.ctm_offset = d->arg_ctmoff;
-        bp_cfg.primary_buffer_list = 0;
-        bp_cfg.secondary_buffer_list = 0;
-        bp_cfg.ctm_split_length = 3;
-        bp_cfg.bpe_head = 0;
-        bp_cfg.bpe_chain_end = me_isl_cnt - 1;
-        bp_cfg.bpe_chain = bpechain;
-        for (j = 0; j < bp_cfg.bpe_chain_end - bp_cfg.bpe_head + 1; j++) {
-            bpechain[j].bpe = bp_cfg.bpe_head + j;
-            bpechain[j].ctm_target = me_island[j];
-            bpechain[j].packet_credits = 128;
-            bpechain[j].buffer_credits = (256 * 1024) / 2048;
-        }
-        if (nfp_nbi_dma_cfg_bp(d->nfp_nbi, &bp_cfg) < 0) {
+    for (i = 0; i < d->num_bp_cfg; i++) {
+        d->bp_cfg[i].bpe_chain = &d->bpechain[0];
+        if (nfp_nbi_dma_cfg_bp(d->nfp_nbi, &d->bp_cfg[i]) < 0) {
             fprintf(stderr, "nfp_nbi_dma_cfg_bp() failed (%s)\n",
                     strerror(errno));
             return -1;

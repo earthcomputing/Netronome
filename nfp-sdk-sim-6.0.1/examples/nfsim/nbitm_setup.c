@@ -3,6 +3,8 @@
  *
  * Perform a simple NBI Traffic Manager setup for packet examples
  *
+ *  Atsushi Kasuya @ Earth Computing: Modified for num_seq configuration
+ *
  */
 
 #include <errno.h>
@@ -34,10 +36,13 @@
 
 #define ARG_DEFAULT_DEVICE 0
 #define ARG_DEFAULT_NBI    0
+// AK: default value to work as the original
+#define ARG_DEFAULT_NUM_SEQ    0
 
 struct tmsetup_data {
     int arg_device;
     int arg_nbi;
+    int num_seq;     // AK: new config param
     struct nfp_device *nfp;
     struct nfp_nbi_dev *nfp_nbi;
 };
@@ -84,7 +89,7 @@ int do_config(struct tmsetup_data *d)
     gbl_cfg.schd_enable  = 1;
     gbl_cfg.shp_enable   = 0;
     gbl_cfg.chan_lvl_sel = 0;
-    gbl_cfg.num_seq      = 0;
+    gbl_cfg.num_seq      = d->num_seq ; // AK: config num_seq for Earth Computing
     gbl_cfg.l1_input_sel = 0;
 
     if (nfp_nbi_tm_write_gbl_cfg(d->nfp_nbi, &gbl_cfg) < 0) {
@@ -146,6 +151,7 @@ static void usage(char *progname)
             "\nWhere options are:\n"
             "        -d <device>            -- select NFP device, default 0\n"
             "        -n <nbi>               -- select NBI, default 0\n"
+            "        -s <num_seq>           -- select num_seq by encoded reg value, default 0\n"
             "        -h                     -- print help\n",
             progname);
 }
@@ -154,11 +160,13 @@ static int uintarg(const char *s, uint64_t *val)
 {
     char *cp;
     uint64_t r;
+    //r = strtol(s, &cp, 0);
     r = nfp_strtou64(s, &cp, 0);
     if (cp == s) {
         fprintf(stderr, "Invalid integer value: %s\n", s);
         return -1;
     }
+    r = atoi(s) ; 
     *val = r;
     return 0;
 }
@@ -170,8 +178,9 @@ static void parse_options(struct tmsetup_data *d, int argc, char **argv)
 
     d->arg_device = ARG_DEFAULT_DEVICE;
     d->arg_nbi = ARG_DEFAULT_NBI;
+    d->num_seq = ARG_DEFAULT_NUM_SEQ;
 
-    while ((o = getopt(argc, argv, "d:n:h")) != -1) {
+    while ((o = getopt(argc, argv, "d:n:h:s:")) != -1) {
         switch(o) {
         case 'h':
             usage(argv[0]);
@@ -190,6 +199,13 @@ static void parse_options(struct tmsetup_data *d, int argc, char **argv)
                 exit(1);
             }
             d->arg_nbi = val;
+            break;
+        case 's':     // AK: capture seq_num value, which is the encoded reg value
+            if (uintarg(optarg, &val)) {
+                usage(argv[0]);
+                exit(1);
+            }
+            d->num_seq = val;
             break;
         default:
             usage(argv[0]);

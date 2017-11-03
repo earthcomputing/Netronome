@@ -72,6 +72,7 @@ if not linker_obj is None:
             common_link_flags += ( f + " ")
     pico_obj = linker_obj.get( "pico")
 
+
 #print(common_comple_flags)
 
 #component
@@ -128,7 +129,7 @@ def gen_compo( name, compo_name, last ):
         if not inc_list is None:
             for inc in inc_list:
                 inc = var_convert(inc)
-                mfile.write( "$(eval $(call microc.add_include,%s,%s ))" % (name, inc))
+                mfile.write( "$(eval $(call micro_c.add_include,%s,%s))" % (name, inc))
         dir = compo_obj.get( "dir" )
         if dir is None:
             dir = "."
@@ -164,14 +165,14 @@ def gen_target( name, tgt_obj ):
         if not flag_list is None:
             for f in flag_list:
                 f = var_convert( f )
-                #print( "$(eval $(microc.add_flags( %s, %s ))" % (l_name, f))
-                mfile.write("$(eval $(call microc.add_flags, %s, %s ))\n" % (name, f))
+                #print( "$(eval $(micro_c.add_flags( %s, %s ))\n" % (l_name, f))
+                mfile.write("$(eval $(call micro_c.add_flags,%s,%s))\n" % (name, f))
         def_list = comp_obj.get("defines")
         if not def_list is None:
             for d in def_list:
                 d = var_convert( d )
-                #print( "$(eval $(microc.add_define( %s, %s ))" % (l_name, d))
-                mfile.write( "$(eval $(call microc.add_define, %s, %s ))\n" % (name, d))
+                #print( "$(eval $(micro_c.add_define( %s, %s ))" % (l_name, d))
+                mfile.write( "$(eval $(call micro_c.add_define,%s,%s))\n" % (name, d))
     length = 0
     for compo_name in compo_list:
         if compo_name in valid_compo_list:
@@ -193,41 +194,94 @@ def gen_target( name, tgt_obj ):
 
 def gen_platform( platform, p_obj ):
     # process "common" : "defines"
+    name_num = 0
     common_obj = p_obj.get( "common" )
     if not common_obj is None:
         common_defs = common_obj.get("defines")
         #if not defs is None:
         #    for def in defs:
         #        mfile.write( "$(eval $(microc.add_define( %s,%s ))\n" % (name, def))
+    #New link_targets build
+    targets_obj = p_obj.get( "link_targets" )
+    #Original targets build
+    if not targets_obj is None:
+        t_list = list( targets_obj )
+        for target in t_list:
+            targ_obj = targets_obj.get( target )
+            target_name = targ_obj.get( "target" )
+            platform_target_name = platform + "_" + target
+            mes_list = targ_obj.get( "mes" )
+            if not mes_list is None:
+                #process common defines
+                if not common_defs is None:
+                    for d in common_defs:
+                        mfile.write( "$(eval $(call micro_c.add_define,%s,%s))\n" % (platform_target_name, d))
+                        #mfile.write("OBJ_%s__DEFS += -D%s\n" % (platform_target_name, d))
+
+                # process per target defines
+                compiler_obj = targ_obj.get("compiler")
+                if not compiler_obj is None:
+                    defines_array = compiler_obj.get("defines")
+                    if not defines_array is None:
+                        for d in defines_array:
+                            mfile.write( "$(eval $(call micro_c.add_define,%s,%s))\n" % (platform_target_name, d))
+                            #mfile.write("OBJ_%s__DEFS += -D%s\n" %(platform_target_name, d))
+                    else:
+                        print( "defines is empty\n")
+                    includes_array = compiler_obj.get("include")
+                    if not includes_array is None:
+                        for inc in includes_array:
+                            inc = var_convert(inc)
+                            mfile.write("$(eval $(call micro_c.add_include,%s,%s))\n" % (platform_target_name, inc))
+                            #mfile.write("OBJ_%s__DEFS += -D%s\n" %(platform_target_name, inc))
+                else:
+                    print("compiler is empty\n")
+                tgt_obj = tgets_obj.get(target_name)
+                gen_target( platform_target_name, tgt_obj )
+                for me in mes_list:
+                    me = var_convert( me )
+                    #print( '$(eval $(call fw.add_obj,%s,%s,%s))' % ( proj_obj_name, target, me ))
+                    mfile.write('$(eval $(call fw.add_obj,%s,%s,%s))\n' % (proj_name, platform_target_name, me))
     targets_obj = p_obj.get( "targets" )
-    t_list = list( targets_obj )
-    for target in t_list:
-        targ_obj = targets_obj.get( target )
-        platform_target_name = platform + "_" + target
-        mes_list = targ_obj.get( "mes" )
-        if not mes_list is None:
-            #process common defines
-            if not common_defs is None:
-                for d in common_defs:
-                    mfile.write( "$(eval $(call microc.add_define, %s, %s ))\n" % (platform_target_name, d))
-            # process per target defines 
-            compiler_obj = targ_obj.get("compiler")
-            if not compiler_obj is None:
-                defines_array = compiler_obj.get("defines")
-                if not defines_array is None:
-                    for d in defines_array:
-                        mfile.write( "$(eval $(call microc.add_define, %s, %s ))\n" % (platform_target_name, d))
-                includes_array = compiler_obj.get("include")
-                if not includes_array is None:
-                    for inc in includes_array:
-                        inc = var_convert(inc)
-                        mfile.write("$(eval $(call microc.add_include,%s,%s ))" % (platform_target_name, inc))
-            tgt_obj = tgets_obj.get(target)
-            gen_target( platform_target_name, tgt_obj )
-            for me in mes_list:
-                me = var_convert( me )
-                #print( '$(eval $(call fw.add_obj,%s,%s,%s))' % ( proj_obj_name, target, me ))
-                mfile.write('$(eval $(call fw.add_obj,%s,%s,%s))\n' % (proj_name, platform_target_name, me))
+    #Original targets build
+    if not targets_obj is None:
+        t_list = list( targets_obj )
+        for target in t_list:
+            targ_obj = targets_obj.get( target )
+            platform_target_name = platform + "_" + target + "_" + str(name_num)
+            name_num+= 1
+            mes_list = targ_obj.get( "mes" )
+            if not mes_list is None:
+                #process common defines
+                if not common_defs is None:
+                    for d in common_defs:
+                        mfile.write( "$(eval $(call micro_c.add_define,%s,%s))\n" % (platform_target_name, d))
+                        #mfile.write("OBJ_%s__DEFS += -D%s\n" % (platform_target_name, d))
+
+                # process per target defines 
+                compiler_obj = targ_obj.get("compiler")
+                if not compiler_obj is None:
+                    defines_array = compiler_obj.get("defines")
+                    if not defines_array is None:
+                        for d in defines_array:
+                            mfile.write( "$(eval $(call micro_c.add_define,%s,%s))\n" % (platform_target_name, d))
+                            #mfile.write("OBJ_%s__DEFS += -D%s\n" %(platform_target_name, d))
+                    else:
+                        print( "defines is empty\n")
+                    includes_array = compiler_obj.get("include")
+                    if not includes_array is None:
+                        for inc in includes_array:
+                            inc = var_convert(inc)
+                            mfile.write("$(eval $(call micro_c.add_include,%s,%s))\n" % (platform_target_name, inc))
+                            #mfile.write("OBJ_%s__DEFS += -D%s\n" %(platform_target_name, inc))
+                else:
+                    print("compiler is empty\n")
+                tgt_obj = tgets_obj.get(target)
+                gen_target( platform_target_name, tgt_obj )
+                for me in mes_list:
+                    me = var_convert( me )
+                    #print( '$(eval $(call fw.add_obj,%s,%s,%s))' % ( proj_obj_name, target, me ))
+                    mfile.write('$(eval $(call fw.add_obj,%s,%s,%s))\n' % (proj_name, platform_target_name, me))
 
 #testing gen_target
 #for tgt in targets_list:

@@ -19,8 +19,13 @@
 #include "entl_reflect.h"
 #include "entl_state_machine.h"
 
+// global tables are allocated in Sender code (only on one ME)
 #define PACKET_RING_EXPORT
 #include "egress_queue.h"
+
+// Only one ME in the system should define FW_TABLE_ALLOCATE, others should define FW_TABLE_INPORT on compile time
+#include "fw_table_access.h"
+
 
 #define ETH_P_ECLP  0xEAC0    /* Earth Computing Link Protocol [ NOT AN OFFICIALLY REGISTERED ID ] */
 
@@ -242,7 +247,7 @@ rewrite_packet_header( __addr40 char *pbuf, volatile uint64_t s_addr, volatile u
   uint8_t pkt[14] ;
   unsigned int mbox0, mbox1, mbox2, mbox3 ;
   SIGNAL sig ;
-  mem_read32( &r_buf[0], pbuf, 24 ) ;
+  mem_read32( &r_buf[0], pbuf, 16 ) ;
   pkt[0] = d_addr >> 40 ;
   pkt[1] = d_addr >> 32 ;
   pkt[2] = d_addr >> 24 ;
@@ -261,7 +266,7 @@ rewrite_packet_header( __addr40 char *pbuf, volatile uint64_t s_addr, volatile u
 
 #ifdef ENTL_STATE_DEBUG
   state.addr = d_addr ;
-  state.data = data ;
+  //state.data = data ;
 #endif
 
 
@@ -286,11 +291,14 @@ rewrite_packet_header( __addr40 char *pbuf, volatile uint64_t s_addr, volatile u
 }
 
 void
-send_packet( int port, int island, int pnum, int plen, unsigned int seq_num, int flag )
+send_packet( int port, int island, int pnum, int plen, unsigned int seq_num, unsigned int sequencer, int flag )
 {
     int pkt_off;
     __gpr struct pkt_ms_info msi;
     __addr40 char *pbuf;
+    int nbi, txq ;
+    nbi = get_nbi(port) ;
+    txq = get_tm_queue(port) ;
     //unsigned int mbox2 ;
     /* Write the MAC egress CMD and adjust offset and len accordingly */
     pkt_off = PKT_NBI_OFFSET;  // 64
@@ -307,26 +315,24 @@ send_packet( int port, int island, int pnum, int plen, unsigned int seq_num, int
     //local_csr_write(local_csr_mailbox2, mbox2);
 
     if( flag ) {
-**
- * Send a packet to an NBI port. Notifies sequencer and frees the packet.
- * @param isl           Island of the CTM packet
- * @param pnum          Packet number of the CTM packet
- * @param msi           Modification script info required for transmission
- * @param len           Length of the packet from the start of the packet data
- *                      (which immediately follows the rewrite script
- *                      plus padding)
- * @param nbi           NBI TM to send the packet to
- * @param txq           NBI TM TX queue to send the packet to
- * @param seqr          NBI TM sequencer to send the packet to
- * @param seq           NBI TM sequence number of the packet
- * @param ctm_buf_size  Encoded CTM buffer size
- */
-       pkt_nbi_send(island, pnum, &msi, plen, NBI, 0,
-                 0, seq_num, PKT_CTM_SIZE_2048);
+      /*
+       * Send a packet to an NBI port. Notifies sequencer and frees the packet.
+       * @param isl           Island of the CTM packet
+       * @param pnum          Packet number of the CTM packet
+       * @param msi           Modification script info required for transmission
+       * @param len           Length of the packet from the start of the packet data
+       *                      (which immediately follows the rewrite script
+       *                      plus padding)
+       * @param nbi           NBI TM to send the packet to
+       * @param txq           NBI TM TX queue to send the packet to
+       * @param seqr          NBI TM sequencer to send the packet to
+       * @param seq           NBI TM sequence number of the packet
+       * @param ctm_buf_size  Encoded CTM buffer size
+       */
+       pkt_nbi_send(island, pnum, &msi, plen, nbi, txq, sequencer, seq_num, PKT_CTM_SIZE_2048);
     }
     else {
-      pkt_nbi_send_dont_free(island, pnum, &msi, plen, NBI, 0,
-                 0, seq_num, PKT_CTM_SIZE_256);
+      pkt_nbi_send_dont_free(island, pnum, &msi, plen, nbi, txq, sequencer, seq_num, PKT_CTM_SIZE_2048);
     }
 
 }
@@ -335,12 +341,14 @@ send_packet( int port, int island, int pnum, int plen, unsigned int seq_num, int
 //    
 void forward_packet() 
 {
-  int island, pnum ;
+  int island, pnum, out_port ;
   int pkt_off = PKT_NBI_OFFSET + MAC_PREPEND_BYTES ;
-  __xread packet_data_t pkt_in
+  __xread packet_data_t pkt_in ;
   __addr40 char *pkt_hdr;    /* The packet in the CTM */
   uint64_t s_addr ;
   uint64_t d_addr ;
+  unsigned int seq ;
+  int s_count = 0 ;
   sleep(500) ;
   for(;;) {
     get_packet_data( &pkt_in, FORWARD_RING_NUM ) ;
@@ -350,8 +358,13 @@ void forward_packet()
     d_addr = ECLP_FW_MASK ; // forward packet, etype = nop
     pkt_hdr  = pkt_ctm_ptr40( island, pnum, pkt_off );
     rewrite_packet_header( pkt_hdr, s_addr, d_addr ) ;
+    seq = get_sequencer(pkt_in.port) ;
+    out_port = pkt_in.out_port ;
+  // send_packet( int port, int island, int pnum, int plen, unsigned int seq_num, unsigned int sequencer, int flag )
+    s_count++ ;
+    local_csr_write(local_csr_mailbox3, out_port << 16 | s_count );
 
-    send_packet( island, pnum, pkt_in.len - MAC_PREPEND_BYTES + 4, pkt_in.seq_num, 1 )
+    send_packet( out_port, island, pnum, pkt_in.len - MAC_PREPEND_BYTES + 4, pkt_in.seq_num, seq, 1 ) ;
 
   }
 
@@ -401,20 +414,22 @@ main(void)
         // initial packet generation
         ret = entl_next_send( &state, &d_addr, &data, 0, 0 ) ; 
         if( ret ) {
-            //mbox3 = (d_addr >>32) ;
-            //local_csr_write(local_csr_mailbox3, mbox3);
-            pkt_hdr  = pkt_ctm_ptr40(__ISLAND, entl_send_sig_num, pkt_off);
+            mbox2 = get_tm_queue(ENTL_SENDER_PORT) ;
+            local_csr_write(local_csr_mailbox2, mbox2);
+            mbox3 = (d_addr >>32) ;
+            local_csr_write(local_csr_mailbox3, mbox3);
+            pkt_hdr  = pkt_ctm_ptr40(__ISLAND, ctm_pkt_num, pkt_off);
             s_addr = 0 ;
             rewrite_packet( pkt_hdr, s_addr, d_addr, data ) ;
-            send_packet( __ISLAND, entl_send_sig_num, 64 + 4, seq_num++, 0 ) ;
+            send_packet( ENTL_SENDER_PORT, __ISLAND, ctm_pkt_num, 64 + 4, seq_num++, 0, 0 ) ;
         }
 
 
         for (;;) {
           int flag ;
-          local_csr_write(local_csr_mailbox0, ++s_count );
+          //local_csr_write(local_csr_mailbox0, ++s_count );
           ret = wait_without_timeout(RETRY_CYCLE);
-          local_csr_write(local_csr_mailbox1, s_count);
+          //local_csr_write(local_csr_mailbox1, s_count);
           data = entl_data_in.data ;
           d_addr = entl_data_in.d_addr ;
           //MUTEXLV_lock(state_lock,STATE_LOCK_BIT) ;
@@ -442,9 +457,10 @@ main(void)
             pkt_hdr  = pkt_ctm_ptr40(island, pnum, pkt_off);
             s_addr = 0 ;
             rewrite_packet( pkt_hdr, s_addr, d_addr, data ) ;
-            send_packet( entl_datain.port, island, pnum, 64 + 4, seq_num++, flag ) ;
-            local_csr_write(local_csr_mailbox2, island );
-            local_csr_write(local_csr_mailbox3, pnum | flag << 16 );
+  // send_packet( int port, int island, int pnum, int plen, unsigned int seq_num, unsigned int sequencer, int flag )
+            send_packet( ENTL_SENDER_PORT, island, pnum, 64 + 4, seq_num++, 0, flag ) ;
+            //local_csr_write(local_csr_mailbox2, island );
+            //local_csr_write(local_csr_mailbox3, pnum | flag << 16 );
           }
 
         }

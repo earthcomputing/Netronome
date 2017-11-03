@@ -19,7 +19,7 @@ BINDIR = $(INSTALL_ROOT)/bin
 ETCDIR = $(INSTALL_ROOT)/etc
 
 # ucode defines
-PROJECT=entl_packet_test
+PROJECT=entl_packet_forward_test
 #UC_SRC=$(PROJECT).uc
 C_SRC=$(PROJECT).c
 LIST=$(PROJECT).list
@@ -37,10 +37,23 @@ C_LIB=-L$(INSTALL_ROOT)/lib -lnfp -lpthread -lnfp_common
 
 ENV=LD_LIBRARY_PATH=$(INSTALL_ROOT)/lib
 
-
+#NFCC_BASE_DEFS= -DFOOO
+#OBJ_entl_packet_forward_test_entl_packet_sender0_0__DEFS = -DFORWARD_RING_NUM=PACKET_RING_NUM_0
 # C Make part
 app_src_dir     := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 NETRO_INSTALL_ROOT ?= ../../../..
+
+SDK_DIR = $(TOP_DIR)/nfp-sdk-6.0.1
+NGNFD_BLK_DIR = $(SDK_DIR)/p4/components/ng_nfd/me/blocks/
+NGNFD_SHRD_DIR = $(SDK_DIR)/p4/components/ng_nfd/shared/
+NFDPIF_INC_DIR = $(SDK_DIR)/p4/components/nfp_pif/me/apps/common/include/
+NFDPIF_APP_INC_DIR = $(SDK_DIR)/p4/components/nfp_pif/me/apps/pif_app/include/
+BLM_INC_DIR = $(SDK_DIR)/p4/components/flowenv/me/blocks/blm/
+BLMH_INC_DIR = $(SDK_DIR)/p4/components/flowenv/me/blocks/blm/_h/
+LIBPIF_INC_DIR = $(SDK_DIR)/p4/components/nfp_pif/me/lib/pif/include/
+SHRDPIF_INC_DIR = $(SDK_DIR)/p4/components/nfp_pif/shared/include/
+DCFL_INC_DIR = $(SDK_DIR)/p4/components/dcfl/shared/include/dcfl/
+STDLIB_INC_DIR = $(SDK_DIR)/components/standardlibrary/microc/include/
 
 # Define src_dir FIRST - it is the directory that this makefile resides in
 # MUST OCCUR BEFORE ANY include's (which will change MAKEFILE_LIST)
@@ -63,7 +76,8 @@ TO_NET_DIR=$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib
 #  /Users/atsushi/earthcomputing/Netronome/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/mem_bulk.h
 
 #overwrite from Makefile.nfp.config
-NFCC_BASE_INC := -I. -I../entl_libs -I$(TO_NET_DIR) -I$(base_dir)/microc/include -I$(base_dir)/microc/lib -I$(base_dir)/microc/lib/nfp  
+#NFCC_BASE_INC := -I. -I../entl_libs -I$(TO_NET_DIR) -I$(base_dir)/microc/include -I$(base_dir)/microc/lib -I$(base_dir)/microc/lib/nfp  
+NFCC_BASE_INC := -I. -I../entl_libs -I$(TO_NET_DIR) -I$(base_dir)/microc/include -I$(base_dir)/microc/lib -I$(base_dir)/microc/lib/nfp -I$(NGNFD_BLK_DIR) -I$(STDLIB_INC_DIR) -I$(NGNFD_SHRD_DIR) -I$(NFDPIF_INC_DIR) -I$(NFDPIF_APP_INC_DIR) -I$(BLM_INC_DIR) -I$(BLMH_INC_DIR) -I$(LIBPIF_INC_DIR) -I$(SHRDPIF_INC_DIR) -I$(DCFL_INC_DIR)
 #NFCC_FLAGS=-chip nfp-6xxx -DENTL_STATE_DEBUG
 
 
@@ -71,3 +85,4 @@ FW_BUILD     := $(app_src_dir)
 FW_FW        := $(app_src_dir)
 # $(eval $(call micro_c.compile,entl_state_machine_obj,entl_state_machine.c,.))
 include $(scripts_dir)/Makefile.templates
+

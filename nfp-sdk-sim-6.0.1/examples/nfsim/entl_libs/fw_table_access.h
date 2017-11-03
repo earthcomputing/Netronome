@@ -18,23 +18,39 @@
 #define FW_TABLE_SIZE_0 0x8000
 #define FW_TABLE_SIZE_1 0x10000
 
+#ifndef __PACKED
+#ifdef __NFP_TOOL_NFCC
+#include <nfp.h>
+#define __PACKED __packed
+#else
+#define __PACKED __attribute__((packed))
+#endif
+#endif
 
 __shared volatile uint64_t  keep_pkt_num ;
 //__shared uint32_t alo_command ;
 //__shared int  next_flag ;
-typedef struct fw_table_entry {
+struct fw_table_entry {
   union {
     struct {
       uint16_t fw_vector ;		  // bit 0 to host
       unsigned int parent:4 ;     // parent port of this tree
       unsigned int drop_host:1 ;  // do not forward packet from host
-      unsigned int reserved:3 ;   
+      unsigned int reserved:11 ;   
       uint32_t next_lookup[15] ;  // next lookup field for the packet
     };
     uint32_t __raw[16] ; // 64 byte
-  }
-} __PACKED fw_table_entry_t ;  
+  };
+} __PACKED ;  
 
+typedef struct fw_table_entry fw_table_entry_t ;
+
+#ifdef FW_TABLE_IMPORT
+
+__import __shared __imem_n(0) fw_table_entry_t fw_table0[FW_TABLE_SIZE_0] ;
+__import __shared __imem_n(1) fw_table_entry_t fw_table1[FW_TABLE_SIZE_1] ;
+
+#else
 
 #ifdef FW_TABLE_ALLOCATE
 
@@ -42,11 +58,6 @@ __export __shared __imem_n(0) fw_table_entry_t fw_table0[FW_TABLE_SIZE_0] ;
 __export __shared __imem_n(1) fw_table_entry_t fw_table1[FW_TABLE_SIZE_1] ;
 
 #endif
-
-#ifdef FW_TABLE_IMPORT
-
-__import __shared __imem_n(0) fw_table_entry_t fw_table0[FW_TABLE_SIZE_0] ;
-__import __shared __imem_n(1) fw_table_entry_t fw_table1[FW_TABLE_SIZE_1] ;
 
 #endif
 

@@ -8,8 +8,19 @@
  * Author:        Atsushi Kasuya
  *
  */
+#include <nfp.h>
+#include <me.h>
+#include <mutexlv.h>
+#include <stdint.h>
+#include <nfp6000/nfp_me.h>
 
 #include "nfp_cls.h"
+// from wire_main.c for getting port on meta data to port number
+#define MAC_CHAN_PER_PORT   8
+#define TMQ_PER_PORT        (MAC_CHAN_PER_PORT * 8)
+
+#define MAC_TO_PORT(x)      (x / MAC_CHAN_PER_PORT)
+#define PORT_TO_TMQ(x)      (x * TMQ_PER_PORT)
 
 #define PACKET_RING_IMPORT
 
@@ -20,7 +31,7 @@ void egress_queue_init() {
                    (__cls void *)packet_ring_mem0,
                    (PACKET_RING_SIZE_LW*sizeof(packet_data_t)));
     cls_ring_setup(PACKET_RING_NUM_1,
-                   (__cls void *)packet_ring_mem0,
+                   (__cls void *)packet_ring_mem1,
                    (PACKET_RING_SIZE_LW*sizeof(packet_data_t)));
 }
 
@@ -80,12 +91,12 @@ uint32_t get_island_ring( uint32_t port ) {
 uint32_t get_nbi( uint32_t port ) {
 	switch(port) {
 		case 0:		return 0 ;
-		case 1:		return 1 ;
+		case 1:		return 0 ;
 		case 2:		return 0 ;
-		case 3:		return 1 ;
-		case 4:		return 0 ;
+		case 3:		return 0 ;
+		case 4:		return 1 ;
 		case 5:		return 1 ;
-		case 6:		return 0 ;
+		case 6:		return 1 ;
 		case 7:		return 1 ;  // reality, up to 8 ports can be supported on current hw
 //		case 8:		return 0 ;
 //		case 9:		return 1 ;
@@ -95,9 +106,10 @@ uint32_t get_nbi( uint32_t port ) {
 	}
 }
 
-uint32_t get_sequencer( uint32_t in_port ) 
+uint32_t get_sequencer( uint32_t port ) 
 {
-	switch(in_port) {
+	switch(port) {
+		// sequencer 0 is used for ENTL packet
 		case 0:		return 1 ;
 		case 1:		return 2 ;
 		case 2:		return 3 ;
@@ -117,14 +129,14 @@ uint32_t get_sequencer( uint32_t in_port )
 uint32_t get_tm_queue( uint32_t port ) 
 {
 	switch(port) {
-		case 0:		return 0 ;
-		case 1:		return 0 ;
-		case 2:		return 1 ;
-		case 3:		return 1 ;
-		case 4:		return 2 ;
-		case 5:		return 2 ;
-		case 6:		return 3 ;
-		case 7:		return 3 ;  // reality, up to 8 ports can be supported on current hw
+		case 0:		return PORT_TO_TMQ(0) ;
+		case 1:		return PORT_TO_TMQ(1) ;
+		case 2:		return PORT_TO_TMQ(2) ;
+		case 3:		return PORT_TO_TMQ(3) ;
+		case 4:		return PORT_TO_TMQ(0) ;
+		case 5:		return PORT_TO_TMQ(1) ;
+		case 6:		return PORT_TO_TMQ(2) ;
+		case 7:		return PORT_TO_TMQ(3) ;  // reality, up to 8 ports can be supported on current hw
 //		case 8:		return 0 ;
 //		case 9:		return 1 ;
 //		case 10:	return 0 ;
@@ -172,20 +184,20 @@ uint32_t get_sequence_num( uint32_t port ) {
 
 	uint32_t offset = port >> 1 ;
 
-	if( port & 1 ) {
+	if( port < 7 ) {
 		cls_read_ptr32(
 	    	&data_r,
 	    	&sequence_num_array0[offset],
-	    	sizeof(uint32_t),
+	    	1,
 	    	ctx_swap,
 	    	&sig 
 		);
-		seq_num = (uint32_t)*data_r ;
+		seq_num = (uint32_t)data_r ;
 		data_w = seq_num + 1 ;
 		cls_write_ptr32(
 	    	&data_w,
 	    	&sequence_num_array0[offset],
-	    	sizeof(uint32_t),
+	    	1,
 	    	ctx_swap,
 	    	&sig 
 		);
@@ -194,16 +206,16 @@ uint32_t get_sequence_num( uint32_t port ) {
 		cls_read_ptr32(
 	    	&data_r,
 	    	&sequence_num_array1[offset],
-	    	sizeof(uint32_t),
+	    	1,
 	    	ctx_swap,
 	    	&sig 
 		);
-		seq_num = (uint32_t)*data_r ;
+		seq_num = (uint32_t)data_r ;
 		data_w = seq_num + 1 ;
 		cls_write_ptr32(
 	    	&data_w,
 	    	&sequence_num_array1[offset],
-	    	sizeof(uint32_t),
+	    	1,
 	    	ctx_swap,
 	    	&sig 
 		);

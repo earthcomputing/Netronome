@@ -17,7 +17,9 @@ EX_FILES = 	read_xpb.c \
 			exttcache.c ilkn_pcap_play.c ilkn_pcap_record.c ilkn_loopback.c\
 			history.c pstats.c log_level.c read_meattn.c \
 			watch_meattn.c mac_stats.c mac_ports.c \
-			exec_pausesim.c signal_test_run.c entl_test_run.c
+			exec_pausesim.c my_nbidma_setup.c
+
+#signal_test_run.c entl_test_run.c nbidma_json_setup.c
 
 # multisource source examples - specifically handled
 EX_APPS = interactive
@@ -25,8 +27,9 @@ EX_APPS = interactive
 
 EX_PROGS = $(addprefix ,$(EX_FILES:.c=))
 EX_INC = -I../../include -I./include
-EX_FLAGS = -Wall -Werror -L${LIB_INC_PATH} -g -Wl,-rpath,'$$ORIGIN/../../lib' -DPACKAGE_NAME="\"nfp-sim-tools\"" -DPACKAGE_VERSION="\"beta\""
+EX_FLAGS = -L/usr/lib -Wall -Werror -L${LIB_INC_PATH} -Wno-parentheses -g -Wl,-rpath,'$$ORIGIN/../../lib' -DPACKAGE_NAME="\"nfp-sim-tools\"" -DPACKAGE_VERSION="\"beta\""
 EX_LIBS = -L.. -lpcap -lnfp_hwdbg -lnfp -lrt -lnfp_common -ljansson -lz
+#EX_LIBS = -L.. -lpcap -lnfp_hwdbg -lnfp -lrt -lnfp_common -ljansson -lz -lwjelement -lwjreader
 
 #IA_FLAGS = -DUSE_READLINE
 IA_LIBS = -lreadline

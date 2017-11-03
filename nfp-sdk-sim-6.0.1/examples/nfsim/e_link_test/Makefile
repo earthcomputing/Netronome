@@ -91,7 +91,7 @@ $(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,libpkt,$(TOP_DIR)/nfp
 $(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,mem_bulk,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c))
 $(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,reg_utils,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/std/_c))
 
-$(eval $(call fw.add_obj,entl_packet_test,entl_packet_receiver_obj,i32.me1 ))
+$(eval $(call fw.add_obj,entl_packet_test,entl_packet_receiver_obj,i33.me0 ))
 $(eval $(call fw.add_obj,entl_packet_test,entl_packet_sender_obj,i32.me0 ))
 
 $(eval $(call fw.link_with_rtsyms,entl_packet_test))
@@ -122,9 +122,10 @@ HOST_LIBS = -lpcap -lnfp_hwdbg -lnfp -lrt -lnfp_common -ljansson -lz
 
 # Compile Switch for Host code
 HOST_FLAGS+= -DNETRONOME_HOST 
+#entl_packet_test_run: entl_packet_test_run.c ../entl_state_test/entl_state_machine.c ../entl_state_test/entl_sm_unit_test/entl_sm_tester.c ../entl_state_test/atomic_link_op.c ../entl_state_test/alo_unit_test/alo_tester.c ../entl_state_test/alo_unit_test/cyc_random.c
 
-entl_packet_test_run: entl_packet_test_run.c ../entl_state_test/entl_state_machine.c ../entl_state_test/entl_sm_unit_test/entl_sm_tester.c ../entl_state_test/atomic_link_op.c ../entl_state_test/alo_unit_test/alo_tester.c ../entl_state_test/alo_unit_test/cyc_random.c
-	$(CC) $(HOST_FLAGS) $(HOST_INC) -pthread -o $@ $^ $(HOST_LIBS) 
+entl_packet_test_run: entl_packet_test_run.c ../entl_libs/entl_state_machine.c ../entl_state_test/entl_sm_unit_test/entl_sm_tester.c ../entl_libs/atomic_link_op.c ../entl_state_test/alo_unit_test/alo_tester.c ../entl_state_test/alo_unit_test/cyc_random.c
+	$(CC) -I../entl_libs $(HOST_FLAGS) $(HOST_INC) -pthread -o $@ $^ $(HOST_LIBS) 
 
 %.cpp.o: %.cpp
 	$(CPP) $(HOST_FLAGS) $(HOST_INC) -c -o $@ $<

@@ -76,10 +76,6 @@ void reorder_lock( unsigned int ring_num, unsigned int sequence ) ;
 
 void reorder_unlock( unsigned int ring_num, unsigned int sequence ) ;
 
-// Optimized for 8 port, last Island supports two ports
-inline uint32_t get_ring_num( unsigned int port ) {
-    if( port == 7 ) return REORDER_RING_NUM1 ;
-    else return REORDER_RING_NUM0 ;
-}
+uint32_t get_ring_num( unsigned int port ) ;
 
 #endif

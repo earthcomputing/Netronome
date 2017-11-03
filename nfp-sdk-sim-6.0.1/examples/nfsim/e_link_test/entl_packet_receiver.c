@@ -316,7 +316,7 @@ main(void)
         unsigned int mbox0, mbox1, mbox2 ;
         int ret ;
         int i = 0 ;
-        sleep(200) ;
+        sleep(500) ;
         //while( state.my_value != MY_VALUE ) {
         //sleep(100) ;            
         //}
@@ -324,19 +324,26 @@ main(void)
         //local_csr_write(local_csr_mailbox2, mbox2 );
         //sleep(100) ;             
         //signal_ctx(0, __signal_number(&entl_send_sig)) ;  // send hello first       
-        entl_data_out.d_addr = 0 ;
-        entl_data_out.data = 0 ;
-        entl_data_out.island = 0 ;
-        entl_data_out.pnum = 0 ;
-        // initial trigger to send hello  
-        entl_reflect_data( ENTL_SENDER_ME, __xfer_reg_number(&entl_data_in, ENTL_SENDER_ME),
-          __signal_number(&entl_send_sig, ENTL_SENDER_ME), &entl_data_out,
-          sizeof(entl_data_out)
-        ) ;
-        sleep(100) ;       
+        if( __ctx() == 0 ) {
+          entl_data_out.d_addr = 0 ;
+          entl_data_out.data = 0 ;
+          entl_data_out.island = 0 ;
+          entl_data_out.pnum = 0 ;
+          // initial trigger to send hello  
+          mbox0 = 1 ;
+          local_csr_write(local_csr_mailbox0, mbox0 );
+          entl_reflect_data( ENTL_SENDER_ME, __xfer_reg_number(&entl_data_in, ENTL_SENDER_ME),
+            __signal_number(&entl_send_sig, ENTL_SENDER_ME), &entl_data_out,
+            sizeof(entl_data_out)
+          ) ;
+          mbox0 = 2 ;
+          local_csr_write(local_csr_mailbox0, mbox0 );
+        }
+        else sleep(500) ;       
         for (;;) {
           ret = receive_packet(&pkt_rxed, sizeof(pkt_rxed));
-          //mbox0 = (ret << 16) | 0x8000 | state.state.current_state ;
+          mbox0++ ;
+          local_csr_write(local_csr_mailbox0, mbox0 );          //mbox0 = (ret << 16) | 0x8000 | state.state.current_state ;
           //local_csr_write(local_csr_mailbox0, mbox0 );
           if( ret & 1 ) {
             //sleep(100) ;
