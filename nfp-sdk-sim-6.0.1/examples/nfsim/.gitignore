@@ -10,6 +10,7 @@ log_level
 mac_ports
 mac_stats
 nbidma_setup
+nbidma_json_setup
 nbitm_setup
 nfmem
 pcap_play
