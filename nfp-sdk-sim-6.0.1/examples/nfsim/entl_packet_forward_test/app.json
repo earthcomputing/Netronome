@@ -269,7 +269,7 @@
               "FW_TABLE_ALLOCATE",
               "FORWARD_RING_NUM=PACKET_RING_NUM_0",
               "ENTL_SENDER_PORT=0",
-              "ENTL_SENDER_ME=32"
+              "ENTL_SENDER_ISL=32"
             ]
           }
         },
@@ -290,6 +290,9 @@
           ],
           "compiler": {
             "defines": [
+              "FORWARD_RING_NUM=PACKET_RING_NUM_0",
+              "ENTL_SENDER_PORT=1",
+              "ENTL_SENDER_ISL=33"
             ]
           }
         },
@@ -300,9 +303,8 @@
           ],
           "compiler": {
             "defines": [
-              "FORWARD_RING_NUM=PACKET_RING_NUM_0",
               "ENTL_SENDER_PORT=1",
-              "ENTL_SENDER_ME=33"
+              "ENTL_SENDER_ISL=33"
             ]
           }
         },
@@ -323,6 +325,8 @@
           ],
           "compiler": {
             "defines": [
+              "ENTL_SENDER_PORT=1",
+              "ENTL_SENDER_ISL=33"
             ]
           }
         }

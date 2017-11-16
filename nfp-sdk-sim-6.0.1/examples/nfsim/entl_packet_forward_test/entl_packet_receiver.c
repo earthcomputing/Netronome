@@ -34,8 +34,12 @@
 #define FW_TABLE_INPORT
 #include "fw_table_access.h"
 
-#define ENTL_SENDER_ISL 33
+//#define ENTL_SENDER_ISL 33
+//#define ENTL_SENDER_ME 0
+//#define ENTL_SENDER_ISL 32
 #define ENTL_SENDER_ME 0
+#define ENTL_RECEIVER_ISL 33
+#define ENTL_RECEIVER_ME 0
 
 #define ETH_P_ECLP  0xEAC0    /* Earth Computing Link Protocol [ NOT AN OFFICIALLY REGISTERED ID ] */
 
@@ -207,11 +211,11 @@ main(void)
   
   struct pkt_rxed pkt_rxed; /* The packet header received by the thread */
   //__mem struct pkt_hdr *pkt_hdr;    /* The packet in the CTM */
-  unsigned int mbox0, mbox1, mbox2 ;
+  //unsigned int mbox0, mbox1, mbox2 ;
   int ret ;
-  int i = 0 ;
+  //int i = 0 ;
   if (__ctx() == 0) {
-    mbox0 = 0 ;
+    unsigned int mbox0 = 0 ;
     local_csr_write(local_csr_mailbox0, mbox0 );
     reorder_ring_init() ;
   }
@@ -243,6 +247,7 @@ main(void)
   for (;;) {
     uint64_t s_addr ;
     int sent = 0 ;
+    unsigned int mbox0, mbox1 ;
     //mbox0 = local_csr_read(local_csr_mailbox0) ;
     //mbox0 |= (1 << __ctx()) ;
     //local_csr_write(local_csr_mailbox0, mbox0 );
@@ -265,8 +270,12 @@ main(void)
       //sleep(100) ;
       // __signal_me( RECEIVER_ISLAND_NUM, RECEIVER_ME_NUM, RECEIVER_THREAD_NUM, entl_send_sig_num ) ;
       //signal_ctx(0, __signal_number(&entl_send_sig)) ;                    
-      entl_reflect( ENTL_SENDER_ISL, meid, __xfer_reg_number(&entl_data_in, ENTL_SENDER_ME),
-        __signal_number(&entl_send_sig, ENTL_SENDER_ME), &entl_data_out,
+      //entl_reflect( ENTL_SENDER_ISL, meid, __xfer_reg_number(&entl_data_in, ENTL_SENDER_ME),
+      //  __signal_number(&entl_send_sig, ENTL_SENDER_ME), &entl_data_out,
+      //  sizeof(entl_data_out)
+      //) ;
+      entl_reflect( ENTL_SENDER_ISL, ENTL_SENDER_ME, __xfer_reg_number(&entl_data_in, __nfp_meid(ENTL_SENDER_ISL,ENTL_SENDER_ME)),
+        __signal_number(&entl_send_sig, __nfp_meid(ENTL_SENDER_ISL,ENTL_SENDER_ME)), &entl_data_out,
         sizeof(entl_data_out)
       ) ;
 
@@ -321,11 +330,12 @@ main(void)
         }
       }
       else {
+        int i ;
         uint16_t fw_vector ;
         fw_vector = entry.fw_vector ;
-        mbox2 = local_csr_read(local_csr_mailbox2) ;
-        mbox2++ ;
-        local_csr_write(local_csr_mailbox2, mbox2 );
+        //mbox2 = local_csr_read(local_csr_mailbox2) ;
+        //mbox2++ ;
+        //local_csr_write(local_csr_mailbox2, mbox2 );
         if( fw_vector & 1 ){
           // send to host, TBD
           sent = 1 ;
@@ -350,11 +360,9 @@ main(void)
               
               if( sent ) {
                 struct nbi_meta_pkt_info pkt_info;
-                __xwrite uint32_t buf_xw[2];
-                __addr40 void *ctm_ptr;
                 __gpr struct pkt_clone_destination  destination = {0};
                 // need to copy the packet
-                /*
+                /* */
                 destination = pkt_clone(
                   pkt_rxed.nbi_meta.pkt_info.pnum,
                   PKT_CTM_SIZE_256,
@@ -364,18 +372,23 @@ main(void)
                   pkt_rxed.nbi_meta.pkt_info.len,
                   pkt_rxed.nbi_meta.pkt_info.split
                 );
-                */
-                pkt_data.packet_num = destination.ctm_pkt_num ;
-                pkt_out = pkt_data ;
-                // update packet meta data
-                pkt_info.isl = pkt_rxed.nbi_meta.pkt_info.isl ;
-                pkt_info.pnum = destination.ctm_pkt_num ;
-                pkt_info.split = pkt_rxed.nbi_meta.pkt_info.split ;
-                pkt_info.muptr = blm_buf_ptr2handle(destination.mu_ptr);
-                ctm_ptr = pkt_ctm_ptr40(__ISLAND, destination.ctm_pkt_num, 0);
-                buf_xw[0] = pkt_info.__raw[0];
-                buf_xw[1] = pkt_info.__raw[1];
-                mem_write32(buf_xw, ctm_ptr, sizeof(buf_xw));
+                /* */
+                {
+                  __xwrite uint32_t buf_xw[2];
+                  __addr40 void *ctm_ptr;
+
+                  pkt_data.packet_num = destination.ctm_pkt_num ;
+                  pkt_out = pkt_data ;
+                  // update packet meta data
+                  pkt_info.isl = pkt_rxed.nbi_meta.pkt_info.isl ;
+                  pkt_info.pnum = destination.ctm_pkt_num ;
+                  pkt_info.split = pkt_rxed.nbi_meta.pkt_info.split ;
+                  pkt_info.muptr = blm_buf_ptr2handle(destination.mu_ptr);
+                  ctm_ptr = pkt_ctm_ptr40(__ISLAND, destination.ctm_pkt_num, 0);
+                  buf_xw[0] = pkt_info.__raw[0];
+                  buf_xw[1] = pkt_info.__raw[1];
+                  mem_write32(buf_xw, ctm_ptr, sizeof(buf_xw));
+                }
               }
               else {
                 
