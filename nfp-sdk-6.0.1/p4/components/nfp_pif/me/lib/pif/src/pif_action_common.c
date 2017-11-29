@@ -68,8 +68,8 @@ int pif_action_execute(__lmem uint32_t *parrep,
         act_len -= retrieved;
 
         /* all accesses to opdata->action_id done in pif_action_exec_op() for performance */
-        if (pif_action_exec_op(parrep, xfer_buf))
-            return -1;
+        //if (pif_action_exec_op(parrep, xfer_buf))
+        //    return -1;
     }
     return 0;
 }

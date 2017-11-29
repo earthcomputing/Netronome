@@ -144,9 +144,9 @@ int16_t process_multicast(struct replication_information mcast)
     * Setup multicast element information
     */
     egress_port = (egress_ports >> 16); // extract current port
-    pif_global_set_stdmd_egress_port((__lmem uint32_t *)parrep, egress_port);
-    pif_global_set_stdmd_egress_instance((__lmem uint32_t *)parrep, mcast.rid);
-    pif_global_set_stdmd_instance_type((__lmem uint32_t *)parrep, PIF_PKT_INSTANCE_TYPE_NORMAL);
+    //pif_global_set_stdmd_egress_port((__lmem uint32_t *)parrep, egress_port);
+    //pif_global_set_stdmd_egress_instance((__lmem uint32_t *)parrep, mcast.rid);
+    //pif_global_set_stdmd_instance_type((__lmem uint32_t *)parrep, PIF_PKT_INSTANCE_TYPE_NORMAL);
 
     if ((egress_ports & 0xffff) != 0xffff)
     {

@@ -90,6 +90,8 @@ pif_lookup_store_key(__mem uint64_t *key_store, __lmem uint32_t *parrep)
 }
 #endif
 
+#define PIF_TABLE_COUNT 65535
+
 struct pif_lookup_result
 pif_lookup(unsigned int tableno,
            __lmem uint32_t *parrep,

@@ -113,9 +113,9 @@ NFD_CFG_BASE_DECLARE(PCIE_ISL);
 /* The #NBI and #port are encoded in P4 standard_metadata.egress_port */
 __forceinline int forward(__lmem uint32_t *parrep)
 {
-    unsigned int port_spec;
+    unsigned int port_spec = 0;
 
-    port_spec = pif_global_get_stdmd_egress_port(parrep);
+    //port_spec = pif_global_get_stdmd_egress_port(parrep);
 
     /* egress_port == -1 : drop */
     if (port_spec == PIF_EGRESS_DROP)
@@ -144,7 +144,7 @@ __forceinline int forward(__lmem uint32_t *parrep)
 
         /* logical port - for future use, drop packet for now */
         /* multicast port - we dont support recursive mcast groups (mcast in mcast)- drop packet */
-        pif_global_set_stdmd_egress_port(parrep, PIF_EGRESS_DROP);
+        //pif_global_set_stdmd_egress_port(parrep, PIF_EGRESS_DROP);
         return 1;
     }
 #endif /* ! PIF_NO_NFD */
@@ -300,7 +300,7 @@ void main(void)
                     PIF_COUNT(RX_NFD);
                 }
 
-                pif_global_metadata_init((__lmem uint32_t *)parrep);
+                //pif_global_metadata_init((__lmem uint32_t *)parrep);
                 rep_info.rid = 0;
 
             } else {
@@ -311,17 +311,17 @@ void main(void)
                 pkt_dup_state.__raw = PIF_PKT_INSTANCE_TYPE_NORMAL;          // clear duplication flag
             }
 
-            exit_node = pif_parrep_extract((__lmem uint32_t *)parrep,
-                                           pif_pkt_info_global.pkt_buf,
-                                           pif_pkt_info_global.pkt_len,
-                                           flowkey,
-                                           (__gpr unsigned int *)&flowkey_len);
+            //exit_node = pif_parrep_extract((__lmem uint32_t *)parrep,
+            //                               pif_pkt_info_global.pkt_buf,
+            //                               pif_pkt_info_global.pkt_len,
+            //                               flowkey,
+            //                               (__gpr unsigned int *)&flowkey_len);
 
             /* Verify calculated fields if required. Returns 0 if verification
              * successful and -PIF_PARSE_ERROR_CHECKSUM otherwise. */
             if (exit_node >= 0) {
                 __gpr int flcalc_verify_result;
-                flcalc_verify_result = pif_flcalc_verify((__lmem uint32_t *)parrep);
+                //flcalc_verify_result = pif_flcalc_verify((__lmem uint32_t *)parrep);
                 if (flcalc_verify_result)
                     exit_node = flcalc_verify_result;
             }
@@ -334,8 +334,8 @@ void main(void)
                     PIF_COUNT_RANGE(ERROR_PARREP, (-exit_node));
                 }
 
-                exit_node = pif_parrep_exceptions((__lmem uint32_t *)parrep,
-                                                  exit_node);
+                //exit_node = pif_parrep_exceptions((__lmem uint32_t *)parrep,
+                //                                  exit_node);
                 if (exit_node < 0) {
                     handle_error_packet(PACKET_ERROR_PARREP);
                     continue;
@@ -412,9 +412,9 @@ void main(void)
             if (ingress_cached < 0) { /* uncached */
                 int ret;
 
-                ret = pif_ctlflow_ingress_flow((int *)&exit_node,
-                                               (__lmem uint32_t *)parrep,
-                                               act_buf + PIF_FC_PAYLOAD_OFF);
+                //ret = pif_ctlflow_ingress_flow((int *)&exit_node,
+                //                               (__lmem uint32_t *)parrep,
+                //                               act_buf + PIF_FC_PAYLOAD_OFF);
                 if (ret < 0) { /* drop */
                     /* store the action buffer length so actions up to and
                     * including drop will be done each time
@@ -469,7 +469,7 @@ void main(void)
             * has to be dropped.
             */
             {
-                __gpr uint32_t port_spec = pif_global_get_stdmd_egress_spec((__lmem uint32_t *)parrep);
+                __gpr uint32_t port_spec ; //= pif_global_get_stdmd_egress_spec((__lmem uint32_t *)parrep);
 
 #if (MCAST_GROUP_MAX > 0)
                 if (PIF_PORT_SPEC_TYPE_of(port_spec) == PIF_PORT_SPEC_TYPE_MULTICAST) {
@@ -530,7 +530,7 @@ void main(void)
                     */
                     __critical_path();
 
-                    pif_global_set_stdmd_egress_port((__lmem uint32_t *)parrep, port_spec);
+                    //pif_global_set_stdmd_egress_port((__lmem uint32_t *)parrep, port_spec);
 
                     if (pkt_dup_state.action && port_spec != PIF_EGRESS_DROP) {
 
@@ -663,11 +663,11 @@ void main(void)
         }
 #else
         if (egress_cached < 0) {
-            int ret;
+            int ret = 0;
 
-            ret = pif_ctlflow_egress_flow((int *)&exit_node,
-                                           (__lmem uint32_t *)parrep,
-                                           act_buf + PIF_FC_PAYLOAD_OFF + ingress_cached);
+            //ret = pif_ctlflow_egress_flow((int *)&exit_node,
+            //                               (__lmem uint32_t *)parrep,
+            //                               act_buf + PIF_FC_PAYLOAD_OFF + ingress_cached);
 
             if (ret < 0) { /* drop */
                 /* store the action buffer length so actions up to and
@@ -727,12 +727,12 @@ void main(void)
         }
 
         /* Update calculated fields if required. */
-        pif_flcalc_update((__lmem uint32_t *)parrep);
+        //pif_flcalc_update((__lmem uint32_t *)parrep);
 
 
         PIF_DEBUG_SET_STATE(PIF_DEBUG_STATE_DEPARSING, 0);
         {
-            __gpr int pkt_byteoffset = pif_deparse((__lmem uint32_t *)parrep, &pif_pkt_info_global);
+            __gpr int pkt_byteoffset = 0 ; //pif_deparse((__lmem uint32_t *)parrep, &pif_pkt_info_global);
 
             if (pkt_byteoffset < 0) {
                 handle_error_packet(PACKET_ERROR_DEPARSE);
