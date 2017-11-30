@@ -395,6 +395,11 @@ nfp_net_fw_find(struct pci_dev *pdev, struct nfp_pf *pf)
 
 	nfp_info(pf->cpp, "Looking for firmware file in order of priority:\n");
 
+	sprintf(fw_name, "netronome/pif_app_nfd.fw");
+	fw = nfp_net_fw_request(pdev, pf, fw_name);
+	if (fw)
+		return fw;
+
 	/* First try to find a firmware image specific for this device */
 	interface = nfp_cpp_interface(pf->cpp);
 	nfp_cpp_serial(pf->cpp, &serial);
