@@ -5,8 +5,8 @@
 #
 
 # folders
-INSTALL_ROOT ?= ../../..
-TOP_DIR = ../../../..
+INSTALL_ROOT ?= ../..
+TOP_DIR = ..
 ifdef NFPSDKDIR
 NFP_TOOLCHAIN_DIR = $(NFPSDKDIR)
 endif
@@ -37,7 +37,7 @@ ENV=LD_LIBRARY_PATH=$(INSTALL_ROOT)/lib
 
 # C Make part
 app_src_dir     := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-NETRO_INSTALL_ROOT ?= ../../../..
+NETRO_INSTALL_ROOT ?= ..
 
 # Define src_dir FIRST - it is the directory that this makefile resides in
 # MUST OCCUR BEFORE ANY include's (which will change MAKEFILE_LIST)
@@ -56,11 +56,11 @@ include $(scripts_dir)/Makefile.nfp.config
 -include Makefile.nfp.config
 
 # /Users/atsushi/earthcomputing/Netronome/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/net/eth.h:
-TO_NET_DIR=$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib
+TO_NET_DIR=p4/components/flowenv/me/lib
 #  /Users/atsushi/earthcomputing/Netronome/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/mem_bulk.h
 
 #overwrite from Makefile.nfp.config
-NFCC_BASE_INC := -I. -I../entl_libs -I$(TO_NET_DIR) -I$(base_dir)/microc/include -I$(base_dir)/microc/lib -I$(base_dir)/microc/lib/nfp -Ip4/components/nfp_pif/me/apps/pif_app_nfd/include/
+NFCC_BASE_INC := -I. -I../nfp-sdk-sim-6.0.1/examples/nfsim/entl_libs -I$(TO_NET_DIR) -I$(base_dir)/microc/include -I$(base_dir)/microc/lib -I$(base_dir)/microc/lib/nfp -Ip4/components/nfp_pif/me/apps/pif_app_nfd/include/ -Icomponents/standardlibrary/include
 #NFCC_FLAGS=-chip nfp-6xxx -DENTL_STATE_DEBUG
 
 
