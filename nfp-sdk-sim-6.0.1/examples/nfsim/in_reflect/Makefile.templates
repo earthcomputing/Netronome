@@ -36,14 +36,14 @@ list:
 #
 define microcode.assemble
 
-A_OBJ_$1__INC   += $(NFAS_BASE_INC)
-A_OBJ_$1__DEFS  += $(NFAS_BASE_DEFS)
-A_OBJ_$1__FLAGS += $(NFAS_BASE_FLAGS)
-A_OBJ_$1__FLAGS += $4
-A_OBJ_$1__LIST  = $(FW_BUILD)/$1.list
+OBJ_$1__INC   += $(NFAS_BASE_INC)
+OBJ_$1__DEFS  += $(NFAS_BASE_DEFS)
+OBJ_$1__FLAGS += $(NFAS_BASE_FLAGS)
+OBJ_$1__FLAGS += $4
+OBJ_$1__LIST  = $(FW_BUILD)/$1.list
 
-$$(A_OBJ_$1__LIST): $2/$3
-	$(NFAS) $$(A_OBJ_$1__FLAGS) $$(A_OBJ_$1__DEFS) $$(A_OBJ_$1__INC) -o $$@ $$<
+$$(OBJ_$1__LIST): $2/$3
+	$(NFAS) $$(OBJ_$1__FLAGS) $$(OBJ_$1__DEFS) $$(OBJ_$1__INC) -o $$@ $$<
 
 endef
 
@@ -56,7 +56,7 @@ endef
 #
 define microcode.add_flags
 
-A_OBJ_$1__FLAGS += $2
+OBJ_$1__FLAGS += $2
 
 endef
 

@@ -88,11 +88,11 @@ $(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,entl_reflect,.))
 $(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,me,$(base_dir)/microc/lib/nfp/_c))
 #$(eval $(call micro_c.add_src_lib,pgen_test_obj,pkt_ops,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/nfp_pif/me/apps/common/src))
 $(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,libpkt,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/pkt))
-$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,mem_bulk,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c))
+#$(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,mem_bulk,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/nfp/_c))
 $(eval $(call micro_c.add_src_lib,entl_packet_receiver_obj,reg_utils,$(TOP_DIR)/nfp-sdk-6.0.1/p4/components/flowenv/me/lib/std/_c))
 
-$(eval $(call fw.add_obj,entl_packet_test,entl_packet_receiver_obj,i33.me0 ))
 $(eval $(call fw.add_obj,entl_packet_test,entl_packet_sender_obj,i32.me0 ))
+$(eval $(call fw.add_obj,entl_packet_test,entl_packet_receiver_obj,i32.me1 ))
 
 $(eval $(call fw.link_with_rtsyms,entl_packet_test))
 
@@ -154,14 +154,5 @@ chip_setup:
 	@echo "loading firmware"
 	$(BINDIR)/nfp-nffw $(ELF) load
 
-load_fw: 
-	@echo "Running chip setup, this may take some time..."
-	@echo "Enabling island 8,32 clocks only"
-	$(EXDIR)/load_me -b
-	#$(EXDIR)/load_me -F -e 8,32
-	$(EXDIR)/nbidma_setup
-	$(EXDIR)/nbitm_setup
-	$(BINDIR)/nfp-macinit -m0 -0$(ETCDIR)/macinit/1x100GE.json -1$(ETCDIR)/macinit/1x100GE.json
-	@echo "loading firmware"
-	$(BINDIR)/nfp-nffw pif_app_nfd.fw load
+
 

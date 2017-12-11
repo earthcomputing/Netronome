@@ -99,7 +99,6 @@ main(void)
         unsigned int mbox0, mbox1, mbox2 ;
         int ret ;
         int i = 0 ;
-        sleep(500) ;
         //while( state.my_value != MY_VALUE ) {
         //sleep(100) ;            
         //}
@@ -108,28 +107,30 @@ main(void)
         //sleep(100) ;             
         //signal_ctx(0, __signal_number(&entl_send_sig)) ;  // send hello first       
         if( __ctx() == 0 ) {
+          local_csr_write(local_csr_mailbox3, 55 );
+          sleep(500) ;
           for( i = 0 ; i < 1000 ; i++ ) {
             entl_data_out.d_addr = i + 500 ;
             entl_data_out.data = i + 1000 ;
             entl_data_out.island = 0 ;
             entl_data_out.pnum = 0 ;
             // initial trigger to send hello  
-            mbox0 = i + 200 ;
-            local_csr_write(local_csr_mailbox0, mbox0 );
+            mbox2 = i + 200 ;
+            local_csr_write(local_csr_mailbox2, mbox2 );
             /*
             entl_reflect_data( ENTL_SENDER_ISLME, __xfer_reg_number(&entl_data_in, ENTL_SENDER_ISLME),
               __signal_number(&entl_send_sig, ENTL_SENDER_ISLME), &entl_data_out,
               sizeof(entl_data_out)
             ) ;
             */
-            /* */ 
+            /* */
             entl_reflect_data_ptr40(
               &entl_data_out, ENTL_SENDER_ISL, ENTL_SENDER_ME, __xfer_reg_number(&entl_data_in, ENTL_SENDER_ISLME),
               __signal_number(&entl_send_sig, ENTL_SENDER_ISLME), 8
             ) ;
             /* */
             mbox1 = i + 200 ;
-            local_csr_write(local_csr_mailbox1, mbox1 );
+            local_csr_write(local_csr_mailbox3, mbox1 );
           }
         }
         else sleep(10000) ;       

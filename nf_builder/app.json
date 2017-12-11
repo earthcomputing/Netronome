@@ -859,6 +859,60 @@
         }
       }
     },
+    "debug": {
+      "chip": {
+        "minimum_revision": "0x10",
+        "sku": "NFP-6480-1C-B0"
+      },
+      "common": {
+        "defines": [
+          "PLATFORM_PORT_SELECTION=CDP_PLATFORM",
+          "PIF_APP_CONFIG=PIF_APP_DEFAULT",
+          "NUM_IMU=1",
+          "NUM_EMU=1"
+        ],
+        "linker": {
+          "flags": [
+            "rtsyms", "mip"
+          ]
+        }
+      },
+      "targets": {
+        "pif_app_nfd": {
+          "mes": [
+            "i32.me0", "i33.me0"
+          ]
+        },
+        "flowcache_timeout_emu0": {
+          "mes": [
+            "i32.me11"
+          ],
+          "compiler": {
+            "defines": [
+            "FC_TIMEOUT_EMU=0"
+            ]
+          }
+        },
+        "flowcache_timeout_emu1": {
+          "mes": [
+            "i34.me11"
+          ],
+          "compiler": {
+            "defines": [
+            "FC_TIMEOUT_EMU=1"
+            ]
+          }
+        },
+        "flowcache_timeout_emu2": {
+          "mes": [
+          ]
+        },
+        "blm1": {
+          "mes": [
+          ]
+        }
+      }
+    },
     "hydrogen": {
       "chip": {
         "minimum_revision": "0x10",
