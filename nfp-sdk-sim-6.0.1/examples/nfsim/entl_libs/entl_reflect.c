@@ -32,7 +32,7 @@ entl_reflect(unsigned int dst_isl, unsigned int dst_me, unsigned int dst_xfer,
             bits[30:28] = ctx
             bit[31]     = Signal reference (If set, signal number comes from bits [27:24]
     */
-    low_addr = (1 << 31) | (sig_no << 24) | ((dst_me & 0xf) << 12) | (dst_xfer & 0xfff);
+    low_addr = (1 << 31) | (sig_no << 24) | (((dst_me+4) & 0xf) << 12) | (dst_xfer & 0xfff);
     hi_addr = (dst_isl & 0x3f) << 26;
 
     /* Currently just support reflect_write_sig_remote */
@@ -66,8 +66,8 @@ uint32_t get_entl_sender_meid( uint32_t port ) {
         case 3:     return __nfp_meid(35,0) ;
         case 4:     return __nfp_meid(36,0) ;
         case 5:     return __nfp_meid(37,0) ;
-        case 6:     return __nfp_meid(38,0) ;
-        case 7:     return __nfp_meid(38,1) ;  
+        //case 6:     return __nfp_meid(38,0) ;
+        //case 7:     return __nfp_meid(38,1) ;  
         //case 8:     return __nfp_meid(36,0) ;
         //case 9:     return __nfp_meid(36,1) ;
         //case 10:    return __nfp_meid(37,0) ;

@@ -1966,8 +1966,8 @@ issue_dma()
         desc_ring_off = ((gather_dma_seq_serv * sizeof(tx_desc)) &
                          (NFD_IN_DESC_RING_SZ - 1));
         desc_ring_addr = (__cls void *) (desc_ring_base | desc_ring_off);
-        __cls_read(&tx_desc, desc_ring_addr, sizeof tx_desc, sizeof tx_desc,
-                   sig_done, &tx_desc_sig);
+        //__cls_read(&tx_desc, desc_ring_addr, sizeof tx_desc, sizeof tx_desc,
+        //           sig_done, &tx_desc_sig);    // AK: Workaround to compile somehow
 
         /* Start of dma_order_sig reorder stage */
         __asm {

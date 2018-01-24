@@ -69,8 +69,8 @@ issue_dma_status_setup()
 
     /* Fix the transfer registers used */
     __assign_relative_register(&status_queue_info, STATUS_QUEUE_START1);
-    __assign_relative_register(&status_issued, STATUS_ISSUE_DMA_START);
-    __assign_relative_register(&status_queue_sel, STATUS_Q_SEL_START1);
+    //__assign_relative_register(&status_issued, STATUS_ISSUE_DMA_START);  AK work around 
+    //__assign_relative_register(&status_queue_sel, STATUS_Q_SEL_START1);  AK work around
 
     set_alarm(NFD_IN_DBG_ISSUE_DMA_INTVL, &status_throttle);
 }

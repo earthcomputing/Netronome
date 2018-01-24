@@ -9,9 +9,9 @@
 #include "entl_reflect.h"
 #include "entl_state_machine.h"
 
-#define ENTL_SENDER_ISL 32
+#define ENTL_SENDER_ISL 33
 #define ENTL_SENDER_ME 0
-#define ENTL_RECEIVER_ISL 33
+#define ENTL_RECEIVER_ISL 32
 #define ENTL_RECEIVER_ME 0
 
 #define ETH_P_ECLP  0xEAC0    /* Earth Computing Link Protocol [ NOT AN OFFICIALLY REGISTERED ID ] */
@@ -342,7 +342,7 @@ main(void)
         entl_data_out.island = 0 ;
         entl_data_out.pnum = 0 ;
     if (__ctx() == 0) {
-        local_csr_write(local_csr_mailbox0, 0x10000000 );
+        local_csr_write(local_csr_mailbox3, 0x10000000 );
         // initial trigger to send hello  
             ctassert(__is_ct_const(sizeof(entl_data_out)));
 
@@ -350,7 +350,7 @@ main(void)
           __signal_number(&entl_send_sig, __nfp_meid(ENTL_SENDER_ISL,ENTL_SENDER_ME)), &entl_data_out,
           sizeof(entl_data_out)
         ) ;
-        local_csr_write(local_csr_mailbox0, 0x20000000 );
+        local_csr_write(local_csr_mailbox3, 0x20000000 );
       }
       //else {
         sleep(100) ;       

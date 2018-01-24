@@ -323,6 +323,7 @@ def gen_target( tname, name, tgt_obj, common_defs, compiler_obj=None ):
             index += 1
     if not mes is None:
         for me in mes:
+            me = var_convert(me)
             mfile.write('$(eval $(call fw.add_obj,%s,%s,%s))\n' % (proj_name, name, me))
 
             # mes in target is not supported for now
@@ -339,12 +340,27 @@ def gen_platform( platform, p_obj ):
     # process "common" : "defines"
     name_num = 0
     common_obj = p_obj.get( "common" )
+    pico = None
     if not common_obj is None:
+        mfile.write('#Find common on %s\n' % (platform))
         common_defs = common_obj.get("defines")
+        lnker = common_obj.get("linker")
+        if not lnker is None:
+            pico = lnker.get("pico")
         #if not defs is None:
         #    for def in defs:
         #        mfile.write( "$(eval $(microc.add_define( %s,%s ))\n" % (name, def))
     #New link_targets build
+    targets_list = list(tgets_obj)
+    for target in targets_list:
+        targets_obj = tgets_obj.get(target)
+        mes = targets_obj.get("mes")
+        mes_l = 0
+        if not mes is None:
+            mes_l = len(mes)
+        if mes_l > 0:
+            platform_target_name = platform + "_" + target
+            gen_target(target, platform_target_name, targets_obj, common_defs)
     targets_obj = p_obj.get( "link_targets" )
     #Original targets build
     if not targets_obj is None:
@@ -405,14 +421,28 @@ def gen_platform( platform, p_obj ):
                                 #mfile.write("OBJ_%s__DEFS += -D%s\n" %(platform_target_name, inc))
                     #else:
                     #    print("compiler is empty\n")
+                    if not common_defs is None and len(common_defs) > 0:
+                        gen_common_def(platform_target_name, common_defs)
                     tgt_obj = tgets_obj.get(target)
                     gen_target(target, platform_target_name, tgt_obj, common_defs, compiler_obj)
                     for me in mes_list:
                         me = var_convert( me )
                         #print( '$(eval $(call fw.add_obj,%s,%s,%s))' % ( proj_obj_name, target, me ))
                         mfile.write('$(eval $(call fw.add_obj,%s,%s,%s))\n' % (proj_name, platform_target_name, me))
+    if pico is None:
+        mfile.write('#No pico find in common on %s\n' % (platform))
+        mfile.write("$(eval $(call fw.add_ppc,%s,i8,$(PICO_CODE)))\n" % proj_name )
+        mfile.write("$(eval $(call fw.add_ppc,%s,i9,$(PICO_CODE)))\n" % proj_name )
+    else:
+        i8 = pico.get("i8")
+        if not i8 is None:
+            mfile.write("$(eval $(call fw.add_ppc,%s,i8,$(PICO_CODE)))\n" % proj_name)
+        i9 = pico.get("i9")
+        if not i9 is None:
+            mfile.write("$(eval $(call fw.add_ppc,%s,i9,$(PICO_CODE)))\n" % proj_name)
 
-#testing gen_target
+
+        #testing gen_target
 #for tgt in targets_list:
     #if( tgt == "pif_app_nfd" ):
     #tgt_obj = tgets_obj.get( tgt )
@@ -428,8 +458,6 @@ for platform in platforms_list:
         plf_obj = platforms_obj.get(platform)
         gen_platform( platform, plf_obj )
 
-        mfile.write("$(eval $(call fw.add_ppc,%s,i8,$(PICO_CODE)))\n" % proj_name )
-        mfile.write("$(eval $(call fw.add_ppc,%s,i9,$(PICO_CODE)))\n" % proj_name )
         mfile.write("$(eval $(call fw.link_with_rtsyms,%s))\n" % proj_name )
 
 """ testing var_convert

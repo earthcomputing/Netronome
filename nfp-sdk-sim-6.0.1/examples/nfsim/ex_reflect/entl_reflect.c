@@ -60,7 +60,7 @@ __intrinsic void entl_reflect_data_ptr40(
     bits[30:28] = ctx
     bit[31]     = Signal reference (If set, signal number comes from bits [27:24]
     */
-    unsigned int low_addr = (1U << 31) | (sig << 24) | ((remote_ME & 0xf) << 12) | (remote_xfer_reg_number & 0xfff);
+    unsigned int low_addr = (1U << 31) | (sig << 24) | (((remote_ME + 4) & 0xf) << 12) | (remote_xfer_reg_number & 0xfff);
     unsigned int hi_addr = (remote_island & 0x3f) << 26;
 
     CT_ASSERT(count<=8);

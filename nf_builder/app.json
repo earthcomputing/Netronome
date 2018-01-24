@@ -230,8 +230,8 @@
           "%(PIFSHARED)s/include"
         ],
         "src": ["%(PIFAPPDIR)s/src/app_master.c",
-                "%(PIFLIBDIR)s/src/pif_init.c",
-                "%(PIFOUTDIR)s/pif_digests.c",
+                "pif_init.c",
+                "pif_digests.c",
                 "%(PIFOUTDIR)s/pif_parrep_pvs_sync.c"]
       }
     },
@@ -874,7 +874,10 @@
         "linker": {
           "flags": [
             "rtsyms", "mip"
-          ]
+          ],
+          "pico": {
+            "i8": "catamaran"
+          }
         }
       },
       "targets": {
@@ -895,11 +898,9 @@
         },
         "flowcache_timeout_emu1": {
           "mes": [
-            "i34.me11"
           ],
           "compiler": {
             "defines": [
-            "FC_TIMEOUT_EMU=1"
             ]
           }
         },
