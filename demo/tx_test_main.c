@@ -1,10 +1,7 @@
-/* 
- * Netronome NIC Data Tester Test
- * Copyright(c) 2017 Earth Computing.
- *
- *  Author: Atsushi Kasuya
- *
- */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright © 2017-present Earth Computing Corporation. All rights reserved.
+ *  Licensed under the MIT License. See LICENSE.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
 #include <stdio.h>
 #include <sys/ioctl.h>
